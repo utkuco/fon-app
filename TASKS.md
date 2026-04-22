@@ -1,38 +1,69 @@
-# TASKS — FonApp / FonRapor — Anasayfa Sadeleştirme
+# TASKS — FonApp / FonRapor
 
-## Active Goal
-Anasayfayı sadeleştir + ETF category sparkline ekle
+## ✅ Completed
 
-## ✅ Bugün yapılan
+### 1. formatters.tsx
+- `src/lib/formatters.tsx` — centralized: `fmtPct(showSign)`, `fmtAum(n, currency?)`, `fmtPrice`, `SparklineSvg`
+- `fmtMoney` REMOVED — all files updated to `fmtAum`
+- TL → `fmtAum(n, "TL")` → ₺. USD → `fmtAum(n, "USD")` → $.
+- Aggregate stats → plain `fmtAum(n)` → 1.2B (no currency sign)
 
-### Kategori birleştirme
-- `CategoryTypeCards.tsx` → iki ayrı grid tek kart + tab bar ("Türk Fonları | Yabancı ETF")
-- FunLists → "En Büyük Fonlar" section kaldırıldı
+### 2. FundCard component
+- `src/components/ui/fund-card.tsx` — single flexible component for ALL 4 card variants
+- Fund: logo + sparkline + price + AUM + monthly %
+- ETF: logo-badge + expense_ratio/dividend_yield + price + AUM + daily/ytd %
+- TS: 0 errors ✓, Build: clean ✓
 
-### ETF "Diğer" sorunu
-- `ASSET_TYPE_FALLBACK` mapping (65+ asset_type → 5 kategori)
-- DIGER_THRESHOLD = 100
+### 3. HomePageClient.tsx refactor
+- FundList, CategorySection extracted
+- TS: 0 errors ✓, Build: clean ✓
 
-### ETF category sparkline (YENİ)
-- `scripts/compute-etf-sparklines.mjs` oluşturuldu
-- DB'ye 5 ETF category sparkline kaydedildi: SP500, NASDAQ, DUNYA, ALTIN, TAHVIL
-- Kaynak: `foreign_etf_prices` tablosu (SPY, IVV, VOO, QQQ, VTI, VEA, VWO, EFA, GLD, SLV, BND, AGG, TLT, LQD)
-- `CategoryTypeCards.tsx` → ETF kartlarında sparkline gösterimi ("SON 6 AY" etiketi + 48px SVG)
+### 8. Type definitions centralized
+- `src/types/index.ts` — shared types: Fund, CompareFund, HomeFund, HomeEtf, DashboardStats, HomepageStats, CategoryStats, CategoryChange, Stock, Etf, IndexData, ComparePageProps, MostInvested, MostHeldStock, FunListsProps, TopFund, FunListFund, BenchmarkData
 
-### Route düzeltmesi
-- `[symbol]` + `[[...category]]` route çakışması çözüldü
-- `[[...category]]/page.tsx` artık hem category hem individual ETF handle ediyor
-- `/etf/sp500`, `/etf/nasdaq`, `/etf/dunya`, `/etf/SPY` hepsi çalışıyor
+### 16. ComparePageClient refactor
+- `src/app/compare/ChartPanel.tsx` — normalized price chart + benchmark toggles
+- `src/app/compare/FundSelector.tsx` — search + fund pill chips
+- `src/app/compare/MetricsTable.tsx` — returns table (1H/1A/3A/6A/YBB/1Y) + quick stat cards
+- TS: 0 errors ✓, Build: clean ✓
 
-## 📊 DB Durumu
-- `homepage_stats.category_sparklines`: 11 sparkline (önceden 7 Türk fon + 5 ETF = 12... aslında overlap olabilir)
-  - Türk: BYF, KFF, OKS, SRF, VFF, ALTIN, DÖVİZ
-  - ETF: SP500, NASDAQ, DUNYA, ALTIN, TAHVIL
-- `foreign_etf_prices`: 4 ETF (SPY, IVV, VOO, QQQ) — 251 günlük veri
+### 17. DashboardStats + MarketSummary → StatsGrid
+- `src/components/ui/stats-grid.tsx` — shared FlexiStatCard-based grid
+- `DashboardStats.tsx` updated to use StatsGrid (6 slots: Total Funds, Total AUM, Avg Daily Change, Last Update, Parsed Funds, Top Gainer)
+- `MarketSummary.tsx` updated to import types from `@/types`
 
-## ✅ Return Hesaplaması (BUGÜN - 22 Nisan 2026)
-- `compute_returns_yf.py` scripti düzeltildi: `and=(...)` syntax → `column=is.null` + offset pagination
-- 164 eksik ETF için return hesaplandı → **159 başarılı, 5 skipped**
-- Son durum: **1171/1176 ETF** dönüş verisi mevcut (99.6%)
-- 5 eksik: CWY, DGAP, CBOX, MUYY, ORBX (yfinance'de veri yok)
-- DB: `foreign_etfs.one_month_return_try`, `three_month_return_try`, `six_month_return_try`
+### 5. FlexiStatCard
+- `src/components/ui/flexi-stat-card.tsx` — created and reviewed by user
+- BetaAlphaCard and SharpeRatioCard: kept as-is (complex multi-metric cards, not single FlexiStatCard candidates)
+- RiskMetrics: kept as-is (multi-section card)
+
+### TL/USD Audit — FIXES APPLIED
+- `FundDetailClient.tsx:246` — `fmtAum(fund.market_cap, "USD")` → `"TL"` (fund market caps are TL)
+- `metrics-table.tsx:76,104` — `fmtAum(cf.market_cap, "USD")` → `"TL"` (compare page fund market caps)
+- `HomePageClient.tsx:544` — `{fmtAum(..., "TL")} ₺ AUM` → `{fmtAum(..., "TL")} AUM` (duplicate ₺ removed)
+- `TypePageClient.tsx:205` — same duplicate fix
+- `CompanyPageClient.tsx:195` — same duplicate fix
+- `CategoryOverview.tsx:84` — `{fmtAum(..., "TL")} TL` → `{fmtAum(..., "TL")}` (duplicate TL removed)
+- `CompaniesPageClient.tsx:97,161` — duplicate "TL" text removed
+- `CategoryTypeCards.tsx:291` — `formatAUM(stat.total_market_cap) TL` → `fmtAum(stat.total_market_cap, "TL")` (local formatAUM replaced with centralized fmtAum)
+- ETF AUM uses `"USD"` correctly (ETFs are USD-denominated)
+- Exchange rate API calls (etf-cron, performers) correctly use "USD"/"TRY" strings
+
+### Deployment
+- component-test page deleted ✓
+- TS: 0 errors ✓, Build: clean ✓, Deploy: ✓
+
+## 📁 Key Files
+- `src/lib/formatters.tsx` — centralized formatters
+- `src/types/index.ts` — shared type definitions
+- `src/components/ui/flexi-stat-card.tsx` — FlexiStatCard base component
+- `src/components/ui/stats-grid.tsx` — shared StatsGrid
+- `src/components/ui/fund-card.tsx` — FundCard (4 variants)
+- `src/app/compare/ChartPanel.tsx` — compare chart
+- `src/app/compare/FundSelector.tsx` — fund search + pills
+- `src/app/compare/MetricsTable.tsx` — returns table
+- `src/app/HomePageClient.tsx` — refactored
+- `src/app/fon/[code]/FundDetailClient.tsx` — fund detail
+- `src/components/BetaAlphaCard.tsx` — Beta/Alpha/R² card (complex multi-metric, as-is)
+- `src/components/SharpeRatioCard.tsx` — Sharpe/Sortino/Calmar card (complex multi-metric, as-is)
+- `src/components/RiskMetrics.tsx` — risk metrics card (multi-section, as-is)
