@@ -37,6 +37,42 @@
 - BetaAlphaCard and SharpeRatioCard: kept as-is (complex multi-metric cards, not single FlexiStatCard candidates)
 - RiskMetrics: kept as-is (multi-section card)
 
+### 17. FunLists.tsx Refactor (v1.2)
+- **Before:** 495-line monolith (ChampionCard + BenchmarksSection + GainersSection + TopFundsSection + MostHeldStocksSection + StockCard + MiniCard — all in one file)
+- **After:**
+  - `src/components/ui/benchmarks-section.tsx` — benchmark panel (standalone)
+  - `src/components/ui/gainers-section.tsx` — mixed FON+ETF table with period tabs (standalone, exports `Period`, `TurkishGainerEntry`, `EtfGainerEntry`, `getReturn`, `PERIOD_LABELS`)
+  - `src/components/FunLists.tsx` — orchestrator (~130 lines, imports BenchmarksSection + GainersSection)
+- `ChampionCard.tsx` — created but **unused** (dead code in original), removed
+- TS: 0 errors ✓, Build: clean ✓, Deploy: ✓
+
+### 18. Duplicate types removed (d1)
+- `HomePageClient.tsx` — inline `HomeFund`/`HomeEtf` removed, imported from `@/types`
+- `EtfGrid.tsx` — inline `HomeEtf` removed, imported from `@/types`
+- `types/index.ts` already had all shared types — no duplication remaining
+- TS: 0 errors ✓, Build: clean ✓
+
+### 19. React.memo FundCard (d3)
+- `src/components/ui/fund-card.tsx` — `export function FundCard` → `export const FundCard = React.memo(function FundCard ...)`
+- Prevents re-render of all 4 card variants (PureFundItem/MixedEtfItem/MixedFundItem/EtfTabItem) on parent state changes
+- TS: 0 errors ✓, Build: clean ✓
+
+### 20. Holdings API → TanStack Query (d4)
+- `src/components/providers.tsx` — new `QueryProvider` wrapping `QueryClientProvider` (10-min stale time, 30-min gc, no refetch on window focus)
+- `src/app/layout.tsx` — `<QueryProvider>` wraps entire app body
+- `src/hooks/useHoldings.ts` — `useHoldings(initialHoldings)` + `useHoldingDetail(isin)` custom hooks
+- `src/app/holdings/HoldingsClient.tsx` — `useEffect/useState` → `useQuery` hooks:
+  - `holdings` list: `useHoldings(initialHoldings)` with server-side `initialData` (SSR still works, background revalidation added)
+  - `detail` modal: `useHoldingDetail(selectedIsin)` — automatic refetch on ISIN change, loading/error states from hook
+  - Removed: `useCallback`, `useEffect` for detail, `useState` for `holdings/detail/loading`
+  - Added: `refetch` + `refetchDetail` retry buttons
+- TS: 0 errors ✓, Build: clean ✓, Deploy: ✓
+
+### 21. Precomputed stats audit (d5)
+- `fetchHomePageData` in `src/lib/homepage-data.ts` already uses `homepage_stats` precomputed table
+- No redundant aggregate queries found
+- **No code changes needed** — already optimal
+
 ### TL/USD Audit — FIXES APPLIED
 - `FundDetailClient.tsx:246` — `fmtAum(fund.market_cap, "USD")` → `"TL"` (fund market caps are TL)
 - `metrics-table.tsx:76,104` — `fmtAum(cf.market_cap, "USD")` → `"TL"` (compare page fund market caps)
@@ -56,13 +92,18 @@
 ## 📁 Key Files
 - `src/lib/formatters.tsx` — centralized formatters
 - `src/types/index.ts` — shared type definitions
+- `src/components/providers.tsx` — TanStack QueryProvider
+- `src/hooks/useHoldings.ts` — `useHoldings` + `useHoldingDetail` TanStack Query hooks
 - `src/components/ui/flexi-stat-card.tsx` — FlexiStatCard base component
 - `src/components/ui/stats-grid.tsx` — shared StatsGrid
-- `src/components/ui/fund-card.tsx` — FundCard (4 variants)
+- `src/components/ui/fund-card.tsx` — FundCard (4 variants, React.memo)
+- `src/components/ui/benchmarks-section.tsx` — benchmark panel
+- `src/components/ui/gainers-section.tsx` — FON+ETF gainers table
 - `src/app/compare/ChartPanel.tsx` — compare chart
 - `src/app/compare/FundSelector.tsx` — fund search + pills
 - `src/app/compare/MetricsTable.tsx` — returns table
 - `src/app/HomePageClient.tsx` — refactored
+- `src/app/holdings/HoldingsClient.tsx` — TanStack Query powered
 - `src/app/fon/[code]/FundDetailClient.tsx` — fund detail
 - `src/components/BetaAlphaCard.tsx` — Beta/Alpha/R² card (complex multi-metric, as-is)
 - `src/components/SharpeRatioCard.tsx` — Sharpe/Sortino/Calmar card (complex multi-metric, as-is)
