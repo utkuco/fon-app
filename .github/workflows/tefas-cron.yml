@@ -1,0 +1,48 @@
+name: TEFAS Fund Scraper
+
+on:
+  schedule:
+    # 10:00 TR (UTC+3) = 07:00 UTC, Mon-Fri
+    - cron: '0 7 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      max_funds:
+        description: 'Max funds to scrape'
+        required: false
+        default: '200'
+        type: string
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      - name: Install Python dependencies
+        run: |
+          pip install tefas requests
+
+      - name: Run scraper
+        env:
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          MGMT_TOKEN: ${{ secrets.MGMT_TOKEN }}
+          MAX_FUNDS: ${{ github.event.inputs.max_funds || '200' }}
+        run: |
+          python scripts/tefas_scraper.py $MAX_FUNDS
+
+      - name: Report result
+        if: always()
+        run: |
+          echo "TEFAS scrape completed at $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
