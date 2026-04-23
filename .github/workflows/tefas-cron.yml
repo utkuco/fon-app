@@ -31,7 +31,7 @@ jobs:
 
       - name: Install Python dependencies
         run: |
-          pip install tefas requests
+          pip install tefas webdriver-manager requests
 
       - name: Run scraper
         env:
