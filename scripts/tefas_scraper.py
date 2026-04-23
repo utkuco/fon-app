@@ -59,80 +59,55 @@ def mgmt(sql, timeout=60):
         return None
 
 
-def supabase_upsert(table: str, rows: list[dict], conflict_col: str) -> int:
-    """Upsert rows via raw SQL using Management API (bypasses RLS)."""
+def update_funds(rows: list[dict]) -> int:
+    """Update existing fund rows via REST API PATCH (service role bypasses RLS)."""
     if not rows:
         return 0
+    updated = 0
+    for row in rows:
+        code = row.get("code")
+        if not code:
+            continue
+        url = f"{SUPABASE_URL}/rest/v1/funds?code=eq.{code}"
+        payload = json.dumps(row)
+        req = requests.patch(
+            url, data=payload,
+            headers={
+                **HEADERS,
+                "Prefer": "return=minimal"
+            },
+            timeout=30
+        )
+        if req.status_code in (200, 204):
+            updated += 1
+        else:
+            print(f"  PATCH ERROR {code}: {req.status_code}")
+    return updated
 
-    if table == "funds":
-        # All scraped funds already exist in DB — use UPDATE only
-        updated = 0
-        for row in rows:
-            code = row.get("code", "")
-            price = row.get("price")
-            daily_change = row.get("daily_change")
-            weekly = row.get("weekly")
-            monthly = row.get("monthly")
-            quarterly = row.get("quarterly")
-            returns_json = json.dumps(row.get("returns", {}))
-            last_fetch = row.get("last_tefas_fetch", "")
 
-            def fmt(v):
-                if v is None:
-                    return "NULL"
-                if isinstance(v, dict):
-                    escaped = json.dumps(v).replace("'", "''")
-                    return f"'{escaped}'::jsonb"
-                if isinstance(v, (int, float)):
-                    return str(v)
-                return f"'{str(v).replace(chr(39), chr(39)+chr(39))}'"
-
-            sql = f"""
-            UPDATE funds SET
-                price = {fmt(price)},
-                daily_change = {fmt(daily_change)},
-                weekly = {fmt(weekly)},
-                monthly = {fmt(monthly)},
-                quarterly = {fmt(quarterly)},
-                returns = {fmt(returns_json)},
-                last_tefas_fetch = {fmt(last_fetch)}
-            WHERE code = {fmt(code)}
-            """
-            result = mgmt(sql)
-            if result is not None:
-                updated += 1
-        return updated
-
-    # Default: use REST API (for other tables)
-    url = f"{SUPABASE_URL}/rest/v1/{table}"
-    payload = json.dumps(rows)
+def insert_system_status(key: str, value: str) -> bool:
+    """Update system_status table."""
+    url = f"{SUPABASE_URL}/rest/v1/system_status"
+    payload = json.dumps([{"key": key, "value": value}])
     req = requests.post(
         url, data=payload,
         headers={
             **HEADERS,
-            "Prefer": f"resolution=merge-duplicates, conflict={conflict_col}"
+            "Prefer": "resolution=merge-duplicates, conflict=key"
         },
-        timeout=60
+        timeout=30
     )
-    if req.status_code not in (200, 201):
-        print(f"  UPSERT ERROR {table}: {req.status_code} {req.text[:200]}")
-        return 0
-    return len(rows)
+    return req.status_code in (200, 201)
 
 
 def get_top_funds(limit: int = 200) -> list[dict]:
-    """Get top funds by market_cap (AUM) from Supabase."""
-    result = mgmt(f"""
-        SELECT code, name, market_cap
-        FROM funds
-        WHERE market_cap IS NOT NULL AND market_cap > 0
-        ORDER BY market_cap DESC NULLS LAST
-        LIMIT {limit}
-    """)
-    if not result:
-        print("  Could not fetch top funds from Supabase")
+    """Get top funds by market_cap (AUM) from Supabase via REST API."""
+    url = f"{SUPABASE_URL}/rest/v1/funds?market_cap=gt.0&order=market_cap.desc&limit={limit}&select=code,name,market_cap"
+    req = requests.get(url, headers=HEADERS, timeout=30)
+    if req.status_code != 200:
+        print(f"  get_top_funds ERROR: {req.status_code}")
         return []
-    return result
+    return req.json()
 
 
 def parse_date(d: str) -> date:
@@ -349,18 +324,11 @@ def main():
     print(f"\n[TEFAS SCRAPER] Done — {len(results)} funds scraped, {errors} errors")
 
     if results:
-        updated = supabase_upsert("funds", results, "code")
+        updated = update_funds(results)
         print(f"  Upserted {updated} rows to funds table")
 
     # Update system_status
-    mgmt(f"""
-        INSERT INTO system_status (key, value, updated_at)
-        VALUES ('last_tefas_fetch', '{datetime.utcnow().isoformat()}', NOW())
-        ON CONFLICT (key) DO UPDATE SET
-            value = EXCLUDED.value,
-            updated_at = NOW()
-    """)
-
+    insert_system_status("last_tefas_fetch", datetime.utcnow().isoformat())
     print("[TEFAS SCRAPER] system_status updated")
     return len(results)
 
