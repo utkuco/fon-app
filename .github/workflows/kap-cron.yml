@@ -23,9 +23,13 @@ jobs:
     timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
-        with:
-          # Need PDFs for parsing — shallow clone is fine
-          fetch-depth: 1
+
+      - name: Debug workspace
+        run: |
+          echo "github.workspace=${{ github.workspace }}"
+          echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
+          ls -la "${{ github.workspace }}/" 2>&1 || echo "workspace not found"
+          ls -la scripts/ 2>&1 || echo "scripts not found"
 
       - name: Set up Python
         uses: actions/setup-python@v5
