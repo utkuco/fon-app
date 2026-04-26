@@ -39,11 +39,11 @@ jobs:
 
       - name: Install Python dependencies
         run: |
-          pip install pdfplumber pdfminer.six zhipuai requests Pillow
+          pip install pdfplumber pdfminer.six zhipuai requests Pillow undetected-chromedriver
 
       - name: Discover new PDFs from KAP
         run: |
-          python scripts/kap_discover_download.py \
+          python "$GITHUB_WORKSPACE/scripts/kap_discover_download.py" \
             --batch \
             --limit ${{ github.event.inputs.limit || '0' }} \
             --force ${{ github.event.inputs.force || 'false' }}
@@ -52,20 +52,20 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
         continue-on-error: true
-        # Discovery may fail if KAP blocks — continue to parse existing PDFs
 
       - name: Run portfolio parser
         run: |
-          python scripts/kap_portfolio_parser.py --batch --limit ${{ github.event.inputs.limit || '0' }}
+          python "$GITHUB_WORKSPACE/scripts/kap_portfolio_parser.py" --batch --limit ${{ github.event.inputs.limit || '0' }}
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
-          # Disable GLM fallback if key not set
           PYTHONUNBUFFERED: "1"
+        continue-on-error: true
 
       - name: Commit new PDFs
         run: |
+          cd "$GITHUB_WORKSPACE"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain pdfs/)" ]; then
