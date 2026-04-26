@@ -23,11 +23,8 @@ jobs:
     timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
-
-      - name: Init submodules
-        run: |
-          git submodule update --init --recursive
-          ls -la
+        with:
+          submodules: recursive
 
       - name: Debug workspace
         run: |
