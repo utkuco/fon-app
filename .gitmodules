@@ -1,0 +1,4 @@
+[submodule "ref/pykap"]
+	url = https://github.com/utkuco/pykap
+[submodule "web"]
+	url = https://github.com/utkuco/fonrapor-web
