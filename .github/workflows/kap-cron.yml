@@ -43,7 +43,7 @@ jobs:
 
       - name: Discover new PDFs from KAP
         run: |
-          python "$GITHUB_WORKSPACE/scripts/kap_discover_download.py" \
+          python "${{ github.workspace }}/scripts/kap_discover_download.py" \
             --batch \
             --limit ${{ github.event.inputs.limit || '0' }} \
             --force ${{ github.event.inputs.force || 'false' }}
@@ -55,7 +55,7 @@ jobs:
 
       - name: Run portfolio parser
         run: |
-          python "$GITHUB_WORKSPACE/scripts/kap_portfolio_parser.py" --batch --limit ${{ github.event.inputs.limit || '0' }}
+          python "${{ github.workspace }}/scripts/kap_portfolio_parser.py" --batch --limit ${{ github.event.inputs.limit || '0' }}
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
@@ -65,7 +65,7 @@ jobs:
 
       - name: Commit new PDFs
         run: |
-          cd "$GITHUB_WORKSPACE"
+          cd "${{ github.workspace }}"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain pdfs/)" ]; then
