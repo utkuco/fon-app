@@ -24,12 +24,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Init submodules
+        run: |
+          git submodule update --init --recursive
+          ls -la
+
       - name: Debug workspace
         run: |
           echo "github.workspace=${{ github.workspace }}"
-          echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
-          ls -la "${{ github.workspace }}/" 2>&1 || echo "workspace not found"
-          ls -la scripts/ 2>&1 || echo "scripts not found"
+          echo "ls scripts/:"
+          ls -la scripts/ 2>&1 || echo "NOT FOUND"
 
       - name: Set up Python
         uses: actions/setup-python@v5
