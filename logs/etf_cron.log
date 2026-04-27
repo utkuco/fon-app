@@ -107,3 +107,11 @@ DONE: 839 updated, 161 skipped, 0 errors
   ✓ 100 ETFs updated
   ✓ 200 ETFs updated
   ✓ 300 ETFs updated
+  ✓ 400 ETFs updated
+  ✓ 500 ETFs updated
+  ✓ 600 ETFs updated
+  ✓ 700 ETFs updated
+  ✓ 800 ETFs updated
+  Sparklines: 839 updated, 159 skipped, 0 errors
+
+✅ ETF cron complete — prices=1000, returns=839, sparklines=839

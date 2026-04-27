@@ -1,9 +1,12 @@
 name: KAP Portfolio Parser
 
 on:
-  schedule:
-    # Weekly: Monday at 07:00 UTC (10:00 TR)
-    - cron: '0 7 * * 1'
+  # DISABLED — local launchd (com.fonapp.kap-portfolio-cron.plist) handles KAP discovery + parse.
+  # GitHub Actions and local both ran the same pipeline, causing duplicate work.
+  # Keeping local because it uses Chrome Remote Debugging (same Chrome session as TEFAS scraper).
+  # Re-enable here ONLY if local Mac is offline for an extended period.
+  # schedule:
+  #   - cron: '0 7 * * 1'
   workflow_dispatch:
     inputs:
       limit:

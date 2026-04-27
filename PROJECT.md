@@ -1,136 +1,168 @@
-# PROJECT — FonApp / FonRapor (fonrapor.com)
+# FonRapor — Project Architecture
 
-> Stable facts about this project. Read at the start of every session.
-> Update only when architecture, stack, or conventions change.
+## Overview
+FonRapor (fonrapor.com) is a Turkish fund analytics platform. It aggregates fund/ETF prices from TEFAS and KAP, stores them in Supabase, and serves them via a Next.js frontend. The system has three execution environments: **Vercel** (cron jobs + web server), **Local Mac** (launchd cron jobs), and **GitHub Actions** (backup/fallback pipelines).
 
-## What this is
-Türkiye yatırım fonu ve yabancı ETF portföy analiz platformu. Kullanıcılar fonların performansını, portföy dağılımını, gider oranlarını karşılaştırabilir. Supabase (Postgres) + Next.js App Router + Tailwind CSS.
+---
 
-## Stack
-- Language: TypeScript 5
-- Framework: Next.js 15 (App Router, Turbopack)
-- Database: Supabase Postgres (oqkobptbvcazifpvjwfz)
-- Package manager: npm (web/), pip (scripts/)
-- Build: `npm run build` in web/
-- Deploy: `npx vercel --prod --yes` from web/ directory
-
-## Architecture
-
-```
-web/src/
-├── app/
-│   ├── page.tsx                      # Anasayfa (server component)
-│   ├── fon/[code]/page.tsx           # Fon detay sayfası
-│   ├── etf/
-│   │   ├── [[...category]]/page.tsx  # ETF listesi (catch-all: /, /sp500, /nasdaq...)
-│   │   └── [symbol]/page.tsx         # Bireysel ETF detay
-│   ├── type/[type]/page.tsx          # Fon kategori sayfası
-│   └── performes/                    # Karşılaştırma sayfası
-├── components/
-│   ├── CategoryTypeCards.tsx         # Türk fon + ETF kategori kartları
-│   └── ...
-└── lib/
-    ├── supabase-admin.ts             # Supabase service role client
-    ├── etf-categories.ts             # ETF mega-kategorileri (paylaşılan)
-    └── ...
-
-scripts/
-├── etf_scraper.py                    # yfinance → Supabase ETF verisi
-├── sync-tefas.py                     # TEFAS → Supabase fon verisi
-└── compute-homepage-stats.ts        # Pre-computed homepage stats
-```
-
-## ETF Kategorileri (src/lib/etf-categories.ts)
-6 mega-kategori — sembol pattern'ine göre:
-- `sp500` → S&P 500 (SPY, VOO, IVV...)
-- `nasdaq` → Nasdaq/Teknoloji (QQQ, ARKK, VGT...)
-- `tahvil` → Tahvil & Bono (BND, TLT, AGG, HYG...)
-- `altin` → Altın & Emtia (GLD, IAU, SLV...)
-- `dunya` → Dünya (VTI, VXUS, EFA, VWO...)
-- `diger` → Diğer (yukarıdakilerin dışındaki ETF'ler)
-
-Her anasayfa ETF card'ı `/etf/${cat.key}`e link verir.
-
-## Routing
-- `/etf/[[...category]]` → catch-all (hem `/etf` hem `/etf/sp500`)
-- `/etf/[symbol]` → bireysel ETF (daha specific route, öncelikli)
-- `/type/[type]` → fon kategori sayfası
-
-## DB Schema
-- `foreign_etfs` — ETF metadata (symbol, aum, ytd_return, expense_ratio...)
-- `foreign_etf_holdings`, `foreign_etf_sectors`, `foreign_etf_prices`
-- `exchange_rates` — USD/TRY kuru
-- `funds` — Türk fonlar (code, name, fund_type, market_cap...)
-- `homepage_stats` — pre-computed JSONB (category_stats, top_gainers, sparklines...)
-
-## Supabase
-- Project ID: oqkobptbvcazifpvjwfz
-- Anon key (client): sb_publishable__GPrsdfKRZCMZE8to916iQ_Izv9naG-
-- Mgmt API token: sbp_ce308d5b5e2b05c59cbebda49ace62e8e1413fea (401 — DDL için kullanılamıyor)
-
-## Gotchas
-- `[[...category]]` route — Next.js App Router catch-all. `params.category` tipi `string[] | undefined`
-- Homepage data source: Supabase only (NOT data.json)
-- ETF verisi yfinance'den gelir — USD cinsinden, TRY'ye dönüştürme gerekebilir
-- Supabase free plan: max 1000 row/page — ETF fetch 2 sayfa yapar (0-999, 1000-2000)
-
-## Known Data Gaps (2026-04-24 Audit)
-See `DATA-AUDIT.md` for full details. Key points:
-- `funds.price_history`: Mevcut veri = fonun TÜM TEFAS geçmişi (~252 pts = ~1 yıl). Tüm 2400 fon < 5 yıl yaşında — TEFAS'ta 5 yıllık veri yok. 5Y backfill gereksiz.
-- `funds.sparkline`: 2399/2400 mevcut ✅ (pagination fix sonrası)
-- `homepage_stats.total`: 2400 ✅ (pagination fix sonrası)
-- `fund_category_ranks`: 2400 satır ✅ (pagination fix sonrası)
-- `homepage_stats.benchmarks_data`: 5 benchmark (NASDAQ, SP500, BIST100, USDTRY, GOLD) ✅ (benchmarks-cron, direct Yahoo Finance v8 API)
-- `benchmarks` table: 2024-04-18 tarihli eski veri (benchmarks-cron ayrı endpoint, bu tabloyu güncellemiyor)
-- `exchange_rates`: 2026-04-21 (3 gün eski)
-- `foreign_etfs`: 1000/1176 ETF'in return'ı var (176 eksik)
-
-## Benchmark Data
-- **Source**: Yahoo Finance v8 REST API (`https://query1.finance.yahoo.com/v8/finance/chart/{ticker}`)
-- **Tickers**: NASDAQ=^IXIC, SP500=^GSPC, BIST100=XU100.IS, USDTRY=TRY=X, GOLD=GC=F
-- **NOTE**: yahoo-finance2 npm package Vercel serverless'te ÇALIŞMIYOR (Node.js fetch uyumluluk sorunu). DOĞRU YÖNTEM: direkt `fetch()` ile Yahoo Finance v8 API'sine istek atmak.
-- **Cron**: Her gün 07:30 UTC (10:30 TR) — weekdays — `src/app/api/benchmarks-cron/route.ts`
-- **Storage**: `homepage_stats.benchmarks_data` JSONB — last 30 data points + change % per benchmark
-
-## TEFAS Scraper (scripts/tefas_scraper.py)
-- TEFAS WAF headless Chrome'u engelliyor. Çözüm: `--headless=new` + Mac Chrome user-agent + anti-detect flags
-- Script MUST use `python3.11` (homebrew at /opt/homebrew/bin/python3.11) — venv has NO selenium
-- Period button ID: `MainContent_RadioButtonListPeriod_7` (value=60 ay = 5 yıl, ~1255 veri noktası)
-- Chart race condition: Page load default (1Y≈253pts) → click 5Y → chart async update.
-  Fix: `chart_updated()` waits for category count to INCREASE after click (from ~253 to ~1255).
-- `parse_date()` expects DD.MM.YYYY format from chart categories
-
-## Cron Jobs
-- TEFAS daily: 10:00 TR weekdays — GitHub Actions workflow `.github/workflows/tefas-cron.yml`
-- ETF daily: 22:00 TR weekdays — `com.fonapp.etf-daily-cron.plist` → `run_etf_cron.sh` (script has weekday check, runs Mon-Fri)
-- Monitor: 11:00 TR weekdays — `com.fonapp.tefas-monitor.plist` → `run_tefas_monitor.sh`
-- All use homebrew `python3.11`, NOT the project venv
-
-## KAP Portfolio Parser Pipeline
-### Components
-- `scripts/kap_portfolio_parser.py` — Python PDF parser (pdfminer + Zhipu GLM)
-- `scripts/kap_discover_download.py` — Chrome-based KAP PDF discovery (GitHub Actions only)
-- `.github/workflows/kap-cron.yml` — Weekly GitHub Actions workflow
-- `web/src/app/api/kap-portfolio-cron/route.ts` — Vercel cron (status updater only)
-
-### How it works
-1. **GitHub Actions (weekly, Monday 07:00 UTC)** — Chrome ile KAP'tan yeni PDF'leri keşfeder ve indirir
-2. **GitHub Actions (weekly)** — `kap_portfolio_parser.py` batch mode: PDF'leri parse eder → Supabase `portfolio_breakdown` tablosuna yazar
-3. **Vercel Cron (weekly, Monday 07:00 UTC)** — Sadece status okur, admin paneli günceller
+## Data Architecture
 
 ### Database
-- `portfolio_breakdown` — fund_code, report_date, stock_pct, government_bond_pct, byf_pct, extraction_method, ai_model, ai_token_count
-- `parse_job_runs` — job tracking (total_funds, success_count, failed_count, categories, status)
-- `system_status` — key/value (only columns: key, value, updated_at)
+- **Supabase**: `oqkobptbvcazifpvjwfz.supabase.co`
+- **Anon key** (frontend): `sb_publishable__GPrsdfKRZCMZE8to916iQ_Izv9naG-`
+- **Service key** (scripts, Vercel server): in Vercel env vars as `SUPABASE_SERVICE_KEY`
+- **Management token** (`sbp_...`): DDL operations via `supabase` CLI or direct PG connection
 
-### Key Bugs Fixed
-- `_create_job_run` SQL used bare `{total_funds}` instead of f-string → fixed
-- `PDFSyntaxError` crash in `parse_single_pdf` fallback path → wrapped with try/except
-- SKIP category (ALTIN/DÖVİZ) funds went through extraction → added to skip_categories
-- `system_status` table only has key/value/updated_at — `upsertSystemStatus` ignores status/message params
+### Core Tables
+| Table | Purpose | Updated by |
+|-------|---------|------------|
+| `funds` | TEFAS funds: price, daily_change, price_history, sparkline, last_tefas_fetch | `tefas_scraper_v2.py` (local launchd), `tefas_scraper.py` (GitHub Actions) |
+| `foreign_etfs` | International ETFs: price, sparkline, category_history | `etf_daily_cron.py` (local launchd) |
+| `category_history` | Benchmark index daily values (ALTIN, BORSA, DOVIZ, all) | `benchmarks-cron` (Vercel) |
+| `homepage_stats` | Pre-computed homepage aggregates: top_gainers, category_stats | `homepage-stats-cron` (Vercel) |
+| `system_status` | Cron job last-run timestamps + stats JSON | Local scripts + Vercel cron routes (see below) |
+| `content_posts` | Blog/content management | Admin panel |
+| `kap_portfolio_holdings` | KAP PDF portfolio holdings (GLM parsed) | `kap_portfolio_parser.py` (local launchd) |
+| `parse_job_runs` | KAP parse job run logs | `kap_portfolio_parser.py` (local launchd) |
 
-### KAP WAF
-- KAP API HTTP 666 on all non-browser requests (including from Vercel serverless)
-- Chrome-based discovery MUST run in GitHub Actions, NOT Vercel
-- 507 PDFs currently stored locally at `~/Desktop/projects/fon-app/pdfs/portfoy_dagilim/`
-- Pending PDFs (not yet parsed): 42 funds
+### Sparkline Format
+- **Storage**: JSON object `{"points": [[x, y], ...], "positive": bool}`
+- **x range**: [0, 280] (280 data points)
+- **y range**: [0, 40] (pre-scaled to SVG viewBox height)
+- **Fund sparklines**: Computed by `fund-cron` (Vercel) for funds where `sparkline IS NULL` — chunked in batches of 100
+- **ETF sparklines**: Computed by `etf_daily_cron.py` (local) or `etf-cron` (Vercel)
+- **Rendering**: `SparklineMini` component (src/app/admin/../ui/fund-card.tsx) uses pre-scaled data directly — no JS scaling needed for new data. Backwards compatibility: if `maxY <= 28`, scales legacy y=[0-1] ETF data up to y=[0,40].
+
+---
+
+## Cron Jobs
+
+### Vercel Cron Routes (vercel.json)
+
+| Route | Schedule (UTC) | Schedule (TR) | Writes to | Reads from |
+|-------|---------------|---------------|-----------|------------|
+| `fund-cron` | 0 13 **1-5** | 15:00 Pazartesi–Cuma | `funds` (via TEFAS REST API fallback) | TEFAS REST API |
+| `homepage-stats-cron` | 0 14 **1-5**, 30 23 **1-5** | 16:00 & 02:30 Pazartesi–Cuma | `homepage_stats`, `fund_category_ranks`, `system_status` (last_homepage_stats_cron) | `funds` (lightweight: code, name, fund_type, market_cap, daily_change, price) |
+| `benchmarks-cron` | 30 7 **1-5** | 09:30 Pazartesi–Cuma | `category_history` | Yahoo Finance (yfinance) |
+| `etf-cron` | 0 21 **1-5** | 23:00 Pazartesi–Cuma | `foreign_etfs` | Yahoo Finance |
+| `etf-sparkline-cron` | 30 21 **1-5** | 23:30 Pazartesi–Cuma | `foreign_etfs.sparkline` | `foreign_etfs.price_history` |
+| `etf-returns-cron` | 0 22 **1-5** | 00:00 Pazartesi–Cuma | `foreign_etfs.returns` | `foreign_etfs.price_history` |
+
+> ⚠️ **BUG**: `homepage-stats-cron` calls `upsertSystemStatus("last_homepage_stats_cron", ...)` but this key does NOT appear in `system_status` table. The cron runs and updates `homepage_stats` but the status row is missing. Investigate the `upsertSystemStatus` function.
+
+### Local Launchd Jobs (~/Library/LaunchAgents)
+
+| Job | Script | Schedule (TR) | Writes to | Notes |
+|-----|--------|---------------|-----------|-------|
+| `com.fonapp.tefas-daily-cron.plist` | `run_tefas_cron.sh` → `tefas_scraper_v2.py` | 10:00 Pazartesi–Cuma | `funds`, `system_status` (last_tefas_fetch) | Primary TEFAS source. Uses undetected-chromedriver + Chrome Remote Debugging. |
+| `com.fonapp.etf-daily-cron.plist` | `run_etf_cron.sh` → `etf_daily_cron.py` | 22:00 Her gün | `foreign_etfs`, `system_status` (last_etf_fetch, etf_cron_stats) | Fetches ETF prices via Yahoo Finance, computes sparklines |
+| `com.fonapp.tefas-monitor.plist` | `run_tefas_monitor.sh` → `tefas_monitor.py` | 11:00 Pazartesi–Cuma | None (read-only) | Monitors last_tefas_fetch age, sends Slack alert if > 4h |
+| `com.fonapp.kap-portfolio-cron.plist` | `kap_discover_download.py --batch --limit 0` then `kap_portfolio_parser.py --batch --limit 0` | 09:00 Pazartesi | `kap_portfolio_holdings`, `parse_job_runs`, `system_status` (last_kap_portfolio_cron) | Downloads + parses KAP portfolio PDFs |
+
+### GitHub Actions Workflows
+
+| Workflow | Schedule (UTC) | Schedule (TR) | Trigger | Notes |
+|----------|---------------|---------------|---------|-------|
+| `tefas-cron.yml` | 0 8 **1-5** | 10:00 Pazartesi–Cuma | schedule + workflow_dispatch | Backup TEFAS source. Uses PyPI `tefas` package (different from local v2). Writes `system_status` (last_tefas_fetch via insert_system_status). |
+| `kap-cron.yml` | **DISABLED** | — | workflow_dispatch only | Was running same KAP pipeline as local launchd → duplicate work. Disabled 2026-04-27. Local launchd is primary. Re-enable only if Mac is offline. |
+
+---
+
+## Data Flow Summary
+
+### Fund Data (TEFAS funds)
+1. `tefas_scraper_v2.py` (local Mac, 10:00 TR weekdays) scrapes TEFAS → writes `funds.price_history`, `funds.last_tefas_fetch`, `system_status.last_tefas_fetch`
+2. `tefas_scraper.py` (GitHub Actions, 10:00 TR weekdays) — PyPI tefas package fallback → same writes
+3. `fund-cron` (Vercel, 15:00 TR weekdays) — TEFAS REST API fallback → `funds` (unreliable, TEFAS blocks cloud IPs). ALSO computes sparklines for funds where `sparkline IS NULL` (chunked, 100 at a time).
+4. `homepage-stats-cron` (Vercel, 16:00 & 02:30 TR weekdays) reads lightweight `funds` columns → computes `homepage_stats` + `fund_category_ranks` + `system_status`
+
+### ETF Data
+1. `etf_daily_cron.py` (local Mac, 22:00 TR daily) fetches Yahoo Finance → writes `foreign_etfs.price_history`, `foreign_etfs.sparkline`
+2. `etf-cron` (Vercel, 23:00 TR weekdays) → `foreign_etfs` (same data, redundancy)
+3. `etf-sparkline-cron` (Vercel, 23:30 TR weekdays) → `foreign_etfs.sparkline` (same data, redundancy)
+
+### Benchmark Data
+1. `benchmarks-cron` (Vercel, 09:30 TR weekdays) fetches Yahoo Finance → writes `category_history`
+
+### KAP Portfolio
+1. `kap_discover_download.py` (local Mac, 09:00 TR Pazartesi) discovers + downloads new KAP PDFs → saves to `pdfs/portfoy_dagilim/`
+2. `kap_portfolio_parser.py` (local Mac, 09:00 TR Pazartesi) parses PDFs via Zhipu GLM → writes `kap_portfolio_holdings`, logs to `parse_job_runs`
+
+---
+
+## Key Scripts
+
+### Active Scripts (scripts/)
+
+| Script | Purpose | Trigger |
+|--------|---------|---------|
+| `tefas_scraper_v2.py` | Scrape TEFAS fund prices via undetected-chromedriver | Local launchd (tefas-daily-cron) |
+| `tefas_scraper.py` | Scrape TEFAS via PyPI `tefas` package | GitHub Actions tefas-cron.yml |
+| `etf_daily_cron.py` | Fetch ETF prices via yfinance, compute sparklines | Local launchd (etf-daily-cron) |
+| `kap_discover_download.py` | Discover + download KAP portfolio PDFs | Local launchd (kap-portfolio-cron) |
+| `kap_portfolio_parser.py` | Parse KAP PDFs via Zhipu GLM, write holdings | Local launchd (kap-portfolio-cron) |
+| `run_tefas_monitor.sh` | Monitor TEFAS freshness, alert via Slack if stale | Local launchd (tefas-monitor) |
+
+### One-time / Backfill Scripts (scripts/)
+
+| Script | Purpose |
+|--------|---------|
+| `tefas_5y_backfill.py` | Historical TEFAS data backfill (5 years) |
+| `backfill_etf_sparkline_precomputed.py` | Backfill ETF sparklines in new y=[0-40] format |
+| `compute_etf_returns.py` | Compute ETF return metrics |
+| `kap_discover_download.py` | Also used for one-time KAP PDF discovery |
+| `etf_scraper_all.py`, `etf_scraper_v3.py` | Obsolete ETF scraper variants |
+| `sync-tefas-fees.py`, `sync-valour-only.py` | Obsolete sync scripts |
+
+> Obsolete scripts (`*_refactor*`, `*_old*`, `*_backup*`, `*_bak*`, `check_etfs.js`, `etf_sparkline_backfill.*`) should be deleted after verification.
+
+---
+
+## Known Issues
+
+1. **Duplicate KAP pipeline**: GitHub Actions `kap-cron.yml` was disabled (2026-04-27). Local launchd is primary. If Mac goes offline for extended period, re-enable GitHub Actions schedule.
+
+2. **Vercel fund-cron unreliable**: TEFAS blocks cloud/Vercel IPs. `fetchTefasFunds()` in `fund-cron/route.ts` likely fails. Primary fund data source is local `tefas_scraper_v2.py`.
+
+3. **Duplicate ETF pipelines**: `etf_daily_cron.py` (local, 22:00) and `etf-cron` (Vercel, 23:00) both write to `foreign_etfs`. Could consolidate to one source.
+
+4. **`system_status` table keys**:
+   - `last_tefas_fetch` → written by `tefas_scraper_v2.py` ✓
+   - `last_5y_backfill` → written by `tefas_5y_backfill.py` (one-time)
+   - `last_kap_portfolio_cron` → written by `kap_portfolio_parser.py` ✓
+   - `last_etf_fetch` → written by `etf_daily_cron.py` ✓
+   - `etf_cron_stats` → written by `etf_daily_cron.py` ✓
+   - `last_homepage_stats_cron` → written by `homepage-stats-cron` ✓ (FIXED 2026-04-28: removed `|| "***"` fallback in supabase-admin.ts)
+   - `tefas_scraper_log` → written by `tefas_scraper_v2.py` ✓
+
+---
+
+## Environment Variables
+
+### Vercel (Production)
+```
+ADMIN_PASSWORD=***
+CRON_SECRET=***
+SUPABASE_SERVICE_KEY=***
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable__GPrsdfKRZCMZE8to916iQ_Izv9naG-
+NEXT_PUBLIC_SUPABASE_URL=https://oqkobptbvcazifpvjwfz.supabase.co
+```
+
+### Local Mac (.env.local in scripts/)
+```
+SUPABASE_URL=https://oqkobptbvcazifpvjwfz.supabase.co
+SUPABASE_SERVICE_KEY=***
+ZHIPU_API_KEY=***
+TEFAS_EMAIL=***
+TEFAS_PASSWORD=***
+SLACK_WEBHOOK_URL=***
+```
+
+---
+
+## Deployment
+
+- **Vercel token**: `vcp_***` (stored in 1Password)
+- **Deploy**: `vercel --prod --token $VERCEL_TOKEN` (token in 1Password)
+- **Admin panel**: /admin (password: `Yigit-co1`)
+- **Git author**: `utkuozercoskun@gmail.com` / `Utku Özer Coşkun`
