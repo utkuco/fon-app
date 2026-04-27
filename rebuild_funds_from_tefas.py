@@ -1,100 +1,13 @@
 #!/usr/bin/env python3
-"""Simple Tefas data import — no pandas, fast."""
+"""Tefas data import using the tefas Python package (YYYY-MM-DD format)."""
 import sqlite3
 import time
-import ssl
-import json
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
 
-import requests
-from requests.adapters import HTTPAdapter
-from urllib3.poolmanager import PoolManager
+from tefas import Crawler
 
 DB = Path(__file__).parent / "db" / "fonapp.db"
-
-class HA(HTTPAdapter):
-    def __init__(self, ssl_ctx=None, **kwargs):
-        self.ssl_ctx = ssl_ctx
-        super().__init__(**kwargs)
-    def init_poolmanager(self, connections, maxsize, block=False):
-        self.poolmanager = PoolManager(
-            num_pools=connections, maxsize=maxsize, block=block,
-            ssl_context=self.ssl_ctx)
-
-def get_session():
-    ctx = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
-    ctx.options |= 0x4
-    s = requests.session()
-    s.mount("https://", HA(ssl_ctx=ctx))
-    return s
-
-def fetch_tefas(session, kind, date_str):
-    """Fetch raw JSON from tefas API."""
-    url = "https://fundturkey.com.tr/api/DB/BindHistoryInfo"
-    headers = {
-        "X-Requested-With": "XMLHttpRequest",
-        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
-        "Origin": "https://fundturkey.com.tr",
-        "Referer": "https://fundturkey.com.tr/TarihselVeriler.aspx",
-    }
-    data = {"fontip": kind, "bastarih": date_str, "bittarih": date_str, "fonkod": ""}
-    r = session.post(url, data=data, headers=headers, timeout=30)
-    return r.json().get("data", [])
-
-def fetch_breakdown(session, kind, date_str):
-    url = "https://fundturkey.com.tr/api/DB/BindHistoryAllocation"
-    headers = {
-        "X-Requested-With": "XMLHttpRequest",
-        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
-    }
-    data = {"fontip": kind, "bastarih": date_str, "bittarih": date_str, "fonkod": ""}
-    try:
-        r = session.post(url, data=data, headers=headers, timeout=30)
-        return r.json().get("data", [])
-    except:
-        return []
-
-def parse_row(row, has_breakdown=False):
-    """Parse API row into normalized dict."""
-    ts = row.get("TARIH", 0)
-    if isinstance(ts, (int, float)) and ts > 0:
-        date_str = datetime.fromtimestamp(int(ts) / 1000).strftime("%Y-%m-%d")
-    else:
-        date_str = "2026-04-16"
-    return {
-        "code": row.get("FONKODU", ""),
-        "title": row.get("FONUNVAN", ""),
-        "price": row.get("FIYAT"),
-        "date": date_str,
-        "market_cap": row.get("PORTFOYBUYUKLUK"),
-        "number_of_shares": row.get("TEDPAYSAYISI"),
-        "number_of_investors": row.get("KISISAYISI"),
-    }
-
-def parse_breakdown(row):
-    return {
-        "stock": row.get("HS", 0) or 0,
-        "government_bond": row.get("DT", 0) or 0,
-        "private_sector_bond": row.get("OST", 0) or 0,
-        "eurobond": row.get("EUT", 0) or 0,
-        "gold": row.get("KM", 0) or 0,
-        "repo": row.get("R", 0) or 0,
-        "reverse_repo": row.get("TR", 0) or 0,
-        "treasury_bill": row.get("HB", 0) or 0,
-        "bank_bills": row.get("BB", 0) or 0,
-        "commercial_paper": row.get("FB", 0) or 0,
-        "term_deposit": row.get("VM", 0) or 0,
-        "etf": row.get("BYF", 0) or 0,
-        "derivatives": row.get("T", 0) or 0,
-        "foreign_equity": row.get("YHS", 0) or 0,
-        "foreign_bond": row.get("YBA", 0) or 0,
-        "precious_metals": row.get("KM", 0) or 0,
-        "participation_account": row.get("KH", 0) or 0,
-        "other": row.get("D", 0) or 0,
-    }
 
 def guess_type(title):
     if not title:
@@ -109,42 +22,54 @@ def guess_type(title):
     if any(x in t for x in ["BYF", "ETF", "BORSADA İŞLEM"]): return "BYF"
     return "VFF"
 
-print("Connecting to Tefas API...")
-session = get_session()
-_ = session.get("https://fundturkey.com.tr", timeout=10)
+# Find most recent trading day that has data (try up to 7 days back)
+print("Finding most recent trading day with data...")
+crawler = Crawler()
+target = None
+for back in range(1, 8):
+    d = datetime.now() - timedelta(days=back)
+    if d.weekday() >= 5:
+        continue  # skip weekends
+    date_str = d.strftime("%Y-%m-%d")
+    try:
+        test = crawler.fetch(date_str, date_str, kind='YAT')
+        if len(test) > 0:
+            target = date_str
+            print(f"  Using date: {target} ({len(test)} rows)")
+            break
+    except Exception as e:
+        print(f"  {date_str}: error {e}")
+        continue
 
-# Fetch for 3 fund types
-from datetime import datetime, timedelta
-import sys
+if target is None:
+    print("ERROR: No trading data found in past 7 days!")
+    exit(1)
 
-# Use last business day: Friday if today is Sat/Sun, else yesterday
-today = datetime.now()
-if today.weekday() >= 5:  # Saturday=5, Sunday=6
-    target = today - timedelta(days=2)  # Friday
-elif today.weekday() == 0:  # Monday → use Friday (Sunday has no trading)
-    target = today - timedelta(days=3)
-else:
-    target = today - timedelta(days=1)
-DATE = target.strftime("%d.%m.%Y")
 all_funds = {}
-all_breakdown = {}
 
 for kind in ["YAT", "EMK", "BYF"]:
-    print(f"Fetching {kind}...")
-    rows = fetch_tefas(session, kind, DATE)
-    print(f"  Got {len(rows)} rows")
-    for row in rows:
-        p = parse_row(row)
-        code = p["code"]
-        if code and code not in all_funds:
-            all_funds[code] = p
-
-    bdata = fetch_breakdown(session, kind, DATE)
-    print(f"  Got {len(bdata)} breakdown rows")
-    for row in bdata:
-        code = row.get("FONKODU", "")
-        if code:
-            all_breakdown[code] = parse_breakdown(row)
+    print(f"Fetching {kind} for {target}...")
+    try:
+        data = crawler.fetch(target, target, kind=kind)
+        print(f"  Got {len(data)} rows")
+        if len(data) == 0:
+            continue
+        for _, row in data.iterrows():
+            code = str(row.get("code", "")).strip()
+            if not code or code == "nan" or code in all_funds:
+                continue
+            all_funds[code] = {
+                "code": code,
+                "title": str(row.get("title", "")),
+                "price": row.get("price"),
+                "date": row.get("date", target),
+                "market_cap": row.get("market_cap"),
+                "number_of_shares": row.get("number_of_shares"),
+                "number_of_investors": row.get("number_of_investors"),
+            }
+        time.sleep(1)  # rate limit
+    except Exception as e:
+        print(f"  ERROR fetching {kind}: {e}")
 
 print(f"\nTotal unique funds: {len(all_funds)}")
 
@@ -169,12 +94,12 @@ conn.execute("""CREATE TABLE tefas_funds (
     foreign_equity REAL, foreign_bond REAL, precious_metals REAL,
     participation_account REAL, other REAL,
     fetched_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)""")
+)
+""")
 
 inserted = 0
 for code, fund in all_funds.items():
     ft = guess_type(fund["title"])
-    bd = all_breakdown.get(code, {})
     conn.execute(f"""INSERT OR REPLACE INTO tefas_funds
         (tefas_code, title, fund_type, price, price_date, market_cap,
          number_of_shares, number_of_investors,
@@ -182,27 +107,23 @@ for code, fund in all_funds.items():
          repo, reverse_repo, treasury_bill, bank_bills, commercial_paper,
          term_deposit, etf, derivatives, foreign_equity, foreign_bond,
          precious_metals, participation_account, other)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """,
         (code, fund["title"], ft, fund["price"], fund["date"], fund["market_cap"],
          fund["number_of_shares"], fund["number_of_investors"],
-         bd.get("stock"), bd.get("government_bond"), bd.get("private_sector_bond"),
-         bd.get("eurobond"), bd.get("gold"), bd.get("repo"), bd.get("reverse_repo"),
-         bd.get("treasury_bill"), bd.get("bank_bills"), bd.get("commercial_paper"),
-         bd.get("term_deposit"), bd.get("etf"), bd.get("derivatives"),
-         bd.get("foreign_equity"), bd.get("foreign_bond"),
-         bd.get("precious_metals"), bd.get("participation_account"), bd.get("other")))
+         None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None))
     inserted += 1
 
 conn.commit()
 
 # Stats
-c = conn.cursor()
-c.execute("SELECT COUNT(*) FROM tefas_funds")
-total = c.fetchone()[0]
-c.execute("SELECT COUNT(*) FROM funds")
-kap_total = c.fetchone()[0]
-c.execute("SELECT COUNT(*) FROM funds WHERE tefas_code IS NOT NULL")
-mapped = c.fetchone()[0]
+cur = conn.cursor()
+cur.execute("SELECT COUNT(*) FROM tefas_funds")
+total = cur.fetchone()[0]
+cur.execute("SELECT COUNT(*) FROM funds")
+kap_total = cur.fetchone()[0]
+cur.execute("SELECT COUNT(*) FROM funds WHERE tefas_code IS NOT NULL")
+mapped = cur.fetchone()[0]
 conn.close()
 
 print(f"\n{'='*50}")

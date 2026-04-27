@@ -1,0 +1,49 @@
+==================================================
+TEFAS SCRAPER HEALTH REPORT
+Generated: 2026-04-26T21:43:57Z
+==================================================
+
+OVERALL STATUS: PROBLEM
+
+-----------------------------------------------
+SCRAPER LAST RUN
+-----------------------------------------------
+  Status:          STALLED (started 2026-04-26T20:37:21, never finished)
+  Last finished:   NEVER (stalled)
+  Funds scraped:   0 (of 1000 total)
+  Errors logged:   0
+
+-----------------------------------------------
+DATABASE STATUS
+-----------------------------------------------
+  Total funds:              1000
+  system_status.last_tefas_fetch: 2026-04-26T16:52:52.440298
+
+-----------------------------------------------
+SAMPLE FUND PRICES (VEV, GES, GRL, TIP, PAF)
+-----------------------------------------------
+  Fund | Current Price | price_history Latest | Staleness | # Records
+  VEV  | 0.169915       | 2026-04-24           | 1 day(s)  | 1255
+  GES  | 0.095529       | 2026-04-16           | 11 days   | 247
+  GRL  | 19.650702      | 2026-04-16           | 11 days   | 252
+  TIP  | 2.161393       | 2026-04-16           | 11 days   | 252
+  PAF  | 3.631212       | 2026-04-24           | 1 day(s)  | 631
+
+-----------------------------------------------
+DIAGNOSIS
+-----------------------------------------------
+  Yesterday's scrape (2026-04-26): Started at 20:37:21, status still 'running',
+  but 0 funds scraped -- scraper is STALLED.
+
+  Fund data staleness:
+  - VEV, PAF: price_history at 2026-04-24 (3 days stale -- partial progress)
+  - GES, GRL, TIP: price_history at 2026-04-16 (11 days stale)
+
+-----------------------------------------------
+ACTION REQUIRED
+-----------------------------------------------
+  1. Kill the stalled scraper process from 2026-04-26T20:37:21
+  2. Investigate crash/timeout -- check tefas_cron.log and tefas_monitor.err
+  3. Re-run the TEFAS scrape for 2026-04-27
+  4. Verify price_history updated for GES, GRL, TIP after re-run
+==================================================

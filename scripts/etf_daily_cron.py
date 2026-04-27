@@ -48,6 +48,13 @@ def supabase_query(table: str, select: str, filters: str = "") -> list:
         return json.loads(resp.read())
 
 
+def supabase_query_raw(url: str) -> list:
+    """Execute a raw GET URL (for complex queries)."""
+    req = urllib.request.Request(url, headers=HEADERS)
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        return json.loads(resp.read())
+
+
 def supabase_upsert(table: str, rows: list[dict], conflict_col: str) -> bool:
     if not rows:
         return True
@@ -141,7 +148,9 @@ def calc_return(series: pd.Series, days: int, fx_rate: float) -> Optional[float]
             break
     if p_start is None or p_start == 0:
         return None
-    return round((p_today / p_start - 1) * fx_rate, 6)
+    # Return is ratio — fx_rate doesn't multiply the ratio, it cancels out
+    # (p_today_USD * fx) / (p_start_USD * fx) = p_today_USD / p_start_USD
+    return round(p_today / p_start - 1, 6)
 
 
 def fetch_latest_prices_batch(symbols: list[str]) -> dict[str, float]:
@@ -157,11 +166,23 @@ def fetch_latest_prices_batch(symbols: list[str]) -> dict[str, float]:
                 continue
             if isinstance(df.columns, pd.MultiIndex):
                 df.columns = [c[1] if isinstance(c, tuple) else c for c in df.columns]
+            # Deduplicate column names (can happen when multiple tuples share same symbol)
+            if df.columns.duplicated().any():
+                df = df.loc[:, ~df.columns.duplicated()]
             for sym in batch_syms:
-                if sym in df.columns:
-                    col = df[sym].dropna()
-                    if not col.empty:
-                        result[sym] = round(float(col.iloc[-1]), 4)
+                if sym not in df.columns:
+                    continue
+                col = df[sym].dropna()
+                if col.empty:
+                    continue
+                val = col.iloc[-1]
+                # Guard: if it's still a Series/DataFrame (duplicate cols), pick first scalar
+                while hasattr(val, 'iloc'):
+                    val = val.iloc[0] if hasattr(val, 'iloc') else val
+                try:
+                    result[sym] = round(float(val), 4)
+                except (TypeError, ValueError):
+                    pass
         except Exception as e:
             print(f"    Batch error: {e}")
         time.sleep(0.5)
@@ -189,6 +210,9 @@ def main():
     etfs = supabase_query("foreign_etfs", "symbol, id", "limit=5000")
     print(f"  Total ETFs in DB: {len(etfs)}")
 
+    if not etfs:
+        return
+
     # ── Step 3: Download latest prices (incremental) ────────────────────
     print("\n[3/4] Fetching latest prices...")
     symbols = [e["symbol"] for e in etfs if e.get("symbol")]
@@ -205,24 +229,43 @@ def main():
         print(f"  Upserting {len(price_rows)} today's price rows...")
         supabase_upsert("foreign_etf_prices", price_rows, "symbol")
 
-    # ── Step 4: Compute returns for all ETFs ────────────────────────────
-    print("\n[4/4] Computing 1M/3M/6M TRY returns...")
+    # ── Step 4: Compute returns for all ETFs (BATCH) ─────────────────────
+    print("\n[4/4] Computing 1M/3M/6M TRY returns (batched)...")
+
+    # Batch-fetch ALL price histories in one query
+    sym_chunks = [symbols[i:i+100] for i in range(0, len(symbols), 100)]
+    all_prices: dict[str, list] = {}
+
+    for chunk in sym_chunks:
+        syms_param = ",".join(chunk)
+        url = (f"{SUPABASE_URL}/rest/v1/foreign_etf_prices"
+               f"?symbol=in.({syms_param})&order=date.desc&limit=730")
+        rows = supabase_query_raw(url)
+        for row in rows:
+            sym = row.get("symbol")
+            if sym not in all_prices:
+                all_prices[sym] = []
+            all_prices[sym].append({"date": row.get("date"), "close": row.get("close")})
+        time.sleep(0.3)
+
+    print(f"  Fetched price history for {len(all_prices)} ETFs")
+
+    # Build id→symbol map and symbol→id map
+    sym_to_id = {e["symbol"]: e["id"] for e in etfs if e.get("symbol") and e.get("id")}
+
+    # Compute returns in Python
     updated = 0
     skipped = 0
     errors = 0
+    patch_rows: list[dict] = []
 
     for etf in etfs:
         sym = etf["symbol"]
-        row_id = etf.get("id") or get_row_id("foreign_etfs", sym)
-        if not row_id:
+        row_id = etf.get("id")
+        if not row_id or not sym:
             continue
 
-        # Get price history from DB
-        prices = supabase_query(
-            "foreign_etf_prices", "date, close",
-            f"symbol=eq.{sym}&order=date.desc&limit=730"
-        )
-
+        prices = all_prices.get(sym, [])
         if not prices or len(prices) < 5:
             skipped += 1
             continue
@@ -237,34 +280,50 @@ def main():
         ret_3m = calc_return(df_prices, 90, usd_try)
         ret_6m = calc_return(df_prices, 180, usd_try)
 
-        # Only update fields that have data
-        patch_data = {}
-        if ret_1m is not None:
-            patch_data["one_month_return_try"] = ret_1m
-        if ret_3m is not None:
-            patch_data["three_month_return_try"] = ret_3m
-        if ret_6m is not None:
-            patch_data["six_month_return_try"] = ret_6m
-        patch_data["updated_at"] = datetime.utcnow().isoformat()
-
-        if patch_data:
-            ok = supabase_patch("foreign_etfs", row_id, patch_data)
-            if ok:
-                updated += 1
-                if updated <= 20:
-                    m1 = f"{ret_1m*100:.1f}%" if ret_1m else "—"
-                    m3 = f"{ret_3m*100:.1f}%" if ret_3m else "—"
-                    m6 = f"{ret_6m*100:.1f}%" if ret_6m else "—"
-                    print(f"  {sym}: 1M={m1} 3M={m3} 6M={m6}")
-            else:
-                errors += 1
-        else:
+        if ret_1m is None and ret_3m is None and ret_6m is None:
             skipped += 1
+            continue
 
-        time.sleep(0.05)  # Be gentle with DB
+        patch_rows.append({
+            "id": row_id,
+            "symbol": sym,
+            "one_month_return_try": ret_1m,
+            "three_month_return_try": ret_3m,
+            "six_month_return_try": ret_6m,
+            "updated_at": datetime.utcnow().isoformat(),
+        })
+        updated += 1
+
+    # Batch upsert patch rows (batched PATCH by id)
+    if patch_rows:
+        BATCH = 100
+        for i in range(0, len(patch_rows), BATCH):
+            batch = patch_rows[i:i+BATCH]
+            for row in batch:
+                row_id = row.pop("id")
+                row.pop("symbol")
+                ok = supabase_patch("foreign_etfs", row_id, row)
+                if not ok:
+                    errors += 1
+            time.sleep(0.3)
 
     print(f"\nDONE: {updated} updated, {skipped} skipped, {errors} errors")
     print(f"  FX: USD/TRY={usd_try:.4f}")
+
+    # Update system status
+    update_key("last_etf_fetch", datetime.utcnow().isoformat())
+
+
+def update_key(key: str, value: str) -> None:
+    url = f"{SUPABASE_URL}/rest/v1/system_status"
+    payload = json.dumps([{"key": key, "value": value}])
+    req = urllib.request.Request(url, data=payload.encode(), method="POST",
+        headers={**HEADERS, "Prefer": "resolution=merge-duplicates, conflict=key"})
+    try:
+        with urllib.request.urlopen(req, timeout=10):
+            pass
+    except Exception as e:
+        print(f"  system_status update failed: {e}")
 
 
 if __name__ == "__main__":

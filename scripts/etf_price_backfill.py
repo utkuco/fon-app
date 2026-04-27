@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """
-ETF Price Backfill — fetches 2 years of daily prices for ALL 1000 ETFs in foreign_etfs table.
-Saves to foreign_etf_prices table in Supabase.
+ETF Price History Backfill Script (v2)
+Fetches 2 years of daily price history from yfinance for all ETFs in foreign_etfs table
+and populates the foreign_etf_prices table.
+
+Key fix: For each ETF, first query existing dates in DB, then insert only NEW rows.
+Avoids 409 Conflict errors by never trying to insert duplicate (symbol, date) pairs.
 
 Usage:
-    python3 etf_price_backfill.py        # Full backfill
-    python3 etf_price_backfill.py --dry-run  # Test with 10 ETFs
+    /opt/homebrew/bin/python3.11 scripts/etf_price_backfill.py
 """
 
 import yfinance as yf
@@ -15,7 +18,6 @@ import json
 import time
 import warnings
 from datetime import date, datetime, timedelta
-from typing import Optional
 
 warnings.filterwarnings('ignore')
 
@@ -27,176 +29,182 @@ HEADERS = {
     "Content-Type": "application/json",
     "Prefer": "return=representation"
 }
+FETCH_BATCH = 10   # ETFs per yfinance download call
+INSERT_BATCH = 100  # Rows per Supabase insert
 
 
-def supabase_query(table: str, select: str, filters: str = "") -> list:
-    import urllib.parse
-    params = [("select", select)]
-    if filters:
-        for f in filters.split("&"):
-            if "=" in f:
-                k, v = f.split("=", 1)
-                params.append((k, v))
-    encoded = urllib.parse.urlencode(params)
-    url = f"{SUPABASE_URL}/rest/v1/{table}?{encoded}"
+def supabase_query(url: str) -> list:
     req = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(req, timeout=30) as resp:
+    with urllib.request.urlopen(req, timeout=60) as resp:
         return json.loads(resp.read())
 
 
-def supabase_delete_and_insert(rows: list[dict]) -> bool:
-    """Delete existing rows for each symbol/date combo, then insert fresh data."""
+def get_existing_dates(symbol: str) -> set[str]:
+    """Get set of dates already in DB for this symbol."""
+    url = f"{SUPABASE_URL}/rest/v1/foreign_etf_prices?symbol=eq.{symbol}&select=date"
+    try:
+        rows = supabase_query(url)
+        return {r["date"] for r in rows if r.get("date")}
+    except Exception:
+        return set()
+
+
+def upsert_rows(rows: list[dict]) -> int:
+    """Insert rows to foreign_etf_prices. Returns count of rows returned."""
     if not rows:
-        return True
-    # Group by symbol for efficient deletes
-    from collections import defaultdict
-    by_symbol = defaultdict(list)
-    for row in rows:
-        by_symbol[row["symbol"]].append(row["date"])
-    
-    deleted = 0
-    for sym, dates in by_symbol.items():
-        # Delete existing rows for this symbol (we're doing full refresh)
-        del_url = f"{SUPABASE_URL}/rest/v1/foreign_etf_prices?symbol=eq.{sym}"
-        del_req = urllib.request.Request(del_url, method="DELETE", headers=HEADERS)
-        try:
-            with urllib.request.urlopen(del_req, timeout=60) as resp:
-                deleted += resp.read().count(b"id")
-        except Exception as e:
-            print(f"    Delete error for {sym}: {e}")
-    
-    # Now insert all rows fresh in batches of 4000
-    BATCH = 4000
-    total = len(rows)
-    inserted = 0
-    for i in range(0, total, BATCH):
-        batch = rows[i:i+BATCH]
-        url = f"{SUPABASE_URL}/rest/v1/foreign_etf_prices"
-        payload = json.dumps(batch)
-        req = urllib.request.Request(
-            url, data=payload.encode(), method="POST",
-            headers={**HEADERS}
-        )
-        try:
-            with urllib.request.urlopen(req, timeout=120) as resp:
-                body = resp.read()
-                result = json.loads(body) if body else []
-                count = len(result) if isinstance(result, list) else BATCH
-                inserted += count
-                print(f"    → batch {i//BATCH + 1}: {count} rows (total: {inserted}/{total})")
-        except Exception as e:
-            print(f"    → INSERT ERROR at batch {i//BATCH + 1}: {e}")
-    return inserted
-
-
-def get_all_etf_symbols(dry_run: bool = False) -> list[str]:
-    """Get all ETF symbols from foreign_etfs table."""
-    etfs = supabase_query("foreign_etfs", "symbol", "limit=5000")
-    symbols = [e["symbol"] for e in etfs if e.get("symbol")]
-    print(f"  Total ETFs in DB: {len(symbols)}")
-    return symbols
-
-
-def download_batch_prices(symbols: list[str], period: str = "2y") -> dict[str, pd.Series]:
-    """Download price series for multiple symbols using yfinance batch."""
-    result = {}
-    BATCH = 50
-    for i in range(0, len(symbols), BATCH):
-        batch_syms = symbols[i:i+BATCH]
-        batch_label = f"{batch_syms[0]}...{batch_syms[-1]}" if len(batch_syms) > 1 else batch_syms[0]
-        print(f"    Downloading {batch_label} ({i+1}/{len(symbols)})...")
-        try:
-            df = yf.download(
-                " ".join(batch_syms),
-                period=period,
-                interval="1d",
-                progress=False,
-                auto_adjust=True,
-                timeout=30
-            )
-            if df is None or df.empty:
-                print(f"      No data for {batch_label}")
-                time.sleep(2)
-                continue
-            if isinstance(df.columns, pd.MultiIndex):
-                # Flatten (Close, AGG) -> AGG for that column
-                df.columns = [c[1] if isinstance(c, tuple) else c for c in df.columns]
-            for sym in batch_syms:
-                if sym in df.columns:
-                    col = df[sym].dropna()
-                    if not col.empty:
-                        result[sym] = col
-        except Exception as e:
-            print(f"      Batch error at {batch_label}: {e}")
-        time.sleep(1)  # Be gentle with rate limits
-    return result
-
-
-def prices_to_rows(price_data: dict[str, pd.Series]) -> list[dict]:
-    """Convert price series dict to rows for foreign_etf_prices table."""
-    rows = []
-    for sym, series in price_data.items():
-        if series is None or series.empty:
-            continue
-        for dt_idx in series.index:
-            d = str(dt_idx.date()) if hasattr(dt_idx, "date") else str(dt_idx)[:10]
-            cv = series.loc[dt_idx]
-            # Handle both scalar and array (in case of duplicate index entries)
-            if hasattr(cv, 'item'):
+        return 0
+    url = f"{SUPABASE_URL}/rest/v1/foreign_etf_prices"
+    payload = json.dumps(rows)
+    req = urllib.request.Request(url, data=payload.encode(), method="POST", headers=HEADERS)
+    try:
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            body = resp.read()
+            if body:
+                result = json.loads(body)
+                if isinstance(result, list):
+                    return len(result)
+            return len(rows)
+    except urllib.error.HTTPError as e:
+        body = e.read()
+        if e.code == 409:
+            # Some rows conflict — try one at a time
+            count = 0
+            for row in rows:
                 try:
-                    cv = cv.item()
-                except ValueError:
-                    cv = float(cv.iloc[0]) if hasattr(cv, 'iloc') else float(cv)
-            if cv is not None and not pd.isna(cv):
-                rows.append({
-                    "symbol": sym,
-                    "date": d,
-                    "close": round(float(cv), 4)
-                })
-    return rows
+                    req2 = urllib.request.Request(url, data=json.dumps([row]).encode(), method="POST", headers=HEADERS)
+                    with urllib.request.urlopen(req2, timeout=30) as resp2:
+                        resp2.read()
+                        count += 1
+                except Exception:
+                    pass
+            return count
+        else:
+            print(f"    HTTP {e.code}: {body[:200]}")
+            return 0
+    except Exception as e:
+        print(f"    Insert error: {e}")
+        return 0
+
+
+def fetch_prices_for_symbols(symbols: list[str], days: int = 730) -> dict[str, list[dict]]:
+    """Download price history for a batch of symbols."""
+    if not symbols:
+        return {}
+    start = date.today() - timedelta(days=days)
+    try:
+        df = yf.download(
+            symbols, start=str(start), interval="1d",
+            progress=False, auto_adjust=True, timeout=30
+        )
+        if df is None or df.empty:
+            return {s: [] for s in symbols}
+
+        if isinstance(df.columns, pd.MultiIndex):
+            if "Close" not in df.columns.get_level_values(0):
+                return {s: [] for s in symbols}
+            close_df = df["Close"]
+        else:
+            close_df = df["Close"] if "Close" in df.columns else None
+            if close_df is None:
+                return {s: [] for s in symbols}
+
+        close_df.index = close_df.index.tz_localize(None) if close_df.index.tz else close_df.index
+        close_df.index = close_df.index.normalize()
+
+        result = {}
+        for sym in symbols:
+            if sym not in close_df.columns:
+                result[sym] = []
+                continue
+            sym_series = close_df[sym].dropna()
+            rows = []
+            for dt, val in sym_series.items():
+                dt_str = dt.strftime("%Y-%m-%d") if hasattr(dt, "strftime") else str(dt)[:10]
+                rows.append({"symbol": sym, "date": dt_str, "close": round(float(val), 4)})
+            result[sym] = rows
+        return result
+
+    except Exception as e:
+        print(f"    yfinance error for {symbols}: {e}")
+        return {s: [] for s in symbols}
 
 
 def main():
-    dry_run = "--dry-run" in __import__("sys").argv
-
-    print(f"\n[{datetime.now().strftime('%H:%M:%S')}] ETF Price Backfill")
+    start_time = datetime.now()
+    print(f"\n[{start_time.strftime('%Y-%m-%d %H:%M:%S')}] ETF Price Backfill v2")
     print("=" * 60)
-    print(f"  Mode: DRY RUN" if dry_run else "  Mode: LIVE")
 
-    # Get all symbols
-    print("\n[1/2] Fetching ETF list from Supabase...")
-    symbols = get_all_etf_symbols()
-    if dry_run:
-        symbols = symbols[:10]
-        print(f"  Dry run: only {len(symbols)} symbols")
+    # Get all ETF symbols
+    print("\n[1/4] Fetching ETF list from DB...")
+    url = f"{SUPABASE_URL}/rest/v1/foreign_etfs?select=symbol&is_active=eq.true&limit=5000"
+    all_symbols = [r["symbol"] for r in supabase_query(url) if r.get("symbol")]
+    print(f"  Total active ETFs: {len(all_symbols)}")
 
-    # Download prices
-    print(f"\n[2/2] Downloading 2-year price history for {len(symbols)} ETFs...")
-    price_data = download_batch_prices(symbols, "2y")
-    print(f"  Got price data for {len(price_data)} ETFs")
-
-    if not price_data:
-        print("  ERROR: No price data downloaded!")
+    if not all_symbols:
         return
 
-    # Convert to rows
-    rows = prices_to_rows(price_data)
-    print(f"  Total price rows: {len(rows)}")
+    # Process ETFs in batches
+    total_inserted = 0
+    total_batches = (len(all_symbols) + FETCH_BATCH - 1) // FETCH_BATCH
 
-    if dry_run:
-        print(f"  Dry run — skipping Supabase upsert")
-        print(f"  Would insert {len(rows)} rows")
-        return
+    print(f"\n[2/4] Fetching & inserting prices ({FETCH_BATCH} ETFs per batch)...")
 
-    # Save to Supabase (delete existing + insert fresh)
-    print("\n  Saving to Supabase (delete + insert)...")
-    ok = supabase_delete_and_insert(rows)
-    if not ok:
-        print("  FAILED to save data")
+    for i in range(0, len(all_symbols), FETCH_BATCH):
+        batch_syms = all_symbols[i:i+FETCH_BATCH]
+        batch_num = (i // FETCH_BATCH) + 1
 
-    print(f"\n[{datetime.now().strftime('%H:%M:%S')}] DONE!")
-    print(f"  ETFs processed: {len(price_data)}")
-    print(f"  Total rows: {len(rows)}")
+        # Download prices
+        prices = fetch_prices_for_symbols(batch_syms, days=730)
+
+        batch_inserted = 0
+        for sym in batch_syms:
+            rows = prices.get(sym, [])
+            if not rows:
+                print(f"  {batch_num}/{total_batches}: {sym}: NO DATA")
+                continue
+
+            # Get existing dates in DB
+            existing_dates = get_existing_dates(sym)
+            new_rows = [r for r in rows if r["date"] not in existing_dates]
+
+            if not new_rows:
+                print(f"  {batch_num}/{total_batches}: {sym}: already up to date ({len(rows)} pts)")
+                continue
+
+            # Insert in sub-batches
+            inserted = 0
+            for j in range(0, len(new_rows), INSERT_BATCH):
+                chunk = new_rows[j:j+INSERT_BATCH]
+                count = upsert_rows(chunk)
+                inserted += count
+
+            batch_inserted += inserted
+            total_inserted += inserted
+            print(f"  {batch_num}/{total_batches}: {sym}: {len(rows)} pts fetched, {len(new_rows)} new, {inserted} inserted")
+
+        # Progress
+        elapsed = (datetime.now() - start_time).total_seconds()
+        progress = (i + FETCH_BATCH) / len(all_symbols)
+        if elapsed > 10 and progress > 0:
+            eta_sec = (elapsed / progress) - elapsed
+            print(f"    → Batch done. Progress: {progress*100:.1f}% | Elapsed: {elapsed/60:.1f}min | ETA: {eta_sec/60:.1f}min")
+        print()
+
+        time.sleep(0.5)
+
+    # Summary
+    elapsed_total = (datetime.now() - start_time).total_seconds()
+    print(f"[DONE] Runtime: {elapsed_total/60:.1f} minutes | Total inserted: {total_inserted}")
+
+    # Quick verification
+    print("\n[3/4] Verification...")
+    sample = all_symbols[:20]
+    total_pts = 0
+    for sym in sample:
+        dates = get_existing_dates(sym)
+        total_pts += len(dates)
+        print(f"  {sym}: {len(dates)} pts")
+    print(f"  Sample avg: {total_pts/len(sample):.0f} pts/ETF")
 
 
 if __name__ == "__main__":

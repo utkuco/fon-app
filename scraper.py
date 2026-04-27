@@ -313,6 +313,9 @@ def parse_holdings_advanced(text: str) -> list[dict]:
             # Sondan 4. = birim fiyat
             # Sondan 5. = nominal
             total = float(numbers[-1].replace('.', '').replace(',', '.'))
+            # Guard against PDF parsing corruption (e.g. 8.01e+20 for a stock value)
+            if total > 1_000_000_000_000:  # > 1 trillion TL — impossibly large for a single holding
+                total = None
             pct = float(numbers[-2].replace('.', '').replace(',', '.'))
             daily = float(numbers[-3].replace('.', '').replace(',', '.')) if len(numbers) >= 3 else None
             price = float(numbers[-4].replace('.', '').replace(',', '.')) if len(numbers) >= 4 else None

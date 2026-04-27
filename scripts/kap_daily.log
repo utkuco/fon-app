@@ -1,0 +1,2650 @@
+2026-04-26 14:52:43,644 [INFO] ============================================================
+2026-04-26 14:52:43,644 [INFO] ============================================================
+2026-04-26 14:52:43,644 [INFO] KAP Daily Pipeline started
+2026-04-26 14:52:43,644 [INFO] KAP Daily Pipeline started
+2026-04-26 14:52:43,644 [INFO] No last_run in state — scanning last 30 days
+2026-04-26 14:52:43,644 [INFO] No last_run in state — scanning last 30 days
+2026-04-26 14:52:45,724 [INFO] KAP discovered 1162 portfolio disclosures in 2026-03-27 → 2026-04-26
+2026-04-26 14:52:45,724 [INFO] KAP discovered 1162 portfolio disclosures in 2026-03-27 → 2026-04-26
+2026-04-26 14:52:46,063 [ERROR] SB GET funds?select=code,name → 400: {"code":"PGRST100","details":"unexpected '?' expecting letter, digit, \"-\", \"->>\", \"->\", \"::\"
+2026-04-26 14:52:46,063 [ERROR] SB GET funds?select=code,name → 400: {"code":"PGRST100","details":"unexpected '?' expecting letter, digit, \"-\", \"->>\", \"->\", \"::\"
+2026-04-26 14:52:46,066 [ERROR] Could not load fund list from DB
+2026-04-26 14:52:46,066 [ERROR] Could not load fund list from DB
+2026-04-26 14:52:46,066 [ERROR] Cannot proceed without fund map
+2026-04-26 14:52:46,066 [ERROR] Cannot proceed without fund map
+2026-04-26 14:53:12,925 [INFO] ============================================================
+2026-04-26 14:53:12,925 [INFO] KAP Daily Pipeline started
+2026-04-26 14:53:12,925 [INFO] No last_run in state — scanning last 30 days
+2026-04-26 14:53:14,779 [INFO] KAP discovered 1162 portfolio disclosures in 2026-03-27 → 2026-04-26
+2026-04-26 14:53:15,402 [INFO] Loaded 1191 fund names
+2026-04-26 14:53:15,404 [WARNING] No fund match for: AK PORTFÖY SABANCI TOPLULUĞU ŞİRKETLERİ ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SE
+2026-04-26 14:53:15,404 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,404 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,404 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,405 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,405 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,405 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,405 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,405 [INFO]   [OTK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,405 [INFO]   [OTJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,405 [INFO]   [OBI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,405 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,405 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,405 [INFO]   [OKF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,405 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,406 [INFO]   [OBI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,406 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,406 [INFO]   [OBI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,406 [INFO]   [OBI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,406 [INFO]   [OFS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,406 [INFO]   [OBI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,406 [INFO]   [OBI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,406 [INFO]   [OBI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,406 [INFO]   [OBI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,406 [INFO]   [OBI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,407 [INFO]   [PDE] Portföy Dağılım Raporu
+2026-04-26 14:53:15,407 [INFO]   [PNU] Portföy Dağılım Raporu
+2026-04-26 14:53:15,407 [INFO]   [PHE] Portföy Dağılım Raporu
+2026-04-26 14:53:15,407 [INFO]   [PBR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,407 [INFO]   [PRY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,407 [INFO]   [IUF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,408 [INFO]   [PMG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,408 [INFO]   [KP3] Portföy Dağılım Raporu
+2026-04-26 14:53:15,408 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,408 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,408 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,408 [INFO]   [KP3] Portföy Dağılım Raporu
+2026-04-26 14:53:15,409 [INFO]   [KP3] Portföy Dağılım Raporu
+2026-04-26 14:53:15,409 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,409 [INFO]   [KP3] Portföy Dağılım Raporu
+2026-04-26 14:53:15,409 [INFO]   [KP3] Portföy Dağılım Raporu
+2026-04-26 14:53:15,409 [INFO]   [KP3] Portföy Dağılım Raporu
+2026-04-26 14:53:15,410 [INFO]   [KP3] Portföy Dağılım Raporu
+2026-04-26 14:53:15,410 [INFO]   [KKC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,410 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,410 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,410 [INFO]   [GNP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,410 [INFO]   [HIH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,410 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,410 [INFO]   [GKG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,410 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,410 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,410 [INFO]   [GTH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,410 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [GRT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [KDT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [GBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [GOL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [GTM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [GKH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,411 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GVI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GOH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GZJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GZP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GZH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,412 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [INH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [GPF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,413 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,414 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,414 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,414 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,414 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,414 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,414 [INFO]   [GJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,414 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,414 [INFO]   [TRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,414 [INFO]   [PMG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,414 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,414 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,414 [INFO]   [DTZ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [BHI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [ZAY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [KTR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [KTJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [KSV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [AP5] Portföy Dağılım Raporu
+2026-04-26 14:53:15,415 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [KPU] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [KME] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [KIK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [KGM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [KDE] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [KVA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [KAV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [EKL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [AP5] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [AP5] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [AP5] Portföy Dağılım Raporu
+2026-04-26 14:53:15,416 [INFO]   [AP5] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [LAI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [LAI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [BTZ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [LAI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [LAI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [LAI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [PPT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [PFS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [LAI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [LAI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [LAI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [KVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [LAI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [LAI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [EDP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,417 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,418 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,418 [INFO]   [FSK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,418 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,418 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,418 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,418 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,418 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,418 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,418 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,418 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,418 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,418 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,418 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,418 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [PTS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [PTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [PPK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [OLD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [BTK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [GRL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,419 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [AZF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [DA1] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [PMG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [YHI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [YVB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [BIG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [PKT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,420 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YPF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YPK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YKS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,421 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YP4] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YUB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YGM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YIV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YCP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YVG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YZK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,422 [INFO]   [YPV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [PLA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [YSA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [YTY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [BDA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [YIK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [CKL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [SSS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [YMH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [FLS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [YSO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [NNF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [HYV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [HVK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,423 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [HKJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [HKH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,424 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,425 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,425 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,425 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,425 [INFO]   [FNT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,425 [INFO]   [HVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,425 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,425 [INFO]   [FDG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,425 [INFO]   [ILK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,425 [INFO]   [GJM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,425 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,425 [INFO]   [BSD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,425 [INFO]   [HDE] Portföy Dağılım Raporu
+2026-04-26 14:53:15,426 [INFO]   [PMG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,426 [INFO]   [ILK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,426 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,426 [INFO]   [HDE] Portföy Dağılım Raporu
+2026-04-26 14:53:15,426 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,426 [INFO]   [HDE] Portföy Dağılım Raporu
+2026-04-26 14:53:15,426 [INFO]   [HDE] Portföy Dağılım Raporu
+2026-04-26 14:53:15,427 [INFO]   [HDE] Portföy Dağılım Raporu
+2026-04-26 14:53:15,427 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,427 [INFO]   [HDE] Portföy Dağılım Raporu
+2026-04-26 14:53:15,427 [INFO]   [BTK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,427 [INFO]   [BIO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,427 [INFO]   [HFV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,427 [INFO]   [HDE] Portföy Dağılım Raporu
+2026-04-26 14:53:15,427 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,427 [INFO]   [MHF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,427 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,427 [INFO]   [ILK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [SFA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZTG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZSF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZR3] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZPR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZPJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZP8] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,428 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZHH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZDZ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZBO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZBN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [VFK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,429 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [HKG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [NBZ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [EDP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [EDP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [BHI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [NFF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [EDP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [NAU] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [NVC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [EDP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [NVT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [EDP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [EDP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [NKM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,430 [INFO]   [EDP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [EDP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [EDP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [EDP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [EDP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [EDP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [NTI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [NKA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [OUR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [OUD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,431 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [OPB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [ODP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [IHC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [GGK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [GAN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,432 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [CVK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [IV7] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [IRT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [INV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [YHY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [SSF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [GEI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [AZJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [AZJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,433 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [FYI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [BJD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [HYP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [SFS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [PPZ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [PGS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [OTM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [KVS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,434 [INFO]   [ZMT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [EJG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [UPS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [UPS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [UPS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [UPS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [UPS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [UPS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [UPS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [UPS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [UPS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [PTP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,435 [INFO]   [GZN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,436 [WARNING] No fund match for: GLOBAL MD PORTFÖY DURU SERBEST FON
+2026-04-26 14:53:15,436 [WARNING] No fund match for: GLOBAL MD PORTFÖY ALGORİTMİK MODEL HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)
+2026-04-26 14:53:15,436 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,436 [INFO]   [GMD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,436 [INFO]   [TIL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,437 [WARNING] No fund match for: GLOBAL MD PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU
+2026-04-26 14:53:15,437 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,437 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,437 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,437 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,437 [WARNING] No fund match for: GLOBAL MD PORTFÖY BERRAK SERBEST FON
+2026-04-26 14:53:15,437 [INFO]   [IJZ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,437 [INFO]   [TNH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,437 [INFO]   [TNH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,437 [INFO]   [TNH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,437 [INFO]   [TNH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,437 [INFO]   [TNH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,437 [INFO]   [TNH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,437 [INFO]   [TNH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,437 [INFO]   [TNH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [INFO]   [PRD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [INFO]   [PPM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [INFO]   [ILK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [INFO]   [PID] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [INFO]   [PPM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [INFO]   [BHI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [INFO]   [BIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [INFO]   [BSD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [INFO]   [BTE] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [INFO]   [BTK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [INFO]   [BVD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [INFO]   [BVV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,438 [WARNING] No fund match for: BV PORTFÖY İSTATİSTİKSEL ARBİTRAJ SERBEST (TL) FON
+2026-04-26 14:53:15,438 [INFO]   [HAR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [MTD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [DTZ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [SPR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [PBK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [IAS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [IAS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [THV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [URA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [TLZ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [THV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [PKP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [PKF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [THV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [THV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [THV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [THV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [THV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [THV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [THV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [THV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,439 [INFO]   [THV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,440 [INFO]   [MPP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,440 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,440 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,440 [INFO]   [FUA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,440 [INFO]   [IPG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,440 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,440 [INFO]   [IEV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,440 [INFO]   [IUZ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,440 [INFO]   [IUF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,440 [INFO]   [BNC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,440 [WARNING] No fund match for: İŞ PORTFÖY TARIM SERBEST FON
+2026-04-26 14:53:15,440 [INFO]   [IJC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,440 [INFO]   [IJB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [VNK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [VPS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [VNK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [VNK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [PRV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [PRV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [PDD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [PBK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [IAS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [IAS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [PRV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [IAS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [IAS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [IAS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [IAS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [ODG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,441 [INFO]   [FJM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [FJM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [FJM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [FJM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [FJM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [PMG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [IZS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [IVY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [IRB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,442 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [BIP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [GMI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [FJM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [FJM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [FJM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [FJM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [FJM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [ILK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [FBZ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,443 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,444 [INFO]   [EBS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,444 [INFO]   [EBS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,444 [INFO]   [EBS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,444 [INFO]   [EBS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,444 [INFO]   [EPT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,444 [INFO]   [EBS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,444 [INFO]   [EBS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,444 [INFO]   [EBS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,444 [INFO]   [EBS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,444 [INFO]   [EBS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,444 [INFO]   [EBI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,444 [WARNING] No fund match for: İŞ PORTFÖY YABANCI HİSSE SENEDİ FONU
+2026-04-26 14:53:15,444 [WARNING] No fund match for: İŞ PORTFÖY KUMBARA HESABI FON SEPETİ ÖZEL FON
+2026-04-26 14:53:15,445 [WARNING] No fund match for: İŞ PORTFÖY DENGELİ DEĞİŞKEN FON
+2026-04-26 14:53:15,445 [WARNING] No fund match for: İŞ PORTFÖY İŞ BANKASI İŞTİRAKLERİ ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ Y
+2026-04-26 14:53:15,445 [INFO]   [PMG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,445 [WARNING] No fund match for: İŞ PORTFÖY TEMKİNLİ DEĞİŞKEN FON
+2026-04-26 14:53:15,446 [WARNING] No fund match for: İŞ PORTFÖY BORÇLANMA ARAÇLARI (TL) FONU
+2026-04-26 14:53:15,446 [WARNING] No fund match for: İŞ PORTFÖY MAKSİMUM HESAP KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU
+2026-04-26 14:53:15,446 [WARNING] No fund match for: İŞ PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU
+2026-04-26 14:53:15,446 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,446 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,446 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,446 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,446 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [ACN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [IRO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [GO6] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [GO4] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [ODG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [ODG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [ODG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [ODG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [ODG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [ODG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [FBC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [FAL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [PKR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [RTA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [RTA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [RTA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [CPT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [RTA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [RPX] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [RTA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [RTA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [RTA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [RPI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [RTA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [RTA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [RKS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [RPG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,447 [INFO]   [RTA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [RTA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [RTA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [RTA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [ROF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [RSK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [RTA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [RTA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [RDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [RIK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [BNC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [BRC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [BTK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [RIK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [RIK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,448 [INFO]   [TLV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [RIK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [ILK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [RGH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [RIK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [PAB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [PMG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [DA1] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [DA1] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [DA1] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [CVL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [PMG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [DA1] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [ILK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [AJ1] Portföy Dağılım Raporu
+2026-04-26 14:53:15,449 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [PEA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [GMI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [STM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [AOJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [BFE] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [STM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [STM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [STM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [HVU] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [HVZ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [STM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [STM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,450 [INFO]   [KLS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [STM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [LLA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [STM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [SBS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [SBS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NUB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NUB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NCS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NUB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NUB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NUB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NUB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NUB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NSH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NUB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NUB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NUB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NME] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NUB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NUB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NKT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,451 [INFO]   [NUB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,452 [WARNING] No fund match for: İŞ PORTFÖY PY ÖZEL SEKTÖR BORÇLANMA ARAÇLARI (TL) ÖZEL FONU
+2026-04-26 14:53:15,452 [INFO]   [ILK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,452 [INFO]   [TMC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,452 [WARNING] No fund match for: İŞ PORTFÖY PRİVİA BANKACILIK FON SEPETİ ÖZEL FONU
+2026-04-26 14:53:15,452 [WARNING] No fund match for: İŞ PORTFÖY EMTİA YABANCI BYF FON SEPETİ FONU
+2026-04-26 14:53:15,453 [WARNING] No fund match for: İŞ PORTFÖY YABANCI BORÇLANMA ARAÇLARI FONU
+2026-04-26 14:53:15,453 [INFO]   [AZF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,453 [INFO]   [MHF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,453 [INFO]   [MHF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,453 [INFO]   [MHF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,453 [INFO]   [UCP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,453 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,453 [WARNING] No fund match for: AK PORTFÖY ALTERNATİF ENERJİ YABANCI HİSSE SENEDİ FONU
+2026-04-26 14:53:15,454 [WARNING] No fund match for: AK PORTFÖY ALTERNATİF BANK PARA PİYASASI (TL) FONU
+2026-04-26 14:53:15,454 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,454 [INFO]   [KUP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,454 [INFO]   [MHF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,454 [WARNING] No fund match for: AK PORTFÖY EUROBOND (AMERİKAN DOLARI) BORÇLANMA ARAÇLARI FONU
+2026-04-26 14:53:15,454 [INFO]   [PMG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,454 [INFO]   [AUV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,454 [INFO]   [DSH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,454 [INFO]   [AJL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,455 [WARNING] No fund match for: AK PORTFÖY 0-5 YIL VADELİ SERBEST (DÖVİZ) FON
+2026-04-26 14:53:15,455 [INFO]   [UCP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,455 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,455 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,455 [WARNING] No fund match for: AK PORTFÖY AVRUPA YABANCI HİSSE SENEDİ FONU
+2026-04-26 14:53:15,455 [WARNING] No fund match for: AK PORTFÖY YENİ TEKNOLOJİLER YABANCI HİSSE SENEDİ FONU
+2026-04-26 14:53:15,456 [WARNING] No fund match for: AK PORTFÖY SAĞLIK SEKTÖRÜ YABANCI HİSSE SENEDİ FONU
+2026-04-26 14:53:15,456 [INFO]   [ILK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,456 [WARNING] No fund match for: AK PORTFÖY AMERİKA YABANCI HİSSE SENEDİ FONU
+2026-04-26 14:53:15,456 [WARNING] No fund match for: AK PORTFÖY PETROL YABANCI BYF FON SEPETİ FONU
+2026-04-26 14:53:15,456 [INFO]   [MHF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,456 [INFO]   [BHI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,456 [INFO]   [ABU] Portföy Dağılım Raporu
+2026-04-26 14:53:15,456 [INFO]   [DTZ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,457 [WARNING] No fund match for: AK PORTFÖY EMLAK SEKTÖRÜ DEĞİŞKEN FON
+2026-04-26 14:53:15,457 [INFO]   [FUA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,457 [INFO]   [GMI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,457 [INFO]   [GMI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,457 [INFO]   [BNC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,457 [INFO]   [BRR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,457 [INFO]   [BUY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,457 [INFO]   [MT8] Portföy Dağılım Raporu
+2026-04-26 14:53:15,457 [INFO]   [DZS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,457 [INFO]   [COT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,457 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,457 [INFO]   [CYD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,457 [WARNING] No fund match for: AK PORTFÖY ORTA VADELİ BORÇLANMA ARAÇLARI FONU
+2026-04-26 14:53:15,457 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,457 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,457 [INFO]   [AUV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [WARNING] No fund match for: AK PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU
+2026-04-26 14:53:15,458 [INFO]   [AZF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [AZF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [MHF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [UCP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [MHF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [SPP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,458 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [DB2] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [BTK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [BOL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [ONN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [MTS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [MPN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [ILK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [YBJ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [BOS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [BAG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [BRB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,459 [INFO]   [BBS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,460 [INFO]   [BCO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,460 [INFO]   [BFS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,460 [INFO]   [BRB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,460 [INFO]   [BMU] Portföy Dağılım Raporu
+2026-04-26 14:53:15,460 [INFO]   [BPZ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,460 [INFO]   [BVK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,460 [INFO]   [BUV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,460 [INFO]   [BLT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,460 [WARNING] No fund match for: İŞ PORTFÖY ODEABANK PARA PİYASASI (TL) FONU
+2026-04-26 14:53:15,460 [INFO]   [BSD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,460 [INFO]   [VCY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,460 [INFO]   [IPG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,461 [WARNING] No fund match for: İŞ PORTFÖY EUROBOND BORÇLANMA ARAÇLARI (DÖVİZ) FONU
+2026-04-26 14:53:15,461 [WARNING] No fund match for: İŞ PORTFÖY PY EUROBOND BORÇLANMA ARAÇLARI (DÖVİZ) ÖZEL FONU
+2026-04-26 14:53:15,461 [WARNING] No fund match for: İŞ PORTFÖY KİRA SERTİFİKALARI KATILIM (TL) FONU
+2026-04-26 14:53:15,461 [INFO]   [YAR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,461 [INFO]   [TPR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,461 [WARNING] No fund match for: İŞ PORTFÖY MAXİMUM KART KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU
+2026-04-26 14:53:15,461 [INFO]   [KRR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,462 [INFO]   [TIL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,462 [WARNING] No fund match for: İŞ PORTFÖY TÜFE'YE ENDEKSLİ BORÇLANMA ARAÇLARI (TL) FONU
+2026-04-26 14:53:15,462 [INFO]   [TIL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,462 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,462 [INFO]   [NST] Portföy Dağılım Raporu
+2026-04-26 14:53:15,462 [INFO]   [TND] Portföy Dağılım Raporu
+2026-04-26 14:53:15,462 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,462 [INFO]   [UCP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,462 [INFO]   [YBR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,462 [INFO]   [MGB] Portföy Dağılım Raporu
+2026-04-26 14:53:15,462 [WARNING] No fund match for: LOGOS PORTFÖY DİNAMİK DAĞILIMLI SERBEST FON
+2026-04-26 14:53:15,462 [WARNING] No fund match for: LOGOS PORTFÖY DİNAMİK DAĞILIMLI SERBEST FON
+2026-04-26 14:53:15,463 [INFO]   [UCP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,463 [WARNING] No fund match for: AK PORTFÖY FİNTEK VE BLOKZİNCİRİ TEKNOLOJİLERİ DEĞİŞKEN FON
+2026-04-26 14:53:15,463 [INFO]   [VCY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,463 [WARNING] No fund match for: AK PORTFÖY DEĞER ODAKLI 100 ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞU
+2026-04-26 14:53:15,463 [INFO]   [URC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,463 [INFO]   [TGR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,464 [WARNING] No fund match for: AK PORTFÖY TARIM VE GIDA TEKNOLOJİLERİ DEĞİŞKEN FON
+2026-04-26 14:53:15,464 [INFO]   [SER] Portföy Dağılım Raporu
+2026-04-26 14:53:15,464 [WARNING] No fund match for: AK PORTFÖY 2026 SERBEST (DÖVİZ) FON
+2026-04-26 14:53:15,464 [WARNING] No fund match for: AK PORTFÖY ŞEKERBANK PARA PİYASASI (TL) FONU
+2026-04-26 14:53:15,464 [WARNING] No fund match for: AK PORTFÖY SABANCI TOPLULUĞU ŞİRKETLERİ ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SE
+2026-04-26 14:53:15,464 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,464 [INFO]   [PAI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [ILK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [ONK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [UCP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [MTV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [LHP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [TIL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [KVT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [ICZ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [PAI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [PMG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [BHL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [ILK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [WARNING] No fund match for: İŞ PORTFÖY AGRESİF FON SEPETİ FONU
+2026-04-26 14:53:15,465 [INFO]   [KPH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [IDO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [TMZ] Portföy Dağılım Raporu
+2026-04-26 14:53:15,465 [INFO]   [BIO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,466 [WARNING] No fund match for: İŞ PORTFÖY TEV EĞİTİME DESTEK DEĞİŞKEN FON
+2026-04-26 14:53:15,466 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,466 [INFO]   [ONK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,466 [WARNING] No fund match for: İŞ PORTFÖY BLOCKCHAİN TEKNOLOJİLERİ KARMA FON
+2026-04-26 14:53:15,466 [WARNING] No fund match for: İŞ PORTFÖY YENİLENEBİLİR ENERJİ KARMA FON
+2026-04-26 14:53:15,466 [INFO]   [IHK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,466 [WARNING] No fund match for: İŞ PORTFÖY TEMKİNLİ FON SEPETİ FONU
+2026-04-26 14:53:15,467 [WARNING] No fund match for: İŞ PORTFÖY SAĞLIK ŞİRKETLERİ KARMA FON
+2026-04-26 14:53:15,467 [INFO]   [ITP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [MHF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [FBV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [GMI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [WARNING] No fund match for: İŞ PORTFÖY DENGELİ FON SEPETİ FONU
+2026-04-26 14:53:15,467 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [DOV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [DID] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [DHT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,467 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DFD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DMG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [BIO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [SSK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [HVI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [EVM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DVS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,468 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [DAS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [BLD] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [DDF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [RDT] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [PTN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [PTN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [PHK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [PTN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [TMM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [TMM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [TMM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [TLY] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [TMV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [TMM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [TRU] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [TMM] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [PYR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [PO9] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [PMP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [PKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [PCE] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,469 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [AP7] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [PTO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [PP1] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [PBI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [PAF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [KHA] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [BIH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [PAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [AC4] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TAO] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [SKL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TPP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,470 [INFO]   [PTL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [MRI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [GMC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [TIL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [AIS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [MT1] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [MPL] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [MPE] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [MHF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [MD1] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [MBR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [ZCN] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [PRH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,471 [INFO]   [PRH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [PRH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [PRH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [PRH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [JUP] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [PRH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [PRH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [BDC] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [IJH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [IJH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [IJH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [IJH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [IJH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [IJH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [IJH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [IJH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [IJH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [IJH] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [VKI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [RTI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [RTI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [RTI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [RTI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [RTI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [RTI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [RTI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [PVK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [PPG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [MJE] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [RTI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [RTI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [RTI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [RTI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [RTI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [AL7] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [AL6] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [AL5] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [RTI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [RTI] Portföy Dağılım Raporu
+2026-04-26 14:53:15,472 [INFO]   [ILK] Portföy Dağılım Raporu
+2026-04-26 14:53:15,473 [INFO]   [PMG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,473 [INFO]   [MHF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,473 [INFO]   [MHF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,473 [INFO]   [MHF] Portföy Dağılım Raporu
+2026-04-26 14:53:15,473 [INFO]   [TCG] Portföy Dağılım Raporu
+2026-04-26 14:53:15,473 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,473 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,473 [INFO]   [FUS] Portföy Dağılım Raporu
+2026-04-26 14:53:15,473 [INFO]   [OVR] Portföy Dağılım Raporu
+2026-04-26 14:53:15,473 [INFO] Processing 1110 new disclosures...
+2026-04-26 14:53:15,475 [INFO] Processing [HVC] from 20.04.2026
+2026-04-26 14:53:15,614 [INFO] Downloaded PDF HVC (77KB)
+2026-04-26 14:53:16,941 [ERROR] GLM parse failed for HVC: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:16,942 [WARNING] No categories extracted for HVC
+2026-04-26 14:53:17,462 [INFO] Processing [DDF] from 13.04.2026
+2026-04-26 14:53:17,611 [INFO] Downloaded PDF DDF (77KB)
+2026-04-26 14:53:18,814 [ERROR] GLM parse failed for DDF: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:18,814 [WARNING] No categories extracted for DDF
+2026-04-26 14:53:19,465 [INFO] Processing [IRO] from 13.04.2026
+2026-04-26 14:53:19,584 [INFO] Downloaded PDF IRO (78KB)
+2026-04-26 14:53:20,785 [ERROR] GLM parse failed for IRO: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:20,785 [WARNING] No categories extracted for IRO
+2026-04-26 14:53:21,436 [INFO] Processing [IRO] from 13.04.2026
+2026-04-26 14:53:21,548 [INFO] Downloaded PDF IRO (78KB)
+2026-04-26 14:53:22,749 [ERROR] GLM parse failed for IRO: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:22,749 [WARNING] No categories extracted for IRO
+2026-04-26 14:53:23,400 [INFO] Processing [IRO] from 13.04.2026
+2026-04-26 14:53:23,500 [INFO] Downloaded PDF IRO (78KB)
+2026-04-26 14:53:24,701 [ERROR] GLM parse failed for IRO: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:24,701 [WARNING] No categories extracted for IRO
+2026-04-26 14:53:25,352 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:53:25,457 [INFO] Downloaded PDF MTF (78KB)
+2026-04-26 14:53:26,656 [ERROR] GLM parse failed for MTF: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:26,656 [WARNING] No categories extracted for MTF
+2026-04-26 14:53:27,307 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:53:27,411 [INFO] Downloaded PDF MTF (78KB)
+2026-04-26 14:53:28,612 [ERROR] GLM parse failed for MTF: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:28,612 [WARNING] No categories extracted for MTF
+2026-04-26 14:53:29,263 [INFO] Processing [OTK] from 08.04.2026
+2026-04-26 14:53:29,373 [INFO] Downloaded PDF OTK (78KB)
+2026-04-26 14:53:30,566 [ERROR] GLM parse failed for OTK: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:30,566 [WARNING] No categories extracted for OTK
+2026-04-26 14:53:31,217 [INFO] Processing [OTJ] from 08.04.2026
+2026-04-26 14:53:31,318 [INFO] Downloaded PDF OTJ (77KB)
+2026-04-26 14:53:32,432 [ERROR] GLM parse failed for OTJ: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:32,432 [WARNING] No categories extracted for OTJ
+2026-04-26 14:53:33,083 [INFO] Processing [OBI] from 08.04.2026
+2026-04-26 14:53:33,186 [INFO] Downloaded PDF OBI (78KB)
+2026-04-26 14:53:34,391 [ERROR] GLM parse failed for OBI: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:34,391 [WARNING] No categories extracted for OBI
+2026-04-26 14:53:35,042 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:53:35,154 [INFO] Downloaded PDF MTF (77KB)
+2026-04-26 14:53:36,353 [ERROR] GLM parse failed for MTF: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:36,353 [WARNING] No categories extracted for MTF
+2026-04-26 14:53:37,003 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:53:37,100 [INFO] Downloaded PDF MTF (78KB)
+2026-04-26 14:53:38,241 [ERROR] GLM parse failed for MTF: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:38,241 [WARNING] No categories extracted for MTF
+2026-04-26 14:53:38,892 [INFO] Processing [OKF] from 08.04.2026
+2026-04-26 14:53:38,993 [INFO] Downloaded PDF OKF (78KB)
+2026-04-26 14:53:40,153 [ERROR] GLM parse failed for OKF: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:40,153 [WARNING] No categories extracted for OKF
+2026-04-26 14:53:40,804 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:53:40,909 [INFO] Downloaded PDF MTF (78KB)
+2026-04-26 14:53:42,099 [ERROR] GLM parse failed for MTF: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:42,099 [WARNING] No categories extracted for MTF
+2026-04-26 14:53:42,750 [INFO] Processing [OBI] from 08.04.2026
+2026-04-26 14:53:42,845 [INFO] Downloaded PDF OBI (78KB)
+2026-04-26 14:53:44,051 [ERROR] GLM parse failed for OBI: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:44,051 [WARNING] No categories extracted for OBI
+2026-04-26 14:53:44,702 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:53:44,805 [INFO] Downloaded PDF MTF (78KB)
+2026-04-26 14:53:45,967 [ERROR] GLM parse failed for MTF: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:45,967 [WARNING] No categories extracted for MTF
+2026-04-26 14:53:46,562 [INFO] Processing [OBI] from 08.04.2026
+2026-04-26 14:53:46,673 [INFO] Downloaded PDF OBI (78KB)
+2026-04-26 14:53:47,857 [ERROR] GLM parse failed for OBI: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:47,857 [WARNING] No categories extracted for OBI
+2026-04-26 14:53:48,508 [INFO] Processing [OBI] from 08.04.2026
+2026-04-26 14:53:48,609 [INFO] Downloaded PDF OBI (77KB)
+2026-04-26 14:53:49,811 [ERROR] GLM parse failed for OBI: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:49,812 [WARNING] No categories extracted for OBI
+2026-04-26 14:53:50,462 [INFO] Processing [OFS] from 08.04.2026
+2026-04-26 14:53:50,582 [INFO] Downloaded PDF OFS (78KB)
+2026-04-26 14:53:51,777 [ERROR] GLM parse failed for OFS: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:51,778 [WARNING] No categories extracted for OFS
+2026-04-26 14:53:52,428 [INFO] Processing [OBI] from 08.04.2026
+2026-04-26 14:53:52,548 [INFO] Downloaded PDF OBI (78KB)
+2026-04-26 14:53:53,752 [ERROR] GLM parse failed for OBI: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:53,752 [WARNING] No categories extracted for OBI
+2026-04-26 14:53:54,403 [INFO] Processing [OBI] from 08.04.2026
+2026-04-26 14:53:54,507 [INFO] Downloaded PDF OBI (78KB)
+2026-04-26 14:53:55,707 [ERROR] GLM parse failed for OBI: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:55,707 [WARNING] No categories extracted for OBI
+2026-04-26 14:53:56,358 [INFO] Processing [OBI] from 08.04.2026
+2026-04-26 14:53:56,456 [INFO] Downloaded PDF OBI (77KB)
+2026-04-26 14:53:57,652 [ERROR] GLM parse failed for OBI: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:57,652 [WARNING] No categories extracted for OBI
+2026-04-26 14:53:58,303 [INFO] Processing [OBI] from 08.04.2026
+2026-04-26 14:53:58,760 [INFO] Downloaded PDF OBI (78KB)
+2026-04-26 14:53:59,902 [ERROR] GLM parse failed for OBI: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:53:59,902 [WARNING] No categories extracted for OBI
+2026-04-26 14:54:00,553 [INFO] Processing [OBI] from 08.04.2026
+2026-04-26 14:54:00,669 [INFO] Downloaded PDF OBI (78KB)
+2026-04-26 14:54:01,874 [ERROR] GLM parse failed for OBI: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:01,874 [WARNING] No categories extracted for OBI
+2026-04-26 14:54:02,525 [INFO] Processing [PDE] from 08.04.2026
+2026-04-26 14:54:03,891 [INFO] Downloaded PDF PDE (78KB)
+2026-04-26 14:54:05,066 [ERROR] GLM parse failed for PDE: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:05,066 [WARNING] No categories extracted for PDE
+2026-04-26 14:54:05,717 [INFO] Processing [PNU] from 08.04.2026
+2026-04-26 14:54:05,826 [INFO] Downloaded PDF PNU (78KB)
+2026-04-26 14:54:07,031 [ERROR] GLM parse failed for PNU: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:07,031 [WARNING] No categories extracted for PNU
+2026-04-26 14:54:07,682 [INFO] Processing [PHE] from 08.04.2026
+2026-04-26 14:54:07,797 [INFO] Downloaded PDF PHE (78KB)
+2026-04-26 14:54:08,997 [ERROR] GLM parse failed for PHE: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:08,997 [WARNING] No categories extracted for PHE
+2026-04-26 14:54:09,564 [INFO] Processing [PBR] from 08.04.2026
+2026-04-26 14:54:09,655 [INFO] Downloaded PDF PBR (78KB)
+2026-04-26 14:54:10,854 [ERROR] GLM parse failed for PBR: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:10,854 [WARNING] No categories extracted for PBR
+2026-04-26 14:54:11,505 [INFO] Processing [PRY] from 08.04.2026
+2026-04-26 14:54:11,604 [INFO] Downloaded PDF PRY (78KB)
+2026-04-26 14:54:12,791 [ERROR] GLM parse failed for PRY: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:12,791 [WARNING] No categories extracted for PRY
+2026-04-26 14:54:13,442 [INFO] Processing [IUF] from 08.04.2026
+2026-04-26 14:54:13,552 [INFO] Downloaded PDF IUF (78KB)
+2026-04-26 14:54:14,741 [ERROR] GLM parse failed for IUF: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:14,741 [WARNING] No categories extracted for IUF
+2026-04-26 14:54:15,274 [INFO] Processing [PMG] from 08.04.2026
+2026-04-26 14:54:15,356 [INFO] Downloaded PDF PMG (78KB)
+2026-04-26 14:54:16,469 [ERROR] GLM parse failed for PMG: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:16,469 [WARNING] No categories extracted for PMG
+2026-04-26 14:54:17,120 [INFO] Processing [KP3] from 08.04.2026
+2026-04-26 14:54:17,268 [INFO] Downloaded PDF KP3 (78KB)
+2026-04-26 14:54:18,470 [ERROR] GLM parse failed for KP3: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:18,470 [WARNING] No categories extracted for KP3
+2026-04-26 14:54:19,121 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:54:19,229 [INFO] Downloaded PDF MTF (78KB)
+2026-04-26 14:54:20,429 [ERROR] GLM parse failed for MTF: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:20,429 [WARNING] No categories extracted for MTF
+2026-04-26 14:54:21,079 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:54:21,183 [INFO] Downloaded PDF MTF (78KB)
+2026-04-26 14:54:22,384 [ERROR] GLM parse failed for MTF: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:22,384 [WARNING] No categories extracted for MTF
+2026-04-26 14:54:23,035 [INFO] Processing [AIS] from 08.04.2026
+2026-04-26 14:54:23,151 [INFO] Downloaded PDF AIS (78KB)
+2026-04-26 14:54:24,354 [ERROR] GLM parse failed for AIS: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:24,354 [WARNING] No categories extracted for AIS
+2026-04-26 14:54:25,005 [INFO] Processing [KP3] from 08.04.2026
+2026-04-26 14:54:25,109 [INFO] Downloaded PDF KP3 (78KB)
+2026-04-26 14:54:26,308 [ERROR] GLM parse failed for KP3: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:26,308 [WARNING] No categories extracted for KP3
+2026-04-26 14:54:26,958 [INFO] Processing [KP3] from 08.04.2026
+2026-04-26 14:54:27,100 [INFO] Downloaded PDF KP3 (78KB)
+2026-04-26 14:54:28,301 [ERROR] GLM parse failed for KP3: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:28,301 [WARNING] No categories extracted for KP3
+2026-04-26 14:54:28,951 [INFO] Processing [IKV] from 08.04.2026
+2026-04-26 14:54:29,061 [INFO] Downloaded PDF IKV (78KB)
+2026-04-26 14:54:30,172 [ERROR] GLM parse failed for IKV: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:30,172 [WARNING] No categories extracted for IKV
+2026-04-26 14:54:30,822 [INFO] Processing [KP3] from 08.04.2026
+2026-04-26 14:54:31,019 [INFO] Downloaded PDF KP3 (78KB)
+2026-04-26 14:54:32,121 [ERROR] GLM parse failed for KP3: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:32,121 [WARNING] No categories extracted for KP3
+2026-04-26 14:54:32,771 [INFO] Processing [KP3] from 08.04.2026
+2026-04-26 14:54:32,882 [INFO] Downloaded PDF KP3 (78KB)
+2026-04-26 14:54:34,063 [ERROR] GLM parse failed for KP3: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:34,064 [WARNING] No categories extracted for KP3
+2026-04-26 14:54:34,572 [INFO] Processing [KP3] from 08.04.2026
+2026-04-26 14:54:34,668 [INFO] Downloaded PDF KP3 (78KB)
+2026-04-26 14:54:35,873 [ERROR] GLM parse failed for KP3: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:35,873 [WARNING] No categories extracted for KP3
+2026-04-26 14:54:36,523 [INFO] Processing [KP3] from 08.04.2026
+2026-04-26 14:54:36,621 [INFO] Downloaded PDF KP3 (79KB)
+2026-04-26 14:54:37,744 [ERROR] GLM parse failed for KP3: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:37,744 [WARNING] No categories extracted for KP3
+2026-04-26 14:54:38,394 [INFO] Processing [KKC] from 08.04.2026
+2026-04-26 14:54:39,054 [INFO] Downloaded PDF KKC (78KB)
+2026-04-26 14:54:40,171 [ERROR] GLM parse failed for KKC: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:40,171 [WARNING] No categories extracted for KKC
+2026-04-26 14:54:40,822 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:40,932 [INFO] Downloaded PDF GJD (78KB)
+2026-04-26 14:54:42,121 [ERROR] GLM parse failed for GJD: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:42,121 [WARNING] No categories extracted for GJD
+2026-04-26 14:54:42,771 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:42,872 [INFO] Downloaded PDF GJD (78KB)
+2026-04-26 14:54:44,042 [ERROR] GLM parse failed for GJD: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:44,043 [WARNING] No categories extracted for GJD
+2026-04-26 14:54:44,693 [INFO] Processing [GNP] from 08.04.2026
+2026-04-26 14:54:44,798 [INFO] Downloaded PDF GNP (78KB)
+2026-04-26 14:54:45,945 [ERROR] GLM parse failed for GNP: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:45,945 [WARNING] No categories extracted for GNP
+2026-04-26 14:54:46,596 [INFO] Processing [HIH] from 08.04.2026
+2026-04-26 14:54:46,704 [INFO] Downloaded PDF HIH (78KB)
+2026-04-26 14:54:47,905 [ERROR] GLM parse failed for HIH: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:47,905 [WARNING] No categories extracted for HIH
+2026-04-26 14:54:48,556 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:48,681 [INFO] Downloaded PDF GJD (78KB)
+2026-04-26 14:54:49,887 [ERROR] GLM parse failed for GJD: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:49,887 [WARNING] No categories extracted for GJD
+2026-04-26 14:54:50,460 [INFO] Processing [GKG] from 08.04.2026
+2026-04-26 14:54:50,562 [INFO] Downloaded PDF GKG (78KB)
+2026-04-26 14:54:51,681 [ERROR] GLM parse failed for GKG: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:51,682 [WARNING] No categories extracted for GKG
+2026-04-26 14:54:52,332 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:52,468 [INFO] Downloaded PDF GJD (78KB)
+2026-04-26 14:54:53,675 [ERROR] GLM parse failed for GJD: module 'zhipuai' has no attribute 'model_api'
+2026-04-26 14:54:53,675 [WARNING] No categories extracted for GJD
+2026-04-26 14:54:54,325 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:54,518 [WARNING] No attachment URL in disclosure 1589418
+2026-04-26 14:54:54,524 [INFO] Processing [GTH] from 08.04.2026
+2026-04-26 14:54:54,718 [WARNING] No attachment URL in disclosure 1589417
+2026-04-26 14:54:54,723 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:55,103 [WARNING] No attachment URL in disclosure 1589416
+2026-04-26 14:54:55,107 [INFO] Processing [GRT] from 08.04.2026
+2026-04-26 14:54:55,299 [WARNING] No attachment URL in disclosure 1589415
+2026-04-26 14:54:55,304 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:55,488 [WARNING] No attachment URL in disclosure 1589414
+2026-04-26 14:54:55,492 [INFO] Processing [KDT] from 08.04.2026
+2026-04-26 14:54:55,744 [WARNING] No attachment URL in disclosure 1589413
+2026-04-26 14:54:55,748 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:56,200 [WARNING] No attachment URL in disclosure 1589385
+2026-04-26 14:54:56,205 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:56,386 [WARNING] No attachment URL in disclosure 1589384
+2026-04-26 14:54:56,391 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:56,611 [WARNING] No attachment URL in disclosure 1589383
+2026-04-26 14:54:56,615 [INFO] Processing [GBJ] from 08.04.2026
+2026-04-26 14:54:56,804 [WARNING] No attachment URL in disclosure 1589382
+2026-04-26 14:54:56,809 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:57,047 [WARNING] No attachment URL in disclosure 1589381
+2026-04-26 14:54:57,053 [INFO] Processing [GOL] from 08.04.2026
+2026-04-26 14:54:57,245 [WARNING] No attachment URL in disclosure 1589380
+2026-04-26 14:54:57,249 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:57,428 [WARNING] No attachment URL in disclosure 1589379
+2026-04-26 14:54:57,432 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:57,628 [WARNING] No attachment URL in disclosure 1589378
+2026-04-26 14:54:57,633 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:57,820 [WARNING] No attachment URL in disclosure 1589377
+2026-04-26 14:54:57,825 [INFO] Processing [GTM] from 08.04.2026
+2026-04-26 14:54:58,014 [WARNING] No attachment URL in disclosure 1589376
+2026-04-26 14:54:58,018 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:58,222 [WARNING] No attachment URL in disclosure 1589375
+2026-04-26 14:54:58,227 [INFO] Processing [GKH] from 08.04.2026
+2026-04-26 14:54:58,411 [WARNING] No attachment URL in disclosure 1589374
+2026-04-26 14:54:58,416 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:58,605 [WARNING] No attachment URL in disclosure 1589373
+2026-04-26 14:54:58,610 [INFO] Processing [GVI] from 08.04.2026
+2026-04-26 14:54:58,799 [WARNING] No attachment URL in disclosure 1589355
+2026-04-26 14:54:58,804 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:59,025 [WARNING] No attachment URL in disclosure 1589354
+2026-04-26 14:54:59,030 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:59,215 [WARNING] No attachment URL in disclosure 1589353
+2026-04-26 14:54:59,220 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:59,411 [WARNING] No attachment URL in disclosure 1589352
+2026-04-26 14:54:59,416 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:59,593 [WARNING] No attachment URL in disclosure 1589351
+2026-04-26 14:54:59,598 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:59,783 [WARNING] No attachment URL in disclosure 1589350
+2026-04-26 14:54:59,788 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:54:59,977 [WARNING] No attachment URL in disclosure 1589349
+2026-04-26 14:54:59,982 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:00,193 [WARNING] No attachment URL in disclosure 1589348
+2026-04-26 14:55:00,198 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:00,380 [WARNING] No attachment URL in disclosure 1589347
+2026-04-26 14:55:00,385 [INFO] Processing [GOH] from 08.04.2026
+2026-04-26 14:55:00,585 [WARNING] No attachment URL in disclosure 1589346
+2026-04-26 14:55:00,595 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:00,790 [WARNING] No attachment URL in disclosure 1589345
+2026-04-26 14:55:00,798 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:01,030 [WARNING] No attachment URL in disclosure 1589344
+2026-04-26 14:55:01,037 [INFO] Processing [GZJ] from 08.04.2026
+2026-04-26 14:55:01,256 [WARNING] No attachment URL in disclosure 1589343
+2026-04-26 14:55:01,263 [INFO] Processing [GZP] from 08.04.2026
+2026-04-26 14:55:01,580 [WARNING] No attachment URL in disclosure 1589322
+2026-04-26 14:55:01,587 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:01,780 [WARNING] No attachment URL in disclosure 1589321
+2026-04-26 14:55:01,787 [INFO] Processing [GZH] from 08.04.2026
+2026-04-26 14:55:01,993 [WARNING] No attachment URL in disclosure 1589320
+2026-04-26 14:55:02,004 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:02,194 [WARNING] No attachment URL in disclosure 1589319
+2026-04-26 14:55:02,199 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:02,390 [WARNING] No attachment URL in disclosure 1589318
+2026-04-26 14:55:02,395 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:02,590 [WARNING] No attachment URL in disclosure 1589317
+2026-04-26 14:55:02,595 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:02,854 [WARNING] No attachment URL in disclosure 1589316
+2026-04-26 14:55:02,859 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:03,035 [WARNING] No attachment URL in disclosure 1589315
+2026-04-26 14:55:03,040 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:03,245 [WARNING] No attachment URL in disclosure 1589314
+2026-04-26 14:55:03,249 [INFO] Processing [INH] from 08.04.2026
+2026-04-26 14:55:03,438 [WARNING] No attachment URL in disclosure 1589313
+2026-04-26 14:55:03,445 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:03,644 [WARNING] No attachment URL in disclosure 1589312
+2026-04-26 14:55:03,651 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:03,837 [WARNING] No attachment URL in disclosure 1589311
+2026-04-26 14:55:03,840 [INFO] Processing [GPF] from 08.04.2026
+2026-04-26 14:55:04,024 [WARNING] No attachment URL in disclosure 1589310
+2026-04-26 14:55:04,030 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:04,206 [WARNING] No attachment URL in disclosure 1589270
+2026-04-26 14:55:04,212 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:04,387 [WARNING] No attachment URL in disclosure 1589269
+2026-04-26 14:55:04,388 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:04,568 [WARNING] No attachment URL in disclosure 1589268
+2026-04-26 14:55:04,574 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:04,773 [WARNING] No attachment URL in disclosure 1589267
+2026-04-26 14:55:04,777 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:04,971 [WARNING] No attachment URL in disclosure 1589266
+2026-04-26 14:55:04,975 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:05,163 [WARNING] No attachment URL in disclosure 1589265
+2026-04-26 14:55:05,167 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:05,347 [WARNING] No attachment URL in disclosure 1589264
+2026-04-26 14:55:05,350 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:05,618 [WARNING] No attachment URL in disclosure 1589263
+2026-04-26 14:55:05,623 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:05,816 [WARNING] No attachment URL in disclosure 1589262
+2026-04-26 14:55:05,821 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:06,015 [WARNING] No attachment URL in disclosure 1589261
+2026-04-26 14:55:06,019 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:06,257 [WARNING] No attachment URL in disclosure 1589260
+2026-04-26 14:55:06,262 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:06,446 [WARNING] No attachment URL in disclosure 1589259
+2026-04-26 14:55:06,450 [INFO] Processing [GJD] from 08.04.2026
+2026-04-26 14:55:06,637 [WARNING] No attachment URL in disclosure 1589258
+2026-04-26 14:55:06,640 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:55:06,826 [WARNING] No attachment URL in disclosure 1589089
+2026-04-26 14:55:06,832 [INFO] Processing [TRO] from 08.04.2026
+2026-04-26 14:55:07,015 [WARNING] No attachment URL in disclosure 1589088
+2026-04-26 14:55:07,018 [INFO] Processing [PMG] from 08.04.2026
+2026-04-26 14:55:07,186 [WARNING] No attachment URL in disclosure 1589087
+2026-04-26 14:55:07,191 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:55:07,375 [WARNING] No attachment URL in disclosure 1589086
+2026-04-26 14:55:07,376 [INFO] Processing [AIS] from 08.04.2026
+2026-04-26 14:55:07,527 [WARNING] No attachment URL in disclosure 1589084
+2026-04-26 14:55:07,533 [INFO] Processing [DTZ] from 08.04.2026
+2026-04-26 14:55:07,728 [WARNING] No attachment URL in disclosure 1589082
+2026-04-26 14:55:07,733 [INFO] Processing [BHI] from 08.04.2026
+2026-04-26 14:55:07,930 [WARNING] No attachment URL in disclosure 1589081
+2026-04-26 14:55:07,935 [INFO] Processing [ZAY] from 08.04.2026
+2026-04-26 14:55:08,138 [WARNING] No attachment URL in disclosure 1589016
+2026-04-26 14:55:08,143 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:08,330 [WARNING] No attachment URL in disclosure 1589015
+2026-04-26 14:55:08,333 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:08,556 [WARNING] No attachment URL in disclosure 1589014
+2026-04-26 14:55:08,561 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:08,753 [WARNING] No attachment URL in disclosure 1589013
+2026-04-26 14:55:08,758 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:08,955 [WARNING] No attachment URL in disclosure 1589012
+2026-04-26 14:55:08,960 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:09,162 [WARNING] No attachment URL in disclosure 1589011
+2026-04-26 14:55:09,167 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:09,361 [WARNING] No attachment URL in disclosure 1589010
+2026-04-26 14:55:09,365 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:09,556 [WARNING] No attachment URL in disclosure 1589009
+2026-04-26 14:55:09,561 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:09,753 [WARNING] No attachment URL in disclosure 1589008
+2026-04-26 14:55:09,758 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:10,070 [WARNING] No attachment URL in disclosure 1589007
+2026-04-26 14:55:10,074 [INFO] Processing [KTR] from 08.04.2026
+2026-04-26 14:55:10,264 [WARNING] No attachment URL in disclosure 1589006
+2026-04-26 14:55:10,268 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:10,437 [WARNING] No attachment URL in disclosure 1589005
+2026-04-26 14:55:10,439 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:10,840 [WARNING] No attachment URL in disclosure 1589004
+2026-04-26 14:55:10,845 [INFO] Processing [KTJ] from 08.04.2026
+2026-04-26 14:55:11,045 [WARNING] No attachment URL in disclosure 1589003
+2026-04-26 14:55:11,049 [INFO] Processing [KSV] from 08.04.2026
+2026-04-26 14:55:11,250 [WARNING] No attachment URL in disclosure 1589002
+2026-04-26 14:55:11,256 [INFO] Processing [AP5] from 08.04.2026
+2026-04-26 14:55:11,458 [WARNING] No attachment URL in disclosure 1588985
+2026-04-26 14:55:11,463 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:11,659 [WARNING] No attachment URL in disclosure 1588967
+2026-04-26 14:55:11,665 [INFO] Processing [KPU] from 08.04.2026
+2026-04-26 14:55:11,870 [WARNING] No attachment URL in disclosure 1588966
+2026-04-26 14:55:11,876 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:12,081 [WARNING] No attachment URL in disclosure 1588965
+2026-04-26 14:55:12,087 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:12,274 [WARNING] No attachment URL in disclosure 1588964
+2026-04-26 14:55:12,279 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:12,455 [WARNING] No attachment URL in disclosure 1588963
+2026-04-26 14:55:12,459 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:12,650 [WARNING] No attachment URL in disclosure 1588962
+2026-04-26 14:55:12,654 [INFO] Processing [KME] from 08.04.2026
+2026-04-26 14:55:12,973 [WARNING] No attachment URL in disclosure 1588961
+2026-04-26 14:55:12,979 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:13,173 [WARNING] No attachment URL in disclosure 1588960
+2026-04-26 14:55:13,178 [INFO] Processing [KIK] from 08.04.2026
+2026-04-26 14:55:13,296 [WARNING] No attachment URL in disclosure 1588959
+2026-04-26 14:55:13,301 [INFO] Processing [KGM] from 08.04.2026
+2026-04-26 14:55:13,482 [WARNING] No attachment URL in disclosure 1588958
+2026-04-26 14:55:13,487 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:13,699 [WARNING] No attachment URL in disclosure 1588957
+2026-04-26 14:55:13,704 [INFO] Processing [KDE] from 08.04.2026
+2026-04-26 14:55:13,901 [WARNING] No attachment URL in disclosure 1588956
+2026-04-26 14:55:13,906 [INFO] Processing [KVA] from 08.04.2026
+2026-04-26 14:55:14,029 [WARNING] No attachment URL in disclosure 1588955
+2026-04-26 14:55:14,034 [INFO] Processing [KAV] from 08.04.2026
+2026-04-26 14:55:14,216 [WARNING] No attachment URL in disclosure 1588954
+2026-04-26 14:55:14,221 [INFO] Processing [EKL] from 08.04.2026
+2026-04-26 14:55:14,466 [WARNING] No attachment URL in disclosure 1588953
+2026-04-26 14:55:14,471 [INFO] Processing [AP5] from 08.04.2026
+2026-04-26 14:55:14,664 [WARNING] No attachment URL in disclosure 1588950
+2026-04-26 14:55:14,669 [INFO] Processing [AP5] from 08.04.2026
+2026-04-26 14:55:15,049 [WARNING] No attachment URL in disclosure 1588941
+2026-04-26 14:55:15,054 [INFO] Processing [AP5] from 08.04.2026
+2026-04-26 14:55:15,280 [WARNING] No attachment URL in disclosure 1588940
+2026-04-26 14:55:15,285 [INFO] Processing [AP5] from 08.04.2026
+2026-04-26 14:55:15,468 [WARNING] No attachment URL in disclosure 1588920
+2026-04-26 14:55:15,473 [INFO] Processing [LAI] from 08.04.2026
+2026-04-26 14:55:15,585 [ERROR] Disclosure page 1588918 → 429
+2026-04-26 14:55:15,588 [INFO] Processing [LAI] from 08.04.2026
+2026-04-26 14:55:15,688 [ERROR] Disclosure page 1588917 → 429
+2026-04-26 14:55:15,692 [INFO] Processing [BTZ] from 08.04.2026
+2026-04-26 14:55:15,792 [ERROR] Disclosure page 1588916 → 429
+2026-04-26 14:55:15,793 [INFO] Processing [LAI] from 08.04.2026
+2026-04-26 14:55:15,893 [ERROR] Disclosure page 1588914 → 429
+2026-04-26 14:55:15,897 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:55:16,007 [ERROR] Disclosure page 1588913 → 429
+2026-04-26 14:55:16,011 [INFO] Processing [LAI] from 08.04.2026
+2026-04-26 14:55:16,095 [ERROR] Disclosure page 1588912 → 429
+2026-04-26 14:55:16,095 [INFO] Processing [LAI] from 08.04.2026
+2026-04-26 14:55:16,174 [ERROR] Disclosure page 1588911 → 429
+2026-04-26 14:55:16,175 [INFO] Processing [PPT] from 08.04.2026
+2026-04-26 14:55:16,255 [ERROR] Disclosure page 1588908 → 429
+2026-04-26 14:55:16,256 [INFO] Processing [PFS] from 08.04.2026
+2026-04-26 14:55:16,345 [ERROR] Disclosure page 1588902 → 429
+2026-04-26 14:55:16,347 [INFO] Processing [LAI] from 08.04.2026
+2026-04-26 14:55:16,440 [ERROR] Disclosure page 1588901 → 429
+2026-04-26 14:55:16,444 [INFO] Processing [LAI] from 08.04.2026
+2026-04-26 14:55:16,550 [ERROR] Disclosure page 1588898 → 429
+2026-04-26 14:55:16,554 [INFO] Processing [LAI] from 08.04.2026
+2026-04-26 14:55:16,676 [ERROR] Disclosure page 1588880 → 429
+2026-04-26 14:55:16,680 [INFO] Processing [KVR] from 08.04.2026
+2026-04-26 14:55:16,790 [ERROR] Disclosure page 1588879 → 429
+2026-04-26 14:55:16,794 [INFO] Processing [LAI] from 08.04.2026
+2026-04-26 14:55:16,895 [ERROR] Disclosure page 1588861 → 429
+2026-04-26 14:55:16,898 [INFO] Processing [LAI] from 08.04.2026
+2026-04-26 14:55:17,005 [ERROR] Disclosure page 1588860 → 429
+2026-04-26 14:55:17,008 [INFO] Processing [EDP] from 08.04.2026
+2026-04-26 14:55:17,114 [ERROR] Disclosure page 1588859 → 429
+2026-04-26 14:55:17,118 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:55:17,232 [ERROR] Disclosure page 1588858 → 429
+2026-04-26 14:55:17,236 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:17,349 [ERROR] Disclosure page 1588797 → 429
+2026-04-26 14:55:17,353 [INFO] Processing [FSK] from 08.04.2026
+2026-04-26 14:55:17,470 [ERROR] Disclosure page 1588795 → 429
+2026-04-26 14:55:17,474 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:55:17,581 [ERROR] Disclosure page 1588794 → 429
+2026-04-26 14:55:17,585 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:55:17,690 [ERROR] Disclosure page 1588793 → 429
+2026-04-26 14:55:17,694 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:17,795 [ERROR] Disclosure page 1588792 → 429
+2026-04-26 14:55:17,798 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:17,898 [ERROR] Disclosure page 1588791 → 429
+2026-04-26 14:55:17,901 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:18,006 [ERROR] Disclosure page 1588790 → 429
+2026-04-26 14:55:18,009 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:18,120 [ERROR] Disclosure page 1588789 → 429
+2026-04-26 14:55:18,124 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:18,231 [ERROR] Disclosure page 1588788 → 429
+2026-04-26 14:55:18,234 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:18,334 [ERROR] Disclosure page 1588787 → 429
+2026-04-26 14:55:18,337 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:18,441 [ERROR] Disclosure page 1588786 → 429
+2026-04-26 14:55:18,444 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:18,546 [ERROR] Disclosure page 1588785 → 429
+2026-04-26 14:55:18,549 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:18,655 [ERROR] Disclosure page 1588586 → 429
+2026-04-26 14:55:18,658 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:18,765 [ERROR] Disclosure page 1588585 → 429
+2026-04-26 14:55:18,768 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:18,885 [ERROR] Disclosure page 1588584 → 429
+2026-04-26 14:55:18,889 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:19,004 [ERROR] Disclosure page 1588583 → 429
+2026-04-26 14:55:19,008 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:19,118 [ERROR] Disclosure page 1588582 → 429
+2026-04-26 14:55:19,122 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:19,232 [ERROR] Disclosure page 1588581 → 429
+2026-04-26 14:55:19,236 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:19,340 [ERROR] Disclosure page 1588580 → 429
+2026-04-26 14:55:19,343 [INFO] Processing [PTS] from 08.04.2026
+2026-04-26 14:55:19,450 [ERROR] Disclosure page 1588579 → 429
+2026-04-26 14:55:19,455 [INFO] Processing [PTF] from 08.04.2026
+2026-04-26 14:55:19,565 [ERROR] Disclosure page 1588578 → 429
+2026-04-26 14:55:19,568 [INFO] Processing [PPK] from 08.04.2026
+2026-04-26 14:55:19,677 [ERROR] Disclosure page 1588577 → 429
+2026-04-26 14:55:19,680 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:19,786 [ERROR] Disclosure page 1588576 → 429
+2026-04-26 14:55:19,789 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:19,892 [ERROR] Disclosure page 1588575 → 429
+2026-04-26 14:55:19,896 [INFO] Processing [OLD] from 08.04.2026
+2026-04-26 14:55:20,003 [ERROR] Disclosure page 1588574 → 429
+2026-04-26 14:55:20,006 [INFO] Processing [BTK] from 08.04.2026
+2026-04-26 14:55:20,116 [ERROR] Disclosure page 1588573 → 429
+2026-04-26 14:55:20,120 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:20,230 [ERROR] Disclosure page 1588572 → 429
+2026-04-26 14:55:20,234 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:20,359 [ERROR] Disclosure page 1588571 → 429
+2026-04-26 14:55:20,363 [INFO] Processing [GRL] from 08.04.2026
+2026-04-26 14:55:20,478 [ERROR] Disclosure page 1588570 → 429
+2026-04-26 14:55:20,482 [INFO] Processing [OVR] from 08.04.2026
+2026-04-26 14:55:20,595 [ERROR] Disclosure page 1588569 → 429
+2026-04-26 14:55:20,598 [INFO] Processing [AZF] from 08.04.2026
+2026-04-26 14:55:20,715 [ERROR] Disclosure page 1588568 → 429
+2026-04-26 14:55:20,718 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:55:20,816 [ERROR] Disclosure page 1588567 → 429
+2026-04-26 14:55:20,819 [INFO] Processing [DA1] from 08.04.2026
+2026-04-26 14:55:20,930 [ERROR] Disclosure page 1588566 → 429
+2026-04-26 14:55:20,933 [INFO] Processing [PMG] from 08.04.2026
+2026-04-26 14:55:21,040 [ERROR] Disclosure page 1588562 → 429
+2026-04-26 14:55:21,044 [INFO] Processing [YHI] from 08.04.2026
+2026-04-26 14:55:21,184 [ERROR] Disclosure page 1588059 → 429
+2026-04-26 14:55:21,188 [INFO] Processing [YVB] from 08.04.2026
+2026-04-26 14:55:21,296 [ERROR] Disclosure page 1588058 → 429
+2026-04-26 14:55:21,300 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:21,404 [ERROR] Disclosure page 1588057 → 429
+2026-04-26 14:55:21,407 [INFO] Processing [BIG] from 08.04.2026
+2026-04-26 14:55:21,516 [ERROR] Disclosure page 1588056 → 429
+2026-04-26 14:55:21,519 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:21,636 [ERROR] Disclosure page 1588055 → 429
+2026-04-26 14:55:21,640 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:21,761 [ERROR] Disclosure page 1588054 → 429
+2026-04-26 14:55:21,765 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:21,881 [ERROR] Disclosure page 1588053 → 429
+2026-04-26 14:55:21,885 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:22,007 [ERROR] Disclosure page 1588052 → 429
+2026-04-26 14:55:22,009 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:22,114 [ERROR] Disclosure page 1588051 → 429
+2026-04-26 14:55:22,118 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:22,220 [ERROR] Disclosure page 1588050 → 429
+2026-04-26 14:55:22,223 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:22,330 [ERROR] Disclosure page 1588049 → 429
+2026-04-26 14:55:22,334 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:22,435 [ERROR] Disclosure page 1588048 → 429
+2026-04-26 14:55:22,439 [INFO] Processing [PKT] from 08.04.2026
+2026-04-26 14:55:22,544 [ERROR] Disclosure page 1588047 → 429
+2026-04-26 14:55:22,547 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:22,658 [ERROR] Disclosure page 1588046 → 429
+2026-04-26 14:55:22,662 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:22,776 [ERROR] Disclosure page 1588045 → 429
+2026-04-26 14:55:22,780 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:22,889 [ERROR] Disclosure page 1588044 → 429
+2026-04-26 14:55:22,894 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:23,002 [ERROR] Disclosure page 1588043 → 429
+2026-04-26 14:55:23,005 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:23,114 [ERROR] Disclosure page 1588042 → 429
+2026-04-26 14:55:23,117 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:23,225 [ERROR] Disclosure page 1588041 → 429
+2026-04-26 14:55:23,228 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:23,334 [ERROR] Disclosure page 1588040 → 429
+2026-04-26 14:55:23,337 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:23,450 [ERROR] Disclosure page 1588039 → 429
+2026-04-26 14:55:23,454 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:23,561 [ERROR] Disclosure page 1588038 → 429
+2026-04-26 14:55:23,566 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:23,669 [ERROR] Disclosure page 1588037 → 429
+2026-04-26 14:55:23,672 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:23,777 [ERROR] Disclosure page 1588036 → 429
+2026-04-26 14:55:23,780 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:23,878 [ERROR] Disclosure page 1588035 → 429
+2026-04-26 14:55:23,882 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:23,991 [ERROR] Disclosure page 1588034 → 429
+2026-04-26 14:55:23,995 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:24,099 [ERROR] Disclosure page 1588033 → 429
+2026-04-26 14:55:24,104 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:24,217 [ERROR] Disclosure page 1588032 → 429
+2026-04-26 14:55:24,221 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:24,332 [ERROR] Disclosure page 1588031 → 429
+2026-04-26 14:55:24,336 [INFO] Processing [YPF] from 08.04.2026
+2026-04-26 14:55:24,442 [ERROR] Disclosure page 1588030 → 429
+2026-04-26 14:55:24,446 [INFO] Processing [YPK] from 08.04.2026
+2026-04-26 14:55:24,554 [ERROR] Disclosure page 1588029 → 429
+2026-04-26 14:55:24,556 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:24,661 [ERROR] Disclosure page 1588028 → 429
+2026-04-26 14:55:24,664 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:24,771 [ERROR] Disclosure page 1588027 → 429
+2026-04-26 14:55:24,774 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:24,878 [ERROR] Disclosure page 1588026 → 429
+2026-04-26 14:55:24,881 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:24,987 [ERROR] Disclosure page 1588025 → 429
+2026-04-26 14:55:24,990 [INFO] Processing [YKS] from 08.04.2026
+2026-04-26 14:55:25,099 [ERROR] Disclosure page 1588024 → 429
+2026-04-26 14:55:25,103 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:25,212 [ERROR] Disclosure page 1588023 → 429
+2026-04-26 14:55:25,215 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:25,332 [ERROR] Disclosure page 1588022 → 429
+2026-04-26 14:55:25,336 [INFO] Processing [YP4] from 08.04.2026
+2026-04-26 14:55:25,442 [ERROR] Disclosure page 1588021 → 429
+2026-04-26 14:55:25,446 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:25,558 [ERROR] Disclosure page 1588020 → 429
+2026-04-26 14:55:25,561 [INFO] Processing [YUB] from 08.04.2026
+2026-04-26 14:55:25,664 [ERROR] Disclosure page 1588019 → 429
+2026-04-26 14:55:25,667 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:25,772 [ERROR] Disclosure page 1588018 → 429
+2026-04-26 14:55:25,775 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:25,881 [ERROR] Disclosure page 1588017 → 429
+2026-04-26 14:55:25,885 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:25,990 [ERROR] Disclosure page 1588016 → 429
+2026-04-26 14:55:25,993 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:26,099 [ERROR] Disclosure page 1588015 → 429
+2026-04-26 14:55:26,102 [INFO] Processing [YGM] from 08.04.2026
+2026-04-26 14:55:26,215 [ERROR] Disclosure page 1588014 → 429
+2026-04-26 14:55:26,219 [INFO] Processing [YIV] from 08.04.2026
+2026-04-26 14:55:26,322 [ERROR] Disclosure page 1588013 → 429
+2026-04-26 14:55:26,325 [INFO] Processing [YCP] from 08.04.2026
+2026-04-26 14:55:26,429 [ERROR] Disclosure page 1588012 → 429
+2026-04-26 14:55:26,433 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:26,544 [ERROR] Disclosure page 1588011 → 429
+2026-04-26 14:55:26,547 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:26,654 [ERROR] Disclosure page 1588010 → 429
+2026-04-26 14:55:26,658 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:26,759 [ERROR] Disclosure page 1588009 → 429
+2026-04-26 14:55:26,763 [INFO] Processing [YVG] from 08.04.2026
+2026-04-26 14:55:26,868 [ERROR] Disclosure page 1588008 → 429
+2026-04-26 14:55:26,871 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:26,986 [ERROR] Disclosure page 1588007 → 429
+2026-04-26 14:55:26,989 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:27,088 [ERROR] Disclosure page 1588006 → 429
+2026-04-26 14:55:27,091 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:27,197 [ERROR] Disclosure page 1588005 → 429
+2026-04-26 14:55:27,201 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:27,303 [ERROR] Disclosure page 1588004 → 429
+2026-04-26 14:55:27,306 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:27,417 [ERROR] Disclosure page 1588003 → 429
+2026-04-26 14:55:27,421 [INFO] Processing [YZK] from 08.04.2026
+2026-04-26 14:55:27,534 [ERROR] Disclosure page 1588002 → 429
+2026-04-26 14:55:27,538 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:27,648 [ERROR] Disclosure page 1588001 → 429
+2026-04-26 14:55:27,651 [INFO] Processing [YPV] from 08.04.2026
+2026-04-26 14:55:27,764 [ERROR] Disclosure page 1588000 → 429
+2026-04-26 14:55:27,768 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:27,872 [ERROR] Disclosure page 1587999 → 429
+2026-04-26 14:55:27,875 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:27,981 [ERROR] Disclosure page 1587998 → 429
+2026-04-26 14:55:27,985 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:28,090 [ERROR] Disclosure page 1587997 → 429
+2026-04-26 14:55:28,093 [INFO] Processing [PLA] from 08.04.2026
+2026-04-26 14:55:28,198 [ERROR] Disclosure page 1587996 → 429
+2026-04-26 14:55:28,201 [INFO] Processing [YSA] from 08.04.2026
+2026-04-26 14:55:28,304 [ERROR] Disclosure page 1587995 → 429
+2026-04-26 14:55:28,308 [INFO] Processing [YTY] from 08.04.2026
+2026-04-26 14:55:28,421 [ERROR] Disclosure page 1587994 → 429
+2026-04-26 14:55:28,425 [INFO] Processing [BDA] from 08.04.2026
+2026-04-26 14:55:28,528 [ERROR] Disclosure page 1587993 → 429
+2026-04-26 14:55:28,532 [INFO] Processing [YIK] from 08.04.2026
+2026-04-26 14:55:28,642 [ERROR] Disclosure page 1587992 → 429
+2026-04-26 14:55:28,646 [INFO] Processing [CKL] from 08.04.2026
+2026-04-26 14:55:28,752 [ERROR] Disclosure page 1587991 → 429
+2026-04-26 14:55:28,755 [INFO] Processing [SSS] from 08.04.2026
+2026-04-26 14:55:28,857 [ERROR] Disclosure page 1587990 → 429
+2026-04-26 14:55:28,861 [INFO] Processing [YMH] from 08.04.2026
+2026-04-26 14:55:28,961 [ERROR] Disclosure page 1587989 → 429
+2026-04-26 14:55:28,964 [INFO] Processing [FLS] from 08.04.2026
+2026-04-26 14:55:29,072 [ERROR] Disclosure page 1587988 → 429
+2026-04-26 14:55:29,076 [INFO] Processing [YSO] from 08.04.2026
+2026-04-26 14:55:29,177 [ERROR] Disclosure page 1587987 → 429
+2026-04-26 14:55:29,180 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:29,285 [ERROR] Disclosure page 1587833 → 429
+2026-04-26 14:55:29,288 [INFO] Processing [NNF] from 08.04.2026
+2026-04-26 14:55:29,399 [ERROR] Disclosure page 1587832 → 429
+2026-04-26 14:55:29,403 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:29,516 [ERROR] Disclosure page 1587831 → 429
+2026-04-26 14:55:29,519 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:29,632 [ERROR] Disclosure page 1587830 → 429
+2026-04-26 14:55:29,636 [INFO] Processing [HYV] from 08.04.2026
+2026-04-26 14:55:29,740 [ERROR] Disclosure page 1587829 → 429
+2026-04-26 14:55:29,744 [INFO] Processing [HVK] from 08.04.2026
+2026-04-26 14:55:29,848 [ERROR] Disclosure page 1587828 → 429
+2026-04-26 14:55:29,851 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:29,963 [ERROR] Disclosure page 1587827 → 429
+2026-04-26 14:55:29,967 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:30,078 [ERROR] Disclosure page 1587826 → 429
+2026-04-26 14:55:30,082 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:30,194 [ERROR] Disclosure page 1587823 → 429
+2026-04-26 14:55:30,198 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:30,307 [ERROR] Disclosure page 1587822 → 429
+2026-04-26 14:55:30,310 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:30,425 [ERROR] Disclosure page 1587821 → 429
+2026-04-26 14:55:30,430 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:30,540 [ERROR] Disclosure page 1587820 → 429
+2026-04-26 14:55:30,543 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:30,653 [ERROR] Disclosure page 1587819 → 429
+2026-04-26 14:55:30,657 [INFO] Processing [HKJ] from 08.04.2026
+2026-04-26 14:55:30,767 [ERROR] Disclosure page 1587818 → 429
+2026-04-26 14:55:30,770 [INFO] Processing [HKH] from 08.04.2026
+2026-04-26 14:55:30,878 [ERROR] Disclosure page 1587817 → 429
+2026-04-26 14:55:30,881 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:55:30,987 [ERROR] Disclosure page 1587816 → 429
+2026-04-26 14:55:30,991 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:31,095 [ERROR] Disclosure page 1587815 → 429
+2026-04-26 14:55:31,099 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:31,206 [ERROR] Disclosure page 1587814 → 429
+2026-04-26 14:55:31,209 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:55:31,311 [ERROR] Disclosure page 1587813 → 429
+2026-04-26 14:55:31,314 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:31,424 [ERROR] Disclosure page 1587812 → 429
+2026-04-26 14:55:31,427 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:31,529 [ERROR] Disclosure page 1587811 → 429
+2026-04-26 14:55:31,532 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:31,643 [ERROR] Disclosure page 1587810 → 429
+2026-04-26 14:55:31,646 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:31,753 [ERROR] Disclosure page 1587809 → 429
+2026-04-26 14:55:31,756 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:31,860 [ERROR] Disclosure page 1587808 → 429
+2026-04-26 14:55:31,863 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:31,978 [ERROR] Disclosure page 1587807 → 429
+2026-04-26 14:55:31,982 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:32,094 [ERROR] Disclosure page 1587806 → 429
+2026-04-26 14:55:32,098 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:32,211 [ERROR] Disclosure page 1587805 → 429
+2026-04-26 14:55:32,215 [INFO] Processing [FNT] from 08.04.2026
+2026-04-26 14:55:32,324 [ERROR] Disclosure page 1587804 → 429
+2026-04-26 14:55:32,328 [INFO] Processing [HVC] from 08.04.2026
+2026-04-26 14:55:32,438 [ERROR] Disclosure page 1587803 → 429
+2026-04-26 14:55:32,442 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:55:32,552 [ERROR] Disclosure page 1587782 → 429
+2026-04-26 14:55:32,556 [INFO] Processing [FDG] from 08.04.2026
+2026-04-26 14:55:32,672 [ERROR] Disclosure page 1587781 → 429
+2026-04-26 14:55:32,679 [INFO] Processing [ILK] from 08.04.2026
+2026-04-26 14:55:32,797 [ERROR] Disclosure page 1587780 → 429
+2026-04-26 14:55:32,802 [INFO] Processing [GJM] from 08.04.2026
+2026-04-26 14:55:32,908 [ERROR] Disclosure page 1587775 → 429
+2026-04-26 14:55:32,912 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:55:33,011 [ERROR] Disclosure page 1587761 → 429
+2026-04-26 14:55:33,015 [INFO] Processing [BSD] from 08.04.2026
+2026-04-26 14:55:33,120 [ERROR] Disclosure page 1587759 → 429
+2026-04-26 14:55:33,124 [INFO] Processing [HDE] from 08.04.2026
+2026-04-26 14:55:33,235 [ERROR] Disclosure page 1587711 → 429
+2026-04-26 14:55:33,239 [INFO] Processing [PMG] from 08.04.2026
+2026-04-26 14:55:33,343 [ERROR] Disclosure page 1587710 → 429
+2026-04-26 14:55:33,347 [INFO] Processing [ILK] from 08.04.2026
+2026-04-26 14:55:33,453 [ERROR] Disclosure page 1587709 → 429
+2026-04-26 14:55:33,457 [INFO] Processing [AIS] from 08.04.2026
+2026-04-26 14:55:33,561 [ERROR] Disclosure page 1587708 → 429
+2026-04-26 14:55:33,566 [INFO] Processing [HDE] from 08.04.2026
+2026-04-26 14:55:33,666 [ERROR] Disclosure page 1587707 → 429
+2026-04-26 14:55:33,670 [INFO] Processing [AIS] from 08.04.2026
+2026-04-26 14:55:33,783 [ERROR] Disclosure page 1587706 → 429
+2026-04-26 14:55:33,787 [INFO] Processing [HDE] from 08.04.2026
+2026-04-26 14:55:33,903 [ERROR] Disclosure page 1587705 → 429
+2026-04-26 14:55:33,907 [INFO] Processing [HDE] from 08.04.2026
+2026-04-26 14:55:34,009 [ERROR] Disclosure page 1587704 → 429
+2026-04-26 14:55:34,013 [INFO] Processing [HDE] from 08.04.2026
+2026-04-26 14:55:34,119 [ERROR] Disclosure page 1587703 → 429
+2026-04-26 14:55:34,122 [INFO] Processing [IKV] from 08.04.2026
+2026-04-26 14:55:34,237 [ERROR] Disclosure page 1587702 → 429
+2026-04-26 14:55:34,241 [INFO] Processing [HDE] from 08.04.2026
+2026-04-26 14:55:34,357 [ERROR] Disclosure page 1587701 → 429
+2026-04-26 14:55:34,361 [INFO] Processing [BTK] from 08.04.2026
+2026-04-26 14:55:34,471 [ERROR] Disclosure page 1587700 → 429
+2026-04-26 14:55:34,474 [INFO] Processing [BIO] from 08.04.2026
+2026-04-26 14:55:34,591 [ERROR] Disclosure page 1587699 → 429
+2026-04-26 14:55:34,595 [INFO] Processing [HFV] from 08.04.2026
+2026-04-26 14:55:34,709 [ERROR] Disclosure page 1587698 → 429
+2026-04-26 14:55:34,714 [INFO] Processing [HDE] from 08.04.2026
+2026-04-26 14:55:34,821 [ERROR] Disclosure page 1587697 → 429
+2026-04-26 14:55:34,825 [INFO] Processing [IKV] from 08.04.2026
+2026-04-26 14:55:34,932 [ERROR] Disclosure page 1587696 → 429
+2026-04-26 14:55:34,937 [INFO] Processing [MHF] from 08.04.2026
+2026-04-26 14:55:35,045 [ERROR] Disclosure page 1587695 → 429
+2026-04-26 14:55:35,048 [INFO] Processing [MTF] from 08.04.2026
+2026-04-26 14:55:35,153 [ERROR] Disclosure page 1587694 → 429
+2026-04-26 14:55:35,157 [INFO] Processing [ILK] from 08.04.2026
+2026-04-26 14:55:35,264 [ERROR] Disclosure page 1587693 → 429
+2026-04-26 14:55:35,268 [INFO] Processing [SFA] from 08.04.2026
+2026-04-26 14:55:35,379 [ERROR] Disclosure page 1587578 → 429
+2026-04-26 14:55:35,382 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:35,484 [ERROR] Disclosure page 1587540 → 429
+2026-04-26 14:55:35,487 [INFO] Processing [ZTG] from 08.04.2026
+2026-04-26 14:55:35,592 [ERROR] Disclosure page 1587539 → 429
+2026-04-26 14:55:35,595 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:35,701 [ERROR] Disclosure page 1587538 → 429
+2026-04-26 14:55:35,704 [INFO] Processing [ZSF] from 08.04.2026
+2026-04-26 14:55:35,807 [ERROR] Disclosure page 1587537 → 429
+2026-04-26 14:55:35,811 [INFO] Processing [ZR3] from 08.04.2026
+2026-04-26 14:55:35,920 [ERROR] Disclosure page 1587536 → 429
+2026-04-26 14:55:35,923 [INFO] Processing [ZPR] from 08.04.2026
+2026-04-26 14:55:36,036 [ERROR] Disclosure page 1587535 → 429
+2026-04-26 14:55:36,040 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:36,158 [ERROR] Disclosure page 1587534 → 429
+2026-04-26 14:55:36,162 [INFO] Processing [ZPJ] from 08.04.2026
+2026-04-26 14:55:36,265 [ERROR] Disclosure page 1587533 → 429
+2026-04-26 14:55:36,269 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:36,370 [ERROR] Disclosure page 1587532 → 429
+2026-04-26 14:55:36,374 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:36,480 [ERROR] Disclosure page 1587531 → 429
+2026-04-26 14:55:36,483 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:36,595 [ERROR] Disclosure page 1587530 → 429
+2026-04-26 14:55:36,598 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:36,708 [ERROR] Disclosure page 1587529 → 429
+2026-04-26 14:55:36,713 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:36,822 [ERROR] Disclosure page 1587528 → 429
+2026-04-26 14:55:36,825 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:36,929 [ERROR] Disclosure page 1587527 → 429
+2026-04-26 14:55:36,932 [INFO] Processing [ZP8] from 08.04.2026
+2026-04-26 14:55:37,040 [ERROR] Disclosure page 1587526 → 429
+2026-04-26 14:55:37,043 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:37,144 [ERROR] Disclosure page 1587525 → 429
+2026-04-26 14:55:37,147 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:37,255 [ERROR] Disclosure page 1587524 → 429
+2026-04-26 14:55:37,258 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:37,367 [ERROR] Disclosure page 1587523 → 429
+2026-04-26 14:55:37,371 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:37,477 [ERROR] Disclosure page 1587522 → 429
+2026-04-26 14:55:37,481 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:37,588 [ERROR] Disclosure page 1587521 → 429
+2026-04-26 14:55:37,592 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:37,694 [ERROR] Disclosure page 1587520 → 429
+2026-04-26 14:55:37,698 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:37,805 [ERROR] Disclosure page 1587519 → 429
+2026-04-26 14:55:37,809 [INFO] Processing [ZHH] from 08.04.2026
+2026-04-26 14:55:37,920 [ERROR] Disclosure page 1587518 → 429
+2026-04-26 14:55:37,923 [INFO] Processing [ZDZ] from 08.04.2026
+2026-04-26 14:55:38,031 [ERROR] Disclosure page 1587513 → 429
+2026-04-26 14:55:38,035 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:38,138 [ERROR] Disclosure page 1587512 → 429
+2026-04-26 14:55:38,142 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:38,253 [ERROR] Disclosure page 1587511 → 429
+2026-04-26 14:55:38,256 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:38,362 [ERROR] Disclosure page 1587510 → 429
+2026-04-26 14:55:38,365 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:38,470 [ERROR] Disclosure page 1587509 → 429
+2026-04-26 14:55:38,474 [INFO] Processing [ZBO] from 08.04.2026
+2026-04-26 14:55:38,586 [ERROR] Disclosure page 1587508 → 429
+2026-04-26 14:55:38,589 [INFO] Processing [ZBN] from 08.04.2026
+2026-04-26 14:55:38,703 [ERROR] Disclosure page 1587507 → 429
+2026-04-26 14:55:38,706 [INFO] Processing [ZBJ] from 08.04.2026
+2026-04-26 14:55:38,813 [ERROR] Disclosure page 1587506 → 429
+2026-04-26 14:55:38,816 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:38,923 [ERROR] Disclosure page 1587505 → 429
+2026-04-26 14:55:38,926 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:39,036 [ERROR] Disclosure page 1587504 → 429
+2026-04-26 14:55:39,039 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:39,151 [ERROR] Disclosure page 1587503 → 429
+2026-04-26 14:55:39,155 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:39,265 [ERROR] Disclosure page 1587502 → 429
+2026-04-26 14:55:39,269 [INFO] Processing [VFK] from 08.04.2026
+2026-04-26 14:55:39,372 [ERROR] Disclosure page 1587501 → 429
+2026-04-26 14:55:39,376 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:39,484 [ERROR] Disclosure page 1587500 → 429
+2026-04-26 14:55:39,487 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:39,592 [ERROR] Disclosure page 1587499 → 429
+2026-04-26 14:55:39,595 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:39,704 [ERROR] Disclosure page 1587498 → 429
+2026-04-26 14:55:39,707 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:39,818 [ERROR] Disclosure page 1587497 → 429
+2026-04-26 14:55:39,822 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:39,933 [ERROR] Disclosure page 1587496 → 429
+2026-04-26 14:55:39,937 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:40,044 [ERROR] Disclosure page 1587495 → 429
+2026-04-26 14:55:40,048 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:40,156 [ERROR] Disclosure page 1587494 → 429
+2026-04-26 14:55:40,160 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:40,266 [ERROR] Disclosure page 1587493 → 429
+2026-04-26 14:55:40,269 [INFO] Processing [ZCN] from 08.04.2026
+2026-04-26 14:55:40,374 [ERROR] Disclosure page 1587492 → 429
+2026-04-26 14:55:40,378 [INFO] Processing [HKG] from 08.04.2026
+2026-04-26 14:55:40,490 [ERROR] Disclosure page 1587491 → 429
+2026-04-26 14:55:40,494 [INFO] Processing [NBZ] from 07.04.2026
+2026-04-26 14:55:40,604 [ERROR] Disclosure page 1587375 → 429
+2026-04-26 14:55:40,607 [INFO] Processing [EDP] from 07.04.2026
+2026-04-26 14:55:40,715 [ERROR] Disclosure page 1587374 → 429
+2026-04-26 14:55:40,719 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:40,834 [ERROR] Disclosure page 1587373 → 429
+2026-04-26 14:55:40,838 [INFO] Processing [EDP] from 07.04.2026
+2026-04-26 14:55:40,948 [ERROR] Disclosure page 1587372 → 429
+2026-04-26 14:55:40,952 [INFO] Processing [BHI] from 07.04.2026
+2026-04-26 14:55:41,069 [ERROR] Disclosure page 1587371 → 429
+2026-04-26 14:55:41,073 [INFO] Processing [NFF] from 07.04.2026
+2026-04-26 14:55:41,183 [ERROR] Disclosure page 1587370 → 429
+2026-04-26 14:55:41,187 [INFO] Processing [EDP] from 07.04.2026
+2026-04-26 14:55:41,296 [ERROR] Disclosure page 1587369 → 429
+2026-04-26 14:55:41,300 [INFO] Processing [NAU] from 07.04.2026
+2026-04-26 14:55:41,421 [ERROR] Disclosure page 1587368 → 429
+2026-04-26 14:55:41,425 [INFO] Processing [NVC] from 07.04.2026
+2026-04-26 14:55:41,543 [ERROR] Disclosure page 1587367 → 429
+2026-04-26 14:55:41,549 [INFO] Processing [EDP] from 07.04.2026
+2026-04-26 14:55:41,663 [ERROR] Disclosure page 1587366 → 429
+2026-04-26 14:55:41,668 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:41,779 [ERROR] Disclosure page 1587360 → 429
+2026-04-26 14:55:41,782 [INFO] Processing [NVT] from 07.04.2026
+2026-04-26 14:55:41,880 [ERROR] Disclosure page 1587359 → 429
+2026-04-26 14:55:41,884 [INFO] Processing [EDP] from 07.04.2026
+2026-04-26 14:55:41,990 [ERROR] Disclosure page 1587358 → 429
+2026-04-26 14:55:41,993 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:42,098 [ERROR] Disclosure page 1587357 → 429
+2026-04-26 14:55:42,101 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:42,209 [ERROR] Disclosure page 1587356 → 429
+2026-04-26 14:55:42,212 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:42,326 [ERROR] Disclosure page 1587355 → 429
+2026-04-26 14:55:42,330 [INFO] Processing [EDP] from 07.04.2026
+2026-04-26 14:55:42,446 [ERROR] Disclosure page 1587354 → 429
+2026-04-26 14:55:42,449 [INFO] Processing [NKM] from 07.04.2026
+2026-04-26 14:55:42,553 [ERROR] Disclosure page 1587353 → 429
+2026-04-26 14:55:42,556 [INFO] Processing [EDP] from 07.04.2026
+2026-04-26 14:55:42,655 [ERROR] Disclosure page 1587352 → 429
+2026-04-26 14:55:42,659 [INFO] Processing [EDP] from 07.04.2026
+2026-04-26 14:55:42,758 [ERROR] Disclosure page 1587351 → 429
+2026-04-26 14:55:42,762 [INFO] Processing [EDP] from 07.04.2026
+2026-04-26 14:55:42,869 [ERROR] Disclosure page 1587350 → 429
+2026-04-26 14:55:42,872 [INFO] Processing [EDP] from 07.04.2026
+2026-04-26 14:55:42,979 [ERROR] Disclosure page 1587349 → 429
+2026-04-26 14:55:42,983 [INFO] Processing [EDP] from 07.04.2026
+2026-04-26 14:55:43,087 [ERROR] Disclosure page 1587348 → 429
+2026-04-26 14:55:43,091 [INFO] Processing [EDP] from 07.04.2026
+2026-04-26 14:55:43,195 [ERROR] Disclosure page 1587347 → 429
+2026-04-26 14:55:43,198 [INFO] Processing [NTI] from 07.04.2026
+2026-04-26 14:55:43,304 [ERROR] Disclosure page 1587346 → 429
+2026-04-26 14:55:43,307 [INFO] Processing [NKA] from 07.04.2026
+2026-04-26 14:55:43,417 [ERROR] Disclosure page 1587345 → 429
+2026-04-26 14:55:43,420 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:43,521 [ERROR] Disclosure page 1587173 → 429
+2026-04-26 14:55:43,525 [INFO] Processing [OUR] from 07.04.2026
+2026-04-26 14:55:43,632 [ERROR] Disclosure page 1587172 → 429
+2026-04-26 14:55:43,636 [INFO] Processing [OUD] from 07.04.2026
+2026-04-26 14:55:43,742 [ERROR] Disclosure page 1587171 → 429
+2026-04-26 14:55:43,747 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:43,854 [ERROR] Disclosure page 1587170 → 429
+2026-04-26 14:55:43,857 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:43,963 [ERROR] Disclosure page 1587169 → 429
+2026-04-26 14:55:43,967 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:44,082 [ERROR] Disclosure page 1587168 → 429
+2026-04-26 14:55:44,085 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:44,191 [ERROR] Disclosure page 1587167 → 429
+2026-04-26 14:55:44,195 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:44,294 [ERROR] Disclosure page 1587166 → 429
+2026-04-26 14:55:44,297 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:44,408 [ERROR] Disclosure page 1587165 → 429
+2026-04-26 14:55:44,412 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:44,521 [ERROR] Disclosure page 1587164 → 429
+2026-04-26 14:55:44,524 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:44,631 [ERROR] Disclosure page 1587163 → 429
+2026-04-26 14:55:44,634 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:44,741 [ERROR] Disclosure page 1587162 → 429
+2026-04-26 14:55:44,745 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:44,856 [ERROR] Disclosure page 1587161 → 429
+2026-04-26 14:55:44,859 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:44,964 [ERROR] Disclosure page 1587160 → 429
+2026-04-26 14:55:44,968 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:45,082 [ERROR] Disclosure page 1587159 → 429
+2026-04-26 14:55:45,087 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:45,195 [ERROR] Disclosure page 1587158 → 429
+2026-04-26 14:55:45,199 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:45,304 [ERROR] Disclosure page 1587157 → 429
+2026-04-26 14:55:45,307 [INFO] Processing [OPB] from 07.04.2026
+2026-04-26 14:55:45,420 [ERROR] Disclosure page 1587156 → 429
+2026-04-26 14:55:45,425 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:45,528 [ERROR] Disclosure page 1587155 → 429
+2026-04-26 14:55:45,531 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:45,638 [ERROR] Disclosure page 1587154 → 429
+2026-04-26 14:55:45,642 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:45,748 [ERROR] Disclosure page 1587153 → 429
+2026-04-26 14:55:45,751 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:45,856 [ERROR] Disclosure page 1587152 → 429
+2026-04-26 14:55:45,859 [INFO] Processing [ODP] from 07.04.2026
+2026-04-26 14:55:45,970 [ERROR] Disclosure page 1587151 → 429
+2026-04-26 14:55:45,974 [INFO] Processing [IHC] from 07.04.2026
+2026-04-26 14:55:46,089 [ERROR] Disclosure page 1587144 → 429
+2026-04-26 14:55:46,092 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:46,198 [ERROR] Disclosure page 1587143 → 429
+2026-04-26 14:55:46,200 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:46,297 [ERROR] Disclosure page 1587142 → 429
+2026-04-26 14:55:46,300 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:46,405 [ERROR] Disclosure page 1587141 → 429
+2026-04-26 14:55:46,409 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:46,516 [ERROR] Disclosure page 1587140 → 429
+2026-04-26 14:55:46,520 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:46,626 [ERROR] Disclosure page 1587139 → 429
+2026-04-26 14:55:46,630 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:46,736 [ERROR] Disclosure page 1587138 → 429
+2026-04-26 14:55:46,740 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:46,846 [ERROR] Disclosure page 1587137 → 429
+2026-04-26 14:55:46,849 [INFO] Processing [GGK] from 07.04.2026
+2026-04-26 14:55:46,961 [ERROR] Disclosure page 1587136 → 429
+2026-04-26 14:55:46,965 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:47,075 [ERROR] Disclosure page 1587135 → 429
+2026-04-26 14:55:47,079 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:47,189 [ERROR] Disclosure page 1587134 → 429
+2026-04-26 14:55:47,192 [INFO] Processing [GAN] from 07.04.2026
+2026-04-26 14:55:47,287 [ERROR] Disclosure page 1587133 → 429
+2026-04-26 14:55:47,290 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:47,386 [ERROR] Disclosure page 1587132 → 429
+2026-04-26 14:55:47,390 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:47,495 [ERROR] Disclosure page 1587131 → 429
+2026-04-26 14:55:47,498 [INFO] Processing [CVK] from 07.04.2026
+2026-04-26 14:55:47,601 [ERROR] Disclosure page 1587130 → 429
+2026-04-26 14:55:47,604 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:47,706 [ERROR] Disclosure page 1587099 → 429
+2026-04-26 14:55:47,709 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:47,821 [ERROR] Disclosure page 1587098 → 429
+2026-04-26 14:55:47,825 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:47,943 [ERROR] Disclosure page 1587097 → 429
+2026-04-26 14:55:47,947 [INFO] Processing [IV7] from 07.04.2026
+2026-04-26 14:55:48,054 [ERROR] Disclosure page 1587096 → 429
+2026-04-26 14:55:48,057 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:48,161 [ERROR] Disclosure page 1587095 → 429
+2026-04-26 14:55:48,164 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:48,271 [ERROR] Disclosure page 1587094 → 429
+2026-04-26 14:55:48,274 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:48,376 [ERROR] Disclosure page 1587093 → 429
+2026-04-26 14:55:48,380 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:48,487 [ERROR] Disclosure page 1587092 → 429
+2026-04-26 14:55:48,489 [INFO] Processing [IRT] from 07.04.2026
+2026-04-26 14:55:48,603 [ERROR] Disclosure page 1587091 → 429
+2026-04-26 14:55:48,607 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:48,721 [ERROR] Disclosure page 1587090 → 429
+2026-04-26 14:55:48,725 [INFO] Processing [INV] from 07.04.2026
+2026-04-26 14:55:48,824 [ERROR] Disclosure page 1587089 → 429
+2026-04-26 14:55:48,829 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:48,939 [ERROR] Disclosure page 1587088 → 429
+2026-04-26 14:55:48,943 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:49,051 [ERROR] Disclosure page 1587087 → 429
+2026-04-26 14:55:49,055 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:49,161 [ERROR] Disclosure page 1587086 → 429
+2026-04-26 14:55:49,165 [INFO] Processing [YHY] from 07.04.2026
+2026-04-26 14:55:49,270 [ERROR] Disclosure page 1587085 → 429
+2026-04-26 14:55:49,273 [INFO] Processing [SSF] from 07.04.2026
+2026-04-26 14:55:49,379 [ERROR] Disclosure page 1587084 → 429
+2026-04-26 14:55:49,382 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:49,493 [ERROR] Disclosure page 1587083 → 429
+2026-04-26 14:55:49,497 [INFO] Processing [GEI] from 07.04.2026
+2026-04-26 14:55:49,596 [ERROR] Disclosure page 1587082 → 429
+2026-04-26 14:55:49,600 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:49,710 [ERROR] Disclosure page 1586978 → 429
+2026-04-26 14:55:49,714 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:49,829 [ERROR] Disclosure page 1586954 → 429
+2026-04-26 14:55:49,832 [INFO] Processing [AZJ] from 07.04.2026
+2026-04-26 14:55:49,937 [ERROR] Disclosure page 1586953 → 429
+2026-04-26 14:55:49,940 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:50,050 [ERROR] Disclosure page 1586952 → 429
+2026-04-26 14:55:50,053 [INFO] Processing [AZJ] from 07.04.2026
+2026-04-26 14:55:50,157 [ERROR] Disclosure page 1586951 → 429
+2026-04-26 14:55:50,160 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:50,265 [ERROR] Disclosure page 1586950 → 429
+2026-04-26 14:55:50,267 [INFO] Processing [FYI] from 07.04.2026
+2026-04-26 14:55:50,366 [ERROR] Disclosure page 1586949 → 429
+2026-04-26 14:55:50,369 [INFO] Processing [BJD] from 07.04.2026
+2026-04-26 14:55:50,465 [ERROR] Disclosure page 1586948 → 429
+2026-04-26 14:55:50,469 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:50,563 [ERROR] Disclosure page 1586947 → 429
+2026-04-26 14:55:50,565 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:50,663 [ERROR] Disclosure page 1586946 → 429
+2026-04-26 14:55:50,668 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:50,771 [ERROR] Disclosure page 1586945 → 429
+2026-04-26 14:55:50,773 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:50,849 [ERROR] Disclosure page 1586943 → 429
+2026-04-26 14:55:50,850 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:50,930 [ERROR] Disclosure page 1586942 → 429
+2026-04-26 14:55:50,931 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:51,017 [ERROR] Disclosure page 1586941 → 429
+2026-04-26 14:55:51,019 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:51,114 [ERROR] Disclosure page 1586940 → 429
+2026-04-26 14:55:51,117 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:51,217 [ERROR] Disclosure page 1586939 → 429
+2026-04-26 14:55:51,221 [INFO] Processing [HYP] from 07.04.2026
+2026-04-26 14:55:51,320 [ERROR] Disclosure page 1586938 → 429
+2026-04-26 14:55:51,324 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:51,430 [ERROR] Disclosure page 1586937 → 429
+2026-04-26 14:55:51,433 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:51,537 [ERROR] Disclosure page 1586936 → 429
+2026-04-26 14:55:51,540 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:51,651 [ERROR] Disclosure page 1586935 → 429
+2026-04-26 14:55:51,655 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:51,759 [ERROR] Disclosure page 1586934 → 429
+2026-04-26 14:55:51,764 [INFO] Processing [SFS] from 07.04.2026
+2026-04-26 14:55:51,871 [ERROR] Disclosure page 1586933 → 429
+2026-04-26 14:55:51,874 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:51,981 [ERROR] Disclosure page 1586932 → 429
+2026-04-26 14:55:51,984 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:52,096 [ERROR] Disclosure page 1586931 → 429
+2026-04-26 14:55:52,101 [INFO] Processing [PPZ] from 07.04.2026
+2026-04-26 14:55:52,210 [ERROR] Disclosure page 1586930 → 429
+2026-04-26 14:55:52,214 [INFO] Processing [PGS] from 07.04.2026
+2026-04-26 14:55:52,320 [ERROR] Disclosure page 1586929 → 429
+2026-04-26 14:55:52,323 [INFO] Processing [OTM] from 07.04.2026
+2026-04-26 14:55:52,430 [ERROR] Disclosure page 1586928 → 429
+2026-04-26 14:55:52,434 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:52,542 [ERROR] Disclosure page 1586927 → 429
+2026-04-26 14:55:52,546 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:52,645 [ERROR] Disclosure page 1586926 → 429
+2026-04-26 14:55:52,649 [INFO] Processing [KVS] from 07.04.2026
+2026-04-26 14:55:52,753 [ERROR] Disclosure page 1586925 → 429
+2026-04-26 14:55:52,757 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:52,863 [ERROR] Disclosure page 1586924 → 429
+2026-04-26 14:55:52,867 [INFO] Processing [ZMT] from 07.04.2026
+2026-04-26 14:55:52,962 [ERROR] Disclosure page 1586919 → 429
+2026-04-26 14:55:52,965 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:53,070 [ERROR] Disclosure page 1586918 → 429
+2026-04-26 14:55:53,073 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:53,176 [ERROR] Disclosure page 1586917 → 429
+2026-04-26 14:55:53,180 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:53,287 [ERROR] Disclosure page 1586916 → 429
+2026-04-26 14:55:53,291 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:53,393 [ERROR] Disclosure page 1586915 → 429
+2026-04-26 14:55:53,397 [INFO] Processing [EJG] from 07.04.2026
+2026-04-26 14:55:53,501 [ERROR] Disclosure page 1586914 → 429
+2026-04-26 14:55:53,505 [INFO] Processing [UPS] from 07.04.2026
+2026-04-26 14:55:53,627 [ERROR] Disclosure page 1586871 → 429
+2026-04-26 14:55:53,631 [INFO] Processing [UPS] from 07.04.2026
+2026-04-26 14:55:53,743 [ERROR] Disclosure page 1586870 → 429
+2026-04-26 14:55:53,748 [INFO] Processing [UPS] from 07.04.2026
+2026-04-26 14:55:53,857 [ERROR] Disclosure page 1586869 → 429
+2026-04-26 14:55:53,861 [INFO] Processing [UPS] from 07.04.2026
+2026-04-26 14:55:53,970 [ERROR] Disclosure page 1586868 → 429
+2026-04-26 14:55:53,973 [INFO] Processing [UPS] from 07.04.2026
+2026-04-26 14:55:54,074 [ERROR] Disclosure page 1586867 → 429
+2026-04-26 14:55:54,078 [INFO] Processing [UPS] from 07.04.2026
+2026-04-26 14:55:54,182 [ERROR] Disclosure page 1586866 → 429
+2026-04-26 14:55:54,185 [INFO] Processing [UPS] from 07.04.2026
+2026-04-26 14:55:54,287 [ERROR] Disclosure page 1586865 → 429
+2026-04-26 14:55:54,290 [INFO] Processing [UPS] from 07.04.2026
+2026-04-26 14:55:54,397 [ERROR] Disclosure page 1586864 → 429
+2026-04-26 14:55:54,401 [INFO] Processing [UPS] from 07.04.2026
+2026-04-26 14:55:54,514 [ERROR] Disclosure page 1586863 → 429
+2026-04-26 14:55:54,517 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:54,628 [ERROR] Disclosure page 1586862 → 429
+2026-04-26 14:55:54,631 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:54,740 [ERROR] Disclosure page 1586836 → 429
+2026-04-26 14:55:54,744 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:54,849 [ERROR] Disclosure page 1586675 → 429
+2026-04-26 14:55:54,853 [INFO] Processing [PTP] from 07.04.2026
+2026-04-26 14:55:54,957 [ERROR] Disclosure page 1586671 → 429
+2026-04-26 14:55:54,960 [INFO] Processing [GZN] from 07.04.2026
+2026-04-26 14:55:55,066 [ERROR] Disclosure page 1586652 → 429
+2026-04-26 14:55:55,070 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:55,186 [ERROR] Disclosure page 1586646 → 429
+2026-04-26 14:55:55,189 [INFO] Processing [GMD] from 07.04.2026
+2026-04-26 14:55:55,291 [ERROR] Disclosure page 1586644 → 429
+2026-04-26 14:55:55,295 [INFO] Processing [TIL] from 07.04.2026
+2026-04-26 14:55:55,403 [ERROR] Disclosure page 1586642 → 429
+2026-04-26 14:55:55,406 [INFO] Processing [AIS] from 07.04.2026
+2026-04-26 14:55:55,510 [ERROR] Disclosure page 1586636 → 429
+2026-04-26 14:55:55,513 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:55,613 [ERROR] Disclosure page 1586634 → 429
+2026-04-26 14:55:55,616 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:55,726 [ERROR] Disclosure page 1586632 → 429
+2026-04-26 14:55:55,730 [INFO] Processing [IKV] from 07.04.2026
+2026-04-26 14:55:55,838 [ERROR] Disclosure page 1586629 → 429
+2026-04-26 14:55:55,842 [INFO] Processing [IJZ] from 07.04.2026
+2026-04-26 14:55:55,954 [ERROR] Disclosure page 1586357 → 429
+2026-04-26 14:55:55,958 [INFO] Processing [TNH] from 07.04.2026
+2026-04-26 14:55:56,063 [ERROR] Disclosure page 1585971 → 429
+2026-04-26 14:55:56,066 [INFO] Processing [TNH] from 07.04.2026
+2026-04-26 14:55:56,175 [ERROR] Disclosure page 1585970 → 429
+2026-04-26 14:55:56,178 [INFO] Processing [TNH] from 07.04.2026
+2026-04-26 14:55:56,280 [ERROR] Disclosure page 1585969 → 429
+2026-04-26 14:55:56,282 [INFO] Processing [TNH] from 07.04.2026
+2026-04-26 14:55:56,387 [ERROR] Disclosure page 1585968 → 429
+2026-04-26 14:55:56,390 [INFO] Processing [TNH] from 07.04.2026
+2026-04-26 14:55:56,492 [ERROR] Disclosure page 1585967 → 429
+2026-04-26 14:55:56,496 [INFO] Processing [TNH] from 07.04.2026
+2026-04-26 14:55:56,616 [ERROR] Disclosure page 1585966 → 429
+2026-04-26 14:55:56,620 [INFO] Processing [TNH] from 07.04.2026
+2026-04-26 14:55:56,724 [ERROR] Disclosure page 1585965 → 429
+2026-04-26 14:55:56,727 [INFO] Processing [TNH] from 07.04.2026
+2026-04-26 14:55:56,832 [ERROR] Disclosure page 1585964 → 429
+2026-04-26 14:55:56,836 [INFO] Processing [PRD] from 07.04.2026
+2026-04-26 14:55:56,945 [ERROR] Disclosure page 1585899 → 429
+2026-04-26 14:55:56,948 [INFO] Processing [PPM] from 07.04.2026
+2026-04-26 14:55:57,054 [ERROR] Disclosure page 1585897 → 429
+2026-04-26 14:55:57,057 [INFO] Processing [ILK] from 07.04.2026
+2026-04-26 14:55:57,164 [ERROR] Disclosure page 1585885 → 429
+2026-04-26 14:55:57,166 [INFO] Processing [PID] from 07.04.2026
+2026-04-26 14:55:57,271 [ERROR] Disclosure page 1585884 → 429
+2026-04-26 14:55:57,274 [INFO] Processing [PPM] from 07.04.2026
+2026-04-26 14:55:57,383 [ERROR] Disclosure page 1585883 → 429
+2026-04-26 14:55:57,387 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:57,490 [ERROR] Disclosure page 1585882 → 429
+2026-04-26 14:55:57,493 [INFO] Processing [BHI] from 07.04.2026
+2026-04-26 14:55:57,600 [ERROR] Disclosure page 1585857 → 429
+2026-04-26 14:55:57,604 [INFO] Processing [BIS] from 07.04.2026
+2026-04-26 14:55:57,710 [ERROR] Disclosure page 1585856 → 429
+2026-04-26 14:55:57,713 [INFO] Processing [BSD] from 07.04.2026
+2026-04-26 14:55:57,819 [ERROR] Disclosure page 1585855 → 429
+2026-04-26 14:55:57,823 [INFO] Processing [BTE] from 07.04.2026
+2026-04-26 14:55:57,926 [ERROR] Disclosure page 1585854 → 429
+2026-04-26 14:55:57,930 [INFO] Processing [BTK] from 07.04.2026
+2026-04-26 14:55:58,039 [ERROR] Disclosure page 1585853 → 429
+2026-04-26 14:55:58,043 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:55:58,159 [ERROR] Disclosure page 1585852 → 429
+2026-04-26 14:55:58,163 [INFO] Processing [BVD] from 07.04.2026
+2026-04-26 14:55:58,275 [ERROR] Disclosure page 1585851 → 429
+2026-04-26 14:55:58,280 [INFO] Processing [AIS] from 07.04.2026
+2026-04-26 14:55:58,388 [ERROR] Disclosure page 1585850 → 429
+2026-04-26 14:55:58,391 [INFO] Processing [BVV] from 07.04.2026
+2026-04-26 14:55:58,500 [ERROR] Disclosure page 1585849 → 429
+2026-04-26 14:55:58,502 [INFO] Processing [HAR] from 07.04.2026
+2026-04-26 14:55:58,604 [ERROR] Disclosure page 1585844 → 429
+2026-04-26 14:55:58,607 [INFO] Processing [MTD] from 07.04.2026
+2026-04-26 14:55:58,711 [ERROR] Disclosure page 1585841 → 429
+2026-04-26 14:55:58,714 [INFO] Processing [DTZ] from 07.04.2026
+2026-04-26 14:55:58,822 [ERROR] Disclosure page 1585840 → 429
+2026-04-26 14:55:58,826 [INFO] Processing [SPR] from 07.04.2026
+2026-04-26 14:55:58,929 [ERROR] Disclosure page 1585817 → 429
+2026-04-26 14:55:58,933 [INFO] Processing [PBK] from 07.04.2026
+2026-04-26 14:55:59,049 [ERROR] Disclosure page 1585807 → 429
+2026-04-26 14:55:59,053 [INFO] Processing [IAS] from 07.04.2026
+2026-04-26 14:55:59,157 [ERROR] Disclosure page 1585806 → 429
+2026-04-26 14:55:59,161 [INFO] Processing [IAS] from 07.04.2026
+2026-04-26 14:55:59,263 [ERROR] Disclosure page 1585805 → 429
+2026-04-26 14:55:59,266 [INFO] Processing [THV] from 07.04.2026
+2026-04-26 14:55:59,370 [ERROR] Disclosure page 1585751 → 429
+2026-04-26 14:55:59,373 [INFO] Processing [URA] from 07.04.2026
+2026-04-26 14:55:59,485 [ERROR] Disclosure page 1585750 → 429
+2026-04-26 14:55:59,489 [INFO] Processing [TLZ] from 07.04.2026
+2026-04-26 14:55:59,599 [ERROR] Disclosure page 1585749 → 429
+2026-04-26 14:55:59,601 [INFO] Processing [THV] from 07.04.2026
+2026-04-26 14:55:59,704 [ERROR] Disclosure page 1585748 → 429
+2026-04-26 14:55:59,707 [INFO] Processing [PKP] from 07.04.2026
+2026-04-26 14:55:59,810 [ERROR] Disclosure page 1585747 → 429
+2026-04-26 14:55:59,814 [INFO] Processing [PKF] from 07.04.2026
+2026-04-26 14:55:59,916 [ERROR] Disclosure page 1585746 → 429
+2026-04-26 14:55:59,919 [INFO] Processing [THV] from 07.04.2026
+2026-04-26 14:56:00,033 [ERROR] Disclosure page 1585745 → 429
+2026-04-26 14:56:00,036 [INFO] Processing [THV] from 07.04.2026
+2026-04-26 14:56:00,129 [ERROR] Disclosure page 1585744 → 429
+2026-04-26 14:56:00,132 [INFO] Processing [THV] from 07.04.2026
+2026-04-26 14:56:00,230 [ERROR] Disclosure page 1585743 → 429
+2026-04-26 14:56:00,234 [INFO] Processing [THV] from 07.04.2026
+2026-04-26 14:56:00,341 [ERROR] Disclosure page 1585742 → 429
+2026-04-26 14:56:00,345 [INFO] Processing [THV] from 07.04.2026
+2026-04-26 14:56:00,456 [ERROR] Disclosure page 1585741 → 429
+2026-04-26 14:56:00,459 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:56:00,566 [ERROR] Disclosure page 1585740 → 429
+2026-04-26 14:56:00,572 [INFO] Processing [THV] from 07.04.2026
+2026-04-26 14:56:00,681 [ERROR] Disclosure page 1585739 → 429
+2026-04-26 14:56:00,685 [INFO] Processing [THV] from 07.04.2026
+2026-04-26 14:56:00,799 [ERROR] Disclosure page 1585738 → 429
+2026-04-26 14:56:00,803 [INFO] Processing [THV] from 07.04.2026
+2026-04-26 14:56:00,908 [ERROR] Disclosure page 1585737 → 429
+2026-04-26 14:56:00,912 [INFO] Processing [THV] from 07.04.2026
+2026-04-26 14:56:01,014 [ERROR] Disclosure page 1585736 → 429
+2026-04-26 14:56:01,018 [INFO] Processing [MPP] from 07.04.2026
+2026-04-26 14:56:01,122 [ERROR] Disclosure page 1585643 → 429
+2026-04-26 14:56:01,126 [INFO] Processing [IKV] from 07.04.2026
+2026-04-26 14:56:01,233 [ERROR] Disclosure page 1585642 → 429
+2026-04-26 14:56:01,237 [INFO] Processing [MTF] from 07.04.2026
+2026-04-26 14:56:01,347 [ERROR] Disclosure page 1585641 → 429
+2026-04-26 14:56:01,351 [INFO] Processing [FUA] from 07.04.2026
+2026-04-26 14:56:01,454 [ERROR] Disclosure page 1585453 → 429
+2026-04-26 14:56:01,457 [INFO] Processing [IPG] from 07.04.2026
+2026-04-26 14:56:01,563 [ERROR] Disclosure page 1585452 → 429
+2026-04-26 14:56:01,567 [INFO] Processing [IKV] from 07.04.2026
+2026-04-26 14:56:01,680 [ERROR] Disclosure page 1585451 → 429
+2026-04-26 14:56:01,683 [INFO] Processing [IEV] from 07.04.2026
+2026-04-26 14:56:01,791 [ERROR] Disclosure page 1585450 → 429
+2026-04-26 14:56:01,796 [INFO] Processing [IUZ] from 07.04.2026
+2026-04-26 14:56:01,912 [ERROR] Disclosure page 1585449 → 429
+2026-04-26 14:56:01,916 [INFO] Processing [IUF] from 07.04.2026
+2026-04-26 14:56:02,022 [ERROR] Disclosure page 1585448 → 429
+2026-04-26 14:56:02,026 [INFO] Processing [BNC] from 07.04.2026
+2026-04-26 14:56:02,129 [ERROR] Disclosure page 1585447 → 429
+2026-04-26 14:56:02,132 [INFO] Processing [IJC] from 07.04.2026
+2026-04-26 14:56:02,239 [ERROR] Disclosure page 1585445 → 429
+2026-04-26 14:56:02,242 [INFO] Processing [IJB] from 07.04.2026
+2026-04-26 14:56:02,344 [ERROR] Disclosure page 1585444 → 429
+2026-04-26 14:56:02,347 [INFO] Processing [VNK] from 06.04.2026
+2026-04-26 14:56:02,455 [ERROR] Disclosure page 1585167 → 429
+2026-04-26 14:56:02,458 [INFO] Processing [VPS] from 06.04.2026
+2026-04-26 14:56:02,562 [ERROR] Disclosure page 1585166 → 429
+2026-04-26 14:56:02,565 [INFO] Processing [VNK] from 06.04.2026
+2026-04-26 14:56:02,679 [ERROR] Disclosure page 1585165 → 429
+2026-04-26 14:56:02,685 [INFO] Processing [VNK] from 06.04.2026
+2026-04-26 14:56:02,797 [ERROR] Disclosure page 1585164 → 429
+2026-04-26 14:56:02,801 [INFO] Processing [PRV] from 06.04.2026
+2026-04-26 14:56:02,918 [ERROR] Disclosure page 1584959 → 429
+2026-04-26 14:56:02,922 [INFO] Processing [PRV] from 06.04.2026
+2026-04-26 14:56:03,030 [ERROR] Disclosure page 1584958 → 429
+2026-04-26 14:56:03,034 [INFO] Processing [MTF] from 06.04.2026
+2026-04-26 14:56:03,148 [ERROR] Disclosure page 1584957 → 429
+2026-04-26 14:56:03,152 [INFO] Processing [PDD] from 06.04.2026
+2026-04-26 14:56:03,257 [ERROR] Disclosure page 1584956 → 429
+2026-04-26 14:56:03,260 [INFO] Processing [PBK] from 06.04.2026
+2026-04-26 14:56:03,363 [ERROR] Disclosure page 1584955 → 429
+2026-04-26 14:56:03,366 [INFO] Processing [IAS] from 06.04.2026
+2026-04-26 14:56:03,473 [ERROR] Disclosure page 1584954 → 429
+2026-04-26 14:56:03,476 [INFO] Processing [IAS] from 06.04.2026
+2026-04-26 14:56:03,578 [ERROR] Disclosure page 1584953 → 429
+2026-04-26 14:56:03,581 [INFO] Processing [PRV] from 06.04.2026
+2026-04-26 14:56:03,726 [ERROR] Disclosure page 1584952 → 429
+2026-04-26 14:56:03,750 [INFO] Processing [IAS] from 06.04.2026
+2026-04-26 14:56:03,922 [ERROR] Disclosure page 1584951 → 429
+2026-04-26 14:56:03,926 [INFO] Processing [IAS] from 06.04.2026
+2026-04-26 14:56:04,024 [ERROR] Disclosure page 1584950 → 429
+2026-04-26 14:56:04,027 [INFO] Processing [IAS] from 06.04.2026
+2026-04-26 14:56:04,125 [ERROR] Disclosure page 1584949 → 429
+2026-04-26 14:56:04,128 [INFO] Processing [IAS] from 06.04.2026
+2026-04-26 14:56:04,229 [ERROR] Disclosure page 1584948 → 429
+2026-04-26 14:56:04,232 [INFO] Processing [ODG] from 06.04.2026
+2026-04-26 14:56:04,338 [ERROR] Disclosure page 1584896 → 429
+2026-04-26 14:56:04,341 [INFO] Processing [FJM] from 06.04.2026
+2026-04-26 14:56:04,449 [ERROR] Disclosure page 1584806 → 429
+2026-04-26 14:56:04,454 [INFO] Processing [FJM] from 06.04.2026
+2026-04-26 14:56:04,558 [ERROR] Disclosure page 1584805 → 429
+2026-04-26 14:56:04,561 [INFO] Processing [FJM] from 06.04.2026
+2026-04-26 14:56:04,658 [ERROR] Disclosure page 1584804 → 429
+2026-04-26 14:56:04,662 [INFO] Processing [MTF] from 06.04.2026
+2026-04-26 14:56:04,768 [ERROR] Disclosure page 1584803 → 429
+2026-04-26 14:56:04,770 [INFO] Processing [IKV] from 06.04.2026
+2026-04-26 14:56:04,864 [ERROR] Disclosure page 1584802 → 429
+2026-04-26 14:56:04,867 [INFO] Processing [FJM] from 06.04.2026
+2026-04-26 14:56:04,966 [ERROR] Disclosure page 1584801 → 429
+2026-04-26 14:56:04,970 [INFO] Processing [MTF] from 06.04.2026
+2026-04-26 14:56:05,070 [ERROR] Disclosure page 1584800 → 429
+2026-04-26 14:56:05,073 [INFO] Processing [AIS] from 06.04.2026
+2026-04-26 14:56:05,177 [ERROR] Disclosure page 1584799 → 429
+2026-04-26 14:56:05,179 [INFO] Processing [FJM] from 06.04.2026
+2026-04-26 14:56:05,257 [ERROR] Disclosure page 1584798 → 429
+2026-04-26 14:56:05,258 [INFO] Processing [PMG] from 06.04.2026
+2026-04-26 14:56:05,338 [ERROR] Disclosure page 1584797 → 429
+2026-04-26 14:56:05,339 [INFO] Processing [IZS] from 06.04.2026
+2026-04-26 14:56:05,424 [ERROR] Disclosure page 1584791 → 429
+2026-04-26 14:56:05,426 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:05,521 [ERROR] Disclosure page 1584790 → 429
+2026-04-26 14:56:05,525 [INFO] Processing [IVY] from 06.04.2026
+2026-04-26 14:56:05,628 [ERROR] Disclosure page 1584789 → 429
+2026-04-26 14:56:05,632 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:05,741 [ERROR] Disclosure page 1584788 → 429
+2026-04-26 14:56:05,743 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:05,846 [ERROR] Disclosure page 1584787 → 429
+2026-04-26 14:56:05,849 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:05,956 [ERROR] Disclosure page 1584786 → 429
+2026-04-26 14:56:05,959 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:06,066 [ERROR] Disclosure page 1584785 → 429
+2026-04-26 14:56:06,070 [INFO] Processing [IRB] from 06.04.2026
+2026-04-26 14:56:06,181 [ERROR] Disclosure page 1584784 → 429
+2026-04-26 14:56:06,184 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:06,292 [ERROR] Disclosure page 1584783 → 429
+2026-04-26 14:56:06,295 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:06,403 [ERROR] Disclosure page 1584782 → 429
+2026-04-26 14:56:06,406 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:06,515 [ERROR] Disclosure page 1584781 → 429
+2026-04-26 14:56:06,518 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:06,633 [ERROR] Disclosure page 1584780 → 429
+2026-04-26 14:56:06,635 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:06,738 [ERROR] Disclosure page 1584779 → 429
+2026-04-26 14:56:06,741 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:06,847 [ERROR] Disclosure page 1584778 → 429
+2026-04-26 14:56:06,850 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:06,965 [ERROR] Disclosure page 1584777 → 429
+2026-04-26 14:56:06,969 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:07,085 [ERROR] Disclosure page 1584776 → 429
+2026-04-26 14:56:07,088 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:07,193 [ERROR] Disclosure page 1584775 → 429
+2026-04-26 14:56:07,196 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:07,306 [ERROR] Disclosure page 1584774 → 429
+2026-04-26 14:56:07,310 [INFO] Processing [BIP] from 06.04.2026
+2026-04-26 14:56:07,418 [ERROR] Disclosure page 1584773 → 429
+2026-04-26 14:56:07,421 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:07,527 [ERROR] Disclosure page 1584772 → 429
+2026-04-26 14:56:07,530 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:07,632 [ERROR] Disclosure page 1584771 → 429
+2026-04-26 14:56:07,635 [INFO] Processing [GMI] from 06.04.2026
+2026-04-26 14:56:07,742 [ERROR] Disclosure page 1584768 → 429
+2026-04-26 14:56:07,744 [INFO] Processing [FJM] from 06.04.2026
+2026-04-26 14:56:07,831 [ERROR] Disclosure page 1584767 → 429
+2026-04-26 14:56:07,832 [INFO] Processing [FJM] from 06.04.2026
+2026-04-26 14:56:07,929 [ERROR] Disclosure page 1584766 → 429
+2026-04-26 14:56:07,932 [INFO] Processing [FJM] from 06.04.2026
+2026-04-26 14:56:08,033 [ERROR] Disclosure page 1584765 → 429
+2026-04-26 14:56:08,037 [INFO] Processing [FJM] from 06.04.2026
+2026-04-26 14:56:08,140 [ERROR] Disclosure page 1584764 → 429
+2026-04-26 14:56:08,143 [INFO] Processing [AIS] from 06.04.2026
+2026-04-26 14:56:08,248 [ERROR] Disclosure page 1584763 → 429
+2026-04-26 14:56:08,250 [INFO] Processing [FJM] from 06.04.2026
+2026-04-26 14:56:08,357 [ERROR] Disclosure page 1584762 → 429
+2026-04-26 14:56:08,360 [INFO] Processing [ILK] from 06.04.2026
+2026-04-26 14:56:08,463 [ERROR] Disclosure page 1584761 → 429
+2026-04-26 14:56:08,466 [INFO] Processing [FBZ] from 06.04.2026
+2026-04-26 14:56:08,571 [ERROR] Disclosure page 1584760 → 429
+2026-04-26 14:56:08,574 [INFO] Processing [MTF] from 06.04.2026
+2026-04-26 14:56:08,679 [ERROR] Disclosure page 1584759 → 429
+2026-04-26 14:56:08,683 [INFO] Processing [EBS] from 06.04.2026
+2026-04-26 14:56:08,792 [ERROR] Disclosure page 1584739 → 429
+2026-04-26 14:56:08,796 [INFO] Processing [EBS] from 06.04.2026
+2026-04-26 14:56:08,903 [ERROR] Disclosure page 1584737 → 429
+2026-04-26 14:56:08,907 [INFO] Processing [EBS] from 06.04.2026
+2026-04-26 14:56:09,014 [ERROR] Disclosure page 1584726 → 429
+2026-04-26 14:56:09,017 [INFO] Processing [EBS] from 06.04.2026
+2026-04-26 14:56:09,125 [ERROR] Disclosure page 1584724 → 429
+2026-04-26 14:56:09,128 [INFO] Processing [EPT] from 06.04.2026
+2026-04-26 14:56:09,232 [ERROR] Disclosure page 1584723 → 429
+2026-04-26 14:56:09,235 [INFO] Processing [EBS] from 06.04.2026
+2026-04-26 14:56:09,343 [ERROR] Disclosure page 1584722 → 429
+2026-04-26 14:56:09,346 [INFO] Processing [EBS] from 06.04.2026
+2026-04-26 14:56:09,454 [ERROR] Disclosure page 1584720 → 429
+2026-04-26 14:56:09,457 [INFO] Processing [EBS] from 06.04.2026
+2026-04-26 14:56:09,567 [ERROR] Disclosure page 1584719 → 429
+2026-04-26 14:56:09,571 [INFO] Processing [EBS] from 06.04.2026
+2026-04-26 14:56:09,685 [ERROR] Disclosure page 1584718 → 429
+2026-04-26 14:56:09,689 [INFO] Processing [EBS] from 06.04.2026
+2026-04-26 14:56:09,796 [ERROR] Disclosure page 1584717 → 429
+2026-04-26 14:56:09,799 [INFO] Processing [EBI] from 06.04.2026
+2026-04-26 14:56:09,908 [ERROR] Disclosure page 1584716 → 429
+2026-04-26 14:56:09,912 [INFO] Processing [PMG] from 06.04.2026
+2026-04-26 14:56:10,026 [ERROR] Disclosure page 1584657 → 429
+2026-04-26 14:56:10,029 [INFO] Processing [AIS] from 06.04.2026
+2026-04-26 14:56:10,138 [ERROR] Disclosure page 1584651 → 429
+2026-04-26 14:56:10,141 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:10,247 [ERROR] Disclosure page 1584650 → 429
+2026-04-26 14:56:10,251 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:10,355 [ERROR] Disclosure page 1584649 → 429
+2026-04-26 14:56:10,358 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:10,463 [ERROR] Disclosure page 1584648 → 429
+2026-04-26 14:56:10,466 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:10,566 [ERROR] Disclosure page 1584647 → 429
+2026-04-26 14:56:10,568 [INFO] Processing [ACN] from 06.04.2026
+2026-04-26 14:56:10,667 [ERROR] Disclosure page 1584646 → 429
+2026-04-26 14:56:10,670 [INFO] Processing [IRO] from 06.04.2026
+2026-04-26 14:56:10,771 [ERROR] Disclosure page 1584645 → 429
+2026-04-26 14:56:10,773 [INFO] Processing [MTF] from 06.04.2026
+2026-04-26 14:56:10,859 [ERROR] Disclosure page 1584624 → 429
+2026-04-26 14:56:10,861 [INFO] Processing [GO6] from 06.04.2026
+2026-04-26 14:56:10,963 [ERROR] Disclosure page 1584623 → 429
+2026-04-26 14:56:10,967 [INFO] Processing [GO4] from 06.04.2026
+2026-04-26 14:56:11,053 [ERROR] Disclosure page 1584622 → 429
+2026-04-26 14:56:11,054 [INFO] Processing [ODG] from 06.04.2026
+2026-04-26 14:56:11,127 [ERROR] Disclosure page 1584621 → 429
+2026-04-26 14:56:11,128 [INFO] Processing [ODG] from 06.04.2026
+2026-04-26 14:56:11,205 [ERROR] Disclosure page 1584620 → 429
+2026-04-26 14:56:11,206 [INFO] Processing [MTF] from 06.04.2026
+2026-04-26 14:56:11,282 [ERROR] Disclosure page 1584619 → 429
+2026-04-26 14:56:11,283 [INFO] Processing [ODG] from 06.04.2026
+2026-04-26 14:56:11,366 [ERROR] Disclosure page 1584618 → 429
+2026-04-26 14:56:11,368 [INFO] Processing [ODG] from 06.04.2026
+2026-04-26 14:56:11,465 [ERROR] Disclosure page 1584617 → 429
+2026-04-26 14:56:11,468 [INFO] Processing [MTF] from 06.04.2026
+2026-04-26 14:56:11,575 [ERROR] Disclosure page 1584616 → 429
+2026-04-26 14:56:11,578 [INFO] Processing [ODG] from 06.04.2026
+2026-04-26 14:56:11,680 [ERROR] Disclosure page 1584615 → 429
+2026-04-26 14:56:11,683 [INFO] Processing [MTF] from 06.04.2026
+2026-04-26 14:56:11,787 [ERROR] Disclosure page 1584614 → 429
+2026-04-26 14:56:11,790 [INFO] Processing [ODG] from 06.04.2026
+2026-04-26 14:56:11,895 [ERROR] Disclosure page 1584613 → 429
+2026-04-26 14:56:11,899 [INFO] Processing [FBC] from 06.04.2026
+2026-04-26 14:56:12,004 [ERROR] Disclosure page 1584612 → 429
+2026-04-26 14:56:12,008 [INFO] Processing [FAL] from 06.04.2026
+2026-04-26 14:56:12,121 [ERROR] Disclosure page 1584611 → 429
+2026-04-26 14:56:12,124 [INFO] Processing [PKR] from 06.04.2026
+2026-04-26 14:56:12,229 [ERROR] Disclosure page 1584608 → 429
+2026-04-26 14:56:12,233 [INFO] Processing [RTA] from 06.04.2026
+2026-04-26 14:56:12,343 [ERROR] Disclosure page 1584606 → 429
+2026-04-26 14:56:12,347 [INFO] Processing [RTA] from 06.04.2026
+2026-04-26 14:56:12,455 [ERROR] Disclosure page 1584605 → 429
+2026-04-26 14:56:12,459 [INFO] Processing [RTA] from 06.04.2026
+2026-04-26 14:56:12,566 [ERROR] Disclosure page 1584604 → 429
+2026-04-26 14:56:12,568 [INFO] Processing [CPT] from 06.04.2026
+2026-04-26 14:56:12,670 [ERROR] Disclosure page 1584603 → 429
+2026-04-26 14:56:12,673 [INFO] Processing [RTA] from 06.04.2026
+2026-04-26 14:56:12,779 [ERROR] Disclosure page 1584602 → 429
+2026-04-26 14:56:12,782 [INFO] Processing [RPX] from 06.04.2026
+2026-04-26 14:56:47,004 [INFO] ============================================================
+2026-04-26 14:56:47,004 [INFO] KAP Daily Pipeline started
+2026-04-26 14:56:47,004 [INFO] Last run: 2026-04-26T00:00:00 — checking for new disclosures
+2026-04-26 14:56:47,049 [ERROR] KAP discovery → 429: 
+2026-04-26 14:56:47,049 [INFO] No new disclosures found
+2026-04-26 14:59:19,262 [INFO] ============================================================
+2026-04-26 14:59:19,263 [INFO] KAP Daily Pipeline started
+2026-04-26 14:59:19,263 [INFO] Resuming from last run: 2026-04-26T00:00:00
+2026-04-26 14:59:19,313 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/disclosure/list/main, retry 1/5 in 2s
+2026-04-26 14:59:21,524 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/disclosure/list/main, retry 2/5 in 3s
+2026-04-26 14:59:24,738 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/disclosure/list/main, retry 3/5 in 5s
+2026-04-26 14:59:29,866 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/disclosure/list/main, retry 4/5 in 9s
+2026-04-26 14:59:39,078 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/disclosure/list/main, retry 5/5 in 17s
+2026-04-26 14:59:56,226 [ERROR] KAP discovery → 429: 
+2026-04-26 14:59:56,230 [INFO] No new disclosures — done
+2026-04-27 06:00:00,644 [INFO] ============================================================
+2026-04-27 06:00:00,644 [INFO] ============================================================
+2026-04-27 06:00:00,644 [INFO] KAP Daily Pipeline started
+2026-04-27 06:00:00,644 [INFO] KAP Daily Pipeline started
+2026-04-27 06:00:00,644 [INFO] Resuming from last run: 2026-04-26T14:59:19.263169
+2026-04-27 06:00:00,644 [INFO] Resuming from last run: 2026-04-26T14:59:19.263169
+2026-04-27 06:00:00,722 [INFO] KAP discovered 0 portfolio disclosures in 2026-04-26 → 2026-04-27
+2026-04-27 06:00:00,722 [INFO] KAP discovered 0 portfolio disclosures in 2026-04-26 → 2026-04-27
+2026-04-27 06:00:00,723 [INFO] No new disclosures — done
+2026-04-27 06:00:00,723 [INFO] No new disclosures — done

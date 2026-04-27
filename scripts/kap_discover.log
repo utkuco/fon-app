@@ -1,0 +1,4 @@
+[2026-04-26 13:46:42] [INFO] Starting KAP discover — batch=True, test=None, limit=3
+[2026-04-26 13:46:43] [INFO] Fetched 1000 fund codes from Supabase
+[2026-04-26 13:46:43] [INFO] Total funds to check: 1000
+[2026-04-26 13:46:43] [INFO] Starting Chrome (undetected)...

@@ -1,0 +1,1123 @@
+
+ETF Sparkline Backfill
+  Supabase: https://oqkobptbvcazifpvjwfz.supabase.co
+  Period: 2y | Interval: 1d
+  Batch size: 20 | Fetch delay: 0.5s
+
+Found 1000 ETFs in foreign_etfs table
+
+  [1/50] AGG... 502 rows ✓
+  [1/50] BND... 502 rows ✓
+  [1/50] CAFG... 502 rows ✓
+  [1/50] CAFX... 402 rows ✓
+  [1/50] CAIE... 208 rows ✓
+  [1/50] CAIQ... 104 rows ✓
+  [1/50] CALF... 502 rows ✓
+  [1/50] CALI... 502 rows ✓
+  [1/50] CAM... 137 rows ✓
+  [1/50] CAML... 502 rows ✓
+  [1/50] CAMX... 502 rows ✓
+  [1/50] CANC... 502 rows ✓
+  [1/50] CANE... 502 rows ✓
+  [1/50] CANQ... 502 rows ✓
+  [1/50] CAOS... 502 rows ✓
+  [1/50] CAPE... 502 rows ✓
+  [1/50] CARD... 447 rows ✓
+  [1/50] CARK... 502 rows ✓
+  [1/50] CARU... 446 rows ✓
+  [1/50] CARY... 502 rows ✓
+  → Inserted 8772 rows into foreign_etf_prices
+
+  [2/50] CARZ... 502 rows ✓
+  [2/50] CAS... 319 rows ✓
+  [2/50] CATF... 442 rows ✓
+  [2/50] CATH... 502 rows ✓
+  [2/50] CBLS... 502 rows ✓
+  [2/50] CBOA... 262 rows ✓
+  [2/50] CBOJ... 314 rows ✓
+  [2/50] CBOL... 131 rows ✓
+  [2/50] CBON... 502 rows ✓
+  [2/50] CBOO... 136 rows ✓
+  [2/50] CBOX... 4 rows ✓
+  [2/50] CBOY... 200 rows ✓
+  [2/50] CBSE... 502 rows ✓
+  [2/50] CBTA... 262 rows ✓
+  [2/50] CBTJ... 305 rows ✓
+  [2/50] CBTL... 131 rows ✓
+  [2/50] CBTO... 136 rows ✓
+  [2/50] CBTY... 200 rows ✓
+  [2/50] CBXA... 262 rows ✓
+  [2/50] CBXJ... 305 rows ✓
+  → Inserted 5919 rows into foreign_etf_prices
+
+  [3/50] CBXL... 131 rows ✓
+  [3/50] CBXO... 136 rows ✓
+  [3/50] CBXY... 200 rows ✓
+  [3/50] CCEF... 502 rows ✓
+  [3/50] CCFE... 216 rows ✓
+  [3/50] CCNR... 447 rows ✓
+  [3/50] CCOM... 59 rows ✓
+  [3/50] CCOR... 502 rows ✓
+  [3/50] CCSB... 502 rows ✓
+  [3/50] CCSO... 502 rows ✓
+  [3/50] CCUP... 176 rows ✓
+  [3/50] CDC... 502 rows ✓
+  [3/50] CDEI... 502 rows ✓
+  [3/50] CDIG... 150 rows ✓
+  [3/50] CDL... 502 rows ✓
+  [3/50] CDX... 502 rows ✓
+  [3/50] CEFA... 502 rows ✓
+  [3/50] CEFD... 502 rows ✓
+  [3/50] CEFS... 502 rows ✓
+  [3/50] CEFZ... 181 rows ✓
+  → Inserted 7218 rows into foreign_etf_prices
+
+  [4/50] CEGX... 197 rows ✓
+  [4/50] CEMB... 502 rows ✓
+  [4/50] CEPI... 345 rows ✓
+  [4/50] CERY... 408 rows ✓
+  [4/50] CEW... 502 rows ✓
+  [4/50] CFA... 502 rows ✓
+  [4/50] CFIT... 268 rows ✓
+  [4/50] CFO... 502 rows ✓
+  [4/50] CGBL... 502 rows ✓
+  [4/50] CGCB... 502 rows ✓
+  [4/50] CGCP... 502 rows ✓
+  [4/50] CGCV... 456 rows ✓
+  [4/50] CGDG... 502 rows ✓
+  [4/50] CGDV... 502 rows ✓
+  [4/50] CGGE... 456 rows ✓
+  [4/50] CGGG... 207 rows ✓
+  [4/50] CGGO... 502 rows ✓
+  [4/50] CGGR... 502 rows ✓
+  [4/50] CGHM... 456 rows ✓
+  [4/50] CGHY... 207 rows ✓
+  → Inserted 8522 rows into foreign_etf_prices
+
+  [5/50] CGIB... 456 rows ✓
+  [5/50] CGIC... 456 rows ✓
+  [5/50] CGIE... 502 rows ✓
+  [5/50] CGMM... 317 rows ✓
+  [5/50] CGMS... 502 rows ✓
+  [5/50] CGMU... 502 rows ✓
+  [5/50] CGNG... 456 rows ✓
+  [5/50] CGRO... 502 rows ✓
+  [5/50] CGSD... 502 rows ✓
+  [5/50] CGSM... 502 rows ✓
+  [5/50] CGUI... 456 rows ✓
+  [5/50] CGUS... 502 rows ✓
+  [5/50] CGV... 502 rows ✓
+  [5/50] CGVV... 207 rows ✓
+  [5/50] CGW... 502 rows ✓
+  [5/50] CGXU... 502 rows ✓
+  [5/50] CHAT... 502 rows ✓
+  [5/50] CHAU... 502 rows ✓
+  [5/50] CHGX... 502 rows ✓
+  [5/50] CHIQ... 502 rows ✓
+  → Inserted 9376 rows into foreign_etf_prices
+
+  [6/50] CHNL... 15 rows ✓
+  [6/50] CHNU... 15 rows ✓
+  [6/50] CHPS... 502 rows ✓
+  [6/50] CHPX... 140 rows ✓
+  [6/50] CHPY... 261 rows ✓
+  [6/50] CHRI... 144 rows ✓
+  [6/50] CIBR... 502 rows ✓
+  [6/50] CIFG... 90 rows ✓
+  [6/50] CIFU... 103 rows ✓
+  [6/50] CLCG... 189 rows ✓
+  [6/50] CLCV... 189 rows ✓
+  [6/50] CLIP... 502 rows ✓
+  [6/50] CLIX... 502 rows ✓
+  [6/50] CLOA... 502 rows ✓
+  [6/50] CLOB... 394 rows ✓
+  [6/50] CLOD... 501 rows ✓
+  [6/50] CLOI... 502 rows ✓
+  [6/50] CLOU... 502 rows ✓
+  [6/50] CLOX... 502 rows ✓
+  [6/50] CLOZ... 502 rows ✓
+  → Inserted 6559 rows into foreign_etf_prices
+
+  [7/50] CLSE... 502 rows ✓
+  [7/50] CLSM... 502 rows ✓
+  [7/50] CLSX... 151 rows ✓
+  [7/50] CLSZ... 44 rows ✓
+  [7/50] CMBO... 115 rows ✓
+  [7/50] CMBS... 502 rows ✓
+  [7/50] CMCI... 502 rows ✓
+  [7/50] CMDT... 502 rows ✓
+  [7/50] CMDY... 502 rows ✓
+  [7/50] CMF... 502 rows ✓
+  [7/50] CMGG... 107 rows ✓
+  [7/50] CNAV... 390 rows ✓
+  [7/50] CNBS... 502 rows ✓
+  [7/50] CNCG... 85 rows ✓
+  [7/50] CNEQ... 502 rows ✓
+  [7/50] CNQQ... 143 rows ✓
+  [7/50] CNRG... 502 rows ✓
+  [7/50] CNXT... 502 rows ✓
+  [7/50] CNYA... 502 rows ✓
+  [7/50] COAL... 502 rows ✓
+  → Inserted 7561 rows into foreign_etf_prices
+
+  [8/50] COHX... 44 rows ✓
+  [8/50] COIG... 277 rows ✓
+  [8/50] COII... 222 rows ✓
+  [8/50] COIO... 174 rows ✓
+  [8/50] COIW... 295 rows ✓
+  [8/50] COLO... 502 rows ✓
+  [8/50] COM... 502 rows ✓
+  [8/50] COMB... 502 rows ✓
+  [8/50] COMD... 49 rows ✓
+  [8/50] COMT... 502 rows ✓
+  [8/50] CONI... 409 rows ✓
+  [8/50] CONL... 502 rows ✓
+  [8/50] CONX... 105 rows ✓
+  [8/50] CONY... 502 rows ✓
+  [8/50] COPA... 395 rows ✓
+  [8/50] COPJ... 502 rows ✓
+  [8/50] COPP... 502 rows ✓
+  [8/50] COPX... 502 rows ✓
+  [8/50] COPY... 329 rows ✓
+  [8/50] CORB... 112 rows ✓
+  → Inserted 6929 rows into foreign_etf_prices
+
+  [9/50] CORD... 143 rows ✓
+  [9/50] CORN... 502 rows ✓
+  [9/50] CORO... 343 rows ✓
+  [9/50] CORP... 502 rows ✓
+  [9/50] COSW... 124 rows ✓
+  [9/50] COTG... 149 rows ✓
+  [9/50] COWG... 502 rows ✓
+  [9/50] COWS... 502 rows ✓
+  [9/50] COWZ... 502 rows ✓
+  [9/50] COYY... 185 rows ✓
+  [9/50] COZX... 115 rows ✓
+  [9/50] CPAG... 175 rows ✓
+  [9/50] CPAI... 502 rows ✓
+  [9/50] CPER... 502 rows ✓
+  [9/50] CPHY... 175 rows ✓
+  [9/50] CPII... 501 rows ✓
+  [9/50] CPLB... 502 rows ✓
+  [9/50] CPLS... 502 rows ✓
+  [9/50] CPNJ... 473 rows ✓
+  [9/50] CPNM... 287 rows ✓
+  → Inserted 7188 rows into foreign_etf_prices
+
+  [10/50] CPNQ... 347 rows ✓
+  [10/50] CPNS... 410 rows ✓
+  [10/50] CPRA... 266 rows ✓
+  [10/50] CPRJ... 454 rows ✓
+  [10/50] CPRO... 390 rows ✓
+  [10/50] CPRY... 326 rows ✓
+  [10/50] CPSA... 432 rows ✓
+  [10/50] CPSD... 347 rows ✓
+  [10/50] CPSF... 306 rows ✓
+  [10/50] CPSJ... 454 rows ✓
+  [10/50] CPSL... 406 rows ✓
+  [10/50] CPSM... 495 rows ✓
+  [10/50] CPSN... 367 rows ✓
+  [10/50] CPSO... 390 rows ✓
+  [10/50] CPSP... 266 rows ✓
+  [10/50] CPSR... 287 rows ✓
+  [10/50] CPST... 410 rows ✓
+  [10/50] CPSU... 224 rows ✓
+  [10/50] CPSY... 326 rows ✓
+  [10/50] CPXR... 314 rows ✓
+  → Inserted 7217 rows into foreign_etf_prices
+
+  [11/50] CQQQ... 502 rows ✓
+  [11/50] CRAK... 502 rows ✓
+  [11/50] CRBN... 502 rows ✓
+  [11/50] CRCD... 143 rows ✓
+  [11/50] CRCG... 176 rows ✓
+  [11/50] CRDD... 15 rows ✓
+  [11/50] CRDT... 502 rows ✓
+  [11/50] CRDU... 151 rows ✓
+  [11/50] CRDX... 15 rows ✓
+  [11/50] CRED... 502 rows ✓
+  [11/50] CRMG... 263 rows ✓
+  [11/50] CRMU... 50 rows ✓
+  [11/50] CRMX... 69 rows ✓
+  [11/50] CRPT... 502 rows ✓
+  [11/50] CRSH... 494 rows ✓
+  [11/50] CRTC... 502 rows ✓
+  [11/50] CRUX... 27 rows ✓
+  [11/50] CRWG... 176 rows ✓
+  [11/50] CRWL... 360 rows ✓
+  [11/50] CRWU... 186 rows ✓
+  → Inserted 5639 rows into foreign_etf_prices
+
+  [12/50] CSB... 502 rows ✓
+  [12/50] CSCL... 208 rows ✓
+  [12/50] CSCS... 208 rows ✓
+  [12/50] CSD... 502 rows ✓
+  [12/50] CSEX... 109 rows ✓
+  [12/50] CSHI... 502 rows ✓
+  [12/50] CSHP... 432 rows ✓
+  [12/50] CSM... 502 rows ✓
+  [12/50] CSMD... 502 rows ✓
+  [12/50] CSNR... 304 rows ✓
+  [12/50] CSPF... 304 rows ✓
+  [12/50] CSRE... 304 rows ✓
+  [12/50] CSTK... 241 rows ✓
+  [12/50] CTA... 502 rows ✓
+  [12/50] CTEC... 502 rows ✓
+  [12/50] CTEF... 212 rows ✓
+  [12/50] CTEX... 502 rows ✓
+  [12/50] CTIF... 208 rows ✓
+  [12/50] CTWO... 211 rows ✓
+  [12/50] CURE... 502 rows ✓
+  → Inserted 7259 rows into foreign_etf_prices
+
+  [13/50] CUSD... 501 rows ✓
+  [13/50] CUT... 502 rows ✓
+  [13/50] CVAR... 502 rows ✓
+  [13/50] CVIE... 502 rows ✓
+  [13/50] CVLC... 502 rows ✓
+  [13/50] CVMC... 502 rows ✓
+  [13/50] CVNX... 226 rows ✓
+  [13/50] CVNY... 307 rows ✓
+  [13/50] CVRD... 502 rows ✓
+  [13/50] CVRT... 502 rows ✓
+  [13/50] CVSB... 502 rows ✓
+  [13/50] CVY... 502 rows ✓
+  [13/50] CWB... 502 rows ✓
+  [13/50] CWEB... 502 rows ✓
+  [13/50] CWI... 502 rows ✓
+  [13/50] CWII... 116 rows ✓
+  [13/50] CWS... 502 rows ✓
+  [13/50] CWVX... 197 rows ✓
+  [13/50] CWY... 6 rows ✓
+  [13/50] CXRN... 292 rows ✓
+  → Inserted 8171 rows into foreign_etf_prices
+
+  [14/50] CXSE... 502 rows ✓
+  [14/50] CZA... 502 rows ✓
+  [14/50] CZAR... 501 rows ✓
+  [14/50] DABS... 286 rows ✓
+  [14/50] DADS... 179 rows ✓
+  [14/50] DAK... 184 rows ✓
+  [14/50] DALI... 502 rows ✓
+  [14/50] DANA... 96 rows ✓
+  [14/50] DAPP... 502 rows ✓
+  [14/50] DAPR... 502 rows ✓
+  [14/50] DARP... 502 rows ✓
+  [14/50] DAT... 502 rows ✓
+  [14/50] DAUG... 502 rows ✓
+  [14/50] DAX... 502 rows ✓
+  [14/50] DBA... 502 rows ✓
+  [14/50] DBAW... 502 rows ✓
+  [14/50] DBB... 502 rows ✓
+  [14/50] DBC... 502 rows ✓
+  [14/50] DBE... 502 rows ✓
+  [14/50] DBEF... 502 rows ✓
+  → Inserted 8776 rows into foreign_etf_prices
+
+  [15/50] DBEM... 502 rows ✓
+  [15/50] DBEU... 502 rows ✓
+  [15/50] DBEZ... 502 rows ✓
+  [15/50] DBJP... 502 rows ✓
+  [15/50] DBMF... 502 rows ✓
+  [15/50] DBND... 502 rows ✓
+  [15/50] DBO... 502 rows ✓
+  [15/50] DBP... 502 rows ✓
+  [15/50] DBSC... 86 rows ✓
+  [15/50] DCMT... 502 rows ✓
+  [15/50] DCOR... 502 rows ✓
+  [15/50] DCRE... 502 rows ✓
+  [15/50] DDEC... 502 rows ✓
+  [15/50] DDFA... 15 rows ✓
+  [15/50] DDFD... 97 rows ✓
+  [15/50] DDFF... 56 rows ✓
+  [15/50] DDFJ... 76 rows ✓
+  [15/50] DDFL... 204 rows ✓
+  [15/50] DDFM... 37 rows ✓
+  [15/50] DDFN... 117 rows ✓
+  → Inserted 6712 rows into foreign_etf_prices
+
+  [16/50] DDFO... 140 rows ✓
+  [16/50] DDFS... 161 rows ✓
+  [16/50] DDIV... 502 rows ✓
+  [16/50] DDLS... 502 rows ✓
+  [16/50] DDM... 502 rows ✓
+  [16/50] DDNQ... 76 rows ✓
+  [16/50] DDSQ... 76 rows ✓
+  [16/50] DDTA... 15 rows ✓
+  [16/50] DDTD... 97 rows ✓
+  [16/50] DDTF... 56 rows ✓
+  [16/50] DDTJ... 76 rows ✓
+  [16/50] DDTL... 204 rows ✓
+  [16/50] DDTM... 37 rows ✓
+  [16/50] DDTN... 117 rows ✓
+  [16/50] DDTO... 140 rows ✓
+  [16/50] DDTS... 161 rows ✓
+  [16/50] DDV... 109 rows ✓
+  [16/50] DDWM... 502 rows ✓
+  [16/50] DDX... 502 rows ✓
+  [16/50] DDXX... 109 rows ✓
+  → Inserted 4084 rows into foreign_etf_prices
+
+  [17/50] DECM... 332 rows ✓
+  [17/50] DECO... 405 rows ✓
+  [17/50] DECP... 465 rows ✓
+  [17/50] DECT... 502 rows ✓
+  [17/50] DECU... 347 rows ✓
+  [17/50] DECW... 502 rows ✓
+  [17/50] DECZ... 502 rows ✓
+  [17/50] DEED... 502 rows ✓
+  [17/50] DEEF... 502 rows ✓
+  [17/50] DEEP... 502 rows ✓
+  [17/50] DEFI... 502 rows ✓
+  [17/50] DEFR... 236 rows ✓
+  [17/50] DEHP... 502 rows ✓
+  [17/50] DEM... 502 rows ✓
+  [17/50] DEMZ... 502 rows ✓
+  [17/50] DES... 502 rows ✓
+  [17/50] DESK... 502 rows ✓
+  [17/50] DEUS... 502 rows ✓
+  [17/50] DEW... 502 rows ✓
+  [17/50] DEXC... 358 rows ✓
+  → Inserted 9171 rows into foreign_etf_prices
+
+  [18/50] DFAC... 502 rows ✓
+  [18/50] DFAE... 502 rows ✓
+  [18/50] DFAI... 502 rows ✓
+  [18/50] DFAR... 502 rows ✓
+  [18/50] DFAS... 502 rows ✓
+  [18/50] DFAT... 502 rows ✓
+  [18/50] DFAU... 502 rows ✓
+  [18/50] DFAW... 502 rows ✓
+  [18/50] DFAX... 502 rows ✓
+  [18/50] DFCA... 502 rows ✓
+  [18/50] DFCF... 502 rows ✓
+  [18/50] DFE... 502 rows ✓
+  [18/50] DFEB... 502 rows ✓
+  [18/50] DFEM... 502 rows ✓
+  [18/50] DFEN... 502 rows ✓
+  [18/50] DFEV... 502 rows ✓
+  [18/50] DFGP... 502 rows ✓
+  [18/50] DFGR... 502 rows ✓
+  [18/50] DFGX... 502 rows ✓
+  [18/50] DFIC... 502 rows ✓
+  → Inserted 10040 rows into foreign_etf_prices
+
+  [19/50] DFII... 264 rows ✓
+  [19/50] DFIP... 502 rows ✓
+  [19/50] DFIS... 502 rows ✓
+  [19/50] DFIV... 502 rows ✓
+  [19/50] DFJ... 502 rows ✓
+  [19/50] DFLV... 502 rows ✓
+  [19/50] DFNL... 502 rows ✓
+  [19/50] DFNM... 502 rows ✓
+  [19/50] DFSB... 502 rows ✓
+  [19/50] DFSD... 502 rows ✓
+  [19/50] DFSE... 502 rows ✓
+  [19/50] DFSI... 502 rows ✓
+  [19/50] DFSU... 502 rows ✓
+  [19/50] DFSV... 502 rows ✓
+  [19/50] DFUS... 502 rows ✓
+  [19/50] DFUV... 502 rows ✓
+  [19/50] DFVE... 502 rows ✓
+  [19/50] DFVX... 502 rows ✓
+  [19/50] DGAP... 2 rows ✓
+  [19/50] DGCB... 502 rows ✓
+  → Inserted 9302 rows into foreign_etf_prices
+
+  [20/50] DGIN... 502 rows ✓
+  [20/50] DGJA... 65 rows ✓
+  [20/50] DGLO... 178 rows ✓
+  [20/50] DGOC... 127 rows ✓
+  [20/50] DGRE... 502 rows ✓
+  [20/50] DGRO... 502 rows ✓
+  [20/50] DGRS... 502 rows ✓
+  [20/50] DGRW... 502 rows ✓
+  [20/50] DGS... 502 rows ✓
+  [20/50] DGT... 502 rows ✓
+  [20/50] DHDG... 376 rows ✓
+  [20/50] DHLX... 142 rows ✓
+  [20/50] DHS... 502 rows ✓
+  [20/50] DHSB... 291 rows ✓
+  [20/50] DIA... 502 rows ✓
+  [20/50] DIAL... 502 rows ✓
+  [20/50] DIEM... 502 rows ✓
+  [20/50] DIG... 502 rows ✓
+  [20/50] DIHP... 502 rows ✓
+  [20/50] DIM... 502 rows ✓
+  → Inserted 8207 rows into foreign_etf_prices
+
+  [21/50] DIME... 136 rows ✓
+  [21/50] DINT... 502 rows ✓
+  [21/50] DIPS... 438 rows ✓
+  [21/50] DISO... 502 rows ✓
+  [21/50] DISV... 502 rows ✓
+  [21/50] DIV... 502 rows ✓
+  [21/50] DIVB... 502 rows ✓
+  [21/50] DIVD... 502 rows ✓
+  [21/50] DIVG... 502 rows ✓
+  [21/50] DIVI... 502 rows ✓
+  [21/50] DIVL... 502 rows ✓
+  [21/50] DIVN... 207 rows ✓
+  [21/50] DIVO... 502 rows ✓
+  [21/50] DIVP... 502 rows ✓
+  [21/50] DIVS... 502 rows ✓
+  [21/50] DIVY... 502 rows ✓
+  [21/50] DIVZ... 502 rows ✓
+  [21/50] DJAN... 502 rows ✓
+  [21/50] DJD... 502 rows ✓
+  [21/50] DJIA... 502 rows ✓
+  → Inserted 9315 rows into foreign_etf_prices
+
+  [22/50] DJP... 502 rows ✓
+  [22/50] DJTU... 286 rows ✓
+  [22/50] DJUL... 502 rows ✓
+  [22/50] DJUN... 502 rows ✓
+  [22/50] DKNX... 183 rows ✓
+  [22/50] DLAG... 147 rows ✓
+  [22/50] DLFE... 42 rows ✓
+  [22/50] DLLL... 297 rows ✓
+  [22/50] DLN... 502 rows ✓
+  [22/50] DLNV... 102 rows ✓
+  [22/50] DLS... 502 rows ✓
+  [22/50] DMAR... 502 rows ✓
+  [22/50] DMAX... 326 rows ✓
+  [22/50] DMAY... 502 rows ✓
+  [22/50] DMBS... 502 rows ✓
+  [22/50] DMX... 346 rows ✓
+  [22/50] DMXF... 502 rows ✓
+  [22/50] DNL... 502 rows ✓
+  [22/50] DNNG... 49 rows ✓
+  [22/50] DNOV... 502 rows ✓
+  → Inserted 7300 rows into foreign_etf_prices
+
+  [23/50] DOCT... 502 rows ✓
+  [23/50] DOG... 502 rows ✓
+  [23/50] DOGD... 173 rows ✓
+  [23/50] DOGG... 502 rows ✓
+  [23/50] DOJE... 149 rows ✓
+  [23/50] DOL... 502 rows ✓
+  [23/50] DON... 502 rows ✓
+  [23/50] DPST... 502 rows ✓
+  [23/50] DRAI... 447 rows ✓
+  [23/50] DRAM... 14 rows ✓
+  [23/50] DRGN... 195 rows ✓
+  [23/50] DRIP... 502 rows ✓
+  [23/50] DRIV... 502 rows ✓
+  [23/50] DRLL... 502 rows ✓
+  [23/50] DRN... 502 rows ✓
+  [23/50] DRNL... 36 rows ✓
+  [23/50] DRNZ... 120 rows ✓
+  [23/50] DRSK... 502 rows ✓
+  [23/50] DRUP... 502 rows ✓
+  [23/50] DRV... 502 rows ✓
+  → Inserted 7660 rows into foreign_etf_prices
+
+  [24/50] DSCO... 56 rows ✓
+  [24/50] DSEP... 502 rows ✓
+  [24/50] DSI... 502 rows ✓
+  [24/50] DSMC... 502 rows ✓
+  [24/50] DSPY... 265 rows ✓
+  [24/50] DSTL... 502 rows ✓
+  [24/50] DSTX... 502 rows ✓
+  [24/50] DTAN... 405 rows ✓
+  [24/50] DTCR... 502 rows ✓
+  [24/50] DTD... 502 rows ✓
+  [24/50] DTEC... 502 rows ✓
+  [24/50] DTH... 502 rows ✓
+  [24/50] DTRE... 502 rows ✓
+  [24/50] DUBS... 502 rows ✓
+  [24/50] DUG... 502 rows ✓
+  [24/50] DUHP... 502 rows ✓
+  [24/50] DUKH... 447 rows ✓
+  [24/50] DUKQ... 447 rows ✓
+  [24/50] DUKX... 447 rows ✓
+  [24/50] DUKZ... 447 rows ✓
+  → Inserted 9040 rows into foreign_etf_prices
+
+  [25/50] DULL... 502 rows ✓
+  [25/50] DUOG... 90 rows ✓
+  [25/50] DURA... 502 rows ✓
+  [25/50] DUSA... 502 rows ✓
+  [25/50] DUSB... 502 rows ✓
+  [25/50] DUSL... 502 rows ✓
+  [25/50] DUST... 502 rows ✓
+  [25/50] DUTY... 11 rows ✓
+  [25/50] DVAL... 502 rows ✓
+  [25/50] DVDN... 502 rows ✓
+  [25/50] DVGR... 93 rows ✓
+  [25/50] DVIN... 188 rows ✓
+  [25/50] DVLU... 502 rows ✓
+  [25/50] DVND... 502 rows ✓
+  [25/50] DVOL... 502 rows ✓
+  [25/50] DVQQ... 331 rows ✓
+  [25/50] DVRE... 188 rows ✓
+  [25/50] DVSP... 335 rows ✓
+  [25/50] DVUT... 189 rows ✓
+  [25/50] DVVY... 24 rows ✓
+  → Inserted 6971 rows into foreign_etf_prices
+
+  [26/50] DVXB... 188 rows ✓
+  [26/50] DVXC... 188 rows ✓
+  [26/50] DVXE... 189 rows ✓
+  [26/50] DVXF... 188 rows ✓
+  [26/50] DVXK... 188 rows ✓
+  [26/50] DVXP... 187 rows ✓
+  [26/50] DVXV... 188 rows ✓
+  [26/50] DVXY... 188 rows ✓
+  [26/50] DVY... 502 rows ✓
+  [26/50] DVYA... 502 rows ✓
+  [26/50] DVYE... 502 rows ✓
+  [26/50] DWAS... 502 rows ✓
+  [26/50] DWAW... 502 rows ✓
+  [26/50] DWLD... 502 rows ✓
+  [26/50] DWM... 502 rows ✓
+  [26/50] DWMF... 502 rows ✓
+  [26/50] DWSH... 502 rows ✓
+  [26/50] DWUS... 502 rows ✓
+  [26/50] DWX... 502 rows ✓
+  [26/50] DXD... 502 rows ✓
+  → Inserted 7528 rows into foreign_etf_prices
+
+  [27/50] DXIV... 403 rows ✓
+  [27/50] DXJ... 502 rows ✓
+  [27/50] DXUV... 403 rows ✓
+  [27/50] DYFI... 502 rows ✓
+  [27/50] DYLD... 502 rows ✓
+  [27/50] DYLG... 502 rows ✓
+  [27/50] DYNB... 145 rows ✓
+  [27/50] DYNF... 502 rows ✓
+  [27/50] DYTA... 502 rows ✓
+  [27/50] EAFG... 502 rows ✓
+  [27/50] EAGG... 502 rows ✓
+  [27/50] EAGL... 502 rows ✓
+  [27/50] EALT... 502 rows ✓
+  [27/50] EAOA... 502 rows ✓
+  [27/50] EAOK... 502 rows ✓
+  [27/50] EAOM... 502 rows ✓
+  [27/50] EAOR... 502 rows ✓
+  [27/50] EAPR... 502 rows ✓
+  [27/50] EART... 502 rows ✓
+  [27/50] EASG... 502 rows ✓
+  → Inserted 9485 rows into foreign_etf_prices
+
+  [28/50] EASY... 140 rows ✓
+  [28/50] EATZ... 502 rows ✓
+  [28/50] EBI... 288 rows ✓
+  [28/50] EBIT... 447 rows ✓
+  [28/50] EBIZ... 502 rows ✓
+  [28/50] EBND... 502 rows ✓
+  [28/50] EBUF... 454 rows ✓
+  [28/50] ECH... 502 rows ✓
+  [28/50] ECML... 502 rows ✓
+  [28/50] ECNS... 502 rows ✓
+  [28/50] ECON... 502 rows ✓
+  [28/50] ECOW... 502 rows ✓
+  [28/50] EDC... 502 rows ✓
+  [28/50] EDEN... 502 rows ✓
+  [28/50] EDGE... 314 rows ✓
+  [28/50] EDGF... 388 rows ✓
+  [28/50] EDGH... 388 rows ✓
+  [28/50] EDGI... 388 rows ✓
+  [28/50] EDGU... 388 rows ✓
+  [28/50] EDIV... 502 rows ✓
+  → Inserted 8717 rows into foreign_etf_prices
+
+  [29/50] EDOG... 502 rows ✓
+  [29/50] EDOW... 502 rows ✓
+  [29/50] EDV... 502 rows ✓
+  [29/50] EDZ... 502 rows ✓
+  [29/50] EEE... 56 rows ✓
+  [29/50] EELV... 502 rows ✓
+  [29/50] EEM... 502 rows ✓
+  [29/50] EEMA... 502 rows ✓
+  [29/50] EEMO... 502 rows ✓
+  [29/50] EEMS... 502 rows ✓
+  [29/50] EEMV... 502 rows ✓
+  [29/50] EEMX... 502 rows ✓
+  [29/50] EES... 502 rows ✓
+  [29/50] EET... 502 rows ✓
+  [29/50] EETH... 502 rows ✓
+  [29/50] EEV... 502 rows ✓
+  [29/50] EFA... 502 rows ✓
+  [29/50] GLD... 502 rows ✓
+  [29/50] HYG... 502 rows ✓
+  [29/50] IEFA... 502 rows ✓
+  → Inserted 9594 rows into foreign_etf_prices
+
+  [30/50] ITOT... 502 rows ✓
+  [30/50] IVV... 502 rows ✓
+  [30/50] LQD... 502 rows ✓
+  [30/50] MMMA... 86 rows ✓
+  [30/50] MMSC... 502 rows ✓
+  [30/50] MMSD... 242 rows ✓
+  [30/50] MMTM... 502 rows ✓
+  [30/50] MNA... 502 rows ✓
+  [30/50] MNBD... 502 rows ✓
+  [30/50] MNRS... 308 rows ✓
+  [30/50] MNVT... 25 rows ✓
+  [30/50] MNZL... 105 rows ✓
+  [30/50] MOAT... 502 rows ✓
+  [30/50] MODL... 502 rows ✓
+  [30/50] MOO... 502 rows ✓
+  [30/50] MOOD... 502 rows ✓
+  [30/50] MORT... 502 rows ✓
+  [30/50] MOTG... 502 rows ✓
+  [30/50] MOTI... 502 rows ✓
+  [30/50] MOTO... 502 rows ✓
+  → Inserted 8296 rows into foreign_etf_prices
+
+  [31/50] MPG... 122 rows ✓
+  [31/50] MPL... 126 rows ✓
+  [31/50] MPLY... 234 rows ✓
+  [31/50] MPRO... 502 rows ✓
+  [31/50] MQQQ... 410 rows ✓
+  [31/50] MRAL... 283 rows ✓
+  [31/50] MRCP... 502 rows ✓
+  [31/50] MRGR... 502 rows ✓
+  [31/50] MRNX... 54 rows ✓
+  [31/50] MRNY... 502 rows ✓
+  [31/50] MRSK... 502 rows ✓
+  [31/50] MRVU... 48 rows ✓
+  [31/50] MSBT... 12 rows ✓
+  [31/50] MSDD... 218 rows ✓
+  [31/50] MSFD... 502 rows ✓
+  [31/50] MSFL... 502 rows ✓
+  [31/50] MSFO... 502 rows ✓
+  [31/50] MSFU... 502 rows ✓
+  [31/50] MSFW... 188 rows ✓
+  [31/50] MSFX... 502 rows ✓
+  → Inserted 6715 rows into foreign_etf_prices
+
+  [32/50] MSFY... 502 rows ✓
+  [32/50] MSII... 222 rows ✓
+  [32/50] MSLC... 340 rows ✓
+  [32/50] MSMR... 502 rows ✓
+  [32/50] MSOO... 174 rows ✓
+  [32/50] MSOS... 502 rows ✓
+  [32/50] MSOX... 502 rows ✓
+  [32/50] MSSM... 340 rows ✓
+  [32/50] MSSS... 502 rows ✓
+  [32/50] MSST... 106 rows ✓
+  [32/50] MST... 244 rows ✓
+  [32/50] MSTB... 502 rows ✓
+  [32/50] MSTI... 502 rows ✓
+  [32/50] MSTP... 218 rows ✓
+  [32/50] MSTQ... 502 rows ✓
+  [32/50] MSTU... 399 rows ✓
+  [32/50] MSTW... 188 rows ✓
+  [32/50] MSTX... 422 rows ✓
+  [32/50] MSTY... 502 rows ✓
+  [32/50] MSTZ... 399 rows ✓
+  → Inserted 7570 rows into foreign_etf_prices
+
+  [33/50] MTBA... 502 rows ✓
+  [33/50] MTGP... 502 rows ✓
+  [33/50] MTRA... 217 rows ✓
+  [33/50] MTUL... 502 rows ✓
+  [33/50] MTUM... 502 rows ✓
+  [33/50] MTYY... 146 rows ✓
+  [33/50] MUB... 502 rows ✓
+  [33/50] MUD... 377 rows ✓
+  [33/50] MULL... 360 rows ✓
+  [33/50] MULT... 163 rows ✓
+  [33/50] MUNI... 502 rows ✓
+  [33/50] MUNY... 230 rows ✓
+  [33/50] MUSE... 355 rows ✓
+  [33/50] MUSI... 502 rows ✓
+  [33/50] MUSQ... 502 rows ✓
+  [33/50] MUST... 502 rows ✓
+  [33/50] MUU... 383 rows ✓
+  [33/50] MUYY... 7 rows ✓
+  [33/50] MVAL... 502 rows ✓
+  [33/50] MVFD... 502 rows ✓
+  → Inserted 7760 rows into foreign_etf_prices
+
+  [34/50] MVFG... 502 rows ✓
+  [34/50] MVLL... 283 rows ✓
+  [34/50] MVPA... 502 rows ✓
+  [34/50] MVPL... 502 rows ✓
+  [34/50] MVRL... 502 rows ✓
+  [34/50] MVV... 502 rows ✓
+  [34/50] MXI... 502 rows ✓
+  [34/50] MYCF... 395 rows ✓
+  [34/50] MYCG... 395 rows ✓
+  [34/50] MYCH... 395 rows ✓
+  [34/50] MYCI... 395 rows ✓
+  [34/50] MYCJ... 395 rows ✓
+  [34/50] MYCK... 395 rows ✓
+  [34/50] MYCL... 394 rows ✓
+  [34/50] MYCM... 395 rows ✓
+  [34/50] MYCN... 394 rows ✓
+  [34/50] MYCO... 149 rows ✓
+  [34/50] MYHA... 38 rows ✓
+  [34/50] MYHB... 38 rows ✓
+  [34/50] MYHC... 38 rows ✓
+  → Inserted 7111 rows into foreign_etf_prices
+
+  [35/50] MYHD... 38 rows ✓
+  [35/50] MYHE... 38 rows ✓
+  [35/50] MYLD... 502 rows ✓
+  [35/50] MYMF... 395 rows ✓
+  [35/50] MYMG... 394 rows ✓
+  [35/50] MYMH... 394 rows ✓
+  [35/50] MYMI... 394 rows ✓
+  [35/50] MYMJ... 394 rows ✓
+  [35/50] MYMK... 149 rows ✓
+  [35/50] MYY... 502 rows ✓
+  [35/50] MZZ... 502 rows ✓
+  [35/50] NACP... 502 rows ✓
+  [35/50] NAIL... 502 rows ✓
+  [35/50] NANC... 502 rows ✓
+  [35/50] NANR... 502 rows ✓
+  [35/50] NAPR... 502 rows ✓
+  [35/50] NATO... 382 rows ✓
+  [35/50] NAUG... 432 rows ✓
+  [35/50] NBCE... 502 rows ✓
+  [35/50] NBCM... 502 rows ✓
+  → Inserted 8030 rows into foreign_etf_prices
+
+  [36/50] NBCR... 432 rows ✓
+  [36/50] NBDS... 502 rows ✓
+  [36/50] NBET... 502 rows ✓
+  [36/50] NBFC... 458 rows ✓
+  [36/50] NBGX... 333 rows ✓
+  [36/50] NBIE... 32 rows ✓
+  [36/50] NBIG... 122 rows ✓
+  [36/50] NBIL... 136 rows ✓
+  [36/50] NBIZ... 63 rows ✓
+  [36/50] NBJP... 403 rows ✓
+  [36/50] NBOS... 502 rows ✓
+  [36/50] NBSD... 459 rows ✓
+  [36/50] NBSM... 502 rows ✓
+  [36/50] NBTR... 335 rows ✓
+  [36/50] NCIQ... 297 rows ✓
+  [36/50] NCLO... 340 rows ✓
+  [36/50] NCPB... 502 rows ✓
+  [36/50] NDAA... 376 rows ✓
+  [36/50] NDEC... 347 rows ✓
+  [36/50] NDIA... 502 rows ✓
+  → Inserted 7145 rows into foreign_etf_prices
+
+  [37/50] NDIV... 502 rows ✓
+  [37/50] NDOW... 486 rows ✓
+  [37/50] NEAR... 502 rows ✓
+  [37/50] NEBX... 156 rows ✓
+  [37/50] NEHI... 96 rows ✓
+  [37/50] NELS... 130 rows ✓
+  [37/50] NEMD... 175 rows ✓
+  [37/50] NEMG... 107 rows ✓
+  [37/50] NERD... 502 rows ✓
+  [37/50] NETG... 107 rows ✓
+  [37/50] NETL... 502 rows ✓
+  [37/50] NEWZ... 501 rows ✓
+  [37/50] NFEB... 306 rows ✓
+  [37/50] NFLP... 502 rows ✓
+  [37/50] NFLT... 502 rows ✓
+  [37/50] NFLU... 392 rows ✓
+  [37/50] NFLW... 212 rows ✓
+  [37/50] NFLY... 502 rows ✓
+  [37/50] NFRA... 502 rows ✓
+  [37/50] NFRX... 56 rows ✓
+  → Inserted 6740 rows into foreign_etf_prices
+
+  [38/50] NFTY... 502 rows ✓
+  [38/50] NFXL... 388 rows ✓
+  [38/50] NFXS... 388 rows ✓
+  [38/50] NGHT... 11 rows ✓
+  [38/50] NHYM... 313 rows ✓
+  [38/50] NIHI... 150 rows ✓
+  [38/50] NIKL... 502 rows ✓
+  [38/50] NIOG... 85 rows ✓
+  [38/50] NITE... 459 rows ✓
+  [38/50] NIXT... 405 rows ✓
+  [38/50] NJAN... 502 rows ✓
+  [38/50] NJNK... 408 rows ✓
+  [38/50] NJUL... 502 rows ✓
+  [38/50] NJUN... 473 rows ✓
+  [38/50] NLR... 502 rows ✓
+  [38/50] NLSI... 91 rows ✓
+  [38/50] NMAR... 287 rows ✓
+  [38/50] NMAY... 245 rows ✓
+  [38/50] NMB... 404 rows ✓
+  [38/50] NMBL... 117 rows ✓
+  → Inserted 6734 rows into foreign_etf_prices
+
+  [39/50] NNEX... 109 rows ✓
+  [39/50] NNOV... 367 rows ✓
+  [39/50] NOBL... 502 rows ✓
+  [39/50] NOCT... 502 rows ✓
+  [39/50] NODE... 236 rows ✓
+  [39/50] NOEQ... 22 rows ✓
+  [39/50] NORW... 502 rows ✓
+  [39/50] NOVM... 356 rows ✓
+  [39/50] NOVP... 247 rows ✓
+  [39/50] NOVZ... 502 rows ✓
+  [39/50] NOWL... 195 rows ✓
+  [39/50] NPFE... 30 rows ✓
+  [39/50] NPFI...Failed to get ticker 'NPFI' reason: Failed to perform, curl: (28) Operation timed out after 10003 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+ 502 rows ✓
+  [39/50] NRES... 501 rows ✓
+  [39/50] NRGD... 294 rows ✓
+  [39/50] NRGU... 294 rows ✓
+  [39/50] NRSH... 502 rows ✓
+  [39/50] NSEP... 410 rows ✓
+  [39/50] NSI... 502 rows ✓
+  [39/50] NTSE... 502 rows ✓
+  → Inserted 7077 rows into foreign_etf_prices
+
+  [40/50] NTSI... 502 rows ✓
+  [40/50] NTSX... 502 rows ✓
+  [40/50] NUAG... 502 rows ✓
+  [40/50] NUBD... 502 rows ✓
+  [40/50] NUDM... 502 rows ✓
+  [40/50] NUDV... 502 rows ✓
+  [40/50] NUEM... 502 rows ✓
+  [40/50] NUG... 107 rows ✓
+  [40/50] NUGO... 502 rows ✓
+  [40/50] NUGT... 502 rows ✓
+  [40/50] NUGY... 106 rows ✓
+  [40/50] NUHY... 502 rows ✓
+  [40/50] NUKZ... 502 rows ✓
+  [40/50] NULC... 502 rows ✓
+  [40/50] NULG... 502 rows ✓
+  [40/50] NULV... 502 rows ✓
+  [40/50] NUMG... 502 rows ✓
+  [40/50] NUMI... 313 rows ✓
+  [40/50] NUMV... 502 rows ✓
+  [40/50] NURE... 502 rows ✓
+  → Inserted 9060 rows into foreign_etf_prices
+
+  [41/50] NUSA... 502 rows ✓
+  [41/50] NUSB... 502 rows ✓
+  [41/50] NUSC... 502 rows ✓
+  [41/50] NVBT... 502 rows ✓
+  [41/50] NVBU... 367 rows ✓
+  [41/50] NVBW... 502 rows ✓
+  [41/50] NVD... 502 rows ✓
+  [41/50] NVDD... 502 rows ✓
+  [41/50] NVDG... 338 rows ✓
+  [41/50] NVDL... 502 rows ✓
+  [41/50] NVDO... 174 rows ✓
+  [41/50] NVDQ... 502 rows ✓
+  [41/50] NVDS... 502 rows ✓
+  [41/50] NVDU... 502 rows ✓
+  [41/50] NVDW... 295 rows ✓
+  [41/50] NVDX... 502 rows ✓
+  [41/50] NVDY... 502 rows ✓
+  [41/50] NVII... 227 rows ✓
+  [41/50] NVIR... 502 rows ✓
+  [41/50] NVIT... 106 rows ✓
+  → Inserted 8535 rows into foreign_etf_prices
+
+  [42/50] NVOH... 323 rows ✓
+  [42/50] NVOX... 346 rows ✓
+  [42/50] NVTX... 156 rows ✓
+  [42/50] NVYY... 237 rows ✓
+  [42/50] NXTE... 502 rows ✓
+  [42/50] NXTG... 502 rows ✓
+  [42/50] NXTI... 502 rows ✓
+  [42/50] NYF... 502 rows ✓
+  [42/50] NYM... 112 rows ✓
+  [42/50] NZAC... 502 rows ✓
+  [42/50] NZUS... 501 rows ✓
+  [42/50] OACP... 502 rows ✓
+  [42/50] OAEM... 502 rows ✓
+  [42/50] OAIM... 502 rows ✓
+  [42/50] OAKM... 346 rows ✓
+  [42/50] OALC... 502 rows ✓
+  [42/50] OARK... 502 rows ✓
+  [42/50] OASC... 464 rows ✓
+  [42/50] OBIL... 502 rows ✓
+  [42/50] OBND... 502 rows ✓
+  → Inserted 8509 rows into foreign_etf_prices
+
+  [43/50] OBOR... 502 rows ✓
+  [43/50] OBTC... 502 rows ✓
+  [43/50] OCIO... 502 rows ✓
+  [43/50] OCTB... 131 rows ✓
+  [43/50] OCTH... 502 rows ✓
+  [43/50] OCTJ... 502 rows ✓
+  [43/50] OCTM... 376 rows ✓
+  [43/50] OCTP... 483 rows ✓
+  [43/50] OCTT... 502 rows ✓
+  [43/50] OCTU... 390 rows ✓
+  [43/50] OCTW... 502 rows ✓
+  [43/50] OCTZ... 502 rows ✓
+  [43/50] ODDS... 501 rows ✓
+  [43/50] ODHY... 205 rows ✓
+  [43/50] ODTE... 14 rows ✓
+  [43/50] OEF... 502 rows ✓
+  [43/50] OEFA... 502 rows ✓
+  [43/50] OGIG... 502 rows ✓
+  [43/50] OGSP... 501 rows ✓
+  [43/50] OIH... 502 rows ✓
+  → Inserted 8625 rows into foreign_etf_prices
+
+  [44/50] OILD... 502 rows ✓
+  [44/50] OILK... 502 rows ✓
+  [44/50] OILT... 502 rows ✓
+  [44/50] OILU... 502 rows ✓
+  [44/50] OKLL... 209 rows ✓
+  [44/50] OKLS... 100 rows ✓
+  [44/50] OKTG... 107 rows ✓
+  [44/50] OMAH... 285 rows ✓
+  [44/50] OMFL... 502 rows ✓
+  [44/50] OMFS... 502 rows ✓
+  [44/50] OND... 502 rows ✓
+  [44/50] ONDG... 69 rows ✓
+  [44/50] ONDL... 78 rows ✓
+  [44/50] ONDU... 69 rows ✓
+  [44/50] ONEH... 57 rows ✓
+  [44/50] ONEO... 502 rows ✓
+  [44/50] ONEQ... 502 rows ✓
+  [44/50] ONEV... 502 rows ✓
+  [44/50] ONEY... 502 rows ✓
+  [44/50] ONEZ... 307 rows ✓
+  → Inserted 6803 rows into foreign_etf_prices
+
+  [45/50] ONLN... 502 rows ✓
+  [45/50] ONOF... 502 rows ✓
+  [45/50] OOSP... 502 rows ✓
+  [45/50] OPEG... 90 rows ✓
+  [45/50] OPER... 502 rows ✓
+  [45/50] OPEX... 124 rows ✓
+  [45/50] OPPE... 502 rows ✓
+  [45/50] OPPJ... 502 rows ✓
+  [45/50] OPTZ... 501 rows ✓
+  [45/50] ORBX... 6 rows ✓
+  [45/50] ORCS... 105 rows ✓
+  [45/50] ORCU... 105 rows ✓
+  [45/50] ORCX... 302 rows ✓
+  [45/50] ORLG... 67 rows ✓
+  [45/50] ORO... 128 rows ✓
+  [45/50] ORR... 318 rows ✓
+  [45/50] OSCG... 115 rows ✓
+  [45/50] OSCV... 502 rows ✓
+  [45/50] OSCX... 144 rows ✓
+  [45/50] OSEA... 502 rows ✓
+  → Inserted 6021 rows into foreign_etf_prices
+
+  [46/50] OTGL... 195 rows ✓
+  [46/50] OUNZ... 502 rows ✓
+  [46/50] OUSA... 502 rows ✓
+  [46/50] OUSM... 502 rows ✓
+  [46/50] OVB... 502 rows ✓
+  [46/50] OVF... 502 rows ✓
+  [46/50] OVL... 502 rows ✓
+  [46/50] OVLH... 502 rows ✓
+  [46/50] OVM... 502 rows ✓
+  [46/50] OVS... 502 rows ✓
+  [46/50] OVT... 502 rows ✓
+  [46/50] OWNB... 281 rows ✓
+  [46/50] OWNS... 502 rows ✓
+  [46/50] OZEM... 481 rows ✓
+  [46/50] PAAA... 502 rows ✓
+  [46/50] PAAU... 29 rows ✓
+  [46/50] PAB... 502 rows ✓
+  [46/50] PABD... 502 rows ✓
+  [46/50] PABU... 502 rows ✓
+  [46/50] PALC... 502 rows ✓
+  → Inserted 9018 rows into foreign_etf_prices
+
+  [47/50] PALD... 268 rows ✓
+  [47/50] PALL... 502 rows ✓
+  [47/50] PALU... 269 rows ✓
+  [47/50] PAMC... 502 rows ✓
+  [47/50] PANG... 273 rows ✓
+  [47/50] PAPI... 502 rows ✓
+  [47/50] PAPR... 502 rows ✓
+  [47/50] PATN... 400 rows ✓
+  [47/50] PATX... 69 rows ✓
+  [47/50] PAUG... 502 rows ✓
+  [47/50] PAVE... 502 rows ✓
+  [47/50] PAWZ... 502 rows ✓
+  [47/50] PAYH... 78 rows ✓
+  [47/50] PAYM... 78 rows ✓
+  [47/50] PAYR... 135 rows ✓
+  [47/50] PBAP... 502 rows ✓
+  [47/50] PBAU... 488 rows ✓
+  [47/50] PBD... 502 rows ✓
+  [47/50] PBDC... 502 rows ✓
+  [47/50] PBDE... 478 rows ✓
+  → Inserted 7556 rows into foreign_etf_prices
+
+  [48/50] PBE... 502 rows ✓
+  [48/50] PBEU... 98 rows ✓
+  [48/50] PBFB... 502 rows ✓
+  [48/50] PBFR... 464 rows ✓
+  [48/50] PBJ... 502 rows ✓
+  [48/50] PBJA... 502 rows ✓
+  [48/50] PBJL... 490 rows ✓
+  [48/50] PBJN... 473 rows ✓
+  [48/50] PBL... 502 rows ✓
+  [48/50] PBMR... 502 rows ✓
+  [48/50] PBMY... 495 rows ✓
+  [48/50] PBNV... 250 rows ✓
+  [48/50] PBOC... 483 rows ✓
+  [48/50] PBOG... 98 rows ✓
+  [48/50] PBP... 502 rows ✓
+  [48/50] PBPH... 98 rows ✓
+  [48/50] PBQQ... 322 rows ✓
+  [48/50] PBRG... 85 rows ✓
+  [48/50] PBSE... 468 rows ✓
+  [48/50] PBTP... 502 rows ✓
+  → Inserted 7840 rows into foreign_etf_prices
+
+  [49/50] PBUS... 501 rows ✓
+  [49/50] PBW... 501 rows ✓
+  [49/50] PCCE... 501 rows ✓
+  [49/50] PCEF... 502 rows ✓
+  [49/50] PCFI... 268 rows ✓
+  [49/50] PCGG... 501 rows ✓
+  [49/50] PCHI... 271 rows ✓
+  [49/50] PCI... 181 rows ✓
+  [49/50] PCIG... 501 rows ✓
+  [49/50] PCL... 179 rows ✓
+  [49/50] PCLG... 141 rows ✓
+  [49/50] PCLO... 346 rows ✓
+  [49/50] PCMM... 346 rows ✓
+  [49/50] PCPI... 13 rows ✓
+  [49/50] PCRB... 502 rows ✓
+  [49/50] PCS... 182 rows ✓
+  [49/50] PCY... 502 rows ✓
+  [49/50] PDBA... 501 rows ✓
+  [49/50] PDBC... 501 rows ✓
+  [49/50] PDDL... 195 rows ✓
+    insert error for PCEF: 400 {"code":"PGRST102","details":null,"hint":null,"message":"Empty or invalid json"}
+    insert error for PCRB: 400 {"code":"PGRST102","details":null,"hint":null,"message":"Empty or invalid json"}
+    insert error for PCY: 400 {"code":"PGRST102","details":null,"hint":null,"message":"Empty or invalid json"}
+  → Inserted 7135 rows into foreign_etf_prices
+
+  [50/50] PDEC... 501 rows ✓
+  [50/50] PDN... 501 rows ✓
+  [50/50] PDP... 501 rows ✓
+  [50/50] PEJ... 501 rows ✓
+  [50/50] PEMX... 501 rows ✓
+  [50/50] PEPS... 252 rows ✓
+  [50/50] PEVC... 305 rows ✓
+  [50/50] PEX... 501 rows ✓
+  [50/50] PEXL... 501 rows ✓
+  [50/50] PEY... 502 rows ✓
+  [50/50] PEZ... 501 rows ✓
+  [50/50] PFDE... 77 rows ✓
+  [50/50] PFEB... 501 rows ✓
+  [50/50] PFF... 501 rows ✓
+  [50/50] PFFA... 502 rows ✓
+  [50/50] PFFD... 501 rows ✓
+  [50/50] PFFR... 502 rows ✓
+  [50/50] PFFV... 501 rows ✓
+  [50/50] PFI... 501 rows ✓
+  [50/50] PFIG... 502 rows ✓
+    insert error for PEY: 400 {"code":"PGRST102","details":null,"hint":null,"message":"Empty or invalid json"}
+    insert error for PFFA: 400 {"code":"PGRST102","details":null,"hint":null,"message":"Empty or invalid json"}
+    insert error for PFFR: 400 {"code":"PGRST102","details":null,"hint":null,"message":"Empty or invalid json"}
+    insert error for PFIG: 400 {"code":"PGRST102","details":null,"hint":null,"message":"Empty or invalid json"}
+  → Inserted 9155 rows into foreign_etf_prices
+
+============================================================
+✅ Done!
+   ETFs processed: 1000/1000
+   Failed ETFs: 0
+   Total price rows inserted: 389,667
+
+Sparklines will be computed by page.tsx on next request.

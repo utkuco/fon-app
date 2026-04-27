@@ -28,7 +28,7 @@ import pdfplumber
 import requests
 
 # ─── Config ───────────────────────────────────────────────────────────────────
-ZHIPU_API_KEY=os.getenv("ZHIPU_API_KEY") or "4ca4188d116c433597f87d6a09e27b71.9lhC8b6VX1l9VM9V"
+ZHIPU_API_KEY = os.environ.get("ZHIPU_API_KEY") or "4ca4188d116c433597f87d6a09e27b71.9lhC8b6VX1l9VM9V"
 ZHIPU_API_BASE   = "https://api.z.ai/api/coding/paas/v4"
 SUPABASE_URL     = "https://oqkobptbvcazifpvjwfz.supabase.co"
 # Hardcoded publishable key — used for REST API upserts to portfolio_breakdown
@@ -162,10 +162,10 @@ def parse_portfolio_tables(pdf_path: Path, fund_code: str, category_override: st
             return result
 
         # ── HISSE/KARMA: table parsing → GLM fallback inside _parse_hisse_tables ──
-        return _parse_hisse_tables(pdf_path, raw_text)
+        return _parse_hisse_tables(pdf_path, raw_text, fund_code)
 
     except Exception as e:
-        log(f"parse_portfolio_tables error {pdf_path.name}: {e}", "WARN")
+        log(f"parse_portfolio_tables error {fund_code}: {e}", "WARN")
         return None
 
 
@@ -261,7 +261,7 @@ def _parse_para_piyasasi_section4(raw_text: str) -> Optional[dict]:
             elif "BORÇLAR" in line_upper or "İHTİYAT" in line_upper or "VERGİ" in line_upper:
                 pass  # negative items — not an allocation
 
-    print(f"    Section IV pcts: {sec4_pct}")
+    log(f"    Section IV pcts: {sec4_pct}", "INFO")
 
     # ─────────────────────────────────────────────────────────────────────────
     # STEP 2: Section III — GRUP TOPLAMI (only if pct is clearly valid)
@@ -331,7 +331,7 @@ def _parse_para_piyasasi_section4(raw_text: str) -> Optional[dict]:
         else:
             grup_totals["other"] = max(grup_totals.get("other", 0), pct)
 
-    print(f"    Section III grup_totals: {grup_totals}")
+    log(f"    Section III grup_totals: {grup_totals}", "INFO")
 
     # ─────────────────────────────────────────────────────────────────────────
     # STEP 3: Merge — use Section III values + Section IV total as total_pct
@@ -459,7 +459,7 @@ def _parse_para_piyasasi_section4(raw_text: str) -> Optional[dict]:
     return result
 
 
-def _parse_hisse_tables(pdf_path: Path, raw_text: str = "") -> Optional[dict]:
+def _parse_hisse_tables(pdf_path: Path, raw_text: str = "", fund_code: str = "") -> Optional[dict]:
     """
     Parse hisse/karma fund from pdfplumber tables.
     Falls back to GLM if pdfplumber returns no data.
@@ -559,7 +559,7 @@ def _parse_hisse_tables(pdf_path: Path, raw_text: str = "") -> Optional[dict]:
         return None  # pdfplumber failed, let GLM handle it
 
     except Exception as e:
-        log(f"_parse_hisse_tables error {pdf_path.name}: {e}", "WARN")
+        log(f"_parse_hisse_tables error {fund_code}: {e}", "WARN")
         return None
 
 
@@ -1142,7 +1142,9 @@ FUND_TYPE_MAP = {
 
 def _fund_type_to_category(fund_type: str) -> str:
     """Map TEFAS fund_type to KAP parse category."""
-    return FUND_TYPE_MAP.get(fund_type.upper(), "SKIP")
+    if not fund_type:
+        return "UNKNOWN"
+    return FUND_TYPE_MAP.get(fund_type.upper(), "UNKNOWN")
 
 
 def _get_fund_type_from_db(fund_codes: list[str]) -> dict[str, str]:
@@ -1244,8 +1246,10 @@ def parse_single_pdf(pdf_path: Path, fund_code: str, category_override: str | No
 
     # ── Fallback: HISSE/UNKNOWN → GLM ─────────────────────────────────────
     if not result:
-        if category_override in ("HISSE", "UNKNOWN", "KARMA", ""):
-            log(f"  Fallback: attempting GLM for {category_override or 'UNKNOWN'}...", "WARN")
+        # category_override may be None (direct call without DB lookup) — treat as UNKNOWN
+        cat = category_override if category_override else "UNKNOWN"
+        if cat in ("HISSE", "UNKNOWN", "KARMA", "PARA"):
+            log(f"  Fallback: attempting GLM for {cat}...", "WARN")
             try:
                 raw_text = pdfminer.high_level.extract_text(str(pdf_path), maxpages=5)
             except Exception as e:
