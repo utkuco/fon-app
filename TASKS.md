@@ -7,7 +7,13 @@
   - Hesaplama: `Σ(return × aum) / Σ(aum)` — büyük ETF'lerin daha çok etkisi var
   - Diğer kartı artık 1A/3A/6A değerleri gösteriyor (eskiden "—")
   - Commit `23b050c`, deploy `web-1avhi3tht`
-  - ⚠️ **GAP**: ETF category sparkline'ları `homepage-stats-cron` tarafından hesaplanmıyor (sadece Türk fonları). Düzeltilecek.
+- **ETF category sparkline gap** (Nisan 2026): `homepage-stats-cron`'a ETF category sparkline hesaplaması eklendi
+  - `computeEtfCategorySparklines()` — `ETF_CATEGORIES` ticker set'lerini kullanıyor (CategoryTypeCards ile aynı mantık)
+  - 6 kategori: SP500/NASDAQ/TAHVİL/ALTIN/DUNYA + DIGER (fallback)
+  - Son 30 gün, AUM-ağırlıklı USD fiyat serisi, viewBox 280×40
+  - `category_sparklines` içine merge ediliyor — aynı JSONB field
+  - Commit `1b275a9`, parent `c7524b1`
+  - ⚠️ Cron'un Vercel'de çalışması için manuel tetikleme veya zamanlama gerekli (cron at 14:00 + 23:30)
 - **Kategori kartı historical returns FIX** (Nisan 2026): Tüm değerler artık gerçek AUM-ağırlıklı historical return. 1d≠1m≠3m≠6m birbirinden farklı ✅
   - Root cause: Global latestDateStr kullanımı → fund verisi April 10'da bitiyor, cron April 28'de çalışıyor → pNow=null → fallback April 10 → 1d=1m
   - Fix: Her fon kendi `lastDate`'ini referans alıyor
