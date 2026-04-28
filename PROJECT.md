@@ -131,7 +131,7 @@
 | `most_held_stocks` | jsonb | `[{ticker, company, total_weight, fund_count}]` | `homepage-stats-cron` |
 | `category_stats` | jsonb | `{type: {count, total_market_cap, change_1d, change_1w, change_1m, change_3m, change_6m}}` — AUM-weighted historical returns (%) for Turkish fund categories. ETF categories: computed client-side from `foreign_etfs` (AUM-weighted) | `homepage-stats-cron` (funds only) |
 | `category_change` | jsonb | `{type: {change_pct, prev_aum, curr_aum, count}}` | `homepage-stats-cron` |
-| `category_sparklines` | jsonb | `{type: {points: [[x,y],...], positive: bool}}` — 30-day AUM-weighted avg price series for **Turkish fund categories only** (viewBox 280×40). ETF category sparklines → NOT computed by any cron (⚠️ gap) | `homepage-stats-cron` (funds only) |
+| `category_sparklines` | jsonb | `{type: {points: [[x,y],...], positive: bool}}` — 30-day AUM-weighted avg price series (viewBox 280×40). Turkish fund categories computed by `homepage-stats-cron`; ETF categories: SP500/NASDAQ/TAHVİL/ALTIN/DUNYA/DİGER also computed by `homepage-stats-cron` (AUM-weighted USD price series, same grouping as CategoryTypeCards) | `homepage-stats-cron` |
 | `benchmarks_data` | jsonb | `{LABEL: {data: [{date, price}], change}}` | `benchmarks-cron` |
 | `updated_at` | timestamptz | Son güncelleme | Various |
 
@@ -376,7 +376,7 @@ type Sparkline = {
 - `CategorySection` — category cards with sparklines and stats
   - **Turkish fund cards**: AUM-weighted historical returns from `homepage_stats.category_stats` (Türk fonu kartları)
   - **ETF cards**: AUM-weighted aggregation computed client-side from `foreign_etfs` table (yukarıda açıklandığı gibi)
-  - ⚠️ **ETF category sparklines**: `homepage_stats.category_sparklines` sadece Türk fonları için hesaplanıyor. ETF sparkline'ları için ayrı bir AUM-ağırlıklı hesaplama yok (gap — düzeltilecek)
+  - **ETF category sparklines**: `homepage_stats.category_sparklines` içinde — `homepage-stats-cron` AUM-ağırlıklı USD fiyat serisi hesaplıyor (SP500/NASDAQ/TAHVİL/ALTIN/DUNYA/DİGER)
 - `BlogSection` — latest 6 blog posts
 - `TopMovers` — top gainers/losers list
 - `MarketSummary` — total funds, AUM, avg change

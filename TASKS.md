@@ -12,7 +12,8 @@
   - 6 kategori: SP500/NASDAQ/TAHVİL/ALTIN/DUNYA + DIGER (fallback)
   - Son 30 gün, AUM-ağırlıklı USD fiyat serisi, viewBox 280×40
   - `category_sparklines` içine merge ediliyor — aynı JSONB field
-  - Commit `1b275a9`, parent `c7524b1`
+  - Commit `1b275a9` (web submodule), `c7524b1` (parent pointer), `adfc9bb` (docs)
+  - Deploy `web-brmfvldc6` → fonrapor.com
   - ⚠️ Cron'un Vercel'de çalışması için manuel tetikleme veya zamanlama gerekli (cron at 14:00 + 23:30)
 - **Kategori kartı historical returns FIX** (Nisan 2026): Tüm değerler artık gerçek AUM-ağırlıklı historical return. 1d≠1m≠3m≠6m birbirinden farklı ✅
   - Root cause: Global latestDateStr kullanımı → fund verisi April 10'da bitiyor, cron April 28'de çalışıyor → pNow=null → fallback April 10 → 1d=1m
