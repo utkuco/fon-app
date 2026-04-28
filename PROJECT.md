@@ -260,6 +260,7 @@ type Sparkline = {
 - **API route**: `GET /api/homepage-data` → `fetchHomePageData()`
 - **Cache**: `cache-control: public, s-maxage=300, stale-while-revalidate=60`
 - **Components**: `HomePageClient` → `FunLists`, `CategorySection`, `BlogSection`
+- **Tüm Varlıklar grid**: `MIXED_PAGE_SIZE = 20` (items per page), shows FON + ETF mixed
 
 ### /varliklar (Varlık Bazlı Görünüm)
 - **Data source**: `foreign_etfs` table (direct, via `etfs/route.ts`)
@@ -373,7 +374,7 @@ type Sparkline = {
 ### Homepage Components
 - `FunLists` (`HomePageClient`) — tabbed view: Tümü/VFF/SRF/etc., fund list with sparklines
 - `CategorySection` — category cards with sparklines and stats
-- `BlogSection` — latest 3 blog posts
+- `BlogSection` — latest 6 blog posts
 - `TopMovers` — top gainers/losers list
 - `MarketSummary` — total funds, AUM, avg change
 - `DashboardStats` — homepage stats strip
