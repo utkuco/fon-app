@@ -530,6 +530,13 @@ type Sparkline = {
 - `etf_daily_cron.py`: computes from `foreign_etf_prices`, writes to `foreign_etfs.sparkline`
 - Format: `{points: [[x,y], ...], positive: bool}` where x=[0,280], y=[0,40]
 
+### ETF Price Display
+- ETF fiyatları **USD** olarak gösterilir — `$` prefix ile
+- ETF getiri metrikleri **TL** cinsinden hesaplanır (yabancı piyasalar TL'den)
+- FundCard'da `"isEtf" in fund && fund.isEtf` kontrolü ile tip güvenliği sağlanır
+- PeriodBadge labels: "1A TL", "1G TL" — sort bar butonları: "Günlük (TL)", "Aylık (TL)"
+- Homepage'de info notice: "Yabancı ETF getirileri TL cinsinden hesaplanır. Fiyatları USD'dir."
+
 ### Homepage Stats Flow
 1. `benchmarks-cron` (09:30 TR) → `homepage_stats.benchmarks_data`
 2. `fund-cron` (15:00 TR) → `funds.sparkline`, `funds.daily_change`
