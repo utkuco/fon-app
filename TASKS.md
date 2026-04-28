@@ -24,10 +24,13 @@
   - Tarih aralığı: 2025-07-23 → 2026-04-28
   - PostgREST filter nota: `base` ve `quote` kolonları operatör olarak parse ediliyor — `select=date&base=eq.USD&quote=eq.TRY` kullan
 - **Supabase DDL workflow**: README'ye eklendi, migration dosyası `web/supabase/migrations/` dizininde
+- **README cron table**: vercel.json ile eşleşecek şekilde güncellendi (Mayıs 2026)
 
 ## In Progress
 
-- *(yok)*
+- **Kategori kartı sparkline BUG**: `homepage_stats.category_sparklines` = `{}` (boş) — kategori kartlarında sparkline yerine placeholder gösteriliyor (Mayıs 2026)
+  - `homepage-stats-cron` veya `fetchHomePageStats()` fonksiyonu `category_sparklines` hesaplamıyor
+  - Homepage'de "SON 6 AY" yazısı var ama SVG chart yok
 
 ## Backlog
 
@@ -36,16 +39,17 @@
 - **KAP portfolio parser**: Zhipu GLM ile KAP PDF'lerinden portföy dağılımı çıkar
   - 507 PDF var, 102'si parse edildi, 405 bekliyor
   - Supabase management token 401 veriyor → yeni token gerekli
-
 - **Supabase DDL**: Schema değişikliklerini management API ile uygula
   - Mevcut tablolar: funds, foreign_etfs, homepage_stats, vb.
   - SQL migrations yazılıp uygulanacak
+- **Kategori sparkline fix**: `category_sparklines` computation ekle
+  - Her kategori için Son 6Ay AUM-ağırlıklı ortalama getiri hesapla
+  - `homepage_stats` tablosuna yaz — cron çalıştığında update et
 
 ### Orta Öncelik
 
 - **ETF category pages**: /varliklar/hisseler, /varliklar/tahvil, /varliklar/altin, /varliklar/gelismekte
   - Mevcut /varliklar sayfası çalışıyor, category routing eklenecek
-
 - **Blog post content**: Türkçe finans içeriği üret
   - 71 içerik var (content_posts tablosu)
   - Aktif içerik üretimi + SEO optimize içerik planı

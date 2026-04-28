@@ -57,14 +57,16 @@ Her periyot için o tarihte geçerli olan USD/TRY kuru kullanılır. Bu:
 
 ## Cron Job Bölümü
 
-### Vercel (15:00–02:30 TR, Pazartesi–Cuma)
-| Cron | Zaman | İş |
-|------|-------|-----|
-| `fund-cron` | 15:00 | `funds.daily_change`, `funds.sparkline` hesapla |
-| `homepage-stats-cron` | 16:00 & 02:30 | `homepage_stats`, `fund_category_ranks` hesapla |
-| `benchmarks-cron` | 09:30 | Benchmark endekslerini çek |
-| `etf-cron` | 23:00 | ETF fiyatlarını güncelle |
-| `etf-returns-cron` | 00:00 | ETF getiri metriklerini hesapla |
+### Vercel ( Pazartesi–Cuma)
+| Cron | UTC | TR (UTC+3) | İş |
+|------|-----|-----------|-----|
+| `fund-cron` | 13:00 | 16:00 | `funds.daily_change`, `funds.sparkline` hesapla |
+| `homepage-stats-cron` | 14:00 | 17:00 | `homepage_stats` hesapla |
+| `benchmarks-cron` | 07:30 | 10:30 | Benchmark endekslerini çek |
+| `etf-cron` | 21:00 | 00:00 | ETF sparkline + fiyatları güncelle |
+| `etf-returns-cron` | 21:30 | 00:30 | ETF getiri metriklerini hesapla |
+| `homepage-stats-cron` (2.) | 23:30 | 02:30 | Final stats update |
+| `kap-portfolio-cron` | 07:00 Mon | 10:00 Pzt | KAP PDF portföy parse |
 
 ### Local Mac (launchd, ~/Library/LaunchAgents)
 | Job | Zaman | İş |
