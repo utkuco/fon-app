@@ -1,3 +1,4 @@
 [2026-04-24T21:32:47Z] PROBLEM: Scraper stuck since 2026-04-24T21:13:44 — 0 funds scraped, price_history stale (GES: 2026-04-16). Last successful fetch: 2026-04-24T00:50:20
 [2026-04-25T21:37:50Z] PROBLEM: Scraper stalled again (started 2026-04-25T20:36:43, finished_at=null) — no new price data since 2026-04-16. All 5 sampled funds (VEV, GES, GRL, TIP, PAF) show price_history latest=2026-04-16. system_status.last_tefas_fetch still 2026-04-24T00:50:20. Last successful scrape was 2 days ago.
 2026-04-26T21:43:57Z | PROBLEM | Scraper stalled 2026-04-26T20:37:21 | Funds GES/GRL/TIP 11 days stale | VEV/PAF 3 days stale
+[2026-04-27T22:08:24Z] PROBLEM: TEFAS scraper stuck in 'running' state since 2026-04-27T22:04:50. 1000 funds never fetched. GES/GRL/TIP 5 days stale. price_history table missing.

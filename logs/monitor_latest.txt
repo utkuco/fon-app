@@ -1,49 +1,37 @@
-==================================================
 TEFAS SCRAPER HEALTH REPORT
-Generated: 2026-04-26T21:43:57Z
-==================================================
+Generated: 2026-04-27T22:08:24.654524+00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-OVERALL STATUS: PROBLEM
+OVERALL STATUS: ⚠️  PROBLEM
 
------------------------------------------------
-SCRAPER LAST RUN
------------------------------------------------
-  Status:          STALLED (started 2026-04-26T20:37:21, never finished)
-  Last finished:   NEVER (stalled)
-  Funds scraped:   0 (of 1000 total)
-  Errors logged:   0
+SCRAPER STATUS
+  Log file:         ~/Desktop/projects/fon-app/logs/scraper_last_run.json
+  Status:           running (STALE - started 2026-04-27 22:04:50 UTC, never finished)
+  Funds scraped:    0 (log shows 0, scrape crashed/stuck before writing any)
+  Finished at:      null (never completed)
 
------------------------------------------------
 DATABASE STATUS
------------------------------------------------
-  Total funds:              1000
-  system_status.last_tefas_fetch: 2026-04-26T16:52:52.440298
+  Total funds:             1000
+  Updated yesterday (2026-04-26): 500
+  Never fetched (null):    1000
+  system_status last_tefas_fetch: 2026-04-26T16:52:52.440298
+  price_history table:     DOES NOT EXIST
 
------------------------------------------------
-SAMPLE FUND PRICES (VEV, GES, GRL, TIP, PAF)
------------------------------------------------
-  Fund | Current Price | price_history Latest | Staleness | # Records
-  VEV  | 0.169915       | 2026-04-24           | 1 day(s)  | 1255
-  GES  | 0.095529       | 2026-04-16           | 11 days   | 247
-  GRL  | 19.650702      | 2026-04-16           | 11 days   | 252
-  TIP  | 2.161393       | 2026-04-16           | 11 days   | 252
-  PAF  | 3.631212       | 2026-04-24           | 1 day(s)  | 631
+SAMPLE FUND PRICES (2026-04-28)
+  VEV:  1.387228 TL   last fetch: 2026-04-26 (2 days ago) ✓
+  GES:  0.095529 TL   last fetch: 2026-04-23 (5 days ago) ✗ STALE
+  GRL: 19.650702 TL   last fetch: 2026-04-23 (5 days ago) ✗ STALE
+  TIP:  2.161393 TL   last fetch: 2026-04-23 (5 days ago) ✗ STALE
+  PAF:  8.815642 TL   last fetch: 2026-04-26 (2 days ago) ✓
 
------------------------------------------------
-DIAGNOSIS
------------------------------------------------
-  Yesterday's scrape (2026-04-26): Started at 20:37:21, status still 'running',
-  but 0 funds scraped -- scraper is STALLED.
+ISSUES DETECTED
+  1. [CRITICAL] Scraper stuck in 'running' state since 2026-04-27 22:04:50 UTC
+  2. [HIGH] 1000 funds never been fetched (last_tefas_fetch is null)
+  3. [MEDIUM] GES, GRL, TIP not updated in 5 days
+  4. [INFO] price_history table does not exist
 
-  Fund data staleness:
-  - VEV, PAF: price_history at 2026-04-24 (3 days stale -- partial progress)
-  - GES, GRL, TIP: price_history at 2026-04-16 (11 days stale)
-
------------------------------------------------
-ACTION REQUIRED
------------------------------------------------
-  1. Kill the stalled scraper process from 2026-04-26T20:37:21
-  2. Investigate crash/timeout -- check tefas_cron.log and tefas_monitor.err
-  3. Re-run the TEFAS scrape for 2026-04-27
-  4. Verify price_history updated for GES, GRL, TIP after re-run
-==================================================
+RECOMMENDATIONS
+  → Investigate why scraper process died on 2026-04-27 22:04:50
+  → Re-run scraper to clear stale 'running' lock
+  → Backfill null-fetch funds
+  → Add price_history table for historical tracking

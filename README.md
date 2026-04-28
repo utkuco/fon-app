@@ -36,6 +36,11 @@ fon-app/
 - **yfinance** → uluslararası ETF fiyatları (`etf_daily_cron.py`)
 - **Yahoo Finance** → benchmark endeksleri (`benchmarks-cron`)
 
+### ETF Fiyat Gösterimi
+- ETF fiyatları **USD** olarak gösterilir (`$` prefix)
+- ETF getiri metrikleri **TL** cinsinden hesaplanır (yabancı piyasalar TL'den)
+- Tüm dönem badge'leri: "1A TL", "1G TL" (sıralama butonları: "Günlük (TL)", "Aylık (TL)")
+
 ## Cron Job Bölümü
 
 ### Vercel (15:00–02:30 TR, Pazartesi–Cuma)

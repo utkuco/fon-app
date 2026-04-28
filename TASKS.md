@@ -9,10 +9,13 @@
 - Admin layout: SiteNavbar/Footer gizleme for /admin routes
 - Sparkline rendering: DB pre-scaled points (y=0-40) directly use et
 - KAP portfolio parser: Zhipu GLM ile PDF parse pipeline
+- ETF fiyat gösterimi: USD ($ prefix), getiri badge'leri TL etiketli (1A TL, 1G TL, Günlük (TL), Aylık (TL))
+- Homepage: Tüm Varlıklar grid 20'ye çıkarıldı, blog posts 6'ya çıkarıldı
+- Info notice: "Yabancı ETF getirileri TL cinsinden hesaplanır. Fiyatları USD'dir." — homepage'e eklendi
 
 ## In Progress
 
-- *(yok)*
+- Info notice: `/varliklar` sayfasına da aynı notice'i ekle (VarliklarListClient.tsx)
 
 ## Backlog
 

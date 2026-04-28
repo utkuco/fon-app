@@ -2648,3 +2648,13 @@
 2026-04-27 06:00:00,722 [INFO] KAP discovered 0 portfolio disclosures in 2026-04-26 → 2026-04-27
 2026-04-27 06:00:00,723 [INFO] No new disclosures — done
 2026-04-27 06:00:00,723 [INFO] No new disclosures — done
+2026-04-28 06:00:00,935 [INFO] ============================================================
+2026-04-28 06:00:00,935 [INFO] ============================================================
+2026-04-28 06:00:00,936 [INFO] KAP Daily Pipeline started
+2026-04-28 06:00:00,936 [INFO] KAP Daily Pipeline started
+2026-04-28 06:00:00,936 [INFO] Resuming from last run: 2026-04-27T06:00:00.644940
+2026-04-28 06:00:00,936 [INFO] Resuming from last run: 2026-04-27T06:00:00.644940
+2026-04-28 06:00:01,038 [INFO] KAP discovered 0 portfolio disclosures in 2026-04-27 → 2026-04-28
+2026-04-28 06:00:01,038 [INFO] KAP discovered 0 portfolio disclosures in 2026-04-27 → 2026-04-28
+2026-04-28 06:00:01,039 [INFO] No new disclosures — done
+2026-04-28 06:00:01,039 [INFO] No new disclosures — done

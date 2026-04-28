@@ -1,50 +1,46 @@
 {
-  "generated_at": "2026-04-26T21:43:57Z",
-  "report_date": "2026-04-27",
+  "checked_at": "2026-04-27T22:08:24.654524+00:00",
   "last_scrape_finished_at": null,
-  "scraper_status": "stalled",
-  "scraper_started_at": "2026-04-26T20:37:21",
-  "funds_scraped_count": 0,
-  "errors": [],
+  "last_scrape_started_at": "2026-04-27T22:04:50.738571",
+  "scraper_status": "running (STALE)",
   "system_status_last_tefas_fetch": "2026-04-26T16:52:52.440298",
-  "total_funds_in_db": 1000,
-  "sample_fund_prices": {
+  "funds_scraped_count": 0,
+  "funds_with_price": 1000,
+  "funds_updated_yesterday": 500,
+  "funds_with_null_fetch": 1000,
+  "price_history_table_exists": false,
+  "errors": [
+    "Scraper stuck in running state since 2026-04-27T22:04:50",
+    "1000 funds have never been fetched (null last_tefas_fetch)",
+    "GES, GRL, TIP not updated since 2026-04-23 (5 days stale)",
+    "price_history table does not exist"
+  ],
+  "sample_funds": {
     "VEV": {
-      "price": 0.169915,
-      "price_history_latest": "2026-04-24",
-      "price_history_count": 1255,
-      "days_stale": 1
+      "price": 1.387228,
+      "last_tefas_fetch": "2026-04-26T16:28:42.646387+00:00",
+      "days_old": 1
     },
     "GES": {
       "price": 0.095529,
-      "price_history_latest": "2026-04-16",
-      "price_history_count": 247,
-      "days_stale": 11
+      "last_tefas_fetch": "2026-04-23T21:47:33.122038+00:00",
+      "days_old": 4
     },
     "GRL": {
       "price": 19.650702,
-      "price_history_latest": "2026-04-16",
-      "price_history_count": 252,
-      "days_stale": 11
+      "last_tefas_fetch": "2026-04-23T19:00:40.879728+00:00",
+      "days_old": 4
     },
     "TIP": {
       "price": 2.161393,
-      "price_history_latest": "2026-04-16",
-      "price_history_count": 252,
-      "days_stale": 11
+      "last_tefas_fetch": "2026-04-23T17:36:50.673304+00:00",
+      "days_old": 4
     },
     "PAF": {
-      "price": 3.631212,
-      "price_history_latest": "2026-04-24",
-      "price_history_count": 631,
-      "days_stale": 1
+      "price": 8.815642,
+      "last_tefas_fetch": "2026-04-26T16:26:30.663201+00:00",
+      "days_old": 1
     }
   },
-  "overall_status": "PROBLEM",
-  "diagnosis": [
-    "Yesterday's scrape (2026-04-26) started at 20:37:21 but never finished -- status still 'running' with 0 funds scraped",
-    "3 of 5 sample funds (GES, GRL, TIP) have price_history stuck at 2026-04-16 -- 11 days stale",
-    "2 of 5 sample funds (VEV, PAF) have price_history at 2026-04-24 -- 3 days stale",
-    "Scraper process is stalled and needs to be killed and re-run"
-  ]
+  "overall_status": "PROBLEM"
 }
