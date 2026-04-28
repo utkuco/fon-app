@@ -2,7 +2,12 @@
 
 ## Done
 
-- **Kategori kartı historical returns FIX** (Mayıs 2026): Tüm değerler artık gerçek AUM-ağırlıklı historical return. 1d≠1m≠3m≠6m birbirinden farklı ✅
+- **ETF category cards AUM-weighted** (Nisan 2026): ETF kartları da AUM-ağırlıklı aggregation kullanıyor artık
+  - `EtfCatAgg` type'ı `avg_*` yerine `weighted_*` olarak değişti
+  - Hesaplama: `Σ(return × aum) / Σ(aum)`
+  - Diğer kartı artık 1A/3A/6A değerleri gösteriyor (eskiden "—")
+  - Commit `23b050c`, deploy `web-1avhi3tht`
+- **Kategori kartı historical returns FIX** (Nisan 2026): Tüm değerler artık gerçek AUM-ağırlıklı historical return. 1d≠1m≠3m≠6m birbirinden farklı ✅
   - Root cause: Global latestDateStr kullanımı → fund verisi April 10'da bitiyor, cron April 28'de çalışıyor → pNow=null → fallback April 10 → 1d=1m
   - Fix: Her fon kendi `lastDate`'ini referans alıyor
   - Commits: `4253dfe` (web/), `bc8d827` (parent)
