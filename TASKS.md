@@ -2,7 +2,12 @@
 
 ## Done
 
-- ETF sparkline backfill: x=0-280, y=0-40 formatına align et
+- **Kategori kartı historical returns FIX** (Mayıs 2026): Tüm değerler artık gerçek AUM-ağırlıklı historical return. 1d≠1m≠3m≠6m birbirinden farklı ✅
+  - Root cause: Global latestDateStr kullanımı → fund verisi April 10'da bitiyor, cron April 28'de çalışıyor → pNow=null → fallback April 10 → 1d=1m
+  - Fix: Her fon kendi `lastDate`'ini referans alıyor
+  - Commits: `4253dfe` (web/), `bc8d827` (parent)
+  - Vercel deploy: `proc_*` (web-4w8hjztkh)
+  - Cron success: 27s, 2400 funds, 7 categories
 - TEFAS scraper v2: undetected-chromedriver ile Cloudflare bypass
 - Fund detail BetaAlphaCard: category_history guard (Apr 2026)
 - homepage-stats-cron: price_history JSONB fetch removed (timeout fix)
