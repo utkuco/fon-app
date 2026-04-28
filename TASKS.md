@@ -2,11 +2,12 @@
 
 ## Done
 
-- **ETF category cards AUM-weighted** (Nisan 2026): ETF kartları da AUM-ağırlıklı aggregation kullanıyor artık
+- **ETF category cards AUM-weighted aggregation** (Nisan 2026): ETF kartları da AUM-ağırlıklı aggregation kullanıyor
   - `EtfCatAgg` type'ı `avg_*` yerine `weighted_*` olarak değişti
-  - Hesaplama: `Σ(return × aum) / Σ(aum)`
+  - Hesaplama: `Σ(return × aum) / Σ(aum)` — büyük ETF'lerin daha çok etkisi var
   - Diğer kartı artık 1A/3A/6A değerleri gösteriyor (eskiden "—")
   - Commit `23b050c`, deploy `web-1avhi3tht`
+  - ⚠️ **GAP**: ETF category sparkline'ları `homepage-stats-cron` tarafından hesaplanmıyor (sadece Türk fonları). Düzeltilecek.
 - **Kategori kartı historical returns FIX** (Nisan 2026): Tüm değerler artık gerçek AUM-ağırlıklı historical return. 1d≠1m≠3m≠6m birbirinden farklı ✅
   - Root cause: Global latestDateStr kullanımı → fund verisi April 10'da bitiyor, cron April 28'de çalışıyor → pNow=null → fallback April 10 → 1d=1m
   - Fix: Her fon kendi `lastDate`'ini referans alıyor

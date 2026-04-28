@@ -129,9 +129,9 @@
 | `top5_losers` | jsonb | `[{code, name, change, market_cap}]` | `homepage-stats-cron` |
 | `most_invested` | jsonb | `[{code, name, market_cap}]` | `homepage-stats-cron` |
 | `most_held_stocks` | jsonb | `[{ticker, company, total_weight, fund_count}]` | `homepage-stats-cron` |
-| `category_stats` | jsonb | `{type: {count, total_market_cap, change_1d, change_1w, change_1m, change_3m, change_6m}}` — AUM-weighted historical returns (%) | `homepage-stats-cron` |
+| `category_stats` | jsonb | `{type: {count, total_market_cap, change_1d, change_1w, change_1m, change_3m, change_6m}}` — AUM-weighted historical returns (%) for Turkish fund categories. ETF categories: computed client-side from `foreign_etfs` (AUM-weighted) | `homepage-stats-cron` (funds only) |
 | `category_change` | jsonb | `{type: {change_pct, prev_aum, curr_aum, count}}` | `homepage-stats-cron` |
-| `category_sparklines` | jsonb | `{type: {points: [[x,y],...], positive: bool}}` — 30-day AUM-weighted avg price series, viewBox 280×40 | `homepage-stats-cron` |
+| `category_sparklines` | jsonb | `{type: {points: [[x,y],...], positive: bool}}` — 30-day AUM-weighted avg price series for **Turkish fund categories only** (viewBox 280×40). ETF category sparklines → NOT computed by any cron (⚠️ gap) | `homepage-stats-cron` (funds only) |
 | `benchmarks_data` | jsonb | `{LABEL: {data: [{date, price}], change}}` | `benchmarks-cron` |
 | `updated_at` | timestamptz | Son güncelleme | Various |
 
@@ -374,6 +374,9 @@ type Sparkline = {
 ### Homepage Components
 - `FunLists` (`HomePageClient`) — tabbed view: Tümü/VFF/SRF/etc., fund list with sparklines
 - `CategorySection` — category cards with sparklines and stats
+  - **Turkish fund cards**: AUM-weighted historical returns from `homepage_stats.category_stats` (Türk fonu kartları)
+  - **ETF cards**: AUM-weighted aggregation computed client-side from `foreign_etfs` table (yukarıda açıklandığı gibi)
+  - ⚠️ **ETF category sparklines**: `homepage_stats.category_sparklines` sadece Türk fonları için hesaplanıyor. ETF sparkline'ları için ayrı bir AUM-ağırlıklı hesaplama yok (gap — düzeltilecek)
 - `BlogSection` — latest 6 blog posts
 - `TopMovers` — top gainers/losers list
 - `MarketSummary` — total funds, AUM, avg change
