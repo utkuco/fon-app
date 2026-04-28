@@ -26,11 +26,13 @@
 - **Supabase DDL workflow**: README'ye eklendi, migration dosyası `web/supabase/migrations/` dizininde
 - **README cron table**: vercel.json ile eşleşecek şekilde güncellendi (Mayıs 2026)
 
-## In Progress
-
-- **Kategori kartı sparkline BUG**: `homepage_stats.category_sparklines` = `{}` (boş) — kategori kartlarında sparkline yerine placeholder gösteriliyor (Mayıs 2026)
-  - `homepage-stats-cron` veya `fetchHomePageStats()` fonksiyonu `category_sparklines` hesaplamıyor
-  - Homepage'de "SON 6 AY" yazısı var ama SVG chart yok
+- **Kategori kartı historical returns FIX** (Mayıs 2026):
+  - `homepage-stats-cron`: `computeCategoryStats()` — tek geçişte hem sparklines hem period returns
+  - AUM-ağırlıklı ortalama: Son 30 gün fiyat serisi + 1H/1A/3A/6A gerçek historical getiriler
+  - `category_stats` → `change_1d/change_1w/change_1m/change_3m/change_6m` (eskisi `avg_change` equal-weighted idi)
+  - `CategoryTypeCards.tsx`: SAHTE `avgChange×mult` → gerçek `change_1m/change_3m/change_6m`
+  - Her periyodun rengi kendi değerinin işaretine göre (yeşil/kırmızı)
+  - Commit `10ddcb4`, Vercel deploy `proc_c6f78c14e03b`
 
 ## Backlog
 
@@ -42,9 +44,9 @@
 - **Supabase DDL**: Schema değişikliklerini management API ile uygula
   - Mevcut tablolar: funds, foreign_etfs, homepage_stats, vb.
   - SQL migrations yazılıp uygulanacak
-- **Kategori sparkline fix**: `category_sparklines` computation ekle
-  - Her kategori için Son 6Ay AUM-ağırlıklı ortalama getiri hesapla
-  - `homepage_stats` tablosuna yaz — cron çalıştığında update et
+- ~~**Kategori sparkline fix**: `category_sparklines` computation ekle~~
+  - ~~Her kategori için Son 6Ay AUM-ağırlıklı ortalama getiri hesapla~~
+  - ~~`homepage_stats` tablosuna yaz — cron çalıştığında update et~~
 
 ### Orta Öncelik
 

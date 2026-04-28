@@ -129,9 +129,9 @@
 | `top5_losers` | jsonb | `[{code, name, change, market_cap}]` | `homepage-stats-cron` |
 | `most_invested` | jsonb | `[{code, name, market_cap}]` | `homepage-stats-cron` |
 | `most_held_stocks` | jsonb | `[{ticker, company, total_weight, fund_count}]` | `homepage-stats-cron` |
-| `category_stats` | jsonb | `{type: {count, avg_change, total_market_cap}}` | `homepage-stats-cron` |
+| `category_stats` | jsonb | `{type: {count, total_market_cap, change_1d, change_1w, change_1m, change_3m, change_6m}}` — AUM-weighted historical returns (%) | `homepage-stats-cron` |
 | `category_change` | jsonb | `{type: {change_pct, prev_aum, curr_aum, count}}` | `homepage-stats-cron` |
-| `category_sparklines` | jsonb | `{type: {points, positive}}` — DEPRECATED | `homepage-stats-cron` |
+| `category_sparklines` | jsonb | `{type: {points: [[x,y],...], positive: bool}}` — 30-day AUM-weighted avg price series, viewBox 280×40 | `homepage-stats-cron` |
 | `benchmarks_data` | jsonb | `{LABEL: {data: [{date, price}], change}}` | `benchmarks-cron` |
 | `updated_at` | timestamptz | Son güncelleme | Various |
 

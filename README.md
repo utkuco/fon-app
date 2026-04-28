@@ -50,6 +50,27 @@ Her periyot için o tarihte geçerli olan USD/TRY kuru kullanılır. Bu:
 
 ⚠️ **PostgREST Filter Bug:** `base` ve `quote` kolonları PostgREST'te operatör olarak parse ediliyor. Filtrelerde `select=date&base=eq.USD&quote=eq.TRY` kullan.
 
+### Kategori Kartları — Tarihsel Getiriler
+`homepage_stats.category_stats` AUM-ağırlıklı historical getiriler içerir:
+
+```typescript
+{
+  "SERBEST": {
+    count: 120,
+    total_market_cap: 5e9,
+    change_1d: 0.45,    // bugün vs 1 gün önce (%)
+    change_1w: 1.23,    // bugün vs 7 gün önce (%)
+    change_1m: 2.31,    // bugün vs 30 gün önce (%)
+    change_3m: 5.12,    // bugün vs 90 gün önce (%)
+    change_6m: 8.47     // bugün vs 180 gün önce (%)
+  }
+}
+```
+
+Her periyodun rengi **kendi değerinin işaretine** göre belirlenir (yeşil = pozitif, kırmızı = negatif).
+
+`category_sparklines`: Son 30 günün AUM-ağırlıklı ortalama fiyat serisi (`points: [[x,y],...]`, viewBox 280×40)
+
 ### ETF Fiyat Gösterimi
 - ETF fiyatları **USD** olarak gösterilir (`$` prefix)
 - ETF getiri metrikleri **TL** cinsinden hesaplanır (yabancı piyasalar TL'den)
