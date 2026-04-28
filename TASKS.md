@@ -14,6 +14,16 @@
 - Info notice: "Yabancı ETF getirileri TL cinsinden hesaplanır. Fiyatları USD'dir." — homepage'e eklendi
 - Info notice: `/varliklar` sayfasına da eklendi (VarliklarListClient.tsx)
 - Sort bar (TL): `/varliklar` sayfası "Günlük (TL)", "Aylık (TL)"
+- **ETF TL return fix**: `exchange_rates` tablosu `(base, date)` PK ile historical FX korumaya başladı
+  - DDL: `exchange_rates_pkey` → `(base, date)` primary key olarak değiştirildi
+  - `etf-cron`: upsert key `"base"` → `"base,date"` (historical FX korunuyor)
+  - `etf-returns-cron`: historical FX rate + doğru TL return formülü `((endPx*endFX)/(startPx*startFX))-1`
+  - Build + Vercel deploy başarılı
+- **FX historical backfill**: 198 gün USD/TRY + 197 gün EUR/TRY verisi `exchange_rates` tablosuna yazıldı
+  - `scripts/fx_historical_backfill.py` ile Yahoo Finance'ten çekildi (yfinance)
+  - Tarih aralığı: 2025-07-23 → 2026-04-28
+  - PostgREST filter nota: `base` ve `quote` kolonları operatör olarak parse ediliyor — `select=date&base=eq.USD&quote=eq.TRY` kullan
+- **Supabase DDL workflow**: README'ye eklendi, migration dosyası `web/supabase/migrations/` dizininde
 
 ## In Progress
 

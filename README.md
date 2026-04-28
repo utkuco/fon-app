@@ -34,7 +34,21 @@ fon-app/
 - **TEFAS** → fon fiyatları, AUM, yatırımcı sayısı (`tefas_scraper_v2.py`)
 - **KAP** → fon portföy dağılımı PDF'leri (`kap_portfolio_parser.py`)
 - **yfinance** → uluslararası ETF fiyatları (`etf_daily_cron.py`)
-- **Yahoo Finance** → benchmark endeksleri (`benchmarks-cron`)
+- **Yahoo Finance** → benchmark endeksleri + USD/TRY kurları
+
+### ETF Getiri Hesaplama (TL)
+ETF getirileri **TL cinsinden** doğru formülle hesaplanır:
+
+```
+TL_return = (Fiyat_bugün_USD × Kur_bugün) / (Fiyat_30gün_USD × Kur_30gün) — 1
+```
+
+Her periyot için o tarihte geçerli olan USD/TRY kuru kullanılır. Bu:
+- `exchange_rates` tablosunda historical `(base, date)` primary key ile saklanır
+- `etf-cron` her gün yeni FX verisi yazar (upsert, eski verileri silmez)
+- `etf-returns-cron` hem start hem end tarihleri için FX rate çeker
+
+⚠️ **PostgREST Filter Bug:** `base` ve `quote` kolonları PostgREST'te operatör olarak parse ediliyor. Filtrelerde `select=date&base=eq.USD&quote=eq.TRY` kullan.
 
 ### ETF Fiyat Gösterimi
 - ETF fiyatları **USD** olarak gösterilir (`$` prefix)
@@ -59,6 +73,24 @@ fon-app/
 | `com.fonapp.etf-daily-cron` | 22:00 | ETF sparkline + fiyat |
 | `com.fonapp.kap-portfolio-cron` | 09:00 Pazartesi | KAP PDF parse |
 | `com.fonapp.tefas-monitor` | 11:00 | TEFAS taze mi kontrol et |
+
+## Supabase DDL Workflow
+
+Migrations `web/supabase/migrations/` dizininde tutulur. Deploy etmek için:
+
+```bash
+# 1. Login (token: sbp_...)
+npx supabase login --token "sbp_<token>"
+
+# 2. DB password'u ayarla (Supabase Dashboard → Settings → Database)
+export SUPABASE_DB_PASSWORD="<db_password>"
+
+# 3. Push migrations
+cd web
+npx supabase db push --linked
+```
+
+⚠️ **DB password:** `rzvfO6ub5F1W6hpR` (Supabase Dashboard'dan resetlenebilir)
 
 ## Kurulum
 
