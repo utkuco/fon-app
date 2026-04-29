@@ -27,7 +27,16 @@ fi
 SCRAPER_EXIT=$?
 
 if [ $SCRAPER_EXIT -eq 0 ]; then
-    echo "[$(date '+%a %b %d %H:%M:%S %z %Y')] TEFAS scraper v2 tamamlandi" >> "$LOG"
+    echo "[$(date '+%a %b %d %H:%M:%S %z %Y')] TEFAS scraper v2 tamamlandi — cascade tetikleniyor" >> "$LOG"
+
+    # Cascade: Vercel /api/tefas-cascade cron'u otomatik 15:00 UTC'de çalışır
+    # ama scraper başarılıysa hemen şimdi tetikleyelim (site erken güncellenir)
+    cd /Users/admin/Desktop/projects/fon-app/web
+    CASCADE_URL="https://web-brmfvldc6.vercel.app/api/tefas-cascade"
+    CASCADE_RESP=$(curl -s -o /dev/null -w "%{http_code}" \
+        -H "x-vercel-cron: true" \
+        "$CASCADE_URL" 2>> "$ERR" || echo "000")
+    echo "[$(date '+%a %b %d %H:%M:%S %z %Y')] Cascade HTTP $CASCADE_RESP" >> "$LOG"
 else
     echo "[$(date '+%a %b %d %H:%M:%S %z %Y')] TEFAS scraper v2 BASARISIZ (exit=$SCRAPER_EXIT)" >> "$LOG"
 fi

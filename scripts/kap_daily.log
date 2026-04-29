@@ -2658,3 +2658,31 @@
 2026-04-28 06:00:01,038 [INFO] KAP discovered 0 portfolio disclosures in 2026-04-27 → 2026-04-28
 2026-04-28 06:00:01,039 [INFO] No new disclosures — done
 2026-04-28 06:00:01,039 [INFO] No new disclosures — done
+2026-04-29 06:00:01,029 [INFO] ============================================================
+2026-04-29 06:00:01,029 [INFO] ============================================================
+2026-04-29 06:00:01,029 [INFO] KAP Daily Pipeline started
+2026-04-29 06:00:01,029 [INFO] KAP Daily Pipeline started
+2026-04-29 06:00:01,030 [INFO] Resuming from last run: 2026-04-28T06:00:00.936745
+2026-04-29 06:00:01,030 [INFO] Resuming from last run: 2026-04-28T06:00:00.936745
+2026-04-29 06:00:01,292 [INFO] KAP discovered 1 portfolio disclosures in 2026-04-28 → 2026-04-29
+2026-04-29 06:00:01,292 [INFO] KAP discovered 1 portfolio disclosures in 2026-04-28 → 2026-04-29
+2026-04-29 06:00:01,854 [INFO] Loaded 1583 fund name entries
+2026-04-29 06:00:01,854 [INFO] Loaded 1583 fund name entries
+2026-04-29 06:00:01,855 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-29 06:00:01,855 [INFO]   [MTF] Portföy Dağılım Raporu
+2026-04-29 06:00:01,855 [INFO] Processing 1 new disclosures...
+2026-04-29 06:00:01,855 [INFO] Processing 1 new disclosures...
+2026-04-29 06:00:01,857 [INFO] Processing [MTF] from 2026-04-28
+2026-04-29 06:00:01,857 [INFO] Processing [MTF] from 2026-04-28
+2026-04-29 06:00:02,030 [INFO] Downloaded PDF MTF (79KB)
+2026-04-29 06:00:02,030 [INFO] Downloaded PDF MTF (79KB)
+2026-04-29 06:00:03,942 [ERROR] GLM failed for MTF: module 'zhipuai' has no attribute 'model_api'
+2026-04-29 06:00:03,942 [ERROR] GLM failed for MTF: module 'zhipuai' has no attribute 'model_api'
+2026-04-29 06:00:03,942 [WARNING] No categories for MTF
+2026-04-29 06:00:03,942 [WARNING] No categories for MTF
+2026-04-29 06:00:04,932 [ERROR] SB UPSERT system_status → 409: {"code":"23505","details":"Key (key)=(last_kap_portfolio_cron) already exists.","hint":null,"message":"duplicate key value violates unique constraint \"system_status_pkey\""}
+2026-04-29 06:00:04,932 [ERROR] SB UPSERT system_status → 409: {"code":"23505","details":"Key (key)=(last_kap_portfolio_cron) already exists.","hint":null,"message":"duplicate key value violates unique constraint \"system_status_pkey\""}
+2026-04-29 06:00:04,936 [INFO] Done: 0 ✓ / 1 ✗
+2026-04-29 06:00:04,936 [INFO] Done: 0 ✓ / 1 ✗
+2026-04-29 06:00:04,937 [INFO] ============================================================
+2026-04-29 06:00:04,937 [INFO] ============================================================

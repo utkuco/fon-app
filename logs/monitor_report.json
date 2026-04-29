@@ -1,46 +1,24 @@
 {
-  "checked_at": "2026-04-27T22:08:24.654524+00:00",
-  "last_scrape_finished_at": null,
-  "last_scrape_started_at": "2026-04-27T22:04:50.738571",
-  "scraper_status": "running (STALE)",
-  "system_status_last_tefas_fetch": "2026-04-26T16:52:52.440298",
+  "checked_at": "2026-04-29T01:15:00+00:00",
+  "last_scrape_finished_at": "2026-04-29T01:13:45.000000",
+  "last_scrape_started_at": "2026-04-28T22:13:24.757449",
+  "scraper_status": "failed",
+  "scraper_error": "selenium.WebDriverException: ChromeDriver process killed (status -9). Sandbox/container environment restriction preventing Chrome from starting.",
   "funds_scraped_count": 0,
-  "funds_with_price": 1000,
-  "funds_updated_yesterday": 500,
-  "funds_with_null_fetch": 1000,
-  "price_history_table_exists": false,
+  "funds_with_price_history_count": 2400,
   "errors": [
-    "Scraper stuck in running state since 2026-04-27T22:04:50",
-    "1000 funds have never been fetched (null last_tefas_fetch)",
-    "GES, GRL, TIP not updated since 2026-04-23 (5 days stale)",
-    "price_history table does not exist"
+    "ChromeDriver process killed: sandbox/container environment restriction preventing Chrome from starting",
+    "Yesterday's scrape (2026-04-28) failed — funds_scraped: 0",
+    "price_history data gap: all sample funds have latest price_history date of 2026-04-16 (12+ days stale as of 2026-04-28)",
+    "last_tefas_fetch values (2026-04-23 to 2026-04-26) do not match price_history latest dates (2026-04-16) — possible update mechanism issue"
   ],
-  "sample_funds": {
-    "VEV": {
-      "price": 1.387228,
-      "last_tefas_fetch": "2026-04-26T16:28:42.646387+00:00",
-      "days_old": 1
-    },
-    "GES": {
-      "price": 0.095529,
-      "last_tefas_fetch": "2026-04-23T21:47:33.122038+00:00",
-      "days_old": 4
-    },
-    "GRL": {
-      "price": 19.650702,
-      "last_tefas_fetch": "2026-04-23T19:00:40.879728+00:00",
-      "days_old": 4
-    },
-    "TIP": {
-      "price": 2.161393,
-      "last_tefas_fetch": "2026-04-23T17:36:50.673304+00:00",
-      "days_old": 4
-    },
-    "PAF": {
-      "price": 8.815642,
-      "last_tefas_fetch": "2026-04-26T16:26:30.663201+00:00",
-      "days_old": 1
-    }
-  },
+  "sample_funds": [
+    {"code": "VEV", "name": "TÜRKİYE HAYAT VE EMEKLİLİK A.Ş. AES BALANCED VARIABLE EMEKLİLİK YATIRIM FONU", "price": 1.387228, "last_tefas_fetch": "2026-04-26T16:28:42.646387+00:00", "price_history_latest": "2026-04-16"},
+    {"code": "GES", "name": "GARANTİ EMEKLİLİK VE HAYAT A.Ş. KATILIM STANDARD EMEKLİLİK YATIRIM FONU", "price": 0.095529, "last_tefas_fetch": "2026-04-23T21:47:33.122038+00:00", "price_history_latest": "2026-04-16"},
+    {"code": "GRL", "name": "QNB PORTFÖY AGRESİF SERBEST FON", "price": 19.650702, "last_tefas_fetch": "2026-04-23T19:00:40.879728+00:00", "price_history_latest": "2026-04-16"},
+    {"code": "PAF", "name": "PARDUS PORTFÖY ALTIN FONU", "price": 8.815642, "last_tefas_fetch": "2026-04-26T16:26:30.663201+00:00", "price_history_latest": "2026-04-16"},
+    {"code": "TIP", "name": "TEB PORTFÖY ING BANK ÖZEL BANKACILIK VE PLATİNUM SERBEST (DÖVİZ) ÖZEL FON", "price": 2.161393, "last_tefas_fetch": "2026-04-23T17:36:50.673304+00:00", "price_history_latest": "2026-04-16"}
+  ],
+  "system_status_note": "system_status table has no last_tefas_fetch entry (only last_5y_backfill from 2026-04-24)",
   "overall_status": "PROBLEM"
 }

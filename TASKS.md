@@ -1,81 +1,102 @@
-# TASKS — FonApp
+# FonRapor.com — Görev Listesi
+**Odak:** Sadece P4 — Veri Altyapısı
 
-## Done
+---
 
-- **ETF category cards AUM-weighted aggregation** (Nisan 2026): ETF kartları da AUM-ağırlıklı aggregation kullanıyor
-  - `EtfCatAgg` type'ı `avg_*` yerine `weighted_*` olarak değişti
-  - Hesaplama: `Σ(return × aum) / Σ(aum)` — büyük ETF'lerin daha çok etkisi var
-  - Diğer kartı artık 1A/3A/6A değerleri gösteriyor (eskiden "—")
-  - Commit `23b050c`, deploy `web-1avhi3tht`
-- **ETF category sparkline gap** (Nisan 2026): `homepage-stats-cron`'a ETF category sparkline hesaplaması eklendi
-  - `computeEtfCategorySparklines()` — `ETF_CATEGORIES` ticker set'lerini kullanıyor (CategoryTypeCards ile aynı mantık)
-  - 6 kategori: SP500/NASDAQ/TAHVİL/ALTIN/DUNYA + DIGER (fallback)
-  - Son 30 gün, AUM-ağırlıklı USD fiyat serisi, viewBox 280×40
-  - `category_sparklines` içine merge ediliyor — aynı JSONB field
-  - Commit `1b275a9` (web submodule), `c7524b1` (parent pointer), `adfc9bb` (docs)
-  - Deploy `web-brmfvldc6` → fonrapor.com
-  - ⚠️ Cron'un Vercel'de çalışması için manuel tetikleme veya zamanlama gerekli (cron at 14:00 + 23:30)
-- **Kategori kartı historical returns FIX** (Nisan 2026): Tüm değerler artık gerçek AUM-ağırlıklı historical return. 1d≠1m≠3m≠6m birbirinden farklı ✅
-  - Root cause: Global latestDateStr kullanımı → fund verisi April 10'da bitiyor, cron April 28'de çalışıyor → pNow=null → fallback April 10 → 1d=1m
-  - Fix: Her fon kendi `lastDate`'ini referans alıyor
-  - Commits: `4253dfe` (web/), `bc8d827` (parent)
-  - Vercel deploy: `proc_*` (web-4w8hjztkh)
-  - Cron success: 27s, 2400 funds, 7 categories
-- TEFAS scraper v2: undetected-chromedriver ile Cloudflare bypass
-- Fund detail BetaAlphaCard: category_history guard (Apr 2026)
-- homepage-stats-cron: price_history JSONB fetch removed (timeout fix)
-- Admin layout: SiteNavbar/Footer gizleme for /admin routes
-- Sparkline rendering: DB pre-scaled points (y=0-40) directly use et
-- KAP portfolio parser: Zhipu GLM ile PDF parse pipeline
-- ETF fiyat gösterimi: USD ($ prefix), getiri badge'leri TL etiketli (1A TL, 1G TL, Günlük (TL), Aylık (TL))
-- Homepage: Tüm Varlıklar grid 20'ye çıkarıldı, blog posts 6'ya çıkarıldı
-- Info notice: "Yabancı ETF getirileri TL cinsinden hesaplanır. Fiyatları USD'dir." — homepage'e eklendi
-- Info notice: `/varliklar` sayfasına da eklendi (VarliklarListClient.tsx)
-- Sort bar (TL): `/varliklar` sayfası "Günlük (TL)", "Aylık (TL)"
-- **ETF TL return fix**: `exchange_rates` tablosu `(base, date)` PK ile historical FX korumaya başladı
-  - DDL: `exchange_rates_pkey` → `(base, date)` primary key olarak değiştirildi
-  - `etf-cron`: upsert key `"base"` → `"base,date"` (historical FX korunuyor)
-  - `etf-returns-cron`: historical FX rate + doğru TL return formülü `((endPx*endFX)/(startPx*startFX))-1`
-  - Build + Vercel deploy başarılı
-- **FX historical backfill**: 198 gün USD/TRY + 197 gün EUR/TRY verisi `exchange_rates` tablosuna yazıldı
-  - `scripts/fx_historical_backfill.py` ile Yahoo Finance'ten çekildi (yfinance)
-  - Tarih aralığı: 2025-07-23 → 2026-04-28
-  - PostgREST filter nota: `base` ve `quote` kolonları operatör olarak parse ediliyor — `select=date&base=eq.USD&quote=eq.TRY` kullan
-- **Supabase DDL workflow**: README'ye eklendi, migration dosyası `web/supabase/migrations/` dizininde
-- **README cron table**: vercel.json ile eşleşecek şekilde güncellendi (Mayıs 2026)
+## Proje Özeti
+FonRapor.com — Türkiye'nin TEFAS ve KAP verilerini kullanan bağımsız yatırım fonu ve ETF analiz platformu.
+Next.js SSR/SSG, Supabase PostgreSQL, Vercel cron jobs.
 
-- **Kategori kartı historical returns FIX** (Mayıs 2026):
-  - `homepage-stats-cron`: `computeCategoryStats()` — tek geçişte hem sparklines hem period returns
-  - AUM-ağırlıklı ortalama: Son 30 gün fiyat serisi + 1H/1A/3A/6A gerçek historical getiriler
-  - `category_stats` → `change_1d/change_1w/change_1m/change_3m/change_6m` (eskisi `avg_change` equal-weighted idi)
-  - `CategoryTypeCards.tsx`: SAHTE `avgChange×mult` → gerçek `change_1m/change_3m/change_6m`
-  - Her periyodun rengi kendi değerinin işaretine göre (yeşil/kırmızı)
-  - Commit `10ddcb4`, Vercel deploy `proc_c6f78c14e03b`
+---
 
-## Backlog
+## Pipeline Mimarisi (Son Durum)
 
-### Yüksek Öncelik
+```
+[YEREL MAC — her iş günü ~18:00 TR]
+run_tefas_cron.sh
+    ├── Chrome CDP → tefas_scraper_v2.py  (TEFAS'tan veri çeker)
+    │       └── PostgREST → Supabase /funds (price_history günceller)
+    │
+    └── Scraper başarılıysa → curl /api/tefas-cascade
+            (Vercel otomatik de çalışır: her gün 15:00 UTC = 18:00 TR)
 
-- **KAP portfolio parser**: Zhipu GLM ile KAP PDF'lerinden portföy dağılımı çıkar
-  - 507 PDF var, 102'si parse edildi, 405 bekliyor
-  - Supabase management token 401 veriyor → yeni token gerekli
-- **Supabase DDL**: Schema değişikliklerini management API ile uygula
-  - Mevcut tablolar: funds, foreign_etfs, homepage_stats, vb.
-  - SQL migrations yazılıp uygulanacak
-- ~~**Kategori sparkline fix**: `category_sparklines` computation ekle~~
-  - ~~Her kategori için Son 6Ay AUM-ağırlıklı ortalama getiri hesapla~~
-  - ~~`homepage_stats` tablosuna yaz — cron çalıştığında update et~~
+[VERCEL]
+/api/tefas-cascade (cron: 0 15 * * 1-5 = her iş günü 15:00 UTC = 18:00 TR)
+    │
+    ├── Step 1: computeFundCronMetrics()
+    │       └── funds.tablosu → precomputed_funds (sparkline + daily_change + risk metrics)
+    │
+    ├── Step 2: syncCompanies()
+    │       └── precomputed_funds.top_holdings → companies tablosu
+    │
+    └── Step 3: computeHomepageStats()
+            └── precomputed_homepage (category rankings + homepage_stats)
+```
 
-### Orta Öncelik
+**Eski crons (hâlâ çalışır, 15 dkda bir kontrol eder):**
+- `fund-cron` (13:00 UTC) — risk metrics için yedek
+- `homepage-stats-cron` (14:00 + 23:30 UTC) — ek güncellemeler
 
-- **ETF category pages**: /varliklar/hisseler, /varliklar/tahvil, /varliklar/altin, /varliklar/gelismekte
-  - Mevcut /varliklar sayfası çalışıyor, category routing eklenecek
-- **Blog post content**: Türkçe finans içeriği üret
-  - 71 içerik var (content_posts tablosu)
-  - Aktif içerik üretimi + SEO optimize içerik planı
+---
 
-### Düşük Öncelik
+## Done ✅
 
-- **SEO**: Fund/ETF sayfalarına JSON-LD structured data ekle
-- **Fund detail BetaAlphaCard guard**: category_history olmayan ETF'ler için koruma
-  - VOO (EQUITY/SRF) gibi ETF'ler ALTIN benchmark yerine doğru benchmark kullanmalı
+### P4-1 ✅ — TEFAS veri boşluğu araştırması
+- **Bulgu:** 10 gün = 4 iş günü (Ramazan Bayramı 21-24 Nisan) + hafta sonu (26 Pazar) + scraper çalışmadı (27-28) + bugün henüz çalışmadı (29)
+- 29 Nisan verisi: 0 fon — bugün 18:00'de scraper çalışınca dolacak
+
+### P4-2 ✅ — P4-2 aslında zaten mevcuttu
+- `run_tefas_cron.sh` → `tefas_scraper_v2.py` → Supabase pipeline'ı baştan beri çalışıyordu
+- Sadece cascade otomasyonu eksikti
+
+### P4-3 ✅ — Cascade sistemi
+- [x] `src/lib/fund-cron-lib.ts` — shared lib (computeSparkline, computeFundCronMetrics, syncCompanies)
+- [x] `src/lib/homepage-stats-lib.ts` — shared lib (computeCategoryStats, computeEtfCategorySparklines, computeHomepageStats)
+- [x] `src/app/api/fund-cron/route.ts` — lib kullanacak şekilde yeniden yazıldı (4xx → 58 satır)
+- [x] `src/app/api/homepage-stats-cron/route.ts` — lib kullanacak şekilde yeniden yazıldı (577 → 60 satır)
+- [x] `src/app/api/internal/fund-cron/route.ts` — header check yok, cascade'den doğrudan çağrılır
+- [x] `src/app/api/internal/homepage-stats-cron/route.ts` — header check yok
+- [x] `src/app/api/tefas-cascade/route.ts` — Vercel cron (15:00 UTC), sırayla 3 adımı çalıştırır
+- [x] `scripts/run_tefas_cron.sh` — scraper başarılıysa cascade'i tetikler
+- [x] `vercel.json` — homepage-stats-cron timeout 120s → 300s, tefas-cascade cron eklendi (0 15 * * 1-5)
+- [x] TypeScript build kontrolü — 0 yeni hata
+
+### P4-4 ✅ — homepage-stats-cron TEFAS sonrası otomatik tetikleme
+- `tefas-cascade` route'u sırayla `computeHomepageStats()` çağırır
+
+### P4-5 ✅ — daily pipeline.sh scripti
+- `run_tefas_cron.sh` güncellendi — scraper + cascade webhook
+
+---
+
+## Bekleyen — Deploy
+
+**Deploy edilmesi gereken değişiklikler (fonrapor.com):**
+
+1. `src/lib/fund-cron-lib.ts` — 14,701 bytes, yeni dosya
+2. `src/lib/homepage-stats-lib.ts` — 15,128 bytes, yeni dosya
+3. `src/app/api/fund-cron/route.ts` — yeniden yazıldı (4xx → 58 satır)
+4. `src/app/api/homepage-stats-cron/route.ts` — yeniden yazıldı (577 → 60 satır)
+5. `src/app/api/internal/fund-cron/route.ts` — yeni dosya
+6. `src/app/api/internal/homepage-stats-cron/route.ts` — yeni dosya
+7. `src/app/api/tefas-cascade/route.ts` — yeni dosya
+8. `vercel.json` — timeout güncelleme + yeni cron
+9. `scripts/run_tefas_cron.sh` — cascade ekleme
+
+---
+
+## Doğrulama Planı
+
+Bugün 18:00'de (veya TEFAS verisi gelince) `run_tefas_cron.sh` çalıştırılacak.
+Sonra Supabase'de kontrol edilecek:
+
+```sql
+-- precomputed_funds güncellenmiş mi?
+SELECT updated_at, COUNT(*) FROM precomputed_funds GROUP BY updated_at ORDER BY updated_at DESC LIMIT 5;
+
+-- precomputed_homepage güncellenmiş mi?
+SELECT updated_at FROM precomputed_homepage WHERE id=1;
+
+-- system_status
+SELECT * FROM system_status ORDER BY updated_at DESC LIMIT 10;
+```

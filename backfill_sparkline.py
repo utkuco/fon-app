@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.11
 import os, sys, time, json, tempfile, warnings, urllib.parse
 warnings.filterwarnings('ignore')
 import requests
@@ -5,9 +6,14 @@ import yfinance as yf
 yf.set_tz_cache_location(tempfile.mkdtemp())
 
 SUPABASE_URL = 'https://oqkobptbvcazifpvjwfz.supabase.co'
-SUPABASE_KEY = 'sb_secret_PkAEAOU2YO4YS-ELYpwS5w_SsVg2kqi'
+SUPABASE_KEY = os.environ.get('SUPABASE_KEY', 'sb_secret_PkAEAOU2YO4YS-ELYpwS5w_SsVg2kqi')
 REST_URL = f'{SUPABASE_URL}/rest/v1'
-HEADERS = {'apikey': SUPABASE_KEY, 'Authorization': f'Bearer {SUPABASE_KEY}', 'Content-Type': 'application/json', 'Prefer': 'return=minimal'}
+HEADERS = {
+    'apikey': SUPABASE_KEY,
+    'Authorization': f'Bearer {SUPABASE_KEY}',
+    'Content-Type': 'application/json',
+    'Prefer': 'return=minimal'
+}
 
 def rest_get(table, params=None):
     url = f'{REST_URL}/{table}'
@@ -21,20 +27,19 @@ def rest_get(table, params=None):
         raise Exception(f'GET {url} -> {resp.status_code}')
     return resp.json()
 
+print('Fetching foreign_etfs...', flush=True)
 all_symbols = [r['symbol'] for r in rest_get('foreign_etfs', {'select': 'symbol'})]
-print(f"Total ETFs: {len(all_symbols)}")
+print(f'Total ETFs: {len(all_symbols)}', flush=True)
 
 batch_size = 20
 fetch_delay = 0.3
 insert_chunk = 500
 period = '2y'
 interval = '1d'
+total_batches = (len(all_symbols) + batch_size - 1) // batch_size
 
-total_inserted = 0
-total_errors = 0
-
-for batch_idx in range((len(all_symbols) + batch_size - 1) // batch_size):
-    batch = all_symbols[batch_idx * batch_size:batch_idx * batch_size + batch_size]
+for batch_idx in range(total_batches):
+    batch = all_symbols[batch_idx * batch_size:(batch_idx + 1) * batch_size]
     all_rows = []
     for symbol in batch:
         try:
@@ -51,14 +56,13 @@ for batch_idx in range((len(all_symbols) + batch_size - 1) // batch_size):
                         'close': float(row['Close']),
                         'volume': int(row['Volume'])
                     })
-                print(f'{symbol}: {len(h)} rows OK')
+                print(f'{symbol}:{len(h)} rows OK', flush=True)
             else:
-                print(f'{symbol}: no data')
+                print(f'{symbol}: no data', flush=True)
         except Exception as e:
-            print(f'{symbol}: ERROR {e}')
-            total_errors += 1
+            print(f'{symbol}: ERROR {e}', flush=True)
         time.sleep(fetch_delay)
-
+    
     if all_rows:
         by_sym = {}
         for r in all_rows:
@@ -69,8 +73,7 @@ for batch_idx in range((len(all_symbols) + batch_size - 1) // batch_size):
                 chunk = sym_rows[i:i + insert_chunk]
                 r = requests.post(REST_URL + '/foreign_etf_prices', headers={**HEADERS, 'Prefer': 'return=minimal'}, data=json.dumps(chunk), timeout=60)
                 if r.status_code not in (200, 201):
-                    print(f'ERR {sym}: {r.status_code} {r.text[:100]}')
-        total_inserted += len(all_rows)
-        print(f'Batch {batch_idx + 1}: inserted {len(all_rows)} rows')
+                    print(f'ERR {sym}:{r.status_code}', flush=True)
+        print(f'Batch {batch_idx + 1}/{total_batches}: inserted {len(all_rows)} rows', flush=True)
 
-print(f'BACKFILL_COMPLETE — Total inserted: {total_inserted}, Errors: {total_errors}')
+print('BACKFILL_COMPLETE', flush=True)
