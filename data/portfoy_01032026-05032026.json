@@ -1,0 +1,581 @@
+[
+  {
+    "fund_code": "GUM",
+    "fund_name": "AK PORTFÖY GÜMÜŞ FON SEPETİ FONU",
+    "fund_oid": "4028328d76e302780176f647a17d2182",
+    "publish_date": "05.03.2026 18:25:16",
+    "report_summary": "Aylık Rapor",
+    "fund_info": {},
+    "holdings": [],
+    "stock_count": 0
+  },
+  {
+    "fund_code": "GMI",
+    "fund_name": "AK PORTFÖY GÜMÜŞ SERBEST FON",
+    "fund_oid": "4028328c992f6d5701994d207d04156e",
+    "publish_date": "05.03.2026 18:25:16",
+    "report_summary": "Aylık Rapor",
+    "fund_info": {},
+    "holdings": [],
+    "stock_count": 0
+  },
+  {
+    "fund_code": "FUA",
+    "fund_name": "AK PORTFÖY İHRACATÇI ŞİRKETLER HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+    "fund_oid": "4028328c7da7e73d017e9138f9d50086",
+    "publish_date": "05.03.2026 18:25:16",
+    "report_summary": "Aylık Rapor",
+    "fund_info": {
+      "period": "Şubat 2022"
+    },
+    "holdings": [
+      {
+        "ticker": "AKCNS",
+        "isin": "TRAAKCNS91F3",
+        "nominal": "30.000,00",
+        "unit_price": "124,066171",
+        "total_value": "115,200000",
+        "date": "26/02/26"
+      },
+      {
+        "ticker": "ARCLK",
+        "isin": "TRAARCLK91H5",
+        "nominal": "108.000,00",
+        "unit_price": "109,198018",
+        "total_value": "322,000000",
+        "date": "25/02/26"
+      },
+      {
+        "ticker": "ASELS",
+        "isin": "TRAASELS91H2",
+        "nominal": "-7.000,00",
+        "unit_price": "109,198018",
+        "total_value": "322,000000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "ASTOR",
+        "isin": "TREASTR00013",
+        "nominal": "-30.000,00",
+        "unit_price": "140,668708",
+        "total_value": "188,000000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "BRISA",
+        "isin": "TRABRISA91E3",
+        "nominal": "142.000",
+        "unit_price": "55,623",
+        "total_value": "679",
+        "date": "25/02/26"
+      },
+      {
+        "ticker": "CCOLA",
+        "isin": "TRECOLA00011",
+        "nominal": "627.242",
+        "unit_price": "9,666",
+        "total_value": "235",
+        "date": "25/02/26"
+      },
+      {
+        "ticker": "CEMTS",
+        "isin": "TRACEMTS91G6",
+        "nominal": "297.211,00",
+        "unit_price": "41,661654",
+        "total_value": "51,200000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "CIMSA",
+        "isin": "TRACIMSA91F9",
+        "nominal": "1.044.459,00",
+        "unit_price": "26,049819",
+        "total_value": "32,660000",
+        "date": "25/02/26"
+      },
+      {
+        "ticker": "EREGL",
+        "isin": "TRAEREGL91G3",
+        "nominal": "-25.000,00",
+        "unit_price": "26,049819",
+        "total_value": "32,660000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "FROTO",
+        "isin": "TRAOTOSN91H6",
+        "nominal": "67.000,00",
+        "unit_price": "370,299799",
+        "total_value": "362,250000",
+        "date": "20/02/26"
+      },
+      {
+        "ticker": "GRSEL",
+        "isin": "TREGRSL00025",
+        "nominal": "0,91",
+        "unit_price": "11,666667",
+        "total_value": "11,020000",
+        "date": "19/01/26"
+      },
+      {
+        "ticker": "KCAER",
+        "isin": "TREKCAE00030",
+        "nominal": "730.865",
+        "unit_price": "40,326",
+        "total_value": "128",
+        "date": "08/01/26"
+      },
+      {
+        "ticker": "KMPUR",
+        "isin": "TREKMPU00017",
+        "nominal": "153.074,00",
+        "unit_price": "75,072334",
+        "total_value": "52,150000",
+        "date": "08/01/26"
+      },
+      {
+        "ticker": "KORDS",
+        "isin": "TRAKORDS91B2",
+        "nominal": "994.218,00",
+        "unit_price": "8,789023",
+        "total_value": "15,050000",
+        "date": "08/01/26"
+      },
+      {
+        "ticker": "MNDRS",
+        "isin": "TRAMNDRS91B0",
+        "nominal": "2.000,00",
+        "unit_price": "338,431715",
+        "total_value": "437,000000",
+        "date": "20/02/26"
+      },
+      {
+        "ticker": "MPARK",
+        "isin": "TREMLPC00021",
+        "nominal": "-202",
+        "unit_price": "",
+        "total_value": "",
+        "date": ""
+      },
+      {
+        "ticker": "PARSN",
+        "isin": "TRAPARSN91H6",
+        "nominal": "64.333,00",
+        "unit_price": "229,273911",
+        "total_value": "196,500000",
+        "date": "08/01/26"
+      },
+      {
+        "ticker": "PGSUS",
+        "isin": "TREPEGS00016",
+        "nominal": "0,60",
+        "unit_price": "8,789386",
+        "total_value": "37,060000",
+        "date": "01/12/25"
+      },
+      {
+        "ticker": "SARKY",
+        "isin": "TRASARKY91G6",
+        "nominal": "2.915",
+        "unit_price": "000",
+        "total_value": "2,596",
+        "date": "24/02/26"
+      },
+      {
+        "ticker": "SASA",
+        "isin": "TRASASAW91E4",
+        "nominal": "150.000",
+        "unit_price": "46,683",
+        "total_value": "830",
+        "date": "26/02/26"
+      },
+      {
+        "ticker": "SISE",
+        "isin": "TRASISEW91Q3",
+        "nominal": "55.000",
+        "unit_price": "46,204",
+        "total_value": "348",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "TAVHL",
+        "isin": "TRETAVH00018",
+        "nominal": "49.159,00",
+        "unit_price": "300,187678",
+        "total_value": "307,500000",
+        "date": "27/01/26"
+      },
+      {
+        "ticker": "THYAO",
+        "isin": "TRATHYAO91M5",
+        "nominal": "46.670,00",
+        "unit_price": "214,595196",
+        "total_value": "318,000000",
+        "date": "08/01/26"
+      },
+      {
+        "ticker": "TOASO",
+        "isin": "TRATOASO91H3",
+        "nominal": "0,38",
+        "unit_price": "471,200000",
+        "total_value": "511,000000",
+        "date": "01/12/25"
+      },
+      {
+        "ticker": "TTRAK",
+        "isin": "TRETTRK00010",
+        "nominal": "143.655",
+        "unit_price": "200,500",
+        "total_value": "231",
+        "date": "20/02/26"
+      },
+      {
+        "ticker": "TUPRS",
+        "isin": "TRATUPRS91E8",
+        "nominal": "8.015",
+        "unit_price": "254",
+        "total_value": "310.279",
+        "date": ""
+      }
+    ],
+    "stock_count": 26
+  },
+  {
+    "fund_code": "EML",
+    "fund_name": "AK PORTFÖY EMLAK SEKTÖRÜ DEĞİŞKEN FON",
+    "fund_oid": "4028328d998eebe80199ce31e03c4e74",
+    "publish_date": "05.03.2026 18:25:16",
+    "report_summary": "Aylık Rapor",
+    "fund_info": {
+      "period": "Aralık 2025"
+    },
+    "holdings": [
+      {
+        "ticker": "ADGYO",
+        "isin": "TREADRA00023",
+        "nominal": "190,00",
+        "unit_price": "56,600198",
+        "total_value": "53,950000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "AKFGY",
+        "isin": "TREAKFG00012",
+        "nominal": "4.320,00",
+        "unit_price": "2,883806",
+        "total_value": "2,890000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "AKSGY",
+        "isin": "TREAIGY00017",
+        "nominal": "2.860,00",
+        "unit_price": "8,038967",
+        "total_value": "8,220000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "ALGYO",
+        "isin": "TRAALGYO91Q5",
+        "nominal": "3.960,00",
+        "unit_price": "4,768907",
+        "total_value": "5,120000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "AVPGY",
+        "isin": "TREAVRK00024",
+        "nominal": "250,00",
+        "unit_price": "54,688795",
+        "total_value": "52,200000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "BASGZ",
+        "isin": "TREBSGZ00037",
+        "nominal": "540,00",
+        "unit_price": "44,245479",
+        "total_value": "47,400000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "EKGYO",
+        "isin": "TREEGYO00017",
+        "nominal": "5.600,00",
+        "unit_price": "22,257564",
+        "total_value": "23,700000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "HLGYO",
+        "isin": "TREHLGY00016",
+        "nominal": "1.880,00",
+        "unit_price": "4,245179",
+        "total_value": "4,840000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "ISGYO",
+        "isin": "TRAISGYO91Q3",
+        "nominal": "1.060,00",
+        "unit_price": "21,520692",
+        "total_value": "21,800000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "KZBGY",
+        "isin": "TREKZBG00026",
+        "nominal": "6.090,00",
+        "unit_price": "3,696067",
+        "total_value": "3,420000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "OZKGY",
+        "isin": "TREOZAK00014",
+        "nominal": "990,00",
+        "unit_price": "14,960870",
+        "total_value": "14,530000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "PSGYO",
+        "isin": "TREPSFK00023",
+        "nominal": "7.200,00",
+        "unit_price": "2,674167",
+        "total_value": "2,240000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "RYGYO",
+        "isin": "TRERGYO00019",
+        "nominal": "2.030,00",
+        "unit_price": "25,119590",
+        "total_value": "32,360000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "SNGYO",
+        "isin": "TRESNGY00019",
+        "nominal": "5.180,00",
+        "unit_price": "4,830711",
+        "total_value": "4,520000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "TRGYO",
+        "isin": "TRETRGY00018",
+        "nominal": "600,00",
+        "unit_price": "78,429779",
+        "total_value": "85,100000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "YGGYO",
+        "isin": "TREYGMI00012",
+        "nominal": "310,00",
+        "unit_price": "136,633241",
+        "total_value": "145,800000",
+        "date": "27/02/26"
+      },
+      {
+        "ticker": "ZRGYO",
+        "isin": "TREZRGY00023",
+        "nominal": "3.140",
+        "unit_price": "23,143",
+        "total_value": "359",
+        "date": "27/02/26"
+      }
+    ],
+    "stock_count": 17
+  },
+  {
+    "fund_code": "DTZ",
+    "fund_name": "AK PORTFÖY ROBOTİK TEKNOLOJİLER DEĞİŞKEN FON",
+    "fund_oid": "4028328d7b648589017bf311e5505104",
+    "publish_date": "05.03.2026 18:25:16",
+    "report_summary": "Aylık Rapor",
+    "fund_info": {
+      "period": "Kasım 2021"
+    },
+    "holdings": [
+      {
+        "ticker": "ALTNY",
+        "isin": "TREALTA00014",
+        "nominal": "158.620",
+        "unit_price": "30,388",
+        "total_value": "344",
+        "date": "17/11/25"
+      },
+      {
+        "ticker": "ARDYZ",
+        "isin": "TREARDY00023",
+        "nominal": "39.820",
+        "unit_price": "127,414",
+        "total_value": "266",
+        "date": "09/02/26"
+      },
+      {
+        "ticker": "ASELS",
+        "isin": "TRAASELS91H2",
+        "nominal": "22.260",
+        "unit_price": "115,114",
+        "total_value": "762",
+        "date": "17/11/25"
+      },
+      {
+        "ticker": "ATATP",
+        "isin": "TREATTP00023",
+        "nominal": "151.477,66",
+        "unit_price": "5,496447",
+        "total_value": "12,750000",
+        "date": "01/12/25"
+      },
+      {
+        "ticker": "EDATA",
+        "isin": "TREEDTA00021",
+        "nominal": "263.312,82",
+        "unit_price": "3,897626",
+        "total_value": "5,000000",
+        "date": "01/12/25"
+      },
+      {
+        "ticker": "ESCOM",
+        "isin": "TRAESCOM91U8",
+        "nominal": "5,20",
+        "unit_price": "2,811538",
+        "total_value": "3,650000",
+        "date": "22/10/25"
+      },
+      {
+        "ticker": "FONET",
+        "isin": "TREFONT00010",
+        "nominal": "90.214,12",
+        "unit_price": "40,251449",
+        "total_value": "41,740000",
+        "date": "01/12/25"
+      },
+      {
+        "ticker": "HTTBT",
+        "isin": "TREHTTB00036",
+        "nominal": "549.290,00",
+        "unit_price": "7,468835",
+        "total_value": "7,910000",
+        "date": "17/11/25"
+      },
+      {
+        "ticker": "INDES",
+        "isin": "TREINDX00019",
+        "nominal": "238.093,36",
+        "unit_price": "10,556061",
+        "total_value": "9,490000",
+        "date": "01/12/25"
+      },
+      {
+        "ticker": "KAREL",
+        "isin": "TREKREL00019",
+        "nominal": "178.130,00",
+        "unit_price": "10,063247",
+        "total_value": "9,010000",
+        "date": "13/11/25"
+      },
+      {
+        "ticker": "KFEIN",
+        "isin": "TREKFIN00037",
+        "nominal": "1,53",
+        "unit_price": "31,782438",
+        "total_value": "9,400000",
+        "date": "16/12/25"
+      },
+      {
+        "ticker": "KONTR",
+        "isin": "TREKNTR00013",
+        "nominal": "69.210",
+        "unit_price": "135,778",
+        "total_value": "948",
+        "date": "09/02/26"
+      },
+      {
+        "ticker": "LOGO",
+        "isin": "TRALOGOW91U2",
+        "nominal": "270.610,00",
+        "unit_price": "40,792874",
+        "total_value": "37,500000",
+        "date": "09/02/26"
+      },
+      {
+        "ticker": "MIATK",
+        "isin": "TREMIAT00015",
+        "nominal": "33.920,00",
+        "unit_price": "21,003804",
+        "total_value": "21,880000",
+        "date": "13/11/25"
+      },
+      {
+        "ticker": "MTRKS",
+        "isin": "TREMTRK00015",
+        "nominal": "23.480,00",
+        "unit_price": "36,766117",
+        "total_value": "34,800000",
+        "date": "13/11/25"
+      },
+      {
+        "ticker": "OBASE",
+        "isin": "TREOBAS00018",
+        "nominal": "209.070",
+        "unit_price": "21,844",
+        "total_value": "259",
+        "date": "23/12/25"
+      },
+      {
+        "ticker": "PAPIL",
+        "isin": "TREPAPL00010",
+        "nominal": "479.539,85",
+        "unit_price": "23,673674",
+        "total_value": "19,290000",
+        "date": "09/02/26"
+      },
+      {
+        "ticker": "PATEK",
+        "isin": "TREPSFD00010",
+        "nominal": "913.420,00",
+        "unit_price": "11,754627",
+        "total_value": "6,450000",
+        "date": "09/02/26"
+      },
+      {
+        "ticker": "REEDR",
+        "isin": "TREREED00035",
+        "nominal": "4.700,00",
+        "unit_price": "222,865098",
+        "total_value": "241,300000",
+        "date": "13/11/25"
+      },
+      {
+        "ticker": "SDTTR",
+        "isin": "TRESDTT00013",
+        "nominal": "-202",
+        "unit_price": "25.286,98",
+        "total_value": "0,0083",
+        "date": ""
+      },
+      {
+        "ticker": "SMART",
+        "isin": "TRESMRT00018",
+        "nominal": "47.725",
+        "unit_price": "23,622",
+        "total_value": "419",
+        "date": "13/11/25"
+      },
+      {
+        "ticker": "VBTYZ",
+        "isin": "TREVBTY00029",
+        "nominal": "3.893",
+        "unit_price": "768",
+        "total_value": "83.434",
+        "date": ""
+      }
+    ],
+    "stock_count": 22
+  }
+]

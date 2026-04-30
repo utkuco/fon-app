@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Scrollbar hide */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Card entrance animation */
+  @keyframes cardEntrance {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .card-animate {
+    animation: cardEntrance 0.35s ease-out both;
+  }
+
+  /* Stagger delays */
+  .card-delay-1  { animation-delay: 40ms; }
+  .card-delay-2  { animation-delay: 80ms; }
+  .card-delay-3  { animation-delay: 120ms; }
+  .card-delay-4  { animation-delay: 160ms; }
+  .card-delay-5  { animation-delay: 200ms; }
+  .card-delay-6  { animation-delay: 240ms; }
+  .card-delay-7  { animation-delay: 280ms; }
+  .card-delay-8  { animation-delay: 320ms; }
+
+  /* Shimmer skeleton */
+  @keyframes shimmer {
+    0% { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+  }
+
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      #f0f0f0 25%,
+      #e8e8e8 37%,
+      #f0f0f0 63%
+    );
+    background-size: 800px 100%;
+    animation: shimmer 1.4s infinite linear;
+  }
+
+  /* Fade in */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.3s ease-out both;
+  }
+
+  /* Pulse scale */
+  @keyframes pulseScale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+  }
+
+  .pulse-once {
+    animation: pulseScale 0.4s ease-out;
+  }
+}

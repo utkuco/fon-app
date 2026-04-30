@@ -1,0 +1,60 @@
+TEFAS SCRAPER MONITOR REPORT
+Generated: 2026-04-29 01:15:00+00:00
+================================================================
+
+OVERALL STATUS: ⚠️  PROBLEM
+
+----------------------------------------------------------------
+SCRAPER LAST RUN (2026-04-28 → 2026-04-29)
+----------------------------------------------------------------
+  Started:    2026-04-28 22:13:24
+  Finished:   2026-04-29 01:13:45 (duration: ~3h)
+  Status:     FAILED ❌
+  Funds scraped: 0
+
+  ERROR:
+  ChromeDriver process killed (status -9).
+  Sandbox/container environment restriction preventing Chrome from starting.
+
+----------------------------------------------------------------
+DATABASE STATUS
+----------------------------------------------------------------
+  Funds with price_history: 2,400
+  system_status last_tefas_fetch: (no entry — only last_5y_backfill: 2026-04-24)
+
+----------------------------------------------------------------
+SAMPLE FUND PRICES & DATA FRESHNESS (2026-04-28)
+----------------------------------------------------------------
+  Fund  | Price      | last_tefas_fetch       | price_history latest
+  ------|------------|------------------------|----------------------
+  VEV   | 1.387228   | 2026-04-26 16:28 UTC   | 2026-04-16 ⚠️ (12d stale)
+  GES   | 0.095529   | 2026-04-23 21:47 UTC   | 2026-04-16 ⚠️ (12d stale)
+  GRL   | 19.650702  | 2026-04-23 19:00 UTC   | 2026-04-16 ⚠️ (12d stale)
+  PAF   | 8.815642   | 2026-04-26 16:26 UTC   | 2026-04-16 ⚠️ (12d stale)
+  TIP   | 2.161393   | 2026-04-23 17:36 UTC   | 2026-04-16 ⚠️ (12d stale)
+
+  ⚠️  All 5 sample funds have price_history data ending 2026-04-16
+      — data is ~12 days stale as of this report.
+
+  ⚠️  last_tefas_fetch (2026-04-23 to 2026-04-26) does not match
+      price_history latest date (2026-04-16). This suggests the
+      price_history JSONB array was NOT updated during recent fetches.
+
+----------------------------------------------------------------
+ISSUES DETECTED
+----------------------------------------------------------------
+  1. ChromeDriver process killed — Selenium/Chrome cannot start in
+     current container/sandbox environment. Need --no-sandbox or
+     headless container mode.
+
+  2. Yesterday's scrape (2026-04-28) produced 0 new records.
+     All subsequent funds have stale price_history (last entry 2026-04-16).
+
+  3. price_history gap: funds appear to have been fetched
+     (last_tefas_fetch updated) but price_history JSONB was not
+     appended. Possible bug in update logic or partial failure.
+
+  4. system_status table missing last_tefas_fetch entry — scraper
+     may not be writing system status correctly.
+
+================================================================

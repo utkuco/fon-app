@@ -1,0 +1,117 @@
+[Sun Apr 26 15:22:43 +03 2026] Weekend — skipping ETF cron
+
+[2026-04-27 16:05:12] ETF Daily Cron
+============================================================
+
+[1/5] Fetching FX rates...
+  USD/TRY = 45.0196
+  EUR/TRY = 52.9333
+  GBP/TRY = 61.0280
+
+[2/5] Fetching ETF list from DB...
+  Total ETFs in DB: 1000
+
+[3/5] Fetching latest prices...
+  Got prices for 1000 ETFs
+  Upserting 1000 today's price rows...
+    → foreign_etf_prices ERROR: HTTP Error 409: Conflict
+
+[4/5] Fetching full price history for returns...
+  Fetched price history for 1000 ETFs
+  Fetching last 30 days per symbol for sparklines...
+  Got last-30-day prices for 1000 ETFs
+
+DONE: 826 updated, 174 skipped, 0 errors
+  FX: USD/TRY=45.0196
+
+[5/5] Recomputing sparklines (last 30 days)...
+  ✓ 100 ETFs updated
+  ✓ 200 ETFs updated
+  ✓ 300 ETFs updated
+  ✓ 400 ETFs updated
+  ✓ 500 ETFs updated
+  ✓ 600 ETFs updated
+  ✓ 700 ETFs updated
+  ✓ 800 ETFs updated
+  Sparklines: 840 updated, 160 skipped, 0 errors
+Traceback (most recent call last):
+  File "/Users/admin/Desktop/projects/fon-app/scripts/etf_daily_cron.py", line 433, in <module>
+    main()
+  File "/Users/admin/Desktop/projects/fon-app/scripts/etf_daily_cron.py", line 356, in main
+    print(f"\n✅ ETF cron complete — prices={latest_ok}, returns={updated}, sparklines={spark_ok}")
+                                             ^^^^^^^^^
+NameError: name 'latest_ok' is not defined
+
+[2026-04-27 16:11:32] ETF Daily Cron
+============================================================
+
+[1/5] Fetching FX rates...
+  USD/TRY = 45.0227
+  EUR/TRY = 52.9522
+  GBP/TRY = 61.0146
+
+[2/5] Fetching ETF list from DB...
+  Total ETFs in DB: 1000
+
+[3/5] Fetching latest prices...
+  Got prices for 1000 ETFs
+  Upserting 1000 today's price rows...
+    → foreign_etf_prices ERROR: HTTP Error 409: Conflict
+
+[4/5] Fetching full price history for returns...
+  Fetched price history for 1000 ETFs
+  Fetching last 30 days per symbol for sparklines...
+  Got last-30-day prices for 1000 ETFs
+
+DONE: 825 updated, 175 skipped, 0 errors
+  FX: USD/TRY=45.0227
+
+[5/5] Recomputing sparklines (last 30 days)...
+  ✓ 100 ETFs updated
+  ✓ 200 ETFs updated
+  ✓ 300 ETFs updated
+  ✓ 400 ETFs updated
+  ✓ 500 ETFs updated
+  ✓ 600 ETFs updated
+  ✓ 700 ETFs updated
+  ✓ 800 ETFs updated
+  Sparklines: 840 updated, 160 skipped, 0 errors
+
+✅ ETF cron complete — prices=1000, returns=825, sparklines=840
+
+[2026-04-27 21:44:02] ETF Daily Cron
+============================================================
+
+[1/5] Fetching FX rates...
+  USD/TRY = 45.0021
+  EUR/TRY = 52.8039
+  GBP/TRY = 60.9328
+
+[2/5] Fetching ETF list from DB...
+  Total ETFs in DB: 1000
+
+[3/5] Fetching latest prices...
+  Got prices for 1000 ETFs
+  Upserting 1000 today's price rows...
+    → foreign_etf_prices ERROR: HTTP Error 409: Conflict
+
+[4/5] Fetching full price history for returns...
+  Fetched price history for 998 ETFs
+  Fetching last 30 days per symbol for sparklines...
+  Got last-30-day prices for 998 ETFs
+
+DONE: 839 updated, 161 skipped, 0 errors
+  FX: USD/TRY=45.0021
+
+[5/5] Recomputing sparklines (last 30 days)...
+  ✓ 100 ETFs updated
+  ✓ 200 ETFs updated
+  ✓ 300 ETFs updated
+  ✓ 400 ETFs updated
+  ✓ 500 ETFs updated
+  ✓ 600 ETFs updated
+  ✓ 700 ETFs updated
+  ✓ 800 ETFs updated
+  Sparklines: 839 updated, 159 skipped, 0 errors
+
+✅ ETF cron complete — prices=1000, returns=839, sparklines=839

@@ -1,0 +1,119 @@
+[2026-04-25 21:06:25] [INFO] ============================================================
+[2026-04-25 21:06:25] [INFO] KAP Portfolio Parser — pdfplumber + GLM fallback
+[2026-04-25 21:06:25] [INFO] PDF dir: /Users/admin/Desktop/projects/fon-app/pdfs/portfoy_dagilim
+[2026-04-25 21:06:25] [INFO] Zhipu key: SET
+[2026-04-25 21:06:25] [INFO] Supabase key: SET
+[2026-04-25 21:06:25] [INFO] ============================================================
+[2026-04-25 21:06:25] [INFO] Found 507 PDF files in /Users/admin/Desktop/projects/fon-app/pdfs/portfoy_dagilim
+[2026-04-25 21:06:25] [INFO] Pending: 78 PDFs (resume=False)
+[2026-04-25 21:06:25] [INFO] DB fund_type lookup: 71/78 found
+[2026-04-25 21:06:25] [WARN]   Skipping GTY (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping GZM (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping GZN (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping KTS (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping KVK (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping MJG (DB fund_type=OKS) → KIRA
+[2026-04-25 21:06:25] [WARN]   Skipping MRI (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping MTG (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping ODD (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping OFS (DB fund_type=OKS) → KIRA
+[2026-04-25 21:06:25] [WARN]   Skipping ONE (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping PBK (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping PBN (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping PFO (DB fund_type=OKS) → KIRA
+[2026-04-25 21:06:25] [WARN]   Skipping PKD (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping PPE (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping PPM (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping PPS (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping RBI (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping RBN (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping RBR (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping RDT (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping RIH (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping RPL (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping RTP (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping SSF (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping TCF (DB fund_type=OKS) → KIRA
+[2026-04-25 21:06:25] [WARN]   Skipping TGN (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping TJT (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping TLY (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping TPJ (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping TPP (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping ULH (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping UP2 (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping UPD (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping VMV (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping ZCN (DB fund_type=OKS) → KIRA
+[2026-04-25 21:06:25] [WARN]   Skipping ZP6 (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping ZP8 (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping ZP9 (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping ZPA (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [WARN]   Skipping ZSG (DB fund_type=OKS) → KIRA
+[2026-04-25 21:06:25] [WARN]   Skipping ZTG (DB fund_type=OKS) → KIRA
+[2026-04-25 21:06:25] [WARN]   Skipping ZVO (DB fund_type=SRF) → SERBEST
+[2026-04-25 21:06:25] [INFO] Skipped: {'SERBEST': 37, 'KIRA': 7} | Processing: 10 funds
+[2026-04-25 21:06:26] [WARN] _create_job_run exception: Expecting value: line 1 column 1 (char 0)
+[2026-04-25 21:06:26] [INFO] [1/10] Processing OHK (OHK_4028328c.pdf)
+[2026-04-25 21:06:26] [INFO]   DB → KAP category=KARMA
+[2026-04-25 21:06:26] [INFO]   KARMA fund: GLM directly (no pdfplumber)
+[2026-04-25 21:06:27] [WARN]   PDF read (maxpages=3) failed for OHK: Unexpected EOF
+[2026-04-25 21:06:28] [WARN]   PDF read (maxpages=1) failed for OHK: Unexpected EOF
+[2026-04-25 21:06:28] [ERROR]   ❌ PDF read failed for OHK (all attempts)
+[2026-04-25 21:06:29] [INFO] [2/10] Processing OYL (OYL_4028328c.pdf)
+[2026-04-25 21:06:29] [INFO]   DB → KAP category=KARMA
+[2026-04-25 21:06:29] [INFO]   KARMA fund: GLM directly (no pdfplumber)
+[2026-04-25 21:06:36] [WARN]   PDF read (maxpages=3) failed for OYL: Unexpected EOF
+[2026-04-25 21:06:42] [WARN]   PDF read (maxpages=1) failed for OYL: Unexpected EOF
+[2026-04-25 21:06:42] [ERROR]   ❌ PDF read failed for OYL (all attempts)
+[2026-04-25 21:06:43] [INFO] [3/10] Processing SSK (SSK_4028328c.pdf)
+[2026-04-25 21:06:43] [INFO]   DB → KAP category=KARMA
+[2026-04-25 21:06:43] [INFO]   KARMA fund: GLM directly (no pdfplumber)
+[2026-04-25 21:07:34] [INFO]   ✅ JSON from reasoning_content for SSK (attempt 1)
+[2026-04-25 21:07:34] [INFO]   ✅ KARMA GLM success: stock=66.4%
+[2026-04-25 21:07:34] [INFO]   ✅ Upserted SSK
+[2026-04-25 21:07:35] [INFO] [4/10] Processing SUA (SUA_4028328d.pdf)
+[2026-04-25 21:07:35] [INFO]   DB → KAP category=KARMA
+[2026-04-25 21:07:35] [INFO]   KARMA fund: GLM directly (no pdfplumber)
+[2026-04-25 21:07:44] [WARN]   PDF read (maxpages=3) failed for SUA: No /Root object! - Is this really a PDF?
+[2026-04-25 21:07:52] [WARN]   PDF read (maxpages=1) failed for SUA: No /Root object! - Is this really a PDF?
+[2026-04-25 21:07:52] [ERROR]   ❌ PDF read failed for SUA (all attempts)
+[2026-04-25 21:07:53] [INFO] [5/10] Processing SUB (SUB_4028328d.pdf)
+[2026-04-25 21:07:53] [INFO]   DB → KAP category=KARMA
+[2026-04-25 21:07:53] [INFO]   KARMA fund: GLM directly (no pdfplumber)
+[2026-04-25 21:08:42] [WARN] GLM empty content for SUB (attempt 1)
+[2026-04-25 21:09:36] [WARN] GLM empty content for SUB (attempt 2)
+[2026-04-25 21:10:26] [WARN] GLM empty content for SUB (attempt 3)
+[2026-04-25 21:10:28] [ERROR]   ❌ KARMA GLM failed
+[2026-04-25 21:10:29] [INFO] [6/10] Processing SUC (SUC_4028328d.pdf)
+[2026-04-25 21:10:29] [INFO]   DB → KAP category=KARMA
+[2026-04-25 21:10:29] [INFO]   KARMA fund: GLM directly (no pdfplumber)
+[2026-04-25 21:11:21] [WARN] GLM empty content for SUC (attempt 1)
+[2026-04-25 21:12:09] [INFO]   ✅ JSON from reasoning_content for SUC (attempt 2)
+[2026-04-25 21:12:09] [INFO]   ✅ KARMA GLM success: stock=0.58%
+[2026-04-25 21:12:09] [INFO]   ✅ Upserted SUC
+[2026-04-25 21:12:11] [INFO] [7/10] Processing TAO (TAO_4028328c.pdf)
+[2026-04-25 21:12:11] [INFO]   DB → KAP category=KARMA
+[2026-04-25 21:12:11] [INFO]   KARMA fund: GLM directly (no pdfplumber)
+[2026-04-25 21:12:53] [INFO]   ✅ KARMA GLM success: stock=59.16%
+[2026-04-25 21:12:54] [INFO]   ✅ Upserted TAO
+[2026-04-25 21:12:55] [INFO] [8/10] Processing TLE (TLE_4028328c.pdf)
+[2026-04-25 21:12:55] [INFO]   DB → KAP category=KARMA
+[2026-04-25 21:12:55] [INFO]   KARMA fund: GLM directly (no pdfplumber)
+[2026-04-25 21:13:45] [INFO]   ✅ JSON from reasoning_content for TLE (attempt 1)
+[2026-04-25 21:13:45] [INFO]   ✅ KARMA GLM success: stock=0.81%
+[2026-04-25 21:13:46] [INFO]   ✅ Upserted TLE
+[2026-04-25 21:13:47] [INFO] [9/10] Processing TP2 (TP2_4028328d.pdf)
+[2026-04-25 21:13:47] [INFO]   DB → KAP category=KARMA
+[2026-04-25 21:13:47] [INFO]   KARMA fund: GLM directly (no pdfplumber)
+[2026-04-25 21:14:36] [INFO]   ✅ JSON from reasoning_content for TP2 (attempt 1)
+[2026-04-25 21:14:36] [INFO]   ✅ KARMA GLM success: stock=0.0%
+[2026-04-25 21:14:36] [INFO]   ✅ Upserted TP2
+[2026-04-25 21:14:38] [INFO] [10/10] Processing TPC (TPC_4028328c.pdf)
+[2026-04-25 21:14:38] [INFO]   DB → KAP category=KARMA
+[2026-04-25 21:14:38] [INFO]   KARMA fund: GLM directly (no pdfplumber)
+[2026-04-25 21:15:19] [WARN] GLM empty content for TPC (attempt 1)
+[2026-04-25 21:16:07] [WARN] GLM empty content for TPC (attempt 2)
+[2026-04-25 21:16:52] [INFO]   ✅ JSON from reasoning_content for TPC (attempt 3)
+[2026-04-25 21:16:52] [INFO]   ✅ KARMA GLM success: stock=0.0%
+[2026-04-25 21:16:52] [INFO]   ✅ Upserted TPC
+[2026-04-25 21:16:53] [INFO] === BATCH COMPLETE: 6 ✅  4 ❌ ===

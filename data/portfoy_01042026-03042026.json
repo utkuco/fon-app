@@ -1,0 +1,134 @@
+[
+  {
+    "fund_code": "SPP",
+    "fund_name": "SPARTA PORTFÖY BİRİNCİ PARA PİYASASI (TL) FONU",
+    "fund_oid": "4028328d969f2954019759faa97d1a32",
+    "publish_date": "03.04.2026 23:36:18",
+    "report_summary": "SPARTA PORTFÖY BİRİNCİ PARA PİYASASI (TL) FONU MART 2026 PORTFÖY DAĞILIM RAPORU",
+    "fund_info": {
+      "period": "Haziran 2025"
+    },
+    "holdings": [
+      {
+        "ticker": "GARAN",
+        "isin": "TRAGARAN91N1",
+        "nominal": "21.027",
+        "unit_price": "041",
+        "total_value": "47,000",
+        "date": "01/04/26"
+      },
+      {
+        "ticker": "PGSUS",
+        "isin": "TREPEGS00016",
+        "nominal": "280",
+        "unit_price": "531",
+        "total_value": "65.071",
+        "date": "01/04/26"
+      }
+    ],
+    "stock_count": 2
+  },
+  {
+    "fund_code": "SBH",
+    "fund_name": "SPARTA PORTFÖY BİRİNCİ HİSSE SENEDİ SERBEST (TL) FON (HİSSE SENEDİ YOĞUN FON)",
+    "fund_oid": "4028328d969f2954019736190e803b94",
+    "publish_date": "03.04.2026 23:26:31",
+    "report_summary": "SPARTA PORTFÖY BİRİNCİ HİSSE SENEDİ SERBEST (TL) FON (HİSSE SENEDİ YOĞUN FON) MART 2026 PORTFÖY DAĞILIM RAPORU",
+    "fund_info": {
+      "period": "Haziran 2025"
+    },
+    "holdings": [
+      {
+        "ticker": "ANSGR",
+        "isin": "TRAANSGR91O1",
+        "nominal": "1.200",
+        "unit_price": "000",
+        "total_value": "13,320",
+        "date": "31/03/26"
+      },
+      {
+        "ticker": "ATAGY",
+        "isin": "TRAATAYO91Q1",
+        "nominal": "85.000",
+        "unit_price": "13,227",
+        "total_value": "249",
+        "date": "31/03/26"
+      },
+      {
+        "ticker": "BMSCH",
+        "isin": "TREBMSC00018",
+        "nominal": "350.000,00",
+        "unit_price": "26,897230",
+        "total_value": "29,580000",
+        "date": "04/03/26"
+      },
+      {
+        "ticker": "EGPRO",
+        "isin": "TRAEGPRO91E8",
+        "nominal": "33.597,00",
+        "unit_price": "137,762845",
+        "total_value": "126,500000",
+        "date": "31/03/26"
+      },
+      {
+        "ticker": "GARAN",
+        "isin": "TRAGARAN91N1",
+        "nominal": "-202",
+        "unit_price": "626.835,95",
+        "total_value": "0,2609",
+        "date": ""
+      },
+      {
+        "ticker": "ISCTR",
+        "isin": "TRAISCTR91N2",
+        "nominal": "1.160",
+        "unit_price": "000",
+        "total_value": "49,989",
+        "date": "31/03/26"
+      },
+      {
+        "ticker": "PGSUS",
+        "isin": "TREPEGS00016",
+        "nominal": "120.413",
+        "unit_price": "201,838",
+        "total_value": "808",
+        "date": "31/03/26"
+      },
+      {
+        "ticker": "SEGYO",
+        "isin": "TRESKGY00015",
+        "nominal": "4.545",
+        "unit_price": "026",
+        "total_value": "9,996",
+        "date": "31/03/26"
+      },
+      {
+        "ticker": "SKBNK",
+        "isin": "TRASKBNK91N8",
+        "nominal": "954.974",
+        "unit_price": "10,000",
+        "total_value": "757",
+        "date": "30/03/26"
+      },
+      {
+        "ticker": "TKFEN",
+        "isin": "TRETKHO00012",
+        "nominal": "10.694",
+        "unit_price": "000",
+        "total_value": "223.825",
+        "date": ""
+      }
+    ],
+    "stock_count": 10
+  },
+  {
+    "fund_code": "LKT",
+    "fund_name": "AKTİF PORTFÖY İKİNCİ PARA PİYASASI (TL) FONU",
+    "fund_oid": "4028328d9373bab0019387cec28546f5",
+    "publish_date": "03.04.2026 18:31:02",
+    "report_summary": "Portföy Dağılım Raporu",
+    "fund_info": {},
+    "holdings": [],
+    "stock_count": 0
+  }
+]

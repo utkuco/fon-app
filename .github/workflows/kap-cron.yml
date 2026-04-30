@@ -1,0 +1,90 @@
+name: KAP Portfolio Parser
+
+on:
+  # DISABLED — local launchd (com.fonapp.kap-portfolio-cron.plist) handles KAP discovery + parse.
+  # GitHub Actions and local both ran the same pipeline, causing duplicate work.
+  # Keeping local because it uses Chrome Remote Debugging (same Chrome session as TEFAS scraper).
+  # Re-enable here ONLY if local Mac is offline for an extended period.
+  # schedule:
+  #   - cron: '0 7 * * 1'
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Max PDFs to process'
+        required: false
+        default: '0'
+        type: string
+      force:
+        description: 'Force reprocess (ignore cache)'
+        required: false
+        default: 'false'
+        type: string
+
+jobs:
+  discover-and-parse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Debug workspace
+        run: |
+          echo "github.workspace=${{ github.workspace }}"
+          echo "ls scripts/:"
+          ls -la scripts/ 2>&1 || echo "NOT FOUND"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      - name: Install Python dependencies
+        run: |
+          pip install pdfplumber pdfminer.six zhipuai requests Pillow undetected-chromedriver
+
+      - name: Discover new PDFs from KAP
+        run: |
+          python "${{ github.workspace }}/scripts/kap_discover_download.py" \
+            --batch \
+            --limit ${{ github.event.inputs.limit || '0' }} \
+            --force ${{ github.event.inputs.force || 'false' }}
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
+        continue-on-error: true
+
+      - name: Run portfolio parser
+        run: |
+          python "${{ github.workspace }}/scripts/kap_portfolio_parser.py" --batch --limit ${{ github.event.inputs.limit || '0' }}
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
+          PYTHONUNBUFFERED: "1"
+        continue-on-error: true
+
+      - name: Commit new PDFs
+        run: |
+          cd "${{ github.workspace }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain pdfs/)" ]; then
+            git add pdfs/
+            git commit -m "chore: download new KAP portfolio PDFs $(date -u '+%Y-%m-%d')"
+            git push
+          fi
+        continue-on-error: true
+
+      - name: Report result
+        if: always()
+        run: |
+          echo "KAP portfolio parse completed at $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          echo "Check parse_job_runs table in Supabase for detailed results"

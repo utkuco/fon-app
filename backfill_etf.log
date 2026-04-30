@@ -1,0 +1,1116 @@
+Starting backfill: 1000 ETFs, 100 batches
+AGG:501 rows OK
+BND:501 rows OK
+CAFG:501 rows OK
+CAFX:404 rows OK
+CAIE:210 rows OK
+CAIQ:106 rows OK
+CALF:501 rows OK
+CALI:501 rows OK
+CAM:139 rows OK
+CAML:501 rows OK
+Batch 1/100: inserted 3865 rows
+CAMX:501 rows OK
+CANC:501 rows OK
+CANE:501 rows OK
+CANQ:501 rows OK
+CAOS:501 rows OK
+CAPE:501 rows OK
+CARD:449 rows OK
+CARK:501 rows OK
+CARU:448 rows OK
+CARY:501 rows OK
+Batch 2/100: inserted 4905 rows
+CARZ:501 rows OK
+CAS:321 rows OK
+CATF:444 rows OK
+CATH:501 rows OK
+CBLS:501 rows OK
+CBOA:264 rows OK
+CBOJ:316 rows OK
+CBOL:133 rows OK
+CBON:501 rows OK
+CBOO:138 rows OK
+Batch 3/100: inserted 3620 rows
+CBOX:6 rows OK
+CBOY:202 rows OK
+CBSE:501 rows OK
+CBTA:264 rows OK
+CBTJ:307 rows OK
+CBTL:133 rows OK
+CBTO:138 rows OK
+CBTY:202 rows OK
+CBXA:264 rows OK
+CBXJ:307 rows OK
+Batch 4/100: inserted 2324 rows
+CBXL:133 rows OK
+CBXO:138 rows OK
+CBXY:202 rows OK
+CCEF:501 rows OK
+CCFE:218 rows OK
+CCNR:449 rows OK
+CCOM:61 rows OK
+CCOR:501 rows OK
+CCSB:501 rows OK
+CCSO:501 rows OK
+Batch 5/100: inserted 3205 rows
+CCUP:178 rows OK
+CDC:501 rows OK
+CDEI:501 rows OK
+CDIG:152 rows OK
+CDL:501 rows OK
+CDX:501 rows OK
+CEFA:501 rows OK
+CEFD:501 rows OK
+CEFS:502 rows OK
+CEFZ:183 rows OK
+ERR CEFS:400
+Batch 6/100: inserted 4021 rows
+CEGX:199 rows OK
+CEMB:501 rows OK
+CEPI:347 rows OK
+CERY:410 rows OK
+CEW:501 rows OK
+CFA:501 rows OK
+CFIT:270 rows OK
+CFO:501 rows OK
+CGBL:501 rows OK
+CGCB:501 rows OK
+Batch 7/100: inserted 4232 rows
+CGCP:501 rows OK
+CGCV:458 rows OK
+CGDG:501 rows OK
+CGDV:501 rows OK
+CGGE:458 rows OK
+CGGG:209 rows OK
+CGGO:501 rows OK
+CGGR:501 rows OK
+CGHM:458 rows OK
+CGHY:209 rows OK
+Batch 8/100: inserted 4297 rows
+CGIB:458 rows OK
+CGIC:458 rows OK
+CGIE:501 rows OK
+CGMM:319 rows OK
+CGMS:501 rows OK
+CGMU:501 rows OK
+CGNG:458 rows OK
+CGRO:501 rows OK
+CGSD:501 rows OK
+CGSM:501 rows OK
+Batch 9/100: inserted 4699 rows
+CGUI:458 rows OK
+CGUS:501 rows OK
+CGV:501 rows OK
+CGVV:209 rows OK
+CGW:501 rows OK
+CGXU:501 rows OK
+CHAT:501 rows OK
+CHAU:501 rows OK
+CHGX:501 rows OK
+CHIQ:501 rows OK
+Batch 10/100: inserted 4675 rows
+CHNL:17 rows OK
+CHNU:17 rows OK
+CHPS:501 rows OK
+CHPX:142 rows OK
+CHPY:263 rows OK
+CHRI:147 rows OK
+CIBR:501 rows OK
+CIFG:92 rows OK
+CIFU:105 rows OK
+CLCG:191 rows OK
+Batch 11/100: inserted 1976 rows
+CLCV:191 rows OK
+CLIP:501 rows OK
+CLIX:501 rows OK
+CLOA:501 rows OK
+CLOB:396 rows OK
+CLOD:501 rows OK
+CLOI:501 rows OK
+CLOU:501 rows OK
+CLOX:501 rows OK
+CLOZ:501 rows OK
+Batch 12/100: inserted 4595 rows
+CLSE:501 rows OK
+CLSM:501 rows OK
+CLSX:153 rows OK
+CLSZ:46 rows OK
+CMBO:118 rows OK
+CMBS:501 rows OK
+CMCI:501 rows OK
+CMDT:501 rows OK
+CMDY:501 rows OK
+CMF:501 rows OK
+Batch 13/100: inserted 3824 rows
+CMGG:109 rows OK
+CNAV:392 rows OK
+CNBS:501 rows OK
+CNCG:87 rows OK
+CNEQ:501 rows OK
+CNQQ:145 rows OK
+CNRG:501 rows OK
+CNXT:501 rows OK
+CNYA:501 rows OK
+COAL:501 rows OK
+Batch 14/100: inserted 3739 rows
+COHX:46 rows OK
+COIG:279 rows OK
+COII:224 rows OK
+COIO:176 rows OK
+COIW:297 rows OK
+COLO:501 rows OK
+COM:501 rows OK
+COMB:501 rows OK
+COMD:51 rows OK
+COMT:501 rows OK
+Batch 15/100: inserted 3077 rows
+CONI:411 rows OK
+CONL:501 rows OK
+CONX:107 rows OK
+CONY:501 rows OK
+COPA:397 rows OK
+COPJ:501 rows OK
+COPP:501 rows OK
+COPX:501 rows OK
+COPY:331 rows OK
+CORB:114 rows OK
+Batch 16/100: inserted 3865 rows
+CORD:145 rows OK
+CORN:501 rows OK
+CORO:345 rows OK
+CORP:501 rows OK
+COSW:126 rows OK
+COTG:151 rows OK
+COWG:501 rows OK
+COWS:501 rows OK
+COWZ:501 rows OK
+COYY:187 rows OK
+Batch 17/100: inserted 3459 rows
+COZX:117 rows OK
+CPAG:177 rows OK
+CPAI:501 rows OK
+CPER:501 rows OK
+CPHY:177 rows OK
+CPII:501 rows OK
+CPLB:501 rows OK
+CPLS:501 rows OK
+CPNJ:475 rows OK
+CPNM:289 rows OK
+Batch 18/100: inserted 3740 rows
+CPNQ:349 rows OK
+CPNS:412 rows OK
+CPRA:268 rows OK
+CPRJ:456 rows OK
+CPRO:392 rows OK
+CPRY:328 rows OK
+CPSA:434 rows OK
+CPSD:349 rows OK
+CPSF:308 rows OK
+CPSJ:456 rows OK
+Batch 19/100: inserted 3752 rows
+CPSL:408 rows OK
+CPSM:497 rows OK
+CPSN:369 rows OK
+CPSO:392 rows OK
+CPSP:268 rows OK
+CPSR:289 rows OK
+CPST:412 rows OK
+CPSU:226 rows OK
+CPSY:328 rows OK
+CPXR:316 rows OK
+Batch 20/100: inserted 3505 rows
+CQQQ:501 rows OK
+CRAK:501 rows OK
+CRBN:501 rows OK
+CRCD:145 rows OK
+CRCG:178 rows OK
+CRDD:17 rows OK
+CRDT:501 rows OK
+CRDU:153 rows OK
+CRDX:17 rows OK
+CRED:501 rows OK
+Batch 21/100: inserted 3015 rows
+CRMG:265 rows OK
+CRMU:52 rows OK
+CRMX:71 rows OK
+CRPT:501 rows OK
+CRSH:496 rows OK
+CRTC:501 rows OK
+CRUX:29 rows OK
+CRWG:178 rows OK
+CRWL:362 rows OK
+CRWU:188 rows OK
+Batch 22/100: inserted 2643 rows
+CSB:501 rows OK
+CSCL:210 rows OK
+CSCS:210 rows OK
+CSD:501 rows OK
+CSEX:111 rows OK
+CSHI:502 rows OK
+CSHP:434 rows OK
+CSM:501 rows OK
+CSMD:501 rows OK
+CSNR:306 rows OK
+ERR CSHI:400
+Batch 23/100: inserted 3777 rows
+CSPF:306 rows OK
+CSRE:306 rows OK
+CSTK:243 rows OK
+CTA:501 rows OK
+CTEC:501 rows OK
+CTEF:214 rows OK
+CTEX:501 rows OK
+CTIF:210 rows OK
+CTWO:213 rows OK
+CURE:501 rows OK
+Batch 24/100: inserted 3496 rows
+CUSD:501 rows OK
+CUT:501 rows OK
+CVAR:501 rows OK
+CVIE:501 rows OK
+CVLC:501 rows OK
+CVMC:501 rows OK
+CVNX:228 rows OK
+CVNY:309 rows OK
+CVRD:501 rows OK
+CVRT:501 rows OK
+Batch 25/100: inserted 4545 rows
+CVSB:501 rows OK
+CVY:501 rows OK
+CWB:501 rows OK
+CWEB:501 rows OK
+CWI:501 rows OK
+CWII:118 rows OK
+CWS:501 rows OK
+CWVX:199 rows OK
+CWY:8 rows OK
+CXRN:294 rows OK
+Batch 26/100: inserted 3625 rows
+CXSE:501 rows OK
+CZA:501 rows OK
+CZAR:501 rows OK
+DABS:288 rows OK
+DADS:181 rows OK
+DAK:186 rows OK
+DALI:501 rows OK
+DANA:98 rows OK
+DAPP:501 rows OK
+DAPR:501 rows OK
+Batch 27/100: inserted 3759 rows
+DARP:501 rows OK
+DAT:501 rows OK
+DAUG:501 rows OK
+DAX:501 rows OK
+DBA:501 rows OK
+DBAW:501 rows OK
+DBB:501 rows OK
+DBC:501 rows OK
+DBE:501 rows OK
+DBEF:501 rows OK
+Batch 28/100: inserted 5010 rows
+DBEM:501 rows OK
+DBEU:501 rows OK
+DBEZ:501 rows OK
+DBJP:501 rows OK
+DBMF:501 rows OK
+DBND:501 rows OK
+DBO:501 rows OK
+DBP:501 rows OK
+DBSC:89 rows OK
+DCMT:501 rows OK
+Batch 29/100: inserted 4598 rows
+DCOR:501 rows OK
+DCRE:501 rows OK
+DDEC:501 rows OK
+DDFA:17 rows OK
+DDFD:99 rows OK
+DDFF:58 rows OK
+DDFJ:78 rows OK
+DDFL:206 rows OK
+DDFM:39 rows OK
+DDFN:119 rows OK
+Batch 30/100: inserted 2119 rows
+DDFO:142 rows OK
+DDFS:163 rows OK
+DDIV:501 rows OK
+DDLS:501 rows OK
+DDM:501 rows OK
+DDNQ:78 rows OK
+DDSQ:78 rows OK
+DDTA:17 rows OK
+DDTD:99 rows OK
+DDTF:58 rows OK
+Batch 31/100: inserted 2138 rows
+DDTJ:78 rows OK
+DDTL:206 rows OK
+DDTM:39 rows OK
+DDTN:119 rows OK
+DDTO:142 rows OK
+DDTS:163 rows OK
+DDV:111 rows OK
+DDWM:501 rows OK
+DDX:501 rows OK
+DDXX:111 rows OK
+Batch 32/100: inserted 1971 rows
+DECM:334 rows OK
+DECO:407 rows OK
+DECP:467 rows OK
+DECT:501 rows OK
+DECU:349 rows OK
+DECW:501 rows OK
+DECZ:501 rows OK
+DEED:501 rows OK
+DEEF:501 rows OK
+DEEP:501 rows OK
+Batch 33/100: inserted 4563 rows
+DEFI:501 rows OK
+DEFR:238 rows OK
+DEHP:501 rows OK
+DEM:501 rows OK
+DEMZ:501 rows OK
+DES:502 rows OK
+DESK:501 rows OK
+DEUS:501 rows OK
+DEW:501 rows OK
+DEXC:360 rows OK
+ERR DES:400
+Batch 34/100: inserted 4607 rows
+DFAC:501 rows OK
+DFAE:501 rows OK
+DFAI:501 rows OK
+DFAR:501 rows OK
+DFAS:501 rows OK
+DFAT:501 rows OK
+DFAU:501 rows OK
+DFAW:501 rows OK
+DFAX:501 rows OK
+DFCA:501 rows OK
+Batch 35/100: inserted 5010 rows
+DFCF:501 rows OK
+DFE:501 rows OK
+DFEB:501 rows OK
+DFEM:501 rows OK
+DFEN:501 rows OK
+DFEV:501 rows OK
+DFGP:501 rows OK
+DFGR:501 rows OK
+DFGX:501 rows OK
+DFIC:501 rows OK
+Batch 36/100: inserted 5010 rows
+DFII:266 rows OK
+DFIP:501 rows OK
+DFIS:501 rows OK
+DFIV:501 rows OK
+DFJ:501 rows OK
+DFLV:501 rows OK
+DFNL:501 rows OK
+DFNM:501 rows OK
+DFSB:501 rows OK
+DFSD:501 rows OK
+Batch 37/100: inserted 4775 rows
+DFSE:501 rows OK
+DFSI:501 rows OK
+DFSU:501 rows OK
+DFSV:501 rows OK
+DFUS:501 rows OK
+DFUV:501 rows OK
+DFVE:501 rows OK
+DFVX:501 rows OK
+DGAP:4 rows OK
+DGCB:501 rows OK
+Batch 38/100: inserted 4513 rows
+DGIN:501 rows OK
+DGJA:67 rows OK
+DGLO:180 rows OK
+DGOC:129 rows OK
+DGRE:501 rows OK
+DGRO:501 rows OK
+DGRS:502 rows OK
+DGRW:502 rows OK
+DGS:501 rows OK
+DGT:501 rows OK
+ERR DGRS:400
+ERR DGRW:400
+Batch 39/100: inserted 3885 rows
+DHDG:378 rows OK
+DHLX:144 rows OK
+DHS:502 rows OK
+DHSB:293 rows OK
+DIA:501 rows OK
+DIAL:501 rows OK
+DIEM:501 rows OK
+DIG:501 rows OK
+DIHP:501 rows OK
+DIM:501 rows OK
+ERR DHS:400
+Batch 40/100: inserted 4323 rows
+DIME:138 rows OK
+DINT:501 rows OK
+DIPS:440 rows OK
+DISO:501 rows OK
+DISV:501 rows OK
+DIV:501 rows OK
+DIVB:501 rows OK
+DIVD:501 rows OK
+DIVG:501 rows OK
+DIVI:501 rows OK
+Batch 41/100: inserted 4586 rows
+DIVL:501 rows OK
+DIVN:209 rows OK
+DIVO:501 rows OK
+DIVP:501 rows OK
+DIVS:501 rows OK
+DIVY:501 rows OK
+DIVZ:502 rows OK
+DJAN:501 rows OK
+DJD:501 rows OK
+DJIA:501 rows OK
+ERR DIVZ:400
+Batch 42/100: inserted 4719 rows
+DJP:501 rows OK
+DJTU:288 rows OK
+DJUL:501 rows OK
+DJUN:501 rows OK
+DKNX:185 rows OK
+DLAG:149 rows OK
+DLFE:44 rows OK
+DLLL:299 rows OK
+DLN:502 rows OK
+DLNV:104 rows OK
+ERR DLN:400
+Batch 43/100: inserted 3074 rows
+DLS:501 rows OK
+DMAR:501 rows OK
+DMAX:328 rows OK
+DMAY:501 rows OK
+DMBS:501 rows OK
+DMX:348 rows OK
+DMXF:501 rows OK
+DNL:501 rows OK
+DNNG:52 rows OK
+DNOV:501 rows OK
+Batch 44/100: inserted 4235 rows
+DOCT:501 rows OK
+DOG:501 rows OK
+DOGD:177 rows OK
+DOGG:501 rows OK
+DOJE:151 rows OK
+DOL:501 rows OK
+DON:502 rows OK
+DPST:501 rows OK
+DRAI:449 rows OK
+DRAM:16 rows OK
+ERR DON:400
+Batch 45/100: inserted 3800 rows
+DRGN:197 rows OK
+DRIP:501 rows OK
+DRIV:501 rows OK
+DRLL:501 rows OK
+DRN:501 rows OK
+DRNL:38 rows OK
+DRNZ:122 rows OK
+DRSK:501 rows OK
+DRUP:501 rows OK
+DRV:501 rows OK
+Batch 46/100: inserted 3864 rows
+DSCO:58 rows OK
+DSEP:501 rows OK
+DSI:501 rows OK
+DSMC:501 rows OK
+DSPY:267 rows OK
+DSTL:501 rows OK
+DSTX:501 rows OK
+DTAN:407 rows OK
+DTCR:501 rows OK
+DTD:502 rows OK
+ERR DTD:400
+Batch 47/100: inserted 4240 rows
+DTEC:501 rows OK
+DTH:501 rows OK
+DTRE:501 rows OK
+DUBS:501 rows OK
+DUG:501 rows OK
+DUHP:501 rows OK
+DUKH:449 rows OK
+DUKQ:449 rows OK
+DUKX:449 rows OK
+DUKZ:449 rows OK
+Batch 48/100: inserted 4802 rows
+DULL:501 rows OK
+DUOG:92 rows OK
+DURA:501 rows OK
+DUSA:501 rows OK
+DUSB:501 rows OK
+DUSL:501 rows OK
+DUST:501 rows OK
+DUTY:13 rows OK
+DVAL:501 rows OK
+DVDN:501 rows OK
+Batch 49/100: inserted 4113 rows
+DVGR:96 rows OK
+DVIN:191 rows OK
+DVLU:501 rows OK
+DVND:501 rows OK
+DVOL:501 rows OK
+DVQQ:333 rows OK
+DVRE:191 rows OK
+DVSP:338 rows OK
+DVUT:191 rows OK
+DVVY:26 rows OK
+Batch 50/100: inserted 2869 rows
+DVXB:191 rows OK
+DVXC:191 rows OK
+DVXE:191 rows OK
+DVXF:191 rows OK
+DVXK:191 rows OK
+DVXP:190 rows OK
+DVXV:191 rows OK
+DVXY:191 rows OK
+DVY:501 rows OK
+DVYA:501 rows OK
+Batch 51/100: inserted 2529 rows
+DVYE:501 rows OK
+DWAS:501 rows OK
+DWAW:501 rows OK
+DWLD:501 rows OK
+DWM:501 rows OK
+DWMF:501 rows OK
+DWSH:501 rows OK
+DWUS:501 rows OK
+DWX:501 rows OK
+DXD:501 rows OK
+Batch 52/100: inserted 5010 rows
+DXIV:405 rows OK
+DXJ:501 rows OK
+DXUV:405 rows OK
+DYFI:501 rows OK
+DYLD:501 rows OK
+DYLG:501 rows OK
+DYNB:147 rows OK
+DYNF:501 rows OK
+DYTA:501 rows OK
+EAFG:501 rows OK
+Batch 53/100: inserted 4464 rows
+EAGG:501 rows OK
+EAGL:501 rows OK
+EALT:501 rows OK
+EAOA:501 rows OK
+EAOK:501 rows OK
+EAOM:501 rows OK
+EAOR:501 rows OK
+EAPR:501 rows OK
+EART:501 rows OK
+EASG:501 rows OK
+Batch 54/100: inserted 5010 rows
+EASY:142 rows OK
+EATZ:501 rows OK
+EBI:290 rows OK
+EBIT:449 rows OK
+EBIZ:501 rows OK
+EBND:501 rows OK
+EBUF:456 rows OK
+ECH:501 rows OK
+ECML:501 rows OK
+ECNS:501 rows OK
+Batch 55/100: inserted 4343 rows
+ECON:501 rows OK
+ECOW:501 rows OK
+EDC:501 rows OK
+EDEN:501 rows OK
+EDGE:316 rows OK
+EDGF:390 rows OK
+EDGH:390 rows OK
+EDGI:390 rows OK
+EDGU:390 rows OK
+EDIV:501 rows OK
+Batch 56/100: inserted 4381 rows
+EDOG:501 rows OK
+EDOW:501 rows OK
+EDV:501 rows OK
+EDZ:501 rows OK
+EEE:59 rows OK
+EELV:501 rows OK
+EEM:501 rows OK
+EEMA:501 rows OK
+EEMO:501 rows OK
+EEMS:501 rows OK
+Batch 57/100: inserted 4568 rows
+EEMV:501 rows OK
+EEMX:501 rows OK
+EES:501 rows OK
+EET:501 rows OK
+EETH:501 rows OK
+EEV:501 rows OK
+EFA:501 rows OK
+GLD:501 rows OK
+HYG:501 rows OK
+IEFA:501 rows OK
+Batch 58/100: inserted 5010 rows
+ITOT:501 rows OK
+IVV:501 rows OK
+LQD:501 rows OK
+MMMA:88 rows OK
+MMSC:501 rows OK
+MMSD:244 rows OK
+MMTM:501 rows OK
+MNA:501 rows OK
+MNBD:501 rows OK
+MNRS:310 rows OK
+Batch 59/100: inserted 4149 rows
+MNVT:27 rows OK
+MNZL:107 rows OK
+MOAT:501 rows OK
+MODL:501 rows OK
+MOO:501 rows OK
+MOOD:501 rows OK
+MORT:501 rows OK
+MOTG:501 rows OK
+MOTI:501 rows OK
+MOTO:501 rows OK
+Batch 60/100: inserted 4142 rows
+MPG:124 rows OK
+MPL:128 rows OK
+MPLY:236 rows OK
+MPRO:501 rows OK
+MQQQ:412 rows OK
+MRAL:285 rows OK
+MRCP:501 rows OK
+MRGR:501 rows OK
+MRNX:56 rows OK
+MRNY:501 rows OK
+Batch 61/100: inserted 3245 rows
+MRSK:501 rows OK
+MRVU:50 rows OK
+MSBT:14 rows OK
+MSDD:220 rows OK
+MSFD:501 rows OK
+MSFL:501 rows OK
+MSFO:501 rows OK
+MSFU:501 rows OK
+MSFW:190 rows OK
+MSFX:501 rows OK
+Batch 62/100: inserted 3480 rows
+MSFY:502 rows OK
+MSII:224 rows OK
+MSLC:342 rows OK
+MSMR:501 rows OK
+MSOO:176 rows OK
+MSOS:501 rows OK
+MSOX:501 rows OK
+MSSM:342 rows OK
+MSSS:501 rows OK
+MSST:108 rows OK
+ERR MSFY:400
+Batch 63/100: inserted 3698 rows
+MST:246 rows OK
+MSTB:501 rows OK
+MSTI:501 rows OK
+MSTP:220 rows OK
+MSTQ:501 rows OK
+MSTU:401 rows OK
+MSTW:190 rows OK
+MSTX:424 rows OK
+MSTY:501 rows OK
+MSTZ:401 rows OK
+Batch 64/100: inserted 3886 rows
+MTBA:501 rows OK
+MTGP:502 rows OK
+MTRA:219 rows OK
+MTUL:501 rows OK
+MTUM:501 rows OK
+MTYY:148 rows OK
+MUB:501 rows OK
+MUD:379 rows OK
+MULL:362 rows OK
+MULT:165 rows OK
+ERR MTGP:400
+Batch 65/100: inserted 3779 rows
+MUNI:501 rows OK
+MUNY:232 rows OK
+MUSE:357 rows OK
+MUSI:501 rows OK
+MUSQ:501 rows OK
+MUST:501 rows OK
+MUU:385 rows OK
+MUYY:9 rows OK
+MVAL:501 rows OK
+MVFD:501 rows OK
+Batch 66/100: inserted 3989 rows
+MVFG:501 rows OK
+MVLL:285 rows OK
+MVPA:501 rows OK
+MVPL:501 rows OK
+MVRL:501 rows OK
+MVV:501 rows OK
+MXI:501 rows OK
+MYCF:397 rows OK
+MYCG:397 rows OK
+MYCH:397 rows OK
+Batch 67/100: inserted 4482 rows
+MYCI:397 rows OK
+MYCJ:397 rows OK
+MYCK:397 rows OK
+MYCL:397 rows OK
+MYCM:397 rows OK
+MYCN:397 rows OK
+MYCO:152 rows OK
+MYHA:41 rows OK
+MYHB:41 rows OK
+MYHC:41 rows OK
+Batch 68/100: inserted 2657 rows
+MYHD:41 rows OK
+MYHE:41 rows OK
+MYLD:501 rows OK
+MYMF:397 rows OK
+MYMG:397 rows OK
+MYMH:397 rows OK
+MYMI:397 rows OK
+MYMJ:397 rows OK
+MYMK:152 rows OK
+MYY:501 rows OK
+Batch 69/100: inserted 3221 rows
+MZZ:501 rows OK
+NACP:501 rows OK
+NAIL:501 rows OK
+NANC:501 rows OK
+NANR:501 rows OK
+NAPR:501 rows OK
+NATO:384 rows OK
+NAUG:434 rows OK
+NBCE:501 rows OK
+NBCM:501 rows OK
+Batch 70/100: inserted 4826 rows
+NBCR:434 rows OK
+NBDS:501 rows OK
+NBET:501 rows OK
+NBFC:460 rows OK
+NBGX:336 rows OK
+NBIE:34 rows OK
+NBIG:124 rows OK
+NBIL:138 rows OK
+NBIZ:65 rows OK
+NBJP:405 rows OK
+Batch 71/100: inserted 2998 rows
+NBOS:501 rows OK
+NBSD:461 rows OK
+NBSM:501 rows OK
+NBTR:337 rows OK
+NCIQ:299 rows OK
+NCLO:342 rows OK
+NCPB:501 rows OK
+NDAA:379 rows OK
+NDEC:349 rows OK
+NDIA:501 rows OK
+Batch 72/100: inserted 4171 rows
+NDIV:501 rows OK
+NDOW:488 rows OK
+NEAR:501 rows OK
+NEBX:158 rows OK
+NEHI:98 rows OK
+NELS:132 rows OK
+NEMD:177 rows OK
+NEMG:109 rows OK
+NERD:501 rows OK
+NETG:109 rows OK
+Batch 73/100: inserted 2774 rows
+NETL:502 rows OK
+NEWZ:501 rows OK
+NFEB:308 rows OK
+NFLP:502 rows OK
+NFLT:501 rows OK
+NFLU:394 rows OK
+NFLW:214 rows OK
+NFLY:501 rows OK
+NFRA:501 rows OK
+NFRX:59 rows OK
+ERR NETL:400
+ERR NFLP:400
+Batch 74/100: inserted 3983 rows
+NFTY:501 rows OK
+NFXL:390 rows OK
+NFXS:390 rows OK
+NGHT:13 rows OK
+NHYM:315 rows OK
+NIHI:152 rows OK
+NIKL:501 rows OK
+NIOG:87 rows OK
+NITE:461 rows OK
+NIXT:407 rows OK
+Batch 75/100: inserted 3217 rows
+NJAN:501 rows OK
+NJNK:410 rows OK
+NJUL:501 rows OK
+NJUN:475 rows OK
+NLR:501 rows OK
+NLSI:93 rows OK
+NMAR:289 rows OK
+NMAY:247 rows OK
+NMB:406 rows OK
+NMBL:119 rows OK
+Batch 76/100: inserted 3542 rows
+NNEX:112 rows OK
+NNOV:369 rows OK
+NOBL:501 rows OK
+NOCT:501 rows OK
+NODE:238 rows OK
+NOEQ:24 rows OK
+NORW:501 rows OK
+NOVM:358 rows OK
+NOVP:249 rows OK
+NOVZ:501 rows OK
+Batch 77/100: inserted 3354 rows
+NOWL:197 rows OK
+NPFE:32 rows OK
+NPFI:501 rows OK
+NRES:501 rows OK
+NRGD:296 rows OK
+NRGU:296 rows OK
+NRSH:501 rows OK
+NSEP:412 rows OK
+NSI:501 rows OK
+NTSE:501 rows OK
+Batch 78/100: inserted 3738 rows
+NTSI:501 rows OK
+NTSX:501 rows OK
+NUAG:501 rows OK
+NUBD:501 rows OK
+NUDM:501 rows OK
+NUDV:501 rows OK
+NUEM:501 rows OK
+NUG:109 rows OK
+NUGO:501 rows OK
+NUGT:501 rows OK
+Batch 79/100: inserted 4618 rows
+NUGY:108 rows OK
+NUHY:501 rows OK
+NUKZ:501 rows OK
+NULC:501 rows OK
+NULG:501 rows OK
+NULV:501 rows OK
+NUMG:501 rows OK
+NUMI:315 rows OK
+NUMV:501 rows OK
+NURE:501 rows OK
+Batch 80/100: inserted 4431 rows
+NUSA:501 rows OK
+NUSB:501 rows OK
+NUSC:501 rows OK
+NVBT:501 rows OK
+NVBU:369 rows OK
+NVBW:501 rows OK
+NVD:501 rows OK
+NVDD:501 rows OK
+NVDG:340 rows OK
+NVDL:501 rows OK
+Batch 81/100: inserted 4717 rows
+NVDO:176 rows OK
+NVDQ:501 rows OK
+NVDS:501 rows OK
+NVDU:501 rows OK
+NVDW:297 rows OK
+NVDX:501 rows OK
+NVDY:501 rows OK
+NVII:229 rows OK
+NVIR:501 rows OK
+NVIT:108 rows OK
+Batch 82/100: inserted 3816 rows
+NVOH:325 rows OK
+NVOX:348 rows OK
+NVTX:158 rows OK
+NVYY:239 rows OK
+NXTE:501 rows OK
+NXTG:501 rows OK
+NXTI:501 rows OK
+NYF:501 rows OK
+NYM:114 rows OK
+NZAC:501 rows OK
+Batch 83/100: inserted 3689 rows
+NZUS:501 rows OK
+OACP:501 rows OK
+OAEM:501 rows OK
+OAIM:501 rows OK
+OAKM:348 rows OK
+OALC:501 rows OK
+OARK:501 rows OK
+OASC:466 rows OK
+OBIL:501 rows OK
+OBND:501 rows OK
+Batch 84/100: inserted 4822 rows
+OBOR:501 rows OK
+OBTC:501 rows OK
+OCIO:501 rows OK
+OCTB:133 rows OK
+OCTH:501 rows OK
+OCTJ:501 rows OK
+OCTM:378 rows OK
+OCTP:485 rows OK
+OCTT:501 rows OK
+OCTU:392 rows OK
+Batch 85/100: inserted 4394 rows
+OCTW:501 rows OK
+OCTZ:501 rows OK
+ODDS:501 rows OK
+ODHY:207 rows OK
+ODTE:16 rows OK
+OEF:501 rows OK
+OEFA:501 rows OK
+OGIG:501 rows OK
+OGSP:501 rows OK
+OIH:501 rows OK
+Batch 86/100: inserted 4231 rows
+OILD:501 rows OK
+OILK:501 rows OK
+OILT:501 rows OK
+OILU:501 rows OK
+OKLL:211 rows OK
+OKLS:102 rows OK
+OKTG:109 rows OK
+OMAH:287 rows OK
+OMFL:501 rows OK
+OMFS:501 rows OK
+Batch 87/100: inserted 3715 rows
+OND:501 rows OK
+ONDG:71 rows OK
+ONDL:80 rows OK
+ONDU:71 rows OK
+ONEH:59 rows OK
+ONEO:501 rows OK
+ONEQ:501 rows OK
+ONEV:501 rows OK
+ONEY:501 rows OK
+ONEZ:309 rows OK
+Batch 88/100: inserted 3095 rows
+ONLN:501 rows OK
+ONOF:501 rows OK
+OOSP:501 rows OK
+OPEG:92 rows OK
+OPER:501 rows OK
+OPEX:126 rows OK
+OPPE:501 rows OK
+OPPJ:501 rows OK
+OPTZ:501 rows OK
+ORBX:8 rows OK
+Batch 89/100: inserted 3733 rows
+ORCS:107 rows OK
+ORCU:107 rows OK
+ORCX:304 rows OK
+ORLG:69 rows OK
+ORO:130 rows OK
+ORR:320 rows OK
+OSCG:117 rows OK
+OSCV:501 rows OK
+OSCX:146 rows OK
+OSEA:501 rows OK
+Batch 90/100: inserted 2302 rows
+OTGL:197 rows OK
+OUNZ:501 rows OK
+OUSA:501 rows OK
+OUSM:501 rows OK
+OVB:501 rows OK
+OVF:501 rows OK
+OVL:501 rows OK
+OVLH:501 rows OK
+OVM:501 rows OK
+OVS:501 rows OK
+Batch 91/100: inserted 4706 rows
+OVT:501 rows OK
+OWNB:283 rows OK
+OWNS:501 rows OK
+OZEM:483 rows OK
+PAAA:501 rows OK
+PAAU:31 rows OK
+PAB:501 rows OK
+PABD:501 rows OK
+PABU:501 rows OK
+PALC:501 rows OK
+Batch 92/100: inserted 4304 rows
+PALD:271 rows OK
+PALL:501 rows OK
+PALU:271 rows OK
+PAMC:501 rows OK
+PANG:275 rows OK
+PAPI:501 rows OK
+PAPR:501 rows OK
+PATN:402 rows OK
+PATX:71 rows OK
+PAUG:501 rows OK
+Batch 93/100: inserted 3795 rows
+PAVE:501 rows OK
+PAWZ:501 rows OK
+PAYH:80 rows OK
+PAYM:80 rows OK
+PAYR:137 rows OK
+PBAP:501 rows OK
+PBAU:490 rows OK
+PBD:501 rows OK
+PBDC:501 rows OK
+PBDE:480 rows OK
+Batch 94/100: inserted 3772 rows
+PBE:501 rows OK
+PBEU:100 rows OK
+PBFB:501 rows OK
+PBFR:466 rows OK
+PBJ:501 rows OK
+PBJA:501 rows OK
+PBJL:492 rows OK
+PBJN:475 rows OK
+PBL:501 rows OK
+PBMR:501 rows OK
+Batch 95/100: inserted 4539 rows
+PBMY:497 rows OK
+PBNV:252 rows OK
+PBOC:485 rows OK
+PBOG:100 rows OK
+PBP:501 rows OK
+PBPH:100 rows OK
+PBQQ:324 rows OK
+PBRG:87 rows OK
+PBSE:470 rows OK
+PBTP:501 rows OK
+Batch 96/100: inserted 3317 rows
+PBUS:501 rows OK
+PBW:501 rows OK
+PCCE:501 rows OK
+PCEF:501 rows OK
+PCFI:270 rows OK
+PCGG:501 rows OK
+PCHI:273 rows OK
+PCI:184 rows OK
+PCIG:501 rows OK
+PCL:182 rows OK
+Batch 97/100: inserted 3915 rows
+PCLG:143 rows OK
+PCLO:348 rows OK
+PCMM:348 rows OK
+PCPI:15 rows OK
+PCRB:501 rows OK
+PCS:184 rows OK
+PCY:501 rows OK
+PDBA:501 rows OK
+PDBC:501 rows OK
+PDDL:197 rows OK
+Batch 98/100: inserted 3239 rows
+PDEC:501 rows OK
+PDN:501 rows OK
+PDP:501 rows OK
+PEJ:501 rows OK
+PEMX:501 rows OK
+PEPS:254 rows OK
+PEVC:307 rows OK
+PEX:501 rows OK
+PEXL:501 rows OK
+PEY:501 rows OK
+Batch 99/100: inserted 4569 rows
+PEZ:501 rows OK
+PFDE:79 rows OK
+PFEB:501 rows OK
+PFF:501 rows OK
+PFFA:501 rows OK
+PFFD:501 rows OK
+PFFR:501 rows OK
+PFFV:501 rows OK
+PFI:501 rows OK
+PFIG:501 rows OK
+Batch 100/100: inserted 4588 rows
+BACKFILL_COMPLETE

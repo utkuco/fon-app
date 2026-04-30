@@ -1,0 +1,1852 @@
+[2026-04-25 16:01:43] [INFO] ============================================================
+[2026-04-25 16:01:43] [INFO] KAP Portfolio Parser — pdfplumber + GLM fallback
+[2026-04-25 16:01:43] [INFO] PDF dir: /Users/admin/Desktop/projects/fon-app/pdfs/portfoy_dagilim
+[2026-04-25 16:01:43] [INFO] Zhipu key: SET
+[2026-04-25 16:01:43] [INFO] Supabase key: SET
+[2026-04-25 16:01:43] [INFO] ============================================================
+[2026-04-25 16:01:43] [INFO] Found 507 PDF files in /Users/admin/Desktop/projects/fon-app/pdfs/portfoy_dagilim
+[2026-04-25 16:01:43] [INFO] Pending: 128 PDFs (resume=False)
+[2026-04-25 16:01:43] [INFO] [1/128] Processing GTY (GTY_4028328d.pdf)
+[2026-04-25 16:01:43] [INFO] Processing: GTY_4028328d.pdf
+[2026-04-25 16:01:44] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:01:44] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:01:44] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:03:01] [WARN] GLM empty content for GTY (attempt 1)
+[2026-04-25 16:03:37] [INFO]   ✅ JSON from reasoning_content for GTY (attempt 2)
+[2026-04-25 16:03:38] [INFO]   Fund category: SERBEST, method: glm_fallback
+[2026-04-25 16:03:38] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:03:39] [INFO] [2/128] Processing GZM (GZM_4028328c.pdf)
+[2026-04-25 16:03:39] [INFO] Processing: GZM_4028328c.pdf
+[2026-04-25 16:03:43] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:03:43] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:03:43] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:04:12] [INFO]   Fund category: SERBEST, method: glm_fallback
+[2026-04-25 16:04:12] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:04:13] [INFO] [3/128] Processing GZN (GZN_4028328c.pdf)
+[2026-04-25 16:04:13] [INFO] Processing: GZN_4028328c.pdf
+[2026-04-25 16:04:15] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:04:15] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:04:15] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:04:48] [INFO]   Fund category: SERBEST, method: glm_fallback
+[2026-04-25 16:04:48] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:04:49] [INFO] [4/128] Processing KTS (KTS_4028328d.pdf)
+[2026-04-25 16:04:49] [INFO] Processing: KTS_4028328d.pdf
+[2026-04-25 16:04:52] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:04:52] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:04:52] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:06:21] [INFO]   Fund category: SERBEST, method: glm_fallback
+[2026-04-25 16:06:21] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:06:22] [INFO] [5/128] Processing KVK (KVK_4028328d.pdf)
+[2026-04-25 16:06:22] [INFO] Processing: KVK_4028328d.pdf
+[2026-04-25 16:06:23] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:06:23] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:06:23] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:07:17] [INFO]   ✅ JSON from reasoning_content for KVK (attempt 1)
+[2026-04-25 16:07:18] [INFO]   Fund category: SERBEST, method: glm_fallback
+[2026-04-25 16:07:18] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:07:19] [INFO] [6/128] Processing MJG (MJG_4028328d.pdf)
+[2026-04-25 16:07:19] [INFO] Processing: MJG_4028328d.pdf
+[2026-04-25 16:07:20] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:07:20] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:07:20] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:08:53] [INFO]   Fund category: SERBEST, method: glm_fallback
+[2026-04-25 16:08:53] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:08:54] [INFO] [7/128] Processing MLK (MLK_4028328d.pdf)
+[2026-04-25 16:08:54] [INFO] Processing: MLK_4028328d.pdf
+[2026-04-25 16:08:54] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:08:54] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:08:54] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:10:33] [INFO]   Fund category: SERBEST, method: glm_fallback
+[2026-04-25 16:10:33] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:10:35] [INFO] [8/128] Processing MRI (MRI_4028328c.pdf)
+[2026-04-25 16:10:35] [INFO] Processing: MRI_4028328c.pdf
+[2026-04-25 16:10:35] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:10:35] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:10:35] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:12:37] [WARN] Timeout attempt 1/3 for MRI
+[2026-04-25 16:13:20] [INFO]   Fund category: SERBEST, method: glm_fallback
+[2026-04-25 16:13:20] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:13:21] [INFO] [9/128] Processing MTG (MTG_4028328c.pdf)
+[2026-04-25 16:13:21] [INFO] Processing: MTG_4028328c.pdf
+[2026-04-25 16:13:22] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:13:22] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:13:22] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:14:01] [INFO]   Fund category: SERBEST, method: glm_fallback
+[2026-04-25 16:14:01] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:14:02] [INFO] [10/128] Processing OBP (OBP_4028328c.pdf)
+[2026-04-25 16:14:02] [INFO] Processing: OBP_4028328c.pdf
+[2026-04-25 16:14:05] [INFO]   Fund category detected: PARA
+[2026-04-25 16:14:05] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:14:52] [INFO]   Fund category: PARA, method: glm_fallback
+[2026-04-25 16:14:52] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:14:52] [INFO]   Final: stock=24.52%, total=100.0%
+[2026-04-25 16:15:02] [INFO]   📝 Fund summary generated (524 chars)
+[2026-04-25 16:15:03] [INFO]   ✅ Upserted OBP — total_pct=100.0% [glm_fallback]
+[2026-04-25 16:15:04] [INFO] [11/128] Processing ODD (ODD_4028328c.pdf)
+[2026-04-25 16:15:04] [INFO] Processing: ODD_4028328c.pdf
+[2026-04-25 16:15:04] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:15:04] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:15:04] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:15:41] [INFO]   Fund category: SERBEST, method: glm_fallback
+[2026-04-25 16:15:41] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:15:42] [INFO] [12/128] Processing ODS (ODS_4028328c.pdf)
+[2026-04-25 16:15:42] [INFO] Processing: ODS_4028328c.pdf
+[2026-04-25 16:15:43] [INFO]   Fund category detected: PARA
+[2026-04-25 16:15:43] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:16:28] [WARN] GLM empty content for ODS (attempt 1)
+[2026-04-25 16:17:13] [WARN] GLM empty content for ODS (attempt 2)
+[2026-04-25 16:18:00] [INFO]   ✅ JSON from reasoning_content for ODS (attempt 3)
+[2026-04-25 16:18:01] [INFO]   Fund category: PARA, method: glm_fallback
+[2026-04-25 16:18:01] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:18:01] [INFO]   Final: stock=0.0%, total=100%
+[2026-04-25 16:18:15] [INFO]   📝 Fund summary generated (411 chars)
+[2026-04-25 16:18:16] [INFO]   ✅ Upserted ODS — total_pct=100% [glm_fallback]
+[2026-04-25 16:18:17] [INFO] [13/128] Processing OFI (OFI_4028328c.pdf)
+[2026-04-25 16:18:17] [INFO] Processing: OFI_4028328c.pdf
+[2026-04-25 16:18:18] [INFO]   Fund category detected: PARA
+[2026-04-25 16:18:18] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:18:57] [INFO]   Fund category: PARA, method: glm_fallback
+[2026-04-25 16:18:57] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:18:57] [INFO]   Final: stock=2.85%, total=100.0%
+[2026-04-25 16:19:10] [INFO]   📝 Fund summary generated (61 chars)
+[2026-04-25 16:19:10] [INFO]   ✅ Upserted OFI — total_pct=100.0% [glm_fallback]
+[2026-04-25 16:19:11] [INFO] [14/128] Processing OFS (OFS_4028328c.pdf)
+[2026-04-25 16:19:11] [INFO] Processing: OFS_4028328c.pdf
+[2026-04-25 16:19:13] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:19:13] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:19:13] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:19:56] [INFO]   ✅ JSON from reasoning_content for OFS (attempt 1)
+[2026-04-25 16:19:58] [INFO]   Fund category: SERBEST, method: glm_fallback
+[2026-04-25 16:19:58] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:19:59] [INFO] [15/128] Processing OGD (OGD_4028328c.pdf)
+[2026-04-25 16:19:59] [INFO] Processing: OGD_4028328c.pdf
+[2026-04-25 16:20:01] [INFO]   Fund category detected: PARA
+[2026-04-25 16:20:01] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:20:48] [INFO]   Fund category: PARA, method: glm_fallback
+[2026-04-25 16:20:48] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:20:48] [INFO]   Final: stock=0.25%, total=100.0%
+[2026-04-25 16:20:54] [INFO]   📝 Fund summary generated (501 chars)
+[2026-04-25 16:20:54] [INFO]   ✅ Upserted OGD — total_pct=100.0% [glm_fallback]
+[2026-04-25 16:20:55] [INFO] [16/128] Processing OHK (OHK_4028328c.pdf)
+[2026-04-25 16:20:55] [INFO] Processing: OHK_4028328c.pdf
+[2026-04-25 16:20:56] [WARN] parse_portfolio_tables error OHK_4028328c.pdf: Unexpected EOF
+[2026-04-25 16:20:56] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:20:58] [WARN]   pdfminer also failed for OHK_4028328c.pdf: Unexpected EOF
+[2026-04-25 16:20:58] [ERROR] ❌ All extraction methods failed for OHK
+[2026-04-25 16:20:59] [INFO] [17/128] Processing OKD (OKD_4028328c.pdf)
+[2026-04-25 16:20:59] [INFO] Processing: OKD_4028328c.pdf
+[2026-04-25 16:21:03] [INFO]   Fund category detected: PARA
+[2026-04-25 16:21:03] [WARN]   pdfplumber failed, trying GLM fallback...
+[2026-04-25 16:21:57] [INFO]   Fund category: PARA, method: glm_fallback
+[2026-04-25 16:21:57] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:29:57] [INFO] ============================================================
+[2026-04-25 16:29:57] [INFO] KAP Portfolio Parser — pdfplumber + GLM fallback
+[2026-04-25 16:29:57] [INFO] PDF dir: /Users/admin/Desktop/projects/fon-app/pdfs/portfoy_dagilim
+[2026-04-25 16:29:57] [INFO] Zhipu key: SET
+[2026-04-25 16:29:57] [INFO] Supabase key: SET
+[2026-04-25 16:29:57] [INFO] ============================================================
+[2026-04-25 16:29:57] [INFO] Found 507 PDF files in /Users/admin/Desktop/projects/fon-app/pdfs/portfoy_dagilim
+[2026-04-25 16:29:57] [INFO] Pending: 124 PDFs (resume=False)
+[2026-04-25 16:29:57] [INFO] [1/124] Processing GTY (GTY_4028328d.pdf)
+[2026-04-25 16:29:57] [INFO] Processing: GTY_4028328d.pdf
+[2026-04-25 16:29:58] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:29:58] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:29:59] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:29:59] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:30:00] [INFO] [2/124] Processing GZM (GZM_4028328c.pdf)
+[2026-04-25 16:30:00] [INFO] Processing: GZM_4028328c.pdf
+[2026-04-25 16:30:04] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:30:04] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:30:06] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:30:06] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:30:07] [INFO] [3/124] Processing GZN (GZN_4028328c.pdf)
+[2026-04-25 16:30:07] [INFO] Processing: GZN_4028328c.pdf
+[2026-04-25 16:30:09] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:30:09] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:30:11] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:30:11] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:30:12] [INFO] [4/124] Processing KTS (KTS_4028328d.pdf)
+[2026-04-25 16:30:12] [INFO] Processing: KTS_4028328d.pdf
+[2026-04-25 16:30:14] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:30:14] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:30:15] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:30:15] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:30:16] [INFO] [5/124] Processing KVK (KVK_4028328d.pdf)
+[2026-04-25 16:30:16] [INFO] Processing: KVK_4028328d.pdf
+[2026-04-25 16:30:17] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:30:17] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:30:18] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:30:18] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:30:19] [INFO] [6/124] Processing MJG (MJG_4028328d.pdf)
+[2026-04-25 16:30:19] [INFO] Processing: MJG_4028328d.pdf
+[2026-04-25 16:30:20] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:30:20] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:30:21] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:30:21] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:30:22] [INFO] [7/124] Processing MLK (MLK_4028328d.pdf)
+[2026-04-25 16:30:22] [INFO] Processing: MLK_4028328d.pdf
+[2026-04-25 16:30:22] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:30:22] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:30:23] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:30:23] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:30:24] [INFO] [8/124] Processing MRI (MRI_4028328c.pdf)
+[2026-04-25 16:30:24] [INFO] Processing: MRI_4028328c.pdf
+[2026-04-25 16:30:25] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:30:25] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:30:25] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:30:25] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:30:26] [INFO] [9/124] Processing MTG (MTG_4028328c.pdf)
+[2026-04-25 16:30:26] [INFO] Processing: MTG_4028328c.pdf
+[2026-04-25 16:30:27] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:30:27] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:30:28] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:30:28] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:30:29] [INFO] [10/124] Processing ODD (ODD_4028328c.pdf)
+[2026-04-25 16:30:29] [INFO] Processing: ODD_4028328c.pdf
+[2026-04-25 16:30:29] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:30:29] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:30:30] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:30:30] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:30:31] [INFO] [11/124] Processing OFS (OFS_4028328c.pdf)
+[2026-04-25 16:30:31] [INFO] Processing: OFS_4028328c.pdf
+[2026-04-25 16:30:33] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:30:33] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:30:35] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:30:35] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:30:36] [INFO] [12/124] Processing OHK (OHK_4028328c.pdf)
+[2026-04-25 16:30:36] [INFO] Processing: OHK_4028328c.pdf
+[2026-04-25 16:30:37] [WARN] parse_portfolio_tables error OHK_4028328c.pdf: Unexpected EOF
+[2026-04-25 16:30:39] [WARN]   pdfplumber failed for UNKNOWN fund, fallback decision: 
+[2026-04-25 16:30:39] [WARN]   Attempting GLM fallback...
+[2026-04-25 16:30:39] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:30:40] [INFO] [13/124] Processing OKD (OKD_4028328c.pdf)
+[2026-04-25 16:30:40] [INFO] Processing: OKD_4028328c.pdf
+[2026-04-25 16:30:44] [INFO]   Fund category detected: PARA
+[2026-04-25 16:30:48] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:30:48] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:30:49] [INFO] [14/124] Processing ONE (ONE_4028328d.pdf)
+[2026-04-25 16:30:49] [INFO] Processing: ONE_4028328d.pdf
+[2026-04-25 16:30:50] [INFO]   Fund category detected: PARA
+[2026-04-25 16:30:51] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:30:51] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:30:52] [INFO] [15/124] Processing OYL (OYL_4028328c.pdf)
+[2026-04-25 16:30:52] [INFO] Processing: OYL_4028328c.pdf
+[2026-04-25 16:30:58] [WARN] parse_portfolio_tables error OYL_4028328c.pdf: Unexpected EOF
+[2026-04-25 16:31:05] [WARN]   pdfplumber failed for UNKNOWN fund, fallback decision: 
+[2026-04-25 16:31:05] [WARN]   Attempting GLM fallback...
+[2026-04-25 16:31:05] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:31:06] [INFO] [16/124] Processing PBK (PBK_4028328d.pdf)
+[2026-04-25 16:31:06] [INFO] Processing: PBK_4028328d.pdf
+[2026-04-25 16:31:07] [INFO]   Fund category detected: PARA
+[2026-04-25 16:31:08] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:31:08] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:31:09] [INFO] [17/124] Processing PBN (PBN_4028328c.pdf)
+[2026-04-25 16:31:09] [INFO] Processing: PBN_4028328c.pdf
+[2026-04-25 16:31:12] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:31:12] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:31:14] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:31:14] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:31:15] [INFO] [18/124] Processing PBR (PBR_4028328c.pdf)
+[2026-04-25 16:31:15] [INFO] Processing: PBR_4028328c.pdf
+[2026-04-25 16:31:16] [INFO]   Fund category detected: PARA
+[2026-04-25 16:31:17] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:31:17] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:31:17] [INFO]   Final: stock=0.0%, total=100.46%
+[2026-04-25 16:31:37] [INFO]   📝 Fund summary generated (485 chars)
+[2026-04-25 16:31:37] [INFO]   ✅ Upserted PBR — total_pct=100.46% [para_piyasasi_text+section4]
+[2026-04-25 16:31:38] [INFO] [19/124] Processing PDD (PDD_4028328d.pdf)
+[2026-04-25 16:31:38] [INFO] Processing: PDD_4028328d.pdf
+[2026-04-25 16:31:40] [INFO]   Fund category detected: PARA
+[2026-04-25 16:31:41] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:31:41] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:31:42] [INFO] [20/124] Processing PFO (PFO_4028328c.pdf)
+[2026-04-25 16:31:42] [INFO] Processing: PFO_4028328c.pdf
+[2026-04-25 16:31:43] [INFO]   Fund category detected: PARA
+[2026-04-25 16:31:43] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:31:43] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:31:44] [INFO] [21/124] Processing PGD (PGD_4028328d.pdf)
+[2026-04-25 16:31:44] [INFO] Processing: PGD_4028328d.pdf
+[2026-04-25 16:31:46] [INFO]   Fund category detected: PARA
+[2026-04-25 16:31:47] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:31:47] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:31:48] [INFO] [22/124] Processing PHI (PHI_4028328c.pdf)
+[2026-04-25 16:31:48] [INFO] Processing: PHI_4028328c.pdf
+[2026-04-25 16:31:50] [INFO]   Fund category detected: PARA
+[2026-04-25 16:31:51] [INFO]   Fund category: PARA, method: section4_total_only
+[2026-04-25 16:31:51] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:31:51] [INFO]   Final: stock=0.0%, total=100.1%
+[2026-04-25 16:32:07] [INFO]   📝 Fund summary generated (516 chars)
+[2026-04-25 16:32:07] [INFO]   ✅ Upserted PHI — total_pct=100.1% [section4_total_only]
+[2026-04-25 16:32:08] [INFO] [23/124] Processing PHK (PHK_4028328c.pdf)
+[2026-04-25 16:32:08] [INFO] Processing: PHK_4028328c.pdf
+[2026-04-25 16:32:09] [INFO]   Fund category detected: PARA
+[2026-04-25 16:32:09] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:32:09] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:32:10] [INFO] [24/124] Processing PIR (PIR_4028328c.pdf)
+[2026-04-25 16:32:10] [INFO] Processing: PIR_4028328c.pdf
+[2026-04-25 16:32:10] [INFO]   Fund category detected: PARA
+[2026-04-25 16:32:11] [INFO]   Fund category: PARA, method: section4_total_only
+[2026-04-25 16:32:11] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:32:11] [INFO]   Final: stock=0.0%, total=105.81%
+[2026-04-25 16:32:25] [INFO]   📝 Fund summary generated (547 chars)
+[2026-04-25 16:32:25] [INFO]   ✅ Upserted PIR — total_pct=105.81% [section4_total_only]
+[2026-04-25 16:32:26] [INFO] [25/124] Processing PJL (PJL_4028328c.pdf)
+[2026-04-25 16:32:26] [INFO] Processing: PJL_4028328c.pdf
+[2026-04-25 16:32:28] [INFO]   Fund category detected: PARA
+[2026-04-25 16:32:29] [INFO]   Fund category: PARA, method: section4_total_only
+[2026-04-25 16:32:29] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:32:29] [INFO]   Final: stock=0.0%, total=100.11%
+[2026-04-25 16:32:38] [INFO]   📝 Fund summary generated (470 chars)
+[2026-04-25 16:32:38] [INFO]   ✅ Upserted PJL — total_pct=100.11% [section4_total_only]
+[2026-04-25 16:32:39] [INFO] [26/124] Processing PKD (PKD_4028328c.pdf)
+[2026-04-25 16:32:39] [INFO] Processing: PKD_4028328c.pdf
+[2026-04-25 16:32:40] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:32:40] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:32:41] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:32:41] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:32:42] [INFO] [27/124] Processing PPB (PPB_4028328c.pdf)
+[2026-04-25 16:32:42] [INFO] Processing: PPB_4028328c.pdf
+[2026-04-25 16:32:42] [INFO]   Fund category detected: PARA
+[2026-04-25 16:32:43] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:32:43] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:32:44] [INFO] [28/124] Processing PPE (PPE_4028328c.pdf)
+[2026-04-25 16:32:44] [INFO] Processing: PPE_4028328c.pdf
+[2026-04-25 16:32:45] [INFO]   Fund category detected: PARA
+[2026-04-25 16:32:45] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:32:45] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:32:46] [INFO] [29/124] Processing PPM (PPM_4028328c.pdf)
+[2026-04-25 16:32:46] [INFO] Processing: PPM_4028328c.pdf
+[2026-04-25 16:32:52] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:32:52] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:32:57] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:32:57] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:32:58] [INFO] [30/124] Processing PPS (PPS_4028328c.pdf)
+[2026-04-25 16:32:58] [INFO] Processing: PPS_4028328c.pdf
+[2026-04-25 16:32:58] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:32:58] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:32:59] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:32:59] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:33:00] [INFO] [31/124] Processing PRD (PRD_4028328c.pdf)
+[2026-04-25 16:33:00] [INFO] Processing: PRD_4028328c.pdf
+[2026-04-25 16:33:01] [INFO]   Fund category detected: PARA
+[2026-04-25 16:33:03] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:33:03] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:33:03] [INFO]   Final: stock=0.0%, total=100.1%
+[2026-04-25 16:33:13] [INFO]   📝 Fund summary generated (485 chars)
+[2026-04-25 16:33:13] [INFO]   ✅ Upserted PRD — total_pct=100.1% [para_piyasasi_text+section4]
+[2026-04-25 16:33:15] [INFO] [32/124] Processing PRH (PRH_4028328c.pdf)
+[2026-04-25 16:33:15] [INFO] Processing: PRH_4028328c.pdf
+[2026-04-25 16:33:16] [INFO]   Fund category detected: PARA
+[2026-04-25 16:33:17] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:33:17] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:33:17] [INFO]   Final: stock=0.0%, total=100.04%
+[2026-04-25 16:33:31] [INFO]   📝 Fund summary generated (48 chars)
+[2026-04-25 16:33:31] [INFO]   ✅ Upserted PRH — total_pct=100.04% [para_piyasasi_text+section4]
+[2026-04-25 16:33:33] [INFO] [33/124] Processing PRY (PRY_4028328c.pdf)
+[2026-04-25 16:33:33] [INFO] Processing: PRY_4028328c.pdf
+[2026-04-25 16:33:47] [INFO]   Fund category detected: PARA
+[2026-04-25 16:33:52] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:33:52] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:33:52] [INFO]   Final: stock=0.0%, total=100.1%
+[2026-04-25 16:34:04] [INFO]   📝 Fund summary generated (369 chars)
+[2026-04-25 16:34:04] [INFO]   ✅ Upserted PRY — total_pct=100.1% [para_piyasasi_text+section4]
+[2026-04-25 16:34:05] [INFO] [34/124] Processing PTL (PTL_4028328c.pdf)
+[2026-04-25 16:34:05] [INFO] Processing: PTL_4028328c.pdf
+[2026-04-25 16:34:08] [INFO]   Fund category detected: PARA
+[2026-04-25 16:34:10] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:34:10] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:34:10] [INFO]   Final: stock=0.0%, total=100.1%
+[2026-04-25 16:34:16] [INFO]   📝 Fund summary generated (431 chars)
+[2026-04-25 16:34:17] [INFO]   ✅ Upserted PTL — total_pct=100.1% [para_piyasasi_text+section4]
+[2026-04-25 16:34:18] [INFO] [35/124] Processing PTN (PTN_4028328c.pdf)
+[2026-04-25 16:34:18] [INFO] Processing: PTN_4028328c.pdf
+[2026-04-25 16:34:18] [INFO]   Fund category detected: PARA
+[2026-04-25 16:34:19] [INFO]   Fund category: PARA, method: section4_total_only
+[2026-04-25 16:34:19] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:34:19] [INFO]   Final: stock=0.0%, total=106.24%
+[2026-04-25 16:34:27] [INFO]   📝 Fund summary generated (639 chars)
+[2026-04-25 16:34:28] [INFO]   ✅ Upserted PTN — total_pct=106.24% [section4_total_only]
+[2026-04-25 16:34:29] [INFO] [36/124] Processing PYB (PYB_4028328c.pdf)
+[2026-04-25 16:34:29] [INFO] Processing: PYB_4028328c.pdf
+[2026-04-25 16:34:31] [INFO]   Fund category detected: PARA
+[2026-04-25 16:34:33] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:34:33] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:34:33] [INFO]   Final: stock=0.0%, total=100.11%
+[2026-04-25 16:34:39] [INFO]   📝 Fund summary generated (589 chars)
+[2026-04-25 16:34:39] [INFO]   ✅ Upserted PYB — total_pct=100.11% [para_piyasasi_text+section4]
+[2026-04-25 16:34:40] [INFO] [37/124] Processing RBB (RBB_4028328d.pdf)
+[2026-04-25 16:34:40] [INFO] Processing: RBB_4028328d.pdf
+[2026-04-25 16:34:41] [INFO]   Fund category detected: PARA
+[2026-04-25 16:34:42] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:34:42] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:34:42] [INFO]   Final: stock=0.0%, total=100.18%
+[2026-04-25 16:34:50] [INFO]   📝 Fund summary generated (391 chars)
+[2026-04-25 16:34:50] [INFO]   ✅ Upserted RBB — total_pct=100.18% [para_piyasasi_text+section4]
+[2026-04-25 16:34:51] [INFO] [38/124] Processing RBI (RBI_4028328d.pdf)
+[2026-04-25 16:34:51] [INFO] Processing: RBI_4028328d.pdf
+[2026-04-25 16:34:52] [INFO]   Fund category detected: PARA
+[2026-04-25 16:34:53] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:34:53] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:34:54] [INFO] [39/124] Processing RBN (RBN_4028328d.pdf)
+[2026-04-25 16:34:54] [INFO] Processing: RBN_4028328d.pdf
+[2026-04-25 16:34:55] [INFO]   Fund category detected: PARA
+[2026-04-25 16:34:57] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:34:57] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:34:58] [INFO] [40/124] Processing RBP (RBP_4028328d.pdf)
+[2026-04-25 16:34:58] [INFO] Processing: RBP_4028328d.pdf
+[2026-04-25 16:35:00] [INFO]   Fund category detected: PARA
+[2026-04-25 16:35:02] [INFO]   Fund category: PARA, method: section4_total_only
+[2026-04-25 16:35:02] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:35:02] [INFO]   Final: stock=0.0%, total=100.08%
+[2026-04-25 16:35:16] [INFO]   📝 Fund summary generated (383 chars)
+[2026-04-25 16:35:16] [INFO]   ✅ Upserted RBP — total_pct=100.08% [section4_total_only]
+[2026-04-25 16:35:17] [INFO] [41/124] Processing RBR (RBR_4028328d.pdf)
+[2026-04-25 16:35:17] [INFO] Processing: RBR_4028328d.pdf
+[2026-04-25 16:35:17] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:35:17] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:35:18] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:35:18] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:35:19] [INFO] [42/124] Processing RDT (RDT_4028328c.pdf)
+[2026-04-25 16:35:19] [INFO] Processing: RDT_4028328c.pdf
+[2026-04-25 16:35:19] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:35:19] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:35:20] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:35:20] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:35:21] [INFO] [43/124] Processing RIH (RIH_4028328d.pdf)
+[2026-04-25 16:35:21] [INFO] Processing: RIH_4028328d.pdf
+[2026-04-25 16:35:21] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:35:21] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:35:22] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:35:22] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:35:23] [INFO] [44/124] Processing RIK (RIK_4028328d.pdf)
+[2026-04-25 16:35:23] [INFO] Processing: RIK_4028328d.pdf
+[2026-04-25 16:35:28] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:35:28] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:35:31] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:35:31] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:35:32] [INFO] [45/124] Processing RJG (RJG_4028328d.pdf)
+[2026-04-25 16:35:32] [INFO] Processing: RJG_4028328d.pdf
+[2026-04-25 16:35:32] [INFO]   Fund category detected: PARA
+[2026-04-25 16:35:32] [INFO]   Fund category: PARA, method: para_piyasasi_text
+[2026-04-25 16:35:32] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:35:32] [INFO]   Final: stock=0.0%, total=74.28%
+[2026-04-25 16:35:45] [INFO]   📝 Fund summary generated (222 chars)
+[2026-04-25 16:35:45] [INFO]   ✅ Upserted RJG — total_pct=74.28% [para_piyasasi_text]
+[2026-04-25 16:35:46] [INFO] [46/124] Processing RKV (RKV_4028328d.pdf)
+[2026-04-25 16:35:46] [INFO] Processing: RKV_4028328d.pdf
+[2026-04-25 16:35:47] [INFO]   Fund category detected: PARA
+[2026-04-25 16:35:48] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:35:48] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:35:48] [INFO]   Final: stock=0.0%, total=100.09%
+[2026-04-25 16:36:01] [INFO]   📝 Fund summary generated (424 chars)
+[2026-04-25 16:36:01] [INFO]   ✅ Upserted RKV — total_pct=100.09% [para_piyasasi_text+section4]
+[2026-04-25 16:36:02] [INFO] [47/124] Processing RPD (RPD_4028328d.pdf)
+[2026-04-25 16:36:02] [INFO] Processing: RPD_4028328d.pdf
+[2026-04-25 16:36:07] [INFO]   Fund category detected: PARA
+[2026-04-25 16:36:09] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:36:09] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:36:09] [INFO]   Final: stock=0.0%, total=100.87%
+[2026-04-25 16:36:14] [INFO]   📝 Fund summary generated (515 chars)
+[2026-04-25 16:36:15] [INFO]   ✅ Upserted RPD — total_pct=100.87% [para_piyasasi_text+section4]
+[2026-04-25 16:36:16] [INFO] [48/124] Processing RPL (RPL_4028328d.pdf)
+[2026-04-25 16:36:16] [INFO] Processing: RPL_4028328d.pdf
+[2026-04-25 16:36:19] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:36:19] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:36:21] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:36:21] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:36:22] [INFO] [49/124] Processing RTP (RTP_4028328d.pdf)
+[2026-04-25 16:36:22] [INFO] Processing: RTP_4028328d.pdf
+[2026-04-25 16:36:25] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:36:25] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:36:27] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:36:27] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:36:28] [INFO] [50/124] Processing SBH (SBH_4028328c.pdf)
+[2026-04-25 16:36:28] [INFO] Processing: SBH_4028328c.pdf
+[2026-04-25 16:36:29] [INFO]   Fund category detected: PARA
+[2026-04-25 16:36:29] [INFO]   Fund category: PARA, method: section4_total_only
+[2026-04-25 16:36:29] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:36:29] [INFO]   Final: stock=0.0%, total=106.91%
+[2026-04-25 16:36:39] [INFO]   📝 Fund summary generated (579 chars)
+[2026-04-25 16:36:39] [INFO]   ✅ Upserted SBH — total_pct=106.91% [section4_total_only]
+[2026-04-25 16:36:40] [INFO] [51/124] Processing SOS (SOS_4028328d.pdf)
+[2026-04-25 16:36:40] [INFO] Processing: SOS_4028328d.pdf
+[2026-04-25 16:36:41] [INFO]   Fund category detected: PARA
+[2026-04-25 16:36:42] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:36:42] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:36:43] [INFO] [52/124] Processing SPP (SPP_4028328c.pdf)
+[2026-04-25 16:36:43] [INFO] Processing: SPP_4028328c.pdf
+[2026-04-25 16:36:44] [INFO]   Fund category detected: PARA
+[2026-04-25 16:36:44] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:36:44] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:36:44] [INFO]   Final: stock=0.0%, total=100.08%
+[2026-04-25 16:36:51] [INFO]   📝 Fund summary generated (440 chars)
+[2026-04-25 16:36:51] [INFO]   ✅ Upserted SPP — total_pct=100.08% [para_piyasasi_text+section4]
+[2026-04-25 16:36:52] [INFO] [53/124] Processing SPT (SPT_4028328d.pdf)
+[2026-04-25 16:36:52] [INFO] Processing: SPT_4028328d.pdf
+[2026-04-25 16:36:53] [INFO]   Fund category detected: PARA
+[2026-04-25 16:36:53] [INFO]   Fund category: PARA, method: section4_total_only
+[2026-04-25 16:36:53] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:36:53] [INFO]   Final: stock=0.0%, total=101.32%
+[2026-04-25 16:37:04] [INFO]   📝 Fund summary generated (603 chars)
+[2026-04-25 16:37:04] [INFO]   ✅ Upserted SPT — total_pct=101.32% [section4_total_only]
+[2026-04-25 16:37:05] [INFO] [54/124] Processing SSF (SSF_4028328d.pdf)
+[2026-04-25 16:37:05] [INFO] Processing: SSF_4028328d.pdf
+[2026-04-25 16:37:05] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:37:05] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:37:06] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:37:06] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:37:07] [INFO] [55/124] Processing SSK (SSK_4028328c.pdf)
+[2026-04-25 16:37:07] [INFO] Processing: SSK_4028328c.pdf
+[2026-04-25 16:37:08] [INFO]   Fund category detected: PARA
+[2026-04-25 16:37:09] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:37:09] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:37:10] [INFO] [56/124] Processing SUA (SUA_4028328d.pdf)
+[2026-04-25 16:37:10] [INFO] Processing: SUA_4028328d.pdf
+[2026-04-25 16:37:19] [WARN] parse_portfolio_tables error SUA_4028328d.pdf: No /Root object! - Is this really a PDF?
+[2026-04-25 16:37:27] [WARN]   pdfplumber failed for UNKNOWN fund, fallback decision: 
+[2026-04-25 16:37:27] [WARN]   Attempting GLM fallback...
+[2026-04-25 16:37:27] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:37:28] [INFO] [57/124] Processing SUB (SUB_4028328d.pdf)
+[2026-04-25 16:37:28] [INFO] Processing: SUB_4028328d.pdf
+[2026-04-25 16:37:32] [INFO]   Fund category detected: PARA
+[2026-04-25 16:37:35] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:37:35] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:37:36] [INFO] [58/124] Processing SUC (SUC_4028328d.pdf)
+[2026-04-25 16:37:36] [INFO] Processing: SUC_4028328d.pdf
+[2026-04-25 16:37:39] [INFO]   Fund category detected: PARA
+[2026-04-25 16:37:42] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:37:42] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:37:43] [INFO] [59/124] Processing TAO (TAO_4028328c.pdf)
+[2026-04-25 16:37:43] [INFO] Processing: TAO_4028328c.pdf
+[2026-04-25 16:37:46] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:37:46] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:37:47] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:37:47] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:37:48] [INFO] [60/124] Processing TBT (TBT_4028328c.pdf)
+[2026-04-25 16:37:48] [INFO] Processing: TBT_4028328c.pdf
+[2026-04-25 16:37:49] [INFO]   Fund category detected: PARA
+[2026-04-25 16:37:50] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:37:50] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:37:50] [INFO]   Final: stock=0.0%, total=100.29%
+[2026-04-25 16:37:56] [INFO]   📝 Fund summary generated (431 chars)
+[2026-04-25 16:37:56] [INFO]   ✅ Upserted TBT — total_pct=100.29% [para_piyasasi_text+section4]
+[2026-04-25 16:37:57] [INFO] [61/124] Processing TCF (TCF_4028328c.pdf)
+[2026-04-25 16:37:57] [INFO] Processing: TCF_4028328c.pdf
+[2026-04-25 16:38:00] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:38:00] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:38:01] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:38:01] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:38:02] [INFO] [62/124] Processing TE4 (TE4_4028328c.pdf)
+[2026-04-25 16:38:02] [INFO] Processing: TE4_4028328c.pdf
+[2026-04-25 16:38:05] [INFO]   Fund category detected: PARA
+[2026-04-25 16:38:07] [INFO]   Fund category: PARA, method: section4_total_only
+[2026-04-25 16:38:07] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:38:07] [INFO]   Final: stock=0.0%, total=100.3%
+[2026-04-25 16:38:20] [INFO]   📝 Fund summary generated (594 chars)
+[2026-04-25 16:38:20] [INFO]   ✅ Upserted TE4 — total_pct=100.3% [section4_total_only]
+[2026-04-25 16:38:21] [INFO] [63/124] Processing TFF (TFF_4028328c.pdf)
+[2026-04-25 16:38:21] [INFO] Processing: TFF_4028328c.pdf
+[2026-04-25 16:38:22] [INFO]   Fund category detected: PARA
+[2026-04-25 16:38:23] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:38:23] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:38:23] [INFO]   Final: stock=0.0%, total=100.29%
+[2026-04-25 16:38:36] [INFO]   📝 Fund summary generated (247 chars)
+[2026-04-25 16:38:36] [INFO]   ✅ Upserted TFF — total_pct=100.29% [para_piyasasi_text+section4]
+[2026-04-25 16:38:37] [INFO] [64/124] Processing TGA (TGA_4028328d.pdf)
+[2026-04-25 16:38:37] [INFO] Processing: TGA_4028328d.pdf
+[2026-04-25 16:38:37] [INFO]   Fund category detected: HISSE
+[2026-04-25 16:38:38] [WARN]   pdfplumber failed for HISSE fund, fallback decision: 
+[2026-04-25 16:38:38] [WARN]   Attempting GLM fallback...
+[2026-04-25 16:39:16] [INFO]   ✅ JSON from reasoning_content for TGA (attempt 1)
+[2026-04-25 16:39:17] [INFO]   Fund category: HISSE, method: glm_fallback
+[2026-04-25 16:39:17] [INFO]   Calling GLM for stock-level detail...
+[2026-04-25 16:40:03] [INFO]   ✅ JSON from reasoning_content for TGA (attempt 1)
+[2026-04-25 16:40:03] [INFO]   GLM OK: added stock details
+[2026-04-25 16:40:03] [INFO]   Final: stock=81.96%, total=100.0%
+[2026-04-25 16:40:17] [INFO]   ✅ Upserted TGA — total_pct=100.0% [pdfplumber+glm]
+[2026-04-25 16:40:18] [INFO] [65/124] Processing TGN (TGN_4028328c.pdf)
+[2026-04-25 16:40:18] [INFO] Processing: TGN_4028328c.pdf
+[2026-04-25 16:40:19] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:40:19] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:40:20] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:40:20] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:40:21] [INFO] [66/124] Processing THD (THD_4028328d.pdf)
+[2026-04-25 16:40:21] [INFO] Processing: THD_4028328d.pdf
+[2026-04-25 16:40:22] [INFO]   Fund category detected: PARA
+[2026-04-25 16:40:23] [INFO]   Fund category: PARA, method: section4_total_only
+[2026-04-25 16:40:23] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:40:23] [INFO]   Final: stock=0.0%, total=100.11%
+[2026-04-25 16:40:36] [INFO]   📝 Fund summary generated (525 chars)
+[2026-04-25 16:40:37] [INFO]   ✅ Upserted THD — total_pct=100.11% [section4_total_only]
+[2026-04-25 16:40:38] [INFO] [67/124] Processing THF (THF_4028328d.pdf)
+[2026-04-25 16:40:38] [INFO] Processing: THF_4028328d.pdf
+[2026-04-25 16:40:38] [INFO]   Fund category detected: PARA
+[2026-04-25 16:40:39] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:40:39] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:40:39] [INFO]   Final: stock=0.0%, total=103.53%
+[2026-04-25 16:40:50] [INFO]   📝 Fund summary generated (467 chars)
+[2026-04-25 16:40:50] [INFO]   ✅ Upserted THF — total_pct=103.53% [para_piyasasi_text+section4]
+[2026-04-25 16:40:52] [INFO] [68/124] Processing TJI (TJI_4028328c.pdf)
+[2026-04-25 16:40:52] [INFO] Processing: TJI_4028328c.pdf
+[2026-04-25 16:40:53] [INFO]   Fund category detected: PARA
+[2026-04-25 16:40:55] [INFO]   Fund category: PARA, method: section4_total_only
+[2026-04-25 16:40:55] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:40:55] [INFO]   Final: stock=0.0%, total=101.81%
+[2026-04-25 16:41:06] [INFO]   📝 Fund summary generated (623 chars)
+[2026-04-25 16:41:06] [INFO]   ✅ Upserted TJI — total_pct=101.81% [section4_total_only]
+[2026-04-25 16:41:07] [INFO] [69/124] Processing TJT (TJT_4028328c.pdf)
+[2026-04-25 16:41:07] [INFO] Processing: TJT_4028328c.pdf
+[2026-04-25 16:41:09] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:41:09] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:41:10] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:41:10] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:41:12] [INFO] [70/124] Processing TKM (TKM_4028328c.pdf)
+[2026-04-25 16:41:12] [INFO] Processing: TKM_4028328c.pdf
+[2026-04-25 16:41:49] [INFO]   Fund category detected: PARA
+[2026-04-25 16:42:25] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:42:25] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:42:25] [INFO]   Final: stock=0.0%, total=100.23%
+[2026-04-25 16:42:35] [INFO]   📝 Fund summary generated (379 chars)
+[2026-04-25 16:42:35] [INFO]   ✅ Upserted TKM — total_pct=100.23% [para_piyasasi_text+section4]
+[2026-04-25 16:42:36] [INFO] [71/124] Processing TLE (TLE_4028328c.pdf)
+[2026-04-25 16:42:36] [INFO] Processing: TLE_4028328c.pdf
+[2026-04-25 16:42:38] [INFO]   Fund category detected: PARA
+[2026-04-25 16:42:39] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:42:39] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:42:40] [INFO] [72/124] Processing TLH (TLH_4028328c.pdf)
+[2026-04-25 16:42:40] [INFO] Processing: TLH_4028328c.pdf
+[2026-04-25 16:42:42] [INFO]   Fund category detected: PARA
+[2026-04-25 16:42:43] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:42:43] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:42:43] [INFO]   Final: stock=0.0%, total=101.49%
+[2026-04-25 16:42:58] [INFO]   📝 Fund summary generated (305 chars)
+[2026-04-25 16:42:59] [INFO]   ✅ Upserted TLH — total_pct=101.49% [para_piyasasi_text+section4]
+[2026-04-25 16:43:00] [INFO] [73/124] Processing TLK (TLK_4028328d.pdf)
+[2026-04-25 16:43:00] [INFO] Processing: TLK_4028328d.pdf
+[2026-04-25 16:43:01] [INFO]   Fund category detected: PARA
+[2026-04-25 16:43:03] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:43:03] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:43:03] [INFO]   Final: stock=0.0%, total=100.1%
+[2026-04-25 16:43:18] [INFO]   📝 Fund summary generated (527 chars)
+[2026-04-25 16:43:18] [INFO]   ✅ Upserted TLK — total_pct=100.1% [para_piyasasi_text+section4]
+[2026-04-25 16:43:20] [INFO] [74/124] Processing TLY (TLY_4028328d.pdf)
+[2026-04-25 16:43:20] [INFO] Processing: TLY_4028328d.pdf
+[2026-04-25 16:43:21] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:43:21] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:43:21] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:43:21] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:43:23] [INFO] [75/124] Processing TMV (TMV_4028328d.pdf)
+[2026-04-25 16:43:23] [INFO] Processing: TMV_4028328d.pdf
+[2026-04-25 16:43:24] [INFO]   Fund category detected: PARA
+[2026-04-25 16:43:25] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:43:25] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:43:25] [INFO]   Final: stock=0.0%, total=103.93%
+[2026-04-25 16:43:36] [INFO]   📝 Fund summary generated (572 chars)
+[2026-04-25 16:43:37] [INFO]   ✅ Upserted TMV — total_pct=103.93% [para_piyasasi_text+section4]
+[2026-04-25 16:43:38] [INFO] [76/124] Processing TNK (TNK_4028328c.pdf)
+[2026-04-25 16:43:38] [INFO] Processing: TNK_4028328c.pdf
+[2026-04-25 16:43:42] [INFO]   Fund category detected: PARA
+[2026-04-25 16:43:46] [INFO]   Fund category: PARA, method: para_piyasasi_text
+[2026-04-25 16:43:46] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:43:46] [INFO]   Final: stock=0.0%, total=73.74%
+[2026-04-25 16:43:51] [INFO]   📝 Fund summary generated (507 chars)
+[2026-04-25 16:43:51] [INFO]   ✅ Upserted TNK — total_pct=73.74% [para_piyasasi_text]
+[2026-04-25 16:43:52] [INFO] [77/124] Processing TP2 (TP2_4028328d.pdf)
+[2026-04-25 16:43:52] [INFO] Processing: TP2_4028328d.pdf
+[2026-04-25 16:44:19] [INFO]   Fund category detected: PARA
+[2026-04-25 16:44:27] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:44:27] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:44:28] [INFO] [78/124] Processing TPC (TPC_4028328c.pdf)
+[2026-04-25 16:44:28] [INFO] Processing: TPC_4028328c.pdf
+[2026-04-25 16:44:29] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:44:29] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:44:30] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:44:30] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:44:31] [INFO] [79/124] Processing TPJ (TPJ_4028328c.pdf)
+[2026-04-25 16:44:31] [INFO] Processing: TPJ_4028328c.pdf
+[2026-04-25 16:44:35] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:44:35] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:44:37] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:44:37] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:44:38] [INFO] [80/124] Processing TPL (TPL_4028328c.pdf)
+[2026-04-25 16:44:38] [INFO] Processing: TPL_4028328c.pdf
+[2026-04-25 16:44:42] [INFO]   Fund category detected: PARA
+[2026-04-25 16:44:43] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:44:43] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:44:44] [INFO] [81/124] Processing TPP (TPP_4028328c.pdf)
+[2026-04-25 16:44:44] [INFO] Processing: TPP_4028328c.pdf
+[2026-04-25 16:44:47] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:44:47] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:44:48] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:44:48] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:44:49] [INFO] [82/124] Processing TPV (TPV_4028328c.pdf)
+[2026-04-25 16:44:49] [INFO] Processing: TPV_4028328c.pdf
+[2026-04-25 16:44:50] [INFO]   Fund category detected: PARA
+[2026-04-25 16:44:51] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:44:51] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:44:52] [INFO] [83/124] Processing TPZ (TPZ_4028328c.pdf)
+[2026-04-25 16:44:52] [INFO] Processing: TPZ_4028328c.pdf
+[2026-04-25 16:44:52] [INFO]   Fund category detected: PARA
+[2026-04-25 16:44:53] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:44:53] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:44:54] [INFO] [84/124] Processing TRJ (TRJ_4028328d.pdf)
+[2026-04-25 16:44:54] [INFO] Processing: TRJ_4028328d.pdf
+[2026-04-25 16:44:55] [INFO]   Fund category detected: PARA
+[2026-04-25 16:44:56] [INFO]   Fund category: PARA, method: para_piyasasi_text
+[2026-04-25 16:44:56] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:44:56] [INFO]   Final: stock=0.0%, total=52.37%
+[2026-04-25 16:45:04] [INFO]   📝 Fund summary generated (451 chars)
+[2026-04-25 16:45:04] [INFO]   ✅ Upserted TRJ — total_pct=52.37% [para_piyasasi_text]
+[2026-04-25 16:45:05] [INFO] [85/124] Processing TRO (TRO_4028328d.pdf)
+[2026-04-25 16:45:05] [INFO] Processing: TRO_4028328d.pdf
+[2026-04-25 16:45:06] [INFO]   Fund category detected: PARA
+[2026-04-25 16:45:06] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:45:06] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:45:07] [INFO] [86/124] Processing TRU (TRU_4028328d.pdf)
+[2026-04-25 16:45:07] [INFO] Processing: TRU_4028328d.pdf
+[2026-04-25 16:45:08] [INFO]   Fund category detected: PARA
+[2026-04-25 16:45:08] [INFO]   Fund category: PARA, method: para_piyasasi_text
+[2026-04-25 16:45:08] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:45:08] [INFO]   Final: stock=0.0%, total=87.12%
+[2026-04-25 16:45:23] [INFO]   📝 Fund summary generated (531 chars)
+[2026-04-25 16:45:23] [INFO]   ✅ Upserted TRU — total_pct=87.12% [para_piyasasi_text]
+[2026-04-25 16:45:24] [INFO] [87/124] Processing TUA (TUA_4028328c.pdf)
+[2026-04-25 16:45:24] [INFO] Processing: TUA_4028328c.pdf
+[2026-04-25 16:45:28] [INFO]   Fund category detected: PARA
+[2026-04-25 16:45:30] [INFO]   Fund category: PARA, method: para_piyasasi_text+section4
+[2026-04-25 16:45:30] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:45:30] [INFO]   Final: stock=0.0%, total=100.13%
+[2026-04-25 16:45:46] [INFO]   📝 Fund summary generated (350 chars)
+[2026-04-25 16:45:46] [INFO]   ✅ Upserted TUA — total_pct=100.13% [para_piyasasi_text+section4]
+[2026-04-25 16:45:47] [INFO] [88/124] Processing TVN (TVN_4028328d.pdf)
+[2026-04-25 16:45:47] [INFO] Processing: TVN_4028328d.pdf
+[2026-04-25 16:45:48] [INFO]   Fund category detected: PARA
+[2026-04-25 16:45:48] [INFO]   Fund category: PARA, method: section4_total_only
+[2026-04-25 16:45:48] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:45:48] [INFO]   Final: stock=0.0%, total=101.37%
+[2026-04-25 16:46:04] [INFO]   📝 Fund summary generated (572 chars)
+[2026-04-25 16:46:04] [INFO]   ✅ Upserted TVN — total_pct=101.37% [section4_total_only]
+[2026-04-25 16:46:05] [INFO] [89/124] Processing TYH (TYH_4028328c.pdf)
+[2026-04-25 16:46:05] [INFO] Processing: TYH_4028328c.pdf
+[2026-04-25 16:46:08] [INFO]   Fund category detected: PARA
+[2026-04-25 16:46:09] [INFO]   Fund category: PARA, method: section4_total_only
+[2026-04-25 16:46:09] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:46:09] [INFO]   Final: stock=0.0%, total=100.34%
+[2026-04-25 16:46:20] [INFO]   📝 Fund summary generated (640 chars)
+[2026-04-25 16:46:21] [INFO]   ✅ Upserted TYH — total_pct=100.34% [section4_total_only]
+[2026-04-25 16:46:22] [INFO] [90/124] Processing TZL (TZL_4028328c.pdf)
+[2026-04-25 16:46:22] [INFO] Processing: TZL_4028328c.pdf
+[2026-04-25 16:46:23] [INFO]   Fund category detected: PARA
+[2026-04-25 16:46:23] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:46:23] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:46:25] [INFO] [91/124] Processing TZV (TZV_4028328c.pdf)
+[2026-04-25 16:46:25] [INFO] Processing: TZV_4028328c.pdf
+[2026-04-25 16:46:26] [INFO]   Fund category detected: PARA
+[2026-04-25 16:46:26] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:46:26] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:46:27] [INFO] [92/124] Processing ULH (ULH_4028328d.pdf)
+[2026-04-25 16:46:27] [INFO] Processing: ULH_4028328d.pdf
+[2026-04-25 16:46:30] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:46:30] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:46:33] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:46:33] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:46:34] [INFO] [93/124] Processing UP1 (UP1_4028328d.pdf)
+[2026-04-25 16:46:34] [INFO] Processing: UP1_4028328d.pdf
+[2026-04-25 16:46:41] [INFO]   Fund category detected: PARA
+[2026-04-25 16:46:47] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:46:47] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:46:48] [INFO] [94/124] Processing UP2 (UP2_4028328d.pdf)
+[2026-04-25 16:46:48] [INFO] Processing: UP2_4028328d.pdf
+[2026-04-25 16:46:51] [WARN] parse_portfolio_tables error UP2_4028328d.pdf: No /Root object! - Is this really a PDF?
+[2026-04-25 16:46:53] [WARN]   pdfplumber failed for UNKNOWN fund, fallback decision: 
+[2026-04-25 16:46:53] [WARN]   Attempting GLM fallback...
+[2026-04-25 16:46:53] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:46:54] [INFO] [95/124] Processing UPD (UPD_4028328d.pdf)
+[2026-04-25 16:46:54] [INFO] Processing: UPD_4028328d.pdf
+[2026-04-25 16:46:58] [INFO]   Fund category detected: PARA
+[2026-04-25 16:47:01] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:47:01] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:47:02] [INFO] [96/124] Processing UPH (UPH_4028328d.pdf)
+[2026-04-25 16:47:02] [INFO] Processing: UPH_4028328d.pdf
+[2026-04-25 16:47:07] [WARN] parse_portfolio_tables error UPH_4028328d.pdf: Unexpected EOF
+[2026-04-25 16:47:13] [WARN]   pdfplumber failed for UNKNOWN fund, fallback decision: 
+[2026-04-25 16:47:13] [WARN]   Attempting GLM fallback...
+[2026-04-25 16:47:13] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:47:14] [INFO] [97/124] Processing UPP (UPP_4028328d.pdf)
+[2026-04-25 16:47:14] [INFO] Processing: UPP_4028328d.pdf
+[2026-04-25 16:47:21] [INFO]   Fund category detected: PARA
+[2026-04-25 16:47:27] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:47:27] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:47:28] [INFO] [98/124] Processing USDTR (USDTR_4028328c.pdf)
+[2026-04-25 16:47:28] [INFO] Processing: USDTR_4028328c.pdf
+[2026-04-25 16:47:28] [INFO]   Fund category detected: PARA
+[2026-04-25 16:47:28] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:47:28] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:47:29] [INFO] [99/124] Processing VMV (VMV_4028328c.pdf)
+[2026-04-25 16:47:29] [INFO] Processing: VMV_4028328c.pdf
+[2026-04-25 16:47:32] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:47:32] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:47:34] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:47:34] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:47:36] [INFO] [100/124] Processing VRK (VRK_4028328c.pdf)
+[2026-04-25 16:47:36] [INFO] Processing: VRK_4028328c.pdf
+[2026-04-25 16:47:37] [INFO]   Fund category detected: PARA
+[2026-04-25 16:47:38] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:47:38] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:47:39] [INFO] [101/124] Processing YIT (YIT_4028328d.pdf)
+[2026-04-25 16:47:39] [INFO] Processing: YIT_4028328d.pdf
+[2026-04-25 16:47:40] [INFO]   Fund category detected: HISSE
+[2026-04-25 16:47:42] [WARN]   pdfplumber failed for HISSE fund, fallback decision: 
+[2026-04-25 16:47:42] [WARN]   Attempting GLM fallback...
+[2026-04-25 16:48:26] [INFO]   Fund category: HISSE, method: glm_fallback
+[2026-04-25 16:48:26] [INFO]   Calling GLM for stock-level detail...
+[2026-04-25 16:49:18] [INFO]   GLM OK: added stock details
+[2026-04-25 16:49:18] [INFO]   Final: stock=60.93%, total=100.95%
+[2026-04-25 16:49:30] [INFO]   📝 Fund summary generated (626 chars)
+[2026-04-25 16:49:30] [INFO]   ✅ Upserted YIT — total_pct=100.95% [pdfplumber+glm]
+[2026-04-25 16:49:31] [INFO] [102/124] Processing ZA2 (ZA2_4028328d.pdf)
+[2026-04-25 16:49:31] [INFO] Processing: ZA2_4028328d.pdf
+[2026-04-25 16:49:46] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:00] [INFO]   Fund category: PARA, method: section4_total_only
+[2026-04-25 16:50:00] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:50:00] [INFO]   Final: stock=0.0%, total=100.09%
+[2026-04-25 16:50:14] [INFO]   📝 Fund summary generated (132 chars)
+[2026-04-25 16:50:15] [INFO]   ✅ Upserted ZA2 — total_pct=100.09% [section4_total_only]
+[2026-04-25 16:50:16] [INFO] [103/124] Processing ZAY (ZAY_4028328d.pdf)
+[2026-04-25 16:50:16] [INFO] Processing: ZAY_4028328d.pdf
+[2026-04-25 16:50:16] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:17] [INFO]   Fund category: PARA, method: section4_total_only
+[2026-04-25 16:50:17] [INFO]   PARA fund: pdfplumber result (no GLM)
+[2026-04-25 16:50:17] [INFO]   Final: stock=0.0%, total=100.07%
+[2026-04-25 16:50:28] [INFO]   ✅ Upserted ZAY — total_pct=100.07% [section4_total_only]
+[2026-04-25 16:50:29] [INFO] [104/124] Processing ZBI (ZBI_4028328c.pdf)
+[2026-04-25 16:50:29] [INFO] Processing: ZBI_4028328c.pdf
+[2026-04-25 16:50:30] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:30] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:30] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:31] [INFO] [105/124] Processing ZBJ (ZBJ_4028328c.pdf)
+[2026-04-25 16:50:31] [INFO] Processing: ZBJ_4028328c.pdf
+[2026-04-25 16:50:32] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:33] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:33] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:34] [INFO] [106/124] Processing ZCN (ZCN_4028328c.pdf)
+[2026-04-25 16:50:34] [INFO] Processing: ZCN_4028328c.pdf
+[2026-04-25 16:50:34] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:35] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:35] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:36] [INFO] [107/124] Processing ZELOT (ZELOT_4028328d.pdf)
+[2026-04-25 16:50:36] [INFO] Processing: ZELOT_4028328d.pdf
+[2026-04-25 16:50:36] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:36] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:36] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:37] [INFO] [108/124] Processing ZGOLD (ZGOLD_4028328d.pdf)
+[2026-04-25 16:50:37] [INFO] Processing: ZGOLD_4028328d.pdf
+[2026-04-25 16:50:38] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:38] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:38] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:39] [INFO] [109/124] Processing ZMY (ZMY_4028328c.pdf)
+[2026-04-25 16:50:39] [INFO] Processing: ZMY_4028328c.pdf
+[2026-04-25 16:50:39] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:40] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:40] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:41] [INFO] [110/124] Processing ZP6 (ZP6_4028328c.pdf)
+[2026-04-25 16:50:41] [INFO] Processing: ZP6_4028328c.pdf
+[2026-04-25 16:50:41] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:42] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:42] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:43] [INFO] [111/124] Processing ZP8 (ZP8_4028328c.pdf)
+[2026-04-25 16:50:43] [INFO] Processing: ZP8_4028328c.pdf
+[2026-04-25 16:50:43] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:44] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:44] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:45] [INFO] [112/124] Processing ZP9 (ZP9_4028328c.pdf)
+[2026-04-25 16:50:45] [INFO] Processing: ZP9_4028328c.pdf
+[2026-04-25 16:50:45] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:45] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:45] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:46] [INFO] [113/124] Processing ZPA (ZPA_4028328c.pdf)
+[2026-04-25 16:50:46] [INFO] Processing: ZPA_4028328c.pdf
+[2026-04-25 16:50:47] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:47] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:47] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:48] [INFO] [114/124] Processing ZPBDL (ZPBDL_4028328d.pdf)
+[2026-04-25 16:50:48] [INFO] Processing: ZPBDL_4028328d.pdf
+[2026-04-25 16:50:48] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:49] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:49] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:50] [INFO] [115/124] Processing ZPC (ZPC_4028328c.pdf)
+[2026-04-25 16:50:50] [INFO] Processing: ZPC_4028328c.pdf
+[2026-04-25 16:50:50] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:50] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:50] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:52] [INFO] [116/124] Processing ZPF (ZPF_4028328c.pdf)
+[2026-04-25 16:50:52] [INFO] Processing: ZPF_4028328c.pdf
+[2026-04-25 16:50:52] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:52] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:52] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:53] [INFO] [117/124] Processing ZPG (ZPG_4028328c.pdf)
+[2026-04-25 16:50:53] [INFO] Processing: ZPG_4028328c.pdf
+[2026-04-25 16:50:54] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:54] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:54] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:55] [INFO] [118/124] Processing ZPX30 (ZPX30_4028328d.pdf)
+[2026-04-25 16:50:55] [INFO] Processing: ZPX30_4028328d.pdf
+[2026-04-25 16:50:56] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:56] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:56] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:57] [INFO] [119/124] Processing ZSF (ZSF_4028328c.pdf)
+[2026-04-25 16:50:57] [INFO] Processing: ZSF_4028328c.pdf
+[2026-04-25 16:50:57] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:58] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:58] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:50:59] [INFO] [120/124] Processing ZSG (ZSG_4028328c.pdf)
+[2026-04-25 16:50:59] [INFO] Processing: ZSG_4028328c.pdf
+[2026-04-25 16:50:59] [INFO]   Fund category detected: PARA
+[2026-04-25 16:50:59] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:50:59] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:51:00] [INFO] [121/124] Processing ZTG (ZTG_4028328c.pdf)
+[2026-04-25 16:51:00] [INFO] Processing: ZTG_4028328c.pdf
+[2026-04-25 16:51:01] [INFO]   Fund category detected: PARA
+[2026-04-25 16:51:01] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:51:01] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:51:02] [INFO] [122/124] Processing ZTLRK (ZTLRK_4028328d.pdf)
+[2026-04-25 16:51:02] [INFO] Processing: ZTLRK_4028328d.pdf
+[2026-04-25 16:51:02] [INFO]   Fund category detected: PARA
+[2026-04-25 16:51:03] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:51:03] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:51:04] [INFO] [123/124] Processing ZTM25 (ZTM25_4028328d.pdf)
+[2026-04-25 16:51:04] [INFO] Processing: ZTM25_4028328d.pdf
+[2026-04-25 16:51:04] [INFO]   Fund category detected: PARA
+[2026-04-25 16:51:04] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:51:04] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:51:06] [INFO] [124/124] Processing ZVO (ZVO_4028328c.pdf)
+[2026-04-25 16:51:06] [INFO] Processing: ZVO_4028328c.pdf
+[2026-04-25 16:51:07] [INFO]   Fund category detected: PARA
+[2026-04-25 16:51:07] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:51:07] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:51:08] [INFO] === BATCH COMPLETE: 38 ✅  86 ❌ ===
+[2026-04-25 16:57:04] [INFO] ============================================================
+[2026-04-25 16:57:04] [INFO] KAP Portfolio Parser — pdfplumber + GLM fallback
+[2026-04-25 16:57:04] [INFO] PDF dir: /Users/admin/Desktop/projects/fon-app/pdfs/portfoy_dagilim
+[2026-04-25 16:57:04] [INFO] Zhipu key: SET
+[2026-04-25 16:57:04] [INFO] Supabase key: SET
+[2026-04-25 16:57:04] [INFO] ============================================================
+[2026-04-25 16:57:04] [INFO] Found 507 PDF files in /Users/admin/Desktop/projects/fon-app/pdfs/portfoy_dagilim
+[2026-04-25 16:57:04] [INFO] Pending: 86 PDFs (resume=False)
+[2026-04-25 16:57:04] [INFO] [1/86] Processing GTY (GTY_4028328d.pdf)
+[2026-04-25 16:57:04] [INFO] Processing: GTY_4028328d.pdf
+[2026-04-25 16:57:05] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:57:05] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:57:06] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:57:06] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:57:07] [INFO] [2/86] Processing GZM (GZM_4028328c.pdf)
+[2026-04-25 16:57:07] [INFO] Processing: GZM_4028328c.pdf
+[2026-04-25 16:57:11] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:57:11] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:57:13] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:57:13] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:57:14] [INFO] [3/86] Processing GZN (GZN_4028328c.pdf)
+[2026-04-25 16:57:14] [INFO] Processing: GZN_4028328c.pdf
+[2026-04-25 16:57:16] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:57:16] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:57:17] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:57:17] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:57:18] [INFO] [4/86] Processing KTS (KTS_4028328d.pdf)
+[2026-04-25 16:57:18] [INFO] Processing: KTS_4028328d.pdf
+[2026-04-25 16:57:20] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:57:20] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:57:21] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:57:21] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:57:22] [INFO] [5/86] Processing KVK (KVK_4028328d.pdf)
+[2026-04-25 16:57:22] [INFO] Processing: KVK_4028328d.pdf
+[2026-04-25 16:57:23] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:57:23] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:57:24] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:57:24] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:57:25] [INFO] [6/86] Processing MJG (MJG_4028328d.pdf)
+[2026-04-25 16:57:25] [INFO] Processing: MJG_4028328d.pdf
+[2026-04-25 16:57:27] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:57:27] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:57:28] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:57:28] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:57:29] [INFO] [7/86] Processing MLK (MLK_4028328d.pdf)
+[2026-04-25 16:57:29] [INFO] Processing: MLK_4028328d.pdf
+[2026-04-25 16:57:29] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:57:29] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:57:29] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:57:29] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:57:30] [INFO] [8/86] Processing MRI (MRI_4028328c.pdf)
+[2026-04-25 16:57:30] [INFO] Processing: MRI_4028328c.pdf
+[2026-04-25 16:57:31] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:57:31] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:57:32] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:57:32] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:57:33] [INFO] [9/86] Processing MTG (MTG_4028328c.pdf)
+[2026-04-25 16:57:33] [INFO] Processing: MTG_4028328c.pdf
+[2026-04-25 16:57:33] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:57:33] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:57:34] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:57:34] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:57:35] [INFO] [10/86] Processing ODD (ODD_4028328c.pdf)
+[2026-04-25 16:57:35] [INFO] Processing: ODD_4028328c.pdf
+[2026-04-25 16:57:36] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:57:36] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:57:36] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:57:36] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:57:37] [INFO] [11/86] Processing OFS (OFS_4028328c.pdf)
+[2026-04-25 16:57:37] [INFO] Processing: OFS_4028328c.pdf
+[2026-04-25 16:57:39] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:57:39] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:57:41] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:57:41] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:57:43] [INFO] [12/86] Processing OHK (OHK_4028328c.pdf)
+[2026-04-25 16:57:43] [INFO] Processing: OHK_4028328c.pdf
+[2026-04-25 16:57:44] [WARN] parse_portfolio_tables error OHK_4028328c.pdf: Unexpected EOF
+[2026-04-25 16:57:45] [WARN]   pdfplumber failed for UNKNOWN fund, fallback decision: 
+[2026-04-25 16:57:45] [WARN]   Attempting GLM fallback...
+[2026-04-25 16:57:45] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:57:46] [INFO] [13/86] Processing OKD (OKD_4028328c.pdf)
+[2026-04-25 16:57:46] [INFO] Processing: OKD_4028328c.pdf
+[2026-04-25 16:57:50] [INFO]   Fund category detected: PARA
+[2026-04-25 16:57:54] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:57:54] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:57:56] [INFO] [14/86] Processing ONE (ONE_4028328d.pdf)
+[2026-04-25 16:57:56] [INFO] Processing: ONE_4028328d.pdf
+[2026-04-25 16:57:56] [INFO]   Fund category detected: PARA
+[2026-04-25 16:57:57] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:57:57] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:57:58] [INFO] [15/86] Processing OYL (OYL_4028328c.pdf)
+[2026-04-25 16:57:58] [INFO] Processing: OYL_4028328c.pdf
+[2026-04-25 16:58:05] [WARN] parse_portfolio_tables error OYL_4028328c.pdf: Unexpected EOF
+[2026-04-25 16:58:11] [WARN]   pdfplumber failed for UNKNOWN fund, fallback decision: 
+[2026-04-25 16:58:11] [WARN]   Attempting GLM fallback...
+[2026-04-25 16:58:11] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:58:12] [INFO] [16/86] Processing PBK (PBK_4028328d.pdf)
+[2026-04-25 16:58:12] [INFO] Processing: PBK_4028328d.pdf
+[2026-04-25 16:58:13] [INFO]   Fund category detected: PARA
+[2026-04-25 16:58:14] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:58:14] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:58:15] [INFO] [17/86] Processing PBN (PBN_4028328c.pdf)
+[2026-04-25 16:58:15] [INFO] Processing: PBN_4028328c.pdf
+[2026-04-25 16:58:18] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:58:18] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:58:20] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:58:20] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:58:21] [INFO] [18/86] Processing PDD (PDD_4028328d.pdf)
+[2026-04-25 16:58:21] [INFO] Processing: PDD_4028328d.pdf
+[2026-04-25 16:58:23] [INFO]   Fund category detected: PARA
+[2026-04-25 16:58:24] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:58:24] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:58:25] [INFO] [19/86] Processing PFO (PFO_4028328c.pdf)
+[2026-04-25 16:58:25] [INFO] Processing: PFO_4028328c.pdf
+[2026-04-25 16:58:25] [INFO]   Fund category detected: PARA
+[2026-04-25 16:58:26] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:58:26] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:58:27] [INFO] [20/86] Processing PGD (PGD_4028328d.pdf)
+[2026-04-25 16:58:27] [INFO] Processing: PGD_4028328d.pdf
+[2026-04-25 16:58:28] [INFO]   Fund category detected: PARA
+[2026-04-25 16:58:29] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:58:29] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:58:30] [INFO] [21/86] Processing PHK (PHK_4028328c.pdf)
+[2026-04-25 16:58:30] [INFO] Processing: PHK_4028328c.pdf
+[2026-04-25 16:58:31] [INFO]   Fund category detected: PARA
+[2026-04-25 16:58:31] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:58:31] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:58:32] [INFO] [22/86] Processing PKD (PKD_4028328c.pdf)
+[2026-04-25 16:58:32] [INFO] Processing: PKD_4028328c.pdf
+[2026-04-25 16:58:33] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:58:33] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:58:34] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:58:34] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:58:35] [INFO] [23/86] Processing PPB (PPB_4028328c.pdf)
+[2026-04-25 16:58:35] [INFO] Processing: PPB_4028328c.pdf
+[2026-04-25 16:58:35] [INFO]   Fund category detected: PARA
+[2026-04-25 16:58:36] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:58:36] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:58:37] [INFO] [24/86] Processing PPE (PPE_4028328c.pdf)
+[2026-04-25 16:58:37] [INFO] Processing: PPE_4028328c.pdf
+[2026-04-25 16:58:38] [INFO]   Fund category detected: PARA
+[2026-04-25 16:58:38] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:58:38] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:58:39] [INFO] [25/86] Processing PPM (PPM_4028328c.pdf)
+[2026-04-25 16:58:39] [INFO] Processing: PPM_4028328c.pdf
+[2026-04-25 16:58:45] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:58:45] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:58:49] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:58:49] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:58:51] [INFO] [26/86] Processing PPS (PPS_4028328c.pdf)
+[2026-04-25 16:58:51] [INFO] Processing: PPS_4028328c.pdf
+[2026-04-25 16:58:51] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:58:51] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:58:52] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:58:52] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:58:53] [INFO] [27/86] Processing RBI (RBI_4028328d.pdf)
+[2026-04-25 16:58:53] [INFO] Processing: RBI_4028328d.pdf
+[2026-04-25 16:58:54] [INFO]   Fund category detected: PARA
+[2026-04-25 16:58:54] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:58:54] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:58:55] [INFO] [28/86] Processing RBN (RBN_4028328d.pdf)
+[2026-04-25 16:58:55] [INFO] Processing: RBN_4028328d.pdf
+[2026-04-25 16:58:57] [INFO]   Fund category detected: PARA
+[2026-04-25 16:58:59] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:58:59] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:59:00] [INFO] [29/86] Processing RBR (RBR_4028328d.pdf)
+[2026-04-25 16:59:00] [INFO] Processing: RBR_4028328d.pdf
+[2026-04-25 16:59:00] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:59:00] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:59:00] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:59:00] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:59:01] [INFO] [30/86] Processing RDT (RDT_4028328c.pdf)
+[2026-04-25 16:59:01] [INFO] Processing: RDT_4028328c.pdf
+[2026-04-25 16:59:02] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:59:02] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:59:02] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:59:02] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:59:03] [INFO] [31/86] Processing RIH (RIH_4028328d.pdf)
+[2026-04-25 16:59:03] [INFO] Processing: RIH_4028328d.pdf
+[2026-04-25 16:59:04] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:59:04] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:59:04] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:59:04] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:59:05] [INFO] [32/86] Processing RIK (RIK_4028328d.pdf)
+[2026-04-25 16:59:05] [INFO] Processing: RIK_4028328d.pdf
+[2026-04-25 16:59:10] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:59:10] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:59:13] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:59:13] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:59:14] [INFO] [33/86] Processing RPL (RPL_4028328d.pdf)
+[2026-04-25 16:59:14] [INFO] Processing: RPL_4028328d.pdf
+[2026-04-25 16:59:18] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:59:18] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:59:19] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:59:19] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:59:20] [INFO] [34/86] Processing RTP (RTP_4028328d.pdf)
+[2026-04-25 16:59:20] [INFO] Processing: RTP_4028328d.pdf
+[2026-04-25 16:59:24] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:59:24] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:59:25] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:59:25] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:59:26] [INFO] [35/86] Processing SOS (SOS_4028328d.pdf)
+[2026-04-25 16:59:26] [INFO] Processing: SOS_4028328d.pdf
+[2026-04-25 16:59:27] [INFO]   Fund category detected: PARA
+[2026-04-25 16:59:28] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:59:28] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:59:29] [INFO] [36/86] Processing SSF (SSF_4028328d.pdf)
+[2026-04-25 16:59:29] [INFO] Processing: SSF_4028328d.pdf
+[2026-04-25 16:59:30] [INFO]   Fund category detected: SERBEST
+[2026-04-25 16:59:30] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 16:59:30] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 16:59:30] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:59:31] [INFO] [37/86] Processing SSK (SSK_4028328c.pdf)
+[2026-04-25 16:59:31] [INFO] Processing: SSK_4028328c.pdf
+[2026-04-25 16:59:32] [INFO]   Fund category detected: PARA
+[2026-04-25 16:59:34] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:59:34] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:59:35] [INFO] [38/86] Processing SUA (SUA_4028328d.pdf)
+[2026-04-25 16:59:35] [INFO] Processing: SUA_4028328d.pdf
+[2026-04-25 16:59:43] [WARN] parse_portfolio_tables error SUA_4028328d.pdf: No /Root object! - Is this really a PDF?
+[2026-04-25 16:59:51] [WARN]   pdfplumber failed for UNKNOWN fund, fallback decision: 
+[2026-04-25 16:59:51] [WARN]   Attempting GLM fallback...
+[2026-04-25 16:59:51] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 16:59:52] [INFO] [39/86] Processing SUB (SUB_4028328d.pdf)
+[2026-04-25 16:59:52] [INFO] Processing: SUB_4028328d.pdf
+[2026-04-25 16:59:56] [INFO]   Fund category detected: PARA
+[2026-04-25 16:59:59] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 16:59:59] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:00:00] [INFO] [40/86] Processing SUC (SUC_4028328d.pdf)
+[2026-04-25 17:00:00] [INFO] Processing: SUC_4028328d.pdf
+[2026-04-25 17:00:03] [INFO]   Fund category detected: PARA
+[2026-04-25 17:00:06] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:00:06] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:00:07] [INFO] [41/86] Processing TAO (TAO_4028328c.pdf)
+[2026-04-25 17:00:07] [INFO] Processing: TAO_4028328c.pdf
+[2026-04-25 17:00:10] [INFO]   Fund category detected: SERBEST
+[2026-04-25 17:00:10] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 17:00:11] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 17:00:11] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:00:12] [INFO] [42/86] Processing TCF (TCF_4028328c.pdf)
+[2026-04-25 17:00:12] [INFO] Processing: TCF_4028328c.pdf
+[2026-04-25 17:00:15] [INFO]   Fund category detected: SERBEST
+[2026-04-25 17:00:15] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 17:00:16] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 17:00:16] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:00:17] [INFO] [43/86] Processing TGN (TGN_4028328c.pdf)
+[2026-04-25 17:00:17] [INFO] Processing: TGN_4028328c.pdf
+[2026-04-25 17:00:18] [INFO]   Fund category detected: SERBEST
+[2026-04-25 17:00:18] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 17:00:19] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 17:00:19] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:00:20] [INFO] [44/86] Processing TJT (TJT_4028328c.pdf)
+[2026-04-25 17:00:20] [INFO] Processing: TJT_4028328c.pdf
+[2026-04-25 17:00:22] [INFO]   Fund category detected: SERBEST
+[2026-04-25 17:00:22] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 17:00:23] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 17:00:23] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:00:24] [INFO] [45/86] Processing TLE (TLE_4028328c.pdf)
+[2026-04-25 17:00:24] [INFO] Processing: TLE_4028328c.pdf
+[2026-04-25 17:00:26] [INFO]   Fund category detected: PARA
+[2026-04-25 17:00:27] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:00:27] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:00:28] [INFO] [46/86] Processing TLY (TLY_4028328d.pdf)
+[2026-04-25 17:00:28] [INFO] Processing: TLY_4028328d.pdf
+[2026-04-25 17:00:29] [INFO]   Fund category detected: SERBEST
+[2026-04-25 17:00:29] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 17:00:30] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 17:00:30] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:00:31] [INFO] [47/86] Processing TP2 (TP2_4028328d.pdf)
+[2026-04-25 17:00:31] [INFO] Processing: TP2_4028328d.pdf
+[2026-04-25 17:00:58] [INFO]   Fund category detected: PARA
+[2026-04-25 17:01:06] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:01:06] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:01:07] [INFO] [48/86] Processing TPC (TPC_4028328c.pdf)
+[2026-04-25 17:01:07] [INFO] Processing: TPC_4028328c.pdf
+[2026-04-25 17:01:08] [INFO]   Fund category detected: SERBEST
+[2026-04-25 17:01:08] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 17:01:09] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 17:01:09] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:01:10] [INFO] [49/86] Processing TPJ (TPJ_4028328c.pdf)
+[2026-04-25 17:01:10] [INFO] Processing: TPJ_4028328c.pdf
+[2026-04-25 17:01:14] [INFO]   Fund category detected: SERBEST
+[2026-04-25 17:01:14] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 17:01:16] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 17:01:16] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:01:17] [INFO] [50/86] Processing TPL (TPL_4028328c.pdf)
+[2026-04-25 17:01:17] [INFO] Processing: TPL_4028328c.pdf
+[2026-04-25 17:01:21] [INFO]   Fund category detected: PARA
+[2026-04-25 17:01:22] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:01:22] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:01:23] [INFO] [51/86] Processing TPP (TPP_4028328c.pdf)
+[2026-04-25 17:01:23] [INFO] Processing: TPP_4028328c.pdf
+[2026-04-25 17:01:26] [INFO]   Fund category detected: SERBEST
+[2026-04-25 17:01:26] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 17:01:27] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 17:01:27] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:01:28] [INFO] [52/86] Processing TPV (TPV_4028328c.pdf)
+[2026-04-25 17:01:28] [INFO] Processing: TPV_4028328c.pdf
+[2026-04-25 17:01:29] [INFO]   Fund category detected: PARA
+[2026-04-25 17:01:30] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:01:30] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:01:31] [INFO] [53/86] Processing TPZ (TPZ_4028328c.pdf)
+[2026-04-25 17:01:31] [INFO] Processing: TPZ_4028328c.pdf
+[2026-04-25 17:01:31] [INFO]   Fund category detected: PARA
+[2026-04-25 17:01:32] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:01:32] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:01:33] [INFO] [54/86] Processing TRO (TRO_4028328d.pdf)
+[2026-04-25 17:01:33] [INFO] Processing: TRO_4028328d.pdf
+[2026-04-25 17:01:33] [INFO]   Fund category detected: PARA
+[2026-04-25 17:01:34] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:01:34] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:01:35] [INFO] [55/86] Processing TZL (TZL_4028328c.pdf)
+[2026-04-25 17:01:35] [INFO] Processing: TZL_4028328c.pdf
+[2026-04-25 17:01:36] [INFO]   Fund category detected: PARA
+[2026-04-25 17:01:36] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:01:36] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:01:37] [INFO] [56/86] Processing TZV (TZV_4028328c.pdf)
+[2026-04-25 17:01:37] [INFO] Processing: TZV_4028328c.pdf
+[2026-04-25 17:01:39] [INFO]   Fund category detected: PARA
+[2026-04-25 17:01:39] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:01:39] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:01:40] [INFO] [57/86] Processing ULH (ULH_4028328d.pdf)
+[2026-04-25 17:01:40] [INFO] Processing: ULH_4028328d.pdf
+[2026-04-25 17:01:43] [INFO]   Fund category detected: SERBEST
+[2026-04-25 17:01:43] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 17:01:46] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 17:01:46] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:01:47] [INFO] [58/86] Processing UP1 (UP1_4028328d.pdf)
+[2026-04-25 17:01:47] [INFO] Processing: UP1_4028328d.pdf
+[2026-04-25 17:01:54] [INFO]   Fund category detected: PARA
+[2026-04-25 17:02:00] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:02:00] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:02:01] [INFO] [59/86] Processing UP2 (UP2_4028328d.pdf)
+[2026-04-25 17:02:01] [INFO] Processing: UP2_4028328d.pdf
+[2026-04-25 17:02:03] [WARN] parse_portfolio_tables error UP2_4028328d.pdf: No /Root object! - Is this really a PDF?
+[2026-04-25 17:02:06] [WARN]   pdfplumber failed for UNKNOWN fund, fallback decision: 
+[2026-04-25 17:02:06] [WARN]   Attempting GLM fallback...
+[2026-04-25 17:02:06] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:02:07] [INFO] [60/86] Processing UPD (UPD_4028328d.pdf)
+[2026-04-25 17:02:07] [INFO] Processing: UPD_4028328d.pdf
+[2026-04-25 17:02:10] [INFO]   Fund category detected: PARA
+[2026-04-25 17:02:13] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:02:13] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:02:15] [INFO] [61/86] Processing UPH (UPH_4028328d.pdf)
+[2026-04-25 17:02:15] [INFO] Processing: UPH_4028328d.pdf
+[2026-04-25 17:02:20] [WARN] parse_portfolio_tables error UPH_4028328d.pdf: Unexpected EOF
+[2026-04-25 17:02:25] [WARN]   pdfplumber failed for UNKNOWN fund, fallback decision: 
+[2026-04-25 17:02:25] [WARN]   Attempting GLM fallback...
+[2026-04-25 17:02:25] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:02:26] [INFO] [62/86] Processing UPP (UPP_4028328d.pdf)
+[2026-04-25 17:02:26] [INFO] Processing: UPP_4028328d.pdf
+[2026-04-25 17:02:33] [INFO]   Fund category detected: PARA
+[2026-04-25 17:02:39] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:02:39] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:02:40] [INFO] [63/86] Processing USDTR (USDTR_4028328c.pdf)
+[2026-04-25 17:02:40] [INFO] Processing: USDTR_4028328c.pdf
+[2026-04-25 17:02:40] [INFO]   Fund category detected: PARA
+[2026-04-25 17:02:41] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:02:41] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:02:42] [INFO] [64/86] Processing VMV (VMV_4028328c.pdf)
+[2026-04-25 17:02:42] [INFO] Processing: VMV_4028328c.pdf
+[2026-04-25 17:02:44] [INFO]   Fund category detected: SERBEST
+[2026-04-25 17:02:44] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 17:02:47] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 17:02:47] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:02:48] [INFO] [65/86] Processing VRK (VRK_4028328c.pdf)
+[2026-04-25 17:02:48] [INFO] Processing: VRK_4028328c.pdf
+[2026-04-25 17:02:49] [INFO]   Fund category detected: PARA
+[2026-04-25 17:02:50] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:02:50] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:02:51] [INFO] [66/86] Processing ZBI (ZBI_4028328c.pdf)
+[2026-04-25 17:02:51] [INFO] Processing: ZBI_4028328c.pdf
+[2026-04-25 17:02:52] [INFO]   Fund category detected: PARA
+[2026-04-25 17:02:52] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:02:52] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:02:53] [INFO] [67/86] Processing ZBJ (ZBJ_4028328c.pdf)
+[2026-04-25 17:02:53] [INFO] Processing: ZBJ_4028328c.pdf
+[2026-04-25 17:02:54] [INFO]   Fund category detected: PARA
+[2026-04-25 17:02:55] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:02:55] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:02:56] [INFO] [68/86] Processing ZCN (ZCN_4028328c.pdf)
+[2026-04-25 17:02:56] [INFO] Processing: ZCN_4028328c.pdf
+[2026-04-25 17:02:56] [INFO]   Fund category detected: PARA
+[2026-04-25 17:02:56] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:02:56] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:02:57] [INFO] [69/86] Processing ZELOT (ZELOT_4028328d.pdf)
+[2026-04-25 17:02:57] [INFO] Processing: ZELOT_4028328d.pdf
+[2026-04-25 17:02:58] [INFO]   Fund category detected: PARA
+[2026-04-25 17:02:58] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:02:58] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:02:59] [INFO] [70/86] Processing ZGOLD (ZGOLD_4028328d.pdf)
+[2026-04-25 17:02:59] [INFO] Processing: ZGOLD_4028328d.pdf
+[2026-04-25 17:02:59] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:00] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:00] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:01] [INFO] [71/86] Processing ZMY (ZMY_4028328c.pdf)
+[2026-04-25 17:03:01] [INFO] Processing: ZMY_4028328c.pdf
+[2026-04-25 17:03:01] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:02] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:02] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:03] [INFO] [72/86] Processing ZP6 (ZP6_4028328c.pdf)
+[2026-04-25 17:03:03] [INFO] Processing: ZP6_4028328c.pdf
+[2026-04-25 17:03:03] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:03] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:03] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:05] [INFO] [73/86] Processing ZP8 (ZP8_4028328c.pdf)
+[2026-04-25 17:03:05] [INFO] Processing: ZP8_4028328c.pdf
+[2026-04-25 17:03:05] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:06] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:06] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:07] [INFO] [74/86] Processing ZP9 (ZP9_4028328c.pdf)
+[2026-04-25 17:03:07] [INFO] Processing: ZP9_4028328c.pdf
+[2026-04-25 17:03:07] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:07] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:07] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:08] [INFO] [75/86] Processing ZPA (ZPA_4028328c.pdf)
+[2026-04-25 17:03:08] [INFO] Processing: ZPA_4028328c.pdf
+[2026-04-25 17:03:09] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:09] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:09] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:10] [INFO] [76/86] Processing ZPBDL (ZPBDL_4028328d.pdf)
+[2026-04-25 17:03:10] [INFO] Processing: ZPBDL_4028328d.pdf
+[2026-04-25 17:03:10] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:11] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:11] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:12] [INFO] [77/86] Processing ZPC (ZPC_4028328c.pdf)
+[2026-04-25 17:03:12] [INFO] Processing: ZPC_4028328c.pdf
+[2026-04-25 17:03:12] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:12] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:12] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:14] [INFO] [78/86] Processing ZPF (ZPF_4028328c.pdf)
+[2026-04-25 17:03:14] [INFO] Processing: ZPF_4028328c.pdf
+[2026-04-25 17:03:14] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:14] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:14] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:15] [INFO] [79/86] Processing ZPG (ZPG_4028328c.pdf)
+[2026-04-25 17:03:15] [INFO] Processing: ZPG_4028328c.pdf
+[2026-04-25 17:03:16] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:16] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:16] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:17] [INFO] [80/86] Processing ZPX30 (ZPX30_4028328d.pdf)
+[2026-04-25 17:03:17] [INFO] Processing: ZPX30_4028328d.pdf
+[2026-04-25 17:03:18] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:18] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:18] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:19] [INFO] [81/86] Processing ZSF (ZSF_4028328c.pdf)
+[2026-04-25 17:03:19] [INFO] Processing: ZSF_4028328c.pdf
+[2026-04-25 17:03:19] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:20] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:20] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:21] [INFO] [82/86] Processing ZSG (ZSG_4028328c.pdf)
+[2026-04-25 17:03:21] [INFO] Processing: ZSG_4028328c.pdf
+[2026-04-25 17:03:21] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:21] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:21] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:22] [INFO] [83/86] Processing ZTG (ZTG_4028328c.pdf)
+[2026-04-25 17:03:22] [INFO] Processing: ZTG_4028328c.pdf
+[2026-04-25 17:03:23] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:23] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:23] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:24] [INFO] [84/86] Processing ZTLRK (ZTLRK_4028328d.pdf)
+[2026-04-25 17:03:24] [INFO] Processing: ZTLRK_4028328d.pdf
+[2026-04-25 17:03:24] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:25] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:25] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:26] [INFO] [85/86] Processing ZTM25 (ZTM25_4028328d.pdf)
+[2026-04-25 17:03:26] [INFO] Processing: ZTM25_4028328d.pdf
+[2026-04-25 17:03:26] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:26] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:26] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:28] [INFO] [86/86] Processing ZVO (ZVO_4028328c.pdf)
+[2026-04-25 17:03:28] [INFO] Processing: ZVO_4028328c.pdf
+[2026-04-25 17:03:29] [INFO]   Fund category detected: PARA
+[2026-04-25 17:03:29] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:03:29] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:03:30] [INFO] === BATCH COMPLETE: 0 ✅  86 ❌ ===
+[2026-04-25 17:53:23] [INFO] ============================================================
+[2026-04-25 17:53:23] [INFO] KAP Portfolio Parser — pdfplumber + GLM fallback
+[2026-04-25 17:53:23] [INFO] PDF dir: /Users/admin/Desktop/projects/fon-app/pdfs/portfoy_dagilim
+[2026-04-25 17:53:23] [INFO] Zhipu key: SET
+[2026-04-25 17:53:23] [INFO] Supabase key: SET
+[2026-04-25 17:53:23] [INFO] ============================================================
+[2026-04-25 17:53:23] [INFO] Found 507 PDF files in /Users/admin/Desktop/projects/fon-app/pdfs/portfoy_dagilim
+[2026-04-25 17:53:23] [INFO] Pending: 86 PDFs (resume=False)
+[2026-04-25 17:53:23] [INFO] [1/86] Processing GTY (GTY_4028328d.pdf)
+[2026-04-25 17:53:23] [INFO] Processing: GTY_4028328d.pdf
+[2026-04-25 17:53:24] [INFO]   Fund category detected: SERBEST
+[2026-04-25 17:53:24] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 17:53:25] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 17:53:25] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:53:26] [INFO] [2/86] Processing GZM (GZM_4028328c.pdf)
+[2026-04-25 17:53:26] [INFO] Processing: GZM_4028328c.pdf
+[2026-04-25 17:53:30] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:53:36] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:53:36] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:53:37] [INFO] [3/86] Processing GZN (GZN_4028328c.pdf)
+[2026-04-25 17:53:37] [INFO] Processing: GZN_4028328c.pdf
+[2026-04-25 17:53:39] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:54:35] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:54:35] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:54:36] [INFO] [4/86] Processing KTS (KTS_4028328d.pdf)
+[2026-04-25 17:54:36] [INFO] Processing: KTS_4028328d.pdf
+[2026-04-25 17:54:38] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:54:41] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:54:41] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:54:43] [INFO] [5/86] Processing KVK (KVK_4028328d.pdf)
+[2026-04-25 17:54:43] [INFO] Processing: KVK_4028328d.pdf
+[2026-04-25 17:54:43] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:54:45] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:54:45] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:54:46] [INFO] [6/86] Processing MJG (MJG_4028328d.pdf)
+[2026-04-25 17:54:46] [INFO] Processing: MJG_4028328d.pdf
+[2026-04-25 17:54:47] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:54:49] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:54:49] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:54:50] [INFO] [7/86] Processing MLK (MLK_4028328d.pdf)
+[2026-04-25 17:54:50] [INFO] Processing: MLK_4028328d.pdf
+[2026-04-25 17:54:50] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:54:51] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:54:51] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:54:52] [INFO] [8/86] Processing MRI (MRI_4028328c.pdf)
+[2026-04-25 17:54:52] [INFO] Processing: MRI_4028328c.pdf
+[2026-04-25 17:54:53] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:54:54] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:54:54] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:54:55] [INFO] [9/86] Processing MTG (MTG_4028328c.pdf)
+[2026-04-25 17:54:55] [INFO] Processing: MTG_4028328c.pdf
+[2026-04-25 17:54:56] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:54:56] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:54:56] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:54:58] [INFO] [10/86] Processing ODD (ODD_4028328c.pdf)
+[2026-04-25 17:54:58] [INFO] Processing: ODD_4028328c.pdf
+[2026-04-25 17:54:58] [INFO]   Fund category detected: SERBEST
+[2026-04-25 17:54:58] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 17:54:59] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 17:54:59] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:55:00] [INFO] [11/86] Processing OFS (OFS_4028328c.pdf)
+[2026-04-25 17:55:00] [INFO] Processing: OFS_4028328c.pdf
+[2026-04-25 17:55:02] [INFO]   Fund category detected: SERBEST
+[2026-04-25 17:55:02] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 17:55:04] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 17:55:04] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:55:05] [INFO] [12/86] Processing OHK (OHK_4028328c.pdf)
+[2026-04-25 17:55:05] [INFO] Processing: OHK_4028328c.pdf
+[2026-04-25 17:55:06] [WARN] parse_portfolio_tables error OHK_4028328c.pdf: Unexpected EOF
+[2026-04-25 17:55:07] [WARN]   pdfplumber failed for UNKNOWN fund, fallback decision: 
+[2026-04-25 17:55:07] [WARN]   Attempting GLM fallback...
+[2026-04-25 17:55:07] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:55:09] [INFO] [13/86] Processing OKD (OKD_4028328c.pdf)
+[2026-04-25 17:55:09] [INFO] Processing: OKD_4028328c.pdf
+[2026-04-25 17:55:13] [INFO]   Fund category detected: PARA
+[2026-04-25 17:55:17] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:55:17] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:55:18] [INFO] [14/86] Processing ONE (ONE_4028328d.pdf)
+[2026-04-25 17:55:18] [INFO] Processing: ONE_4028328d.pdf
+[2026-04-25 17:55:19] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:55:20] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:55:20] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:55:21] [INFO] [15/86] Processing OYL (OYL_4028328c.pdf)
+[2026-04-25 17:55:21] [INFO] Processing: OYL_4028328c.pdf
+[2026-04-25 17:55:28] [WARN] parse_portfolio_tables error OYL_4028328c.pdf: Unexpected EOF
+[2026-04-25 17:55:34] [WARN]   pdfplumber failed for UNKNOWN fund, fallback decision: 
+[2026-04-25 17:55:34] [WARN]   Attempting GLM fallback...
+[2026-04-25 17:55:34] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:55:35] [INFO] [16/86] Processing PBK (PBK_4028328d.pdf)
+[2026-04-25 17:55:35] [INFO] Processing: PBK_4028328d.pdf
+[2026-04-25 17:55:36] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:55:38] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:55:38] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:55:39] [INFO] [17/86] Processing PBN (PBN_4028328c.pdf)
+[2026-04-25 17:55:39] [INFO] Processing: PBN_4028328c.pdf
+[2026-04-25 17:55:42] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:55:45] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:55:45] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:55:46] [INFO] [18/86] Processing PDD (PDD_4028328d.pdf)
+[2026-04-25 17:55:46] [INFO] Processing: PDD_4028328d.pdf
+[2026-04-25 17:55:47] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:55:50] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:55:50] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:55:51] [INFO] [19/86] Processing PFO (PFO_4028328c.pdf)
+[2026-04-25 17:55:51] [INFO] Processing: PFO_4028328c.pdf
+[2026-04-25 17:55:52] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:55:52] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:55:52] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:55:53] [INFO] [20/86] Processing PGD (PGD_4028328d.pdf)
+[2026-04-25 17:55:53] [INFO] Processing: PGD_4028328d.pdf
+[2026-04-25 17:55:55] [INFO]   Fund category detected: PARA
+[2026-04-25 17:55:56] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:55:56] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:55:57] [INFO] [21/86] Processing PHK (PHK_4028328c.pdf)
+[2026-04-25 17:55:57] [INFO] Processing: PHK_4028328c.pdf
+[2026-04-25 17:55:57] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:55:58] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:55:58] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:55:59] [INFO] [22/86] Processing PKD (PKD_4028328c.pdf)
+[2026-04-25 17:55:59] [INFO] Processing: PKD_4028328c.pdf
+[2026-04-25 17:56:00] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:56:01] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:56:01] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:56:02] [INFO] [23/86] Processing PPB (PPB_4028328c.pdf)
+[2026-04-25 17:56:02] [INFO] Processing: PPB_4028328c.pdf
+[2026-04-25 17:56:02] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:56:03] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:56:03] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:56:05] [INFO] [24/86] Processing PPE (PPE_4028328c.pdf)
+[2026-04-25 17:56:05] [INFO] Processing: PPE_4028328c.pdf
+[2026-04-25 17:56:05] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:56:06] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:56:06] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:56:07] [INFO] [25/86] Processing PPM (PPM_4028328c.pdf)
+[2026-04-25 17:56:07] [INFO] Processing: PPM_4028328c.pdf
+[2026-04-25 17:56:13] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:56:27] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:56:27] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:56:28] [INFO] [26/86] Processing PPS (PPS_4028328c.pdf)
+[2026-04-25 17:56:28] [INFO] Processing: PPS_4028328c.pdf
+[2026-04-25 17:56:28] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:56:29] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:56:29] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:56:31] [INFO] [27/86] Processing RBI (RBI_4028328d.pdf)
+[2026-04-25 17:56:31] [INFO] Processing: RBI_4028328d.pdf
+[2026-04-25 17:56:31] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:56:32] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:56:32] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:56:33] [INFO] [28/86] Processing RBN (RBN_4028328d.pdf)
+[2026-04-25 17:56:33] [INFO] Processing: RBN_4028328d.pdf
+[2026-04-25 17:56:35] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:56:37] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:56:37] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:56:38] [INFO] [29/86] Processing RBR (RBR_4028328d.pdf)
+[2026-04-25 17:56:38] [INFO] Processing: RBR_4028328d.pdf
+[2026-04-25 17:56:39] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:56:39] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:56:39] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:56:40] [INFO] [30/86] Processing RDT (RDT_4028328c.pdf)
+[2026-04-25 17:56:40] [INFO] Processing: RDT_4028328c.pdf
+[2026-04-25 17:56:41] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:56:41] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:56:41] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:56:42] [INFO] [31/86] Processing RIH (RIH_4028328d.pdf)
+[2026-04-25 17:56:42] [INFO] Processing: RIH_4028328d.pdf
+[2026-04-25 17:56:43] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:56:43] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:56:43] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:56:44] [INFO] [32/86] Processing RIK (RIK_4028328d.pdf)
+[2026-04-25 17:56:44] [INFO] Processing: RIK_4028328d.pdf
+[2026-04-25 17:56:49] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:56:58] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:56:58] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:56:59] [INFO] [33/86] Processing RPL (RPL_4028328d.pdf)
+[2026-04-25 17:56:59] [INFO] Processing: RPL_4028328d.pdf
+[2026-04-25 17:57:02] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:57:14] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:57:14] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:57:15] [INFO] [34/86] Processing RTP (RTP_4028328d.pdf)
+[2026-04-25 17:57:15] [INFO] Processing: RTP_4028328d.pdf
+[2026-04-25 17:57:18] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:57:24] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:57:24] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:57:26] [INFO] [35/86] Processing SOS (SOS_4028328d.pdf)
+[2026-04-25 17:57:26] [INFO] Processing: SOS_4028328d.pdf
+[2026-04-25 17:57:27] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:57:28] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:57:28] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:57:29] [INFO] [36/86] Processing SSF (SSF_4028328d.pdf)
+[2026-04-25 17:57:29] [INFO] Processing: SSF_4028328d.pdf
+[2026-04-25 17:57:29] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:57:30] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:57:30] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:57:31] [INFO] [37/86] Processing SSK (SSK_4028328c.pdf)
+[2026-04-25 17:57:31] [INFO] Processing: SSK_4028328c.pdf
+[2026-04-25 17:57:32] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:57:34] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:57:34] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:57:35] [INFO] [38/86] Processing SUA (SUA_4028328d.pdf)
+[2026-04-25 17:57:35] [INFO] Processing: SUA_4028328d.pdf
+[2026-04-25 17:57:43] [WARN] parse_portfolio_tables error SUA_4028328d.pdf: No /Root object! - Is this really a PDF?
+[2026-04-25 17:57:51] [WARN]   pdfplumber failed for UNKNOWN fund, fallback decision: 
+[2026-04-25 17:57:51] [WARN]   Attempting GLM fallback...
+[2026-04-25 17:57:51] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:57:53] [INFO] [39/86] Processing SUB (SUB_4028328d.pdf)
+[2026-04-25 17:57:53] [INFO] Processing: SUB_4028328d.pdf
+[2026-04-25 17:57:56] [INFO]   Fund category detected: PARA
+[2026-04-25 17:57:59] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:57:59] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:58:00] [INFO] [40/86] Processing SUC (SUC_4028328d.pdf)
+[2026-04-25 17:58:00] [INFO] Processing: SUC_4028328d.pdf
+[2026-04-25 17:58:03] [INFO]   Fund category detected: PARA
+[2026-04-25 17:58:06] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 17:58:06] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:58:07] [INFO] [41/86] Processing TAO (TAO_4028328c.pdf)
+[2026-04-25 17:58:07] [INFO] Processing: TAO_4028328c.pdf
+[2026-04-25 17:58:10] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:58:13] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:58:13] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:58:14] [INFO] [42/86] Processing TCF (TCF_4028328c.pdf)
+[2026-04-25 17:58:14] [INFO] Processing: TCF_4028328c.pdf
+[2026-04-25 17:58:17] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:58:19] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:58:19] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:58:20] [INFO] [43/86] Processing TGN (TGN_4028328c.pdf)
+[2026-04-25 17:58:20] [INFO] Processing: TGN_4028328c.pdf
+[2026-04-25 17:58:22] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:58:23] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:58:23] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:58:24] [INFO] [44/86] Processing TJT (TJT_4028328c.pdf)
+[2026-04-25 17:58:24] [INFO] Processing: TJT_4028328c.pdf
+[2026-04-25 17:58:26] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:58:28] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:58:28] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:58:29] [INFO] [45/86] Processing TLE (TLE_4028328c.pdf)
+[2026-04-25 17:58:29] [INFO] Processing: TLE_4028328c.pdf
+[2026-04-25 17:58:30] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:58:32] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:58:32] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:58:34] [INFO] [46/86] Processing TLY (TLY_4028328d.pdf)
+[2026-04-25 17:58:34] [INFO] Processing: TLY_4028328d.pdf
+[2026-04-25 17:58:35] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:58:36] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:58:36] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:58:37] [INFO] [47/86] Processing TP2 (TP2_4028328d.pdf)
+[2026-04-25 17:58:37] [INFO] Processing: TP2_4028328d.pdf
+[2026-04-25 17:59:04] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:59:15] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:59:15] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:59:16] [INFO] [48/86] Processing TPC (TPC_4028328c.pdf)
+[2026-04-25 17:59:16] [INFO] Processing: TPC_4028328c.pdf
+[2026-04-25 17:59:18] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:59:21] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:59:21] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:59:22] [INFO] [49/86] Processing TPJ (TPJ_4028328c.pdf)
+[2026-04-25 17:59:22] [INFO] Processing: TPJ_4028328c.pdf
+[2026-04-25 17:59:26] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:59:29] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:59:29] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:59:30] [INFO] [50/86] Processing TPL (TPL_4028328c.pdf)
+[2026-04-25 17:59:30] [INFO] Processing: TPL_4028328c.pdf
+[2026-04-25 17:59:34] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:59:37] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:59:37] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:59:38] [INFO] [51/86] Processing TPP (TPP_4028328c.pdf)
+[2026-04-25 17:59:38] [INFO] Processing: TPP_4028328c.pdf
+[2026-04-25 17:59:40] [INFO]   Fund category detected: KIRA
+[2026-04-25 17:59:58] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 17:59:58] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 17:59:59] [INFO] [52/86] Processing TPV (TPV_4028328c.pdf)
+[2026-04-25 17:59:59] [INFO] Processing: TPV_4028328c.pdf
+[2026-04-25 18:00:00] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:00:01] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:00:01] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:00:02] [INFO] [53/86] Processing TPZ (TPZ_4028328c.pdf)
+[2026-04-25 18:00:02] [INFO] Processing: TPZ_4028328c.pdf
+[2026-04-25 18:00:03] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:00:04] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:00:04] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:00:05] [INFO] [54/86] Processing TRO (TRO_4028328d.pdf)
+[2026-04-25 18:00:05] [INFO] Processing: TRO_4028328d.pdf
+[2026-04-25 18:00:05] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:00:06] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:00:06] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:00:07] [INFO] [55/86] Processing TZL (TZL_4028328c.pdf)
+[2026-04-25 18:00:07] [INFO] Processing: TZL_4028328c.pdf
+[2026-04-25 18:00:08] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:00:17] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:00:17] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:00:18] [INFO] [56/86] Processing TZV (TZV_4028328c.pdf)
+[2026-04-25 18:00:18] [INFO] Processing: TZV_4028328c.pdf
+[2026-04-25 18:00:19] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:00:22] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:00:22] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:00:23] [INFO] [57/86] Processing ULH (ULH_4028328d.pdf)
+[2026-04-25 18:00:23] [INFO] Processing: ULH_4028328d.pdf
+[2026-04-25 18:00:26] [INFO]   Fund category detected: SERBEST
+[2026-04-25 18:00:26] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 18:00:29] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 18:00:29] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:00:30] [INFO] [58/86] Processing UP1 (UP1_4028328d.pdf)
+[2026-04-25 18:00:30] [INFO] Processing: UP1_4028328d.pdf
+[2026-04-25 18:00:36] [INFO]   Fund category detected: PARA
+[2026-04-25 18:00:42] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 18:00:42] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:00:43] [INFO] [59/86] Processing UP2 (UP2_4028328d.pdf)
+[2026-04-25 18:00:43] [INFO] Processing: UP2_4028328d.pdf
+[2026-04-25 18:00:46] [WARN] parse_portfolio_tables error UP2_4028328d.pdf: No /Root object! - Is this really a PDF?
+[2026-04-25 18:00:48] [WARN]   pdfplumber failed for UNKNOWN fund, fallback decision: 
+[2026-04-25 18:00:48] [WARN]   Attempting GLM fallback...
+[2026-04-25 18:00:48] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:00:49] [INFO] [60/86] Processing UPD (UPD_4028328d.pdf)
+[2026-04-25 18:00:49] [INFO] Processing: UPD_4028328d.pdf
+[2026-04-25 18:00:52] [INFO]   Fund category detected: SERBEST
+[2026-04-25 18:00:52] [WARN]   Skipping SERBEST fon — no standard portföy table
+[2026-04-25 18:00:56] [WARN]   pdfplumber failed for SERBEST fund, fallback decision: 
+[2026-04-25 18:00:56] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:00:57] [INFO] [61/86] Processing UPH (UPH_4028328d.pdf)
+[2026-04-25 18:00:57] [INFO] Processing: UPH_4028328d.pdf
+[2026-04-25 18:01:02] [WARN] parse_portfolio_tables error UPH_4028328d.pdf: Unexpected EOF
+[2026-04-25 18:01:07] [WARN]   pdfplumber failed for UNKNOWN fund, fallback decision: 
+[2026-04-25 18:01:07] [WARN]   Attempting GLM fallback...
+[2026-04-25 18:01:07] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:01:08] [INFO] [62/86] Processing UPP (UPP_4028328d.pdf)
+[2026-04-25 18:01:08] [INFO] Processing: UPP_4028328d.pdf
+[2026-04-25 18:01:15] [INFO]   Fund category detected: PARA
+[2026-04-25 18:01:21] [WARN]   pdfplumber failed for PARA fund, fallback decision: 
+[2026-04-25 18:01:21] [ERROR]   ❌ PARA fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:01:22] [INFO] [63/86] Processing USDTR (USDTR_4028328c.pdf)
+[2026-04-25 18:01:22] [INFO] Processing: USDTR_4028328c.pdf
+[2026-04-25 18:01:23] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:01:23] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:01:23] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:01:24] [INFO] [64/86] Processing VMV (VMV_4028328c.pdf)
+[2026-04-25 18:01:24] [INFO] Processing: VMV_4028328c.pdf
+[2026-04-25 18:01:27] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:01:30] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:01:30] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:01:31] [INFO] [65/86] Processing VRK (VRK_4028328c.pdf)
+[2026-04-25 18:01:31] [INFO] Processing: VRK_4028328c.pdf
+[2026-04-25 18:01:32] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:01:33] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:01:33] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:01:34] [INFO] [66/86] Processing ZBI (ZBI_4028328c.pdf)
+[2026-04-25 18:01:34] [INFO] Processing: ZBI_4028328c.pdf
+[2026-04-25 18:01:35] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:01:36] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:01:36] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:01:37] [INFO] [67/86] Processing ZBJ (ZBJ_4028328c.pdf)
+[2026-04-25 18:01:37] [INFO] Processing: ZBJ_4028328c.pdf
+[2026-04-25 18:01:38] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:01:42] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:01:42] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:01:43] [INFO] [68/86] Processing ZCN (ZCN_4028328c.pdf)
+[2026-04-25 18:01:43] [INFO] Processing: ZCN_4028328c.pdf
+[2026-04-25 18:01:43] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:01:44] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:01:44] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:01:45] [INFO] [69/86] Processing ZELOT (ZELOT_4028328d.pdf)
+[2026-04-25 18:01:45] [INFO] Processing: ZELOT_4028328d.pdf
+[2026-04-25 18:01:45] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:01:46] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:01:46] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:01:47] [INFO] [70/86] Processing ZGOLD (ZGOLD_4028328d.pdf)
+[2026-04-25 18:01:47] [INFO] Processing: ZGOLD_4028328d.pdf
+[2026-04-25 18:01:47] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:01:48] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:01:48] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:01:49] [INFO] [71/86] Processing ZMY (ZMY_4028328c.pdf)
+[2026-04-25 18:01:49] [INFO] Processing: ZMY_4028328c.pdf
+[2026-04-25 18:01:50] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:01:51] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:01:51] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:01:52] [INFO] [72/86] Processing ZP6 (ZP6_4028328c.pdf)
+[2026-04-25 18:01:52] [INFO] Processing: ZP6_4028328c.pdf
+[2026-04-25 18:01:52] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:01:53] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:01:53] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:01:54] [INFO] [73/86] Processing ZP8 (ZP8_4028328c.pdf)
+[2026-04-25 18:01:54] [INFO] Processing: ZP8_4028328c.pdf
+[2026-04-25 18:01:55] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:01:56] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:01:56] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:01:57] [INFO] [74/86] Processing ZP9 (ZP9_4028328c.pdf)
+[2026-04-25 18:01:57] [INFO] Processing: ZP9_4028328c.pdf
+[2026-04-25 18:01:57] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:01:58] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:01:58] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:01:59] [INFO] [75/86] Processing ZPA (ZPA_4028328c.pdf)
+[2026-04-25 18:01:59] [INFO] Processing: ZPA_4028328c.pdf
+[2026-04-25 18:01:59] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:02:00] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:02:00] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:02:01] [INFO] [76/86] Processing ZPBDL (ZPBDL_4028328d.pdf)
+[2026-04-25 18:02:01] [INFO] Processing: ZPBDL_4028328d.pdf
+[2026-04-25 18:02:02] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:02:02] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:02:02] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:02:03] [INFO] [77/86] Processing ZPC (ZPC_4028328c.pdf)
+[2026-04-25 18:02:03] [INFO] Processing: ZPC_4028328c.pdf
+[2026-04-25 18:02:04] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:02:05] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:02:05] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:02:06] [INFO] [78/86] Processing ZPF (ZPF_4028328c.pdf)
+[2026-04-25 18:02:06] [INFO] Processing: ZPF_4028328c.pdf
+[2026-04-25 18:02:06] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:02:07] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:02:07] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:02:08] [INFO] [79/86] Processing ZPG (ZPG_4028328c.pdf)
+[2026-04-25 18:02:08] [INFO] Processing: ZPG_4028328c.pdf
+[2026-04-25 18:02:08] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:02:09] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:02:09] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:02:11] [INFO] [80/86] Processing ZPX30 (ZPX30_4028328d.pdf)
+[2026-04-25 18:02:11] [INFO] Processing: ZPX30_4028328d.pdf
+[2026-04-25 18:02:11] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:02:12] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:02:12] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:02:13] [INFO] [81/86] Processing ZSF (ZSF_4028328c.pdf)
+[2026-04-25 18:02:13] [INFO] Processing: ZSF_4028328c.pdf
+[2026-04-25 18:02:13] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:02:14] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:02:14] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:02:15] [INFO] [82/86] Processing ZSG (ZSG_4028328c.pdf)
+[2026-04-25 18:02:15] [INFO] Processing: ZSG_4028328c.pdf
+[2026-04-25 18:02:15] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:02:16] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:02:16] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:02:17] [INFO] [83/86] Processing ZTG (ZTG_4028328c.pdf)
+[2026-04-25 18:02:17] [INFO] Processing: ZTG_4028328c.pdf
+[2026-04-25 18:02:17] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:02:18] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:02:18] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:02:19] [INFO] [84/86] Processing ZTLRK (ZTLRK_4028328d.pdf)
+[2026-04-25 18:02:19] [INFO] Processing: ZTLRK_4028328d.pdf
+[2026-04-25 18:02:19] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:02:20] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:02:20] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:02:21] [INFO] [85/86] Processing ZTM25 (ZTM25_4028328d.pdf)
+[2026-04-25 18:02:21] [INFO] Processing: ZTM25_4028328d.pdf
+[2026-04-25 18:02:22] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:02:22] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:02:22] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:02:23] [INFO] [86/86] Processing ZVO (ZVO_4028328c.pdf)
+[2026-04-25 18:02:23] [INFO] Processing: ZVO_4028328c.pdf
+[2026-04-25 18:02:24] [INFO]   Fund category detected: KIRA
+[2026-04-25 18:02:29] [WARN]   pdfplumber failed for KIRA fund, fallback decision: 
+[2026-04-25 18:02:29] [ERROR]   ❌ SERBEST fund: pdfplumber failed, GLM not applicable
+[2026-04-25 18:02:30] [INFO] === BATCH COMPLETE: 0 ✅  86 ❌ ===

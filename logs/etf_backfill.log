@@ -1,0 +1,1407 @@
+Total ETFs in foreign_etfs: 1000
+Already have 252+ rows: 0
+Need to fetch: 1000
+
+[Batch 1/200] Fetching ['AGG', 'BND', 'CAFG', 'CAFX', 'CAIE']...
+  AGG: 0 prices inserted
+  BND: 0 prices inserted
+  CAFG: 0 prices inserted
+  CAFX: 0 prices inserted
+  CAIE: 0 prices inserted
+
+[Batch 2/200] Fetching ['CAIQ', 'CALF', 'CALI', 'CAM', 'CAML']...
+  CAIQ: 0 prices inserted
+  CALF: 0 prices inserted
+  CALI: 0 prices inserted
+  CAM: 0 prices inserted
+  CAML: 0 prices inserted
+
+[Batch 3/200] Fetching ['CAMX', 'CANC', 'CANE', 'CANQ', 'CAOS']...
+  CAMX: 0 prices inserted
+  CANC: 0 prices inserted
+  CANE: 0 prices inserted
+  CANQ: 0 prices inserted
+  CAOS: 0 prices inserted
+
+[Batch 4/200] Fetching ['CAPE', 'CARD', 'CARK', 'CARU', 'CARY']...
+  CAPE: 0 prices inserted
+  CARD: 0 prices inserted
+  CARK: 0 prices inserted
+  CARU: 0 prices inserted
+  CARY: 0 prices inserted
+
+[Batch 5/200] Fetching ['CARZ', 'CAS', 'CATF', 'CATH', 'CBLS']...
+  CARZ: 0 prices inserted
+  CAS: 0 prices inserted
+  CATF: 0 prices inserted
+  CATH: 0 prices inserted
+  CBLS: 0 prices inserted
+
+[Batch 6/200] Fetching ['CBOA', 'CBOJ', 'CBOL', 'CBON', 'CBOO']...
+  CBOA: 0 prices inserted
+  CBOJ: 0 prices inserted
+  CBOL: 0 prices inserted
+  CBON: 0 prices inserted
+  CBOO: 0 prices inserted
+
+[Batch 7/200] Fetching ['CBOX', 'CBOY', 'CBSE', 'CBTA', 'CBTJ']...
+  CBOX: 0 prices inserted
+  CBOY: 0 prices inserted
+  CBSE: 0 prices inserted
+  CBTA: 0 prices inserted
+  CBTJ: 0 prices inserted
+
+[Batch 8/200] Fetching ['CBTL', 'CBTO', 'CBTY', 'CBXA', 'CBXJ']...
+  CBTL: 0 prices inserted
+  CBTO: 0 prices inserted
+  CBTY: 0 prices inserted
+  CBXA: 0 prices inserted
+  CBXJ: 0 prices inserted
+
+[Batch 9/200] Fetching ['CBXL', 'CBXO', 'CBXY', 'CCEF', 'CCFE']...
+  CBXL: 0 prices inserted
+  CBXO: 0 prices inserted
+  CBXY: 0 prices inserted
+  CCEF: 0 prices inserted
+  CCFE: 0 prices inserted
+
+[Batch 10/200] Fetching ['CCNR', 'CCOM', 'CCOR', 'CCSB', 'CCSO']...
+  CCNR: 0 prices inserted
+  CCOM: 0 prices inserted
+  CCOR: 0 prices inserted
+  CCSB: 0 prices inserted
+  CCSO: 0 prices inserted
+
+[Batch 11/200] Fetching ['CCUP', 'CDC', 'CDEI', 'CDIG', 'CDL']...
+  CCUP: 0 prices inserted
+  CDC: 0 prices inserted
+  CDEI: 0 prices inserted
+  CDIG: 0 prices inserted
+  CDL: 0 prices inserted
+
+[Batch 12/200] Fetching ['CDX', 'CEFA', 'CEFD', 'CEFS', 'CEFZ']...
+  CDX: 0 prices inserted
+  CEFA: 0 prices inserted
+  CEFD: 0 prices inserted
+  CEFS: 0 prices inserted
+  CEFZ: 0 prices inserted
+
+[Batch 13/200] Fetching ['CEGX', 'CEMB', 'CEPI', 'CERY', 'CEW']...
+  CEGX: 0 prices inserted
+  CEMB: 0 prices inserted
+  CEPI: 0 prices inserted
+  CERY: 0 prices inserted
+  CEW: 0 prices inserted
+
+[Batch 14/200] Fetching ['CFA', 'CFIT', 'CFO', 'CGBL', 'CGCB']...
+  CFA: 0 prices inserted
+  CFIT: 0 prices inserted
+  CFO: 0 prices inserted
+  CGBL: 0 prices inserted
+  CGCB: 0 prices inserted
+
+[Batch 15/200] Fetching ['CGCP', 'CGCV', 'CGDG', 'CGDV', 'CGGE']...
+  CGCP: 0 prices inserted
+  CGCV: 0 prices inserted
+  CGDG: 0 prices inserted
+  CGDV: 0 prices inserted
+  CGGE: 0 prices inserted
+
+[Batch 16/200] Fetching ['CGGG', 'CGGO', 'CGGR', 'CGHM', 'CGHY']...
+  CGGG: 0 prices inserted
+  CGGO: 0 prices inserted
+  CGGR: 0 prices inserted
+  CGHM: 0 prices inserted
+  CGHY: 0 prices inserted
+
+[Batch 17/200] Fetching ['CGIB', 'CGIC', 'CGIE', 'CGMM', 'CGMS']...
+  CGIB: 0 prices inserted
+  CGIC: 0 prices inserted
+  CGIE: 0 prices inserted
+  CGMM: 0 prices inserted
+  CGMS: 0 prices inserted
+
+[Batch 18/200] Fetching ['CGMU', 'CGNG', 'CGRO', 'CGSD', 'CGSM']...
+  CGMU: 0 prices inserted
+  CGNG: 0 prices inserted
+  CGRO: 0 prices inserted
+  CGSD: 0 prices inserted
+  CGSM: 0 prices inserted
+
+[Batch 19/200] Fetching ['CGUI', 'CGUS', 'CGV', 'CGVV', 'CGW']...
+  CGUI: 0 prices inserted
+  CGUS: 0 prices inserted
+  CGV: 0 prices inserted
+  CGVV: 0 prices inserted
+  CGW: 0 prices inserted
+
+[Batch 20/200] Fetching ['CGXU', 'CHAT', 'CHAU', 'CHGX', 'CHIQ']...
+  CGXU: 0 prices inserted
+  CHAT: 0 prices inserted
+  CHAU: 0 prices inserted
+  CHGX: 0 prices inserted
+  CHIQ: 0 prices inserted
+
+[Batch 21/200] Fetching ['CHNL', 'CHNU', 'CHPS', 'CHPX', 'CHPY']...
+  CHNL: 0 prices inserted
+  CHNU: 0 prices inserted
+  CHPS: 0 prices inserted
+  CHPX: 0 prices inserted
+  CHPY: 0 prices inserted
+
+[Batch 22/200] Fetching ['CHRI', 'CIBR', 'CIFG', 'CIFU', 'CLCG']...
+  CHRI: 0 prices inserted
+  CIBR: 0 prices inserted
+  CIFG: 0 prices inserted
+  CIFU: 0 prices inserted
+  CLCG: 0 prices inserted
+
+[Batch 23/200] Fetching ['CLCV', 'CLIP', 'CLIX', 'CLOA', 'CLOB']...
+  CLCV: 0 prices inserted
+  CLIP: 0 prices inserted
+  CLIX: 0 prices inserted
+  CLOA: 0 prices inserted
+  CLOB: 0 prices inserted
+
+[Batch 24/200] Fetching ['CLOD', 'CLOI', 'CLOU', 'CLOX', 'CLOZ']...
+  CLOD: 0 prices inserted
+  CLOI: 0 prices inserted
+  CLOU: 0 prices inserted
+  CLOX: 0 prices inserted
+  CLOZ: 0 prices inserted
+
+[Batch 25/200] Fetching ['CLSE', 'CLSM', 'CLSX', 'CLSZ', 'CMBO']...
+  CLSE: 0 prices inserted
+  CLSM: 0 prices inserted
+  CLSX: 0 prices inserted
+  CLSZ: 0 prices inserted
+  CMBO: 0 prices inserted
+
+[Batch 26/200] Fetching ['CMBS', 'CMCI', 'CMDT', 'CMDY', 'CMF']...
+  CMBS: 0 prices inserted
+  CMCI: 0 prices inserted
+  CMDT: 0 prices inserted
+  CMDY: 0 prices inserted
+  CMF: 0 prices inserted
+
+[Batch 27/200] Fetching ['CMGG', 'CNAV', 'CNBS', 'CNCG', 'CNEQ']...
+  CMGG: 0 prices inserted
+  CNAV: 0 prices inserted
+  CNBS: 0 prices inserted
+  CNCG: 0 prices inserted
+  CNEQ: 0 prices inserted
+
+[Batch 28/200] Fetching ['CNQQ', 'CNRG', 'CNXT', 'CNYA', 'COAL']...
+  CNQQ: 0 prices inserted
+  CNRG: 0 prices inserted
+  CNXT: 0 prices inserted
+  CNYA: 0 prices inserted
+  COAL: 0 prices inserted
+
+[Batch 29/200] Fetching ['COHX', 'COIG', 'COII', 'COIO', 'COIW']...
+  COHX: 0 prices inserted
+  COIG: 0 prices inserted
+  COII: 0 prices inserted
+  COIO: 0 prices inserted
+  COIW: 0 prices inserted
+
+[Batch 30/200] Fetching ['COLO', 'COM', 'COMB', 'COMD', 'COMT']...
+  COLO: 0 prices inserted
+  COM: 0 prices inserted
+  COMB: 0 prices inserted
+  COMD: 0 prices inserted
+  COMT: 0 prices inserted
+
+[Batch 31/200] Fetching ['CONI', 'CONL', 'CONX', 'CONY', 'COPA']...
+  CONI: 0 prices inserted
+  CONL: 0 prices inserted
+  CONX: 0 prices inserted
+  CONY: 0 prices inserted
+  COPA: 0 prices inserted
+
+[Batch 32/200] Fetching ['COPJ', 'COPP', 'COPX', 'COPY', 'CORB']...
+  COPJ: 0 prices inserted
+  COPP: 0 prices inserted
+  COPX: 0 prices inserted
+  COPY: 0 prices inserted
+  CORB: 0 prices inserted
+
+[Batch 33/200] Fetching ['CORD', 'CORN', 'CORO', 'CORP', 'COSW']...
+  CORD: 0 prices inserted
+  CORN: 0 prices inserted
+  CORO: 0 prices inserted
+  CORP: 0 prices inserted
+  COSW: 0 prices inserted
+
+[Batch 34/200] Fetching ['COTG', 'COWG', 'COWS', 'COWZ', 'COYY']...
+  COTG: 0 prices inserted
+  COWG: 0 prices inserted
+  COWS: 0 prices inserted
+  COWZ: 0 prices inserted
+  COYY: 0 prices inserted
+
+[Batch 35/200] Fetching ['COZX', 'CPAG', 'CPAI', 'CPER', 'CPHY']...
+  COZX: 0 prices inserted
+  CPAG: 0 prices inserted
+  CPAI: 0 prices inserted
+  CPER: 0 prices inserted
+  CPHY: 0 prices inserted
+
+[Batch 36/200] Fetching ['CPII', 'CPLB', 'CPLS', 'CPNJ', 'CPNM']...
+  CPII: 0 prices inserted
+  CPLB: 0 prices inserted
+  CPLS: 0 prices inserted
+  CPNJ: 0 prices inserted
+  CPNM: 0 prices inserted
+
+[Batch 37/200] Fetching ['CPNQ', 'CPNS', 'CPRA', 'CPRJ', 'CPRO']...
+  CPNQ: 0 prices inserted
+  CPNS: 0 prices inserted
+  CPRA: 0 prices inserted
+  CPRJ: 0 prices inserted
+  CPRO: 0 prices inserted
+
+[Batch 38/200] Fetching ['CPRY', 'CPSA', 'CPSD', 'CPSF', 'CPSJ']...
+  CPRY: 0 prices inserted
+  CPSA: 0 prices inserted
+  CPSD: 0 prices inserted
+  CPSF: 0 prices inserted
+  CPSJ: 0 prices inserted
+
+[Batch 39/200] Fetching ['CPSL', 'CPSM', 'CPSN', 'CPSO', 'CPSP']...
+  CPSL: 0 prices inserted
+  CPSM: 0 prices inserted
+  CPSN: 0 prices inserted
+  CPSO: 0 prices inserted
+  CPSP: 0 prices inserted
+
+[Batch 40/200] Fetching ['CPSR', 'CPST', 'CPSU', 'CPSY', 'CPXR']...
+  CPSR: 0 prices inserted
+  CPST: 0 prices inserted
+  CPSU: 0 prices inserted
+  CPSY: 0 prices inserted
+  CPXR: 0 prices inserted
+
+[Batch 41/200] Fetching ['CQQQ', 'CRAK', 'CRBN', 'CRCD', 'CRCG']...
+  CQQQ: 0 prices inserted
+  CRAK: 0 prices inserted
+  CRBN: 0 prices inserted
+  CRCD: 0 prices inserted
+  CRCG: 0 prices insertedFailed to get ticker 'DDIV' reason: Failed to perform, curl: (28) Operation timed out after 10004 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+
+
+[Batch 42/200] Fetching ['CRDD', 'CRDT', 'CRDU', 'CRDX', 'CRED']...
+  CRDD: 0 prices inserted
+  CRDT: 0 prices inserted
+  CRDU: 0 prices inserted
+  CRDX: 0 prices inserted
+  CRED: 0 prices inserted
+
+[Batch 43/200] Fetching ['CRMG', 'CRMU', 'CRMX', 'CRPT', 'CRSH']...
+  CRMG: 0 prices inserted
+  CRMU: 0 prices inserted
+  CRMX: 0 prices inserted
+  CRPT: 0 prices inserted
+  CRSH: 0 prices inserted
+
+[Batch 44/200] Fetching ['CRTC', 'CRUX', 'CRWG', 'CRWL', 'CRWU']...
+  CRTC: 0 prices inserted
+  CRUX: 0 prices inserted
+  CRWG: 0 prices inserted
+  CRWL: 0 prices inserted
+  CRWU: 0 prices inserted
+
+[Batch 45/200] Fetching ['CSB', 'CSCL', 'CSCS', 'CSD', 'CSEX']...
+  CSB: 0 prices inserted
+  CSCL: 0 prices inserted
+  CSCS: 0 prices inserted
+  CSD: 0 prices inserted
+  CSEX: 0 prices inserted
+
+[Batch 46/200] Fetching ['CSHI', 'CSHP', 'CSM', 'CSMD', 'CSNR']...
+  CSHI: 0 prices inserted
+  CSHP: 0 prices inserted
+  CSM: 0 prices inserted
+  CSMD: 0 prices inserted
+  CSNR: 0 prices inserted
+
+[Batch 47/200] Fetching ['CSPF', 'CSRE', 'CSTK', 'CTA', 'CTEC']...
+  CSPF: 0 prices inserted
+  CSRE: 0 prices inserted
+  CSTK: 0 prices inserted
+  CTA: 0 prices inserted
+  CTEC: 0 prices inserted
+
+[Batch 48/200] Fetching ['CTEF', 'CTEX', 'CTIF', 'CTWO', 'CURE']...
+  CTEF: 0 prices inserted
+  CTEX: 0 prices inserted
+  CTIF: 0 prices inserted
+  CTWO: 0 prices inserted
+  CURE: 0 prices inserted
+
+[Batch 49/200] Fetching ['CUSD', 'CUT', 'CVAR', 'CVIE', 'CVLC']...
+  CUSD: 0 prices inserted
+  CUT: 0 prices inserted
+  CVAR: 0 prices inserted
+  CVIE: 0 prices inserted
+  CVLC: 0 prices inserted
+
+[Batch 50/200] Fetching ['CVMC', 'CVNX', 'CVNY', 'CVRD', 'CVRT']...
+  CVMC: 0 prices inserted
+  CVNX: 0 prices inserted
+  CVNY: 0 prices inserted
+  CVRD: 0 prices inserted
+  CVRT: 0 prices inserted
+
+[Batch 51/200] Fetching ['CVSB', 'CVY', 'CWB', 'CWEB', 'CWI']...
+  CVSB: 0 prices inserted
+  CVY: 0 prices inserted
+  CWB: 0 prices inserted
+  CWEB: 0 prices inserted
+  CWI: 0 prices inserted
+
+[Batch 52/200] Fetching ['CWII', 'CWS', 'CWVX', 'CWY', 'CXRN']...
+  CWII: 0 prices inserted
+  CWS: 0 prices inserted
+  CWVX: 0 prices inserted
+  CWY: 0 prices inserted
+  CXRN: 0 prices inserted
+
+[Batch 53/200] Fetching ['CXSE', 'CZA', 'CZAR', 'DABS', 'DADS']...
+  CXSE: 0 prices inserted
+  CZA: 0 prices inserted
+  CZAR: 0 prices inserted
+  DABS: 0 prices inserted
+  DADS: 0 prices inserted
+
+[Batch 54/200] Fetching ['DAK', 'DALI', 'DANA', 'DAPP', 'DAPR']...
+  DAK: 0 prices inserted
+  DALI: 0 prices inserted
+  DANA: 0 prices inserted
+  DAPP: 0 prices inserted
+  DAPR: 0 prices inserted
+
+[Batch 55/200] Fetching ['DARP', 'DAT', 'DAUG', 'DAX', 'DBA']...
+  DARP: 0 prices inserted
+  DAT: 0 prices inserted
+  DAUG: 0 prices inserted
+  DAX: 0 prices inserted
+  DBA: 0 prices inserted
+
+[Batch 56/200] Fetching ['DBAW', 'DBB', 'DBC', 'DBE', 'DBEF']...
+  DBAW: 0 prices inserted
+  DBB: 0 prices inserted
+  DBC: 0 prices inserted
+  DBE: 0 prices inserted
+  DBEF: 0 prices inserted
+
+[Batch 57/200] Fetching ['DBEM', 'DBEU', 'DBEZ', 'DBJP', 'DBMF']...
+  DBEM: 0 prices inserted
+  DBEU: 0 prices inserted
+  DBEZ: 0 prices inserted
+  DBJP: 0 prices inserted
+  DBMF: 0 prices inserted
+
+[Batch 58/200] Fetching ['DBND', 'DBO', 'DBP', 'DBSC', 'DCMT']...
+  DBND: 0 prices inserted
+  DBO: 0 prices inserted
+  DBP: 0 prices inserted
+  DBSC: 0 prices inserted
+  DCMT: 0 prices inserted
+
+[Batch 59/200] Fetching ['DCOR', 'DCRE', 'DDEC', 'DDFA', 'DDFD']...
+  DCOR: 0 prices inserted
+  DCRE: 0 prices inserted
+  DDEC: 0 prices inserted
+  DDFA: 0 prices inserted
+  DDFD: 0 prices inserted
+
+[Batch 60/200] Fetching ['DDFF', 'DDFJ', 'DDFL', 'DDFM', 'DDFN']...
+  DDFF: 0 prices inserted
+  DDFJ: 0 prices inserted
+  DDFL: 0 prices inserted
+  DDFM: 0 prices inserted
+  DDFN: 0 prices inserted
+
+[Batch 61/200] Fetching ['DDFO', 'DDFS', 'DDIV', 'DDLS', 'DDM']...
+  DDFO: 0 prices inserted
+  DDFS: 0 prices inserted
+  DDIV: 0 prices inserted
+  DDLS: 0 prices inserted
+  DDM: 0 prices inserted
+
+[Batch 62/200] Fetching ['DDNQ', 'DDSQ', 'DDTA', 'DDTD', 'DDTF']...
+  DDNQ: 0 prices inserted
+  DDSQ: 0 prices inserted
+  DDTA: 0 prices inserted
+  DDTD: 0 prices inserted
+  DDTF: 0 prices inserted
+
+[Batch 63/200] Fetching ['DDTJ', 'DDTL', 'DDTM', 'DDTN', 'DDTO']...
+  DDTJ: 0 prices inserted
+  DDTL: 0 prices inserted
+  DDTM: 0 prices inserted
+  DDTN: 0 prices inserted
+  DDTO: 0 prices inserted
+
+[Batch 64/200] Fetching ['DDTS', 'DDV', 'DDWM', 'DDX', 'DDXX']...
+  DDTS: 0 prices inserted
+  DDV: 0 prices inserted
+  DDWM: 0 prices inserted
+  DDX: 0 prices inserted
+  DDXX: 0 prices inserted
+
+[Batch 65/200] Fetching ['DECM', 'DECO', 'DECP', 'DECT', 'DECU']...
+  DECM: 0 prices inserted
+  DECO: 0 prices inserted
+  DECP: 0 prices inserted
+  DECT: 0 prices inserted
+  DECU: 0 prices inserted
+
+[Batch 66/200] Fetching ['DECW', 'DECZ', 'DEED', 'DEEF', 'DEEP']...
+  DECW: 0 prices inserted
+  DECZ: 0 prices inserted
+  DEED: 0 prices inserted
+  DEEF: 0 prices inserted
+  DEEP: 0 prices inserted
+
+[Batch 67/200] Fetching ['DEFI', 'DEFR', 'DEHP', 'DEM', 'DEMZ']...
+  DEFI: 0 prices inserted
+  DEFR: 0 prices inserted
+  DEHP: 0 prices inserted
+  DEM: 0 prices inserted
+  DEMZ: 0 prices inserted
+
+[Batch 68/200] Fetching ['DES', 'DESK', 'DEUS', 'DEW', 'DEXC']...
+  DES: 0 prices inserted
+  DESK: 0 prices inserted
+  DEUS: 0 prices inserted
+  DEW: 0 prices inserted
+  DEXC: 0 prices inserted
+
+[Batch 69/200] Fetching ['DFAC', 'DFAE', 'DFAI', 'DFAR', 'DFAS']...
+  DFAC: 0 prices inserted
+  DFAE: 0 prices inserted
+  DFAI: 0 prices inserted
+  DFAR: 0 prices inserted
+  DFAS: 0 prices inserted
+
+[Batch 70/200] Fetching ['DFAT', 'DFAU', 'DFAW', 'DFAX', 'DFCA']...
+  DFAT: 0 prices inserted
+  DFAU: 0 prices inserted
+  DFAW: 0 prices inserted
+  DFAX: 0 prices inserted
+  DFCA: 0 prices inserted
+
+[Batch 71/200] Fetching ['DFCF', 'DFE', 'DFEB', 'DFEM', 'DFEN']...
+  DFCF: 0 prices inserted
+  DFE: 0 prices inserted
+  DFEB: 0 prices inserted
+  DFEM: 0 prices inserted
+  DFEN: 0 prices inserted
+
+[Batch 72/200] Fetching ['DFEV', 'DFGP', 'DFGR', 'DFGX', 'DFIC']...
+  DFEV: 0 prices inserted
+  DFGP: 0 prices inserted
+  DFGR: 0 prices inserted
+  DFGX: 0 prices inserted
+  DFIC: 0 prices inserted
+
+[Batch 73/200] Fetching ['DFII', 'DFIP', 'DFIS', 'DFIV', 'DFJ']...
+  DFII: 0 prices inserted
+  DFIP: 0 prices inserted
+  DFIS: 0 prices inserted
+  DFIV: 0 prices inserted
+  DFJ: 0 prices inserted
+
+[Batch 74/200] Fetching ['DFLV', 'DFNL', 'DFNM', 'DFSB', 'DFSD']...
+  DFLV: 0 prices inserted
+  DFNL: 0 prices inserted
+  DFNM: 0 prices inserted
+  DFSB: 0 prices inserted
+  DFSD: 0 prices inserted
+
+[Batch 75/200] Fetching ['DFSE', 'DFSI', 'DFSU', 'DFSV', 'DFUS']...
+  DFSE: 0 prices inserted
+  DFSI: 0 prices inserted
+  DFSU: 0 prices inserted
+  DFSV: 0 prices inserted
+  DFUS: 0 prices inserted
+
+[Batch 76/200] Fetching ['DFUV', 'DFVE', 'DFVX', 'DGAP', 'DGCB']...
+  DFUV: 0 prices inserted
+  DFVE: 0 prices inserted
+  DFVX: 0 prices inserted
+  DGAP: 0 prices inserted
+  DGCB: 0 prices inserted
+
+[Batch 77/200] Fetching ['DGIN', 'DGJA', 'DGLO', 'DGOC', 'DGRE']...
+  DGIN: 0 prices inserted
+  DGJA: 0 prices inserted
+  DGLO: 0 prices inserted
+  DGOC: 0 prices inserted
+  DGRE: 0 prices inserted
+
+[Batch 78/200] Fetching ['DGRO', 'DGRS', 'DGRW', 'DGS', 'DGT']...
+  DGRO: 0 prices inserted
+  DGRS: 0 prices inserted
+  DGRW: 0 prices inserted
+  DGS: 0 prices inserted
+  DGT: 0 prices inserted
+
+[Batch 79/200] Fetching ['DHDG', 'DHLX', 'DHS', 'DHSB', 'DIA']...
+  DHDG: 0 prices inserted
+  DHLX: 0 prices inserted
+  DHS: 0 prices inserted
+  DHSB: 0 prices inserted
+  DIA: 0 prices inserted
+
+[Batch 80/200] Fetching ['DIAL', 'DIEM', 'DIG', 'DIHP', 'DIM']...
+  DIAL: 0 prices inserted
+  DIEM: 0 prices inserted
+  DIG: 0 prices inserted
+  DIHP: 0 prices inserted
+  DIM: 0 prices inserted
+
+[Batch 81/200] Fetching ['DIME', 'DINT', 'DIPS', 'DISO', 'DISV']...
+  DIME: 0 prices inserted
+  DINT: 0 prices inserted
+  DIPS: 0 prices inserted
+  DISO: 0 prices inserted
+  DISV: 0 prices inserted
+
+[Batch 82/200] Fetching ['DIV', 'DIVB', 'DIVD', 'DIVG', 'DIVI']...
+  DIV: 0 prices inserted
+  DIVB: 0 prices inserted
+  DIVD: 0 prices inserted
+  DIVG: 0 prices inserted
+  DIVI: 0 prices inserted
+
+[Batch 83/200] Fetching ['DIVL', 'DIVN', 'DIVO', 'DIVP', 'DIVS']...
+  DIVL: 0 prices inserted
+  DIVN: 0 prices inserted
+  DIVO: 0 prices inserted
+  DIVP: 0 prices inserted
+  DIVS: 0 prices inserted
+
+[Batch 84/200] Fetching ['DIVY', 'DIVZ', 'DJAN', 'DJD', 'DJIA']...
+  DIVY: 0 prices inserted
+  DIVZ: 0 prices inserted
+  DJAN: 0 prices inserted
+  DJD: 0 prices inserted
+  DJIA: 0 prices inserted
+
+[Batch 85/200] Fetching ['DJP', 'DJTU', 'DJUL', 'DJUN', 'DKNX']...
+  DJP: 0 prices inserted
+  DJTU: 0 prices inserted
+  DJUL: 0 prices inserted
+  DJUN: 0 prices inserted
+  DKNX: 0 prices inserted
+
+[Batch 86/200] Fetching ['DLAG', 'DLFE', 'DLLL', 'DLN', 'DLNV']...
+  DLAG: 0 prices inserted
+  DLFE: 0 prices inserted
+  DLLL: 0 prices inserted
+  DLN: 0 prices inserted
+  DLNV: 0 prices inserted
+
+[Batch 87/200] Fetching ['DLS', 'DMAR', 'DMAX', 'DMAY', 'DMBS']...
+  DLS: 0 prices inserted
+  DMAR: 0 prices inserted
+  DMAX: 0 prices inserted
+  DMAY: 0 prices inserted
+  DMBS: 0 prices inserted
+
+[Batch 88/200] Fetching ['DMX', 'DMXF', 'DNL', 'DNNG', 'DNOV']...
+  DMX: 0 prices inserted
+  DMXF: 0 prices inserted
+  DNL: 0 prices inserted
+  DNNG: 0 prices inserted
+  DNOV: 0 prices inserted
+
+[Batch 89/200] Fetching ['DOCT', 'DOG', 'DOGD', 'DOGG', 'DOJE']...
+  DOCT: 0 prices inserted
+  DOG: 0 prices inserted
+  DOGD: 0 prices inserted
+  DOGG: 0 prices inserted
+  DOJE: 0 prices inserted
+
+[Batch 90/200] Fetching ['DOL', 'DON', 'DPST', 'DRAI', 'DRAM']...
+  DOL: 0 prices inserted
+  DON: 0 prices inserted
+  DPST: 0 prices inserted
+  DRAI: 0 prices inserted
+  DRAM: 0 prices inserted
+
+[Batch 91/200] Fetching ['DRGN', 'DRIP', 'DRIV', 'DRLL', 'DRN']...
+  DRGN: 0 prices inserted
+  DRIP: 0 prices inserted
+  DRIV: 0 prices inserted
+  DRLL: 0 prices inserted
+  DRN: 0 prices inserted
+
+[Batch 92/200] Fetching ['DRNL', 'DRNZ', 'DRSK', 'DRUP', 'DRV']...
+  DRNL: 0 prices inserted
+  DRNZ: 0 prices inserted
+  DRSK: 0 prices inserted
+  DRUP: 0 prices inserted
+  DRV: 0 prices inserted
+
+[Batch 93/200] Fetching ['DSCO', 'DSEP', 'DSI', 'DSMC', 'DSPY']...
+  DSCO: 0 prices inserted
+  DSEP: 0 prices inserted
+  DSI: 0 prices inserted
+  DSMC: 0 prices inserted
+  DSPY: 0 prices inserted
+
+[Batch 94/200] Fetching ['DSTL', 'DSTX', 'DTAN', 'DTCR', 'DTD']...
+  DSTL: 0 prices inserted
+  DSTX: 0 prices inserted
+  DTAN: 0 prices inserted
+  DTCR: 0 prices inserted
+  DTD: 0 prices inserted
+
+[Batch 95/200] Fetching ['DTEC', 'DTH', 'DTRE', 'DUBS', 'DUG']...
+  DTEC: 0 prices inserted
+  DTH: 0 prices inserted
+  DTRE: 0 prices inserted
+  DUBS: 0 prices inserted
+  DUG: 0 prices inserted
+
+[Batch 96/200] Fetching ['DUHP', 'DUKH', 'DUKQ', 'DUKX', 'DUKZ']...
+  DUHP: 0 prices inserted
+  DUKH: 0 prices inserted
+  DUKQ: 0 prices inserted
+  DUKX: 0 prices inserted
+  DUKZ: 0 prices inserted
+
+[Batch 97/200] Fetching ['DULL', 'DUOG', 'DURA', 'DUSA', 'DUSB']...
+  DULL: 0 prices inserted
+  DUOG: 0 prices inserted
+  DURA: 0 prices inserted
+  DUSA: 0 prices inserted
+  DUSB: 0 prices inserted
+
+[Batch 98/200] Fetching ['DUSL', 'DUST', 'DUTY', 'DVAL', 'DVDN']...
+  DUSL: 0 prices inserted
+  DUST: 0 prices inserted
+  DUTY: 0 prices inserted
+  DVAL: 0 prices inserted
+  DVDN: 0 prices inserted
+
+[Batch 99/200] Fetching ['DVGR', 'DVIN', 'DVLU', 'DVND', 'DVOL']...
+  DVGR: 0 prices inserted
+  DVIN: 0 prices inserted
+  DVLU: 0 prices inserted
+  DVND: 0 prices inserted
+  DVOL: 0 prices inserted
+
+[Batch 100/200] Fetching ['DVQQ', 'DVRE', 'DVSP', 'DVUT', 'DVVY']...
+  DVQQ: 0 prices inserted
+  DVRE: 0 prices inserted
+  DVSP: 0 prices inserted
+  DVUT: 0 prices inserted
+  DVVY: 0 prices inserted
+
+[Batch 101/200] Fetching ['DVXB', 'DVXC', 'DVXE', 'DVXF', 'DVXK']...
+  DVXB: 0 prices inserted
+  DVXC: 0 prices inserted
+  DVXE: 0 prices inserted
+  DVXF: 0 prices inserted
+  DVXK: 0 prices inserted
+
+[Batch 102/200] Fetching ['DVXP', 'DVXV', 'DVXY', 'DVY', 'DVYA']...
+  DVXP: 0 prices inserted
+  DVXV: 0 prices inserted
+  DVXY: 0 prices inserted
+  DVY: 0 prices inserted
+  DVYA: 0 prices inserted
+
+[Batch 103/200] Fetching ['DVYE', 'DWAS', 'DWAW', 'DWLD', 'DWM']...
+  DVYE: 0 prices inserted
+  DWAS: 0 prices inserted
+  DWAW: 0 prices inserted
+  DWLD: 0 prices inserted
+  DWM: 0 prices inserted
+
+[Batch 104/200] Fetching ['DWMF', 'DWSH', 'DWUS', 'DWX', 'DXD']...
+  DWMF: 0 prices inserted
+  DWSH: 0 prices inserted
+  DWUS: 0 prices inserted
+  DWX: 0 prices inserted
+  DXD: 0 prices inserted
+
+[Batch 105/200] Fetching ['DXIV', 'DXJ', 'DXUV', 'DYFI', 'DYLD']...
+  DXIV: 0 prices inserted
+  DXJ: 0 prices inserted
+  DXUV: 0 prices inserted
+  DYFI: 0 prices inserted
+  DYLD: 0 prices inserted
+
+[Batch 106/200] Fetching ['DYLG', 'DYNB', 'DYNF', 'DYTA', 'EAFG']...
+  DYLG: 0 prices inserted
+  DYNB: 0 prices inserted
+  DYNF: 0 prices inserted
+  DYTA: 0 prices inserted
+  EAFG: 0 prices inserted
+
+[Batch 107/200] Fetching ['EAGG', 'EAGL', 'EALT', 'EAOA', 'EAOK']...
+  EAGG: 0 prices inserted
+  EAGL: 0 prices inserted
+  EALT: 0 prices inserted
+  EAOA: 0 prices inserted
+  EAOK: 0 prices inserted
+
+[Batch 108/200] Fetching ['EAOM', 'EAOR', 'EAPR', 'EART', 'EASG']...
+  EAOM: 0 prices inserted
+  EAOR: 0 prices inserted
+  EAPR: 0 prices inserted
+  EART: 0 prices inserted
+  EASG: 0 prices inserted
+
+[Batch 109/200] Fetching ['EASY', 'EATZ', 'EBI', 'EBIT', 'EBIZ']...
+  EASY: 0 prices inserted
+  EATZ: 0 prices inserted
+  EBI: 0 prices inserted
+  EBIT: 0 prices inserted
+  EBIZ: 0 prices inserted
+
+[Batch 110/200] Fetching ['EBND', 'EBUF', 'ECH', 'ECML', 'ECNS']...
+  EBND: 0 prices inserted
+  EBUF: 0 prices inserted
+  ECH: 0 prices inserted
+  ECML: 0 prices inserted
+  ECNS: 0 prices inserted
+
+[Batch 111/200] Fetching ['ECON', 'ECOW', 'EDC', 'EDEN', 'EDGE']...
+  ECON: 0 prices inserted
+  ECOW: 0 prices inserted
+  EDC: 0 prices inserted
+  EDEN: 0 prices inserted
+  EDGE: 0 prices inserted
+
+[Batch 112/200] Fetching ['EDGF', 'EDGH', 'EDGI', 'EDGU', 'EDIV']...
+  EDGF: 0 prices inserted
+  EDGH: 0 prices inserted
+  EDGI: 0 prices inserted
+  EDGU: 0 prices inserted
+  EDIV: 0 prices inserted
+
+[Batch 113/200] Fetching ['EDOG', 'EDOW', 'EDV', 'EDZ', 'EEE']...
+  EDOG: 0 prices inserted
+  EDOW: 0 prices inserted
+  EDV: 0 prices inserted
+  EDZ: 0 prices inserted
+  EEE: 0 prices inserted
+
+[Batch 114/200] Fetching ['EELV', 'EEM', 'EEMA', 'EEMO', 'EEMS']...
+  EELV: 0 prices inserted
+  EEM: 0 prices inserted
+  EEMA: 0 prices inserted
+  EEMO: 0 prices inserted
+  EEMS: 0 prices inserted
+
+[Batch 115/200] Fetching ['EEMV', 'EEMX', 'EES', 'EET', 'EETH']...
+  EEMV: 0 prices inserted
+  EEMX: 0 prices inserted
+  EES: 0 prices inserted
+  EET: 0 prices inserted
+  EETH: 0 prices inserted
+
+[Batch 116/200] Fetching ['EEV', 'EFA', 'GLD', 'HYG', 'IEFA']...
+  EEV: 0 prices inserted
+  EFA: 0 prices inserted
+  GLD: 0 prices inserted
+  HYG: 0 prices inserted
+  IEFA: 0 prices inserted
+
+[Batch 117/200] Fetching ['ITOT', 'IVV', 'LQD', 'MMMA', 'MMSC']...
+  ITOT: 0 prices inserted
+  IVV: 0 prices inserted
+  LQD: 0 prices inserted
+  MMMA: 0 prices inserted
+  MMSC: 0 prices inserted
+
+[Batch 118/200] Fetching ['MMSD', 'MMTM', 'MNA', 'MNBD', 'MNRS']...
+  MMSD: 0 prices inserted
+  MMTM: 0 prices inserted
+  MNA: 0 prices inserted
+  MNBD: 0 prices inserted
+  MNRS: 0 prices inserted
+
+[Batch 119/200] Fetching ['MNVT', 'MNZL', 'MOAT', 'MODL', 'MOO']...
+  MNVT: 0 prices inserted
+  MNZL: 0 prices inserted
+  MOAT: 0 prices inserted
+  MODL: 0 prices inserted
+  MOO: 0 prices inserted
+
+[Batch 120/200] Fetching ['MOOD', 'MORT', 'MOTG', 'MOTI', 'MOTO']...
+  MOOD: 0 prices inserted
+  MORT: 0 prices inserted
+  MOTG: 0 prices inserted
+  MOTI: 0 prices inserted
+  MOTO: 0 prices inserted
+
+[Batch 121/200] Fetching ['MPG', 'MPL', 'MPLY', 'MPRO', 'MQQQ']...
+  MPG: 0 prices inserted
+  MPL: 0 prices inserted
+  MPLY: 0 prices inserted
+  MPRO: 0 prices inserted
+  MQQQ: 0 prices inserted
+
+[Batch 122/200] Fetching ['MRAL', 'MRCP', 'MRGR', 'MRNX', 'MRNY']...
+  MRAL: 0 prices inserted
+  MRCP: 0 prices inserted
+  MRGR: 0 prices inserted
+  MRNX: 0 prices inserted
+  MRNY: 0 prices inserted
+
+[Batch 123/200] Fetching ['MRSK', 'MRVU', 'MSBT', 'MSDD', 'MSFD']...
+  MRSK: 0 prices inserted
+  MRVU: 0 prices inserted
+  MSBT: 0 prices inserted
+  MSDD: 0 prices inserted
+  MSFD: 0 prices inserted
+
+[Batch 124/200] Fetching ['MSFL', 'MSFO', 'MSFU', 'MSFW', 'MSFX']...
+  MSFL: 0 prices inserted
+  MSFO: 0 prices inserted
+  MSFU: 0 prices inserted
+  MSFW: 0 prices inserted
+  MSFX: 0 prices inserted
+
+[Batch 125/200] Fetching ['MSFY', 'MSII', 'MSLC', 'MSMR', 'MSOO']...
+  MSFY: 0 prices inserted
+  MSII: 0 prices inserted
+  MSLC: 0 prices inserted
+  MSMR: 0 prices inserted
+  MSOO: 0 prices inserted
+
+[Batch 126/200] Fetching ['MSOS', 'MSOX', 'MSSM', 'MSSS', 'MSST']...
+  MSOS: 0 prices inserted
+  MSOX: 0 prices inserted
+  MSSM: 0 prices inserted
+  MSSS: 0 prices inserted
+  MSST: 0 prices inserted
+
+[Batch 127/200] Fetching ['MST', 'MSTB', 'MSTI', 'MSTP', 'MSTQ']...
+  MST: 0 prices inserted
+  MSTB: 0 prices inserted
+  MSTI: 0 prices inserted
+  MSTP: 0 prices inserted
+  MSTQ: 0 prices inserted
+
+[Batch 128/200] Fetching ['MSTU', 'MSTW', 'MSTX', 'MSTY', 'MSTZ']...
+  MSTU: 0 prices inserted
+  MSTW: 0 prices inserted
+  MSTX: 0 prices inserted
+  MSTY: 0 prices inserted
+  MSTZ: 0 prices inserted
+
+[Batch 129/200] Fetching ['MTBA', 'MTGP', 'MTRA', 'MTUL', 'MTUM']...
+  MTBA: 0 prices inserted
+  MTGP: 0 prices inserted
+  MTRA: 0 prices inserted
+  MTUL: 0 prices inserted
+  MTUM: 0 prices inserted
+
+[Batch 130/200] Fetching ['MTYY', 'MUB', 'MUD', 'MULL', 'MULT']...
+  MTYY: 0 prices inserted
+  MUB: 0 prices inserted
+  MUD: 0 prices inserted
+  MULL: 0 prices inserted
+  MULT: 0 prices inserted
+
+[Batch 131/200] Fetching ['MUNI', 'MUNY', 'MUSE', 'MUSI', 'MUSQ']...
+  MUNI: 0 prices inserted
+  MUNY: 0 prices inserted
+  MUSE: 0 prices inserted
+  MUSI: 0 prices inserted
+  MUSQ: 0 prices inserted
+
+[Batch 132/200] Fetching ['MUST', 'MUU', 'MUYY', 'MVAL', 'MVFD']...
+  MUST: 0 prices inserted
+  MUU: 0 prices inserted
+  MUYY: 0 prices inserted
+  MVAL: 0 prices inserted
+  MVFD: 0 prices inserted
+
+[Batch 133/200] Fetching ['MVFG', 'MVLL', 'MVPA', 'MVPL', 'MVRL']...
+  MVFG: 0 prices inserted
+  MVLL: 0 prices inserted
+  MVPA: 0 prices inserted
+  MVPL: 0 prices inserted
+  MVRL: 0 prices inserted
+
+[Batch 134/200] Fetching ['MVV', 'MXI', 'MYCF', 'MYCG', 'MYCH']...
+  MVV: 0 prices inserted
+  MXI: 0 prices inserted
+  MYCF: 0 prices inserted
+  MYCG: 0 prices inserted
+  MYCH: 0 prices inserted
+
+[Batch 135/200] Fetching ['MYCI', 'MYCJ', 'MYCK', 'MYCL', 'MYCM']...
+  MYCI: 0 prices inserted
+  MYCJ: 0 prices inserted
+  MYCK: 0 prices inserted
+  MYCL: 0 prices inserted
+  MYCM: 0 prices inserted
+
+[Batch 136/200] Fetching ['MYCN', 'MYCO', 'MYHA', 'MYHB', 'MYHC']...
+  MYCN: 0 prices inserted
+  MYCO: 0 prices inserted
+  MYHA: 0 prices inserted
+  MYHB: 0 prices inserted
+  MYHC: 0 prices inserted
+
+[Batch 137/200] Fetching ['MYHD', 'MYHE', 'MYLD', 'MYMF', 'MYMG']...
+  MYHD: 0 prices inserted
+  MYHE: 0 prices inserted
+  MYLD: 0 prices inserted
+  MYMF: 0 prices inserted
+  MYMG: 0 prices inserted
+
+[Batch 138/200] Fetching ['MYMH', 'MYMI', 'MYMJ', 'MYMK', 'MYY']...
+  MYMH: 0 prices inserted
+  MYMI: 0 prices inserted
+  MYMJ: 0 prices inserted
+  MYMK: 0 prices inserted
+  MYY: 0 prices inserted
+
+[Batch 139/200] Fetching ['MZZ', 'NACP', 'NAIL', 'NANC', 'NANR']...
+  MZZ: 0 prices inserted
+  NACP: 0 prices inserted
+  NAIL: 0 prices inserted
+  NANC: 0 prices inserted
+  NANR: 0 prices inserted
+
+[Batch 140/200] Fetching ['NAPR', 'NATO', 'NAUG', 'NBCE', 'NBCM']...
+  NAPR: 0 prices inserted
+  NATO: 0 prices inserted
+  NAUG: 0 prices inserted
+  NBCE: 0 prices inserted
+  NBCM: 0 prices inserted
+
+[Batch 141/200] Fetching ['NBCR', 'NBDS', 'NBET', 'NBFC', 'NBGX']...
+  NBCR: 0 prices inserted
+  NBDS: 0 prices inserted
+  NBET: 0 prices inserted
+  NBFC: 0 prices inserted
+  NBGX: 0 prices inserted
+
+[Batch 142/200] Fetching ['NBIE', 'NBIG', 'NBIL', 'NBIZ', 'NBJP']...
+  NBIE: 0 prices inserted
+  NBIG: 0 prices inserted
+  NBIL: 0 prices inserted
+  NBIZ: 0 prices inserted
+  NBJP: 0 prices inserted
+
+[Batch 143/200] Fetching ['NBOS', 'NBSD', 'NBSM', 'NBTR', 'NCIQ']...
+  NBOS: 0 prices inserted
+  NBSD: 0 prices inserted
+  NBSM: 0 prices inserted
+  NBTR: 0 prices inserted
+  NCIQ: 0 prices inserted
+
+[Batch 144/200] Fetching ['NCLO', 'NCPB', 'NDAA', 'NDEC', 'NDIA']...
+  NCLO: 0 prices inserted
+  NCPB: 0 prices inserted
+  NDAA: 0 prices inserted
+  NDEC: 0 prices inserted
+  NDIA: 0 prices inserted
+
+[Batch 145/200] Fetching ['NDIV', 'NDOW', 'NEAR', 'NEBX', 'NEHI']...
+  NDIV: 0 prices inserted
+  NDOW: 0 prices inserted
+  NEAR: 0 prices inserted
+  NEBX: 0 prices inserted
+  NEHI: 0 prices inserted
+
+[Batch 146/200] Fetching ['NELS', 'NEMD', 'NEMG', 'NERD', 'NETG']...
+  NELS: 0 prices inserted
+  NEMD: 0 prices inserted
+  NEMG: 0 prices inserted
+  NERD: 0 prices inserted
+  NETG: 0 prices inserted
+
+[Batch 147/200] Fetching ['NETL', 'NEWZ', 'NFEB', 'NFLP', 'NFLT']...
+  NETL: 0 prices inserted
+  NEWZ: 0 prices inserted
+  NFEB: 0 prices inserted
+  NFLP: 0 prices inserted
+  NFLT: 0 prices inserted
+
+[Batch 148/200] Fetching ['NFLU', 'NFLW', 'NFLY', 'NFRA', 'NFRX']...
+  NFLU: 0 prices inserted
+  NFLW: 0 prices inserted
+  NFLY: 0 prices inserted
+  NFRA: 0 prices inserted
+  NFRX: 0 prices inserted
+
+[Batch 149/200] Fetching ['NFTY', 'NFXL', 'NFXS', 'NGHT', 'NHYM']...
+  NFTY: 0 prices inserted
+  NFXL: 0 prices inserted
+  NFXS: 0 prices inserted
+  NGHT: 0 prices inserted
+  NHYM: 0 prices inserted
+
+[Batch 150/200] Fetching ['NIHI', 'NIKL', 'NIOG', 'NITE', 'NIXT']...
+  NIHI: 0 prices inserted
+  NIKL: 0 prices inserted
+  NIOG: 0 prices inserted
+  NITE: 0 prices inserted
+  NIXT: 0 prices inserted
+
+[Batch 151/200] Fetching ['NJAN', 'NJNK', 'NJUL', 'NJUN', 'NLR']...
+  NJAN: 0 prices inserted
+  NJNK: 0 prices inserted
+  NJUL: 0 prices inserted
+  NJUN: 0 prices inserted
+  NLR: 0 prices inserted
+
+[Batch 152/200] Fetching ['NLSI', 'NMAR', 'NMAY', 'NMB', 'NMBL']...
+  NLSI: 0 prices inserted
+  NMAR: 0 prices inserted
+  NMAY: 0 prices inserted
+  NMB: 0 prices inserted
+  NMBL: 0 prices inserted
+
+[Batch 153/200] Fetching ['NNEX', 'NNOV', 'NOBL', 'NOCT', 'NODE']...
+  NNEX: 0 prices inserted
+  NNOV: 0 prices inserted
+  NOBL: 0 prices inserted
+  NOCT: 0 prices inserted
+  NODE: 0 prices inserted
+
+[Batch 154/200] Fetching ['NOEQ', 'NORW', 'NOVM', 'NOVP', 'NOVZ']...
+  NOEQ: 0 prices inserted
+  NORW: 0 prices inserted
+  NOVM: 0 prices inserted
+  NOVP: 0 prices inserted
+  NOVZ: 0 prices inserted
+
+[Batch 155/200] Fetching ['NOWL', 'NPFE', 'NPFI', 'NRES', 'NRGD']...
+  NOWL: 0 prices inserted
+  NPFE: 0 prices inserted
+  NPFI: 0 prices inserted
+  NRES: 0 prices inserted
+  NRGD: 0 prices inserted
+
+[Batch 156/200] Fetching ['NRGU', 'NRSH', 'NSEP', 'NSI', 'NTSE']...
+  NRGU: 0 prices inserted
+  NRSH: 0 prices inserted
+  NSEP: 0 prices inserted
+  NSI: 0 prices inserted
+  NTSE: 0 prices inserted
+
+[Batch 157/200] Fetching ['NTSI', 'NTSX', 'NUAG', 'NUBD', 'NUDM']...
+  NTSI: 0 prices inserted
+  NTSX: 0 prices inserted
+  NUAG: 0 prices inserted
+  NUBD: 0 prices inserted
+  NUDM: 0 prices inserted
+
+[Batch 158/200] Fetching ['NUDV', 'NUEM', 'NUG', 'NUGO', 'NUGT']...
+  NUDV: 0 prices inserted
+  NUEM: 0 prices inserted
+  NUG: 0 prices inserted
+  NUGO: 0 prices inserted
+  NUGT: 0 prices inserted
+
+[Batch 159/200] Fetching ['NUGY', 'NUHY', 'NUKZ', 'NULC', 'NULG']...
+  NUGY: 0 prices inserted
+  NUHY: 0 prices inserted
+  NUKZ: 0 prices inserted
+  NULC: 0 prices inserted
+  NULG: 0 prices inserted
+
+[Batch 160/200] Fetching ['NULV', 'NUMG', 'NUMI', 'NUMV', 'NURE']...
+  NULV: 0 prices inserted
+  NUMG: 0 prices inserted
+  NUMI: 0 prices inserted
+  NUMV: 0 prices inserted
+  NURE: 0 prices inserted
+
+[Batch 161/200] Fetching ['NUSA', 'NUSB', 'NUSC', 'NVBT', 'NVBU']...
+  NUSA: 0 prices inserted
+  NUSB: 0 prices inserted
+  NUSC: 0 prices inserted
+  NVBT: 0 prices inserted
+  NVBU: 0 prices inserted
+
+[Batch 162/200] Fetching ['NVBW', 'NVD', 'NVDD', 'NVDG', 'NVDL']...
+  NVBW: 0 prices inserted
+  NVD: 0 prices inserted
+  NVDD: 0 prices inserted
+  NVDG: 0 prices inserted
+  NVDL: 0 prices inserted
+
+[Batch 163/200] Fetching ['NVDO', 'NVDQ', 'NVDS', 'NVDU', 'NVDW']...
+  NVDO: 0 prices inserted
+  NVDQ: 0 prices inserted
+  NVDS: 0 prices inserted
+  NVDU: 0 prices inserted
+  NVDW: 0 prices inserted
+
+[Batch 164/200] Fetching ['NVDX', 'NVDY', 'NVII', 'NVIR', 'NVIT']...
+  NVDX: 0 prices inserted
+  NVDY: 0 prices inserted
+  NVII: 0 prices inserted
+  NVIR: 0 prices inserted
+  NVIT: 0 prices inserted
+
+[Batch 165/200] Fetching ['NVOH', 'NVOX', 'NVTX', 'NVYY', 'NXTE']...
+  NVOH: 0 prices inserted
+  NVOX: 0 prices inserted
+  NVTX: 0 prices inserted
+  NVYY: 0 prices inserted
+  NXTE: 0 prices inserted
+
+[Batch 166/200] Fetching ['NXTG', 'NXTI', 'NYF', 'NYM', 'NZAC']...
+  NXTG: 0 prices insertedFailed to get ticker 'NYF' reason: Failed to perform, curl: (28) Operation timed out after 10003 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+
+  NXTI: 0 prices inserted
+  NYF: 0 prices inserted
+  NYM: 0 prices inserted
+  NZAC: 0 prices inserted
+
+[Batch 167/200] Fetching ['NZUS', 'OACP', 'OAEM', 'OAIM', 'OAKM']...
+  NZUS: 0 prices inserted
+  OACP: 0 prices inserted
+  OAEM: 0 prices inserted
+  OAIM: 0 prices inserted
+  OAKM: 0 prices inserted
+
+[Batch 168/200] Fetching ['OALC', 'OARK', 'OASC', 'OBIL', 'OBND']...
+  OALC: 0 prices inserted
+  OARK: 0 prices inserted
+  OASC: 0 prices inserted
+  OBIL: 0 prices inserted
+  OBND: 0 prices inserted
+
+[Batch 169/200] Fetching ['OBOR', 'OBTC', 'OCIO', 'OCTB', 'OCTH']...
+  OBOR: 0 prices inserted
+  OBTC: 0 prices inserted
+  OCIO: 0 prices inserted
+  OCTB: 0 prices inserted
+  OCTH: 0 prices inserted
+
+[Batch 170/200] Fetching ['OCTJ', 'OCTM', 'OCTP', 'OCTT', 'OCTU']...
+  OCTJ: 0 prices inserted
+  OCTM: 0 prices inserted
+  OCTP: 0 prices inserted
+  OCTT: 0 prices inserted
+  OCTU: 0 prices inserted
+
+[Batch 171/200] Fetching ['OCTW', 'OCTZ', 'ODDS', 'ODHY', 'ODTE']...
+  OCTW: 0 prices inserted
+  OCTZ: 0 prices inserted
+  ODDS: 0 prices inserted
+  ODHY: 0 prices inserted
+  ODTE: 0 prices inserted
+
+[Batch 172/200] Fetching ['OEF', 'OEFA', 'OGIG', 'OGSP', 'OIH']...
+  OEF: 0 prices inserted
+  OEFA: 0 prices inserted
+  OGIG: 0 prices inserted
+  OGSP: 0 prices inserted
+  OIH: 0 prices inserted
+
+[Batch 173/200] Fetching ['OILD', 'OILK', 'OILT', 'OILU', 'OKLL']...
+  OILD: 0 prices inserted
+  OILK: 0 prices inserted
+  OILT: 0 prices inserted
+  OILU: 0 prices inserted
+  OKLL: 0 prices inserted
+
+[Batch 174/200] Fetching ['OKLS', 'OKTG', 'OMAH', 'OMFL', 'OMFS']...
+  OKLS: 0 prices inserted
+  OKTG: 0 prices inserted
+  OMAH: 0 prices inserted
+  OMFL: 0 prices inserted
+  OMFS: 0 prices inserted
+
+[Batch 175/200] Fetching ['OND', 'ONDG', 'ONDL', 'ONDU', 'ONEH']...
+  OND: 0 prices inserted
+  ONDG: 0 prices inserted
+  ONDL: 0 prices inserted
+  ONDU: 0 prices inserted
+  ONEH: 0 prices inserted
+
+[Batch 176/200] Fetching ['ONEO', 'ONEQ', 'ONEV', 'ONEY', 'ONEZ']...
+  ONEO: 0 prices inserted
+  ONEQ: 0 prices inserted
+  ONEV: 0 prices inserted
+  ONEY: 0 prices inserted
+  ONEZ: 0 prices inserted
+
+[Batch 177/200] Fetching ['ONLN', 'ONOF', 'OOSP', 'OPEG', 'OPER']...
+  ONLN: 0 prices inserted
+  ONOF: 0 prices inserted
+  OOSP: 0 prices inserted
+  OPEG: 0 prices inserted
+  OPER: 0 prices inserted
+
+[Batch 178/200] Fetching ['OPEX', 'OPPE', 'OPPJ', 'OPTZ', 'ORBX']...
+  OPEX: 0 prices inserted
+  OPPE: 0 prices inserted
+  OPPJ: 0 prices inserted
+  OPTZ: 0 prices inserted
+  ORBX: 0 prices inserted
+
+[Batch 179/200] Fetching ['ORCS', 'ORCU', 'ORCX', 'ORLG', 'ORO']...
+  ORCS: 0 prices inserted
+  ORCU: 0 prices inserted
+  ORCX: 0 prices inserted
+  ORLG: 0 prices inserted
+  ORO: 0 prices inserted
+
+[Batch 180/200] Fetching ['ORR', 'OSCG', 'OSCV', 'OSCX', 'OSEA']...
+  ORR: 0 prices inserted
+  OSCG: 0 prices inserted
+  OSCV: 0 prices inserted
+  OSCX: 0 prices inserted
+  OSEA: 0 prices inserted
+
+[Batch 181/200] Fetching ['OTGL', 'OUNZ', 'OUSA', 'OUSM', 'OVB']...
+  OTGL: 0 prices inserted
+  OUNZ: 0 prices inserted
+  OUSA: 0 prices inserted
+  OUSM: 0 prices inserted
+  OVB: 0 prices inserted
+
+[Batch 182/200] Fetching ['OVF', 'OVL', 'OVLH', 'OVM', 'OVS']...
+  OVF: 0 prices inserted
+  OVL: 0 prices inserted
+  OVLH: 0 prices inserted
+  OVM: 0 prices inserted
+  OVS: 0 prices inserted
+
+[Batch 183/200] Fetching ['OVT', 'OWNB', 'OWNS', 'OZEM', 'PAAA']...
+  OVT: 0 prices inserted
+  OWNB: 0 prices inserted
+  OWNS: 0 prices inserted
+  OZEM: 0 prices inserted
+  PAAA: 0 prices inserted
+
+[Batch 184/200] Fetching ['PAAU', 'PAB', 'PABD', 'PABU', 'PALC']...
+  PAAU: 0 prices inserted
+  PAB: 0 prices inserted
+  PABD: 0 prices inserted
+  PABU: 0 prices inserted
+  PALC: 0 prices inserted
+
+[Batch 185/200] Fetching ['PALD', 'PALL', 'PALU', 'PAMC', 'PANG']...
+  PALD: 0 prices inserted
+  PALL: 0 prices inserted
+  PALU: 0 prices inserted
+  PAMC: 0 prices inserted
+  PANG: 0 prices inserted
+
+[Batch 186/200] Fetching ['PAPI', 'PAPR', 'PATN', 'PATX', 'PAUG']...
+  PAPI: 0 prices inserted
+  PAPR: 0 prices inserted
+  PATN: 0 prices inserted
+  PATX: 0 prices inserted
+  PAUG: 0 prices inserted
+
+[Batch 187/200] Fetching ['PAVE', 'PAWZ', 'PAYH', 'PAYM', 'PAYR']...
+  PAVE: 0 prices inserted
+  PAWZ: 0 prices inserted
+  PAYH: 0 prices inserted
+  PAYM: 0 prices inserted
+  PAYR: 0 prices inserted
+
+[Batch 188/200] Fetching ['PBAP', 'PBAU', 'PBD', 'PBDC', 'PBDE']...
+  PBAP: 0 prices inserted
+  PBAU: 0 prices inserted
+  PBD: 0 prices inserted
+  PBDC: 0 prices inserted
+  PBDE: 0 prices inserted
+
+[Batch 189/200] Fetching ['PBE', 'PBEU', 'PBFB', 'PBFR', 'PBJ']...
+  PBE: 0 prices inserted
+  PBEU: 0 prices inserted
+  PBFB: 0 prices inserted
+  PBFR: 0 prices inserted
+  PBJ: 0 prices inserted
+
+[Batch 190/200] Fetching ['PBJA', 'PBJL', 'PBJN', 'PBL', 'PBMR']...
+  PBJA: 0 prices inserted
+  PBJL: 0 prices inserted
+  PBJN: 0 prices inserted
+  PBL: 0 prices inserted
+  PBMR: 0 prices inserted
+
+[Batch 191/200] Fetching ['PBMY', 'PBNV', 'PBOC', 'PBOG', 'PBP']...
+  PBMY: 0 prices inserted
+  PBNV: 0 prices inserted
+  PBOC: 0 prices inserted
+  PBOG: 0 prices inserted
+  PBP: 0 prices inserted
+
+[Batch 192/200] Fetching ['PBPH', 'PBQQ', 'PBRG', 'PBSE', 'PBTP']...
+  PBPH: 0 prices inserted
+  PBQQ: 0 prices inserted
+  PBRG: 0 prices inserted
+  PBSE: 0 prices inserted
+  PBTP: 0 prices inserted
+
+[Batch 193/200] Fetching ['PBUS', 'PBW', 'PCCE', 'PCEF', 'PCFI']...
+  PBUS: 0 prices inserted
+  PBW: 0 prices inserted
+  PCCE: 0 prices inserted
+  PCEF: 0 prices inserted
+  PCFI: 0 prices inserted
+
+[Batch 194/200] Fetching ['PCGG', 'PCHI', 'PCI', 'PCIG', 'PCL']...
+  PCGG: 0 prices inserted
+  PCHI: 0 prices inserted
+  PCI: 0 prices inserted
+  PCIG: 0 prices inserted
+  PCL: 0 prices inserted
+
+[Batch 195/200] Fetching ['PCLG', 'PCLO', 'PCMM', 'PCPI', 'PCRB']...
+  PCLG: 0 prices inserted
+  PCLO: 0 prices inserted
+  PCMM: 0 prices inserted
+  PCPI: 0 prices inserted
+  PCRB: 0 prices inserted
+
+[Batch 196/200] Fetching ['PCS', 'PCY', 'PDBA', 'PDBC', 'PDDL']...
+  PCS: 0 prices inserted
+  PCY: 0 prices inserted
+  PDBA: 0 prices inserted
+  PDBC: 0 prices inserted
+  PDDL: 0 prices inserted
+
+[Batch 197/200] Fetching ['PDEC', 'PDN', 'PDP', 'PEJ', 'PEMX']...
+  PDEC: 0 prices inserted
+  PDN: 0 prices inserted
+  PDP: 0 prices inserted
+  PEJ: 0 prices inserted
+  PEMX: 0 prices inserted
+
+[Batch 198/200] Fetching ['PEPS', 'PEVC', 'PEX', 'PEXL', 'PEY']...
+  PEPS: 0 prices inserted
+  PEVC: 0 prices inserted
+  PEX: 0 prices inserted
+  PEXL: 0 prices inserted
+  PEY: 0 prices inserted
+
+[Batch 199/200] Fetching ['PEZ', 'PFDE', 'PFEB', 'PFF', 'PFFA']...
+  PEZ: 0 prices inserted
+  PFDE: 0 prices inserted
+  PFEB: 0 prices inserted
+  PFF: 0 prices inserted
+  PFFA: 0 prices inserted
+
+[Batch 200/200] Fetching ['PFFD', 'PFFR', 'PFFV', 'PFI', 'PFIG']...
+  PFFD: 0 prices inserted
+  PFFR: 0 prices inserted
+  PFFV: 0 prices inserted
+  PFI: 0 prices inserted
+  PFIG: 0 prices inserted
+
+[DONE] Total inserted: 0, errors: 0

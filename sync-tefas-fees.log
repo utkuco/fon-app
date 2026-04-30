@@ -1,0 +1,15 @@
+============================================================
+TEFAS Fee & Valor Sync
+============================================================
+
+[1/3] Fetching management fee data from API...
+  YAT: ERROR - Expecting value: line 1 column 1 (char 0)
+  EMK: ERROR - Expecting value: line 1 column 1 (char 0)
+  BYF: ERROR - Expecting value: line 1 column 1 (char 0)
+  Total funds with API data: 0
+
+[2/3] Fetching valor data from detail pages...
+  Funds in our DB: 2400
+  Scraping valör for 2400 funds (8 workers)...
+  Progress: 200/2400 (8%)
+  Progress: 400/2400 (16%)

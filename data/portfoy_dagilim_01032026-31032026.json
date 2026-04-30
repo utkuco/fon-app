@@ -1,0 +1,62 @@
+[
+  {
+    "fund_code": "NBH",
+    "fund_name": "NEO PORTFÖY ALGORİTMİK STRATEJİLER SERBEST FON",
+    "fund_oid": "4028328d7850aacb0178e8c9a1485c69",
+    "report_period": "Şubat 2026 Porföy Dağılım Raporu",
+    "publish_date": "11.03.2026 11:54:15",
+    "disclosure_id": "4028328c9cc9d177019cdc19470e180a",
+    "year": 2026,
+    "period": "AB",
+    "holdings_count": 0,
+    "holdings": []
+  },
+  {
+    "fund_code": "YHY",
+    "fund_name": "INVEO PORTFÖY YEDİNCİ HİSSE SENEDİ SERBEST FON (HİSSE SENEDİ YOĞUN FON)",
+    "fund_oid": "4028328c919f164a0191dffbb8b93edc",
+    "report_period": "YHY- Portföy Dağılım Raporu 2026 2.Aylık Bildirim",
+    "publish_date": "10.03.2026 17:43:43",
+    "disclosure_id": "4028328d9cc9d32c019cd829960c60aa",
+    "year": 2026,
+    "period": "AB",
+    "holdings_count": 0,
+    "holdings": []
+  },
+  {
+    "fund_code": "SSF",
+    "fund_name": "INVEO PORTFÖY SEKİZİNCİ SERBEST FON",
+    "fund_oid": "4028328c919f164a0191dffb95743ed1",
+    "report_period": "SSF- Portföy Dağılım Raporu 2026 2.Aylık Bildirim",
+    "publish_date": "10.03.2026 17:43:43",
+    "disclosure_id": "4028328d9cc9d32c019cd82995c760a0",
+    "year": 2026,
+    "period": "AB",
+    "holdings_count": 0,
+    "holdings": []
+  },
+  {
+    "fund_code": "PRR",
+    "fund_name": " INVEO PORTFÖY PARA PİYASASI KATILIM (TL) FONU",
+    "fund_oid": "4028328d998eebe8019a0b02debc54cf",
+    "report_period": "PRR- Portföy Dağılım Raporu 2026 2.Aylık Bildirim",
+    "publish_date": "10.03.2026 17:43:43",
+    "disclosure_id": "4028328d9cc9d32c019cd82995476096",
+    "year": 2026,
+    "period": "AB",
+    "holdings_count": 0,
+    "holdings": []
+  },
+  {
+    "fund_code": "NVK",
+    "fund_name": "INVEO PORTFÖY KATILIM SERBEST (DÖVİZ) FON",
+    "fund_oid": "4028328d919f184b0191e664006d0183",
+    "report_period": "NVK- Portföy Dağılım Raporu 2026 2.Aylık Bildirim",
+    "publish_date": "10.03.2026 17:43:42",
+    "disclosure_id": "4028328d9cc9d32c019cd8299503608c",
+    "year": 2026,
+    "period": "AB",
+    "holdings_count": 0,
+    "holdings": []
+  }
+]

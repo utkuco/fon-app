@@ -1,0 +1,1 @@
+[2026-04-29T01:15:00+00:00] ⚠️ PROBLEM: TEFAS scrape FAILED — ChromeDriver killed. funds_scraped=0. price_history 12 days stale (latest: 2026-04-16). Action required: fix Chrome sandbox issue.
