@@ -142,7 +142,12 @@ def parse_date(d: str) -> date:
 
 
 def compute_returns(prices: dict) -> dict:
-    """Compute 1M/3M/6M/1Y returns from {date: price} dict."""
+    """Compute 1M/3M/6M/1Y returns from {date: price} dict.
+
+    For each target period, finds the most recent available price on or before
+    the target date (handles holidays/weekends). Falls back to the earliest
+    available price if no prior price exists.
+    """
     today = date.today()
     one_month = (today - timedelta(days=30)).isoformat()
     three_month = (today - timedelta(days=90)).isoformat()
@@ -154,10 +159,18 @@ def compute_returns(prices: dict) -> dict:
         return {}
 
     def pct(target_date_str):
-        p = prices.get(target_date_str)
-        if not p:
+        # Find most recent available price on or before target_date
+        target = date.fromisoformat(target_date_str)
+        best_date = None
+        best_price = None
+        for d_str, p in prices.items():
+            d = date.fromisoformat(d_str)
+            if d <= target and (best_date is None or d > best_date):
+                best_date = d
+                best_price = p
+        if best_price is None or best_price == 0:
             return None
-        return round((today_price - p) / p * 100, 2)
+        return round((today_price - best_price) / best_price * 100, 2)
 
     return {
         "one_month_return": pct(one_month),
@@ -167,8 +180,13 @@ def compute_returns(prices: dict) -> dict:
     }
 
 
-def scrape_fund(driver, ticker: str) -> dict | None:
-    """Scrape a single fund using the shared Selenium driver."""
+def scrape_fund(driver, ticker: str, existing_history: list[dict]) -> dict | None:
+    """Scrape a single fund using the shared Selenium driver.
+
+    existing_history: list of {date, price, change} from DB (used to extend price
+    history beyond the ~60-day window TEFAS chart provides, so we can compute
+    6M and 1Y returns).
+    """
     from selenium.webdriver.common.by import By
     from selenium.webdriver.support.ui import WebDriverWait
     from selenium.webdriver.support import expected_conditions as EC
@@ -264,10 +282,19 @@ def scrape_fund(driver, ticker: str) -> dict | None:
         if prev_price and prev_price != 0:
             daily_change = round((latest_price - prev_price) / prev_price * 100, 2)
 
-    # Compute M/Y returns
-    returns = compute_returns(prices)
+    # Merge existing price history (from DB) with fresh prices from TEFAS chart.
+    # TEFAS only gives ~60 days of data, so 6M/1Y returns need older prices.
+    merged_prices = dict(prices)
+    for entry in existing_history:
+        d = entry["date"]
+        p = entry["price"]
+        if p is not None and d not in merged_prices:
+            merged_prices[d] = p
 
-    print(f"    {ticker}: {latest_date} price={latest_price:.4f} 1M={returns.get('one_month_return')} daily_chg={daily_change}")
+    # Compute M/Y returns using full merged history
+    returns = compute_returns(merged_prices)
+
+    print(f"    {ticker}: {latest_date} price={latest_price:.4f} 1M={returns.get('one_month_return')} 3M={returns.get('three_month_return')} 6M={returns.get('six_month_return')} 1Y={returns.get('one_year_return')} daily_chg={daily_change}")
 
     # weekly = last 7 days
     today = date.today()
@@ -390,7 +417,7 @@ def main():
         for i, ticker in enumerate(need_scrape):
             print(f"  [{i+1}/{len(need_scrape)}] {ticker}", end="")
             try:
-                data = scrape_fund(driver, ticker)
+                data = scrape_fund(driver, ticker, existing_history.get(ticker, []))
                 if data:
                     # Merge with existing price_history (deduplicate by date, sort asc)
                     existing = existing_history.get(ticker, [])
