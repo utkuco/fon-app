@@ -18,7 +18,7 @@ FonRapor.com, Türkiye'nin TEFAS ve KAP verilerini kullanan bağımsız bir yat�
 
 | Job | Zaman | Interval | Komut | Log |
 |---|---|---|---|---|
-| `com.fonapp.tefas-daily-cron` | Her gün 10:00 TR | launchd (daily) | `tefas_scraper_v2.py` → TEFAS fiyatları | `logs/tefas.log` |
+| `com.fonapp.tefas-daily-cron` | Her gün 10:00 TR | launchd (daily) | `tefas_scraper_v2.py` → TEFAS fiyatları (Chrome CDP) | `logs/tefas.log` |
 | `com.fonapp.tefas-health` | Her gün 11:00 TR | launchd (daily) | `health_check.py` → DB sağlık | `logs/health_check.log` |
 | `com.fonapp.fund-metadata` | Her gün 11:30 TR | **48 saat (2 gün)** | `fetch_fund_metadata.py` → FonBilgiGetir | `logs/metadata.log` |
 | `com.fonapp.etf-daily-cron` | 22:00, 01:00, 04:00, 07:00, 10:00 TR | 5× launchd | `etf_daily_cron.py` → yfinance | `logs/etf.log` |

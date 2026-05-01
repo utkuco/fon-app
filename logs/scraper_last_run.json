@@ -1,8 +1,1 @@
-{
-  "started_at": "2026-04-28T22:13:24.757449",
-  "finished_at": "2026-04-29T01:13:45.000000",
-  "funds_scraped": 0,
-  "errors": 1,
-  "status": "failed",
-  "error": "selenium.WebDriverException: ChromeDriver process killed (status -9). Sandbox/container environment restriction preventing Chrome from starting."
-}
+{"started_at": "2026-04-30T22:40:20.129397", "finished_at": "2026-04-30T22:40:20.129400", "funds_scraped": 0, "errors": 0, "status": "up_to_date"}

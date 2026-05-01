@@ -255,21 +255,34 @@ def build_price_history(price_rows: List[Dict]) -> List[Dict]:
     return result
 
 
-def compute_returns(price_rows: List[Dict]) -> Dict:
-    """Compute weekly/monthly/quarterly/semi-annual/annual returns from price rows."""
+def compute_returns(price_rows: List[Dict], ref_date: Optional[date] = None) -> Dict:
+    """Compute weekly/monthly/quarterly/semi-annual/annual returns from price rows.
+
+    ref_date: reference date to compute returns from (defaults to latest price date
+    in the rows). Finds the most recent available price on or before each target
+    date (handles holidays/weekends).
+    """
     if not price_rows:
         return {}
-    today = date.today()
+    if ref_date is None:
+        ref_date = date.today()
     price_map = {r["date"]: r["price"] for r in price_rows}
+    latest_date = max(price_map.keys())
+    latest_price = price_map.get(latest_date)
+    if not latest_price:
+        return {}
 
     def pct(days_ago):
-        target = (today - timedelta(days=days_ago)).isoformat()
-        latest_date = max(price_map.keys())
-        latest_price = price_map.get(latest_date)
-        past_price = price_map.get(target)
-        if not latest_price or not past_price or past_price == 0:
+        target = (ref_date - timedelta(days=days_ago)).isoformat()
+        # Find most recent price on or before target date (handles weekend/holiday gaps)
+        best_date, best_price = None, None
+        for d_str, p in price_map.items():
+            d = date.fromisoformat(d_str)
+            if d <= date.fromisoformat(target) and (best_date is None or d > best_date):
+                best_date, best_price = d, p
+        if not best_price or best_price == 0:
             return None
-        return round((latest_price - past_price) / past_price * 100, 2)
+        return round((latest_price - best_price) / best_price * 100, 2)
 
     return {
         "daily": compute_daily_change(price_rows),
@@ -534,9 +547,16 @@ def main():
                     existing = existing_history.get(code, [])
                     merged = merge_price_history(existing, data.get("price_history", []))
                     data["price_history"] = merged
+                    # Recompute returns from merged history using latest price date as ref
+                    ref_date = date.fromisoformat(max(merged, key=lambda x: x["date"])["date"])
+                    merged_returns = compute_returns(merged, ref_date=ref_date)
+                    data["daily_change"] = merged_returns.get("daily")
+                    data["weekly"] = merged_returns.get("weekly")
+                    data["monthly"] = merged_returns.get("one_month")
+                    data["quarterly"] = merged_returns.get("three_month")
                     results.append(data)
                     last_ok_code = code
-                    print(f" → {data['price']} | {len(merged)} pts")
+                    print(f" → {data['price']} | {len(merged)} pts | 3M={data['quarterly']}% 6M={merged_returns.get('six_month')}%")
                 else:
                     errors += 1
                     print(" → FAILED (no price)")
