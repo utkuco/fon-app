@@ -471,6 +471,14 @@ def scrape_fund(ws, cdp_eval, code: str) -> Optional[Dict]:
     if latest_date:
         result["last_price_date"] = latest_date
 
+    # Frontend expects {"1M": x, "3M": x, "6M": x, "1Y": x} — transform from compute_returns keys
+    result["returns"] = {
+        "1M": returns.get("one_month"),
+        "3M": returns.get("three_month"),
+        "6M": returns.get("six_month"),
+        "1Y": returns.get("one_year"),
+    }
+
     return result
 
 
@@ -554,6 +562,12 @@ def main():
                     data["weekly"] = merged_returns.get("weekly")
                     data["monthly"] = merged_returns.get("one_month")
                     data["quarterly"] = merged_returns.get("three_month")
+                    data["returns"] = {
+                        "1M": merged_returns.get("one_month"),
+                        "3M": merged_returns.get("three_month"),
+                        "6M": merged_returns.get("six_month"),
+                        "1Y": merged_returns.get("one_year"),
+                    }
                     results.append(data)
                     last_ok_code = code
                     print(f" → {data['price']} | {len(merged)} pts | 3M={data['quarterly']}% 6M={merged_returns.get('six_month')}%")
