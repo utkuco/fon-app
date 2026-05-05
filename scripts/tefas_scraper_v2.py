@@ -362,7 +362,8 @@ def get_funds_from_db(limit: int = 1000) -> tuple[List[Dict], Dict]:
     price_history is fetched separately to avoid URL length limits with large JSONB.
     """
     # Fetch metadata without price_history (avoid URL length issues)
-    url = (f"{SUPABASE_URL}/rest/v1/funds?market_cap=gt.0"
+    # Kaldırılan filter: market_cap=gt.0 — tüm fonlar güncellenmeli (sıfır olanlar dahil)
+    url = (f"{SUPABASE_URL}/rest/v1/funds?"
            f"&order=market_cap.desc&limit={limit}"
            f"&select=code,name,price,last_tefas_fetch")
     req = requests.get(url, headers=HEADERS, timeout=60)
