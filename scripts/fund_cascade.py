@@ -1,0 +1,674 @@
+#!/usr/bin/env python3.11
+"""
+fund_cascade.py — Birleşik fund processing script.
+
+Bu script aşağıdaki eski scriptlerin hepsini birleştirir:
+  - fund_cron.py     → benchmark prices + fund metrics + sparklines
+  - run_cascade.py   → category ranks + homepage_stats
+
+Schedule (launchd): Hafta içi 08:00-08:45 UTC (11:00-11:45 TR)
+Usage:             python3 scripts/fund_cascade.py
+
+Logic:
+  1. Fetch benchmark prices from Yahoo Finance → benchmark_prices table
+  2. Compute daily_change + period returns (1g/7d/30d/90d/180d) from funds.price_history
+  3. Compute + upsert sparklines to funds.sparkline
+  4. Compute + upsert fund_category_ranks (rank within fund_type by daily_change)
+  5. Compute + upsert homepage_stats (top gainers/losers, category averages)
+  6. Update system_status
+
+Approximate runtime: ~25-40 min for 2400 funds.
+"""
+
+import sys
+import math
+import time
+import json
+from datetime import datetime, timedelta
+from pathlib import Path
+import urllib.request
+from typing import Optional
+
+sys.path.insert(0, str(Path(__file__).parent))
+
+from cron_shared import (
+    load_env,
+    SUPABASE_URL,
+    SUPABASE_KEY,
+    HEADERS,
+    upsert_table,
+    query_table,
+    query_table_paginated,
+    upsert_system_status,
+    get_logger,
+    rest_patch,
+)
+
+LOG = get_logger("fund_cascade")
+
+# ─── Constants ────────────────────────────────────────────────────────────────
+
+MAX_ABS_RETURN = 50  # skip outliers > ±50% (likely split or data error)
+PAGE_SIZE = 500      # funds per page when fetching with price_history
+
+# ─── Date helpers ────────────────────────────────────────────────────────────
+
+def turkey_now() -> datetime:
+    """UTC+3 for Turkey."""
+    return datetime.utcnow() + timedelta(hours=3)
+
+
+def to_date_str(d: datetime) -> str:
+    return d.strftime("%Y-%m-%d")
+
+
+def days_ago(n: int) -> datetime:
+    return turkey_now() - timedelta(days=n)
+
+
+def get_price_at_days_ago(
+    sorted_prices: list[dict],
+    days: int,
+    ref_date: str,
+) -> float | None:
+    cutoff = (
+        datetime.strptime(ref_date, "%Y-%m-%d") - timedelta(days=days)
+    ).strftime("%Y-%m-%d")
+    for p in reversed(sorted_prices):
+        if p["date"] <= cutoff:
+            return p["price"]
+    return None
+
+
+# ─── Sparkline ───────────────────────────────────────────────────────────────
+
+SPARKLINE_W = 280
+SPARKLINE_H = 40
+
+
+def compute_sparkline(
+    price_history: list[dict],
+    days: int = 30,
+) -> Optional[dict]:
+    """Build SVG sparkline from price history. Returns SVG dict or None."""
+    if len(price_history) < 2:
+        return None
+
+    sorted_ph = sorted(price_history, key=lambda x: x.get("date", ""))
+    cutoff_str = to_date_str(
+        datetime.strptime(sorted_ph[-1]["date"], "%Y-%m-%d") - timedelta(days=days)
+    )
+    recent = [p for p in sorted_ph if p["date"] >= cutoff_str]
+
+    if len(recent) < 2:
+        return None
+
+    closes = [p["price"] for p in recent if p.get("price") is not None]
+    if len(closes) < 2:
+        return None
+
+    lo = min(closes)
+    hi = max(closes)
+    rng = hi - lo
+    if rng < 1e-9:
+        return None
+
+    def pt(price: float) -> tuple[float, float]:
+        idx = closes.index(price)
+        x = int(idx / (len(closes) - 1) * SPARKLINE_W)
+        y = int(SPARKLINE_H - (price - lo) / rng * SPARKLINE_H)
+        return x, y
+
+    first_x, first_y = pt(closes[0])
+    path = f"M{first_x},{first_y}"
+    for c in closes[1:]:
+        x, y = pt(c)
+        path += f" L{x},{y}"
+
+    last_x, last_y = pt(closes[-1])
+
+    # Determine color based on overall trend
+    if closes[-1] >= closes[0]:
+        color = "#16a34a"  # green
+    else:
+        color = "#dc2626"  # red
+
+    svg = (
+        f'<svg xmlns="http://www.w3.org/2000/svg" '
+        f'width="{SPARKLINE_W}" height="{SPARKLINE_H}" viewBox="0 0 {SPARKLINE_W} {SPARKLINE_H}">'
+        f'<polyline points="{path[1:]}" fill="none" stroke="{color}" stroke-width="1.5"'
+        f' stroke-linejoin="round" stroke-linecap="round"/></svg>'
+    )
+    return {
+        "svg": svg,
+        "direction": "up" if closes[-1] >= closes[0] else "down",
+        "first_price": closes[0],
+        "last_price": closes[-1],
+        "min": lo,
+        "max": hi,
+    }
+
+
+# ─── Benchmark fetching (from fund_cron.py) ─────────────────────────────────
+
+BENCHMARK_DEFAULTS = {
+    "ALTIN":   "GC=F",
+    "BYF":     "^GSPC",
+    "KFF":     "^IXIC",
+    "OKS":     "XU100.IS",
+    "OKS_B":   "XU100.IS",
+    "DÖVİZ":   "TRY=X",
+    "SRF":     "XU100.IS",
+    "VFF":     "XU100.IS",
+    "DEFAULT": "XU100.IS",
+}
+
+ALWAYS_FETCH = ["EURTRY=X", "TRY=X"]
+
+
+def fetch_yahoo_json(url: str, timeout: int = 15) -> dict:
+    try:
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0",
+            "Accept": "application/json",
+        })
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return json.loads(resp.read())
+    except Exception as e:
+        LOG(f"Yahoo fetch failed: {e}", "WARN")
+        return {}
+
+
+def fetch_benchmark_prices(symbols: list[str], lookback_days: int = 35) -> dict[str, list[dict]]:
+    """Fetch benchmark prices from Yahoo Finance. Returns {symbol: [{"date": "YYYY-MM-DD", "close": float}, ...]}"""
+    result: dict[str, list[dict]] = {}
+    period2 = int(time.time())
+    period1 = period2 - (lookback_days + 10) * 86400
+
+    for sym in symbols:
+        url = (
+            f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}"
+            f"?period1={period1}&period2={period2}&interval=1d&events=history"
+        )
+        data = fetch_yahoo_json(url)
+        quotes = (
+            data.get("chart", {})
+            .get("result", [{}])[0]
+            .get("indicators", {})
+            .get("quote", [{}])[0]
+            .get("close", [])
+        )
+        timestamps = (
+            data.get("chart", {})
+            .get("result", [{}])[0]
+            .get("timestamp", [])
+        )
+        if not quotes or not timestamps:
+            LOG(f"Benchmark {sym}: no data", "WARN")
+            continue
+
+        rows: list[dict] = []
+        for i, (ts, close) in enumerate(zip(timestamps, quotes)):
+            if close is None:
+                continue
+            d = datetime.utcfromtimestamp(ts).strftime("%Y-%m-%d")
+            rows.append({"date": d, "close": round(float(close), 4)})
+        result[sym] = rows
+        LOG(f"Benchmark {sym}: {len(rows)} prices")
+    return result
+
+
+def upsert_benchmark_prices(bm_prices: dict[str, list[dict]]) -> int:
+    """Upsert benchmark prices to benchmark_prices table. Returns total rows."""
+    total = 0
+    for sym, points in bm_prices.items():
+        if not points:
+            continue
+        rows = [
+            {"symbol": sym, "date": p["date"], "close_price": p["close"]}
+            for p in points
+        ]
+        ok = upsert_table("benchmark_prices", rows, conflict_col="symbol,date")
+        if ok:
+            total += len(rows)
+    return total
+
+
+# ─── Period returns ──────────────────────────────────────────────────────────
+
+def compute_period_returns(
+    sorted_prices: list[dict],
+    latest_price: float,
+    today_tr: str,
+) -> dict:
+    """Compute period returns as RATIO (not percentage)."""
+    p1g = get_price_at_days_ago(sorted_prices, 1, today_tr)
+    p1h = get_price_at_days_ago(sorted_prices, 7, today_tr)
+    p1a = get_price_at_days_ago(sorted_prices, 30, today_tr)
+    p3a = get_price_at_days_ago(sorted_prices, 90, today_tr)
+    p6a = get_price_at_days_ago(sorted_prices, 180, today_tr)
+
+    return {
+        "return_1g": round((latest_price - p1g) / p1g, 6) if p1g and p1g > 0 else 0.0,
+        "return_1h": round((latest_price - p1h) / p1h, 6) if p1h and p1h > 0 else 0.0,
+        "return_1a": round((latest_price - p1a) / p1a, 6) if p1a and p1a > 0 else 0.0,
+        "return_3a": round((latest_price - p3a) / p3a, 6) if p3a and p3a > 0 else 0.0,
+        "return_6a": round((latest_price - p6a) / p6a, 6) if p6a and p6a > 0 else 0.0,
+    }
+
+
+# ─── Compute fund metrics ────────────────────────────────────────────────────
+
+def compute_fund_metrics(
+    all_funds: list[dict],
+    today_tr: str,
+    yest_tr: str,
+) -> tuple[list[dict], list[dict]]:
+    """
+    Returns (fund_updates, sparkline_updates).
+      fund_updates: [{"code": ..., "daily_change": ..., "return_1g": ..., ...}, ...]
+      sparkline_updates: [{"code": ..., "sparkline": {...}}, ...]
+    """
+    fund_updates: list[dict] = []
+    sparkline_updates: list[dict] = []
+
+    for fund in all_funds:
+        ph = fund.get("price_history") or []
+        if isinstance(ph, str):
+            try:
+                ph = json.loads(ph)
+            except Exception:
+                continue
+
+        if len(ph) < 2:
+            continue
+
+        sorted_ph = sorted(ph, key=lambda x: x.get("date", ""))
+        latest_price = sorted_ph[-1].get("price")
+        if not latest_price or latest_price <= 0:
+            continue
+
+        # daily_change: today vs yesterday (Turkey timezone)
+        today_price: Optional[float] = None
+        yest_price: Optional[float] = None
+        for p in reversed(sorted_ph):
+            if today_price is None and p["date"] <= today_tr:
+                today_price = p.get("price")
+            if yest_price is None and p["date"] <= yest_tr:
+                yest_price = p.get("price")
+            if today_price is not None and yest_price is not None:
+                break
+
+        # Period returns (RATIO)
+        period_rets = compute_period_returns(sorted_ph, latest_price, today_tr)
+
+        # daily_change: stored as PERCENTAGE
+        if today_price and yest_price and yest_price > 0 and today_price > 0:
+            daily_change = round((today_price - yest_price) / yest_price * 100, 4)
+            fund_updates.append({
+                "code": fund["code"],
+                "daily_change": daily_change,
+                **period_rets,
+            })
+
+        # Sparkline
+        sparkline = compute_sparkline(sorted_ph, days=30)
+        if sparkline:
+            sparkline_updates.append({
+                "code": fund["code"],
+                "sparkline": sparkline,
+            })
+
+    return fund_updates, sparkline_updates
+
+
+def upsert_fund_metrics(fund_updates: list[dict]) -> int:
+    """Upsert fund metrics in batches of 100."""
+    if not fund_updates:
+        return 0
+    count = 0
+    for i in range(0, len(fund_updates), 100):
+        batch = fund_updates[i:i + 100]
+        ok = upsert_table("funds", batch, conflict_col="code")
+        if ok:
+            count += len(batch)
+        if i % 200 == 0:
+            LOG(f"  fund_metrics progress: {i}/{len(fund_updates)}")
+    return count
+
+
+def upsert_sparklines(sparkline_updates: list[dict]) -> int:
+    """Upsert sparklines to funds.sparkline in batches of 25."""
+    if not sparkline_updates:
+        return 0
+    payload = [
+        {"code": r["code"], "sparkline": r["sparkline"]}
+        for r in sparkline_updates if r.get("sparkline")
+    ]
+    if not payload:
+        return 0
+    count = 0
+    total_batches = (len(payload) + 24) // 25
+    for i in range(0, len(payload), 25):
+        batch = payload[i:i + 25]
+        ok = upsert_table("funds", batch, conflict_col="code")
+        if ok:
+            count += len(batch)
+        else:
+            LOG(f"  sparkline batch {i//25}/{total_batches} failed")
+        if i % 125 == 0:
+            LOG(f"  sparkline progress: {i}/{len(payload)}")
+    return count
+
+
+# ─── Category ranks ──────────────────────────────────────────────────────────
+
+def compute_category_ranks(funds: list[dict]) -> list[dict]:
+    """Rank funds within each fund_type by daily_change DESC (nulls last)."""
+    groups: dict[str, list[dict]] = {}
+    for f in funds:
+        t = f.get("fund_type") or "OTHER"
+        groups.setdefault(t, []).append(f)
+
+    rank_rows: list[dict] = []
+    for cat, cat_funds in groups.items():
+        ranked = sorted(
+            cat_funds,
+            key=lambda f: (f.get("daily_change") is None, -(f.get("daily_change") or 0)),
+        )
+        for idx, fund in enumerate(ranked):
+            rank = idx + 1
+            count = len(ranked)
+            percentile = ((count - rank) / (count - 1) * 100) if count > 1 else 100.0
+            rank_rows.append({
+                "fund_code": fund["code"],
+                "category": cat,
+                "rank": rank,
+                "category_count": count,
+                "percentile": round(percentile, 1),
+                "computed_at": datetime.utcnow().isoformat(),
+            })
+    return rank_rows
+
+
+def upsert_category_ranks(rank_rows: list[dict]) -> int:
+    """Upsert category ranks using conflict_col (fund_code is unique)."""
+    if not rank_rows:
+        return 0
+    ok = upsert_table("fund_category_ranks", rank_rows, conflict_col="fund_code")
+    return len(rank_rows) if ok else 0
+
+
+# ─── Homepage stats ──────────────────────────────────────────────────────────
+
+def pct_return_ratio(val: Optional[float]) -> Optional[float]:
+    """Convert stored RATIO to percentage (×100)."""
+    if val is None:
+        return None
+    return val * 100
+
+
+def compute_homepage_stats(funds: list[dict]) -> dict:
+    """Compute homepage_stats payload."""
+    # Fetch existing benchmarks_data to preserve it
+    existing = query_table("homepage_stats", "benchmarks_data", filters={"id": "eq.1"})
+    benchmarks_data = None
+    if existing and existing[0].get("benchmarks_data"):
+        benchmarks_data = existing[0]["benchmarks_data"]
+
+    # ── Gainers / losers ──────────────────────────────────────────────────
+    with_change = [f for f in funds if f.get("daily_change") is not None]
+    sorted_by_change = sorted(with_change, key=lambda f: f["daily_change"], reverse=True)
+
+    top5_gainers = [
+        {
+            "code": f["code"],
+            "name": f.get("name", ""),
+            "change": f["daily_change"],
+            "market_cap": f.get("market_cap") or 0,
+        }
+        for f in sorted_by_change[:5]
+    ]
+    top5_losers = [
+        {
+            "code": f["code"],
+            "name": f.get("name", ""),
+            "change": f["daily_change"],
+            "market_cap": f.get("market_cap") or 0,
+        }
+        for f in sorted_by_change[-5:][::-1]
+    ]
+
+    # ── Most invested ─────────────────────────────────────────────────────
+    top_invested = sorted(funds, key=lambda f: f.get("market_cap") or 0, reverse=True)[:5]
+    top_funds = [
+        {
+            "code": f["code"],
+            "name": f.get("name", ""),
+            "market_cap": f.get("market_cap") or 0,
+            "daily_change": f.get("daily_change"),
+        }
+        for f in top_invested
+    ]
+
+    # ── Category stats (AUM-weighted) ─────────────────────────────────────
+    cat_map: dict[str, dict] = {}
+    for f in funds:
+        t = f.get("fund_type") or "OTHER"
+        if t not in cat_map:
+            cat_map[t] = {
+                "count": 0,
+                "total_market_cap": 0.0,
+                "sum_daily_change": 0.0,
+                "change_count": 0,
+                "aum_1w": 0.0, "aum_1m": 0.0, "aum_3m": 0.0, "aum_6m": 0.0,
+                "sum_aum_1w": 0.0, "sum_aum_1m": 0.0,
+                "sum_aum_3m": 0.0, "sum_aum_6m": 0.0,
+            }
+        s = cat_map[t]
+        s["count"] += 1
+        aum = f.get("market_cap") or 0
+        s["total_market_cap"] += aum
+        if f.get("daily_change") is not None:
+            s["sum_daily_change"] += f["daily_change"]
+            s["change_count"] += 1
+
+        # Period returns stored as RATIO → convert to %
+        r1w = pct_return_ratio(f.get("return_1h"))   # 7-day
+        r1m = pct_return_ratio(f.get("return_1a"))   # 30-day
+        r3m = pct_return_ratio(f.get("return_3a"))   # 90-day
+        r6m = pct_return_ratio(f.get("return_6a"))   # 180-day
+
+        if aum > 0:
+            if r1w is not None and abs(r1w) <= MAX_ABS_RETURN:
+                s["aum_1w"] += r1w * aum
+                s["sum_aum_1w"] += aum
+            if r1m is not None and abs(r1m) <= MAX_ABS_RETURN:
+                s["aum_1m"] += r1m * aum
+                s["sum_aum_1m"] += aum
+            if r3m is not None and abs(r3m) <= MAX_ABS_RETURN:
+                s["aum_3m"] += r3m * aum
+                s["sum_aum_3m"] += aum
+            if r6m is not None and abs(r6m) <= MAX_ABS_RETURN:
+                s["aum_6m"] += r6m * aum
+                s["sum_aum_6m"] += aum
+
+    category_stats: list[dict] = []
+    for cat, s in sorted(cat_map.items()):
+        avg_change = s["sum_daily_change"] / s["change_count"] if s["change_count"] else None
+        category_stats.append({
+            "category": cat,
+            "fund_count": s["count"],
+            "total_market_cap": round(s["total_market_cap"], 2),
+            "avg_daily_change": round(avg_change, 4) if avg_change is not None else None,
+            "avg_return_1w": round(s["aum_1w"] / s["sum_aum_1w"] * 100, 4) if s["sum_aum_1w"] > 0 else None,
+            "avg_return_1m": round(s["aum_1m"] / s["sum_aum_1m"] * 100, 4) if s["sum_aum_1m"] > 0 else None,
+            "avg_return_3m": round(s["aum_3m"] / s["sum_aum_3m"] * 100, 4) if s["sum_aum_3m"] > 0 else None,
+            "avg_return_6m": round(s["aum_6m"] / s["sum_aum_6m"] * 100, 4) if s["sum_aum_6m"] > 0 else None,
+        })
+
+    total_market_cap = sum(f.get("market_cap") or 0 for f in funds)
+    avg_daily_change = sum(
+        f["daily_change"] for f in funds if f.get("daily_change") is not None
+    ) / len(with_change) if with_change else None
+
+    latest_date = (
+        query_table("funds", "last_tefas_fetch", order="last_tefas_fetch.desc", limit=1, filters={"last_tefas_fetch": "not.is.null"})[0]["last_tefas_fetch"]
+        if query_table("funds", "last_tefas_fetch", order="last_tefas_fetch.desc", limit=1, filters={"last_tefas_fetch": "not.is.null"}) else None
+    )
+
+    return {
+        "id": 1,
+        "latest_date": latest_date,
+        "total_market_cap": round(total_market_cap, 2),
+        "fund_count": len(funds),
+        "avg_daily_change": round(avg_daily_change, 4) if avg_daily_change is not None else None,
+        "top5_gainers": top5_gainers,
+        "top5_losers": top5_losers,
+        "top_funds": top_funds,
+        "category_stats": category_stats,
+        "benchmarks_data": benchmarks_data,
+    }
+
+
+# ─── Main ────────────────────────────────────────────────────────────────────
+
+def main():
+    load_env()
+    LOG("Starting fund_cascade")
+    t0 = time.time()
+    today_tr = to_date_str(turkey_now())
+    yest_tr = to_date_str(turkey_now() - timedelta(days=1))
+    LOG(f"today={today_tr}, yesterday={yest_tr}")
+
+    test_mode = "--test" in sys.argv or "-t" in sys.argv
+
+    # ── 1. Fetch all benchmark symbols from DB ──────────────────────────────
+    funds_meta = query_table_paginated("funds", "code,fund_type,benchmark_symbol")
+    LOG(f"Funds: {len(funds_meta)}")
+
+    # Backfill missing benchmark_symbols
+    for fund in funds_meta:
+        if not fund.get("benchmark_symbol") and fund.get("fund_type"):
+            bm = BENCHMARK_DEFAULTS.get(fund["fund_type"]) or BENCHMARK_DEFAULTS["DEFAULT"]
+            url = f"{SUPABASE_URL}/rest/v1/funds?code=eq.{fund['code']}"
+            rest_patch(url, {"benchmark_symbol": bm})
+    LOG("benchmark_symbol backfill done")
+
+    # Collect unique benchmark symbols
+    unique_symbols = set()
+    for fund in funds_meta:
+        bm = fund.get("benchmark_symbol")
+        if bm:
+            unique_symbols.add(bm)
+    for sym in ALWAYS_FETCH:
+        unique_symbols.add(sym)
+    unique_symbols = sorted(unique_symbols)
+
+    # ── 2. Fetch + upsert benchmark prices ────────────────────────────────
+    LOG(f"Fetching {len(unique_symbols)} benchmark symbols from Yahoo...")
+    bm_prices = fetch_benchmark_prices(list(unique_symbols), lookback_days=35)
+    bm_total = upsert_benchmark_prices(bm_prices)
+    LOG(f"Benchmark prices: {bm_total} rows written")
+    upsert_system_status(
+        "last_benchmark_prices_cron",
+        datetime.utcnow().isoformat(),
+        "success",
+        f"{len(unique_symbols)} symbols, {bm_total} prices",
+    )
+
+    # ── 3. Fetch all funds with price_history ─────────────────────────────
+    LOG("Fetching funds with price_history...")
+    all_funds_raw: list[dict] = []
+    page = 0
+    has_more = True
+    while has_more:
+        start = page * PAGE_SIZE
+        rows = query_table(
+            "funds",
+            "id,code,name,fund_type,market_cap,price_history,currency",
+            filters={"price_history": "not.is.null"},
+            offset=start,
+            limit=PAGE_SIZE,
+        )
+        if not rows:
+            has_more = False
+            break
+        all_funds_raw.extend(rows)
+        has_more = len(rows) == PAGE_SIZE
+        page += 1
+        if page >= 20:
+            break
+    LOG(f"Total funds with price_history: {len(all_funds_raw)}")
+
+    if test_mode:
+        all_funds_raw = all_funds_raw[:5]
+        LOG(f"TEST MODE: limiting to first {len(all_funds_raw)} funds")
+
+    # ── 4. Compute fund metrics + sparklines ───────────────────────────────
+    LOG("Computing fund metrics...")
+    fund_updates, sparkline_updates = compute_fund_metrics(all_funds_raw, today_tr, yest_tr)
+    LOG(f"  fund_updates: {len(fund_updates)}, sparkline_updates: {len(sparkline_updates)}")
+
+    # ── 5. Upsert fund metrics ─────────────────────────────────────────────
+    LOG("Upserting fund metrics...")
+    fund_count = upsert_fund_metrics(fund_updates)
+    LOG(f"  funds updated: {fund_count}/{len(fund_updates)}")
+
+    # ── 6. Upsert sparklines ──────────────────────────────────────────────
+    LOG("Upserting sparklines...")
+    sparkline_count = upsert_sparklines(sparkline_updates)
+    LOG(f"  sparklines upserted: {sparkline_count}/{len(sparkline_updates)}")
+
+    # ── 7. Reload funds for stats computation ─────────────────────────────
+    LOG("Reloading funds for homepage_stats...")
+    reload_cols = (
+        "code,name,fund_type,market_cap,daily_change,"
+        "return_1g,return_1h,return_1a,return_3a,return_6a"
+    )
+    funds_for_stats = query_table_paginated("funds", reload_cols)
+    normalized = []
+    for f in funds_for_stats:
+        normalized.append({
+            "code": f["code"],
+            "name": f.get("name") or "",
+            "fund_type": f.get("fund_type") or "OTHER",
+            "market_cap": float(f["market_cap"]) if f.get("market_cap") else 0.0,
+            "daily_change": float(f["daily_change"]) if f.get("daily_change") is not None else None,
+            "return_1g": float(f["return_1g"]) if f.get("return_1g") is not None else None,
+            "return_1h": float(f["return_1h"]) if f.get("return_1h") is not None else None,
+            "return_1a": float(f["return_1a"]) if f.get("return_1a") is not None else None,
+            "return_3a": float(f["return_3a"]) if f.get("return_3a") is not None else None,
+            "return_6a": float(f["return_6a"]) if f.get("return_6a") is not None else None,
+        })
+    funds_for_stats = normalized
+    LOG(f"  funds_for_stats: {len(funds_for_stats)}")
+
+    # ── 8. Compute + upsert category ranks ─────────────────────────────────
+    LOG("Computing category ranks...")
+    rank_rows = compute_category_ranks(funds_for_stats)
+    rank_count = upsert_category_ranks(rank_rows)
+    LOG(f"  category ranks upserted: {rank_count}")
+
+    # ── 9. Compute + upsert homepage_stats ────────────────────────────────
+    LOG("Computing homepage_stats...")
+    stats_payload = compute_homepage_stats(funds_for_stats)
+    ok = upsert_table("homepage_stats", [stats_payload], conflict_col="id")
+    if ok:
+        LOG("  homepage_stats upserted OK")
+    else:
+        LOG("  homepage_stats upsert FAILED", "ERROR")
+
+    # ── 10. Update system_status ───────────────────────────────────────────
+    elapsed = round(time.time() - t0, 1)
+    upsert_system_status(
+        "last_fund_cascade",
+        datetime.utcnow().isoformat(),
+        "success",
+        f"funds={len(fund_updates)}, sparklines={sparkline_count}, ranks={rank_count}, elapsed={elapsed}s",
+    )
+    LOG(f"Done in {elapsed}s")
+
+
+if __name__ == "__main__":
+    main()

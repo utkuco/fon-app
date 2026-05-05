@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.11
 """
 ETF Daily Cron Job — runs every day after US market close (~22:00 Turkey).
 1. Fetches today's close prices for all ETFs (incremental update)
@@ -6,11 +6,14 @@ ETF Daily Cron Job — runs every day after US market close (~22:00 Turkey).
 3. Recomputes 1M, 3M, 6M TRY returns and updates foreign_etfs table
 
 Usage:
-    python3 etf_daily_cron.py
+    python3.11 scripts/etf_daily_cron.py
 
 Cron example (run at 22:00 Turkey daily):
     0 22 * * * cd /Users/admin/Desktop/projects/fon-app && ./venv/bin/python3 scripts/etf_daily_cron.py >> logs/etf_cron.log 2>&1
 """
+
+import os
+os.environ['YFINANCE_CACHE_DIR'] = '/tmp/yfinance_cache'
 
 import yfinance as yf
 import pandas as pd
@@ -18,7 +21,6 @@ import urllib.request
 import json
 import time
 import warnings
-import os
 import fcntl
 from datetime import date, datetime, timedelta
 from typing import Optional
