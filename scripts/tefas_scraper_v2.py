@@ -362,8 +362,10 @@ def get_funds_from_db(limit: int = 1000) -> tuple[List[Dict], Dict]:
     price_history is fetched separately to avoid URL length limits with large JSONB.
     """
     # Fetch metadata without price_history (avoid URL length issues)
+    # Sadece aktif fonları çek — is_active=false olanlar atlanır
     # Kaldırılan filter: market_cap=gt.0 — tüm fonlar güncellenmeli (sıfır olanlar dahil)
     url = (f"{SUPABASE_URL}/rest/v1/funds?"
+           f"is_active=eq.true&"
            f"&order=market_cap.desc&limit={limit}"
            f"&select=code,name,price,last_tefas_fetch")
     req = requests.get(url, headers=HEADERS, timeout=60)
@@ -524,6 +526,28 @@ def main():
             skip_count += 1
 
     print(f"  Need to scrape: {len(need_scrape)}/{len(funds)} ({skip_count} up-to-date, skipping)")
+
+    # ─── 30 gün stale фонları otomatik is_active=false yap ───────────────────────
+    cutoff = (date.today() - timedelta(days=30)).isoformat()
+    stale = []
+    for f in funds:
+        code = f["code"]
+        hist = existing_history.get(code, [])
+        if isinstance(hist, list) and len(hist) > 0:
+            last_date = hist[-1].get("date", "")
+            if last_date and last_date < cutoff:
+                stale.append(code)
+    if stale:
+        print(f"  ⚠️  {len(stale)} fon 30 gündür verisiz — is_active=false yapılıyor: {stale[:10]}{'...' if len(stale) > 10 else ''}")
+        for batch in [stale[i:i+100] for i in range(0, len(stale), 100)]:
+            codes_param = ",".join(batch)
+            patch_url = f"{SUPABASE_URL}/rest/v1/funds?code=in.({codes_param})"
+            requests.patch(patch_url, headers=HEADERS,
+                           data=json.dumps({"is_active": False}),
+                           timeout=30)
+        # Bunları need_scrape'den çıkar
+        need_scrape = [c for c in need_scrape if c not in stale]
+        print(f"  → Scrapable fon kaldı: {len(need_scrape)}")
 
     if not need_scrape:
         print("  All funds up-to-date")
