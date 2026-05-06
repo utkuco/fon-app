@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.11
+#!/usr/bin/env python3
 """
 fund_cascade.py — Birleşik fund processing script.
 
@@ -24,6 +24,8 @@ import sys
 import math
 import time
 import json
+import psycopg2
+import psycopg2.extras
 from datetime import datetime, timedelta
 from pathlib import Path
 import urllib.request
@@ -35,6 +37,7 @@ from cron_shared import (
     load_env,
     SUPABASE_URL,
     SUPABASE_KEY,
+    SUPABASE_DB_URL,
     HEADERS,
     upsert_table,
     query_table,
@@ -70,7 +73,7 @@ def get_price_at_days_ago(
     sorted_prices: list[dict],
     days: int,
     ref_date: str,
-) -> float | None:
+) -> Optional[float]:
     cutoff = (
         datetime.strptime(ref_date, "%Y-%m-%d") - timedelta(days=days)
     ).strftime("%Y-%m-%d")
@@ -113,19 +116,18 @@ def compute_sparkline(
     if rng < 1e-9:
         return None
 
-    def pt(price: float) -> tuple[float, float]:
-        idx = closes.index(price)
+    def pt(idx: int, price: float) -> tuple[float, float]:
         x = int(idx / (len(closes) - 1) * SPARKLINE_W)
         y = int(SPARKLINE_H - (price - lo) / rng * SPARKLINE_H)
         return x, y
 
-    first_x, first_y = pt(closes[0])
+    first_x, first_y = pt(0, closes[0])
     path = f"M{first_x},{first_y}"
-    for c in closes[1:]:
-        x, y = pt(c)
+    for idx, c in enumerate(closes[1:], start=1):
+        x, y = pt(idx, c)
         path += f" L{x},{y}"
 
-    last_x, last_y = pt(closes[-1])
+    last_x, last_y = pt(len(closes) - 1, closes[-1])
 
     # Determine color based on overall trend
     if closes[-1] >= closes[0]:
@@ -219,18 +221,29 @@ def fetch_benchmark_prices(symbols: list[str], lookback_days: int = 35) -> dict[
 
 
 def upsert_benchmark_prices(bm_prices: dict[str, list[dict]]) -> int:
-    """Upsert benchmark prices to benchmark_prices table. Returns total rows."""
+    """Upsert benchmark prices to benchmark_prices table. Uses PostgreSQL directly for multi-column upsert."""
+    _db_url = SUPABASE_DB_URL
     total = 0
-    for sym, points in bm_prices.items():
-        if not points:
-            continue
-        rows = [
-            {"symbol": sym, "date": p["date"], "close_price": p["close"]}
-            for p in points
-        ]
-        ok = upsert_table("benchmark_prices", rows, conflict_col="symbol,date")
-        if ok:
-            total += len(rows)
+    if not bm_prices:
+        return 0
+    try:
+        conn = psycopg2.connect(_db_url)
+        cur = conn.cursor()
+        for sym, points in bm_prices.items():
+            if not points:
+                continue
+            for p in points:
+                cur.execute("""
+                    INSERT INTO benchmark_prices (symbol, date, close_price)
+                    VALUES (%s, %s, %s)
+                    ON CONFLICT (symbol, date) DO UPDATE SET close_price = EXCLUDED.close_price
+                """, (sym, p["date"], p["close"]))
+                total += 1
+        conn.commit()
+        cur.close()
+        conn.close()
+    except Exception as e:
+        LOG(f"upsert_benchmark_prices DB error: {e}", "ERROR")
     return total
 
 
@@ -323,43 +336,78 @@ def compute_fund_metrics(
 
 
 def upsert_fund_metrics(fund_updates: list[dict]) -> int:
-    """Upsert fund metrics in batches of 100."""
+    """Upsert fund metrics using PostgreSQL batch INSERT with ON CONFLICT."""
     if not fund_updates:
         return 0
-    count = 0
-    for i in range(0, len(fund_updates), 100):
-        batch = fund_updates[i:i + 100]
-        ok = upsert_table("funds", batch, conflict_col="code")
-        if ok:
-            count += len(batch)
-        if i % 200 == 0:
-            LOG(f"  fund_metrics progress: {i}/{len(fund_updates)}")
-    return count
+    METRIC_COLS = [
+        "daily_change", "return_1g", "return_1h", "return_1a",
+        "return_3a", "return_6a",
+    ]
+    try:
+        conn = psycopg2.connect(SUPABASE_DB_URL)
+        cur = conn.cursor()
+        codes = [r["code"] for r in fund_updates]
+        cur.execute(f"SELECT code, name FROM funds WHERE code = ANY(%s)", (codes,))
+        name_map = {row[0]: row[1] for row in cur.fetchall()}
+        values = []
+        for r in fund_updates:
+            code = r.get("code")
+            name = name_map.get(code)
+            if not code or name is None:
+                continue
+            row_vals = [code, name] + [r.get(k) for k in METRIC_COLS]
+            values.append(row_vals)
+        if not values:
+            cur.close()
+            conn.close()
+            return 0
+        keys = ["code", "name"] + METRIC_COLS
+        set_clause = ", ".join([f"{k}=EXCLUDED.{k}" for k in METRIC_COLS])
+        psycopg2.extras.execute_values(
+            cur,
+            f"INSERT INTO funds ({','.join(keys)}) VALUES %s ON CONFLICT (code) DO UPDATE SET {set_clause}",
+            values,
+            page_size=500,
+        )
+        conn.commit()
+        cur.close()
+        conn.close()
+    except Exception as e:
+        LOG(f"upsert_fund_metrics DB error: {e}", "ERROR")
+        return 0
+    return len(values)
 
 
 def upsert_sparklines(sparkline_updates: list[dict]) -> int:
-    """Upsert sparklines to funds.sparkline in batches of 25."""
+    """Upsert sparklines using PostgreSQL batch UPDATE (all funds exist after upsert_fund_metrics)."""
     if not sparkline_updates:
         return 0
-    payload = [
-        {"code": r["code"], "sparkline": r["sparkline"]}
-        for r in sparkline_updates if r.get("sparkline")
-    ]
-    if not payload:
+    try:
+        import json
+        conn = psycopg2.connect(SUPABASE_DB_URL)
+        cur = conn.cursor()
+        values = [
+            (json.dumps(r["sparkline"]), r["code"])
+            for r in sparkline_updates
+            if r.get("code") and r.get("sparkline")
+        ]
+        if not values:
+            cur.close()
+            conn.close()
+            return 0
+        psycopg2.extras.execute_values(
+            cur,
+            "UPDATE funds SET sparkline = data.sparkline::jsonb FROM (VALUES %s) AS data(sparkline, code) WHERE funds.code = data.code",
+            values,
+            page_size=500,
+        )
+        conn.commit()
+        cur.close()
+        conn.close()
+    except Exception as e:
+        LOG(f"upsert_sparklines DB error: {e}", "ERROR")
         return 0
-    count = 0
-    total_batches = (len(payload) + 24) // 25
-    for i in range(0, len(payload), 25):
-        batch = payload[i:i + 25]
-        ok = upsert_table("funds", batch, conflict_col="code")
-        if ok:
-            count += len(batch)
-        else:
-            LOG(f"  sparkline batch {i//25}/{total_batches} failed")
-        if i % 125 == 0:
-            LOG(f"  sparkline progress: {i}/{len(payload)}")
-    return count
-
+    return len(values)
 
 # ─── Category ranks ──────────────────────────────────────────────────────────
 
@@ -392,11 +440,40 @@ def compute_category_ranks(funds: list[dict]) -> list[dict]:
 
 
 def upsert_category_ranks(rank_rows: list[dict]) -> int:
-    """Upsert category ranks using conflict_col (fund_code is unique)."""
+    """Upsert category ranks using PostgreSQL batch INSERT with ON CONFLICT."""
     if not rank_rows:
         return 0
-    ok = upsert_table("fund_category_ranks", rank_rows, conflict_col="fund_code")
-    return len(rank_rows) if ok else 0
+    try:
+        conn = psycopg2.connect(SUPABASE_DB_URL)
+        cur = conn.cursor()
+        now = datetime.utcnow().isoformat()
+        values = [
+            (r["fund_code"], r["category"], r["rank"], r["category_count"], r["percentile"], now)
+            for r in rank_rows
+        ]
+        # Batch insert using execute_values for speed
+        psycopg2.extras.execute_values(
+            cur,
+            """
+            INSERT INTO fund_category_ranks (fund_code, category, rank, category_count, percentile, computed_at)
+            VALUES %s
+            ON CONFLICT (fund_code) DO UPDATE SET
+                category = EXCLUDED.category,
+                rank = EXCLUDED.rank,
+                category_count = EXCLUDED.category_count,
+                percentile = EXCLUDED.percentile,
+                computed_at = EXCLUDED.computed_at
+            """,
+            values,
+            page_size=500,
+        )
+        conn.commit()
+        cur.close()
+        conn.close()
+    except Exception as e:
+        LOG(f"upsert_category_ranks DB error: {e}", "ERROR")
+        return 0
+    return len(rank_rows)
 
 
 # ─── Homepage stats ──────────────────────────────────────────────────────────
@@ -408,13 +485,15 @@ def pct_return_ratio(val: Optional[float]) -> Optional[float]:
     return val * 100
 
 
-def compute_homepage_stats(funds: list[dict]) -> dict:
+def compute_homepage_stats(funds: list[dict], funds_with_history: Optional[list[dict]] = None) -> dict:
     """Compute homepage_stats payload."""
-    # Fetch existing benchmarks_data to preserve it
-    existing = query_table("homepage_stats", "benchmarks_data", filters={"id": "eq.1"})
+    # Fetch existing benchmarks_data AND category_sparklines to preserve them
+    existing = query_table("homepage_stats", "benchmarks_data,category_sparklines", filters={"id": "eq.1"})
     benchmarks_data = None
-    if existing and existing[0].get("benchmarks_data"):
-        benchmarks_data = existing[0]["benchmarks_data"]
+    existing_category_sparklines = None
+    if existing and existing[0]:
+        benchmarks_data = existing[0].get("benchmarks_data")
+        existing_category_sparklines = existing[0].get("category_sparklines")
 
     # ── Gainers / losers ──────────────────────────────────────────────────
     with_change = [f for f in funds if f.get("daily_change") is not None]
@@ -493,11 +572,10 @@ def compute_homepage_stats(funds: list[dict]) -> dict:
                 s["aum_6m"] += r6m * aum
                 s["sum_aum_6m"] += aum
 
-    category_stats: list[dict] = []
+    category_stats: dict[str, dict] = {}
     for cat, s in sorted(cat_map.items()):
         avg_change = s["sum_daily_change"] / s["change_count"] if s["change_count"] else None
-        category_stats.append({
-            "category": cat,
+        category_stats[cat] = {
             "fund_count": s["count"],
             "total_market_cap": round(s["total_market_cap"], 2),
             "avg_daily_change": round(avg_change, 4) if avg_change is not None else None,
@@ -505,7 +583,7 @@ def compute_homepage_stats(funds: list[dict]) -> dict:
             "avg_return_1m": round(s["aum_1m"] / s["sum_aum_1m"] * 100, 4) if s["sum_aum_1m"] > 0 else None,
             "avg_return_3m": round(s["aum_3m"] / s["sum_aum_3m"] * 100, 4) if s["sum_aum_3m"] > 0 else None,
             "avg_return_6m": round(s["aum_6m"] / s["sum_aum_6m"] * 100, 4) if s["sum_aum_6m"] > 0 else None,
-        })
+        }
 
     total_market_cap = sum(f.get("market_cap") or 0 for f in funds)
     avg_daily_change = sum(
@@ -517,6 +595,82 @@ def compute_homepage_stats(funds: list[dict]) -> dict:
         if query_table("funds", "last_tefas_fetch", order="last_tefas_fetch.desc", limit=1, filters={"last_tefas_fetch": "not.is.null"}) else None
     )
 
+    # ── Category sparklines (Turkish fund types from price_history) ─────────────
+    # Preserve existing ETF sparklines from homepage_stats, compute Turkish fund sparklines from price_history
+    category_sparklines: dict[str, dict] = {}
+    if existing_category_sparklines:
+        category_sparklines = existing_category_sparklines if isinstance(existing_category_sparklines, dict) else {}
+
+    if funds_with_history:
+        # Group funds with price_history by fund_type
+        type_prices: dict[str, list[tuple[float, list[dict]]]] = {}  # fund_type -> [(aum, price_history)]
+        for f in funds_with_history:
+            ph = f.get("price_history")
+            if not ph or not isinstance(ph, list) or len(ph) < 2:
+                continue
+            aum = f.get("market_cap") or 0
+            if aum <= 0:
+                continue
+            ft = f.get("fund_type") or "OTHER"
+            if ft not in type_prices:
+                type_prices[ft] = []
+            type_prices[ft].append((aum, ph))
+
+        # Compute AUM-weighted average sparkline per Turkish fund type
+        SPARKLINE_POINTS = 30
+        for fund_type, fund_list in type_prices.items():
+            # Sort all price_history entries by date, take last 30 data points
+            # Build a common date grid from all funds
+            all_dates: set[str] = set()
+            for aum, ph in fund_list:
+                for p in ph:
+                    if isinstance(p, dict) and p.get("date") and p.get("price") is not None:
+                        all_dates.add(p["date"])
+            if not all_dates:
+                continue
+            sorted_dates = sorted(all_dates)[-SPARKLINE_POINTS:]
+            if len(sorted_dates) < 2:
+                continue
+
+            # For each date, compute AUM-weighted average price
+            weighted_prices: list[float] = []
+            for d in sorted_dates:
+                total_weighted_price = 0.0
+                total_aum = 0.0
+                for aum, ph in fund_list:
+                    # Find closest price on or before this date
+                    price_val = None
+                    for p in sorted(ph, key=lambda x: x.get("date", ""), reverse=True):
+                        if isinstance(p, dict) and p.get("date", "") <= d and p.get("price") is not None:
+                            price_val = float(p["price"])
+                            break
+                    if price_val is not None:
+                        total_weighted_price += price_val * aum
+                        total_aum += aum
+                if total_aum > 0:
+                    weighted_prices.append(total_weighted_price / total_aum)
+
+            if len(weighted_prices) < 2:
+                continue
+
+            # Determine positive/negative from weighted average price change
+            first_price = weighted_prices[0]
+            last_price = weighted_prices[-1]
+            positive = last_price >= first_price
+
+            # Normalize to 0-100 range for sparkline display
+            lo = min(weighted_prices)
+            hi = max(weighted_prices)
+            rng = hi - lo if hi != lo else 1
+            points = [
+                [round(i / (len(weighted_prices) - 1) * 280), round(40 - (p - lo) / rng * 40)]
+                for i, p in enumerate(weighted_prices)
+            ]
+            category_sparklines[fund_type] = {
+                "sparkline": points,
+                "positive": positive,
+            }
+
     return {
         "id": 1,
         "latest_date": latest_date,
@@ -527,6 +681,7 @@ def compute_homepage_stats(funds: list[dict]) -> dict:
         "top5_losers": top5_losers,
         "top_funds": top_funds,
         "category_stats": category_stats,
+        "category_sparklines": category_sparklines,
         "benchmarks_data": benchmarks_data,
     }
 
@@ -579,26 +734,23 @@ def main():
 
     # ── 3. Fetch all funds with price_history ─────────────────────────────
     LOG("Fetching funds with price_history...")
-    all_funds_raw: list[dict] = []
-    page = 0
-    has_more = True
-    while has_more:
-        start = page * PAGE_SIZE
-        rows = query_table(
-            "funds",
-            "id,code,name,fund_type,market_cap,price_history,currency",
-            filters={"price_history": "not.is.null"},
-            offset=start,
-            limit=PAGE_SIZE,
-        )
-        if not rows:
-            has_more = False
-            break
-        all_funds_raw.extend(rows)
-        has_more = len(rows) == PAGE_SIZE
-        page += 1
-        if page >= 20:
-            break
+    conn = psycopg2.connect(SUPABASE_DB_URL)
+    conn.cursor().execute("SET statement_timeout = '120000'")
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT id, code, name, fund_type, market_cap, price_history, currency
+        FROM funds
+        WHERE price_history IS NOT NULL
+    """)
+    rows = cur.fetchall()
+    all_funds_raw = []
+    for r in rows:
+        all_funds_raw.append({
+            "id": r[0], "code": r[1], "name": r[2], "fund_type": r[3],
+            "market_cap": r[4], "price_history": r[5], "currency": r[6]
+        })
+    cur.close()
+    conn.close()
     LOG(f"Total funds with price_history: {len(all_funds_raw)}")
 
     if test_mode:
@@ -622,26 +774,32 @@ def main():
 
     # ── 7. Reload funds for stats computation ─────────────────────────────
     LOG("Reloading funds for homepage_stats...")
-    reload_cols = (
-        "code,name,fund_type,market_cap,daily_change,"
-        "return_1g,return_1h,return_1a,return_3a,return_6a"
-    )
-    funds_for_stats = query_table_paginated("funds", reload_cols)
-    normalized = []
-    for f in funds_for_stats:
-        normalized.append({
-            "code": f["code"],
-            "name": f.get("name") or "",
-            "fund_type": f.get("fund_type") or "OTHER",
-            "market_cap": float(f["market_cap"]) if f.get("market_cap") else 0.0,
-            "daily_change": float(f["daily_change"]) if f.get("daily_change") is not None else None,
-            "return_1g": float(f["return_1g"]) if f.get("return_1g") is not None else None,
-            "return_1h": float(f["return_1h"]) if f.get("return_1h") is not None else None,
-            "return_1a": float(f["return_1a"]) if f.get("return_1a") is not None else None,
-            "return_3a": float(f["return_3a"]) if f.get("return_3a") is not None else None,
-            "return_6a": float(f["return_6a"]) if f.get("return_6a") is not None else None,
+    # Fetch funds for stats using PostgreSQL directly
+    LOG("Reloading funds for homepage_stats via PostgreSQL...")
+    conn = psycopg2.connect(SUPABASE_DB_URL)
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT code, name, fund_type, market_cap, daily_change,
+               return_1g, return_1h, return_1a, return_3a, return_6a
+        FROM funds
+    """)
+    rows = cur.fetchall()
+    cur.close()
+    conn.close()
+    funds_for_stats = []
+    for r in rows:
+        funds_for_stats.append({
+            "code": r[0],
+            "name": r[1] or "",
+            "fund_type": r[2] or "OTHER",
+            "market_cap": float(r[3]) if r[3] else 0.0,
+            "daily_change": float(r[4]) if r[4] is not None else None,
+            "return_1g": float(r[5]) if r[5] is not None else None,
+            "return_1h": float(r[6]) if r[6] is not None else None,
+            "return_1a": float(r[7]) if r[7] is not None else None,
+            "return_3a": float(r[8]) if r[8] is not None else None,
+            "return_6a": float(r[9]) if r[9] is not None else None,
         })
-    funds_for_stats = normalized
     LOG(f"  funds_for_stats: {len(funds_for_stats)}")
 
     # ── 8. Compute + upsert category ranks ─────────────────────────────────
@@ -652,7 +810,7 @@ def main():
 
     # ── 9. Compute + upsert homepage_stats ────────────────────────────────
     LOG("Computing homepage_stats...")
-    stats_payload = compute_homepage_stats(funds_for_stats)
+    stats_payload = compute_homepage_stats(funds_for_stats, all_funds_raw)
     ok = upsert_table("homepage_stats", [stats_payload], conflict_col="id")
     if ok:
         LOG("  homepage_stats upserted OK")
