@@ -142,42 +142,43 @@ def get_fx_rates() -> dict:
     return rates
 
 
-def get_price_series(symbol: str, days: int = 730) -> Optional[pd.Series]:
-    """Download price series for one symbol."""
-    try:
-        start = date.today() - timedelta(days=days)
-        df = yf.download(symbol, start=str(start), interval="1d",
-                        progress=False, auto_adjust=True, timeout=15)
-        if df is None or df.empty:
-            return None
-        if isinstance(df.columns, pd.MultiIndex):
-            df.columns = [c[1] if isinstance(c, tuple) else c for c in df.columns]
-        series = df["Close"].dropna()
-        if series.empty:
-            return None
-        series.index = series.index.tz_localize(None) if series.index.tz else series.index
-        series.index = series.index.normalize()
-        return series
-    except Exception as e:
+def calc_return(prices: list[dict], days: int) -> Optional[float]:
+    """
+    Calculate return over last `days` calendar days using foreign_etf_prices data.
+
+    Args:
+        prices: list of {"date": "YYYY-MM-DD", "close": float}, sorted ASC by date
+        days: number of calendar days to look back
+
+    Returns:
+        Ratio return (e.g. 0.05 = +5%), rounded to 6 decimal places,
+        or None if insufficient data.
+    """
+    if not prices or len(prices) < 2:
         return None
 
+    today_date = prices[-1]["date"]  # newest price date (already sorted desc in fetch)
+    target_date = (datetime.fromisoformat(today_date).date() - timedelta(days=days)).isoformat()
 
-def calc_return(series: pd.Series, days: int, fx_rate: float) -> Optional[float]:
-    """Calculate return over last `days` calendar days, converted to TRY."""
-    if series is None or len(series) < 5:
+    # Find newest price (last row)
+    p_today = prices[-1]["close"]
+    if p_today is None or p_today == 0:
         return None
-    today = series.index.max()
-    start_dt = today - timedelta(days=days)
-    p_today = float(series.iloc[-1])
+
+    # Find oldest price on or after target_date (binary search)
     p_start = None
-    for dt in series.index:
-        if dt >= pd.Timestamp(start_dt.date()):
-            p_start = float(series.loc[dt])
-            break
+    lo, hi = 0, len(prices) - 1
+    while lo <= hi:
+        mid = (lo + hi) // 2
+        d = prices[mid]["date"]
+        if d < target_date:
+            lo = mid + 1
+        else:
+            p_start = prices[mid]["close"]
+            hi = mid - 1
+
     if p_start is None or p_start == 0:
         return None
-    # Return is ratio — fx_rate doesn't multiply the ratio, it cancels out
-    # (p_today_USD * fx) / (p_start_USD * fx) = p_today_USD / p_start_USD
     return round(p_today / p_start - 1, 6)
 
 
@@ -314,20 +315,18 @@ def main():
             if not row_id or not sym:
                 continue
 
-            prices = all_prices.get(sym, [])
-            if not prices or len(prices) < 5:
+            prices_sym = all_prices.get(sym, [])
+            if not prices_sym or len(prices_sym) < 5:
                 skipped += 1
                 continue
 
-            df_prices = pd.DataFrame(prices)
-            df_prices['date'] = pd.to_datetime(df_prices['date'])
-            df_prices = df_prices.sort_values('date')
-            df_prices = df_prices.set_index('date')['close']
-            df_prices.index = df_prices.index.normalize()
+            # prices_sym is already sorted by the query (date.desc)
+            # We need ASC for calc_return binary search, so reverse it
+            prices_asc = list(reversed(prices_sym))
 
-            ret_1m = calc_return(df_prices, 30, usd_try)
-            ret_3m = calc_return(df_prices, 90, usd_try)
-            ret_6m = calc_return(df_prices, 180, usd_try)
+            ret_1m = calc_return(prices_asc, 30)
+            ret_3m = calc_return(prices_asc, 90)
+            ret_6m = calc_return(prices_asc, 180)
 
             if ret_1m is None and ret_3m is None and ret_6m is None:
                 skipped += 1
