@@ -43,11 +43,12 @@ LOG = get_logger("market_data")
 
 def fetch_yahoo_json(url: str, timeout: int = 15) -> dict:
     try:
-        req = __import__("urllib.request").Request(url, headers={
+        import urllib.request
+        req = urllib.request.Request(url, headers={
             "User-Agent": "Mozilla/5.0",
             "Accept": "application/json",
         })
-        with __import__("urllib.request").urlopen(req, timeout=timeout) as resp:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
             return json.loads(resp.read())
     except Exception as e:
         LOG(f"Yahoo fetch failed: {e}", "WARN")

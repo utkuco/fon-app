@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.fonapp.etf-returns</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/caffeinate</string>
+        <string>-s</string>
+        <string>-m</string>
+        <string>-i</string>
+        <string>/bin/bash</string>
+        <string>-c</string>
+        <string>cd /Users/admin/Desktop/projects/fon-app && /opt/homebrew/bin/python3.11 scripts/etf_returns.py 2>&1 | tee -a /tmp/etf_returns.log; cp /tmp/etf_returns.log /Users/admin/Desktop/projects/fon-app/logs/etf_returns.log 2>/dev/null</string>
+    </array>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+        <key>PYTHONUNBUFFERED</key>
+        <string>1</string>
+    </dict>
+
+    <!-- Hafta içi her gün UTC 17:30 = TR 20:30 -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict><key>Hour</key><integer>17</integer><key>Minute</key><integer>30</integer><key>Weekday</key><integer>1</integer></dict>
+        <dict><key>Hour</key><integer>17</integer><key>Minute</key><integer>30</integer><key>Weekday</key><integer>2</integer></dict>
+        <dict><key>Hour</key><integer>17</integer><key>Minute</key><integer>30</integer><key>Weekday</key><integer>3</integer></dict>
+        <dict><key>Hour</key><integer>17</integer><key>Minute</key><integer>30</integer><key>Weekday</key><integer>4</integer></dict>
+        <dict><key>Hour</key><integer>17</integer><key>Minute</key><integer>30</integer><key>Weekday</key><integer>5</integer></dict>
+    </array>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/admin/Desktop/projects/fon-app/logs/etf_returns.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/admin/Desktop/projects/fon-app/logs/etf_returns.err</string>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+
+    <key>LowPriorityIO</key>
+    <true/>
+
+    <key>Nice</key>
+    <integer>1</integer>
+</dict>
+</plist>

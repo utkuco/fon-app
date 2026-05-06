@@ -1,0 +1,10 @@
+[2026-05-06 05:00:00] === Consolidated Health Check Started ===
+[2026-05-06 05:00:01] TEFAS CHECK: last_tefas_fetch = 2026-05-05T16:03:46.602959+00:00
+[2026-05-06 05:00:01] TEFAS CHECK: ✅ Fresh (1d ago)
+[2026-05-06 05:00:02] HOMEPAGE CHECK: latest_date=2026-05-05, total=2400
+[2026-05-06 05:00:02] HOMEPAGE CHECK: ⚠️ Possibly stale (total=2400)
+[2026-05-06 05:00:09] ETF CHECK: last price date = 2026-05-06
+[2026-05-06 05:00:09] ETF CHECK: ✅ Fresh (0d ago)
+[2026-05-06 05:00:09] BENCHMARK CHECK: ✅ Fresh (today=2026-05-06, last=2026-05-05)
+[2026-05-06 05:00:09] OVERALL: ✅ ALL CHECKS PASS — {'tefas': True, 'homepage': True, 'etf': True, 'benchmark': True}
+[2026-05-06 05:00:10] === Health Check Complete ===

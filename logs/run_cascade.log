@@ -1,0 +1,407 @@
+[2026-05-05 17:42:22] [INFO] Starting run_cascade
+[2026-05-05 17:42:22] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 17:42:22] [INFO] Fetching funds with price_history...
+[2026-05-05 17:42:33] [INFO] Total funds fetched: 0
+[2026-05-05 17:42:33] [INFO] TEST MODE: limiting to first 0 funds
+[2026-05-05 17:42:33] [INFO] Computing fund metrics from price_history...
+[2026-05-05 17:42:33] [INFO]   fund_updates (daily_change + returns): 0
+[2026-05-05 17:42:33] [INFO]   sparkline_updates: 0
+[2026-05-05 17:42:33] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 17:42:33] [INFO]   funds updated: 0/0
+[2026-05-05 17:42:33] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 17:42:33] [INFO]   sparklines upserted: 0/0
+[2026-05-05 17:42:33] [INFO] Reloading funds for category ranks + homepage_stats...
+[2026-05-05 17:42:33] [INFO]   funds_for_stats: 0
+[2026-05-05 17:42:33] [INFO] Computing fund_category_ranks...
+[2026-05-05 17:42:33] [INFO]   fund_category_ranks upserted: 0
+[2026-05-05 17:42:33] [INFO] Computing homepage_stats...
+[2026-05-05 17:42:36] [INFO]   homepage_stats upserted OK
+[2026-05-05 17:42:36] [INFO] Done in 13.7s — funds=0, sparklines=0, ranks=0
+[2026-05-05 17:45:36] [INFO] Starting run_cascade
+[2026-05-05 17:45:36] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 17:45:36] [INFO] Fetching funds with price_history...
+[2026-05-05 17:45:43] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 17:45:50] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 17:45:58] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 17:46:07] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 17:46:12] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 17:46:12] [INFO] Total funds fetched: 2400
+[2026-05-05 17:46:12] [INFO] TEST MODE: limiting to first 5 funds
+[2026-05-05 17:46:12] [INFO] Computing fund metrics from price_history...
+[2026-05-05 17:46:12] [INFO]   fund_updates (daily_change + returns): 4
+[2026-05-05 17:46:12] [INFO]   sparkline_updates: 4
+[2026-05-05 17:46:12] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 17:46:15] [INFO]   funds updated: 4/4
+[2026-05-05 17:46:15] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 17:46:17] [INFO]   sparklines upserted: 4/4
+[2026-05-05 17:46:17] [INFO] Reloading funds for category ranks + homepage_stats...
+[2026-05-05 17:46:17] [INFO]   funds_for_stats: 5
+[2026-05-05 17:46:17] [INFO] Computing fund_category_ranks...
+[2026-05-05 17:47:19] [INFO] Starting run_cascade
+[2026-05-05 17:47:19] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 17:47:19] [INFO] Fetching funds with price_history...
+[2026-05-05 17:47:28] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 17:47:35] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 17:47:45] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 17:47:55] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 17:48:02] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 17:48:02] [INFO] Total funds fetched: 2400
+[2026-05-05 17:48:03] [INFO] TEST MODE: limiting to first 5 funds
+[2026-05-05 17:48:03] [INFO] Computing fund metrics from price_history...
+[2026-05-05 17:48:03] [INFO]   fund_updates (daily_change + returns): 4
+[2026-05-05 17:48:03] [INFO]   sparkline_updates: 4
+[2026-05-05 17:48:03] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 17:48:04] [INFO]   funds updated: 4/4
+[2026-05-05 17:48:04] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 17:48:06] [INFO]   sparklines upserted: 4/4
+[2026-05-05 17:48:06] [INFO] Reloading funds for category ranks + homepage_stats...
+[2026-05-05 17:48:06] [INFO]   funds_for_stats: 5
+[2026-05-05 17:48:06] [INFO] Computing fund_category_ranks...
+[2026-05-05 17:48:07] [INFO]   fund_category_ranks upserted: 0
+[2026-05-05 17:48:07] [INFO] Computing homepage_stats...
+[2026-05-05 17:48:09] [INFO]   homepage_stats upserted OK
+[2026-05-05 17:48:09] [INFO] Done in 50.1s — funds=4, sparklines=4, ranks=0
+[2026-05-05 17:50:09] [INFO] Starting run_cascade
+[2026-05-05 17:50:09] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 17:50:09] [INFO] Fetching funds with price_history...
+[2026-05-05 17:50:15] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 17:50:23] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 17:50:34] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 17:50:45] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 17:50:52] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 17:50:52] [INFO] Total funds fetched: 2400
+[2026-05-05 17:50:52] [INFO] TEST MODE: limiting to first 5 funds
+[2026-05-05 17:50:52] [INFO] Computing fund metrics from price_history...
+[2026-05-05 17:50:52] [INFO]   fund_updates (daily_change + returns): 4
+[2026-05-05 17:50:52] [INFO]   sparkline_updates: 4
+[2026-05-05 17:50:52] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 17:50:53] [INFO]   funds updated: 4/4
+[2026-05-05 17:50:53] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 17:50:54] [INFO]   sparklines upserted: 4/4
+[2026-05-05 17:50:54] [INFO] Reloading funds for category ranks + homepage_stats...
+[2026-05-05 17:50:54] [INFO]   funds_for_stats: 5
+[2026-05-05 17:50:54] [INFO] Computing fund_category_ranks...
+[2026-05-05 17:50:54] [INFO]   fund_category_ranks upserted: 5
+[2026-05-05 17:50:54] [INFO] Computing homepage_stats...
+[2026-05-05 17:50:56] [INFO]   homepage_stats upserted OK
+[2026-05-05 17:50:56] [INFO] Done in 47.0s — funds=4, sparklines=4, ranks=5
+[2026-05-05 17:51:11] [INFO] Starting run_cascade
+[2026-05-05 17:51:11] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 17:51:11] [INFO] Fetching funds with price_history...
+[2026-05-05 17:51:17] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 17:51:27] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 17:51:57] [INFO] Total funds fetched: 1000
+[2026-05-05 17:51:57] [INFO] Computing fund metrics from price_history...
+[2026-05-05 17:51:58] [INFO]   fund_updates (daily_change + returns): 928
+[2026-05-05 17:51:58] [INFO]   sparkline_updates: 928
+[2026-05-05 17:51:58] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 17:54:15] [INFO]   funds updated: 917/928
+[2026-05-05 17:54:15] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 17:56:26] [INFO]   sparklines upserted: 928/928
+[2026-05-05 17:56:26] [INFO] Reloading funds for category ranks + homepage_stats...
+[2026-05-05 17:56:27] [INFO]   funds_for_stats: 2400
+[2026-05-05 17:56:27] [INFO] Computing fund_category_ranks...
+[2026-05-05 18:01:50] [INFO]   fund_category_ranks upserted: 2400
+[2026-05-05 18:01:50] [INFO] Computing homepage_stats...
+[2026-05-05 18:01:51] [INFO]   homepage_stats upserted OK
+[2026-05-05 18:01:52] [INFO] Done in 640.5s — funds=928, sparklines=928, ranks=2400
+[2026-05-05 18:02:12] [INFO] Starting run_cascade
+[2026-05-05 18:02:12] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 18:02:12] [INFO] Fetching funds with price_history...
+[2026-05-05 18:02:17] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 18:02:23] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 18:02:28] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 18:02:33] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 18:02:37] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 18:02:37] [INFO] Total funds fetched: 2400
+[2026-05-05 18:02:37] [INFO] Computing fund metrics from price_history...
+[2026-05-05 18:02:38] [INFO]   fund_updates (daily_change + returns): 2163
+[2026-05-05 18:02:38] [INFO]   sparkline_updates: 2163
+[2026-05-05 18:02:38] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 18:08:03] [INFO]   funds updated: 2163/2163
+[2026-05-05 18:08:03] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 18:13:19] [INFO] Starting run_cascade
+[2026-05-05 18:13:19] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 18:13:19] [INFO] Fetching funds with price_history...
+[2026-05-05 18:13:24] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 18:13:32] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 18:13:38] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 18:13:43] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 18:13:51] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 18:13:51] [INFO] Total funds fetched: 2400
+[2026-05-05 18:13:51] [INFO] TEST MODE: limiting to first 5 funds
+[2026-05-05 18:13:51] [INFO] Computing fund metrics from price_history...
+[2026-05-05 18:13:51] [INFO]   fund_updates (daily_change + returns): 5
+[2026-05-05 18:13:51] [INFO]   sparkline_updates: 5
+[2026-05-05 18:13:51] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 18:13:52] [INFO]   funds updated: 0/5
+[2026-05-05 18:13:52] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 18:13:52] [INFO]   sparklines upserted: 0/5
+[2026-05-05 18:13:52] [INFO] Reloading funds for category ranks + homepage_stats...
+[2026-05-05 18:13:52] [INFO]   funds_for_stats: 5
+[2026-05-05 18:13:52] [INFO] Computing fund_category_ranks...
+[2026-05-05 18:13:54] [INFO]   fund_category_ranks upserted: 5
+[2026-05-05 18:13:54] [INFO] Computing homepage_stats...
+[2026-05-05 18:13:55] [INFO]   homepage_stats upserted OK
+[2026-05-05 18:13:55] [INFO] Done in 35.5s — funds=5, sparklines=0, ranks=5
+[2026-05-05 18:14:23] [INFO] Starting run_cascade
+[2026-05-05 18:14:23] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 18:14:23] [INFO] Fetching funds with price_history...
+[2026-05-05 18:14:31] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 18:14:39] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 18:14:53] [INFO] Total funds fetched: 1000
+[2026-05-05 18:14:53] [INFO] TEST MODE: limiting to first 5 funds
+[2026-05-05 18:14:53] [INFO] Computing fund metrics from price_history...
+[2026-05-05 18:14:53] [INFO]   fund_updates (daily_change + returns): 5
+[2026-05-05 18:14:53] [INFO]   sparkline_updates: 5
+[2026-05-05 18:14:53] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 18:14:55] [INFO]   funds updated: 5/5
+[2026-05-05 18:14:55] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 18:14:56] [INFO]   sparklines upserted: 5/5
+[2026-05-05 18:14:56] [INFO] Reloading funds for category ranks + homepage_stats...
+[2026-05-05 18:14:56] [INFO]   funds_for_stats: 5
+[2026-05-05 18:14:56] [INFO] Computing fund_category_ranks...
+[2026-05-05 18:14:57] [INFO]   fund_category_ranks upserted: 5
+[2026-05-05 18:14:57] [INFO] Computing homepage_stats...
+[2026-05-05 18:15:02] [INFO]   homepage_stats upserted OK
+[2026-05-05 18:15:03] [INFO] Done in 38.8s — funds=5, sparklines=5, ranks=5
+[2026-05-05 18:15:14] [INFO] Starting run_cascade
+[2026-05-05 18:15:14] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 18:15:14] [INFO] Fetching funds with price_history...
+[2026-05-05 18:15:20] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 18:15:28] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 18:15:34] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 18:15:41] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 18:15:46] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 18:15:46] [INFO] Total funds fetched: 2400
+[2026-05-05 18:15:46] [INFO] Computing fund metrics from price_history...
+[2026-05-05 18:15:47] [INFO]   fund_updates (daily_change + returns): 2163
+[2026-05-05 18:15:47] [INFO]   sparkline_updates: 2163
+[2026-05-05 18:15:47] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 18:17:22] [INFO] Starting run_cascade
+[2026-05-05 18:17:22] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 18:17:22] [INFO] Fetching funds with price_history...
+[2026-05-05 18:17:26] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 18:17:34] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 18:17:41] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 18:17:52] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 18:17:58] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 18:17:58] [INFO] Total funds fetched: 2400
+[2026-05-05 18:17:58] [INFO] Computing fund metrics from price_history...
+[2026-05-05 18:17:58] [INFO]   fund_updates (daily_change + returns): 2163
+[2026-05-05 18:17:58] [INFO]   sparkline_updates: 2163
+[2026-05-05 18:17:58] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 18:23:27] [INFO]   funds updated: 2163/2163
+[2026-05-05 18:23:27] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 18:28:27] [INFO] Starting run_cascade
+[2026-05-05 18:28:27] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 18:28:27] [INFO] Fetching funds with price_history...
+[2026-05-05 18:28:32] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 18:28:37] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 18:28:44] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 18:28:55] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 18:29:01] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 18:29:01] [INFO] Total funds fetched: 2400
+[2026-05-05 18:29:01] [INFO] Computing fund metrics from price_history...
+[2026-05-05 18:29:02] [INFO]   fund_updates (daily_change + returns): 2163
+[2026-05-05 18:29:02] [INFO]   sparkline_updates: 2163
+[2026-05-05 18:29:02] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 18:32:53] [INFO] Starting run_cascade
+[2026-05-05 18:32:53] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 18:32:53] [INFO] Fetching funds with price_history...
+[2026-05-05 18:33:00] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 18:33:07] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 18:33:14] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 18:33:22] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 18:33:27] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 18:33:27] [INFO] Total funds fetched: 2400
+[2026-05-05 18:33:27] [INFO] TEST MODE: limiting to first 5 funds
+[2026-05-05 18:33:27] [INFO] Computing fund metrics from price_history...
+[2026-05-05 18:33:27] [INFO]   fund_updates (daily_change + returns): 5
+[2026-05-05 18:33:27] [INFO]   sparkline_updates: 5
+[2026-05-05 18:33:27] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 18:33:29] [INFO]   funds updated: 5/5
+[2026-05-05 18:33:29] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 18:33:30] [INFO]   sparklines upserted: 5/5
+[2026-05-05 18:33:30] [INFO] Reloading funds for category ranks + homepage_stats...
+[2026-05-05 18:33:30] [INFO]   funds_for_stats: 5
+[2026-05-05 18:33:30] [INFO] Computing fund_category_ranks...
+[2026-05-05 18:33:31] [INFO]   fund_category_ranks upserted: 5
+[2026-05-05 18:33:31] [INFO] Computing homepage_stats...
+[2026-05-05 18:33:32] [INFO]   homepage_stats upserted OK
+[2026-05-05 18:33:32] [INFO] Done in 38.6s — funds=5, sparklines=5, ranks=5
+[2026-05-05 18:33:38] [INFO] Starting run_cascade
+[2026-05-05 18:33:38] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 18:33:38] [INFO] Fetching funds with price_history...
+[2026-05-05 18:33:44] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 18:33:55] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 18:34:03] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 18:34:13] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 18:34:18] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 18:34:18] [INFO] Total funds fetched: 2400
+[2026-05-05 18:34:18] [INFO] Computing fund metrics from price_history...
+[2026-05-05 18:34:18] [INFO]   fund_updates (daily_change + returns): 2163
+[2026-05-05 18:34:18] [INFO]   sparkline_updates: 2163
+[2026-05-05 18:34:18] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 18:39:45] [INFO]   funds updated: 2163/2163
+[2026-05-05 18:39:45] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 18:44:30] [INFO] Starting run_cascade
+[2026-05-05 18:44:30] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 18:44:30] [INFO] Fetching funds with price_history...
+[2026-05-05 18:44:35] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 18:44:41] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 18:44:47] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 18:44:55] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 18:45:02] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 18:45:02] [INFO] Total funds fetched: 2400
+[2026-05-05 18:45:02] [INFO] Computing fund metrics from price_history...
+[2026-05-05 18:45:02] [INFO]   fund_updates (daily_change + returns): 2163
+[2026-05-05 18:45:02] [INFO]   sparkline_updates: 2163
+[2026-05-05 18:45:02] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 18:50:36] [INFO]   funds updated: 2163/2163
+[2026-05-05 18:50:36] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 18:52:08] [INFO] Starting run_cascade
+[2026-05-05 18:52:08] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 18:52:08] [INFO] Fetching funds with price_history...
+[2026-05-05 18:52:12] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 18:52:20] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 18:52:26] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 18:52:33] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 18:52:39] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 18:52:39] [INFO] Total funds fetched: 2400
+[2026-05-05 18:52:39] [INFO] Computing fund metrics from price_history...
+[2026-05-05 18:52:39] [INFO]   fund_updates (daily_change + returns): 2163
+[2026-05-05 18:52:39] [INFO]   sparkline_updates: 2163
+[2026-05-05 18:52:39] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 18:58:10] [INFO]   funds updated: 2163/2163
+[2026-05-05 18:58:10] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 19:03:06] [INFO] Starting run_cascade
+[2026-05-05 19:03:06] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 19:03:06] [INFO] Fetching funds with price_history...
+[2026-05-05 19:03:11] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 19:03:16] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 19:03:21] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 19:03:26] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 19:03:30] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 19:03:30] [INFO] Total funds fetched: 2400
+[2026-05-05 19:03:30] [INFO] TEST MODE: limiting to first 5 funds
+[2026-05-05 19:03:30] [INFO] Computing fund metrics from price_history...
+[2026-05-05 19:03:30] [INFO]   fund_updates (daily_change + returns): 5
+[2026-05-05 19:03:30] [INFO]   sparkline_updates: 5
+[2026-05-05 19:03:30] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 19:03:31] [INFO]   fund_metrics progress: 0/5
+[2026-05-05 19:03:31] [INFO]   funds updated: 5/5
+[2026-05-05 19:03:31] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 19:03:31] [INFO]   sparkline progress: 0/5
+[2026-05-05 19:03:31] [INFO]   sparklines upserted: 5/5
+[2026-05-05 19:03:31] [INFO] Reloading funds for category ranks + homepage_stats...
+[2026-05-05 19:03:31] [INFO]   funds_for_stats: 5
+[2026-05-05 19:03:31] [INFO] Computing fund_category_ranks...
+[2026-05-05 19:03:32] [INFO]   fund_category_ranks upserted: 5
+[2026-05-05 19:03:32] [INFO] Computing homepage_stats...
+[2026-05-05 19:03:34] [INFO]   homepage_stats upserted OK
+[2026-05-05 19:03:34] [INFO] Done in 27.6s — funds=5, sparklines=5, ranks=5
+[2026-05-05 19:03:55] [INFO] Starting run_cascade
+[2026-05-05 19:03:55] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 19:03:55] [INFO] Fetching funds with price_history...
+[2026-05-05 19:04:05] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 19:04:12] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 19:04:22] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 19:04:28] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 19:04:37] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 19:04:37] [INFO] Total funds fetched: 2400
+[2026-05-05 19:04:37] [INFO] Computing fund metrics from price_history...
+[2026-05-05 19:04:38] [INFO]   fund_updates (daily_change + returns): 2201
+[2026-05-05 19:04:38] [INFO]   sparkline_updates: 2201
+[2026-05-05 19:04:38] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 19:04:52] [INFO]   fund_metrics progress: 0/2201
+[2026-05-05 19:05:21] [INFO]   fund_metrics progress: 200/2201
+[2026-05-05 19:05:50] [INFO]   fund_metrics progress: 400/2201
+[2026-05-05 19:06:24] [INFO]   fund_metrics progress: 600/2201
+[2026-05-05 19:06:54] [INFO]   fund_metrics progress: 800/2201
+[2026-05-05 19:07:25] [INFO]   fund_metrics progress: 1000/2201
+[2026-05-05 19:07:25] [INFO] Starting run_cascade
+[2026-05-05 19:07:25] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 19:07:25] [INFO] Fetching funds with price_history...
+[2026-05-05 19:07:30] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 19:07:37] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 19:07:42] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 19:07:48] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 19:07:53] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 19:07:53] [INFO] Total funds fetched: 2400
+[2026-05-05 19:07:53] [INFO] Computing fund metrics from price_history...
+[2026-05-05 19:07:54] [INFO]   fund_updates (daily_change + returns): 2399
+[2026-05-05 19:07:54] [INFO]   sparkline_updates: 2399
+[2026-05-05 19:07:54] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 19:08:02] [INFO]   fund_metrics progress: 1200/2201
+[2026-05-05 19:08:09] [INFO]   fund_metrics progress: 0/2399
+[2026-05-05 19:08:33] [INFO]   fund_metrics progress: 1400/2201
+[2026-05-05 19:08:40] [INFO]   fund_metrics progress: 200/2399
+[2026-05-05 19:09:04] [INFO]   fund_metrics progress: 1600/2201
+[2026-05-05 19:09:10] [INFO]   fund_metrics progress: 400/2399
+[2026-05-05 19:09:37] [INFO]   fund_metrics progress: 1800/2201
+[2026-05-05 19:09:44] [INFO]   fund_metrics progress: 600/2399
+[2026-05-05 19:10:06] [INFO]   fund_metrics progress: 2000/2201
+[2026-05-05 19:10:15] [INFO]   fund_metrics progress: 800/2399
+[2026-05-05 19:10:22] [INFO]   fund_metrics progress: 2200/2201
+[2026-05-05 19:10:22] [INFO]   funds updated: 2201/2201
+[2026-05-05 19:10:22] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 19:10:26] [INFO]   sparkline progress: 0/2201
+[2026-05-05 19:10:45] [INFO]   sparkline progress: 125/2201
+[2026-05-05 19:10:46] [INFO]   fund_metrics progress: 1000/2399
+[2026-05-05 19:11:05] [INFO]   sparkline progress: 250/2201
+[2026-05-05 19:11:16] [INFO]   fund_metrics progress: 1200/2399
+[2026-05-05 19:11:24] [INFO]   sparkline progress: 375/2201
+[2026-05-05 19:11:43] [INFO]   sparkline progress: 500/2201
+[2026-05-05 19:11:47] [INFO]   fund_metrics progress: 1400/2399
+[2026-05-05 19:12:02] [INFO]   sparkline progress: 625/2201
+[2026-05-05 19:12:18] [INFO]   fund_metrics progress: 1600/2399
+[2026-05-05 19:12:21] [INFO]   sparkline progress: 750/2201
+[2026-05-05 19:12:39] [INFO]   sparkline progress: 875/2201
+[2026-05-05 19:12:47] [INFO]   fund_metrics progress: 1800/2399
+[2026-05-05 19:12:57] [INFO]   sparkline progress: 1000/2201
+[2026-05-05 19:13:14] [INFO]   sparkline progress: 1125/2201
+[2026-05-05 19:13:15] [INFO]   fund_metrics progress: 2000/2399
+[2026-05-05 19:13:31] [INFO]   sparkline progress: 1250/2201
+[2026-05-05 19:13:42] [INFO]   fund_metrics progress: 2200/2399
+[2026-05-05 19:13:48] [INFO]   sparkline progress: 1375/2201
+[2026-05-05 19:13:56] [INFO]   funds updated: 2399/2399
+[2026-05-05 19:13:56] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 19:14:00] [INFO]   sparkline progress: 0/2399
+[2026-05-05 19:14:05] [INFO]   sparkline progress: 1500/2201
+[2026-05-05 19:14:17] [INFO]   sparkline progress: 125/2399
+[2026-05-05 19:14:23] [INFO]   sparkline progress: 1625/2201
+[2026-05-05 19:14:35] [INFO]   sparkline progress: 250/2399
+[2026-05-05 19:14:40] [INFO]   sparkline progress: 1750/2201
+[2026-05-05 19:14:52] [INFO]   sparkline progress: 375/2399
+[2026-05-05 19:14:57] [INFO]   sparkline progress: 1875/2201
+[2026-05-05 19:15:09] [INFO]   sparkline progress: 500/2399
+[2026-05-05 19:15:14] [INFO]   sparkline progress: 2000/2201
+[2026-05-05 19:15:27] [INFO]   sparkline progress: 625/2399
+[2026-05-05 19:15:32] [INFO]   sparkline progress: 2125/2201
+[2026-05-05 19:15:39] [INFO]   sparklines upserted: 2201/2201
+[2026-05-05 19:15:39] [INFO] Reloading funds for category ranks + homepage_stats...
+[2026-05-05 19:15:40] [INFO]   funds_for_stats: 2400
+[2026-05-05 19:15:40] [INFO] Computing fund_category_ranks...
+[2026-05-05 19:15:44] [INFO]   sparkline progress: 750/2399
+[2026-05-05 19:16:02] [INFO]   sparkline progress: 875/2399
+[2026-05-05 19:16:19] [INFO]   sparkline progress: 1000/2399
+[2026-05-05 19:16:37] [INFO]   sparkline progress: 1125/2399
+[2026-05-05 19:16:54] [INFO]   sparkline progress: 1250/2399
+[2026-05-05 19:17:12] [INFO]   sparkline progress: 1375/2399
+[2026-05-05 19:17:29] [INFO]   sparkline progress: 1500/2399
+[2026-05-05 19:17:47] [INFO]   sparkline progress: 1625/2399
+[2026-05-05 19:18:03] [INFO]   sparkline progress: 1750/2399
+[2026-05-05 19:18:21] [INFO]   sparkline progress: 1875/2399
+[2026-05-05 19:18:39] [INFO]   sparkline progress: 2000/2399
+[2026-05-05 19:18:59] [INFO]   sparkline progress: 2125/2399
+[2026-05-05 19:19:19] [INFO]   sparkline progress: 2250/2399
+[2026-05-05 19:19:38] [INFO]   sparkline progress: 2375/2399
+[2026-05-05 19:19:38] [INFO]   sparklines upserted: 2399/2399
+[2026-05-05 19:19:38] [INFO] Reloading funds for category ranks + homepage_stats...
+[2026-05-05 19:19:38] [INFO]   funds_for_stats: 2400
+[2026-05-05 19:19:38] [INFO] Computing fund_category_ranks...
+[2026-05-05 19:25:24] [INFO]   fund_category_ranks upserted: 2400
+[2026-05-05 19:25:24] [INFO] Computing homepage_stats...
+[2026-05-05 19:25:25] [INFO]   homepage_stats upserted OK
+[2026-05-05 19:25:25] [INFO] Done in 1079.5s — funds=2399, sparklines=2399, ranks=2400

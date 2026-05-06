@@ -1,0 +1,272 @@
+
+[2026-05-05 21:41:36] ETF Daily Cron
+============================================================
+
+[1/5] Fetching FX rates...
+  USD/TRY = 45.2105
+  EUR/TRY = 52.9315
+  GBP/TRY = 61.2540
+
+[2/5] Fetching ETF list from DB...
+  Total ETFs in DB: 1000
+
+[3/5] Fetching latest prices...
+$DVVY: possibly delisted; no price data found  (period=5d)
+$CVRT: possibly delisted; no price data found  (period=5d)
+$DWSH: possibly delisted; no price data found  (period=5d)
+$CRDT: possibly delisted; no price data found  (period=5d)
+$MSBT: possibly delisted; no price data found  (period=5d)
+$CPNS: possibly delisted; no price data found  (period=5d)
+$DECZ: possibly delisted; no price data found  (period=5d)
+$EDGH: possibly delisted; no price data found  (period=5d)
+$MYCK: possibly delisted; no price data found  (period=5d)
+$MSSM: possibly delisted; no price data found  (period=5d)
+
+12 Failed downloads:
+['DVVY', 'CVRT', 'DWSH', 'CRDT', 'MSBT', 'CPNS', 'DECZ', 'EDGH', 'MYCK', 'MSSM']: possibly delisted; no price data found  (period=5d)
+['MOAT', 'DUSA']: OperationalError('unable to open database file')
+$PCCE: possibly delisted; no price data found  (period=5d)
+$PBRG: possibly delisted; no price data found  (period=5d)
+$PBMR: possibly delisted; no price data found  (period=5d)
+$PBEU: possibly delisted; no price data found  (period=5d)
+$PBOC: possibly delisted; no price data found  (period=5d)
+$PCIG: possibly delisted; no price data found  (period=5d)
+$DXUV: possibly delisted; no price data found  (period=5d)
+$PAYH: possibly delisted; no price data found  (period=5d)
+$NAUG: possibly delisted; no price data found  (period=5d)
+$CMCI: possibly delisted; no price data found  (period=5d)
+$PAYM: possibly delisted; no price data found  (period=5d)
+$DHSB: possibly delisted; no price data found  (period=5d)
+$PBNV: possibly delisted; no price data found  (period=5d)
+$COIW: possibly delisted; no price data found  (period=5d)
+$PCPI: possibly delisted; no price data found  (period=5d)
+$PBAU: possibly delisted; no price data found  (period=5d)
+$CBON: possibly delisted; no price data found  (period=5d)
+$PBAP: possibly delisted; no price data found  (period=5d)
+$PCRB: possibly delisted; no price data found  (period=5d)
+$PBJL: possibly delisted; no price data found  (period=5d)
+$EAFG: possibly delisted; no price data found  (period=5d)
+$DAPR: possibly delisted; no price data found  (period=5d)
+$NBCM: possibly delisted; no price data found  (period=5d)
+
+32 Failed downloads:
+['PCCE', 'PBRG', 'PBMR', 'PBEU', 'PBOC', 'PCIG', 'DXUV', 'PAYH', 'NAUG', 'CMCI', 'PAYM', 'DHSB', 'PBNV', 'COIW', 'PCPI', 'PBAU', 'CBON', 'PBAP', 'PCRB', 'PBJL', 'EAFG', 'DAPR', 'NBCM']: possibly delisted; no price data found  (period=5d)
+['PBFB', 'DYNF', 'NAPR', 'CONX', 'CDX', 'COMD', 'EAGG', 'PATN', 'PBD']: OperationalError('unable to open database file')
+$PFFR: possibly delisted; no price data found  (period=5d)
+$PHYL: possibly delisted; no price data found  (period=5d)
+$PFDE: possibly delisted; no price data found  (period=5d)
+$PHDG: possibly delisted; no price data found  (period=5d)
+$DVXK: possibly delisted; no price data found  (period=5d)
+$CGIC: possibly delisted; no price data found  (period=5d)
+$EAOA: possibly delisted; no price data found  (period=5d)
+$EASG: possibly delisted; no price data found  (period=5d)
+$PGHY: possibly delisted; no price data found  (period=5d)
+$CAPE: possibly delisted; no price data found  (period=5d)
+$DVLU: possibly delisted; no price data found  (period=5d)
+$EART: possibly delisted; no price data found  (period=5d)
+$DVUT: possibly delisted; no price data found  (period=5d)
+$CGBL: possibly delisted; no price data found  (period=5d)
+$PICK: possibly delisted; no price data found  (period=5d)
+$DSCO: possibly delisted; no price data found  (period=5d)
+$PEVC: possibly delisted; no price data found  (period=5d)
+$NIKL: possibly delisted; no price data found  (period=5d)
+$PHYD: possibly delisted; no price data found  (period=5d)
+$CAS: possibly delisted; no price data found  (period=5d)
+$PFFD: possibly delisted; no price data found  (period=5d)
+$PFI: possibly delisted; no price data found  (period=5d)
+$CWEB: possibly delisted; no price data found  (period=5d)
+$EAOK: possibly delisted; no price data found  (period=5d)
+$PEJ: possibly delisted; no price data found  (period=5d)
+$NFXS: possibly delisted; no price data found  (period=5d)
+$DVOL: possibly delisted; no price data found  (period=5d)
+$DYLG: possibly delisted; no price data found  (period=5d)
+$CGGE: possibly delisted; no price data found  (period=5d)
+$PGRO: possibly delisted; no price data found  (period=5d)
+
+37 Failed downloads:
+['PFFR', 'PHYL', 'PFDE', 'PHDG', 'DVXK', 'CGIC', 'EAOA', 'EASG', 'PGHY', 'CAPE', 'DVLU', 'EART', 'DVUT', 'CGBL', 'PICK', 'DSCO', 'PEVC', 'NIKL', 'PHYD', 'CAS', 'PFFD', 'PFI', 'CWEB', 'EAOK', 'PEJ', 'NFXS', 'DVOL', 'DYLG', 'CGGE', 'PGRO']: possibly delisted; no price data found  (period=5d)
+['PHEQ', 'PICB', 'PDP', 'PGX', 'PDBC', 'DFAI', 'PID']: OperationalError('unable to open database file')
+$DVGR: possibly delisted; no price data found  (period=5d)
+$DEED: possibly delisted; no price data found  (period=5d)
+$PIO: possibly delisted; no price data found  (period=5d)
+$NANR: possibly delisted; no price data found  (period=5d)
+$DXIV: possibly delisted; no price data found  (period=5d)
+$MNZL: possibly delisted; no price data found  (period=5d)
+$COYY: possibly delisted; no price data found  (period=5d)
+$DFIS: possibly delisted; no price data found  (period=5d)
+$EALT: possibly delisted; no price data found  (period=5d)
+$CPSN: possibly delisted; no price data found  (period=5d)
+$MOOD: possibly delisted; no price data found  (period=5d)
+$CPAI: possibly delisted; no price data found  (period=5d)
+$EEMS: possibly delisted; no price data found  (period=5d)
+$NULC: possibly delisted; no price data found  (period=5d)
+$MNRS: possibly delisted; no price data found  (period=5d)
+$EDV: possibly delisted; no price data found  (period=5d)
+$EDOG: possibly delisted; no price data found  (period=5d)
+$EEE: possibly delisted; no price data found  (period=5d)
+$MOO: possibly delisted; no price data found  (period=5d)
+$MNBD: possibly delisted; no price data found  (period=5d)
+$DECU: possibly delisted; no price data found  (period=5d)
+$PIZ: possibly delisted; no price data found  (period=5d)
+$EBI: possibly delisted; no price data found  (period=5d)
+$CORO: possibly delisted; no price data found  (period=5d)
+$EDOW: possibly delisted; no price data found  (period=5d)
+$MOTO: possibly delisted; no price data found  (period=5d)
+$EEMV: possibly delisted; no price data found  (period=5d)
+$CRED: possibly delisted; no price data found  (period=5d)
+$PIPE: possibly delisted; no price data found  (period=5d)
+$EBIT: possibly delisted; no price data found  (period=5d)
+$ECOW: possibly delisted; no price data found  (period=5d)
+$CBOO: possibly delisted; no price data found  (period=5d)
+$PINK: possibly delisted; no price data found  (period=5d)
+$EDZ: possibly delisted; no price data found  (period=5d)
+
+45 Failed downloads:
+['CBOL', 'EDGE', 'EDGU', 'DYTA', 'DEMZ', 'DISO', 'EEMX', 'EDIV', 'CRDD', 'CPSP', 'EDGF']: OperationalError('unable to open database file')
+['DVGR', 'DEED', 'PIO', 'NANR', 'DXIV', 'MNZL', 'COYY', 'DFIS', 'EALT', 'CPSN', 'MOOD', 'CPAI', 'EEMS', 'NULC', 'MNRS', 'EDV', 'EDOG', 'EEE', 'MOO', 'MNBD', 'DECU', 'PIZ', 'EBI', 'CORO', 'EDOW', 'MOTO', 'EEMV', 'CRED', 'PIPE', 'EBIT', 'ECOW', 'CBOO', 'PINK', 'EDZ']: possibly delisted; no price data found  (period=5d)
+$PLTI: possibly delisted; no price data found  (period=5d)
+$CDL: possibly delisted; no price data found  (period=5d)
+$MSFL: possibly delisted; no price data found  (period=5d)
+$CTEX: possibly delisted; no price data found  (period=5d)
+$CPSR: possibly delisted; no price data found  (period=5d)
+$MPLY: possibly delisted; no price data found  (period=5d)
+$MSSS: possibly delisted; no price data found  (period=5d)
+$MSLC: possibly delisted; no price data found  (period=5d)
+$COIG: possibly delisted; no price data found  (period=5d)
+$CTWO: possibly delisted; no price data found  (period=5d)
+$CLSE: possibly delisted; no price data found  (period=5d)
+$CLOB: possibly delisted; no price data found  (period=5d)
+$PLTM: possibly delisted; no price data found  (period=5d)
+$MSOS: possibly delisted; no price data found  (period=5d)
+$PGJ: possibly delisted; no price data found  (period=5d)
+$CSPF: possibly delisted; no price data found  (period=5d)
+$NNEX: possibly delisted; no price data found  (period=5d)
+$CBTL: possibly delisted; no price data found  (period=5d)
+$PJIO: possibly delisted; no price data found  (period=5d)
+$MSOX: possibly delisted; no price data found  (period=5d)
+$MSDD: possibly delisted; no price data found  (period=5d)
+$CFA: possibly delisted; no price data found  (period=5d)
+$NJUL: possibly delisted; no price data found  (period=5d)
+$NMBL: possibly delisted; no price data found  (period=5d)
+$PJFG: possibly delisted; no price data found  (period=5d)
+$DDFL: possibly delisted; no price data found  (period=5d)
+$CAIE: possibly delisted; no price data found  (period=5d)
+$MRNY: possibly delisted; no price data found  (period=5d)
+$NVOH: possibly delisted; no price data found  (period=5d)
+$CTA: possibly delisted; no price data found  (period=5d)
+
+42 Failed downloads:
+['PLTI', 'CDL', 'MSFL', 'CTEX', 'CPSR', 'MPLY', 'MSSS', 'MSLC', 'COIG', 'CTWO', 'CLSE', 'CLOB', 'PLTM', 'MSOS', 'PGJ', 'CSPF', 'NNEX', 'CBTL', 'PJIO', 'MSOX', 'MSDD', 'CFA', 'NJUL', 'NMBL', 'PJFG', 'DDFL', 'CAIE', 'MRNY', 'NVOH', 'CTA']: possibly delisted; no price data found  (period=5d)
+['NSI', 'CONI', 'CVAR', 'MORT', 'CGNG', 'CCFE', 'PLGI', 'CTEF', 'NFLP', 'MRGR', 'MSFU', 'CVMC']: OperationalError('unable to open database file')
+$PSMJ: possibly delisted; no price data found  (period=5d)
+$DLS: possibly delisted; no price data found  (period=5d)
+$PMIO: possibly delisted; no price data found  (period=5d)
+$CGV: possibly delisted; no price data found  (period=5d)
+$PTL: possibly delisted; no price data found  (period=5d)
+$VOO: possibly delisted; no price data found  (period=5d)
+$DIV: possibly delisted; no price data found  (period=5d)
+$OCTJ: possibly delisted; no price data found  (period=5d)
+$CGHM: possibly delisted; no price data found  (period=5d)
+$CPLB: possibly delisted; no price data found  (period=5d)
+
+10 Failed downloads:
+['PSMJ', 'DLS', 'PMIO', 'CGV', 'PTL', 'VOO', 'DIV', 'OCTJ', 'CGHM', 'CPLB']: possibly delisted; no price data found  (period=5d)
+$DECO: possibly delisted; no price data found  (period=5d)
+$CVSB: possibly delisted; no price data found  (period=5d)
+$PMMF: possibly delisted; no price data found  (period=5d)
+$PMJN: possibly delisted; no price data found  (period=5d)
+$CLOI: possibly delisted; no price data found  (period=5d)
+$DDSQ: possibly delisted; no price data found  (period=5d)
+$NURE: possibly delisted; no price data found  (period=5d)
+$CEPI: possibly delisted; no price data found  (period=5d)
+$XLF: possibly delisted; no price data found  (period=5d)
+$MMMA: possibly delisted; no price data found  (period=5d)
+$SPY: possibly delisted; no price data found  (period=5d)
+$DIVN: possibly delisted; no price data found  (period=5d)
+$DIVB: possibly delisted; no price data found  (period=5d)
+$CGSD: possibly delisted; no price data found  (period=5d)
+$NFLW: possibly delisted; no price data found  (period=5d)
+$CERY: possibly delisted; no price data found  (period=5d)
+
+18 Failed downloads:
+['DECO', 'CVSB', 'PMMF', 'PMJN', 'CLOI', 'DDSQ', 'NURE', 'CEPI', 'XLF', 'MMMA', 'SPY', 'DIVN', 'DIVB', 'CGSD', 'NFLW', 'CERY']: possibly delisted; no price data found  (period=5d)
+['NVBT', 'DGCB']: OperationalError('unable to open database file')
+$NBGX: possibly delisted; no price data found  (period=5d)
+$DEM: possibly delisted; no price data found  (period=5d)
+$DJIA: possibly delisted; no price data found  (period=5d)
+$PEX: possibly delisted; no price data found  (period=5d)
+$DSEP: possibly delisted; no price data found  (period=5d)
+$NVD: possibly delisted; no price data found  (period=5d)
+$CLIP: possibly delisted; no price data found  (period=5d)
+$NETL: possibly delisted; no price data found  (period=5d)
+$NZUS: possibly delisted; no price data found  (period=5d)
+$CRCD: possibly delisted; no price data found  (period=5d)
+$DJUN: possibly delisted; no price data found  (period=5d)
+$MTUM: possibly delisted; no price data found  (period=5d)
+$NAIL: possibly delisted; no price data found  (period=5d)
+$DDFF: possibly delisted; no price data found  (period=5d)
+$DECW: possibly delisted; no price data found  (period=5d)
+$DECT: possibly delisted; no price data found  (period=5d)
+$DEFR: possibly delisted; no price data found  (period=5d)
+$PPA: possibly delisted; no price data found  (period=5d)
+$COPY: possibly delisted; no price data found  (period=5d)
+$PPH: possibly delisted; no price data found  (period=5d)
+$PMNV: possibly delisted; no price data found  (period=5d)
+
+31 Failed downloads:
+['NBGX', 'DEM', 'DJIA', 'PEX', 'DSEP', 'NVD', 'CLIP', 'NETL', 'NZUS', 'CRCD', 'DJUN', 'MTUM', 'NAIL', 'DDFF', 'DECW', 'DECT', 'DEFR', 'PPA', 'COPY', 'PPH', 'PMNV']: possibly delisted; no price data found  (period=5d)
+['ITOT', 'CHPX', 'DCOR', 'OARK', 'NVIR', 'NVDS', 'NVDW', 'CPSF', 'CWY', 'NVII']: OperationalError('unable to open database file')
+$ODTE: possibly delisted; no price data found  (period=5d)
+$CWII: possibly delisted; no price data found  (period=5d)
+$CBOY: possibly delisted; no price data found  (period=5d)
+$DBC: possibly delisted; no price data found  (period=5d)
+$DOJE: possibly delisted; no price data found  (period=5d)
+$CRWG: possibly delisted; no price data found  (period=5d)
+$NYM: possibly delisted; no price data found  (period=5d)
+$CSRE: possibly delisted; no price data found  (period=5d)
+$PFM: possibly delisted; no price data found  (period=5d)
+$DIVD: possibly delisted; no price data found  (period=5d)
+$PGF: possibly delisted; no price data found  (period=5d)
+$PQDI: possibly delisted; no price data found  (period=5d)
+$DFSU: possibly delisted; no price data found  (period=5d)
+$DDNQ: possibly delisted; no price data found  (period=5d)
+$CVLC: possibly delisted; no price data found  (period=5d)
+$DFJ: possibly delisted; no price data found  (period=5d)
+$DIPS: possibly delisted; no price data found  (period=5d)
+$DHLX: possibly delisted; no price data found  (period=5d)
+$OCTM: possibly delisted; no price data found  (period=5d)
+$DDTD: possibly delisted; no price data found  (period=5d)
+$DGJA: possibly delisted; no price data found  (period=5d)
+$OIH: possibly delisted; no price data found  (period=5d)
+$OCTZ: possibly delisted; no price data found  (period=5d)
+$CUSD: possibly delisted; no price data found  (period=5d)
+
+38 Failed downloads:
+['DFGP', 'OAKM', 'DGRO', 'DDFS', 'DDTL', 'OCTH', 'DFAU', 'OCTB', 'DNL', 'DFUS', 'DDFJ', 'DHDG', 'DFEB', 'DFAR']: OperationalError('unable to open database file')
+['ODTE', 'CWII', 'CBOY', 'DBC', 'DOJE', 'CRWG', 'NYM', 'CSRE', 'PFM', 'DIVD', 'PGF', 'PQDI', 'DFSU', 'DDNQ', 'CVLC', 'DFJ', 'DIPS', 'DHLX', 'OCTM', 'DDTD', 'DGJA', 'OIH', 'OCTZ', 'CUSD']: possibly delisted; no price data found  (period=5d)
+  Got prices for 735 ETFs
+  Upserting 735 today's price rows...
+    → foreign_etf_prices ERROR: HTTP Error 409: Conflict
+
+[4/5] Fetching full price history for returns...
+  Fetched price history for 1000 ETFs
+  Fetching last 30 days per symbol for sparklines...
+  Got last-30-day prices for 1000 ETFs
+
+DONE: 975 updated, 25 skipped, 0 errors
+  FX: USD/TRY=45.2105
+
+[5/5] Recomputing sparklines (last 30 days)...
+  ✓ 100 ETFs updated
+  ✓ 200 ETFs updated
+  ✓ 300 ETFs updated
+  ✓ 400 ETFs updated
+  ✓ 500 ETFs updated
+  ✓ 600 ETFs updated
+  ✓ 700 ETFs updated
+  ✓ 800 ETFs updated
+  ✓ 900 ETFs updated
+  ✓ 1000 ETFs updated
+  Sparklines: 1000 updated, 0 skipped, 0 errors
+
+✅ ETF cron complete — prices=735, returns=975, sparklines=1000

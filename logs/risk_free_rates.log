@@ -1,0 +1,30 @@
+[2026-05-05 11:57:30] [INFO] Starting risk_free_rates cron
+[2026-05-05 11:57:35] [INFO] USD ^IRX = 3.5899999141693115% → annualized 0.0359
+[2026-05-05 12:01:39] [INFO] Starting risk_free_rates cron
+[2026-05-05 12:01:42] [INFO] USD ^IRX = 3.5899999141693115% → annualized 0.0359
+[2026-05-05 12:01:42] [ERROR] system_rates upsert FAILED
+[2026-05-05 12:01:42] [INFO] Done in 3.2s
+[2026-05-05 12:02:27] [INFO] Starting risk_free_rates cron
+[2026-05-05 12:02:31] [INFO] USD ^IRX = 3.5899999141693115% → annualized 0.0359
+[2026-05-05 12:02:32] [ERROR] system_rates upsert FAILED
+[2026-05-05 12:02:32] [INFO] Done in 4.1s
+[2026-05-05 12:05:10] [INFO] Starting risk_free_rates cron
+[2026-05-05 12:05:10] [INFO] USD ^IRX = 3.5899999141693115% → annualized 0.0359
+[2026-05-05 12:05:10] [INFO] system_rates updated successfully
+[2026-05-05 12:05:11] [INFO] Done in 0.7s
+[2026-05-05 12:05:37] [INFO] Starting risk_free_rates cron
+[2026-05-05 12:05:37] [INFO] USD ^IRX = 3.5899999141693115% → annualized 0.0359
+[2026-05-05 12:05:37] [INFO] system_rates updated successfully
+[2026-05-05 12:05:38] [INFO] Done in 0.7s
+[2026-05-05 16:35:49] [INFO] Starting risk_free_rates cron
+[2026-05-05 16:35:51] [INFO] USD ^IRX = 3.5999999046325684% → annualized 0.036
+[2026-05-05 16:35:51] [INFO] system_rates updated successfully
+[2026-05-05 16:35:51] [INFO] Done in 1.8s
+[2026-05-05 16:55:09] [INFO] Starting risk_free_rates cron
+[2026-05-05 16:55:12] [INFO] USD ^IRX = 3.5999999046325684% → annualized 0.036
+[2026-05-05 16:55:12] [INFO] system_rates updated successfully
+[2026-05-05 16:55:13] [INFO] Done in 3.1s
+[2026-05-05 17:13:09] [INFO] Starting risk_free_rates cron
+[2026-05-05 17:13:09] [INFO] USD ^IRX = 3.5999999046325684% → annualized 0.036
+[2026-05-05 17:13:10] [INFO] system_rates updated successfully
+[2026-05-05 17:13:10] [INFO] Done in 0.8s

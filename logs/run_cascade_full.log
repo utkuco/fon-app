@@ -1,0 +1,32 @@
+[2026-05-05 17:51:11] [INFO] Starting run_cascade
+[2026-05-05 17:51:11] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 17:51:11] [INFO] Fetching funds with price_history...
+[2026-05-05 17:51:17] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 17:51:27] [INFO]   page 2: 500 rows, total so far: 1000
+[rest_get] ERROR https://oqkobptbvcazifpvjwfz.supabase.co/rest/v1/funds?select=id%2Ccode%2Cname%2Cfund_type%2Cmarket_cap%2Cprice_history%2Ccurrency&offset=1000&limit=500&price_history=not.is.null: The read operation timed out
+[2026-05-05 17:51:57] [INFO] Total funds fetched: 1000
+[2026-05-05 17:51:57] [INFO] Computing fund metrics from price_history...
+[2026-05-05 17:51:58] [INFO]   fund_updates (daily_change + returns): 928
+[2026-05-05 17:51:58] [INFO]   sparkline_updates: 928
+[2026-05-05 17:51:58] [INFO] Upserting fund metrics to funds table...
+[rest_patch] ERROR https://oqkobptbvcazifpvjwfz.supabase.co/rest/v1/funds?code=eq.IUH: HTTP Error 521: <none>
+[rest_patch] ERROR https://oqkobptbvcazifpvjwfz.supabase.co/rest/v1/funds?code=eq.ZMU: HTTP Error 521: <none>
+[rest_patch] ERROR https://oqkobptbvcazifpvjwfz.supabase.co/rest/v1/funds?code=eq.AZY: HTTP Error 521: <none>
+[rest_patch] ERROR https://oqkobptbvcazifpvjwfz.supabase.co/rest/v1/funds?code=eq.IRB: HTTP Error 521: <none>
+[rest_patch] ERROR https://oqkobptbvcazifpvjwfz.supabase.co/rest/v1/funds?code=eq.UZY: HTTP Error 521: <none>
+[rest_patch] ERROR https://oqkobptbvcazifpvjwfz.supabase.co/rest/v1/funds?code=eq.RYA: HTTP Error 521: <none>
+[rest_patch] ERROR https://oqkobptbvcazifpvjwfz.supabase.co/rest/v1/funds?code=eq.ODS: HTTP Error 521: <none>
+[rest_patch] ERROR https://oqkobptbvcazifpvjwfz.supabase.co/rest/v1/funds?code=eq.HMC: HTTP Error 521: <none>
+[rest_patch] ERROR https://oqkobptbvcazifpvjwfz.supabase.co/rest/v1/funds?code=eq.KEH: HTTP Error 521: <none>
+[rest_patch] ERROR https://oqkobptbvcazifpvjwfz.supabase.co/rest/v1/funds?code=eq.ESP: HTTP Error 521: <none>
+[rest_patch] ERROR https://oqkobptbvcazifpvjwfz.supabase.co/rest/v1/funds?code=eq.FGA: HTTP Error 503: Service Unavailable
+[2026-05-05 17:54:15] [INFO]   funds updated: 917/928
+[2026-05-05 17:54:15] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 17:56:26] [INFO]   sparklines upserted: 928/928
+[2026-05-05 17:56:26] [INFO] Reloading funds for category ranks + homepage_stats...
+[2026-05-05 17:56:27] [INFO]   funds_for_stats: 2400
+[2026-05-05 17:56:27] [INFO] Computing fund_category_ranks...
+[2026-05-05 18:01:50] [INFO]   fund_category_ranks upserted: 2400
+[2026-05-05 18:01:50] [INFO] Computing homepage_stats...
+[2026-05-05 18:01:51] [INFO]   homepage_stats upserted OK
+[2026-05-05 18:01:52] [INFO] Done in 640.5s — funds=928, sparklines=928, ranks=2400

@@ -1,0 +1,27 @@
+[2026-05-05 17:17:15] [INFO] Starting fund_cron
+[2026-05-05 17:17:18] [INFO] Funds: 2400
+[2026-05-05 17:17:18] [INFO] benchmark_symbol backfill done
+[2026-05-05 17:17:18] [INFO] Fetching 6 benchmark symbols...
+[2026-05-05 17:17:18] [INFO]   EURTRY=X: 22 points, last_close=52.9201
+[2026-05-05 17:17:18] [INFO]   GC=F: 22 points, last_close=4589.1001
+[2026-05-05 17:17:20] [INFO]   TRY=X: 22 points, last_close=45.2136
+[2026-05-05 17:17:24] [INFO]   XU100.IS: 20 points, last_close=14510.5195
+[2026-05-05 17:17:44] [INFO]   ^GSPC: 22 points, last_close=7248.46
+[2026-05-05 17:17:44] [INFO]   ^IXIC: 22 points, last_close=25264.5371
+[2026-05-05 17:18:02] [INFO] Benchmark prices: 0 rows written
+[2026-05-05 17:18:02] [INFO] system_rates: {'TRY': 0.45, 'USD': 0.036, 'EUR': 0.0}
+[2026-05-05 17:18:27] [INFO] Funds with price_history: 1000
+[2026-05-05 17:20:45] [INFO] funds table updated: 909/909
+[2026-05-05 17:24:57] [INFO] Starting fund_cron
+[2026-05-05 17:24:59] [INFO] Funds: 2400
+[2026-05-05 17:24:59] [INFO] benchmark_symbol backfill done
+[2026-05-05 17:24:59] [INFO] Fetching 6 benchmark symbols...
+[2026-05-05 17:24:59] [INFO]   EURTRY=X: 22 points, last_close=52.9545
+[2026-05-05 17:24:59] [INFO]   GC=F: 22 points, last_close=4584.5
+[2026-05-05 17:24:59] [INFO]   TRY=X: 22 points, last_close=45.2171
+[2026-05-05 17:25:00] [INFO]   XU100.IS: 20 points, last_close=14558.5596
+[2026-05-05 17:25:00] [INFO]   ^GSPC: 22 points, last_close=7255.9902
+[2026-05-05 17:25:03] [INFO]   ^IXIC: 22 points, last_close=25305.6719
+[2026-05-05 17:25:21] [INFO] Benchmark prices: 0 rows written
+[2026-05-05 17:25:22] [INFO] system_rates: {'TRY': 0.45, 'USD': 0.036, 'EUR': 0.0}
+[2026-05-05 17:25:43] [INFO] Funds with price_history: 1000

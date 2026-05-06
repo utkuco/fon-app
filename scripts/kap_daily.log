@@ -2686,3 +2686,631 @@
 2026-04-29 06:00:04,936 [INFO] Done: 0 ✓ / 1 ✗
 2026-04-29 06:00:04,937 [INFO] ============================================================
 2026-04-29 06:00:04,937 [INFO] ============================================================
+2026-05-06 06:00:00,810 [INFO] ============================================================
+2026-05-06 06:00:00,810 [INFO] ============================================================
+2026-05-06 06:00:00,810 [INFO] KAP Daily Pipeline started
+2026-05-06 06:00:00,810 [INFO] KAP Daily Pipeline started
+2026-05-06 06:00:00,811 [INFO] Resuming from last run: 2026-04-29T06:00:01.030235
+2026-05-06 06:00:00,811 [INFO] Resuming from last run: 2026-04-29T06:00:01.030235
+2026-05-06 06:00:01,202 [INFO] KAP discovered 98 portfolio disclosures in 2026-04-29 → 2026-05-06
+2026-05-06 06:00:01,202 [INFO] KAP discovered 98 portfolio disclosures in 2026-04-29 → 2026-05-06
+2026-05-06 06:00:02,699 [INFO] Loaded 1619 fund name entries
+2026-05-06 06:00:02,699 [INFO] Loaded 1619 fund name entries
+2026-05-06 06:00:02,700 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,700 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,700 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,700 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,700 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,700 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,700 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,700 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,700 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,700 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,701 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,701 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,701 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,701 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,701 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,701 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,701 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,701 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,701 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,701 [INFO]   [ICS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,701 [INFO]   [SHE] Portföy Dağılım Raporu
+2026-05-06 06:00:02,701 [INFO]   [SHE] Portföy Dağılım Raporu
+2026-05-06 06:00:02,701 [INFO]   [KLI] Portföy Dağılım Raporu
+2026-05-06 06:00:02,701 [INFO]   [KLI] Portföy Dağılım Raporu
+2026-05-06 06:00:02,702 [INFO]   [KLI] Portföy Dağılım Raporu
+2026-05-06 06:00:02,702 [INFO]   [KLI] Portföy Dağılım Raporu
+2026-05-06 06:00:02,702 [INFO]   [MTX] Portföy Dağılım Raporu
+2026-05-06 06:00:02,702 [INFO]   [MTX] Portföy Dağılım Raporu
+2026-05-06 06:00:02,703 [INFO]   [ADE] Portföy Dağılım Raporu
+2026-05-06 06:00:02,703 [INFO]   [ADE] Portföy Dağılım Raporu
+2026-05-06 06:00:02,703 [INFO]   [IGL] Portföy Dağılım Raporu
+2026-05-06 06:00:02,703 [INFO]   [IGL] Portföy Dağılım Raporu
+2026-05-06 06:00:02,703 [INFO]   [ODV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,703 [INFO]   [ODV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,703 [INFO]   [KLI] Portföy Dağılım Raporu
+2026-05-06 06:00:02,703 [INFO]   [KLI] Portföy Dağılım Raporu
+2026-05-06 06:00:02,704 [INFO]   [ODV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,704 [INFO]   [ODV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,704 [INFO]   [ODV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,704 [INFO]   [ODV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,704 [INFO]   [TIP] Portföy Dağılım Raporu
+2026-05-06 06:00:02,704 [INFO]   [TIP] Portföy Dağılım Raporu
+2026-05-06 06:00:02,704 [INFO]   [ODV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,704 [INFO]   [ODV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,704 [INFO]   [TE4] Portföy Dağılım Raporu
+2026-05-06 06:00:02,704 [INFO]   [TE4] Portföy Dağılım Raporu
+2026-05-06 06:00:02,704 [INFO]   [ADE] Portföy Dağılım Raporu
+2026-05-06 06:00:02,704 [INFO]   [ADE] Portföy Dağılım Raporu
+2026-05-06 06:00:02,704 [INFO]   [ODV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,704 [INFO]   [ODV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,705 [INFO]   [KLI] Portföy Dağılım Raporu
+2026-05-06 06:00:02,705 [INFO]   [KLI] Portföy Dağılım Raporu
+2026-05-06 06:00:02,705 [INFO]   [ODV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,705 [INFO]   [ODV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,705 [INFO]   [AYR] Portföy Dağılım Raporu
+2026-05-06 06:00:02,705 [INFO]   [AYR] Portföy Dağılım Raporu
+2026-05-06 06:00:02,706 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,706 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,706 [INFO]   [KLI] Portföy Dağılım Raporu
+2026-05-06 06:00:02,706 [INFO]   [KLI] Portföy Dağılım Raporu
+2026-05-06 06:00:02,707 [INFO]   [TAU] Portföy Dağılım Raporu
+2026-05-06 06:00:02,707 [INFO]   [TAU] Portföy Dağılım Raporu
+2026-05-06 06:00:02,707 [INFO]   [MTH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,707 [INFO]   [MTH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,707 [INFO]   [TTA] Portföy Dağılım Raporu
+2026-05-06 06:00:02,707 [INFO]   [TTA] Portföy Dağılım Raporu
+2026-05-06 06:00:02,708 [INFO]   [TPP] Portföy Dağılım Raporu
+2026-05-06 06:00:02,708 [INFO]   [TPP] Portföy Dağılım Raporu
+2026-05-06 06:00:02,714 [INFO]   [TAU] Portföy Dağılım Raporu
+2026-05-06 06:00:02,714 [INFO]   [TAU] Portföy Dağılım Raporu
+2026-05-06 06:00:02,721 [INFO]   [AKU] Portföy Dağılım Raporu
+2026-05-06 06:00:02,721 [INFO]   [AKU] Portföy Dağılım Raporu
+2026-05-06 06:00:02,721 [INFO]   [BND] Portföy Dağılım Raporu
+2026-05-06 06:00:02,721 [INFO]   [BND] Portföy Dağılım Raporu
+2026-05-06 06:00:02,721 [INFO]   [IDH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,721 [INFO]   [IDH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,721 [INFO]   [KLI] Portföy Dağılım Raporu
+2026-05-06 06:00:02,721 [INFO]   [KLI] Portföy Dağılım Raporu
+2026-05-06 06:00:02,722 [INFO]   [KOP] Portföy Dağılım Raporu
+2026-05-06 06:00:02,722 [INFO]   [KOP] Portföy Dağılım Raporu
+2026-05-06 06:00:02,722 [INFO]   [CKS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,722 [INFO]   [CKS] Portföy Dağılım Raporu
+2026-05-06 06:00:02,723 [INFO]   [MTH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,723 [INFO]   [MTH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,723 [INFO]   [KPH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,723 [INFO]   [KPH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,723 [INFO]   [KLI] Portföy Dağılım Raporu
+2026-05-06 06:00:02,723 [INFO]   [KLI] Portföy Dağılım Raporu
+2026-05-06 06:00:02,723 [INFO]   [EID] Portföy Dağılım Raporu
+2026-05-06 06:00:02,723 [INFO]   [EID] Portföy Dağılım Raporu
+2026-05-06 06:00:02,723 [INFO]   [EIB] Portföy Dağılım Raporu
+2026-05-06 06:00:02,723 [INFO]   [EIB] Portföy Dağılım Raporu
+2026-05-06 06:00:02,723 [INFO]   [RIH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,723 [INFO]   [RIH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,723 [INFO]   [RRP] Portföy Dağılım Raporu
+2026-05-06 06:00:02,723 [INFO]   [RRP] Portföy Dağılım Raporu
+2026-05-06 06:00:02,724 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,724 [INFO]   [IKV] Portföy Dağılım Raporu
+2026-05-06 06:00:02,724 [INFO]   [RKH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,724 [INFO]   [RKH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,725 [INFO]   [RIH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,725 [INFO]   [RIH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,726 [INFO]   [MTH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,726 [INFO]   [MTH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,726 [INFO]   [RGH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,726 [INFO]   [RGH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,726 [INFO]   [RKH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,726 [INFO]   [RKH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,727 [INFO]   [RBP] Portföy Dağılım Raporu
+2026-05-06 06:00:02,727 [INFO]   [RBP] Portföy Dağılım Raporu
+2026-05-06 06:00:02,728 [INFO]   [KPH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,728 [INFO]   [KPH] Portföy Dağılım Raporu
+2026-05-06 06:00:02,730 [INFO]   [FGA] Portföy Dağılım Raporu
+2026-05-06 06:00:02,730 [INFO]   [FGA] Portföy Dağılım Raporu
+2026-05-06 06:00:02,730 [INFO]   [DJA] Portföy Dağılım Raporu
+2026-05-06 06:00:02,730 [INFO]   [DJA] Portföy Dağılım Raporu
+2026-05-06 06:00:02,730 [INFO] Processing 58 new disclosures...
+2026-05-06 06:00:02,730 [INFO] Processing 58 new disclosures...
+2026-05-06 06:00:02,732 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:02,732 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:02,812 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:02,812 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:04,811 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:04,811 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:04,811 [WARNING] No categories for ICS
+2026-05-06 06:00:04,811 [WARNING] No categories for ICS
+2026-05-06 06:00:05,461 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:05,461 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:05,553 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:05,553 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:07,245 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:07,245 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:07,245 [WARNING] No categories for ICS
+2026-05-06 06:00:07,245 [WARNING] No categories for ICS
+2026-05-06 06:00:07,895 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:07,895 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:07,981 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:07,981 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:09,670 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:09,670 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:09,670 [WARNING] No categories for ICS
+2026-05-06 06:00:09,670 [WARNING] No categories for ICS
+2026-05-06 06:00:10,171 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:10,171 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:10,376 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:10,376 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:12,064 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:12,064 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:12,064 [WARNING] No categories for ICS
+2026-05-06 06:00:12,064 [WARNING] No categories for ICS
+2026-05-06 06:00:12,688 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:12,688 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:12,887 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:12,887 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:14,569 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:14,569 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:14,569 [WARNING] No categories for ICS
+2026-05-06 06:00:14,569 [WARNING] No categories for ICS
+2026-05-06 06:00:15,219 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:15,219 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:15,309 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:15,309 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:16,991 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:16,991 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:16,992 [WARNING] No categories for ICS
+2026-05-06 06:00:16,992 [WARNING] No categories for ICS
+2026-05-06 06:00:17,642 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:17,642 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:17,722 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:17,722 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:19,415 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:19,415 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:19,415 [WARNING] No categories for ICS
+2026-05-06 06:00:19,415 [WARNING] No categories for ICS
+2026-05-06 06:00:19,931 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:19,931 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:20,022 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:20,022 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:21,711 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:21,711 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:21,712 [WARNING] No categories for ICS
+2026-05-06 06:00:21,712 [WARNING] No categories for ICS
+2026-05-06 06:00:22,355 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:22,355 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:22,436 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:22,436 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:24,125 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:24,125 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:24,125 [WARNING] No categories for ICS
+2026-05-06 06:00:24,125 [WARNING] No categories for ICS
+2026-05-06 06:00:24,630 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:24,630 [INFO] Processing [ICS] from 2026-05-05
+2026-05-06 06:00:24,710 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:24,710 [INFO] Downloaded PDF ICS (77KB)
+2026-05-06 06:00:26,378 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:26,378 [ERROR] GLM failed for ICS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:26,378 [WARNING] No categories for ICS
+2026-05-06 06:00:26,378 [WARNING] No categories for ICS
+2026-05-06 06:00:27,028 [INFO] Processing [SHE] from 2026-05-05
+2026-05-06 06:00:27,028 [INFO] Processing [SHE] from 2026-05-05
+2026-05-06 06:00:27,112 [INFO] Downloaded PDF SHE (77KB)
+2026-05-06 06:00:27,112 [INFO] Downloaded PDF SHE (77KB)
+2026-05-06 06:00:28,796 [ERROR] GLM failed for SHE: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:28,796 [ERROR] GLM failed for SHE: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:28,796 [WARNING] No categories for SHE
+2026-05-06 06:00:28,796 [WARNING] No categories for SHE
+2026-05-06 06:00:29,445 [INFO] Processing [KLI] from 2026-05-05
+2026-05-06 06:00:29,445 [INFO] Processing [KLI] from 2026-05-05
+2026-05-06 06:00:29,524 [INFO] Downloaded PDF KLI (77KB)
+2026-05-06 06:00:29,524 [INFO] Downloaded PDF KLI (77KB)
+2026-05-06 06:00:31,215 [ERROR] GLM failed for KLI: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:31,215 [ERROR] GLM failed for KLI: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:31,215 [WARNING] No categories for KLI
+2026-05-06 06:00:31,215 [WARNING] No categories for KLI
+2026-05-06 06:00:31,813 [INFO] Processing [KLI] from 2026-05-05
+2026-05-06 06:00:31,813 [INFO] Processing [KLI] from 2026-05-05
+2026-05-06 06:00:31,893 [INFO] Downloaded PDF KLI (77KB)
+2026-05-06 06:00:31,893 [INFO] Downloaded PDF KLI (77KB)
+2026-05-06 06:00:33,574 [ERROR] GLM failed for KLI: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:33,574 [ERROR] GLM failed for KLI: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:33,574 [WARNING] No categories for KLI
+2026-05-06 06:00:33,574 [WARNING] No categories for KLI
+2026-05-06 06:00:34,195 [INFO] Processing [MTX] from 2026-05-05
+2026-05-06 06:00:34,195 [INFO] Processing [MTX] from 2026-05-05
+2026-05-06 06:00:34,289 [INFO] Downloaded PDF MTX (77KB)
+2026-05-06 06:00:34,289 [INFO] Downloaded PDF MTX (77KB)
+2026-05-06 06:00:35,978 [ERROR] GLM failed for MTX: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:35,978 [ERROR] GLM failed for MTX: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:35,978 [WARNING] No categories for MTX
+2026-05-06 06:00:35,978 [WARNING] No categories for MTX
+2026-05-06 06:00:36,480 [INFO] Processing [ADE] from 2026-05-05
+2026-05-06 06:00:36,480 [INFO] Processing [ADE] from 2026-05-05
+2026-05-06 06:00:36,560 [INFO] Downloaded PDF ADE (77KB)
+2026-05-06 06:00:36,560 [INFO] Downloaded PDF ADE (77KB)
+2026-05-06 06:00:38,251 [ERROR] GLM failed for ADE: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:38,251 [ERROR] GLM failed for ADE: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:38,251 [WARNING] No categories for ADE
+2026-05-06 06:00:38,251 [WARNING] No categories for ADE
+2026-05-06 06:00:38,788 [INFO] Processing [IGL] from 2026-05-05
+2026-05-06 06:00:38,788 [INFO] Processing [IGL] from 2026-05-05
+2026-05-06 06:00:38,876 [INFO] Downloaded PDF IGL (77KB)
+2026-05-06 06:00:38,876 [INFO] Downloaded PDF IGL (77KB)
+2026-05-06 06:00:40,564 [ERROR] GLM failed for IGL: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:40,564 [ERROR] GLM failed for IGL: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:40,564 [WARNING] No categories for IGL
+2026-05-06 06:00:40,564 [WARNING] No categories for IGL
+2026-05-06 06:00:41,066 [INFO] Processing [ODV] from 2026-05-05
+2026-05-06 06:00:41,066 [INFO] Processing [ODV] from 2026-05-05
+2026-05-06 06:00:41,681 [INFO] Downloaded PDF ODV (77KB)
+2026-05-06 06:00:41,681 [INFO] Downloaded PDF ODV (77KB)
+2026-05-06 06:00:43,366 [ERROR] GLM failed for ODV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:43,366 [ERROR] GLM failed for ODV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:43,366 [WARNING] No categories for ODV
+2026-05-06 06:00:43,366 [WARNING] No categories for ODV
+2026-05-06 06:00:43,871 [INFO] Processing [KLI] from 2026-05-05
+2026-05-06 06:00:43,871 [INFO] Processing [KLI] from 2026-05-05
+2026-05-06 06:00:43,978 [INFO] Downloaded PDF KLI (77KB)
+2026-05-06 06:00:43,978 [INFO] Downloaded PDF KLI (77KB)
+2026-05-06 06:00:45,653 [ERROR] GLM failed for KLI: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:45,653 [ERROR] GLM failed for KLI: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:45,653 [WARNING] No categories for KLI
+2026-05-06 06:00:45,653 [WARNING] No categories for KLI
+2026-05-06 06:00:46,303 [INFO] Processing [ODV] from 2026-05-05
+2026-05-06 06:00:46,303 [INFO] Processing [ODV] from 2026-05-05
+2026-05-06 06:00:46,388 [INFO] Downloaded PDF ODV (77KB)
+2026-05-06 06:00:46,388 [INFO] Downloaded PDF ODV (77KB)
+2026-05-06 06:00:48,073 [ERROR] GLM failed for ODV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:48,073 [ERROR] GLM failed for ODV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:48,073 [WARNING] No categories for ODV
+2026-05-06 06:00:48,073 [WARNING] No categories for ODV
+2026-05-06 06:00:48,587 [INFO] Processing [ODV] from 2026-05-05
+2026-05-06 06:00:48,587 [INFO] Processing [ODV] from 2026-05-05
+2026-05-06 06:00:48,667 [INFO] Downloaded PDF ODV (77KB)
+2026-05-06 06:00:48,667 [INFO] Downloaded PDF ODV (77KB)
+2026-05-06 06:00:50,341 [ERROR] GLM failed for ODV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:50,341 [ERROR] GLM failed for ODV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:50,341 [WARNING] No categories for ODV
+2026-05-06 06:00:50,341 [WARNING] No categories for ODV
+2026-05-06 06:00:50,866 [INFO] Processing [TIP] from 2026-05-05
+2026-05-06 06:00:50,866 [INFO] Processing [TIP] from 2026-05-05
+2026-05-06 06:00:50,953 [INFO] Downloaded PDF TIP (77KB)
+2026-05-06 06:00:50,953 [INFO] Downloaded PDF TIP (77KB)
+2026-05-06 06:00:52,636 [ERROR] GLM failed for TIP: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:52,636 [ERROR] GLM failed for TIP: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:52,636 [WARNING] No categories for TIP
+2026-05-06 06:00:52,636 [WARNING] No categories for TIP
+2026-05-06 06:00:53,287 [INFO] Processing [ODV] from 2026-05-05
+2026-05-06 06:00:53,287 [INFO] Processing [ODV] from 2026-05-05
+2026-05-06 06:00:53,369 [INFO] Downloaded PDF ODV (77KB)
+2026-05-06 06:00:53,369 [INFO] Downloaded PDF ODV (77KB)
+2026-05-06 06:00:55,053 [ERROR] GLM failed for ODV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:55,053 [ERROR] GLM failed for ODV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:55,053 [WARNING] No categories for ODV
+2026-05-06 06:00:55,053 [WARNING] No categories for ODV
+2026-05-06 06:00:55,555 [INFO] Processing [TE4] from 2026-05-05
+2026-05-06 06:00:55,555 [INFO] Processing [TE4] from 2026-05-05
+2026-05-06 06:00:55,632 [INFO] Downloaded PDF TE4 (77KB)
+2026-05-06 06:00:55,632 [INFO] Downloaded PDF TE4 (77KB)
+2026-05-06 06:00:57,328 [ERROR] GLM failed for TE4: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:57,328 [ERROR] GLM failed for TE4: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:57,328 [WARNING] No categories for TE4
+2026-05-06 06:00:57,328 [WARNING] No categories for TE4
+2026-05-06 06:00:57,971 [INFO] Processing [ADE] from 2026-05-05
+2026-05-06 06:00:57,971 [INFO] Processing [ADE] from 2026-05-05
+2026-05-06 06:00:58,059 [INFO] Downloaded PDF ADE (77KB)
+2026-05-06 06:00:58,059 [INFO] Downloaded PDF ADE (77KB)
+2026-05-06 06:00:59,735 [ERROR] GLM failed for ADE: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:59,735 [ERROR] GLM failed for ADE: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:00:59,735 [WARNING] No categories for ADE
+2026-05-06 06:00:59,735 [WARNING] No categories for ADE
+2026-05-06 06:01:00,371 [INFO] Processing [ODV] from 2026-05-05
+2026-05-06 06:01:00,371 [INFO] Processing [ODV] from 2026-05-05
+2026-05-06 06:01:00,682 [INFO] Downloaded PDF ODV (77KB)
+2026-05-06 06:01:00,682 [INFO] Downloaded PDF ODV (77KB)
+2026-05-06 06:01:02,359 [ERROR] GLM failed for ODV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:02,359 [ERROR] GLM failed for ODV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:02,359 [WARNING] No categories for ODV
+2026-05-06 06:01:02,359 [WARNING] No categories for ODV
+2026-05-06 06:01:03,009 [INFO] Processing [KLI] from 2026-05-05
+2026-05-06 06:01:03,009 [INFO] Processing [KLI] from 2026-05-05
+2026-05-06 06:01:03,095 [INFO] Downloaded PDF KLI (77KB)
+2026-05-06 06:01:03,095 [INFO] Downloaded PDF KLI (77KB)
+2026-05-06 06:01:04,779 [ERROR] GLM failed for KLI: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:04,779 [ERROR] GLM failed for KLI: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:04,779 [WARNING] No categories for KLI
+2026-05-06 06:01:04,779 [WARNING] No categories for KLI
+2026-05-06 06:01:05,429 [INFO] Processing [ODV] from 2026-05-05
+2026-05-06 06:01:05,429 [INFO] Processing [ODV] from 2026-05-05
+2026-05-06 06:01:05,509 [INFO] Downloaded PDF ODV (77KB)
+2026-05-06 06:01:05,509 [INFO] Downloaded PDF ODV (77KB)
+2026-05-06 06:01:07,202 [ERROR] GLM failed for ODV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:07,202 [ERROR] GLM failed for ODV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:07,202 [WARNING] No categories for ODV
+2026-05-06 06:01:07,202 [WARNING] No categories for ODV
+2026-05-06 06:01:07,705 [INFO] Processing [AYR] from 2026-05-05
+2026-05-06 06:01:07,705 [INFO] Processing [AYR] from 2026-05-05
+2026-05-06 06:01:07,784 [INFO] Downloaded PDF AYR (77KB)
+2026-05-06 06:01:07,784 [INFO] Downloaded PDF AYR (77KB)
+2026-05-06 06:01:09,456 [ERROR] GLM failed for AYR: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:09,456 [ERROR] GLM failed for AYR: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:09,456 [WARNING] No categories for AYR
+2026-05-06 06:01:09,456 [WARNING] No categories for AYR
+2026-05-06 06:01:10,106 [INFO] Processing [IKV] from 2026-05-05
+2026-05-06 06:01:10,106 [INFO] Processing [IKV] from 2026-05-05
+2026-05-06 06:01:10,187 [INFO] Downloaded PDF IKV (77KB)
+2026-05-06 06:01:10,187 [INFO] Downloaded PDF IKV (77KB)
+2026-05-06 06:01:11,869 [ERROR] GLM failed for IKV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:11,869 [ERROR] GLM failed for IKV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:11,869 [WARNING] No categories for IKV
+2026-05-06 06:01:11,869 [WARNING] No categories for IKV
+2026-05-06 06:01:12,519 [INFO] Processing [KLI] from 2026-05-05
+2026-05-06 06:01:12,519 [INFO] Processing [KLI] from 2026-05-05
+2026-05-06 06:01:12,651 [INFO] Downloaded PDF KLI (77KB)
+2026-05-06 06:01:12,651 [INFO] Downloaded PDF KLI (77KB)
+2026-05-06 06:01:14,336 [ERROR] GLM failed for KLI: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:14,336 [ERROR] GLM failed for KLI: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:14,336 [WARNING] No categories for KLI
+2026-05-06 06:01:14,336 [WARNING] No categories for KLI
+2026-05-06 06:01:14,986 [INFO] Processing [TAU] from 2026-05-05
+2026-05-06 06:01:14,986 [INFO] Processing [TAU] from 2026-05-05
+2026-05-06 06:01:15,078 [INFO] Downloaded PDF TAU (77KB)
+2026-05-06 06:01:15,078 [INFO] Downloaded PDF TAU (77KB)
+2026-05-06 06:01:16,757 [ERROR] GLM failed for TAU: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:16,757 [ERROR] GLM failed for TAU: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:16,757 [WARNING] No categories for TAU
+2026-05-06 06:01:16,757 [WARNING] No categories for TAU
+2026-05-06 06:01:17,407 [INFO] Processing [MTH] from 2026-05-05
+2026-05-06 06:01:17,407 [INFO] Processing [MTH] from 2026-05-05
+2026-05-06 06:01:17,492 [INFO] Downloaded PDF MTH (77KB)
+2026-05-06 06:01:17,492 [INFO] Downloaded PDF MTH (77KB)
+2026-05-06 06:01:19,178 [ERROR] GLM failed for MTH: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:19,178 [ERROR] GLM failed for MTH: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:19,178 [WARNING] No categories for MTH
+2026-05-06 06:01:19,178 [WARNING] No categories for MTH
+2026-05-06 06:01:19,688 [INFO] Processing [TTA] from 2026-05-05
+2026-05-06 06:01:19,688 [INFO] Processing [TTA] from 2026-05-05
+2026-05-06 06:01:19,769 [INFO] Downloaded PDF TTA (77KB)
+2026-05-06 06:01:19,769 [INFO] Downloaded PDF TTA (77KB)
+2026-05-06 06:01:21,435 [ERROR] GLM failed for TTA: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:21,435 [ERROR] GLM failed for TTA: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:21,435 [WARNING] No categories for TTA
+2026-05-06 06:01:21,435 [WARNING] No categories for TTA
+2026-05-06 06:01:21,938 [INFO] Processing [TPP] from 2026-05-05
+2026-05-06 06:01:21,938 [INFO] Processing [TPP] from 2026-05-05
+2026-05-06 06:01:22,016 [INFO] Downloaded PDF TPP (77KB)
+2026-05-06 06:01:22,016 [INFO] Downloaded PDF TPP (77KB)
+2026-05-06 06:01:23,706 [ERROR] GLM failed for TPP: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:23,706 [ERROR] GLM failed for TPP: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:23,706 [WARNING] No categories for TPP
+2026-05-06 06:01:23,706 [WARNING] No categories for TPP
+2026-05-06 06:01:24,213 [INFO] Processing [TAU] from 2026-05-05
+2026-05-06 06:01:24,213 [INFO] Processing [TAU] from 2026-05-05
+2026-05-06 06:01:24,296 [INFO] Downloaded PDF TAU (77KB)
+2026-05-06 06:01:24,296 [INFO] Downloaded PDF TAU (77KB)
+2026-05-06 06:01:25,979 [ERROR] GLM failed for TAU: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:25,979 [ERROR] GLM failed for TAU: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:25,979 [WARNING] No categories for TAU
+2026-05-06 06:01:25,979 [WARNING] No categories for TAU
+2026-05-06 06:01:26,629 [INFO] Processing [AKU] from 2026-05-04
+2026-05-06 06:01:26,629 [INFO] Processing [AKU] from 2026-05-04
+2026-05-06 06:01:26,710 [INFO] Downloaded PDF AKU (78KB)
+2026-05-06 06:01:26,710 [INFO] Downloaded PDF AKU (78KB)
+2026-05-06 06:01:28,402 [ERROR] GLM failed for AKU: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:28,402 [ERROR] GLM failed for AKU: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:28,402 [WARNING] No categories for AKU
+2026-05-06 06:01:28,402 [WARNING] No categories for AKU
+2026-05-06 06:01:28,963 [INFO] Processing [BND] from 2026-05-04
+2026-05-06 06:01:28,963 [INFO] Processing [BND] from 2026-05-04
+2026-05-06 06:01:29,046 [INFO] Downloaded PDF BND (78KB)
+2026-05-06 06:01:29,046 [INFO] Downloaded PDF BND (78KB)
+2026-05-06 06:01:30,732 [ERROR] GLM failed for BND: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:30,732 [ERROR] GLM failed for BND: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:30,732 [WARNING] No categories for BND
+2026-05-06 06:01:30,732 [WARNING] No categories for BND
+2026-05-06 06:01:31,372 [INFO] Processing [IDH] from 2026-05-04
+2026-05-06 06:01:31,372 [INFO] Processing [IDH] from 2026-05-04
+2026-05-06 06:01:31,453 [INFO] Downloaded PDF IDH (78KB)
+2026-05-06 06:01:31,453 [INFO] Downloaded PDF IDH (78KB)
+2026-05-06 06:01:33,143 [ERROR] GLM failed for IDH: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:33,143 [ERROR] GLM failed for IDH: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:33,143 [WARNING] No categories for IDH
+2026-05-06 06:01:33,143 [WARNING] No categories for IDH
+2026-05-06 06:01:33,667 [INFO] Processing [KLI] from 2026-05-04
+2026-05-06 06:01:33,667 [INFO] Processing [KLI] from 2026-05-04
+2026-05-06 06:01:33,748 [INFO] Downloaded PDF KLI (78KB)
+2026-05-06 06:01:33,748 [INFO] Downloaded PDF KLI (78KB)
+2026-05-06 06:01:35,432 [ERROR] GLM failed for KLI: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:35,432 [ERROR] GLM failed for KLI: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:35,432 [WARNING] No categories for KLI
+2026-05-06 06:01:35,432 [WARNING] No categories for KLI
+2026-05-06 06:01:36,083 [INFO] Processing [KOP] from 2026-05-04
+2026-05-06 06:01:36,083 [INFO] Processing [KOP] from 2026-05-04
+2026-05-06 06:01:36,168 [INFO] Downloaded PDF KOP (78KB)
+2026-05-06 06:01:36,168 [INFO] Downloaded PDF KOP (78KB)
+2026-05-06 06:01:37,840 [ERROR] GLM failed for KOP: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:37,840 [ERROR] GLM failed for KOP: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:37,840 [WARNING] No categories for KOP
+2026-05-06 06:01:37,840 [WARNING] No categories for KOP
+2026-05-06 06:01:38,491 [INFO] Processing [CKS] from 2026-05-04
+2026-05-06 06:01:38,491 [INFO] Processing [CKS] from 2026-05-04
+2026-05-06 06:01:38,623 [INFO] Downloaded PDF CKS (79KB)
+2026-05-06 06:01:38,623 [INFO] Downloaded PDF CKS (79KB)
+2026-05-06 06:01:40,316 [ERROR] GLM failed for CKS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:40,316 [ERROR] GLM failed for CKS: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:40,316 [WARNING] No categories for CKS
+2026-05-06 06:01:40,316 [WARNING] No categories for CKS
+2026-05-06 06:01:40,967 [INFO] Processing [MTH] from 2026-05-04
+2026-05-06 06:01:40,967 [INFO] Processing [MTH] from 2026-05-04
+2026-05-06 06:01:41,553 [INFO] Downloaded PDF MTH (79KB)
+2026-05-06 06:01:41,553 [INFO] Downloaded PDF MTH (79KB)
+2026-05-06 06:01:43,238 [ERROR] GLM failed for MTH: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:43,238 [ERROR] GLM failed for MTH: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:43,238 [WARNING] No categories for MTH
+2026-05-06 06:01:43,238 [WARNING] No categories for MTH
+2026-05-06 06:01:43,824 [INFO] Processing [KPH] from 2026-05-04
+2026-05-06 06:01:43,824 [INFO] Processing [KPH] from 2026-05-04
+2026-05-06 06:01:43,908 [INFO] Downloaded PDF KPH (78KB)
+2026-05-06 06:01:43,908 [INFO] Downloaded PDF KPH (78KB)
+2026-05-06 06:01:45,584 [ERROR] GLM failed for KPH: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:45,584 [ERROR] GLM failed for KPH: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:45,584 [WARNING] No categories for KPH
+2026-05-06 06:01:45,584 [WARNING] No categories for KPH
+2026-05-06 06:01:46,093 [INFO] Processing [KLI] from 2026-05-04
+2026-05-06 06:01:46,093 [INFO] Processing [KLI] from 2026-05-04
+2026-05-06 06:01:46,178 [INFO] Downloaded PDF KLI (78KB)
+2026-05-06 06:01:46,178 [INFO] Downloaded PDF KLI (78KB)
+2026-05-06 06:01:47,871 [ERROR] GLM failed for KLI: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:47,871 [ERROR] GLM failed for KLI: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:47,871 [WARNING] No categories for KLI
+2026-05-06 06:01:47,871 [WARNING] No categories for KLI
+2026-05-06 06:01:48,378 [INFO] Processing [EID] from 2026-05-04
+2026-05-06 06:01:48,378 [INFO] Processing [EID] from 2026-05-04
+2026-05-06 06:01:48,460 [INFO] Downloaded PDF EID (78KB)
+2026-05-06 06:01:48,460 [INFO] Downloaded PDF EID (78KB)
+2026-05-06 06:01:50,153 [ERROR] GLM failed for EID: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:50,153 [ERROR] GLM failed for EID: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:50,153 [WARNING] No categories for EID
+2026-05-06 06:01:50,153 [WARNING] No categories for EID
+2026-05-06 06:01:50,654 [INFO] Processing [EIB] from 2026-05-04
+2026-05-06 06:01:50,654 [INFO] Processing [EIB] from 2026-05-04
+2026-05-06 06:01:50,733 [INFO] Downloaded PDF EIB (78KB)
+2026-05-06 06:01:50,733 [INFO] Downloaded PDF EIB (78KB)
+2026-05-06 06:01:52,412 [ERROR] GLM failed for EIB: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:52,412 [ERROR] GLM failed for EIB: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:52,412 [WARNING] No categories for EIB
+2026-05-06 06:01:52,412 [WARNING] No categories for EIB
+2026-05-06 06:01:53,062 [INFO] Processing [RIH] from 2026-05-04
+2026-05-06 06:01:53,062 [INFO] Processing [RIH] from 2026-05-04
+2026-05-06 06:01:53,149 [INFO] Downloaded PDF RIH (77KB)
+2026-05-06 06:01:53,149 [INFO] Downloaded PDF RIH (77KB)
+2026-05-06 06:01:54,834 [ERROR] GLM failed for RIH: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:54,834 [ERROR] GLM failed for RIH: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:54,834 [WARNING] No categories for RIH
+2026-05-06 06:01:54,834 [WARNING] No categories for RIH
+2026-05-06 06:01:55,452 [INFO] Processing [RRP] from 2026-05-04
+2026-05-06 06:01:55,452 [INFO] Processing [RRP] from 2026-05-04
+2026-05-06 06:01:55,533 [INFO] Downloaded PDF RRP (77KB)
+2026-05-06 06:01:55,533 [INFO] Downloaded PDF RRP (77KB)
+2026-05-06 06:01:57,220 [ERROR] GLM failed for RRP: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:57,220 [ERROR] GLM failed for RRP: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:57,220 [WARNING] No categories for RRP
+2026-05-06 06:01:57,220 [WARNING] No categories for RRP
+2026-05-06 06:01:57,724 [INFO] Processing [IKV] from 2026-05-04
+2026-05-06 06:01:57,724 [INFO] Processing [IKV] from 2026-05-04
+2026-05-06 06:01:57,804 [INFO] Downloaded PDF IKV (77KB)
+2026-05-06 06:01:57,804 [INFO] Downloaded PDF IKV (77KB)
+2026-05-06 06:01:59,484 [ERROR] GLM failed for IKV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:59,484 [ERROR] GLM failed for IKV: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:01:59,484 [WARNING] No categories for IKV
+2026-05-06 06:01:59,484 [WARNING] No categories for IKV
+2026-05-06 06:02:00,134 [INFO] Processing [RKH] from 2026-05-04
+2026-05-06 06:02:00,134 [INFO] Processing [RKH] from 2026-05-04
+2026-05-06 06:02:00,224 [INFO] Downloaded PDF RKH (77KB)
+2026-05-06 06:02:00,224 [INFO] Downloaded PDF RKH (77KB)
+2026-05-06 06:02:01,924 [ERROR] GLM failed for RKH: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:02:01,924 [ERROR] GLM failed for RKH: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:02:01,924 [WARNING] No categories for RKH
+2026-05-06 06:02:01,924 [WARNING] No categories for RKH
+2026-05-06 06:02:02,574 [INFO] Processing [RIH] from 2026-05-04
+2026-05-06 06:02:02,574 [INFO] Processing [RIH] from 2026-05-04
+2026-05-06 06:02:02,621 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600621, retry 1/5 in 2s
+2026-05-06 06:02:02,621 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600621, retry 1/5 in 2s
+2026-05-06 06:02:04,804 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600621, retry 2/5 in 3s
+2026-05-06 06:02:04,804 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600621, retry 2/5 in 3s
+2026-05-06 06:02:07,998 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600621, retry 3/5 in 5s
+2026-05-06 06:02:07,998 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600621, retry 3/5 in 5s
+2026-05-06 06:02:13,195 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600621, retry 4/5 in 9s
+2026-05-06 06:02:13,195 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600621, retry 4/5 in 9s
+2026-05-06 06:02:22,394 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600621, retry 5/5 in 17s
+2026-05-06 06:02:22,394 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600621, retry 5/5 in 17s
+2026-05-06 06:02:39,670 [WARNING] No attachment URL in disclosure 1600621
+2026-05-06 06:02:39,670 [WARNING] No attachment URL in disclosure 1600621
+2026-05-06 06:02:39,673 [INFO] Processing [MTH] from 2026-05-04
+2026-05-06 06:02:39,673 [INFO] Processing [MTH] from 2026-05-04
+2026-05-06 06:02:39,719 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600620, retry 1/5 in 2s
+2026-05-06 06:02:39,719 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600620, retry 1/5 in 2s
+2026-05-06 06:02:41,917 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600620, retry 2/5 in 3s
+2026-05-06 06:02:41,917 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600620, retry 2/5 in 3s
+2026-05-06 06:02:45,108 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600620, retry 3/5 in 5s
+2026-05-06 06:02:45,108 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600620, retry 3/5 in 5s
+2026-05-06 06:02:50,289 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600620, retry 4/5 in 9s
+2026-05-06 06:02:50,289 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600620, retry 4/5 in 9s
+2026-05-06 06:02:59,474 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600620, retry 5/5 in 17s
+2026-05-06 06:02:59,474 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600620, retry 5/5 in 17s
+2026-05-06 06:03:16,741 [WARNING] No attachment URL in disclosure 1600620
+2026-05-06 06:03:16,741 [WARNING] No attachment URL in disclosure 1600620
+2026-05-06 06:03:16,745 [INFO] Processing [RGH] from 2026-05-04
+2026-05-06 06:03:16,745 [INFO] Processing [RGH] from 2026-05-04
+2026-05-06 06:03:16,790 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600619, retry 1/5 in 2s
+2026-05-06 06:03:16,790 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600619, retry 1/5 in 2s
+2026-05-06 06:03:18,984 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600619, retry 2/5 in 3s
+2026-05-06 06:03:18,984 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600619, retry 2/5 in 3s
+2026-05-06 06:03:22,181 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600619, retry 3/5 in 5s
+2026-05-06 06:03:22,181 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600619, retry 3/5 in 5s
+2026-05-06 06:03:27,374 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600619, retry 4/5 in 9s
+2026-05-06 06:03:27,374 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600619, retry 4/5 in 9s
+2026-05-06 06:03:36,573 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600619, retry 5/5 in 17s
+2026-05-06 06:03:36,573 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600619, retry 5/5 in 17s
+2026-05-06 06:03:53,838 [WARNING] No attachment URL in disclosure 1600619
+2026-05-06 06:03:53,838 [WARNING] No attachment URL in disclosure 1600619
+2026-05-06 06:03:53,840 [INFO] Processing [RKH] from 2026-05-04
+2026-05-06 06:03:53,840 [INFO] Processing [RKH] from 2026-05-04
+2026-05-06 06:03:53,886 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600617, retry 1/5 in 2s
+2026-05-06 06:03:53,886 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600617, retry 1/5 in 2s
+2026-05-06 06:03:56,082 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600617, retry 2/5 in 3s
+2026-05-06 06:03:56,082 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600617, retry 2/5 in 3s
+2026-05-06 06:03:59,276 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600617, retry 3/5 in 5s
+2026-05-06 06:03:59,276 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600617, retry 3/5 in 5s
+2026-05-06 06:04:04,472 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600617, retry 4/5 in 9s
+2026-05-06 06:04:04,472 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600617, retry 4/5 in 9s
+2026-05-06 06:04:13,672 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600617, retry 5/5 in 17s
+2026-05-06 06:04:13,672 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600617, retry 5/5 in 17s
+2026-05-06 06:04:30,937 [WARNING] No attachment URL in disclosure 1600617
+2026-05-06 06:04:30,937 [WARNING] No attachment URL in disclosure 1600617
+2026-05-06 06:04:30,939 [INFO] Processing [RBP] from 2026-05-04
+2026-05-06 06:04:30,939 [INFO] Processing [RBP] from 2026-05-04
+2026-05-06 06:04:30,984 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600615, retry 1/5 in 2s
+2026-05-06 06:04:30,984 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600615, retry 1/5 in 2s
+2026-05-06 06:04:33,181 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600615, retry 2/5 in 3s
+2026-05-06 06:04:33,181 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600615, retry 2/5 in 3s
+2026-05-06 06:04:36,370 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600615, retry 3/5 in 5s
+2026-05-06 06:04:36,370 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600615, retry 3/5 in 5s
+2026-05-06 06:04:41,562 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600615, retry 4/5 in 9s
+2026-05-06 06:04:41,562 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600615, retry 4/5 in 9s
+2026-05-06 06:04:50,759 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600615, retry 5/5 in 17s
+2026-05-06 06:04:50,759 [WARNING] HTTP 429 for https://www.kap.org.tr/tr/api/BildirimPdf/1600615, retry 5/5 in 17s
+2026-05-06 06:05:08,033 [WARNING] No attachment URL in disclosure 1600615
+2026-05-06 06:05:08,033 [WARNING] No attachment URL in disclosure 1600615
+2026-05-06 06:05:08,036 [INFO] Processing [KPH] from 2026-05-04
+2026-05-06 06:05:08,036 [INFO] Processing [KPH] from 2026-05-04
+2026-05-06 06:05:08,116 [INFO] Downloaded PDF KPH (77KB)
+2026-05-06 06:05:08,116 [INFO] Downloaded PDF KPH (77KB)
+2026-05-06 06:05:09,803 [ERROR] GLM failed for KPH: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:05:09,803 [ERROR] GLM failed for KPH: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:05:09,803 [WARNING] No categories for KPH
+2026-05-06 06:05:09,803 [WARNING] No categories for KPH
+2026-05-06 06:05:10,453 [INFO] Processing [FGA] from 2026-05-04
+2026-05-06 06:05:10,453 [INFO] Processing [FGA] from 2026-05-04
+2026-05-06 06:05:10,546 [INFO] Downloaded PDF FGA (77KB)
+2026-05-06 06:05:10,546 [INFO] Downloaded PDF FGA (77KB)
+2026-05-06 06:05:12,233 [ERROR] GLM failed for FGA: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:05:12,233 [ERROR] GLM failed for FGA: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:05:12,233 [WARNING] No categories for FGA
+2026-05-06 06:05:12,233 [WARNING] No categories for FGA
+2026-05-06 06:05:12,739 [INFO] Processing [DJA] from 2026-05-04
+2026-05-06 06:05:12,739 [INFO] Processing [DJA] from 2026-05-04
+2026-05-06 06:05:12,824 [INFO] Downloaded PDF DJA (78KB)
+2026-05-06 06:05:12,824 [INFO] Downloaded PDF DJA (78KB)
+2026-05-06 06:05:14,512 [ERROR] GLM failed for DJA: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:05:14,512 [ERROR] GLM failed for DJA: module 'zhipuai' has no attribute 'model_api'
+2026-05-06 06:05:14,512 [WARNING] No categories for DJA
+2026-05-06 06:05:14,512 [WARNING] No categories for DJA
+2026-05-06 06:05:15,370 [ERROR] SB UPSERT system_status → 409: {"code":"23505","details":"Key (key)=(last_kap_portfolio_cron) already exists.","hint":null,"message":"duplicate key value violates unique constraint \"system_status_pkey\""}
+2026-05-06 06:05:15,370 [ERROR] SB UPSERT system_status → 409: {"code":"23505","details":"Key (key)=(last_kap_portfolio_cron) already exists.","hint":null,"message":"duplicate key value violates unique constraint \"system_status_pkey\""}
+2026-05-06 06:05:15,373 [INFO] Done: 0 ✓ / 58 ✗
+2026-05-06 06:05:15,373 [INFO] Done: 0 ✓ / 58 ✗
+2026-05-06 06:05:15,373 [INFO] ============================================================
+2026-05-06 06:05:15,373 [INFO] ============================================================

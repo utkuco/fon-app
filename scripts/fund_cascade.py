@@ -93,15 +93,17 @@ def compute_sparkline(
     price_history: list[dict],
     days: int = 30,
 ) -> Optional[dict]:
-    """Build SVG sparkline from price history. Returns SVG dict or None."""
+    """Build sparkline from price history. Returns {points, positive} format (NOT SVG string).
+    
+    This format matches SparklineMini component in fund-card.tsx which renders
+    gradient-filled path sparklines. The old SVG string format is deprecated.
+    """
     if len(price_history) < 2:
         return None
 
+    # price_history is stored ASC (oldest→newest) — take last `days` entries
     sorted_ph = sorted(price_history, key=lambda x: x.get("date", ""))
-    cutoff_str = to_date_str(
-        datetime.strptime(sorted_ph[-1]["date"], "%Y-%m-%d") - timedelta(days=days)
-    )
-    recent = [p for p in sorted_ph if p["date"] >= cutoff_str]
+    recent = sorted_ph[-days:] if len(sorted_ph) > days else sorted_ph
 
     if len(recent) < 2:
         return None
@@ -112,42 +114,18 @@ def compute_sparkline(
 
     lo = min(closes)
     hi = max(closes)
-    rng = hi - lo
-    if rng < 1e-9:
-        return None
+    rng = hi - lo or 1
 
-    def pt(idx: int, price: float) -> tuple[float, float]:
-        x = int(idx / (len(closes) - 1) * SPARKLINE_W)
-        y = int(SPARKLINE_H - (price - lo) / rng * SPARKLINE_H)
-        return x, y
+    # Map prices to SVG coordinate space (x: 0→W, y: 0→H, inverted Y)
+    W, H = SPARKLINE_W, SPARKLINE_H
+    points = [
+        [round(idx / (len(closes) - 1) * W, 1), round(H - (c - lo) / rng * H, 1)]
+        for idx, c in enumerate(closes)
+    ]
 
-    first_x, first_y = pt(0, closes[0])
-    path = f"M{first_x},{first_y}"
-    for idx, c in enumerate(closes[1:], start=1):
-        x, y = pt(idx, c)
-        path += f" L{x},{y}"
-
-    last_x, last_y = pt(len(closes) - 1, closes[-1])
-
-    # Determine color based on overall trend
-    if closes[-1] >= closes[0]:
-        color = "#16a34a"  # green
-    else:
-        color = "#dc2626"  # red
-
-    svg = (
-        f'<svg xmlns="http://www.w3.org/2000/svg" '
-        f'width="{SPARKLINE_W}" height="{SPARKLINE_H}" viewBox="0 0 {SPARKLINE_W} {SPARKLINE_H}">'
-        f'<polyline points="{path[1:]}" fill="none" stroke="{color}" stroke-width="1.5"'
-        f' stroke-linejoin="round" stroke-linecap="round"/></svg>'
-    )
     return {
-        "svg": svg,
-        "direction": "up" if closes[-1] >= closes[0] else "down",
-        "first_price": closes[0],
-        "last_price": closes[-1],
-        "min": lo,
-        "max": hi,
+        "points": points,
+        "positive": bool(closes[-1] >= closes[0]),
     }
 
 

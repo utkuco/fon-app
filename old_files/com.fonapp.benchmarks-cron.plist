@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.fonapp.benchmarks-cron</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/caffeinate</string>
+        <string>-s</string>
+        <string>-m</string>
+        <string>-i</string>
+        <string>/bin/bash</string>
+        <string>-c</string>
+        <string>cd /Users/admin/Desktop/projects/fon-app && /opt/homebrew/bin/python3.11 web/scripts/fetch-benchmarks.py 2>&1 | tee -a /tmp/benchmarks_cron.log; cp /tmp/benchmarks_cron.log /Users/admin/Desktop/projects/fon-app/logs/benchmarks-cron.log 2>/dev/null</string>
+    </array>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+        <key>PYTHONUNBUFFERED</key>
+        <string>1</string>
+    </dict>
+
+    <key>StartCalendarInterval</key>
+    <array>
+        <!-- Pazar (0) UTC 00:10 = TR 03:10 -->
+        <dict><key>Hour</key><integer>0</integer><key>Minute</key><integer>10</integer><key>Weekday</key><integer>0</integer></dict>
+    </array>
+    <key>RunAtLoad</key>
+    <false/>
+    <key>StandardOutPath</key>
+    <string>/Users/admin/Desktop/projects/fon-app/logs/benchmarks-cron.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/admin/Desktop/projects/fon-app/logs/benchmarks-cron.err</string>
+</dict>
+</plist>

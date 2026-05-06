@@ -1,0 +1,22 @@
+[2026-05-05 22:45:10] [INFO] Starting market_data
+[2026-05-05 22:45:10] [INFO] Fetching risk-free rates...
+[2026-05-05 22:45:10] [WARN] Yahoo fetch failed: module 'urllib' has no attribute 'Request'
+[2026-05-05 22:45:11] [INFO] system_rates updated successfully
+[2026-05-05 22:45:11] [INFO] Fetching benchmarks...
+[2026-05-05 22:45:12] [ERROR] SUPABASE_DB_URL not set — cannot write benchmarks
+[2026-05-05 22:45:12] [INFO] Done in 1.5s
+[2026-05-05 22:46:03] [INFO] Starting market_data
+[2026-05-05 22:46:03] [INFO] Fetching risk-free rates...
+[2026-05-05 22:46:04] [INFO] USD ^IRX = 3.5999999046325684% → annualized 0.036
+[2026-05-05 22:46:04] [INFO] system_rates updated successfully
+[2026-05-05 22:46:04] [INFO] Fetching benchmarks...
+[2026-05-05 22:46:06] [INFO] Benchmark USDTRY: 725 prices
+[2026-05-05 22:46:06] [INFO] Benchmark BIST100: 361 prices
+[2026-05-05 22:46:06] [INFO] Benchmark EURTRY: 725 prices
+[2026-05-05 22:46:06] [INFO] Benchmark NASDAQ: 730 prices
+[2026-05-05 22:46:06] [INFO] Benchmark SP500: 730 prices
+[2026-05-05 22:46:06] [INFO] Benchmark GOLD: 603 prices
+[2026-05-05 22:46:06] [INFO] Benchmark BTCUSD: 730 prices
+[2026-05-05 22:46:06] [INFO] Benchmark ETHUSD: 730 prices
+[2026-05-05 22:46:08] [INFO] Benchmarks: 5334 rows written
+[2026-05-05 22:46:08] [INFO] Done in 4.6s

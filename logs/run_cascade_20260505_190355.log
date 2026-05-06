@@ -1,0 +1,49 @@
+[2026-05-05 19:03:55] [INFO] Starting run_cascade
+[2026-05-05 19:03:55] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 19:03:55] [INFO] Fetching funds with price_history...
+[2026-05-05 19:04:05] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 19:04:12] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 19:04:22] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 19:04:28] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 19:04:37] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 19:04:37] [INFO] Total funds fetched: 2400
+[2026-05-05 19:04:37] [INFO] Computing fund metrics from price_history...
+[2026-05-05 19:04:38] [INFO]   fund_updates (daily_change + returns): 2201
+[2026-05-05 19:04:38] [INFO]   sparkline_updates: 2201
+[2026-05-05 19:04:38] [INFO] Upserting fund metrics to funds table...
+[2026-05-05 19:04:52] [INFO]   fund_metrics progress: 0/2201
+[2026-05-05 19:05:21] [INFO]   fund_metrics progress: 200/2201
+[2026-05-05 19:05:50] [INFO]   fund_metrics progress: 400/2201
+[2026-05-05 19:06:24] [INFO]   fund_metrics progress: 600/2201
+[2026-05-05 19:06:54] [INFO]   fund_metrics progress: 800/2201
+[2026-05-05 19:07:25] [INFO]   fund_metrics progress: 1000/2201
+[2026-05-05 19:08:02] [INFO]   fund_metrics progress: 1200/2201
+[2026-05-05 19:08:33] [INFO]   fund_metrics progress: 1400/2201
+[2026-05-05 19:09:04] [INFO]   fund_metrics progress: 1600/2201
+[2026-05-05 19:09:37] [INFO]   fund_metrics progress: 1800/2201
+[2026-05-05 19:10:06] [INFO]   fund_metrics progress: 2000/2201
+[2026-05-05 19:10:22] [INFO]   fund_metrics progress: 2200/2201
+[2026-05-05 19:10:22] [INFO]   funds updated: 2201/2201
+[2026-05-05 19:10:22] [INFO] Upserting sparklines to precomputed_funds...
+[2026-05-05 19:10:26] [INFO]   sparkline progress: 0/2201
+[2026-05-05 19:10:45] [INFO]   sparkline progress: 125/2201
+[2026-05-05 19:11:05] [INFO]   sparkline progress: 250/2201
+[2026-05-05 19:11:24] [INFO]   sparkline progress: 375/2201
+[2026-05-05 19:11:43] [INFO]   sparkline progress: 500/2201
+[2026-05-05 19:12:02] [INFO]   sparkline progress: 625/2201
+[2026-05-05 19:12:21] [INFO]   sparkline progress: 750/2201
+[2026-05-05 19:12:39] [INFO]   sparkline progress: 875/2201
+[2026-05-05 19:12:57] [INFO]   sparkline progress: 1000/2201
+[2026-05-05 19:13:14] [INFO]   sparkline progress: 1125/2201
+[2026-05-05 19:13:31] [INFO]   sparkline progress: 1250/2201
+[2026-05-05 19:13:48] [INFO]   sparkline progress: 1375/2201
+[2026-05-05 19:14:05] [INFO]   sparkline progress: 1500/2201
+[2026-05-05 19:14:23] [INFO]   sparkline progress: 1625/2201
+[2026-05-05 19:14:40] [INFO]   sparkline progress: 1750/2201
+[2026-05-05 19:14:57] [INFO]   sparkline progress: 1875/2201
+[2026-05-05 19:15:14] [INFO]   sparkline progress: 2000/2201
+[2026-05-05 19:15:32] [INFO]   sparkline progress: 2125/2201
+[2026-05-05 19:15:39] [INFO]   sparklines upserted: 2201/2201
+[2026-05-05 19:15:39] [INFO] Reloading funds for category ranks + homepage_stats...
+[2026-05-05 19:15:40] [INFO]   funds_for_stats: 2400
+[2026-05-05 19:15:40] [INFO] Computing fund_category_ranks...

@@ -1,0 +1,13 @@
+[2026-05-05 18:28:27] [INFO] Starting run_cascade
+[2026-05-05 18:28:27] [INFO] today=2026-05-05, yesterday=2026-05-04
+[2026-05-05 18:28:27] [INFO] Fetching funds with price_history...
+[2026-05-05 18:28:32] [INFO]   page 1: 500 rows, total so far: 500
+[2026-05-05 18:28:37] [INFO]   page 2: 500 rows, total so far: 1000
+[2026-05-05 18:28:44] [INFO]   page 3: 500 rows, total so far: 1500
+[2026-05-05 18:28:55] [INFO]   page 4: 500 rows, total so far: 2000
+[2026-05-05 18:29:01] [INFO]   page 5: 400 rows, total so far: 2400
+[2026-05-05 18:29:01] [INFO] Total funds fetched: 2400
+[2026-05-05 18:29:01] [INFO] Computing fund metrics from price_history...
+[2026-05-05 18:29:02] [INFO]   fund_updates (daily_change + returns): 2163
+[2026-05-05 18:29:02] [INFO]   sparkline_updates: 2163
+[2026-05-05 18:29:02] [INFO] Upserting fund metrics to funds table...

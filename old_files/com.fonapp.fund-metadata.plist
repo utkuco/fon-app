@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.fonapp.fund-metadata</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/admin/Desktop/projects/fon-app/run_metadata_cron.sh</string>
+    </array>
+
+    <!-- Her 2 günde bir, saat 11:30 TR (08:30 UTC) -->
+    <!-- launchd StartCalendarInterval: P0-2 gün cycle yok, 48 saat cycle için SchedulePeriodicTask kullanılır -->
+    <!-- Aslında launchd sadece takvim bazlı çalışır, 48 saat cycle için bunu kullanacağız: -->
+    <key>StartInterval</key>
+    <integer>172800</integer>  <!-- 2 gün = 48*60*60 saniye -->
+
+    <!-- Daha spesifik zamanlama için (her 2 günde bir 11:30'da) StartCalendarInterval kullan: -->
+    <!--
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Hour</key>
+            <integer>8</integer>
+            <key>Minute</key>
+            <integer>30</integer>
+            <key>Weekday</key>
+            <integer>2</integer>  Her Salı
+        </dict>
+    </array>
+    -->
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>inetdCompatibility</key>
+    <dict>
+        <key>Wait</key>
+        <false/>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/admin/Desktop/projects/fon-app/logs/metadata.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/admin/Desktop/projects/fon-app/logs/metadata.err</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+    </dict>
+</dict>
+</plist>
