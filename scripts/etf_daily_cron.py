@@ -303,60 +303,7 @@ def main():
         # Build id→symbol map and symbol→id map
         sym_to_id = {e["symbol"]: e["id"] for e in etfs if e.get("symbol") and e.get("id")}
 
-        # Compute returns in Python
-        updated = 0
-        skipped = 0
-        errors = 0
-        patch_rows: list[dict] = []
 
-        for etf in etfs:
-            sym = etf["symbol"]
-            row_id = etf.get("id")
-            if not row_id or not sym:
-                continue
-
-            prices_sym = all_prices.get(sym, [])
-            if not prices_sym or len(prices_sym) < 5:
-                skipped += 1
-                continue
-
-            # prices_sym is already sorted by the query (date.desc)
-            # We need ASC for calc_return binary search, so reverse it
-            prices_asc = list(reversed(prices_sym))
-
-            ret_1m = calc_return(prices_asc, 30)
-            ret_3m = calc_return(prices_asc, 90)
-            ret_6m = calc_return(prices_asc, 180)
-
-            if ret_1m is None and ret_3m is None and ret_6m is None:
-                skipped += 1
-                continue
-
-            patch_rows.append({
-                "id": row_id,
-                "symbol": sym,
-                "one_month_return_try": ret_1m,
-                "three_month_return_try": ret_3m,
-                "six_month_return_try": ret_6m,
-                "updated_at": datetime.utcnow().isoformat(),
-            })
-            updated += 1
-
-        # Batch upsert patch rows (batched PATCH by id)
-        if patch_rows:
-            BATCH = 100
-            for i in range(0, len(patch_rows), BATCH):
-                batch = patch_rows[i:i+BATCH]
-                for row in batch:
-                    row_id = row.pop("id")
-                    row.pop("symbol")
-                    ok = supabase_patch("foreign_etfs", row_id, row)
-                    if not ok:
-                        errors += 1
-                time.sleep(0.3)
-
-        print(f"\nDONE: {updated} updated, {skipped} skipped, {errors} errors")
-        print(f"  FX: USD/TRY={usd_try:.4f}")
 
         # ── Step 5: Recompute sparklines from last-30-day prices ───────────────
         print("\n[5/5] Recomputing sparklines (last 30 days)...")
@@ -382,7 +329,7 @@ def main():
         })
         update_key("etf_cron_stats", stats_json)
 
-        print(f"\n✅ ETF cron complete — prices={len(latest_prices)}, returns={updated}, sparklines={spark_ok}")
+        print(f"\n✅ ETF cron complete — prices={len(latest_prices)}, sparklines={spark_ok}")
     finally:
         release_lock(lock_fd)
 
