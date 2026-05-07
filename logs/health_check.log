@@ -8,3 +8,12 @@
 [2026-05-06 05:00:09] BENCHMARK CHECK: ✅ Fresh (today=2026-05-06, last=2026-05-05)
 [2026-05-06 05:00:09] OVERALL: ✅ ALL CHECKS PASS — {'tefas': True, 'homepage': True, 'etf': True, 'benchmark': True}
 [2026-05-06 05:00:10] === Health Check Complete ===
+[2026-05-07 05:00:01] === Consolidated Health Check Started ===
+[2026-05-07 05:00:02] TEFAS CHECK: last_tefas_fetch = 2026-05-05T16:03:46.602959+00:00
+[2026-05-07 05:00:02] TEFAS CHECK: ✅ Fresh (2d ago)
+[2026-05-07 05:00:02] HOMEPAGE CHECK: latest_date=2026-05-05, total=2400
+[2026-05-07 05:00:02] HOMEPAGE CHECK: ⚠️ Possibly stale (total=2400)
+[2026-05-07 05:00:11] ETF CHECK: ❌ Error — HTTP Error 500: Internal Server Error
+[2026-05-07 05:00:14] BENCHMARK CHECK: ⚠️ Stale (2d old)
+[2026-05-07 05:00:14] OVERALL: ⚠️ SOME CHECKS FAILED — {'tefas': True, 'homepage': True, 'etf': False, 'benchmark': False}
+[2026-05-07 05:00:15] === Health Check Complete ===

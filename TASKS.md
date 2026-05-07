@@ -168,6 +168,39 @@ Kullanım: market_cap, num_investors, pay_adet, market_share, daily_return,
 | P0-1 | **SP500 0 sparkline** | precomputed_etf_categories'da SP500/DUNYA 0 puan — is_active fix test edilecek |
 | ~~P0-2~~ ✅ | ~~site veri boş~~ | **ÇÖZÜLDÜ** — homepage_stats tablosu artık dolu, cron 2×/gün çalışıyor |
 
+---
+
+## ETF Return/Sparkline Mimari Düzeltmesi (6 Faz)
+
+**Kullanıcı onayı:** Utku — 6 ayrı pipeline, gerekirse sil baştan yaz.
+
+### Mimari Hedef
+| | ETF'ler | Türk Fonları |
+|---|---|---|
+| Fiyat | USD (foreign_etf_prices.close) | TRY (funds.price_history) |
+| Sparkline | USD fiyat bazlı | TRY fiyat bazlı ✓ |
+| Homepage 1H | USD daily + TRY daily (küçük) | TRY daily ✓ |
+| Getiri kolonları | TRY (`*_return_try`) ✓ | TRY ✓ |
+| Detay grafik | USD fiyat | TRY fiyat ✓ |
+
+### Faz 1 — ✅ DOĞRULANDI
+ETF sparkline'ları zaten USD fiyatlarından hesaplanıyor (SPY=$723). **Mevcut durum istenen şekil — kapatıldı.**
+
+### Faz 2 — DB: `close_try` kolonu
+`foreign_etf_prices` tablosuna `close_try` (Decimal) kolonu ekle. Her fiyat yazılırken USD×FX ile TRY fiyatı da yazılsın. `system_status`'a `fx_usd_try` kaydedilsin.
+
+### Faz 3 — Cron: TRY Sparkline Hesabı
+`etf_daily_cron.py`'de sparkline'ları TRY olarak hesapla: `foreign_etf_prices.close_try` kullan. SVG point'ler TRY fiyatları üzerinden çizilsin.
+
+### Faz 4 — TRY Sparkline Backfill
+Mevcut 1176 ETF'in TRY sparkline'larını yeniden hesapla. Backfill script'i yaz, çalıştır, doğrula.
+
+### Faz 5 — Homepage: ETF Kartları TRY Göstersin
+CategoryTypeCards.tsx ETF kartları: TRY sparkline kullan, 1H TRY daily göster (USD daily küçük text).
+
+### Faz 6 — Detay Sayfası: ReturnsTable + Grafik
+ETF detayında: ReturnsTable TRY getiri büyük / USD getiri küçük. Grafik çizgisi USD fiyat göstersin.
+
 ### P1 — UI/UX
 
 | # | Görev | Açıklama |
