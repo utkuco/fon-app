@@ -166,7 +166,7 @@ Kullanım: market_cap, num_investors, pay_adet, market_share, daily_return,
 
 | # | Görev | Açıklama |
 |---|---|---|
-| P0-1 | **SP500 0 sparkline** | precomputed_etf_categories'da SP500/DUNYA 0 puan — is_active fix test edilecek |
+| P0-1 ✅ | **SP500 0 sparkline** | **ÇÖZÜLDÜ** (7 Mayıs 2026) — Root cause: PostgREST 1000-row limit, SPY alphabetically 1157/1176 chunk 12'de limit aşılıyordu → 0 satır → sparkline boş. Fix: Step 4b psycopg2 direct query kullanıyor. sparkline recompute ile SPY=22pts restored. Commit: 938ad95 |
 | ~~P0-2~~ ✅ | ~~site veri boş~~ | **ÇÖZÜLDÜ** — homepage_stats tablosu artık dolu, cron 2×/gün çalışıyor |
 
 ---
@@ -206,10 +206,10 @@ ETF detayında: ReturnsTable TRY getiri büyük / USD getiri küçük. Grafik ç
 
 | # | Görev | Açıklama |
 |---|---|---|
-| P1-1 | **Skeleton loading** | Fon listesi ve detay sayfasına skeleton ekle |
-| P1-2 | **Footer** | Platform bilgisi, hızlı linkler, sosyal medya |
-| P1-3 | **Navbar ikon erişilebilirlik** | sr-only label ekle |
-| P1-4 | **Mobil nav** | Hamburger menü |
+| P1-1 | **Skeleton loading** | ✅ Mevcut — Tüm ana sayfalarda (varliklar, fon detail, ETF, holdings, favorites) loading.tsx skeleton'ları kurulu. Next.js route-level Suspense ile çalışıyor. |
+| P1-2 | **Footer** | ✅ FrameShot'ta tamamlandı (e78253a). FonApp footer ayrı kontrol edilecek. |
+| P1-3 | **Navbar ikon erişilebilirlik** | ✅ Zaten mevcut — Tüm ikon butonlarında aria-label var (hamburger, Heart, BarChart2, ThemeToggle). |
+| P1-4 | **Mobil nav** | ✅ Zaten mevcut — SiteNavbar.tsx'de hamburger buton + drawer (satır 36-146), açık/kapalı state, backdrop overlay, animate-in slide-in. |
 
 ### P2 — SEO
 
