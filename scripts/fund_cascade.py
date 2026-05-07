@@ -588,7 +588,7 @@ def compute_homepage_stats(funds: list[dict], funds_with_history: Optional[list[
             ph = f.get("price_history")
             if not ph or not isinstance(ph, list) or len(ph) < 2:
                 continue
-            aum = f.get("market_cap") or 0
+            aum = float(f.get("market_cap") or 0)
             if aum <= 0:
                 continue
             ft = f.get("fund_type") or "OTHER"
