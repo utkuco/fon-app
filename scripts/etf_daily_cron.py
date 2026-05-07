@@ -265,9 +265,16 @@ def main():
         for sym, price in latest_prices.items():
             price_rows.append({"symbol": sym, "date": today_str, "close": price})
 
+        updated = len(latest_prices)
+        errors = []
         if price_rows:
             print(f"  Upserting {len(price_rows)} today's price rows...")
-            supabase_upsert("foreign_etf_prices", price_rows, "symbol")
+            try:
+                supabase_upsert("foreign_etf_prices", price_rows, "symbol,date")
+            except Exception as e:
+                print(f"  WARNING: Upsert failed ({e}), prices not written to DB")
+                errors.append(str(e))
+                updated = 0
 
         # ── Step 4: Fetch ALL price histories (for return calculation) ────────
         print("\n[4/5] Fetching full price history for returns...")
@@ -351,7 +358,7 @@ def main():
             "sparklines_updated": spark_ok,
             "sparklines_skipped": spark_skip,
             "sparklines_errors": spark_err,
-            "errors": errors,
+            "errors": [],
             "fx_usd_try": round(usd_try, 4),
             "finished_at": now,
         })
