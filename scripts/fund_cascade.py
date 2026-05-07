@@ -116,10 +116,12 @@ def compute_sparkline(
     hi = max(closes)
     rng = hi - lo or 1
 
-    # Map prices to SVG coordinate space (x: 0→W, y: 0→H, inverted Y)
+    # Map prices to SVG coordinate space (x: 0→W, y: 0→H)
+    # NOTE: NO H- inversion here. Frontend SparklineSvg applies (height - y) for SVG coords.
+    # Price UP → y UP in data → SVG (H - y) → line goes UP visually. Correct!
     W, H = SPARKLINE_W, SPARKLINE_H
     points = [
-        [round(idx / (len(closes) - 1) * W, 1), round(H - (c - lo) / rng * H, 1)]
+        [round(idx / (len(closes) - 1) * W, 1), round((c - lo) / rng * H, 1)]
         for idx, c in enumerate(closes)
     ]
 
