@@ -388,7 +388,7 @@ def recompute_sparklines(
         # y in [0, 40] — matches funds.sparkline (H=40 viewBox)
         # x in [0, 280] — matches funds.sparkline (W=280 viewBox)
         points = [
-            [round(i * step, 4), round(((c - mn) / rng) * 40, 4)]
+            [round(i * step, 4), round((1 - (c - mn) / rng) * 40, 4)]
             for i, c in enumerate(closes)
         ]
         positive = closes[-1] >= closes[0]
