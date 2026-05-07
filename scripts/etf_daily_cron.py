@@ -22,6 +22,7 @@ import json
 import time
 import warnings
 import fcntl
+import psycopg2
 from datetime import date, datetime, timedelta
 from typing import Optional
 
@@ -30,6 +31,14 @@ warnings.filterwarnings('ignore')
 LOCK_FILE = "/tmp/etf_daily_cron.lock"
 
 W_SPARKLINE = 280  # sparkline SVG width (matches viewBox)
+
+SUPABASE_DB = dict(
+    host='db.oqkobptbvcazifpvjwfz.supabase.co',
+    port=5432,
+    dbname='postgres',
+    user='postgres',
+    password='rzvfO6ub5F1W6hpR'
+)
 
 def acquire_lock():
     """Prevent concurrent cron runs using file-based lock."""
@@ -283,22 +292,41 @@ def main():
         print("  Fetching last 30 days per symbol for sparklines...")
         last30_prices: dict[str, list] = {}
         cutoff_str = (date.today() - timedelta(days=30)).isoformat()
-        for chunk in sym_chunks:
-            syms_param = ",".join(chunk)
-            # Use high limit per chunk so no symbol gets truncated
-            # 100 symbols × 30 days × 2 rows per day = 6000 — safe upper bound
-            url = (f"{SUPABASE_URL}/rest/v1/foreign_etf_prices"
-                   f"?symbol=in.({syms_param})&date=gte.{cutoff_str}"
-                   f"&order=date.desc&limit=10000")
-            rows = supabase_query_raw(url)
+
+        # Use direct psycopg2 to avoid PostgREST 1000-row hard limit.
+        # With 1176 ETFs × ~22 trading days, total rows ≈ 25K — far exceeding the limit.
+        try:
+            db_conn = psycopg2.connect(**SUPABASE_DB, connect_timeout=30)
+            db_cur = db_conn.cursor()
+            db_cur.execute("""
+                SELECT symbol, date, close FROM foreign_etf_prices
+                WHERE date >= %s
+                ORDER BY symbol ASC, date ASC
+            """, (cutoff_str,))
+            rows = db_cur.fetchall()
             for row in rows:
-                sym = row.get("symbol")
+                sym, dt, close = row
                 if sym not in last30_prices:
                     last30_prices[sym] = []
-                last30_prices[sym].append({"date": row.get("date"), "close": row.get("close")})
-            time.sleep(0.3)
-
-        print(f"  Got last-30-day prices for {len(last30_prices)} ETFs")
+                last30_prices[sym].append({"date": str(dt), "close": float(close)})
+            db_cur.close()
+            db_conn.close()
+            print(f"  Got last-30-day prices for {len(last30_prices)} ETFs via direct DB ({len(rows)} total rows)")
+        except Exception as e:
+            print(f"  WARNING: Direct DB fetch failed ({e}), falling back to PostgREST...")
+            for chunk in sym_chunks:
+                syms_param = ",".join(chunk)
+                url = (f"{SUPABASE_URL}/rest/v1/foreign_etf_prices"
+                       f"?symbol=in.({syms_param})&date=gte.{cutoff_str}"
+                       f"&order=date.desc&limit=10000")
+                rows = supabase_query_raw(url)
+                for row in rows:
+                    sym = row.get("symbol")
+                    if sym not in last30_prices:
+                        last30_prices[sym] = []
+                    last30_prices[sym].append({"date": row.get("date"), "close": row.get("close")})
+                time.sleep(0.3)
+            print(f"  Got last-30-day prices for {len(last30_prices)} ETFs via PostgREST fallback")
 
         # Build id→symbol map and symbol→id map
         sym_to_id = {e["symbol"]: e["id"] for e in etfs if e.get("symbol") and e.get("id")}
