@@ -156,6 +156,7 @@ Kullanım: market_cap, num_investors, pay_adet, market_share, daily_return,
 - [x] **Kategori period returns düzeltildi** (30 Nisan 2026) — AUM-ağırlıklı 1H/1A/3A/6A hesaplaması eklendi. latestDate gerçek price_history'den alınıyor. MAX_ABS_RETURN=50 outlier threshold. Deploy: 3bae9c0.
 - [x] **VFF sparkline düzeltildi** (30 Nisan 2026) — Log10 scale normalization, points ters çevrildi (en yeni sol). GTL spike artık sağda. Commit: 3bae9c0.
 - [x] **Mobil 6A okunabilirliği** (30 Nisan 2026) — flex→grid-cols-4, font 9px→10px / 11px→12px, min-w-0 overflow fix. Commit: 3bae9c0.
+- [x] **FrameShot footer geliştirildi** (7 Mayıs 2026) — Newsletter signup, "Made in Istanbul" location, trust badges (Secure·Private·100% Free), changelog link. Commit: e78253a.
 
 ---
 
