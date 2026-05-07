@@ -22,8 +22,8 @@ if ! curl -s --max-time 3 http://localhost:9222/json/version > /dev/null 2>&1; t
     sleep 5
 fi
 
-# 1000 fon = tüm fonlar
-/opt/homebrew/bin/python3.11 scripts/tefas_scraper_v2.py 1000 >> "$LOG" 2>> "$ERR"
+# 5000 fon = tüm fonlar (2399 aktif fon var, 1000 ile sınırlı kalmayalım)
+/opt/homebrew/bin/python3.11 scripts/tefas_scraper_v2.py 5000 >> "$LOG" 2>> "$ERR"
 SCRAPER_EXIT=$?
 
 if [ $SCRAPER_EXIT -eq 0 ]; then
