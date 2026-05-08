@@ -315,8 +315,8 @@ def compute_fund_metrics(
     return fund_updates, sparkline_updates
 
 
-def upsert_fund_metrics(fund_updates: list[dict]) -> int:
-    """Upsert fund metrics using PostgreSQL batch INSERT with ON CONFLICT."""
+def upsert_fund_returns(fund_updates: list[dict]) -> int:
+    """Upsert fund returns (daily_change, period returns) to funds table using PostgreSQL batch INSERT with ON CONFLICT."""
     if not fund_updates:
         return 0
     METRIC_COLS = [
@@ -353,13 +353,13 @@ def upsert_fund_metrics(fund_updates: list[dict]) -> int:
         cur.close()
         conn.close()
     except Exception as e:
-        LOG(f"upsert_fund_metrics DB error: {e}", "ERROR")
+        LOG(f"upsert_fund_returns DB error: {e}", "ERROR")
         return 0
     return len(values)
 
 
 def upsert_sparklines(sparkline_updates: list[dict]) -> int:
-    """Upsert sparklines using PostgreSQL batch UPDATE (all funds exist after upsert_fund_metrics)."""
+    """Upsert sparklines using PostgreSQL batch UPDATE (all funds exist after upsert_fund_returns)."""
     if not sparkline_updates:
         return 0
     try:
@@ -744,7 +744,7 @@ def main():
 
     # ── 5. Upsert fund metrics ─────────────────────────────────────────────
     LOG("Upserting fund metrics...")
-    fund_count = upsert_fund_metrics(fund_updates)
+    fund_count = upsert_fund_returns(fund_updates)
     LOG(f"  funds updated: {fund_count}/{len(fund_updates)}")
 
     # ── 6. Upsert sparklines ──────────────────────────────────────────────
