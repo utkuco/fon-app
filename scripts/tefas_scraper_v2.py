@@ -428,9 +428,10 @@ def scrape_fund(ws, cdp_eval, code: str) -> Optional[Dict]:
     # Step 5: Compute returns
     returns = compute_returns(price_rows)
 
-    # Latest price from API
+    # Latest price from API — also compute daily change from prev_price (most reliable)
     latest_price = None
     latest_date = None
+    daily_change_from_api = None
     if price_rows:
         latest_row = sorted(price_rows, key=lambda x: x["date"])[-1]
         latest_price = latest_row["price"]
@@ -439,18 +440,22 @@ def scrape_fund(ws, cdp_eval, code: str) -> Optional[Dict]:
         latest_price = current.get("fiyat")
         latest_date = current.get("tarih")
 
-    # Category from profile (FON comparison list)
-    kategori = None
-    for tur in ["HİSSE", "HİSSE SENEDİ", "HİSSE", "BORSA", "YABANCI", "SERBEST", "KAMU", "ÖZEL", "KİRA", "ALTIN", "DÖVİZ", "PARA"]:
-        if tur in profile:
-            kategori = tur
-            break
+    # compute_daily_change from 5Y history (unreliable if <2 data points)
+    daily_from_history = compute_daily_change(price_rows) if price_rows else None
+
+    # Compute from API's prev_price (most reliable — direct from TEFAS)
+    api_prev_price = current.get("prev_price") if current else None
+    api_fiyat = current.get("fiyat") if current else None
+    if api_fiyat and api_prev_price and api_prev_price > 0:
+        daily_from_api = round((api_fiyat - api_prev_price) / api_prev_price * 100, 2)
+    else:
+        daily_from_api = daily_from_history  # fallback
 
     # DB columns: daily_change, weekly, monthly, quarterly, price, market_cap
     result = {
         "code": code,
         "price": latest_price,
-        "daily_change": returns.get("daily"),
+        "daily_change": daily_from_api,
         "weekly": returns.get("weekly"),
         "monthly": returns.get("one_month"),
         "quarterly": returns.get("three_month"),
