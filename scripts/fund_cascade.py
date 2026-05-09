@@ -117,11 +117,13 @@ def compute_sparkline(
     rng = hi - lo or 1
 
     # Map prices to SVG coordinate space (x: 0→W, y: 0→H)
-    # NOTE: NO H- inversion here. Frontend SparklineSvg applies (height - y) for SVG coords.
-    # Price UP → y UP in data → SVG (H - y) → line goes UP visually. Correct!
+    # INVERTED: y = H - ((price - min) / range) * H
+    # Low price → HIGH y (high on screen), High price → LOW y
+    # Frontend SparklineSvg applies (height - y) again, so double-inversion cancels out
+    # to give correct visual direction: price UP → line goes UP
     W, H = SPARKLINE_W, SPARKLINE_H
     points = [
-        [round(idx / (len(closes) - 1) * W, 1), round((c - lo) / rng * H, 1)]
+        [round(idx / (len(closes) - 1) * W, 1), round(H - (c - lo) / rng * H, 1)]
         for idx, c in enumerate(closes)
     ]
 
@@ -282,15 +284,28 @@ def compute_fund_metrics(
             continue
 
         # daily_change: today vs yesterday (Turkey timezone)
+        # TWO PASSES: first find today_price, then find yest_price (strictly before today)
         today_price: Optional[float] = None
         yest_price: Optional[float] = None
+
+        # Pass 1: find most recent price <= today_tr
         for p in reversed(sorted_ph):
-            if today_price is None and p["date"] <= today_tr:
+            if p["date"] <= today_tr:
                 today_price = p.get("price")
-            if yest_price is None and p["date"] <= yest_tr:
-                yest_price = p.get("price")
-            if today_price is not None and yest_price is not None:
                 break
+
+        # Pass 2: find most recent price < today_price's date (yesterday's actual price)
+        if today_price is not None:
+            today_date = None
+            for p in reversed(sorted_ph):
+                if p["date"] <= today_tr:
+                    today_date = p["date"]
+                    break
+            if today_date:
+                for p in reversed(sorted_ph):
+                    if p["date"] < today_date:
+                        yest_price = p.get("price")
+                        break
 
         # Period returns (RATIO)
         period_rets = compute_period_returns(sorted_ph, latest_price, today_tr)
@@ -558,11 +573,11 @@ def compute_homepage_stats(funds: list[dict], funds_with_history: Optional[list[
         category_stats[cat] = {
             "fund_count": s["count"],
             "total_market_cap": round(s["total_market_cap"], 2),
-            "avg_daily_change": round(avg_change, 4) if avg_change is not None else None,
-            "avg_return_1w": round(s["aum_1w"] / s["sum_aum_1w"] * 100, 4) if s["sum_aum_1w"] > 0 else None,
-            "avg_return_1m": round(s["aum_1m"] / s["sum_aum_1m"] * 100, 4) if s["sum_aum_1m"] > 0 else None,
-            "avg_return_3m": round(s["aum_3m"] / s["sum_aum_3m"] * 100, 4) if s["sum_aum_3m"] > 0 else None,
-            "avg_return_6m": round(s["aum_6m"] / s["sum_aum_6m"] * 100, 4) if s["sum_aum_6m"] > 0 else None,
+            "change_1d": round(avg_change, 4) if avg_change is not None else None,
+            "change_1w": round(s["aum_1w"] / s["sum_aum_1w"], 4) if s["sum_aum_1w"] > 0 else None,
+            "change_1m": round(s["aum_1m"] / s["sum_aum_1m"], 4) if s["sum_aum_1m"] > 0 else None,
+            "change_3m": round(s["aum_3m"] / s["sum_aum_3m"], 4) if s["sum_aum_3m"] > 0 else None,
+            "change_6m": round(s["aum_6m"] / s["sum_aum_6m"], 4) if s["sum_aum_6m"] > 0 else None,
         }
 
     total_market_cap = sum(f.get("market_cap") or 0 for f in funds)
@@ -655,7 +670,7 @@ def compute_homepage_stats(funds: list[dict], funds_with_history: Optional[list[
         "id": 1,
         "latest_date": latest_date,
         "total_market_cap": round(total_market_cap, 2),
-        "fund_count": len(funds),
+        "total": len(funds),
         "avg_daily_change": round(avg_daily_change, 4) if avg_daily_change is not None else None,
         "top5_gainers": top5_gainers,
         "top5_losers": top5_losers,
