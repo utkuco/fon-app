@@ -372,7 +372,13 @@ def main():
 
 def update_key(key: str, value: str) -> None:
     url = f"{SUPABASE_URL}/rest/v1/system_status"
-    payload = json.dumps([{"key": key, "value": value}])
+    # Set updated_at — system_status has no auto-trigger, so without this
+    # the row's audit timestamp stays at the original insert.
+    payload = json.dumps([{
+        "key": key,
+        "value": value,
+        "updated_at": datetime.utcnow().isoformat(),
+    }])
     req = urllib.request.Request(url, data=payload.encode(), method="POST",
         headers={**HEADERS, "Prefer": "resolution=merge-duplicates, conflict=key"})
     try:

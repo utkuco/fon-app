@@ -400,9 +400,17 @@ def get_funds_from_db(limit: int = 1000) -> tuple[List[Dict], Dict]:
 
 
 def update_system_status(key: str, value: str) -> None:
-    """Update a single key in system_status table."""
+    """Update a single key in system_status table.
+
+    Always set updated_at — system_status has no DEFAULT-NOW trigger, so
+    without this the row's audit timestamp stays at the original insert.
+    """
     url = f"{SUPABASE_URL}/rest/v1/system_status"
-    payload = json.dumps([{"key": key, "value": value}])
+    payload = json.dumps([{
+        "key": key,
+        "value": value,
+        "updated_at": datetime.utcnow().isoformat(),
+    }])
     requests.post(
         url, data=payload,
         headers={**HEADERS, "Prefer": "resolution=merge-duplicates, conflict=key"},
