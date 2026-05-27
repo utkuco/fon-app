@@ -678,6 +678,10 @@ def compute_homepage_stats(funds: list[dict], funds_with_history: Optional[list[
         "category_stats": category_stats,
         "category_sparklines": category_sparklines,
         "benchmarks_data": benchmarks_data,
+        # Without this every cascade leaves the row's audit timestamp at the
+        # original 2026-05-08 insert time, which made the admin freshness panel
+        # claim the data was 19 days stale even right after a successful run.
+        "updated_at": datetime.utcnow().isoformat() + "Z",
     }
 
 
