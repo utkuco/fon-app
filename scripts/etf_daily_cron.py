@@ -389,18 +389,71 @@ def update_key(key: str, value: str) -> None:
 
 
 
+def _fetch_try_rate_by_date(cutoff_str: str) -> dict[str, float]:
+    """Build {YYYY-MM-DD: try_rate} from benchmark_prices for FX conversion."""
+    import urllib.parse, urllib.request, json, os
+    SUPABASE_URL = (
+        os.environ.get("SUPABASE_URL")
+        or os.environ.get("NEXT_PUBLIC_SUPABASE_URL", "")
+    )
+    SUPABASE_KEY = (
+        os.environ.get("SUPABASE_SERVICE_KEY")
+        or os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
+    )
+    if not SUPABASE_URL or not SUPABASE_KEY:
+        return {}
+    params = urllib.parse.urlencode({
+        "select": "date,close_price",
+        "symbol": "eq.TRY=X",
+        "date": f"gte.{cutoff_str}",
+        "order": "date.asc",
+        "limit": "1000",
+    })
+    url = f"{SUPABASE_URL}/rest/v1/benchmark_prices?{params}"
+    req = urllib.request.Request(url, headers={
+        "apikey": SUPABASE_KEY,
+        "Authorization": f"Bearer {SUPABASE_KEY}",
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            rows = json.loads(resp.read())
+    except Exception:
+        return {}
+    out = {}
+    for r in rows:
+        d = str(r.get("date") or "")[:10]
+        v = r.get("close_price")
+        try:
+            v_f = float(v) if v is not None else None
+        except (TypeError, ValueError):
+            v_f = None
+        if d and v_f and v_f > 0:
+            out[d] = v_f
+    return out
+
+
 def recompute_sparklines(
     all_prices: dict[str, list[dict]],
     sym_to_id: dict[str, int],
 ) -> tuple[int, int, int]:
     """
-    Compute sparkline from the already-fetched price data in `all_prices`.
-    Filters each symbol to last 30 days, then batch-PATCHes foreign_etfs.sparkline.
+    Compute TL-denominated sparkline + return_pct for each ETF. Writing TL
+    here (rather than letting the API route convert at read time) keeps the
+    contract identical to TR funds: chart shape, color and "1A TL" % all
+    derive from one stored series, so nothing can disagree downstream.
     """
     ok, skip, err = 0, 0, 0
     spark_rows = []
-    cutoff_dt = date.today() - timedelta(days=30)
+    cutoff_dt = date.today() - timedelta(days=45)  # buffer for sparse weekends
     cutoff_str = cutoff_dt.isoformat()
+    window_cutoff_str = (date.today() - timedelta(days=30)).isoformat()
+
+    # Forward-fill TRY=X — ETF dates often include holidays/weekends with
+    # no FX print, so we reuse the most recent known rate instead of dropping
+    # the row (which would shrink an already-short window).
+    try_by_date = _fetch_try_rate_by_date(cutoff_str)
+    sorted_fx_dates = sorted(try_by_date.keys())
+    seed_rate = try_by_date.get(sorted_fx_dates[0]) if sorted_fx_dates else None
 
     for sym, prices in all_prices.items():
         row_id = sym_to_id.get(sym)
@@ -408,9 +461,10 @@ def recompute_sparklines(
             skip += 1
             continue
 
-        # Filter to last 30 days from whatever data we already have
-        recent = [p for p in prices if p.get("date", "") >= cutoff_str]
-        # Fallback to all prices if < 2 pts after filter
+        # Last 30 calendar days, with a wider fallback when a fund publishes
+        # irregularly. Falls back to whatever we have only if the 30d window
+        # is too sparse.
+        recent = [p for p in prices if p.get("date", "") >= window_cutoff_str]
         if len(recent) < 2:
             recent = prices
         if len(recent) < 2:
@@ -418,23 +472,42 @@ def recompute_sparklines(
             continue
 
         sorted_rows = sorted(recent, key=lambda r: r.get("date", ""))
-        closes = [r["close"] for r in sorted_rows if r.get("close") is not None]
-        if len(closes) < 2:
+        # Convert each USD close to TL using the FX rate on that date.
+        lastRate = seed_rate
+        tl_closes: list[float] = []
+        for r in sorted_rows:
+            d = str(r.get("date") or "")[:10]
+            usd = r.get("close")
+            if usd is None:
+                continue
+            rate = try_by_date.get(d, lastRate)
+            if rate is None:
+                continue
+            lastRate = rate
+            tl = float(usd) * rate
+            if tl > 0:
+                tl_closes.append(tl)
+        if len(tl_closes) < 2:
             skip += 1
             continue
 
-        mn = min(closes)
-        mx = max(closes)
+        mn = min(tl_closes)
+        mx = max(tl_closes)
         rng = mx - mn or 1
-        step = W_SPARKLINE / (len(closes) - 1)
+        step = W_SPARKLINE / (len(tl_closes) - 1)
         # y in [0, 40] — matches funds.sparkline (H=40 viewBox)
-        # x in [0, 280] — matches funds.sparkline (W=280 viewBox)
         points = [
             [round(i * step, 4), round((1 - (c - mn) / rng) * 40, 4)]
-            for i, c in enumerate(closes)
+            for i, c in enumerate(tl_closes)
         ]
-        positive = closes[-1] >= closes[0]
-        spark = {"points": points, "positive": positive}
+        first = tl_closes[0]
+        last = tl_closes[-1]
+        return_pct = round((last - first) / first * 100, 2) if first > 0 else 0.0
+        spark = {
+            "points": points,
+            "positive": last >= first,
+            "return_pct": return_pct,
+        }
         spark_rows.append({"id": row_id, "symbol": sym, "sparkline": spark})
 
     BATCH = 100

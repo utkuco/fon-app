@@ -82,22 +82,26 @@ def get_price_points(symbol: str, days: int = 730) -> Optional[pd.Series]:
         return None
 
 
-def calc_return(series: pd.Series, days: int, fx_rate: float) -> Optional[float]:
-    """Calculate return over last `days` calendar days, converted to TRY via fx_rate."""
+def calc_return(series: pd.Series, days: int, fx_today: float, fx_start: float) -> Optional[float]:
+    """TL return over the trailing window. Each price is converted to TL with
+    the FX rate ON THAT DATE — multiplying the USD return by `fx_today` (the
+    bug this replaces) silently mixed dollar and lira and produced numbers
+    like +8.7% TL for ONDL while the fund actually fell 29% in TL terms."""
     if series is None or len(series) < 5:
         return None
     today = series.index.max()
     start_dt = today - timedelta(days=days)
-    p_today = float(series.iloc[-1])
-    # Find closest date to start_dt
-    p_start = None
+    p_today_usd = float(series.iloc[-1])
+    p_start_usd = None
     for dt in series.index:
         if dt >= pd.Timestamp(start_dt.date()):
-            p_start = float(series.loc[dt])
+            p_start_usd = float(series.loc[dt])
             break
-    if p_start is None or p_start == 0:
+    if p_start_usd is None or p_start_usd == 0 or fx_start <= 0:
         return None
-    return round((p_today / p_start - 1) * fx_rate, 6)
+    p_today_tl = p_today_usd * fx_today
+    p_start_tl = p_start_usd * fx_start
+    return round((p_today_tl / p_start_tl) - 1, 6)
 
 
 def upsert_returns(symbol: str, ret_1m: Optional[float],
@@ -148,12 +152,39 @@ def main():
     etfs = supabase_query("foreign_etfs", "symbol, price", "limit=2000")
     print(f"  Total ETFs in DB: {len(etfs)}")
 
-    # Get FX rates
-    print("\n[2/2] Fetching FX rates...")
+    # Get FX rates — both current and 30/90/180-day-ago for proper TL return.
+    # The previous implementation multiplied USD return by today's FX, which
+    # silently mixed dollar and lira (ONDL: -29% TL actual, +9% TL written).
+    print("\n[2/2] Fetching FX rates (today + historical)...")
     fx_rates = fetch_exchange_rates()
-    usd_try = fx_rates.get("USD", 1.0)
-    eur_try = fx_rates.get("EUR", 1.0)
-    gbp_try = fx_rates.get("GBP", 1.0)
+    usd_try_today = fx_rates.get("USD", 1.0)
+    # Pull benchmark_prices TRY=X history so we can find the rate on the
+    # window's start date. Falls back to today's rate if no history.
+    fx_history_rows = supabase_query(
+        "benchmark_prices",
+        "date,close_price",
+        "symbol=eq.TRY=X&order=date.desc&limit=300",
+    ) or []
+    fx_by_date: dict[str, float] = {}
+    for r in fx_history_rows:
+        d = str(r.get("date") or "")[:10]
+        v = r.get("close_price")
+        try:
+            v_f = float(v) if v is not None else None
+        except (TypeError, ValueError):
+            v_f = None
+        if d and v_f and v_f > 0:
+            fx_by_date[d] = v_f
+    sorted_fx = sorted(fx_by_date.keys())
+
+    def fx_at(target_date: str) -> float:
+        """Return the FX rate as of target_date (forward-walks if missing)."""
+        # Closest date on or before target_date
+        for d in reversed(sorted_fx):
+            if d <= target_date:
+                return fx_by_date[d]
+        # Earlier than any rate we have → use the oldest known
+        return fx_by_date[sorted_fx[0]] if sorted_fx else usd_try_today
 
     updated = 0
     skipped = 0
@@ -182,10 +213,14 @@ def main():
         df_prices = df_prices.set_index('date')['close']
         df_prices.index = df_prices.index.normalize()
 
-        # Compute returns using USD rate (most ETFs are USD)
-        ret_1m = calc_return(df_prices, 30, usd_try)
-        ret_3m = calc_return(df_prices, 90, usd_try)
-        ret_6m = calc_return(df_prices, 180, usd_try)
+        # Compute returns by converting each endpoint with its own FX rate.
+        today_iso = date.today().isoformat()
+        d30 = (date.today() - timedelta(days=30)).isoformat()
+        d90 = (date.today() - timedelta(days=90)).isoformat()
+        d180 = (date.today() - timedelta(days=180)).isoformat()
+        ret_1m = calc_return(df_prices, 30, fx_at(today_iso), fx_at(d30))
+        ret_3m = calc_return(df_prices, 90, fx_at(today_iso), fx_at(d90))
+        ret_6m = calc_return(df_prices, 180, fx_at(today_iso), fx_at(d180))
 
         if ret_1m is None and ret_3m is None and ret_6m is None:
             skipped += 1

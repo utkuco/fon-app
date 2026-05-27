@@ -656,6 +656,12 @@ def compute_homepage_stats(funds: list[dict], funds_with_history: Optional[list[
             except (TypeError, ValueError):
                 pass
             entry["fund_count"] += 1
+        # Convert total_value to total_weight (share of summed value across
+        # tickers, as %). The StockCard widget expects total_weight, not a
+        # raw lira amount — and raw lira mixes scales across funds anyway.
+        total_value_all = sum(v["total_value"] for v in agg.values()) or 1
+        for entry in agg.values():
+            entry["total_weight"] = round(entry["total_value"] / total_value_all * 100, 2)
         ranked = sorted(agg.values(), key=lambda x: x["fund_count"], reverse=True)
         most_held_stocks = ranked[:10]
     except Exception as e:
