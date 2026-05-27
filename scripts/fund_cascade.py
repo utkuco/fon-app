@@ -662,8 +662,13 @@ def compute_homepage_stats(funds: list[dict], funds_with_history: Optional[list[
         LOG(f"most_held_stocks build failed: {e}", "WARN")
 
     # ── Category stats (AUM-weighted) ─────────────────────────────────────
+    # Use is_real_fund here too so the category fund_count matches the
+    # number an investor would actually see in the listing — without this
+    # SRF was reporting 1255 funds while the screened total is 1184.
     cat_map: dict[str, dict] = {}
     for f in funds:
+        if not is_real_fund(f):
+            continue
         t = f.get("fund_type") or "OTHER"
         if t not in cat_map:
             cat_map[t] = {
@@ -736,6 +741,60 @@ def compute_homepage_stats(funds: list[dict], funds_with_history: Optional[list[
         if (f.get("market_cap") or 0) > 0
     )
     aum_weighted_daily_change = round(aum_num / aum_den, 4) if aum_den > 0 else None
+
+    # ── Benchmarks payload (BIST100 / GOLD / USDTRY / etc.) ───────────────
+    # Build fresh benchmarks_data from benchmark_prices so the homepage's
+    # piyasa göstergeleri section doesn't lag 20+ days behind reality. The
+    # raw benchmark_prices table is updated daily by a separate cron; this
+    # just maps Yahoo symbols → display keys and slices the last ~13 months
+    # so the frontend's "1 year TL getiri" filter has room to work.
+    YAHOO_TO_DISPLAY = {
+        "GC=F":      "GOLD",
+        "^GSPC":     "SP500",
+        "^IXIC":     "NASDAQ",
+        "EURTRY=X":  "EURTRY",
+        "TRY=X":     "USDTRY",
+        "XU100.IS":  "BIST100",
+    }
+    benchmarks_data_new: dict[str, dict] = {}
+    try:
+        cutoff = (date.today() - timedelta(days=400)).isoformat()
+        for yahoo_sym, display in YAHOO_TO_DISPLAY.items():
+            rows = query_table(
+                "benchmark_prices",
+                "date,close_price",
+                filters={
+                    "symbol": f"eq.{yahoo_sym}",
+                    "date": f"gte.{cutoff}",
+                },
+                order="date.asc",
+                limit=1000,
+            ) or []
+            data = []
+            for r in rows:
+                d = str(r.get("date") or "")[:10]
+                p = r.get("close_price")
+                try:
+                    p_f = float(p) if p is not None else None
+                except (TypeError, ValueError):
+                    p_f = None
+                if d and p_f is not None and p_f > 0:
+                    data.append({"date": d, "price": p_f})
+            if len(data) < 2:
+                continue
+            first = data[0]["price"]
+            last = data[-1]["price"]
+            change = round((last - first) / first * 100, 2) if first > 0 else 0
+            benchmarks_data_new[display] = {"data": data, "change": change}
+        # Preserve BTCUSD / ETHUSD from the existing payload — no writer for
+        # those yet, but the homepage still wants to show them when present.
+        if benchmarks_data:
+            for k in ("BTCUSD", "ETHUSD"):
+                if k in benchmarks_data and k not in benchmarks_data_new:
+                    benchmarks_data_new[k] = benchmarks_data[k]
+        benchmarks_data = benchmarks_data_new
+    except Exception as e:
+        LOG(f"benchmarks_data rebuild failed: {e}", "WARN")
 
     # ── Category AUM change (30-day) ──────────────────────────────────────
     # `category_change` had been set to {} by fix_category_stats.py during an
