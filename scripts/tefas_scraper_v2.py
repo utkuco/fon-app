@@ -367,14 +367,32 @@ def get_funds_from_db(limit: int = 1000) -> tuple[List[Dict], Dict]:
     # Fetch metadata without price_history (avoid URL length issues)
     # Sadece aktif fonları çek — is_active=false olanlar atlanır
     # Kaldırılan filter: market_cap=gt.0 — tüm fonlar güncellenmeli (sıfır olanlar dahil)
-    url = (f"{SUPABASE_URL}/rest/v1/funds?"
-           f"is_active=eq.true&"
-           f"&order=market_cap.desc&limit={limit}"
-           f"&select=code,name,price,last_tefas_fetch")
-    req = requests.get(url, headers=HEADERS, timeout=60)
-    if req.status_code != 200:
-        print(f"  DB ERROR fetching funds: {req.status_code} {req.text[:300]}")
-        return [], {}
+    # Supabase REST caps each response at 1000 rows (max_rows server-side).
+    # Range header lifts client-side caps but not the server cap, so we have
+    # to paginate explicitly. ~2400 active funds → 3 pages.
+    PAGE_SIZE = 1000
+    funds_all = []
+    for offset in range(0, max(limit, 1), PAGE_SIZE):
+        page_end = min(offset + PAGE_SIZE, limit) - 1
+        url = (f"{SUPABASE_URL}/rest/v1/funds?"
+               f"is_active=eq.true"
+               f"&order=market_cap.desc"
+               f"&offset={offset}&limit={PAGE_SIZE}"
+               f"&select=code,name,price,last_tefas_fetch")
+        req = requests.get(url, headers=HEADERS, timeout=60)
+        if req.status_code != 200:
+            print(f"  DB ERROR fetching funds (offset={offset}): {req.status_code} {req.text[:300]}")
+            return [], {}
+        batch = req.json()
+        funds_all.extend(batch)
+        if len(batch) < PAGE_SIZE:
+            break
+    # Reassemble pseudo-req-like for downstream code
+    class _Req:
+        status_code = 200
+        def json(_):
+            return funds_all
+    req = _Req()
 
     funds = req.json()
     
