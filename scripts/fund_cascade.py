@@ -92,11 +92,14 @@ SPARKLINE_H = 40
 def compute_sparkline(
     price_history: list[dict],
     days: int = 30,
+    positive_override: Optional[bool] = None,
 ) -> Optional[dict]:
-    """Build sparkline from price history. Returns {points, positive} format (NOT SVG string).
-    
-    This format matches SparklineMini component in fund-card.tsx which renders
-    gradient-filled path sparklines. The old SVG string format is deprecated.
+    """Build sparkline from price history. Returns {points, positive} format.
+
+    `positive_override` lets the caller force the direction flag — useful when
+    funds.monthly should be the source of truth for the color (so a card that
+    says "monthly: -1.5%" doesn't display with a green up-arrow just because
+    the trailing 30 trading-day window happened to drift positive).
     """
     if len(price_history) < 2:
         return None
@@ -133,7 +136,11 @@ def compute_sparkline(
 
     return {
         "points": points,
-        "positive": bool(closes[-1] >= closes[0]),
+        # If the caller has a stronger signal (e.g. funds.monthly from TEFAS,
+        # which uses a calendar-month window vs our 30 trading-day window),
+        # let it win — keeps the card color in sync with the displayed % value.
+        "positive": positive_override if positive_override is not None
+                    else bool(closes[-1] >= closes[0]),
     }
 
 
@@ -337,8 +344,21 @@ def compute_fund_metrics(
                 **period_rets,
             })
 
-        # Sparkline
-        sparkline = compute_sparkline(sorted_ph, days=30)
+        # Sparkline — let funds.monthly (TEFAS's official monthly return) drive
+        # the color so cards stay consistent: a fund showing "monthly: -1.5%"
+        # never paints with a green up-arrow because of a 30-trading-day
+        # window technicality. Fall back to the price-history direction if
+        # monthly is missing/unrealistic.
+        monthly_raw = fund.get("monthly")
+        try:
+            monthly_val = float(monthly_raw) if monthly_raw is not None else None
+        except (TypeError, ValueError):
+            monthly_val = None
+        positive_override = None
+        if monthly_val is not None and -100 < monthly_val < 300:
+            positive_override = monthly_val >= 0
+
+        sparkline = compute_sparkline(sorted_ph, days=30, positive_override=positive_override)
         if sparkline:
             sparkline_updates.append({
                 "code": fund["code"],
@@ -755,7 +775,7 @@ def main():
     conn.cursor().execute("SET statement_timeout = '120000'")
     cur = conn.cursor()
     cur.execute("""
-        SELECT id, code, name, fund_type, market_cap, price_history, currency
+        SELECT id, code, name, fund_type, market_cap, price_history, currency, monthly
         FROM funds
         WHERE price_history IS NOT NULL
     """)
@@ -764,7 +784,8 @@ def main():
     for r in rows:
         all_funds_raw.append({
             "id": r[0], "code": r[1], "name": r[2], "fund_type": r[3],
-            "market_cap": r[4], "price_history": r[5], "currency": r[6]
+            "market_cap": r[4], "price_history": r[5], "currency": r[6],
+            "monthly": r[7],
         })
     cur.close()
     conn.close()
