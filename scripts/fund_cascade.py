@@ -145,13 +145,20 @@ def compute_sparkline(
         for idx, c in enumerate(closes)
     ]
 
+    # return_pct comes from the SAME series — when the UI uses this for the
+    # card's "1A TL" value (the canonical path on /varliklar), there is no
+    # way for the chart shape, color and number to disagree.
+    first = closes[0]
+    last = closes[-1]
+    return_pct = ((last - first) / first * 100) if first > 0 else 0.0
     return {
         "points": points,
         # If the caller has a stronger signal (e.g. funds.monthly from TEFAS,
         # which uses a calendar-month window vs our 30 trading-day window),
         # let it win — keeps the card color in sync with the displayed % value.
         "positive": positive_override if positive_override is not None
-                    else bool(closes[-1] >= closes[0]),
+                    else bool(last >= first),
+        "return_pct": round(return_pct, 2),
     }
 
 
