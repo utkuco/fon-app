@@ -569,6 +569,9 @@ def main():
     results = []
     errors = 0
     last_ok_code = None
+    consecutive_ws_errors = 0
+    reconnect_attempts = 0
+    MAX_RECONNECTS = 3
 
     signal.signal(signal.SIGALRM, _alarm_handler)
     try:
@@ -583,6 +586,7 @@ def main():
                     data["price_history"] = merged
                     results.append(data)
                     last_ok_code = code
+                    consecutive_ws_errors = 0
                     print(f" → {data['price']} | {len(merged)} pts")
                 else:
                     errors += 1
@@ -592,7 +596,28 @@ def main():
                 print(f" → TIMEOUT (>{PER_FUND_DEADLINE_SECS}s, skipping)")
             except Exception as e:
                 errors += 1
-                print(f" → EXCEPTION: {e}")
+                msg = str(e)
+                print(f" → EXCEPTION: {msg}")
+                # A dead Chrome tab keeps raising "no close frame received or sent"
+                # for every subsequent fund. Detect that and rebuild the CDP session.
+                if "close frame" in msg or "ConnectionClosed" in msg or "WebSocket" in msg:
+                    consecutive_ws_errors += 1
+                    if consecutive_ws_errors >= 2 and reconnect_attempts < MAX_RECONNECTS:
+                        reconnect_attempts += 1
+                        print(f"  >>> WebSocket dead, reconnecting (attempt {reconnect_attempts}/{MAX_RECONNECTS})...")
+                        try:
+                            ws.close()
+                        except Exception:
+                            pass
+                        time.sleep(2)
+                        new_ws_url, new_page_id = get_chrome_tab()
+                        if new_ws_url:
+                            ws, cdp_send, cdp_eval = cdp_connect(new_ws_url)
+                            consecutive_ws_errors = 0
+                            print(f"  >>> Reconnected to tab {new_page_id}")
+                        else:
+                            print("  >>> Reconnect FAILED, aborting batch")
+                            break
             finally:
                 signal.alarm(0)
 
@@ -600,7 +625,10 @@ def main():
 
     finally:
         signal.alarm(0)
-        ws.close()
+        try:
+            ws.close()
+        except Exception:
+            pass
         print(f"  Chrome tab closed")
 
     print(f"\n[TEFAS SCRAPER v2] Done — {len(results)} scraped, {errors} errors, last_ok={last_ok_code}")
