@@ -26,7 +26,7 @@ import time
 import json
 import psycopg2
 import psycopg2.extras
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 import urllib.request
 from typing import Optional
@@ -104,9 +104,20 @@ def compute_sparkline(
     if len(price_history) < 2:
         return None
 
-    # price_history is stored ASC (oldest→newest) — take last `days` entries
+    # Filter to entries within the last `days` CALENDAR days (not the last N
+    # entries) so the sparkline window matches funds.monthly's window.
+    # PDC was the smoking gun: 30 entries back went to 2026-04-10 but the
+    # fund publishes irregularly, so 30 calendar days ago was 2026-04-27 —
+    # the peak the price had crashed from. Sparkline (entries) showed the
+    # recovery while monthly (calendar) showed the loss; the green line
+    # next to the red percent didn't match.
     sorted_ph = sorted(price_history, key=lambda x: x.get("date", ""))
-    recent = sorted_ph[-days:] if len(sorted_ph) > days else sorted_ph
+    cutoff = (date.today() - timedelta(days=days)).isoformat()
+    recent = [p for p in sorted_ph if p.get("date") and p["date"] >= cutoff]
+    # Fall back to the trailing-entry window only when the date filter
+    # leaves us with too little data (fund only publishes weekly etc).
+    if len(recent) < 5:
+        recent = sorted_ph[-days:] if len(sorted_ph) > days else sorted_ph
 
     if len(recent) < 2:
         return None
