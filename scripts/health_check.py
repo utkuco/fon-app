@@ -1,187 +1,227 @@
 #!/usr/bin/env python3.11
 """
-Consolidated Health Check — replaces 3 separate health monitor jobs:
-  - TEFAS Monitor (6h): TEFAS son veri tarihi kontrolü
-  - FonApp Health (11:00): Homepage stats + fund metrics tazeliği
-  - ETF Health (12:00): ETF verileri + sparkline tazeliği
+health_check.py — Daily sanity check across the data pipeline.
 
-Usage: python3.11 scripts/health_check.py
+Looks at the underlying data tables (not the cron's self-reported timestamps)
+and decides whether each pipeline is ok. Result is JSON-encoded into
+system_status.health_check so the /admin/system page can render it.
+
+Each check returns one of:
+  - "ok"     fresh within its tolerance
+  - "stale"  past tolerance but the table has rows
+  - "empty"  expected rows missing
+  - "error"  query failed
 """
-import sys
-sys.path.insert(0, 'scripts')
-from cron_shared import load_env, SUPABASE_URL, HEADERS, upsert_system_status
-import urllib.request
+
 import json
-from datetime import datetime, timezone
+import sys
+import urllib.request
+from datetime import date, datetime, timezone
+from pathlib import Path
+from typing import Optional
 
-LOG_URL = f"{SUPABASE_URL}/rest/v1/rpc/log_event"
+sys.path.insert(0, str(Path(__file__).parent))
 
-def LOG(msg: str):
-    ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
-    print(f"[{ts}] {msg}")
+from cron_shared import (
+    SUPABASE_URL,
+    HEADERS,
+    load_env,
+    upsert_system_status,
+    get_logger,
+)
+
+load_env()
+LOG = get_logger("health_check")
+
+
+def _rest(url: str, timeout: int = 10) -> list:
+    req = urllib.request.Request(url, headers=HEADERS)
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        body = r.read()
+        return json.loads(body) if body else []
+
+
+def _days_since(iso: Optional[str]) -> Optional[int]:
+    if not iso:
+        return None
     try:
-        req = urllib.request.Request(
-            LOG_URL,
-            data=json.dumps({"event": f"health_check: {msg}"}).encode(),
-            headers={**HEADERS, "Content-Type": "application/json"},
-            method="POST"
-        )
-        urllib.request.urlopen(req, timeout=5)
+        d = date.fromisoformat(iso[:10])
+        return (date.today() - d).days
     except Exception:
-        pass
+        return None
 
-def check_tefas_freshness() -> bool:
-    """Check if TEFAS scraper ran recently (within 2 days)."""
-    req = urllib.request.Request(
-        f"{SUPABASE_URL}/rest/v1/funds?select=last_tefas_fetch&order=last_tefas_fetch.desc&limit=1",
-        headers=HEADERS
-    )
+
+def _classify(days: Optional[int], max_days: int) -> str:
+    if days is None:
+        return "empty"
+    return "ok" if days <= max_days else "stale"
+
+
+# ─── Individual checks ───────────────────────────────────────────────────────
+
+def check_tefas() -> dict:
     try:
-        with urllib.request.urlopen(req, timeout=10) as r:
-            rows = json.loads(r.read())
-            if not rows:
-                LOG("TEFAS CHECK: No funds found")
-                return False
-            last_fetch = rows[0].get("last_tefas_fetch", "")
-            LOG(f"TEFAS CHECK: last_tefas_fetch = {last_fetch}")
-            # Check if within 2 days
-            from datetime import timedelta
-            today = datetime.now(timezone.utc).date()
-            from datetime import date
-            if last_fetch:
-                fetch_date = date.fromisoformat(last_fetch[:10])
-                diff = (today - fetch_date).days
-                if diff <= 2:
-                    LOG(f"TEFAS CHECK: ✅ Fresh ({(today - fetch_date).days}d ago)")
-                    return True
-                else:
-                    LOG(f"TEFAS CHECK: ⚠️ Stale ({diff}d old)")
-                    return False
-            LOG("TEFAS CHECK: ⚠️ No last_tefas_fetch")
-            return False
-    except Exception as e:
-        LOG(f"TEFAS CHECK: ❌ Error — {e}")
-        return False
+        rows = _rest(
+            f"{SUPABASE_URL}/rest/v1/funds?select=last_tefas_fetch"
+            f"&order=last_tefas_fetch.desc&limit=1"
+        )
+        latest = rows[0].get("last_tefas_fetch") if rows else None
+        days = _days_since(latest)
+        return {"status": _classify(days, 2), "latest": latest, "days_old": days}
+    except Exception as e:  # noqa: BLE001
+        return {"status": "error", "error": str(e)}
 
-def check_homepage_stats() -> bool:
-    """Check if homepage_stats is fresh (today)."""
-    req = urllib.request.Request(
-        f"{SUPABASE_URL}/rest/v1/homepage_stats?select=latest_date,total&order=id.desc&limit=1",
-        headers=HEADERS
-    )
+
+def check_etf_prices() -> dict:
     try:
-        with urllib.request.urlopen(req, timeout=10) as r:
-            rows = json.loads(r.read())
-            if not rows:
-                LOG("HOMEPAGE CHECK: ❌ No homepage_stats row")
-                return False
-            row = rows[0]
-            latest = row.get("latest_date", "")
-            total = row.get("total", 0)
-            today = datetime.now(timezone.utc).date().isoformat()
-            LOG(f"HOMEPAGE CHECK: latest_date={latest}, total={total}")
-            if latest == today and total > 100:
-                LOG("HOMEPAGE CHECK: ✅ Fresh and populated")
-                return True
-            else:
-                LOG(f"HOMEPAGE CHECK: ⚠️ Possibly stale (total={total})")
-                return total > 100
-    except Exception as e:
-        LOG(f"HOMEPAGE CHECK: ❌ Error — {e}")
-        return False
+        rows = _rest(
+            f"{SUPABASE_URL}/rest/v1/foreign_etf_prices?select=date"
+            f"&order=date.desc&limit=1"
+        )
+        latest = rows[0].get("date") if rows else None
+        days = _days_since(latest)
+        return {"status": _classify(days, 3), "latest": latest, "days_old": days}
+    except Exception as e:  # noqa: BLE001
+        return {"status": "error", "error": str(e)}
 
-def check_etf_freshness() -> bool:
-    """Check if ETF prices are recent (within 3 days)."""
-    req = urllib.request.Request(
-        f"{SUPABASE_URL}/rest/v1/foreign_etf_prices?select=date&order=date.desc&limit=1",
-        headers=HEADERS
-    )
+
+def check_benchmark_prices() -> dict:
     try:
-        with urllib.request.urlopen(req, timeout=10) as r:
-            rows = json.loads(r.read())
-            if not rows:
-                LOG("ETF CHECK: No foreign_etf_prices found")
-                return False
-            last_date = rows[0].get("date", "")
-            LOG(f"ETF CHECK: last price date = {last_date}")
-            from datetime import date, timedelta
-            today = date.today()
-            if last_date:
-                price_date = date.fromisoformat(last_date[:10])
-                diff = (today - price_date).days
-                if diff <= 3:
-                    LOG(f"ETF CHECK: ✅ Fresh ({diff}d ago)")
-                    return True
-                else:
-                    LOG(f"ETF CHECK: ⚠️ Stale ({diff}d old)")
-                    return False
-            return False
-    except Exception as e:
-        LOG(f"ETF CHECK: ❌ Error — {e}")
-        return False
+        rows = _rest(
+            f"{SUPABASE_URL}/rest/v1/benchmark_prices?select=date"
+            f"&order=date.desc&limit=1"
+        )
+        latest = rows[0].get("date") if rows else None
+        days = _days_since(latest)
+        return {"status": _classify(days, 3), "latest": latest, "days_old": days}
+    except Exception as e:  # noqa: BLE001
+        return {"status": "error", "error": str(e)}
 
-def check_fund_metrics_populated() -> bool:
-    """Check if fund metrics are populated (2200+ funds with price_history)."""
-    req = urllib.request.Request(
-        f"{SUPABASE_URL}/rest/v1/funds?select=code&price_history=not.is.null&limit=1&offset=2199",
-        headers=HEADERS
-    )
+
+def check_homepage_stats() -> dict:
     try:
-        with urllib.request.urlopen(req, timeout=10) as r:
-            data = json.loads(r.read())
-            count = len(json.loads(r.read().decode())) if r.status == 200 else 0
-            LOG(f"FUND METRICS CHECK: ~2200+ funds have price_history")
-            return True
-    except Exception as e:
-        LOG(f"FUND METRICS CHECK: ❌ Error — {e}")
-        return False
+        rows = _rest(
+            f"{SUPABASE_URL}/rest/v1/homepage_stats?select=updated_at,total&limit=1"
+        )
+        if not rows:
+            return {"status": "empty"}
+        latest = rows[0].get("updated_at")
+        total = rows[0].get("total") or 0
+        days = _days_since(latest)
+        status = _classify(days, 1)
+        if status == "ok" and total < 100:
+            status = "stale"
+        return {"status": status, "latest": latest, "days_old": days, "total": total}
+    except Exception as e:  # noqa: BLE001
+        return {"status": "error", "error": str(e)}
 
-def check_benchmark_prices() -> bool:
-    """Check if benchmark prices (GOLD, USD, BIST100) are recent."""
-    req = urllib.request.Request(
-        f"{SUPABASE_URL}/rest/v1/benchmark_prices?select=date&order=date.desc&limit=1",
-        headers=HEADERS
-    )
+
+def check_fund_metrics() -> dict:
     try:
-        with urllib.request.urlopen(req, timeout=10) as r:
-            rows = json.loads(r.read())
-            if not rows:
-                LOG("BENCHMARK CHECK: No benchmark_prices found")
-                return False
-            last_date = rows[0].get("date", "")
-            from datetime import date
-            today = date.today()
-            if last_date:
-                price_date = date.fromisoformat(last_date[:10])
-                diff = (today - price_date).days
-                if diff <= 1:
-                    LOG(f"BENCHMARK CHECK: ✅ Fresh (today={today}, last={last_date[:10]})")
-                    return True
-                else:
-                    LOG(f"BENCHMARK CHECK: ⚠️ Stale ({diff}d old)")
-                    return False
-            return False
-    except Exception as e:
-        LOG(f"BENCHMARK CHECK: ❌ Error — {e}")
-        return False
+        rows = _rest(
+            f"{SUPABASE_URL}/rest/v1/fund_metrics?select=updated_at"
+            f"&order=updated_at.desc&limit=1"
+        )
+        latest = rows[0].get("updated_at") if rows else None
+        days = _days_since(latest)
+        return {"status": _classify(days, 2), "latest": latest, "days_old": days}
+    except Exception as e:  # noqa: BLE001
+        return {"status": "error", "error": str(e)}
 
-def main():
-    load_env()
-    LOG("=== Consolidated Health Check Started ===")
-    
-    results = {}
-    results["tefas"] = check_tefas_freshness()
-    results["homepage"] = check_homepage_stats()
-    results["etf"] = check_etf_freshness()
-    results["benchmark"] = check_benchmark_prices()
-    
-    all_ok = all(results.values())
-    overall = "✅ ALL CHECKS PASS" if all_ok else "⚠️ SOME CHECKS FAILED"
-    LOG(f"OVERALL: {overall} — {results}")
-    
-    # Upsert system_status
-    upsert_system_status("health_check", value=json.dumps({"status": overall, "results": results}))
-    LOG("=== Health Check Complete ===")
+
+def check_system_rates() -> dict:
+    try:
+        rows = _rest(
+            f"{SUPABASE_URL}/rest/v1/system_rates?select=currency,rate_annualized,updated_at"
+        )
+        if not rows:
+            return {"status": "empty"}
+        latest = max((r.get("updated_at") for r in rows if r.get("updated_at")), default=None)
+        days = _days_since(latest)
+        return {
+            "status": _classify(days, 2),
+            "latest": latest,
+            "days_old": days,
+            "currencies": {r["currency"]: float(r.get("rate_annualized") or 0) for r in rows},
+        }
+    except Exception as e:  # noqa: BLE001
+        return {"status": "error", "error": str(e)}
+
+
+def check_foreign_etfs_metadata() -> dict:
+    try:
+        rows = _rest(
+            f"{SUPABASE_URL}/rest/v1/foreign_etfs?select=updated_at"
+            f"&is_active=eq.true&order=updated_at.desc&limit=1"
+        )
+        latest = rows[0].get("updated_at") if rows else None
+        days = _days_since(latest)
+        # Weekly cron — 8 day tolerance.
+        return {"status": _classify(days, 8), "latest": latest, "days_old": days}
+    except Exception as e:  # noqa: BLE001
+        return {"status": "error", "error": str(e)}
+
+
+def check_kap_portfolio() -> dict:
+    try:
+        rows = _rest(
+            f"{SUPABASE_URL}/rest/v1/portfolio_breakdown?select=report_date"
+            f"&order=report_date.desc&limit=1"
+        )
+        latest = rows[0].get("report_date") if rows else None
+        days = _days_since(latest)
+        # KAP only posts when funds publish portfolios — can legitimately go
+        # quiet for weeks. 14 days is generous but anything beyond means the
+        # pipeline itself is dead.
+        return {"status": _classify(days, 14), "latest": latest, "days_old": days}
+    except Exception as e:  # noqa: BLE001
+        return {"status": "error", "error": str(e)}
+
+
+# ─── Driver ──────────────────────────────────────────────────────────────────
+
+def main() -> int:
+    LOG("=== health_check starting ===")
+
+    results = {
+        "tefas": check_tefas(),
+        "etf_prices": check_etf_prices(),
+        "benchmark_prices": check_benchmark_prices(),
+        "homepage_stats": check_homepage_stats(),
+        "fund_metrics": check_fund_metrics(),
+        "system_rates": check_system_rates(),
+        "etf_metadata": check_foreign_etfs_metadata(),
+        "kap_portfolio": check_kap_portfolio(),
+    }
+
+    for name, r in results.items():
+        status = r.get("status")
+        days = r.get("days_old")
+        suffix = f" ({days}d)" if days is not None else ""
+        LOG(f"  {name:18s} → {status}{suffix}")
+
+    statuses = [r.get("status") for r in results.values()]
+    if all(s == "ok" for s in statuses):
+        overall = "✅ ALL CHECKS PASS"
+    elif any(s == "error" for s in statuses):
+        overall = "❌ ERROR IN ONE OR MORE CHECKS"
+    else:
+        overall = "⚠️ SOME CHECKS FAILED"
+
+    LOG(f"OVERALL: {overall}")
+
+    upsert_system_status(
+        "health_check",
+        value=json.dumps({
+            "status": overall,
+            "results": results,
+            "checked_at": datetime.now(timezone.utc).isoformat(),
+        }),
+    )
+
+    LOG("=== health_check done ===")
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
