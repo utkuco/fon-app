@@ -108,7 +108,11 @@ def compute_sparkline(
     if len(recent) < 2:
         return None
 
-    closes = [p["price"] for p in recent if p.get("price") is not None]
+    # Skip price=0 entries — TEFAS data gaps, not real values. If included
+    # they pin the lo of the chart to 0 and make any real prices look like
+    # spikes; they also break the positive flag (closes[-1]=0 < first → negative
+    # even when the fund actually went up over the visible window).
+    closes = [p["price"] for p in recent if p.get("price") is not None and p["price"] > 0]
     if len(closes) < 2:
         return None
 
@@ -279,9 +283,23 @@ def compute_fund_metrics(
             continue
 
         sorted_ph = sorted(ph, key=lambda x: x.get("date", ""))
-        latest_price = sorted_ph[-1].get("price")
-        if not latest_price or latest_price <= 0:
+        # Walk backwards to find the most recent NON-ZERO price. TEFAS sometimes
+        # publishes price=0 placeholders for days the fund didn't trade; if we
+        # took the literal last entry the whole fund got skipped (no sparkline,
+        # no daily_change refresh) every day a data gap landed at the tail.
+        latest_price = None
+        latest_idx = -1
+        for i in range(len(sorted_ph) - 1, -1, -1):
+            p = sorted_ph[i].get("price")
+            if p and p > 0:
+                latest_price = p
+                latest_idx = i
+                break
+        if latest_price is None:
             continue
+        # Trim trailing zero/null entries so downstream slicing operates on
+        # real data.
+        sorted_ph = sorted_ph[: latest_idx + 1]
 
         # daily_change: today vs yesterday (Turkey timezone)
         # TWO PASSES: first find today_price, then find yest_price (strictly before today)

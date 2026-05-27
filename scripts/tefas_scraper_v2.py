@@ -251,15 +251,24 @@ def parse_body_text(body_text: str) -> Dict:
 # ─── Price History Processing ─────────────────────────────────────────────────
 
 def build_price_history(price_rows: List[Dict]) -> List[Dict]:
-    """Convert API price rows [{date, price}] into DB format [{date, price, change}]."""
+    """Convert API price rows [{date, price}] into DB format [{date, price, change}].
+
+    Skips rows where price is 0 or None. TEFAS API returns 0 for days the
+    fund didn't publish a price (suspended, missing data, etc) — storing
+    those entries broke fund_cascade (it treats latest=0 as a fatal error
+    and skips the whole fund) and corrupted the monthly/weekly fields
+    (change calc divides by prev, gets -100 when current is 0).
+    """
     if not price_rows:
         return []
     sorted_rows = sorted(price_rows, key=lambda x: x["date"])
+    # Pre-filter zero/null prices — they're TEFAS data gaps, not real values.
+    valid_rows = [r for r in sorted_rows if r.get("price") and r["price"] > 0]
     result = []
-    for i, row in enumerate(sorted_rows):
+    for i, row in enumerate(valid_rows):
         change = None
         if i > 0:
-            prev = sorted_rows[i - 1]["price"]
+            prev = valid_rows[i - 1]["price"]
             curr = row["price"]
             if prev and prev != 0:
                 change = round((curr - prev) / prev * 100, 4)
