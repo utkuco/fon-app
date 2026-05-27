@@ -9,7 +9,7 @@ Usage:
     python3.11 scripts/etf_daily_cron.py
 
 Cron example (run at 22:00 Turkey daily):
-    0 22 * * * cd /Users/admin/Desktop/projects/fon-app && ./venv/bin/python3 scripts/etf_daily_cron.py >> logs/etf_cron.log 2>&1
+    0 22 * * * cd /Users/admin/Documents/Projects/fon-app && ./venv/bin/python3 scripts/etf_daily_cron.py >> logs/etf_cron.log 2>&1
 """
 
 import os
@@ -253,6 +253,8 @@ def main():
         if not etfs:
             return
 
+        errors = []
+
         # ── Step 3: Download latest prices (incremental) ────────────────────
         print("\n[3/5] Fetching latest prices...")
         symbols = [e["symbol"] for e in etfs if e.get("symbol")]
@@ -266,7 +268,6 @@ def main():
             price_rows.append({"symbol": sym, "date": today_str, "close": price})
 
         updated = len(latest_prices)
-        errors = []
         if price_rows:
             print(f"  Upserting {len(price_rows)} today's price rows...")
             try:
@@ -358,7 +359,7 @@ def main():
             "sparklines_updated": spark_ok,
             "sparklines_skipped": spark_skip,
             "sparklines_errors": spark_err,
-            "errors": [],
+            "errors": errors,
             "fx_usd_try": round(usd_try, 4),
             "finished_at": now,
         })

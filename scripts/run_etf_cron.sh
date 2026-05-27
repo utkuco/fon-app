@@ -1,8 +1,8 @@
 #!/bin/bash
 # ETF Daily Cron — run after US market close (weekdays only)
-# Cron: 0 22 * * 1-5 cd /Users/admin/Desktop/projects/fon-app && ./scripts/run_etf_cron.sh >> /Users/admin/Desktop/projects/fon-app/logs/etf_cron.log 2>&1
+# Cron: 0 22 * * 1-5 cd /Users/admin/Documents/Projects/fon-app && ./scripts/run_etf_cron.sh >> /Users/admin/Documents/Projects/fon-app/logs/etf_cron.log 2>&1
 
-SCRIPT_DIR="/Users/admin/Desktop/projects/fon-app"
+SCRIPT_DIR="/Users/admin/Documents/Projects/fon-app"
 VENV_PYTHON="$SCRIPT_DIR/venv/bin/python3"
 LOG="$SCRIPT_DIR/logs/etf_cron.log"
 

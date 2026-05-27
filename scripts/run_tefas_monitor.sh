@@ -5,7 +5,7 @@
 PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH
 
-cd ~/Desktop/projects/fon-app
+cd ~/Documents/Projects/fon-app
 
 # Run the monitor check (writes to logs/monitor_latest.txt and logs/monitor_alerts.txt)
 python3.11 -c "

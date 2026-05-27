@@ -18,6 +18,7 @@ import sys
 import json
 import time
 import re
+import signal
 import warnings
 import requests
 from datetime import date, datetime, timedelta
@@ -27,6 +28,21 @@ from websockets.sync import client
 import subprocess
 
 warnings.filterwarnings('ignore')
+
+
+class FundScrapeTimeout(Exception):
+    """Per-fund hard deadline tripped — usually CDP socket got wedged."""
+
+
+def _alarm_handler(signum, frame):  # noqa: ARG001
+    raise FundScrapeTimeout("scrape_fund exceeded hard timeout")
+
+
+# Hard per-fund deadline. scrape_fund makes 3 CDP calls each with a 15s
+# inner timeout, plus a 3s page-settle sleep, so the natural ceiling is
+# ~50s. Anything past 90s means the CDP websocket is wedged — bail out
+# before the whole batch stalls (see GHI hang on 2026-05-07 + 2026-05-26).
+PER_FUND_DEADLINE_SECS = 90
 
 SUPABASE_URL = "https://oqkobptbvcazifpvjwfz.supabase.co"
 SERVICE_KEY = os.environ.get("SUPABASE_SERVICE_KEY", "sb_secret_PkAEAOU2YO4YS-ELYpwS5w_SsVg2kqi")
@@ -554,13 +570,14 @@ def main():
     errors = 0
     last_ok_code = None
 
+    signal.signal(signal.SIGALRM, _alarm_handler)
     try:
         for i, code in enumerate(need_scrape):
             print(f"  [{i+1}/{len(need_scrape)}] {code}", end="", flush=True)
+            signal.alarm(PER_FUND_DEADLINE_SECS)
             try:
                 data = scrape_fund(ws, cdp_eval, code)
                 if data and data.get("price") is not None:
-                    # Merge with existing price_history
                     existing = existing_history.get(code, [])
                     merged = merge_price_history(existing, data.get("price_history", []))
                     data["price_history"] = merged
@@ -570,13 +587,19 @@ def main():
                 else:
                     errors += 1
                     print(" → FAILED (no price)")
+            except FundScrapeTimeout:
+                errors += 1
+                print(f" → TIMEOUT (>{PER_FUND_DEADLINE_SECS}s, skipping)")
             except Exception as e:
                 errors += 1
                 print(f" → EXCEPTION: {e}")
+            finally:
+                signal.alarm(0)
 
             time.sleep(0.5)  # Be polite to TEFAS
 
     finally:
+        signal.alarm(0)
         ws.close()
         print(f"  Chrome tab closed")
 

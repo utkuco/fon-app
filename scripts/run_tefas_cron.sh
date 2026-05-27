@@ -5,13 +5,13 @@
 
 set -e
 
-cd /Users/admin/Desktop/projects/fon-app
+cd /Users/admin/Documents/Projects/fon-app
 
 # Ortam değişkenleri
 export SUPABASE_SERVICE_KEY="sb_secret_PkAEAOU2YO4YS-ELYpwS5w_SsVg2kqi"
 
-LOG="/Users/admin/Desktop/projects/fon-app/logs/tefas_cron.log"
-ERR="/Users/admin/Desktop/projects/fon-app/logs/tefas_cron.err"
+LOG="/Users/admin/Documents/Projects/fon-app/logs/tefas_cron.log"
+ERR="/Users/admin/Documents/Projects/fon-app/logs/tefas_cron.err"
 
 echo "[$(date '+%a %b %d %H:%M:%S %z %Y')] TEFAS scraper v2 başlatılıyor" >> "$LOG"
 
@@ -27,14 +27,8 @@ fi
 SCRAPER_EXIT=$?
 
 if [ $SCRAPER_EXIT -eq 0 ]; then
-    echo "[$(date '+%a %b %d %H:%M:%S %z %Y')] TEFAS scraper v2 tamamlandi — cascade fonda baslatiliyor" >> "$LOG"
-
-    # Cascade: fund_cascade.py local script fonda calissin
-    # Siteyi hemen guncellemek icin cascade'i burada da calistiralim
-    cd /Users/admin/Desktop/projects/fon-app
-    /usr/bin/python3 scripts/fund_cascade.py >> "$LOG" 2>> "$ERR" &
-    CASCADE_PID=$!
-    echo "[$(date '+%a %b %d %H:%M:%S %z %Y')] Cascade fonda PID=$CASCADE_PID ile baslatildi" >> "$LOG"
+    echo "[$(date '+%a %b %d %H:%M:%S %z %Y')] TEFAS scraper v2 tamamlandi" >> "$LOG"
+    echo "[$(date '+%a %b %d %H:%M:%S %z %Y')] fund_cascade.plist 08:30'da otomatik calisacak" >> "$LOG"
 else
     echo "[$(date '+%a %b %d %H:%M:%S %z %Y')] TEFAS scraper v2 BASARISIZ (exit=$SCRAPER_EXIT)" >> "$LOG"
 fi
