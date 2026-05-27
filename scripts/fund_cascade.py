@@ -45,6 +45,8 @@ from cron_shared import (
     upsert_system_status,
     get_logger,
     rest_patch,
+    is_real_fund,
+    MIN_REAL_FUND_AUM,
 )
 
 LOG = get_logger("fund_cascade")
@@ -547,8 +549,14 @@ def compute_homepage_stats(funds: list[dict], funds_with_history: Optional[list[
         existing_category_sparklines = existing[0].get("category_sparklines")
 
     # ── Gainers / losers ──────────────────────────────────────────────────
-    with_change = [f for f in funds if f.get("daily_change") is not None]
-    sorted_by_change = sorted(with_change, key=lambda f: f["daily_change"], reverse=True)
+    # Filter through is_real_fund() before sorting — otherwise the losers
+    # list fills up with dead funds (e.g. RPE with mc=7 TL, PRZ with 12K TL)
+    # whose daily prints aren't useful to surface on the homepage.
+    with_change_real = [
+        f for f in funds
+        if f.get("daily_change") is not None and is_real_fund(f)
+    ]
+    sorted_by_change = sorted(with_change_real, key=lambda f: f["daily_change"], reverse=True)
 
     top5_gainers = [
         {
@@ -580,6 +588,78 @@ def compute_homepage_stats(funds: list[dict], funds_with_history: Optional[list[
         }
         for f in top_invested
     ]
+    # Same payload, but written to the column the homepage actually reads
+    # (homepage_stats.most_invested). Earlier cascades only wrote
+    # `top_funds` so the field on the wire grew stale.
+    most_invested = top_funds
+
+    # ── Most held stocks (aggregate fund_holdings by ticker) ──────────────
+    # The widget on the homepage's FunLists section had been blank because
+    # nothing was writing this column. Compute it inline from fund_holdings,
+    # aggregating each ticker's exposure across every fund that holds it.
+    # The TEFAS parser stuffed the actual BIST ticker into the FIRST word of
+    # the company string (e.g. "ALGYO ALARKO GAYRIMENKUL YAT"), leaving
+    # ticker empty for every row — recover it from the company string so
+    # the aggregate isn't always empty until the parser is fixed.
+    most_held_stocks: list[dict] = []
+    try:
+        holdings_rows = query_table_paginated(
+            "fund_holdings",
+            "fund_code,ticker,isin,company,total_value",
+            page_size=1000,
+        ) or []
+        from collections import defaultdict
+        agg: dict[str, dict] = defaultdict(
+            lambda: {"ticker": "", "company": "", "total_value": 0.0, "fund_count": 0}
+        )
+        # Non-equity tickers that the parser routinely surfaces as the first
+        # token (treasury bonds, FX positions, generic labels). These aren't
+        # BIST equities — drop them so the "most held stocks" widget doesn't
+        # mostly say "HAZINE" and "USD".
+        NON_EQUITY = {
+            "HAZINE", "HAZİNE", "USD", "EUR", "TL", "TRY",
+            "BIST", "PAY", "DEGER", "DEĞERİ", "ADET", "SAYISI",
+            "T.C.", "A.Ş.", "AS", "TOPLAM",
+        }
+        import re as _re
+        BIST_RE = _re.compile(r"^[A-Z]{3,6}$")  # ASCII uppercase only, no Turkish chars
+        # Extract 5-char ticker from ISIN — Turkish equity ISINs follow
+        # TR<A><TICKER>91X<digit>, so positions 3..8 give the BIST ticker
+        # (e.g. TRAALGYO91Q5 → ALGYO, TRACIMSA91F9 → CIMSA). This is far
+        # more reliable than parsing the company string the current
+        # fund_holdings cron leaves us with.
+        def ticker_from_isin(isin: str) -> str:
+            if not isin or len(isin) < 8 or not isin.startswith("TR"):
+                return ""
+            cand = isin[3:8].upper()
+            return cand if BIST_RE.match(cand) and cand not in NON_EQUITY else ""
+
+        for h in holdings_rows:
+            t = (h.get("ticker") or "").strip()
+            isin = (h.get("isin") or "").strip()
+            company = (h.get("company") or "").strip()
+            # ISIN is the only reliable source until the fund_holdings parser
+            # is rewritten. The company-string fallback was returning words
+            # like "TUTARI" (amount) and "YAPI" (build) as tickers.
+            if not t and isin:
+                t = ticker_from_isin(isin)
+            if not t or t in NON_EQUITY:
+                continue
+            entry = agg[t]
+            entry["ticker"] = t
+            if not entry["company"]:
+                # Strip the leading ticker token from the display name.
+                rest = company.split(maxsplit=1)
+                entry["company"] = rest[1] if len(rest) == 2 else company
+            try:
+                entry["total_value"] += float(h.get("total_value") or 0)
+            except (TypeError, ValueError):
+                pass
+            entry["fund_count"] += 1
+        ranked = sorted(agg.values(), key=lambda x: x["fund_count"], reverse=True)
+        most_held_stocks = ranked[:10]
+    except Exception as e:
+        LOG(f"most_held_stocks build failed: {e}", "WARN")
 
     # ── Category stats (AUM-weighted) ─────────────────────────────────────
     cat_map: dict[str, dict] = {}
@@ -637,9 +717,56 @@ def compute_homepage_stats(funds: list[dict], funds_with_history: Optional[list[
         }
 
     total_market_cap = sum(f.get("market_cap") or 0 for f in funds)
-    avg_daily_change = sum(
-        f["daily_change"] for f in funds if f.get("daily_change") is not None
-    ) / len(with_change) if with_change else None
+    with_change = [f for f in funds if f.get("daily_change") is not None]
+    avg_daily_change = (
+        sum(f["daily_change"] for f in with_change) / len(with_change)
+        if with_change else None
+    )
+    # AUM-weighted average is more meaningful for an investor than the simple
+    # mean: a 0.6% mean across 2400 funds tells you nothing if 90% of the AUM
+    # is in one category that moved differently. Compute both, expose both.
+    aum_num = sum(
+        (f["daily_change"] or 0) * (f.get("market_cap") or 0)
+        for f in with_change
+        if (f.get("market_cap") or 0) > 0
+    )
+    aum_den = sum(
+        (f.get("market_cap") or 0)
+        for f in with_change
+        if (f.get("market_cap") or 0) > 0
+    )
+    aum_weighted_daily_change = round(aum_num / aum_den, 4) if aum_den > 0 else None
+
+    # ── Category AUM change (30-day) ──────────────────────────────────────
+    # `category_change` had been set to {} by fix_category_stats.py during an
+    # earlier cleanup and no writer was restoring it. Recompute it: per
+    # fund_type, sum current AUM and sum AUM 30 days ago (derived from
+    # price_history × outstanding units approximation isn't available, so use
+    # the implicit-AUM-from-return method: prev_aum ≈ curr_aum / (1 + r1m)).
+    category_change: dict[str, dict] = {}
+    by_type: dict[str, list[dict]] = {}
+    for f in funds:
+        if not is_real_fund(f):
+            continue
+        t = f.get("fund_type") or "OTHER"
+        by_type.setdefault(t, []).append(f)
+    for t, members in by_type.items():
+        curr = sum((m.get("market_cap") or 0) for m in members)
+        prev = 0.0
+        for m in members:
+            aum = m.get("market_cap") or 0
+            r = pct_return_ratio(m.get("return_1a"))   # 30-day return %
+            if aum > 0 and r is not None and abs(r) <= MAX_ABS_RETURN:
+                prev += aum / (1 + r / 100.0)
+            else:
+                prev += aum   # missing return → assume flat
+        chg = ((curr - prev) / prev * 100) if prev > 0 else 0.0
+        category_change[t] = {
+            "change_pct": round(chg, 2),
+            "prev_aum": round(prev, 2),
+            "curr_aum": round(curr, 2),
+            "count": len(members),
+        }
 
     latest_date = (
         query_table("funds", "last_tefas_fetch", order="last_tefas_fetch.desc", limit=1, filters={"last_tefas_fetch": "not.is.null"})[0]["last_tefas_fetch"]
@@ -728,10 +855,14 @@ def compute_homepage_stats(funds: list[dict], funds_with_history: Optional[list[
         "total_market_cap": round(total_market_cap, 2),
         "total": len(funds),
         "avg_daily_change": round(avg_daily_change, 4) if avg_daily_change is not None else None,
+        "aum_weighted_daily_change": aum_weighted_daily_change,
         "top5_gainers": top5_gainers,
         "top5_losers": top5_losers,
         "top_funds": top_funds,
+        "most_invested": most_invested,
+        "most_held_stocks": most_held_stocks,
         "category_stats": category_stats,
+        "category_change": category_change,
         "category_sparklines": category_sparklines,
         "benchmarks_data": benchmarks_data,
         # Without this every cascade leaves the row's audit timestamp at the

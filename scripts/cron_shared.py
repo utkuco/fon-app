@@ -224,6 +224,37 @@ def release_lock(lock_fd: int, lock_name: str) -> None:
         pass
 
 
+# ─── Fund quality filter ──────────────────────────────────────────────────
+# Centralized "is this a real, tradeable fund or zombie data?" predicate.
+# Without this, the homepage's top5_losers list filled up with funds whose
+# market_cap was literally 7 TL (RPE) or 12K TL (PRZ) — closed/dead funds that
+# still get a daily NAV print but no longer represent anything meaningful.
+# Every aggregate (top5 gainers/losers, category averages, gainers section,
+# most_held_stocks) should route through this; junk filtering scattered
+# inline drifts as new aggregates are added.
+
+MIN_REAL_FUND_AUM = 10_000_000          # 10M TL — below this, ignore
+MIN_REAL_FUND_PRICE = 0.01              # 1 kuruş — below this, broken NAV
+SPLIT_PCT_THRESHOLD = 200               # |daily| > 200% almost always = split
+
+
+def is_real_fund(f: dict) -> bool:
+    """Return True iff the fund row represents a live, tradeable, non-split fund."""
+    mc = f.get("market_cap")
+    if mc is None or mc < MIN_REAL_FUND_AUM:
+        return False
+    price = f.get("price")
+    if price is not None and price < MIN_REAL_FUND_PRICE:
+        return False
+    daily = f.get("daily_change")
+    if daily is not None and abs(daily) > SPLIT_PCT_THRESHOLD:
+        return False
+    monthly = f.get("monthly")
+    if monthly is not None and abs(monthly) > SPLIT_PCT_THRESHOLD:
+        return False
+    return True
+
+
 # ─── Logging ────────────────────────────────────────────────────────────────
 
 LOG_DIR = PROJECT_ROOT / "logs"
