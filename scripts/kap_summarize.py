@@ -51,6 +51,7 @@ açıklama yok:
 
 {
   "summary": "1-2 cümle Türkçe özet — yatırımcının anlayabileceği sade dilde",
+  "detail": "3-4 cümlelik Türkçe açıklama: ne oldu, neden önemli, yatırımcı açısından ne anlama geliyor. Yatırım tavsiyesi verme, sadece bilgilendir. Duyuru başlığından kesin bilgi çıkmıyorsa bunu dürüstçe belirt.",
   "impact_category": "HSF / PPF / BAF / KMF / ALTIN / DÖVİZ / KFF / SRF / FSF / OKS / BYF / DGR" listesinden 1-3 kategori,
   "impact_funds": "duyuruda doğrudan adı geçen fon kodları" listesi (1-5),
   "sentiment": "positive / negative / neutral",
@@ -142,18 +143,20 @@ def main() -> int:
           ADD COLUMN IF NOT EXISTS impact_category text[],
           ADD COLUMN IF NOT EXISTS impact_funds text[],
           ADD COLUMN IF NOT EXISTS importance text,
-          ADD COLUMN IF NOT EXISTS topic text;
+          ADD COLUMN IF NOT EXISTS topic text,
+          ADD COLUMN IF NOT EXISTS ai_detail text;
         """
     )
     conn.commit()
 
-    # Pull pending rows — most recent first so the homepage updates
+    # Pull pending rows — ai_detail IS NULL covers both never-summarised AND
+    # summarised-without-detail rows (natural backfill for the detail page).
     cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
     cur.execute(
         """
         SELECT id, kap_oid, title, company_title, fund_type, fund_code
         FROM fund_announcements
-        WHERE ai_summary IS NULL
+        WHERE ai_detail IS NULL
           AND title IS NOT NULL
         ORDER BY publish_date DESC NULLS LAST
         LIMIT %s
@@ -204,6 +207,7 @@ def main() -> int:
                 """
                 UPDATE fund_announcements
                 SET ai_summary = %s,
+                    ai_detail = %s,
                     ai_sentiment = %s,
                     impact_category = %s,
                     impact_funds = %s,
@@ -213,6 +217,7 @@ def main() -> int:
                 """,
                 (
                     result.get("summary"),
+                    result.get("detail") or result.get("summary"),
                     result.get("sentiment"),
                     _as_list(result.get("impact_category")),
                     _as_list(result.get("impact_funds")),

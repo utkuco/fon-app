@@ -59,6 +59,7 @@ Aşağıdaki JSON şemasını üret — sadece JSON, açıklama yok:
 {{
   "title_tr": "Başlığın akıcı Türkçe çevirisi (terimleri Türk yatırımcının anlayacağı şekilde)",
   "summary": "1-2 cümle Türkçe özet — neden önemli, yatırımcıyı nasıl etkiler",
+  "detail": "3-4 cümlelik Türkçe açıklama: haberde ne anlatılıyor, hangi sektör/varlık etkileniyor, Türk yatırımcı açısından (USD/TL etkisi dahil) ne anlama geliyor. Yatırım tavsiyesi verme.",
   "impact_themes": "şu temalardan etkilenenler" listesi (0-3): {', '.join(THEME_SLUGS)}. Tema yoksa boş liste.
   "impact_buckets": "şu geniş kategorilerden uygun olanlar" listesi (1-2): {', '.join(BUCKET_SLUGS)}
   "sentiment": "positive / negative / neutral" (yatırımcı açısından),
@@ -148,12 +149,16 @@ def main() -> int:
         return 1
     conn = psycopg2.connect(DB_URL)
 
+    cur = conn.cursor()
+    cur.execute("ALTER TABLE etf_news ADD COLUMN IF NOT EXISTS ai_detail text")
+    conn.commit()
+
     cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
     cur.execute(
         """
         SELECT id, source_uid, title_en, publisher, related_tickers
         FROM etf_news
-        WHERE ai_summary IS NULL AND title_en IS NOT NULL
+        WHERE ai_detail IS NULL AND title_en IS NOT NULL
         ORDER BY publish_date DESC NULLS LAST
         LIMIT %s
         """,
@@ -183,6 +188,7 @@ def main() -> int:
                 UPDATE etf_news
                 SET title_tr = %s,
                     ai_summary = %s,
+                    ai_detail = %s,
                     ai_sentiment = %s,
                     impact_themes = %s,
                     importance = %s,
@@ -192,6 +198,7 @@ def main() -> int:
                 (
                     result.get("title_tr"),
                     result.get("summary"),
+                    result.get("detail") or result.get("summary"),
                     result.get("sentiment"),
                     _as_list(result.get("impact_themes"), THEME_SLUGS),
                     result.get("importance"),

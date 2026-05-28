@@ -30,5 +30,9 @@ ETF_FETCH=$?
 ETF_NEWS_BATCH=25 $PY scripts/etf_news_translate.py >> "$LOG" 2>> "$ERR"
 ETF_SUM=$?
 
-echo "[$(date '+%a %b %d %H:%M:%S %z %Y')] bitti — kap(fetch=$KAP_FETCH,sum=$KAP_SUM) etf(fetch=$ETF_FETCH,sum=$ETF_SUM)" >> "$LOG"
+# ── Günün Piyasa Özeti (AI digest) ──
+$PY scripts/market_digest.py >> "$LOG" 2>> "$ERR"
+DIGEST=$?
+
+echo "[$(date '+%a %b %d %H:%M:%S %z %Y')] bitti — kap(fetch=$KAP_FETCH,sum=$KAP_SUM) etf(fetch=$ETF_FETCH,sum=$ETF_SUM) digest=$DIGEST" >> "$LOG"
 exit 0
