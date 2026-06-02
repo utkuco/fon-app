@@ -95,11 +95,17 @@ def sb_post(path: str, data: dict) -> bool:
         return False
     return True
 
-def sb_upsert(path: str, data: list[dict]) -> bool:
-    r = _http_request("POST", f"{SUPABASE_URL}/rest/v1/{path}",
-        headers={**SB_HEADERS, "Prefer": "return=representation", "Content-Type": "application/json"},
+def sb_upsert(path: str, data: list[dict], on_conflict: str = "") -> bool:
+    # Gerçek upsert: on_conflict kolonları + merge-duplicates → mevcut satır
+    # 409 vermeden güncellenir (önceki kod düz INSERT yapıp duplicate alıyordu).
+    url = f"{SUPABASE_URL}/rest/v1/{path}"
+    if on_conflict:
+        url += f"?on_conflict={on_conflict}"
+    prefer = "return=minimal,resolution=merge-duplicates" if on_conflict else "return=representation"
+    r = _http_request("POST", url,
+        headers={**SB_HEADERS, "Prefer": prefer, "Content-Type": "application/json"},
         json=data)
-    if r.status_code not in (200, 201):
+    if r.status_code not in (200, 201, 204):
         log.error(f"SB UPSERT {path} → {r.status_code}: {r.text[:200]}")
         return False
     return True
@@ -306,6 +312,10 @@ def parse_with_glm(text: str, fund_code: str) -> Optional[dict]:
         "Yabancı Hisse→foreign_equity_pct, Yabancı Borçlanma→foreign_bond_pct, "
         "Türev/Opsiyon/Vadeli İşlem→derivatives_pct, Katılım Hesabı→participation_account_pct, "
         "Kira Sertifikası→kiracert_pct, kalanlar→other_pct. "
+        "ÖNEMLİ: Yüzdelerin toplamı ~100 olmalı. Alt kalemleri üst/toplam kalemle "
+        "ÇİFT SAYMA (örn. 'Borçlanma Araçları' başlığı altındaki devlet+özel tahvili "
+        "ayrı ayrı yaz, başlığı tekrar ekleme). Sadece 'Aylık Ortalama Portföy' "
+        "yüzdelerini kullan. "
         'Portföy verisi yoksa {"error":"no_data"} döndür. Sadece JSON.'
     )
     payload = json.dumps({
@@ -390,13 +400,27 @@ def parse_and_upsert(pdf_path: Path, fund_code: str, report_date: str) -> bool:
     report_date = result.get("report_date") or report_date
     row = {"fund_code": fund_code, "report_date": report_date}
     for c in PCT_COLS:
-        row[c] = round(_f(result.get(c)), 2)
+        row[c] = _f(result.get(c))
+
+    raw_total = sum(row[c] for c in PCT_COLS)
+    # Toplam makul aralık dışıysa (çöp çıkarım) reddet
+    if raw_total < 80 or raw_total > 130:
+        log.warning(f"{fund_code}: toplam %{raw_total:.1f} mantıksız — atlanıyor")
+        return False
+    # 100'e normalize et (MiniMax ara sıra çift sayıp ~110 veriyor; oranları koru)
+    if raw_total > 0 and abs(raw_total - 100) > 1.0:
+        factor = 100.0 / raw_total
+        for c in PCT_COLS:
+            row[c] = row[c] * factor
+        log.info(f"{fund_code}: %{raw_total:.1f} → 100'e normalize edildi")
+    for c in PCT_COLS:
+        row[c] = round(row[c], 2)
     row["total_pct"] = round(sum(row[c] for c in PCT_COLS), 2)
     row["fund_summary"] = (result.get("fund_summary") or "").strip()[:1000] or None
     row["extraction_method"] = "minimax"
     row["ai_model"] = _MINIMAX_MODEL
 
-    if sb_upsert("portfolio_breakdown", [row]):
+    if sb_upsert("portfolio_breakdown", [row], on_conflict="fund_code,report_date"):
         log.info(f"Upserted {fund_code} ({report_date}, total={row['total_pct']}%)")
         return True
     log.error(f"Upsert failed for {fund_code}")
@@ -518,7 +542,7 @@ def run():
     sb_upsert("system_status", [{
         "key": "last_kap_portfolio_cron", "value": ended_at,
         "updated_at": ended_at,
-    }])
+    }], on_conflict="key")
 
     _save_state(state, to_date)
     log.info(f"Done: {success_count} ✓ / {failed_count} ✗")
