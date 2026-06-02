@@ -436,6 +436,81 @@ def _f(v) -> float:
     except (ValueError, TypeError):
         return 0.0
 
+
+_HOLDINGS_SYSTEM = (
+    "Bu KAP portföy dağılım raporu metninden fonun tuttuğu HİSSE SENETLERİ listesini çıkar. "
+    'SADECE şu JSON: {"holdings":[{"isin":"TRA...","ticker":"ASELS","name":"Aselsan Elektronik",'
+    '"pct":12.5}]}\n'
+    "pct = o hissenin fon portföyündeki yüzdesi. SADECE hisse senetleri (repo, mevduat, tahvil, "
+    "kira sertifikası, türev DEĞİL). ISIN metinde TR ile başlar (TRAASELS91H2 gibi). ticker BIST "
+    "kodu (ASELS). name temiz şirket adı. Hisse yoksa {\"holdings\":[]}."
+)
+
+
+def parse_holdings_with_minimax(text: str, fund_code: str) -> list[dict]:
+    """EK metninden hisse seviyesi holdings çıkar (isin, ticker, name, pct)."""
+    key = _minimax_key()
+    if not key:
+        return []
+    payload = json.dumps({
+        "model": _MINIMAX_MODEL, "max_tokens": 4000,
+        "system": _HOLDINGS_SYSTEM, "messages": [{"role": "user", "content": text[:8000]}],
+    }).encode()
+    for attempt in range(2):
+        try:
+            req = _urlreq.Request(_MINIMAX_URL, data=payload, method="POST", headers={
+                "x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"})
+            with _urlreq.urlopen(req, timeout=90) as resp:
+                data = json.loads(resp.read())
+            raw = ""
+            for b in data.get("content", []):
+                if b.get("type") == "text":
+                    raw = b.get("text", ""); break
+            raw = re.sub(r"^```(?:json)?\s*", "", (raw or "").strip())
+            raw = re.sub(r"\s*```$", "", raw)
+            m = re.search(r"\{[\s\S]*\}", raw)
+            if not m:
+                return []
+            return (json.loads(m.group(0)) or {}).get("holdings", []) or []
+        except Exception as e:
+            log.error(f"holdings MiniMax {fund_code} (deneme {attempt+1}): {e}")
+            time.sleep(2 + attempt)
+    return []
+
+
+def _ticker_from_isin(isin: str) -> str:
+    isin = (isin or "").strip().upper()
+    if len(isin) >= 8 and isin.startswith("TR"):
+        c = isin[3:8]
+        if re.match(r"^[A-Z0-9]{4,6}$", c):
+            return c
+    return ""
+
+
+def upsert_holdings(fund_code: str, report_date: str, holdings: list[dict]) -> int:
+    """Fonun hisse holdings'ini temiz olarak fund_holdings'e yaz (eskiyi sil + yeni ekle)."""
+    rows = []
+    for h in holdings:
+        isin = (h.get("isin") or "").strip().upper()
+        ticker = (h.get("ticker") or "").strip().upper() or _ticker_from_isin(isin)
+        if not isin or not ticker:
+            continue
+        pct = _f(h.get("pct"))
+        if pct <= 0 or pct > 100:
+            continue
+        rows.append({
+            "fund_code": fund_code, "isin": isin, "ticker": ticker,
+            "company": (h.get("name") or "").strip()[:120] or ticker,
+            "weight_pct": round(pct, 2), "report_date": report_date,
+        })
+    if not rows:
+        return 0
+    # Eski (çöp) satırları sil, temiz olanları ekle
+    _http_request("DELETE", f"{SUPABASE_URL}/rest/v1/fund_holdings?fund_code=eq.{fund_code}",
+                  headers={**SB_HEADERS, "Prefer": "return=minimal"})
+    ok = sb_upsert("fund_holdings", rows, on_conflict="fund_code,isin")
+    return len(rows) if ok else 0
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 def run():
     started_at     = datetime.utcnow().isoformat()
@@ -518,6 +593,17 @@ def run():
         else:
             failed_count += 1
             failed_funds.append(fund_code)
+
+        # Hisse seviyesi holdings (temiz ticker/ad/ağırlık) — ağırlık değişimi için
+        try:
+            text = extract_text(pdf_path)
+            holds = parse_holdings_with_minimax(text, fund_code) if text.strip() else []
+            if holds:
+                n = upsert_holdings(fund_code, pub_date, holds)
+                if n:
+                    log.info(f"  holdings {fund_code}: {n} hisse")
+        except Exception as e:
+            log.warning(f"holdings {fund_code} hata: {e}")
 
         processed.append(fund_code)
         time.sleep(0.5)
