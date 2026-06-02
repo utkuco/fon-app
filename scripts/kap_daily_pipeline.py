@@ -143,38 +143,56 @@ def kap_discover(from_date: datetime, to_date: datetime) -> list[dict]:
     return results
 
 def kap_download_pdf(disclosure_index: str, fund_code: str) -> Optional[Path]:
-    """Download PDF for a disclosure. Returns local path or None."""
+    """Duyurunun GERÇEK portföy dağılım dosyasını indir.
+
+    Önemli: /api/BildirimPdf/{index} sadece KAPAK sayfasını döndürür (~0.5KB,
+    tablo yok). Asıl dağılım tablosu duyuruya EKLİ dosyadadır
+    (/tr/api/file/download/{id}). Bu yüzden önce eki indiriyoruz; ek yoksa
+    kapak PDF'ine düşüyoruz (hiç yoktan iyi).
+    """
     PDF_DIR.mkdir(parents=True, exist_ok=True)
     out_path = PDF_DIR / f"{fund_code}.pdf"
 
-    # Try direct PDF endpoint first
-    url = f"{KAP_BASE}/api/BildirimPdf/{disclosure_index}"
-    r = _http_request("GET", url, headers={"User-Agent": KAP_HEADERS["User-Agent"]})
+    # 1) Duyuru sayfasından ek dosya URL'sini çıkar (BİRİNCİL — gerçek tablo)
+    # ÖNEMLİ: KAP, header'SIZ (python-requests default) isteğe SSR HTML'i
+    # (ek linkli) döndürüyor; tarayıcı User-Agent verilince SPA client-shell'i
+    # (linksiz) dönüyor. O yüzden BİLEREK ekstra header GÖNDERME. Boş gelirse
+    # birkaç kez tekrar dene (yoğunlukta ara sıra shell dönebiliyor).
+    urls: list[str] = []
+    for page_try in range(4):
+        r2 = _http_request("GET", f"{KAP_BASE}/Bildirim/{disclosure_index}")
+        if r2.status_code == 200:
+            matches = re.findall(r'/tr/api/file/download/[0-9a-fA-F]+', r2.text)
+            seen: set[str] = set()
+            urls = [m for m in matches if not (m in seen or seen.add(m))]
+            if urls:
+                break
+        time.sleep(1.5 * (page_try + 1))  # SSR'nin oturması için bekle
+    if urls:
+        # rel zaten "/tr/..." ile başlıyor; KAP_BASE de "/tr" ile bitiyor →
+        # domain KÖKÜNDEN inşa et, yoksa çift /tr olur (404).
+        kap_root = KAP_BASE.rsplit("/tr", 1)[0]  # https://www.kap.org.tr
+        for rel in urls:
+            r3 = _http_request("GET", f"{kap_root}{rel}",
+                               headers={"User-Agent": KAP_HEADERS["User-Agent"]})
+            # Magic-byte kontrolü yok: ek bazen wrapper'lı geliyor ama pdfminer
+            # okuyabiliyor. Boyut eşiği + downstream extract doğrular.
+            if r3.status_code == 200 and len(r3.content) > 4000:
+                out_path.write_bytes(r3.content)
+                log.info(f"Downloaded EK {fund_code} ({len(r3.content)//1024}KB)")
+                return out_path
+    else:
+        log.warning(f"Disclosure page {disclosure_index} → {r2.status_code}")
+
+    # 2) Fallback: kapak PDF (zayıf — genelde tablo içermez)
+    r = _http_request("GET", f"{KAP_BASE}/api/BildirimPdf/{disclosure_index}",
+                      headers={"User-Agent": KAP_HEADERS["User-Agent"]})
     if r.status_code == 200 and r.content[:4] == b"%PDF":
         out_path.write_bytes(r.content)
-        log.info(f"Downloaded PDF {fund_code} ({len(r.content)//1024}KB)")
+        log.info(f"Downloaded KAPAK {fund_code} ({len(r.content)//1024}KB) — ek bulunamadı")
         return out_path
 
-    # Fallback: disclosure page → extract attachment URL
-    r2 = _http_request("GET", f"{KAP_BASE}/Bildirim/{disclosure_index}")
-    if r2.status_code != 200:
-        log.error(f"Disclosure page {disclosure_index} → {r2.status_code}")
-        return None
-
-    import re
-    matches = re.findall(r'href="(/tr/api/file/download/[^"]+)"', r2.text)
-    if not matches:
-        log.warning(f"No attachment URL in disclosure {disclosure_index}")
-        return None
-
-    attach_url = f"{KAP_BASE}{matches[0]}"
-    r3 = _http_request("GET", attach_url, headers={"User-Agent": KAP_HEADERS["User-Agent"]})
-    if r3.status_code == 200 and r3.content[:4] == b"%PDF":
-        out_path.write_bytes(r3.content)
-        log.info(f"Downloaded PDF (fallback) {fund_code} ({len(r3.content)//1024}KB)")
-        return out_path
-
-    log.error(f"Attachment for {disclosure_index} is not a PDF")
+    log.error(f"{fund_code}: ek de kapak da indirilemedi ({disclosure_index})")
     return None
 
 # ── Fund name matching ──────────────────────────────────────────────────────────
