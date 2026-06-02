@@ -59,10 +59,12 @@ CREATE TABLE IF NOT EXISTS stock_holding_snapshots (
     company       TEXT,
     snapshot_date DATE NOT NULL,
     fund_count    INT NOT NULL,
+    avg_weight    NUMERIC,          -- fonlardaki ortalama ağırlık % (weight_pct)
     total_value   NUMERIC,
     created_at    TIMESTAMPTZ DEFAULT now(),
     UNIQUE (isin, snapshot_date)
 );
+ALTER TABLE stock_holding_snapshots ADD COLUMN IF NOT EXISTS avg_weight NUMERIC;
 CREATE INDEX IF NOT EXISTS idx_stock_hold_date ON stock_holding_snapshots (snapshot_date);
 """
 
@@ -121,33 +123,43 @@ def main() -> int:
         c = isin[3:8].upper()
         return c if BIST_RE.match(c) and c not in NON_EQUITY else ""
 
-    cur.execute("SELECT isin, company, total_value FROM fund_holdings WHERE isin IS NOT NULL AND isin <> ''")
+    # Artık fund_holdings'te temiz ticker + weight_pct var (kap_daily holdings parser).
+    cur.execute("SELECT isin, ticker, company, weight_pct, total_value FROM fund_holdings WHERE isin IS NOT NULL AND isin <> ''")
     from collections import defaultdict
-    sagg = defaultdict(lambda: {"ticker": "", "company": "", "fund_count": 0, "total_value": 0.0})
-    for isin, company, tv in cur.fetchall():
-        t = ticker_from_isin(isin or "")
+    sagg = defaultdict(lambda: {"ticker": "", "company": "", "fund_count": 0, "wsum": 0.0, "total_value": 0.0})
+    for isin, tk, company, wpct, tv in cur.fetchall():
+        t = (tk if (tk := (tk or "").strip()) else ticker_from_isin(isin or ""))
         if not t:
             continue
         e = sagg[isin]
         e["ticker"] = t
-        if not e["company"]:
-            toks = (company or "").split()
-            e["company"] = " ".join(toks[toks.index(t) + 1:]).strip() if t in toks else ""
+        if not e["company"] and company:
+            toks = company.split()
+            # kaynak temizse company zaten temiz; değilse ticker-sonrası
+            e["company"] = (" ".join(toks[toks.index(t) + 1:]).strip() if t in toks else company)
         e["fund_count"] += 1
+        try:
+            e["wsum"] += float(wpct or 0)
+        except (TypeError, ValueError):
+            pass
         try:
             e["total_value"] += float(tv or 0)
         except (TypeError, ValueError):
             pass
-    stock_rows = [(isin, e["ticker"], e["company"] or None, today, e["fund_count"], e["total_value"])
-                  for isin, e in sagg.items()]
+    stock_rows = [
+        (isin, e["ticker"], e["company"] or None, today, e["fund_count"],
+         round(e["wsum"] / e["fund_count"], 2) if e["fund_count"] else 0, e["total_value"])
+        for isin, e in sagg.items()
+    ]
     if stock_rows:
         psycopg2.extras.execute_values(
             cur,
-            """INSERT INTO stock_holding_snapshots (isin, ticker, company, snapshot_date, fund_count, total_value)
+            """INSERT INTO stock_holding_snapshots (isin, ticker, company, snapshot_date, fund_count, avg_weight, total_value)
                VALUES %s
                ON CONFLICT (isin, snapshot_date) DO UPDATE
                SET ticker = EXCLUDED.ticker, company = EXCLUDED.company,
-                   fund_count = EXCLUDED.fund_count, total_value = EXCLUDED.total_value""",
+                   fund_count = EXCLUDED.fund_count, avg_weight = EXCLUDED.avg_weight,
+                   total_value = EXCLUDED.total_value""",
             stock_rows,
         )
     log(f"hisse snapshot {today}: {len(stock_rows)} hisse")
