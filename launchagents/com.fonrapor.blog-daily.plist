@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.fonrapor.blog-daily</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/caffeinate</string>
+        <string>-s</string>
+        <string>-i</string>
+        <string>/opt/homebrew/bin/python3.11</string>
+        <string>/Users/admin/Documents/Projects/fon-app/scripts/blog_generator.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/admin/Documents/Projects/fon-app</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+        <key>PYTHONUNBUFFERED</key>
+        <string>1</string>
+    </dict>
+
+    <!-- Her gün UTC 06:30 = TR 09:30 -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key><integer>6</integer>
+        <key>Minute</key><integer>30</integer>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/admin/Library/Logs/fonrapor/blog_daily.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/admin/Library/Logs/fonrapor/blog_daily.err</string>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+    <key>LowPriorityIO</key>
+    <true/>
+    <key>Nice</key>
+    <integer>1</integer>
+</dict>
+</plist>
