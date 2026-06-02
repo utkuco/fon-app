@@ -610,7 +610,7 @@ def compute_homepage_stats(funds: list[dict], funds_with_history: Optional[list[
         ) or []
         from collections import defaultdict
         agg: dict[str, dict] = defaultdict(
-            lambda: {"ticker": "", "company": "", "total_value": 0.0, "fund_count": 0}
+            lambda: {"ticker": "", "isin": "", "company": "", "total_value": 0.0, "fund_count": 0}
         )
         # Non-equity tickers that the parser routinely surfaces as the first
         # token (treasury bonds, FX positions, generic labels). These aren't
@@ -647,21 +647,27 @@ def compute_homepage_stats(funds: list[dict], funds_with_history: Optional[list[
                 continue
             entry = agg[t]
             entry["ticker"] = t
+            if not entry["isin"]:
+                entry["isin"] = isin  # /holdings/[isin] linki için
             if not entry["company"]:
-                # Strip the leading ticker token from the display name.
-                rest = company.split(maxsplit=1)
-                entry["company"] = rest[1] if len(rest) == 2 else company
+                # company string'i parser bozuk bırakıyor:
+                #   "DEĞERİ CIMSA CIMSA CIMENTO SANAYI" / "ALGYO ALARKO GAYRIMENKUL YAT"
+                # = [çöp önek] TICKER GERÇEK_AD. Ticker'ın İLK geçtiği yerden
+                # sonrasını al → temiz ad. Yoksa ticker'ı kullan.
+                toks = company.split()
+                name = " ".join(toks[toks.index(t) + 1:]).strip() if t in toks else ""
+                entry["company"] = name or t
             try:
                 entry["total_value"] += float(h.get("total_value") or 0)
             except (TypeError, ValueError):
                 pass
             entry["fund_count"] += 1
-        # Convert total_value to total_weight (share of summed value across
-        # tickers, as %). The StockCard widget expects total_weight, not a
-        # raw lira amount — and raw lira mixes scales across funds anyway.
-        total_value_all = sum(v["total_value"] for v in agg.values()) or 1
+        # Anlamlı metrik: kaç fon tutuyor (fund_count) + toplam ₺ değer (total_value
+        # ham ₺, frontend fmtAum ile biçimler). Eski "tüm-pazar payı %" yanıltıcıydı
+        # (binlerce ticker → ~%0.0); total_weight'i geriye-uyum için bırakıyoruz ama
+        # widget total_value gösterecek.
         for entry in agg.values():
-            entry["total_weight"] = round(entry["total_value"] / total_value_all * 100, 2)
+            entry["total_weight"] = 0  # deprecated; total_value kullanılıyor
         ranked = sorted(agg.values(), key=lambda x: x["fund_count"], reverse=True)
         most_held_stocks = ranked[:10]
     except Exception as e:
