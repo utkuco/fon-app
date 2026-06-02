@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>SUPABASE_SERVICE_KEY</key>
+		<string>sb_secret_PkAEAOU2YO4YS-ELYpwS5w_SsVg2kqi</string>
+		<key>ZHIPU_API_KEY</key>
+		<string>4ca4188d116c433597f87d6a09e27b71.9lhC8b6VX1l9VM9V</string>
+	</dict>
+	<key>HardResourceLimits</key>
+	<dict>
+		<key>HardResourceUsage_SECONDS</key>
+		<integer>3600</integer>
+	</dict>
+	<key>Label</key>
+	<string>com.fonrapor.kap-daily</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/opt/homebrew/bin/python3.11</string>
+		<string>/Users/admin/Documents/Projects/fon-app/scripts/kap_daily_pipeline.py</string>
+	</array>
+	<key>RunAtLoad</key>
+	<false/>
+	<key>StandardErrorPath</key>
+	<string>/Users/admin/Library/Logs/fonrapor/kap_daily.err</string>
+	<key>StandardOutPath</key>
+	<string>/Users/admin/Library/Logs/fonrapor/kap_daily.log</string>
+	<key>StartCalendarInterval</key>
+	<array>
+		<dict>
+			<key>Hour</key>
+			<integer>6</integer>
+			<key>Minute</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>ThrottleInterval</key>
+	<integer>60</integer>
+	<key>WorkingDirectory</key>
+	<string>/Users/admin/Documents/Projects/fon-app</string>
+</dict>
+</plist>

@@ -1,1 +1,7 @@
 db/
+
+# Cron runtime artefaktları (DATA_INFRASTRUCTURE.md'ye bak)
+scripts/*.log
+scripts/*.err
+scripts/*_state.json
+scripts/__pycache__/

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.fonapp.etf-daily-cron</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/caffeinate</string>
+        <string>-s</string>
+        <string>-i</string>
+        <string>/opt/homebrew/bin/python3.11</string>
+        <string>/Users/admin/Documents/Projects/fon-app/scripts/etf_daily_cron.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/admin/Documents/Projects/fon-app</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+        <key>PYTHONUNBUFFERED</key>
+        <string>1</string>
+    </dict>
+
+    <!-- Script ic-i saat kontrollu (ETF_CRON_HOURS). UTC saatleri: TR 22/01/04/07/10 -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict><key>Hour</key><integer>19</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>22</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>1</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>4</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>7</integer><key>Minute</key><integer>0</integer></dict>
+    </array>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/admin/Library/Logs/fonrapor/etf_daily_cron.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/admin/Library/Logs/fonrapor/etf_daily_cron.err</string>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+    <key>LowPriorityIO</key>
+    <true/>
+    <key>Nice</key>
+    <integer>1</integer>
+</dict>
+</plist>

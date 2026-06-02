@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>TELEGRAM_BOT_TOKEN</key>
+		<string>8679220074:AAFNnX7Mwb77d3J2xIGSANz-VazZhesQBsw</string>
+		<key>TELEGRAM_CHAT_ID</key>
+		<string>2065333086</string>
+	</dict>
+	<key>Label</key>
+	<string>com.fonapp.health-alarm</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/opt/homebrew/bin/python3.11</string>
+		<string>/Users/admin/Documents/Projects/fon-app/scripts/data_health_alarm.py</string>
+	</array>
+	<key>RunAtLoad</key>
+	<false/>
+	<key>StandardErrorPath</key>
+	<string>/Users/admin/Library/Logs/fonrapor/health-alarm.err</string>
+	<key>StandardOutPath</key>
+	<string>/Users/admin/Library/Logs/fonrapor/health-alarm.log</string>
+	<key>StartInterval</key>
+	<integer>1800</integer>
+</dict>
+</plist>

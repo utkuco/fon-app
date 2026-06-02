@@ -13,7 +13,7 @@ Cron (macOS launchd):
 
 from __future__ import annotations
 
-import os, sys, json, time, signal, logging, requests, pdfminer.high_level
+import os, sys, json, time, re, signal, logging, requests, pdfminer.high_level
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Optional
@@ -240,36 +240,73 @@ def extract_text(pdf_path: Path) -> str:
         log.error(f"pdfminer failed for {pdf_path}: {e}")
         return ""
 
-def parse_with_glm(text: str, fund_code: str) -> Optional[dict]:
-    import zhipuai
-    messages = [
-        {"role": "system", "content": (
-            "Verilen metinden portföy dağılımını JSON olarak çıkar.\n"
-            "Format: {\"report_date\":\"YYYY-MM-DD\",\"categories\":[{\"name\":\"HİSSE SENEDİ\",\"percentage\":45.5}]}\n"
-            "Eğer portföy verisi yoksa {\"error\":\"no_data\"} döndür."
-        )},
-        {"role": "user", "content": text[:8000]},
-    ]
+# MiniMax — Anthropic-uyumlu endpoint (haber pipeline'ıyla aynı; Zhipu yerine).
+# Key ~/.hermes/.env'den (cron_shared.load_env veya aşağıdaki fallback yükler).
+import urllib.request as _urlreq
+_MINIMAX_URL = "https://api.minimax.io/anthropic/v1/messages"
+_MINIMAX_MODEL = "MiniMax-M2.7"
+
+
+def _minimax_key() -> str:
+    k = os.environ.get("MINIMAX_API_KEY", "")
+    if k:
+        return k
+    # fallback: ~/.hermes/.env
     try:
-        resp = zhipuai.model_api.invoke(
-            model="glm-4-air",
-            prompt=messages,
-            temperature=0.1,
-            top_p=0.9,
-        )
-        raw = resp.get("data", {}).get("choices", [{}])[0].get("content", "").strip()
-        if raw.startswith("```"):
-            parts = raw.split("```")
-            raw = parts[1] if len(parts) > 1 else raw
-            if raw.startswith("json"):
-                raw = raw[4:]
-        result = json.loads(raw.strip())
-        if "error" in result:
-            return None
-        return result
-    except Exception as e:
-        log.error(f"GLM failed for {fund_code}: {e}")
+        with open(os.path.expanduser("~/.hermes/.env")) as f:
+            for line in f:
+                if line.strip().startswith("MINIMAX_API_KEY"):
+                    return line.partition("=")[2].strip().strip('"').strip("'")
+    except Exception:
+        pass
+    return ""
+
+
+def parse_with_glm(text: str, fund_code: str) -> Optional[dict]:
+    """Portföy dağılımını metinden MiniMax ile JSON olarak çıkarır.
+    (İsim geriye-uyumluluk için korundu; motor artık MiniMax.)"""
+    key = _minimax_key()
+    if not key:
+        log.error(f"MINIMAX_API_KEY yok — {fund_code} atlanıyor")
         return None
+    system = (
+        "Verilen metinden fonun portföy dağılımını JSON olarak çıkar.\n"
+        'Format: {"report_date":"YYYY-MM-DD","categories":[{"name":"HİSSE SENEDİ","percentage":45.5}]}\n'
+        'Eğer portföy verisi yoksa {"error":"no_data"} döndür. Sadece JSON döndür.'
+    )
+    payload = json.dumps({
+        "model": _MINIMAX_MODEL,
+        "max_tokens": 1200,
+        "system": system,
+        "messages": [{"role": "user", "content": text[:8000]}],
+    }).encode()
+    for attempt in range(3):
+        try:
+            req = _urlreq.Request(_MINIMAX_URL, data=payload, method="POST", headers={
+                "x-api-key": key,
+                "anthropic-version": "2023-06-01",
+                "content-type": "application/json",
+            })
+            with _urlreq.urlopen(req, timeout=60) as resp:
+                data = json.loads(resp.read())
+            raw = ""
+            for block in data.get("content", []):
+                if block.get("type") == "text":
+                    raw = block.get("text", ""); break
+            raw = (raw or "").strip()
+            raw = re.sub(r"^```(?:json)?\s*", "", raw)
+            raw = re.sub(r"\s*```$", "", raw)
+            m = re.search(r"\{[\s\S]*\}", raw)
+            if not m:
+                return None
+            result = json.loads(m.group(0))
+            if "error" in result:
+                return None
+            return result
+        except Exception as e:
+            log.error(f"MiniMax failed for {fund_code} (deneme {attempt + 1}): {e}")
+            time.sleep(2 + attempt)
+    return None
 
 def extract_categories_from_text(text: str) -> list[dict]:
     """Rule-based category extraction."""
