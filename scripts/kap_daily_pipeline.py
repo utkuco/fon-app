@@ -288,9 +288,25 @@ def parse_with_glm(text: str, fund_code: str) -> Optional[dict]:
         log.error(f"MINIMAX_API_KEY yok — {fund_code} atlanıyor")
         return None
     system = (
-        "Verilen metinden fonun portföy dağılımını JSON olarak çıkar.\n"
-        'Format: {"report_date":"YYYY-MM-DD","categories":[{"name":"HİSSE SENEDİ","percentage":45.5}]}\n'
-        'Eğer portföy verisi yoksa {"error":"no_data"} döndür. Sadece JSON döndür.'
+        "Verilen KAP portföy dağılım raporu metninden fonun varlık dağılımını çıkar. "
+        "Her varlık sınıfının portföy yüzdesini (0-100 sayı) ilgili anahtara yaz; "
+        "metinde geçmeyen sınıf için 0 kullan. SADECE şu JSON'u döndür:\n"
+        '{"report_date":"YYYY-MM-DD",'
+        '"stock_pct":0,"government_bond_pct":0,"private_bond_pct":0,"eurobond_pct":0,'
+        '"treasury_bill_pct":0,"commercial_paper_pct":0,"bank_bill_pct":0,"gold_pct":0,'
+        '"repo_pct":0,"reverse_repo_pct":0,"byf_pct":0,"etf_pct":0,"term_deposit_pct":0,'
+        '"precious_metals_pct":0,"foreign_equity_pct":0,"foreign_bond_pct":0,"derivatives_pct":0,'
+        '"participation_account_pct":0,"kiracert_pct":0,"other_pct":0,'
+        '"fund_summary":"2-3 cümle TR fon özeti"}\n'
+        "Eşleme: Hisse Senedi→stock_pct, Devlet Tahvili→government_bond_pct, "
+        "Özel Sektör Tahvili→private_bond_pct, Eurobond→eurobond_pct, Hazine Bonosu→treasury_bill_pct, "
+        "Finansman Bonosu→commercial_paper_pct, Banka Bonosu→bank_bill_pct, Altın→gold_pct, "
+        "Repo→repo_pct, Ters Repo→reverse_repo_pct, BYF/Borsa Yatırım Fonu→byf_pct, "
+        "Yatırım Fonu/ETF→etf_pct, (Vadeli) Mevduat→term_deposit_pct, Değerli Maden→precious_metals_pct, "
+        "Yabancı Hisse→foreign_equity_pct, Yabancı Borçlanma→foreign_bond_pct, "
+        "Türev/Opsiyon/Vadeli İşlem→derivatives_pct, Katılım Hesabı→participation_account_pct, "
+        "Kira Sertifikası→kiracert_pct, kalanlar→other_pct. "
+        'Portföy verisi yoksa {"error":"no_data"} döndür. Sadece JSON.'
     )
     payload = json.dumps({
         "model": _MINIMAX_MODEL,
@@ -348,37 +364,53 @@ def extract_categories_from_text(text: str) -> list[dict]:
                     break
     return results
 
+# portfolio_breakdown GENİŞ şema yüzde kolonları
+PCT_COLS = [
+    "stock_pct", "government_bond_pct", "private_bond_pct", "eurobond_pct",
+    "treasury_bill_pct", "commercial_paper_pct", "bank_bill_pct", "gold_pct",
+    "repo_pct", "reverse_repo_pct", "byf_pct", "etf_pct", "term_deposit_pct",
+    "precious_metals_pct", "foreign_equity_pct", "foreign_bond_pct", "derivatives_pct",
+    "participation_account_pct", "kiracert_pct", "other_pct",
+]
+
+
 def parse_and_upsert(pdf_path: Path, fund_code: str, report_date: str) -> bool:
     text = extract_text(pdf_path)
     if not text.strip():
         log.warning(f"Empty PDF for {fund_code}")
         return False
 
-    categories = extract_categories_from_text(text)
-    method     = "text_extract"
-
-    if not categories:
-        glm_result = parse_with_glm(text, fund_code)
-        if glm_result and "categories" in glm_result:
-            report_date = glm_result.get("report_date", report_date)
-            categories  = glm_result["categories"]
-            method      = "glm_air"
-        else:
-            method = "no_data"
-
-    if not categories:
+    result = parse_with_glm(text, fund_code)  # MiniMax → geniş şema dict
+    if not result or "error" in result or not any(
+        _f(result.get(c)) > 0 for c in PCT_COLS
+    ):
         log.warning(f"No categories for {fund_code}")
         return False
 
-    rows = [{"fund_code": fund_code, "report_date": report_date,
-             "category": c["name"], "percentage": float(c["percentage"]),
-             "extraction_method": method, "source": "kap_daily"} for c in categories]
+    report_date = result.get("report_date") or report_date
+    row = {"fund_code": fund_code, "report_date": report_date}
+    for c in PCT_COLS:
+        row[c] = round(_f(result.get(c)), 2)
+    row["total_pct"] = round(sum(row[c] for c in PCT_COLS), 2)
+    row["fund_summary"] = (result.get("fund_summary") or "").strip()[:1000] or None
+    row["extraction_method"] = "minimax"
+    row["ai_model"] = _MINIMAX_MODEL
 
-    if sb_upsert("portfolio_breakdown", rows):
-        log.info(f"Upserted {len(categories)} categories for {fund_code} ({method})")
+    if sb_upsert("portfolio_breakdown", [row]):
+        log.info(f"Upserted {fund_code} ({report_date}, total={row['total_pct']}%)")
         return True
     log.error(f"Upsert failed for {fund_code}")
     return False
+
+
+def _f(v) -> float:
+    """Güvenli float — None/str/'%45,5' → 45.5."""
+    if v is None:
+        return 0.0
+    try:
+        return float(str(v).replace("%", "").replace(",", ".").strip())
+    except (ValueError, TypeError):
+        return 0.0
 
 # ── Main ───────────────────────────────────────────────────────────────────────
 def run():
