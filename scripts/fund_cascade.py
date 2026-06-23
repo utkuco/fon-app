@@ -353,8 +353,11 @@ def compute_fund_metrics(
         sorted_ph = sorted_ph[: latest_idx + 1]
 
         # Pay-bölünmesi (split) düzeltmesi — getiriler bunun üzerinden hesaplanır.
-        # daily_change adjacent günlerde oran korunduğu için etkilenmez; dönem
-        # getirileri ise split uçurumundan arınır. latest_price'ı yeniden oku.
+        # ÖNCE iç sıfır/null günleri at: TEFAS bazen 0-fiyat placeholder koyuyor,
+        # bu da split tespitini bozuyordu (1.3 → 0 → 46 sıçraması yakalanmıyordu).
+        sorted_ph = [p for p in sorted_ph if p.get("price") and p["price"] > 0]
+        if len(sorted_ph) < 2:
+            continue
         sorted_ph = sanitize_splits(sorted_ph)
         if sorted_ph and sorted_ph[-1].get("price"):
             latest_price = sorted_ph[-1]["price"]
