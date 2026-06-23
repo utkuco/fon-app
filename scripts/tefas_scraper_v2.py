@@ -479,15 +479,23 @@ def scrape_fund(ws, cdp_eval, code: str) -> Optional[Dict]:
     # Step 5: Compute returns
     returns = compute_returns(price_rows)
 
-    # Latest price from API — also compute daily change from prev_price (most reliable)
+    # Latest price — price_history zaten TEFAS'ın 0/null "boşluk" günlerini
+    # eliyor (fon o gün henüz fiyat yayınlamadı). Başlık fiyatını HAM price_rows
+    # son satırından alırsak, para piyasası/katılım fonlarının geç yayınladığı
+    # günlerde funds.price = 0 yazıyordu (detay sayfası "₺0.0000"). Bu yüzden
+    # temizlenmiş price_history son geçerli (>0) kaydından al.
     latest_price = None
     latest_date = None
     daily_change_from_api = None
-    if price_rows:
-        latest_row = sorted(price_rows, key=lambda x: x["date"])[-1]
-        latest_price = latest_row["price"]
-        latest_date = latest_row["date"]
-    elif current:
+    if price_history:
+        latest_price = price_history[-1]["price"]
+        latest_date = price_history[-1]["date"]
+    elif price_rows:
+        valid = [r for r in sorted(price_rows, key=lambda x: x["date"]) if r.get("price") and r["price"] > 0]
+        if valid:
+            latest_price = valid[-1]["price"]
+            latest_date = valid[-1]["date"]
+    elif current and current.get("fiyat"):
         latest_price = current.get("fiyat")
         latest_date = current.get("tarih")
 

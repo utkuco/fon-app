@@ -43,6 +43,9 @@ LOG = get_logger("fund_metrics")
 TRADING_DAYS = 252
 MIN_HISTORY = 30
 MIN_DAILY_RETURNS = 20
+# Risk/getiri metrikleri trailing 3 yıl üzerinden — eski kuruluş-dönemi
+# glitch'leri (örn. 2021 launch anomalileri) güncel risk skorunu bozmasın.
+RISK_WINDOW_DAYS = 756
 BENCHMARK_WINDOW_DAYS = 35
 UPSERT_BATCH = 100
 
@@ -50,15 +53,46 @@ UPSERT_BATCH = 100
 # ─── Math helpers ────────────────────────────────────────────────────────────
 
 def daily_returns(price_history: list[dict]) -> list[float]:
-    """Convert sorted-by-date price_history into a list of pct returns."""
+    """Convert sorted-by-date price_history into a list of pct returns.
+
+    curr > 0 ŞART: TEFAS bazı günler price=0 ("o gün yayınlanmadı") döndürüyor;
+    bunu return'e katarsak -100%'lik sahte bir gün + ertesi gün +∞ sıçrama oluşup
+    volatiliteyi şişiriyordu (NZT para piyasası fonu risk 4/7 görünüyordu)."""
     sorted_h = sorted(price_history, key=lambda p: p.get("date", ""))
     out: list[float] = []
     for i in range(1, len(sorted_h)):
         prev = sorted_h[i - 1].get("price")
         curr = sorted_h[i].get("price")
-        if prev and prev > 0 and curr is not None:
+        if prev and prev > 0 and curr and curr > 0:
             out.append((curr - prev) / prev)
     return out
+
+
+def sanitize_window(price_history: list[dict], window_days: int) -> list[dict]:
+    """Risk/getiri metrikleri için fiyat geçmişini hazırla:
+      1) price>0 olanları tut (TEFAS boşluk günleri elenir),
+      2) split/denominasyon sıçramalarını geri al (tek-gün >%70 = r<0.6/>1.7),
+      3) son `window_days` işlem gününe pencerele.
+
+    Pencereleme önemli: birçok fonun kuruluş yılı (örn. 2021) tek seferlik
+    glitch günleri içeriyor (NZT'de -%15.6'lık bir gün). 5 yıllık tam geçmişle
+    hesaplanan volatilite bu eski anomaliyle şişip fonu yanlış risk sınıfına
+    sokuyordu. Trailing pencere fonun GÜNCEL risk profilini yansıtır (SRRI mantığı)."""
+    rows = [p for p in price_history if p.get("price") and p["price"] > 0]
+    rows.sort(key=lambda p: p.get("date", ""))
+    if len(rows) >= 2:
+        out = [dict(rows[0])]
+        factor = 1.0
+        for i in range(1, len(rows)):
+            prev = rows[i - 1]["price"]
+            cur = rows[i]["price"]
+            r = cur / prev if prev > 0 else 1.0
+            if r < 0.6 or r > 1.7:
+                factor *= prev / cur
+            nr = dict(rows[i]); nr["price"] = cur * factor
+            out.append(nr)
+        rows = out
+    return rows[-(window_days + 1):] if window_days and len(rows) > window_days + 1 else rows
 
 
 def std_dev(values: list[float]) -> float:
@@ -243,7 +277,12 @@ def round_r(value: float, places: int) -> float:
 
 
 def compute_for_fund(fund: dict, rates: dict[str, float], bm_map: dict[str, list[dict]]) -> Optional[dict]:
-    history = fund.get("price_history") or []
+    raw_history = fund.get("price_history") or []
+    if len(raw_history) < MIN_HISTORY:
+        return None
+    # Tüm getiri-bazlı metrikler temizlenmiş + split-düzeltilmiş + trailing 3Y
+    # pencereli geçmiş üzerinden hesaplanır (vol/return/drawdown/sharpe tutarlı).
+    history = sanitize_window(raw_history, RISK_WINDOW_DAYS)
     if len(history) < MIN_HISTORY:
         return None
     currency = fund.get("currency") or "TRY"
