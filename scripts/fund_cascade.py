@@ -262,6 +262,30 @@ def upsert_benchmark_prices(bm_prices: dict[str, list[dict]]) -> int:
 
 # ─── Period returns ──────────────────────────────────────────────────────────
 
+def sanitize_splits(prices: list[dict]) -> list[dict]:
+    """TEFAS pay fiyatı bazı fonlarda sıfırlanıyor/bölünüyor (ör. fiyat 30→1 düşüp
+    sonra geri sıçrıyor) ve ham price_history'de düzeltilmiyor → dönem getirileri
+    saçma çıkıyor (ENO 6A=%4082). Bir fon gerçekte günde %40+ oynayamaz; bu eşiği
+    aşan tek-gün sıçramalarını 'split' sayıp bir faktörle yok sayar, seriyi sürekli
+    kılar. (web sanitizeSplits ile aynı mantık.) prices: ASC sıralı [{date,price}]."""
+    if len(prices) < 2:
+        return prices
+    out = [dict(prices[0])]
+    factor = 1.0
+    for i in range(1, len(prices)):
+        prev = prices[i - 1].get("price")
+        cur = prices[i].get("price")
+        if prev and cur and prev > 0 and cur > 0:
+            r = cur / prev
+            if r < 0.6 or r > 1.7:
+                factor *= prev / cur  # sıçramayı geri al
+        p = dict(prices[i])
+        if cur and cur > 0:
+            p["price"] = cur * factor
+        out.append(p)
+    return out
+
+
 def compute_period_returns(
     sorted_prices: list[dict],
     latest_price: float,
@@ -327,6 +351,13 @@ def compute_fund_metrics(
         # Trim trailing zero/null entries so downstream slicing operates on
         # real data.
         sorted_ph = sorted_ph[: latest_idx + 1]
+
+        # Pay-bölünmesi (split) düzeltmesi — getiriler bunun üzerinden hesaplanır.
+        # daily_change adjacent günlerde oran korunduğu için etkilenmez; dönem
+        # getirileri ise split uçurumundan arınır. latest_price'ı yeniden oku.
+        sorted_ph = sanitize_splits(sorted_ph)
+        if sorted_ph and sorted_ph[-1].get("price"):
+            latest_price = sorted_ph[-1]["price"]
 
         # daily_change: today vs yesterday (Turkey timezone)
         # TWO PASSES: first find today_price, then find yest_price (strictly before today)
