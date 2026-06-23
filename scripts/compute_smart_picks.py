@@ -156,6 +156,7 @@ def load_funds(cur) -> list[dict]:
         WHERE f.market_cap >= 10000000
           AND abs(coalesce(f.daily_change, 0)) <= 200
           AND abs(coalesce(f.monthly, 0)) <= 300
+          AND f.last_tefas_fetch >= (now() - interval '21 days')
         """
     )
     return [dict(r) for r in cur.fetchall()]
@@ -221,6 +222,7 @@ def monthly_returns_from_history(ph: list, n_months: int) -> list[float]:
     )
     if len(cleaned) < 30:
         return []
+    cleaned = sanitize_prices(cleaned)
     by_month: dict[str, tuple[float, float]] = {}
     for d, p in cleaned:
         ym = d[:7]
@@ -237,6 +239,24 @@ def monthly_returns_from_history(ph: list, n_months: int) -> list[float]:
     return rets
 
 
+def sanitize_prices(cleaned: list) -> list:
+    """Pay-bölünmesi/glitch düzeltmesi: tek-gün >%40 sıçramayı faktörle yok say.
+    cleaned: ASC sıralı [(date, price)]. Split fonlar (ENO/ZMY) saçma YTD veriyordu."""
+    if len(cleaned) < 2:
+        return cleaned
+    out = [cleaned[0]]
+    factor = 1.0
+    for i in range(1, len(cleaned)):
+        prev = cleaned[i - 1][1]
+        cur = cleaned[i][1]
+        if prev > 0 and cur > 0:
+            r = cur / prev
+            if r < 0.6 or r > 1.7:
+                factor *= prev / cur
+        out.append((cleaned[i][0], cur * factor if cur > 0 else cur))
+    return out
+
+
 def ytd_return(ph: list) -> Optional[float]:
     if not ph or not isinstance(ph, list):
         return None
@@ -247,6 +267,7 @@ def ytd_return(ph: list) -> Optional[float]:
     )
     if len(cleaned) < 2:
         return None
+    cleaned = sanitize_prices(cleaned)
     year = cleaned[-1][0][:4]
     first = None
     for d, p in cleaned:
@@ -285,9 +306,12 @@ def investor_growth_90d(ph: list) -> Optional[float]:
         if d >= cutoff:
             older = n
             break
-    if not older or older <= 0:
+    # Min taban 100: 3→400 gibi küçük tabandan dev % (+%13000) "akın" değil gürültü.
+    if not older or older < 100:
         return None
-    return (latest - older) / older * 100
+    g = (latest - older) / older * 100
+    # %1000 (10x) üstü büyüme 90 günde gerçekçi değil — veri anomalisi, ele.
+    return g if 0 < g <= 1000 else None
 
 
 def compute_strategies(funds: list[dict]) -> dict[str, Any]:
@@ -315,8 +339,16 @@ def compute_strategies(funds: list[dict]) -> dict[str, Any]:
         if (f.get("market_cap") or 0) < 100_000_000:
             continue
         y = ytd_return(f.get("price_history") or [])
-        if y is not None and y > 0:
-            ytd_pool.append((y, f))
+        if y is None or y <= 0:
+            continue
+        # Split-artefakt eleme: sanitize bazı multi-gün split'leri kaçırıyor;
+        # YTD (≈6 ay) bir fonun 1-yıl getirisinin çok üstündeyse (PHN YTD %2525
+        # ↔ 1yıl %127) bu bir pay-bölünmesi glitch'idir. r1a referansıyla + mutlak
+        # 500 tavanıyla ele.
+        r1a = float(f.get("return_1a") or 0) * 100  # return_1a ratio → %
+        if y > 500 or y > max(r1a * 1.5 + 100, 150):
+            continue
+        ytd_pool.append((y, f))
     ytd_pool.sort(key=lambda x: -x[0])
     out["ytd_stars"] = {
         "label": "Bu Yılın Yıldızları",
