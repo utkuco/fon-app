@@ -248,7 +248,19 @@ def read_funds_paginated() -> list[dict]:
     can run 30-100KB per row. Direct PG keeps the whole 2400-fund pull under
     10 seconds.
     """
-    conn = psycopg2.connect(SUPABASE_DB_URL)
+    # DB bağlantısını yeniden dene — bugün (06-23 13:30) geçici DNS/ağ hatası
+    # (host 192.168.1.1'e çözüldü, "connection refused") job'ı tamamen düşürmüştü.
+    conn = None
+    for attempt, backoff in enumerate([3, 8, 20, 0]):
+        try:
+            conn = psycopg2.connect(SUPABASE_DB_URL)
+            break
+        except Exception as e:
+            if backoff:
+                LOG(f"  DB connect denemesi {attempt + 1} başarısız ({e}); {backoff}s sonra tekrar", "WARN")
+                time.sleep(backoff)
+            else:
+                raise
     funds: list[dict] = []
     try:
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:

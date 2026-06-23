@@ -8,6 +8,7 @@ Environment variables loaded from web/.env.local or .env at project root.
 
 import os
 import json
+import time
 import urllib.request
 import urllib.parse
 import fcntl
@@ -15,6 +16,12 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
+
+# Geçici ağ/DNS/SSL hatalarında (örn. captive portal, DNS'in Supabase'i
+# 192.168.1.1'e çözmesi, SSL CERTIFICATE_VERIFY_FAILED) job'ın o günkü tüm
+# güncellemeyi kaybetmemesi için kısa backoff'lu yeniden deneme. Aksi halde
+# zamanlanan dakikada bir saniyelik kesinti = 24 saat bayat veri.
+RETRY_BACKOFF = [3, 8, 20]  # saniye; toplam ~3 ek deneme
 
 # ─── Project root ────────────────────────────────────────────────────────────
 
@@ -63,15 +70,20 @@ HEADERS = {
 
 def rest_get(url: str, timeout: int = 30) -> list:
     req = urllib.request.Request(url, headers=HEADERS)
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            data = resp.read()
-            if not data:
-                return []
-            return json.loads(data)
-    except Exception as e:
-        print(f"[rest_get] ERROR {url}: {e}")
-        return []
+    last_err = None
+    for attempt in range(len(RETRY_BACKOFF) + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                data = resp.read()
+                if not data:
+                    return []
+                return json.loads(data)
+        except Exception as e:
+            last_err = e
+            if attempt < len(RETRY_BACKOFF):
+                time.sleep(RETRY_BACKOFF[attempt])
+    print(f"[rest_get] ERROR {url}: {last_err}")
+    return []
 
 
 def rest_post(
@@ -87,23 +99,33 @@ def rest_post(
     if conflict_col:
         headers["Prefer"] = f"resolution=merge-duplicates, conflict={conflict_col}"
     req = urllib.request.Request(url, data=data.encode(), method="POST", headers=headers)
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            return resp.status in (200, 201)
-    except Exception as e:
-        print(f"[rest_post] ERROR {url}: {e}")
-        return False
+    last_err = None
+    for attempt in range(len(RETRY_BACKOFF) + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.status in (200, 201)
+        except Exception as e:
+            last_err = e
+            if attempt < len(RETRY_BACKOFF):
+                time.sleep(RETRY_BACKOFF[attempt])
+    print(f"[rest_post] ERROR {url}: {last_err}")
+    return False
 
 
 def rest_patch(url: str, payload: dict, timeout: int = 30) -> bool:
     data = json.dumps(payload)
     req = urllib.request.Request(url, data=data.encode(), method="PATCH", headers=HEADERS)
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            return resp.status in (200, 204)
-    except Exception as e:
-        print(f"[rest_patch] ERROR {url}: {e}")
-        return False
+    last_err = None
+    for attempt in range(len(RETRY_BACKOFF) + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.status in (200, 204)
+        except Exception as e:
+            last_err = e
+            if attempt < len(RETRY_BACKOFF):
+                time.sleep(RETRY_BACKOFF[attempt])
+    print(f"[rest_patch] ERROR {url}: {last_err}")
+    return False
 
 
 def upsert_table(
