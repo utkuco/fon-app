@@ -95,11 +95,13 @@ def supabase_query_raw(url: str) -> list:
 def supabase_upsert(table: str, rows: list[dict], conflict_col: str) -> bool:
     if not rows:
         return True
-    url = f"{SUPABASE_URL}/rest/v1/{table}"
+    # on_conflict URL query parametresi olmalı (PostgREST); header'daki "conflict="
+    # geçersizdi → upsert hedeflenmiyor, unique constraint'te 409 Conflict dönüyordu.
+    url = f"{SUPABASE_URL}/rest/v1/{table}?on_conflict={conflict_col}"
     payload = json.dumps(rows)
     req = urllib.request.Request(
         url, data=payload.encode(), method="POST",
-        headers={**HEADERS, "Prefer": f"resolution=merge-duplicates, conflict={conflict_col}"}
+        headers={**HEADERS, "Prefer": "resolution=merge-duplicates,return=minimal"}
     )
     try:
         with urllib.request.urlopen(req, timeout=120) as resp:
